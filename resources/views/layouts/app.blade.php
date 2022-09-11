@@ -15,12 +15,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
     <script src="https://unpkg.com/vue-slicksort@latest/dist/vue-slicksort.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script>
+        $(function (){
+            // let ip_address = '127.0.0.1';
+            let ip_address = 'aukcionaz.loc';
+            let socket_port = '3000';
+            let socket = io(ip_address + ':' + socket_port);
+
+            let chatInput = $('#chatInput');
+
+            chatInput.keypress( function (e) {
+                let message = $(this).html();
+                console.log(message)
+                if(e.which === 13 && !e.shiftKey) {
+                    socket.emit('sendMessageToServer', message);
+                    chatInput.html('');
+                    return false;
+                }
+            });
+
+            socket.on('sendMessageToClient', (message) => {
+                console.log('MMM = ', message)
+                $('.chat-ul').append(`<li>`+ message+ `</li>`)
+            })
+        })
+    </script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

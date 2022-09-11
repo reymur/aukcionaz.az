@@ -12,7 +12,7 @@
             </symbol>
         </svg>
 
-        <div class="alert alert-success d-flex align-items-center mt-0 mb-2" role="alert">
+        <div class="alert alert-success d-flex align-items-center mb-0 py-1" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
             <div>
                 Auksiyon sonlandı

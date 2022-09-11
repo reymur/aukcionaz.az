@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AukcionUsers;
+use App\Events\AukcionRealTimeSend;
+use App\Http\Requests\AukcionRealTimePriceRequest;
+use App\Models\AukcionGamer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
@@ -10,25 +12,28 @@ use function PHPUnit\Framework\isEmpty;
 class AukcionRealTimeController extends Controller
 {
     public function index() {
-        $users = $this->getAukcionUsers();
+        $users = $this->getAukcionGamers();
         return view('pages.real_time_aukcion', ['users' => $users]);
     }
 
-    public function setAukcionSum(Request $request) {
-        $users = AukcionUsers::where('id', 1)
-            ->update(['sum' => $request->sum]);
+    public function setAukcionPrice(AukcionRealTimePriceRequest $request) {
+        $users = AukcionGamer::where('id', 1)
+                            ->update($request->validated());
 
         if( $users ){
-            return $this->getResponseAukcionUsers();
+            broadcast( new AukcionRealTimeSend($request->user, $request->price) );
+            return $this->getResponseAukcionGamers();
         }
+
     }
 
-    public function getAukcionUsers() {
-        return $users = AukcionUsers::all();
+    public function getAukcionGamers() {
+//        dd($users);
+        return $users = AukcionGamer::query()->with(['user','aukcion'])->get();
     }
 
-    public function getResponseAukcionUsers() {
-        return response()->json([ 'users' => $this->getAukcionUsers() ]);
+    public function getResponseAukcionGamers() {
+        return response()->json([ 'users' => $this->getAukcionGamers() ]);
     }
 
 }

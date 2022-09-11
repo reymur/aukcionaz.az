@@ -1,0 +1,22 @@
+.chat-row {
+    margin: 50px;
+}
+.chat-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+    .chat-li {
+        padding: 8px;
+        background-color: #928787;
+        margin-bottom: 20px;
+    }
+        .chat-li:nth-child(2n-2) {
+            background-color: #c3c5c5;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            padding: 8px 10px;
+        }
+.chat-input {
+    border: 1px solid lightgray;
+}

@@ -9,26 +9,16 @@
                 <!--Real time actions table-->
                 <div class="card">
                     <h5 class="card-header bg-transparent p-0">
-
-<!--                                <auksion-continue></auksion-continue>-->
-
-<!--                        <vue-flip :active-hover="true" width="200px" height="50px" transition="2s">-->
-<!--                            <template v-slot:front class="front">-->
-<!--                                <auksion-continue></auksion-continue>-->
-<!--                            </template>-->
-<!--                            <template v-slot:back class="back">-->
-<!--                                <auksion-negotiation></auksion-negotiation>-->
-<!--                            </template>-->
-<!--                        </vue-flip>-->
+                        <auksion-completion></auksion-completion>
                     </h5>
 
-                    <div class="card-body">
-                        <h5 class="card-title">Ən yüksək məbləğ:</h5>
+                    <div class="card-body py-3">
+                        <h5 class="card-title m-0">Ən yüksək məbləğ:</h5>
                     </div>
 
                     <h5 class="card-footer col-12 d-flex">
                         <input v-model="price" type="text" class="form-control me-2">
-                        <button v-on:click="addSum" class="btn btn-success">
+                        <button v-on:click="addPrice" class="btn btn-success">
                             Qiymet
                         </button>
                     </h5>
@@ -41,7 +31,7 @@
                             <div class="col-12 d-flex">
                                 <div class="col-9">
                                     <div class="col-12 d-flex aukcion__text-info">
-                                        <div class="col-10 aukcion__text-name">{{ user.name }} </div>
+                                        <div class="col-10 aukcion__text-name">{{ user.user.name }} </div>
                                     </div>
 
                                     <div class="col-12 justify-content-center d-flex user__sub-titles">
@@ -85,7 +75,7 @@
                                 <div class="col-3 d-flex">
                                     <div class="col-8 text-center aukcion__price-text">
                                 <span class=" aukcion__price-text-style">
-                                     {{ user.sum }}
+                                     {{ user.price }}
                                 </span>
                                     </div>
 
@@ -103,7 +93,7 @@
                                 <div class="col-12 d-flex">
                                     <div class="col-9">
                                         <div class="col-12 d-flex aukcion__text-info">
-                                            <div class="col-10 aukcion__text-name">{{ user.name }} </div>
+                                            <div class="col-10 aukcion__text-name">{{ user.user.name ?? '' }} </div>
                                         </div>
 
                                         <div class="col-12 justify-content-center d-flex user__sub-titles">
@@ -147,7 +137,7 @@
                                     <div class="col-3 d-flex">
                                         <div class="col-8 text-center aukcion__price-text">
                                     <span class=" aukcion__price-text-style">
-                                         {{ user.sum }}
+                                         {{ user.price }}
                                     </span>
                                         </div>
 
@@ -198,13 +188,15 @@ export default {
         }
     },
     methods: {
-        addSum() {
-            axios.post('/sum', {sum: this.price})
+        addPrice() {
+            axios.post('/set-aukcion-price', {price: this.price})
                 .then(res => {
                     this.aukcionUsers = res.data.users
+                    // console.log('Relarion = ', this.aukcionUsers)
                     this.upPrice()
+                    console.log("RES1 === ", res.data.users)
                 }).catch(err => {
-                    console.log("ERROR === ", err)
+                    console.log("ERROR1 === ", err)
                 })
         },
         upPrice: function () {
@@ -212,7 +204,7 @@ export default {
             self.reverse = self.reverse * -1
 
             let newItems = self.aukcionUsers.slice().sort(function (a, b) {
-                return b.sum - a.sum;
+                return b.price - a.price;
             })
 
             newItems.forEach(function (item, index) {
@@ -227,12 +219,13 @@ export default {
         axios.post('/get-auksion-users')
             .then(res => {
                 this.aukcionUsers = res.data.users
+                console.log('RELATIONS = ', res.data.users )
                 this.upPrice();
             }).catch(err => {
-            console.log("ERROR === ", err)
+            console.log("ERROR2 === ", err)
         })
 
-        // console.log('Math.max = ', Math.max(this.aukcionUsers) )
+        // console.log('RELATIONS = ', res.data.users )
         // console.log('ELEM = ', document.getElementsByTagName('li') )
     }
 }

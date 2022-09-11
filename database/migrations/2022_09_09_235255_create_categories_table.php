@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAukcionPeopleTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateAukcionPeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('aukcion_people', function (Blueprint $table) {
-            $table->id();
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();;
             $table->string('name');
-            $table->integer('sum');
-            $table->integer('position');
+            $table->string('alias');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateAukcionPeopleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aukcion_people');
+        Schema::dropIfExists('categories');
     }
 }
