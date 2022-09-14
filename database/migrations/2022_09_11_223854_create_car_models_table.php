@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMarkasTable extends Migration
+class CreateCarModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateMarkasTable extends Migration
      */
     public function up()
     {
-        Schema::create('markas', function (Blueprint $table) {
+        Schema::create('car_models', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\CarMarka::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ class CreateMarkasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('markas');
+        Schema::dropIfExists('car_models');
     }
 }

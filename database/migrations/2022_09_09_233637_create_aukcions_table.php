@@ -17,6 +17,9 @@ class CreateAukcionsTable extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->morphs('productable');
+            $table->dateTime('run_later_time')->nullable();
+            $table->tinyInteger('finished')->default(0);
+            $table->tinyInteger('publish')->default(1);
             $table->timestamps();
         });
     }

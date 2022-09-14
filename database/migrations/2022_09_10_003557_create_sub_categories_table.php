@@ -17,7 +17,6 @@ class CreateSubCategoriesTable extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\Category::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
-            $table->string('alias');
             $table->timestamps();
         });
     }

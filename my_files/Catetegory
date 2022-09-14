@@ -1,0 +1,22 @@
+
+        $category = [
+            'Aksesuarlar',
+            'Audio və video texnika',
+            'Avto kosmetika və kimya',
+            'Diaqnostika cihazları',
+            'Ehtiyat hissələri',
+            'GPS-naviqatorlar',
+            'Qeydiyyat nişanları',
+            'Şinlər, disklər və təkərlər',
+            'Siqnalizasiyalar',
+            'Videoqeydiyyatçılar',
+            'Digər'
+        ];
+
+        foreach ($category as $cat){
+            Category::insert([
+                'title' => $cat,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }

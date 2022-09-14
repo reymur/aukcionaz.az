@@ -19,7 +19,7 @@ class CreateAukcionGamersTable extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignIdFor(Aukcion::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->integer('price');
+            $table->integer('price')->default(0);
             $table->integer('position')->default(0);
             $table->timestamps();
         });
