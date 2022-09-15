@@ -114,6 +114,7 @@ $sub_category = [
     ['category_id' => 10,'name' => 'Tibbi xidmətlər'],
     ['category_id' => 10,'name' => 'Digər'],
 ];
+
 $sub_category_type = [
     ['sub_category_id' => 8,'name' => 'Oğlan uşaq geyimi'],
     ['sub_category_id' => 8,'name' => 'Qız uşaq geyimi'],
@@ -124,11 +125,9 @@ $sub_category_type = [
     ['sub_category_id' => 13,'name' => 'Yaradıcılıq ləvazimatları'],
     ['sub_category_id' => 16,'name' => 'Qadın geyimləri'],
     ['sub_category_id' => 16,'name' => 'Kişi geyimləri'],
-
     ['sub_category_id' => 17,'name' => 'Saatlar'],
     ['sub_category_id' => 17,'name' => 'Bijuteriya'],
     ['sub_category_id' => 17,'name' => 'Zərgərlik məmulatları'],
-
     ['sub_category_id' => 18,'name' => 'Açarlıqlar'],
     ['sub_category_id' => 18,'name' => 'Alışqanlar'],
     ['sub_category_id' => 18,'name' => 'Çamadanlar'],
@@ -139,7 +138,6 @@ $sub_category_type = [
     ['sub_category_id' => 18,'name' => 'Kəmərlər'],
     ['sub_category_id' => 18,'name' => 'Portmone və pul kisələri'],
     ['sub_category_id' => 18,'name' => 'Təsbehlər'],
-
     ['sub_category_id' => 19,'name' => 'Arıqlamaq üçün vasitələr'],
     ['sub_category_id' => 19,'name' => 'Fenlər'],
     ['sub_category_id' => 19,'name' => 'Vücuda qulluq'],
@@ -147,12 +145,10 @@ $sub_category_type = [
     ['sub_category_id' => 19,'name' => 'Kosmetoloji avadanlıqlar'],
     ['sub_category_id' => 19,'name' => 'Ətriyyat'],
     ['sub_category_id' => 19,'name' => 'Taraş vasitələri və epilyatorlar'],
-
     ['sub_category_id' => 21,'name' => 'Elektron siqaretlər'],
     ['sub_category_id' => 21,'name' => 'Tütün qızdırıcıları'],
     ['sub_category_id' => 21,'name' => 'Mayelər, kartriclər və stiklər'],
     ['sub_category_id' => 21,'name' => 'Aksesuarlar'],
-
     ['sub_category_id' => 22,'name' => 'Buxarılar və qızdırıcılar'],
     ['sub_category_id' => 22,'name' => 'Elektrik malları'],
     ['sub_category_id' => 22,'name' => 'Pəncərələr, qapılar, eyvanlar'],
@@ -160,7 +156,6 @@ $sub_category_type = [
     ['sub_category_id' => 22,'name' => 'Tikinti materialları'],
     ['sub_category_id' => 22,'name' => 'Təmir və tikinti alətləri'],
     ['sub_category_id' => 22,'name' => 'Təmir və tikinti alətləri'],
-
     ['sub_category_id' => 23,'name' => 'Bufetlər və servantlar'],
     ['sub_category_id' => 23,'name' => 'Çarpayılar'],
     ['sub_category_id' => 23,'name' => 'Dəhliz mebeli'],
@@ -176,7 +171,6 @@ $sub_category_type = [
     ['sub_category_id' => 23,'name' => 'Rəflər'],
     ['sub_category_id' => 23,'name' => 'Tumbalar'],
     ['sub_category_id' => 23,'name' => 'Yataq otağı mebeli'],
-
     ['sub_category_id' => 24,'name' => 'Aspiratorlar'],
     ['sub_category_id' => 24,'name' => 'Blenderlər, mikserlər, mətbəx kombaynları'],
     ['sub_category_id' => 24,'name' => 'Blinçik və vafli aparatı'],
@@ -207,7 +201,6 @@ $sub_category_type = [
     ['sub_category_id' => 24,'name' => 'Tozsoranlar'],
     ['sub_category_id' => 24,'name' => 'Ütülər'],
     ['sub_category_id' => 24,'name' => 'Vakuum paketləyicilər'],
-
     ['sub_category_id' => 25,'name' => 'Badələr və qədəhlər'],
     ['sub_category_id' => 25,'name' => 'Boşqablar'],
     ['sub_category_id' => 25,'name' => 'Çay və qəhvə servizləri'],
@@ -227,13 +220,11 @@ $sub_category_type = [
     ['sub_category_id' => 25,'name' => 'Şorba qabları'],
     ['sub_category_id' => 25,'name' => 'Stəkanlar'],
     ['sub_category_id' => 25,'name' => 'Süfrə ləvazimatları'],
-
     ['sub_category_id' => 28,'name' => 'Xalçalar'],
     ['sub_category_id' => 28,'name' => 'Kilimlər'],
     ['sub_category_id' => 28,'name' => 'Palazlar'],
     ['sub_category_id' => 28,'name' => 'Hamam və tualet üçün xalçalar'],
     ['sub_category_id' => 28,'name' => 'Qapı qabağı xalçalar'],
-
     ['sub_category_id' => 29,'name' => 'Yataq tekstili'],
     ['sub_category_id' => 29,'name' => 'Dəsmallar'],
     ['sub_category_id' => 29,'name' => 'Mətbəx üçün tekstil'],
@@ -241,7 +232,6 @@ $sub_category_type = [
     ['sub_category_id' => 29,'name' => 'Yastıqlar'],
     ['sub_category_id' => 29,'name' => 'Yorğanlar'],
     ['sub_category_id' => 29,'name' => 'Yorğanlar'],
-
     ['sub_category_id' => 30,'name' => 'Tavan və asma çilçıraqlar'],
     ['sub_category_id' => 30,'name' => 'Divar çıraqları'],
     ['sub_category_id' => 30,'name' => 'Yerüstü və masaüstü çıraqlar'],
@@ -250,7 +240,6 @@ $sub_category_type = [
     ['sub_category_id' => 30,'name' => 'Projektorlar'],
     ['sub_category_id' => 30,'name' => 'Spotlar və trek çıraqlar'],
     ['sub_category_id' => 30,'name' => 'İşıqlandırılma üçün aksessuarlar'],
-
     ['sub_category_id' => 31,'name' => 'Bayram dekoru və aksesuarları'],
     ['sub_category_id' => 31,'name' => 'Fotoçərçivələr'],
     ['sub_category_id' => 31,'name' => 'Güldanlar'],
@@ -262,7 +251,6 @@ $sub_category_type = [
     ['sub_category_id' => 31,'name' => 'Saatlar, zəngli saatlar'],
     ['sub_category_id' => 31,'name' => 'Şamlar və şamdanlar'],
     ['sub_category_id' => 31,'name' => 'Süni güllər və meyvələr'],
-
     ['sub_category_id' => 32,'name' => 'Bağ ləvazimatları'],
     ['sub_category_id' => 32,'name' => 'Manqallar və aksesuarlar'],
     ['sub_category_id' => 32,'name' => 'Otbiçənlər və trimmerlər'],
@@ -271,7 +259,6 @@ $sub_category_type = [
     ['sub_category_id' => 32,'name' => 'Su nasosları'],
     ['sub_category_id' => 32,'name' => 'Suvarma, suyun çəkilməsi və drenaj avadanlıqları'],
     ['sub_category_id' => 32,'name' => 'Toxumlar və gübrələr'],
-
     ['sub_category_id' => 33,'name' => 'Dinamik və sabvuferlər'],
     ['sub_category_id' => 33,'name' => 'MP3-pleyerlər'],
     ['sub_category_id' => 33,'name' => 'Musiqi mərkəzləri, maqnitolalar'],
@@ -280,7 +267,6 @@ $sub_category_type = [
     ['sub_category_id' => 33,'name' => 'Qulaqlıqlar'],
     ['sub_category_id' => 33,'name' => 'Video, DVD və Blu-ray pleyerlər'],
     ['sub_category_id' => 33,'name' => 'Videokameralar'],
-
     ['sub_category_id' => 34,'name' => 'Kabellər və adapterlar'],
     ['sub_category_id' => 34,'name' => 'Klaviaturalar və kompüter siçanları'],
     ['sub_category_id' => 34,'name' => 'Modemlər və routerlar'],
@@ -288,7 +274,6 @@ $sub_category_type = [
     ['sub_category_id' => 34,'name' => 'USB flaş və yaddaş kartları'],
     ['sub_category_id' => 34,'name' => 'Web kameralar'],
     ['sub_category_id' => 34,'name' => 'Şəbəkə avadanlıqları'],
-
     ['sub_category_id' => 35,'name' => 'Oyun konsolları'],
     ['sub_category_id' => 35,'name' => 'Konsollar üçün oyunlar'],
     ['sub_category_id' => 35,'name' => 'Kompüter oyunları'],
@@ -296,7 +281,6 @@ $sub_category_type = [
     ['sub_category_id' => 35,'name' => 'Proqramlar'],
     ['sub_category_id' => 35,'name' => 'Sosial şəbəkələrdə səhifələr'],
     ['sub_category_id' => 35,'name' => 'Aksesuarlar'],
-
     ['sub_category_id' => 37,'name' => 'Ana plataları'],
     ['sub_category_id' => 37,'name' => 'Batareyalar'],
     ['sub_category_id' => 37,'name' => 'CD, DVD və Blu-ray'],
@@ -308,11 +292,9 @@ $sub_category_type = [
     ['sub_category_id' => 37,'name' => 'Qida blokları'],
     ['sub_category_id' => 37,'name' => 'Sərt disklər (HDD, SSD)'],
     ['sub_category_id' => 37,'name' => 'Video kartlar'],
-
     ['sub_category_id' => 38,'name' => 'Aksesuarlar'],
-    ['sub_category_id' => 38,'name' => 'Planşetlər'],
+    ['sub_category_id' => 38,'name' => 'Planşetlər'],178
     ['sub_category_id' => 38,'name' => 'Elektron kitablar'],
-
     ['sub_category_id' => 39,'name' => 'Acer'],
     ['sub_category_id' => 39,'name' => 'Apple Macbook'],
     ['sub_category_id' => 39,'name' => 'Asus'],
@@ -499,7 +481,7 @@ $sub_category_type = [
     ['sub_category_id' => 69,'name' => 'Britan'],
     ['sub_category_id' => 69,'name' => 'Pers'],
     ['sub_category_id' => 69,'name' => 'Siam'],
-    ['sub_category_id' => 69,'name' => 'Sibir'],
+    ['sub_category_id' => 69,'name' => 'Sibir'],['sub_category_id' => 23,'name' => 'Çarpayılar'],
     ['sub_category_id' => 69,'name' => 'Şotland'],
     ['sub_category_id' => 69,'name' => 'Türk anqorı'],
 
@@ -557,14 +539,12 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 1,'name' => 'Köynək və T-shirt'],
     ['sub_category_type_id' => 1,'name' => 'Şalvarlar və şortlar'],
     ['sub_category_type_id' => 1,'name' => 'Üst geyimlər'],
-
     ['sub_category_type_id' => 2,'name' => 'Ayaqqabılar'],
     ['sub_category_type_id' => 2,'name' => 'Don və ətəklər'],
     ['sub_category_type_id' => 2,'name' => 'Kombinezon və bodi'],
     ['sub_category_type_id' => 2,'name' => 'Köynək və T-shirt'],
     ['sub_category_type_id' => 2,'name' => 'Şalvarlar və şortlar'],
     ['sub_category_type_id' => 2,'name' => 'Üst geyimlər'],
-
     ['sub_category_type_id' => 8,'name' => 'Üst geyimləri'],
     ['sub_category_type_id' => 8,'name' => 'Gələcək analar üçün'],
     ['sub_category_type_id' => 8,'name' => 'Kombinezonlar'],
@@ -581,7 +561,6 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 8,'name' => 'Pencək və kostyumlar'],
     ['sub_category_type_id' => 8,'name' => 'Şalvarlar və şortlar'],
     ['sub_category_type_id' => 8,'name' => 'Çimərlik geyimləri'],
-
     ['sub_category_type_id' => 9,'name' => 'Üst geyimləri'],
     ['sub_category_type_id' => 9,'name' => 'Baş geyimi və əlcəklər'],
     ['sub_category_type_id' => 9,'name' => 'Ev geyimləri'],
@@ -596,7 +575,73 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 9,'name' => 'Kombinezonlar'],
     ['sub_category_type_id' => 9,'name' => 'İş geyimləri'],
     ['sub_category_type_id' => 9,'name' => 'Qalstuk və kəpənəklər'],
+    ['sub_category_type_id' => 42,'name' => 'Birnəfərlik'],
+    ['sub_category_type_id' => 42,'name' => 'İkinəfərlik'],
+    ['sub_category_type_id' => 42,'name' => 'Qatlanan'],
+    ['sub_category_type_id' => 42,'name' => 'Çarpayı hissələri'],
+    ['sub_category_type_id' => 45,'name' => 'Dolablar'],
+    ['sub_category_type_id' => 45,'name' => 'Komodlar'],
+    ['sub_category_type_id' => 46,'name' => 'Hava döşəkləri'],
+    ['sub_category_type_id' => 46,'name' => 'Adi döşəklər'],
+    ['sub_category_type_id' => 46,'name' => 'Ortopedik döşəklər'],
+    ['sub_category_type_id' => 110,'name' => 'Döşək üzləri'],
+    ['sub_category_type_id' => 110,'name' => 'Yastıq üzləri'],
+    ['sub_category_type_id' => 110,'name' => 'Yataq dəstləri'],
+    ['sub_category_type_id' => 110,'name' => 'Yorğan üzləri'],
+    ['sub_category_type_id' => 112,'name' => 'Süfrələr və salfetlər'],
+    ['sub_category_type_id' => 112,'name' => 'Mətbəx dəsmalları'],
+    ['sub_category_type_id' => 112,'name' => 'Önlüklər'],
+    ['sub_category_type_id' => 112,'name' => 'Mətbəx əlcəkləri, tutacaqlar'],
+    ['sub_category_type_id' => 114,'name' => 'Yastıqlar'],
+    ['sub_category_type_id' => 114,'name' => 'Boyun üçün yastıqlar'],
+    ['sub_category_type_id' => 114,'name' => 'Dekorativ yastıqlar'],
+    ['sub_category_type_id' => 128,'name' => 'Masaüstü güzgülər'],
+    ['sub_category_type_id' => 128,'name' => 'Divar güzgüləri'],
+    ['sub_category_type_id' => 133,'name' => 'Masaüstü və yerüstü saatlar'],
+    ['sub_category_type_id' => 133,'name' => 'Divar saatları'],
+    ['sub_category_type_id' => 133,'name' => 'Elektron saatlar, zəngli saatla'],
+    ['sub_category_type_id' => 136,'name' => 'Bağ alətləri dəsti'],
+    ['sub_category_type_id' => 136,'name' => 'Bağban qayçıları və doğrayıcıları'],
+    ['sub_category_type_id' => 136,'name' => 'Dırmıqlar'],
+    ['sub_category_type_id' => 136,'name' => 'Kolkəsənlər'],
+    ['sub_category_type_id' => 136,'name' => 'Kürəklər'],
+    ['sub_category_type_id' => 136,'name' => 'Qiyməkeşlər və toxalar'],
+    ['sub_category_type_id' => 136,'name' => 'Yabalar, külünglər və kultivatorlar'],
+    ['sub_category_type_id' => 178,'name' => 'Acer'],75
+    ['sub_category_type_id' => 178,'name' => 'Alcatel'],
+    ['sub_category_type_id' => 178,'name' => 'Allview'],
+    ['sub_category_type_id' => 178,'name' => 'Amazon'],
+    ['sub_category_type_id' => 178,'name' => 'Archos'],
+    ['sub_category_type_id' => 178,'name' => 'BlackBerry'],
+    ['sub_category_type_id' => 178,'name' => 'BLU'],
+    ['sub_category_type_id' => 178,'name' => 'BQ'],
+    ['sub_category_type_id' => 178,'name' => 'Celkon'],
+    ['sub_category_type_id' => 178,'name' => 'Dell'],
+    ['sub_category_type_id' => 178,'name' => 'Google'],
+    ['sub_category_type_id' => 178,'name' => 'Honor'],
+    ['sub_category_type_id' => 178,'name' => 'HP'],
+    ['sub_category_type_id' => 178,'name' => 'HTC'],
+    ['sub_category_type_id' => 178,'name' => 'Huawei'],
+    ['sub_category_type_id' => 178,'name' => 'Icemobile'],
+    ['sub_category_type_id' => 178,'name' => 'Lenovo'],
+    ['sub_category_type_id' => 178,'name' => 'LG'],
+    ['sub_category_type_id' => 178,'name' => 'Maxwest'],
+    ['sub_category_type_id' => 178,'name' => 'Micromax'],
+    ['sub_category_type_id' => 178,'name' => 'Microsoft'],
+    ['sub_category_type_id' => 178,'name' => 'Motorola'],
+    ['sub_category_type_id' => 178,'name' => 'Nokia'],
+    ['sub_category_type_id' => 178,'name' => 'Panasonic'],
+    ['sub_category_type_id' => 178,'name' => 'Prestigio'],
+    ['sub_category_type_id' => 178,'name' => 'QMobile'],
+    ['sub_category_type_id' => 178,'name' => 'Samsung'],
+    ['sub_category_type_id' => 178,'name' => 'Sony'],
+    ['sub_category_type_id' => 178,'name' => 'TCL'],
+    ['sub_category_type_id' => 178,'name' => 'Toshiba'],
+    ['sub_category_type_id' => 178,'name' => 'Xiaomi'],
+    ['sub_category_type_id' => 178,'name' => 'ZTE'],
 ];
+
+
 
 $woman_clothing_type = [
     ['sub_category_type_one_id' => 13,'name' => 'Dublyonkalar'],
