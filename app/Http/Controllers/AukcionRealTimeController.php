@@ -35,7 +35,7 @@ class AukcionRealTimeController extends Controller
             return $this->getResponseAukcionGamers();
         }
 
-    }
+    }  
 
     public function getAukcionGamers() {
         return $users = AukcionGamer::query()->with(['user','aukcion'])->get();
