@@ -620,10 +620,10 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 178,'name' => 'Celkon'],
     ['sub_category_type_id' => 178,'name' => 'Dell'],
     ['sub_category_type_id' => 178,'name' => 'Google'],
-    ['sub_category_type_id' => 178,'name' => 'Honor'],/*88*/
+    ['sub_category_type_id' => 178,'name' => 'Honor'],
     ['sub_category_type_id' => 178,'name' => 'HP'],
     ['sub_category_type_id' => 178,'name' => 'HTC'],
-    ['sub_category_type_id' => 178,'name' => 'Huawei'],
+    ['sub_category_type_id' => 178,'name' => 'Huawei'],/*91*/
     ['sub_category_type_id' => 178,'name' => 'Icemobile'],
     ['sub_category_type_id' => 178,'name' => 'Lenovo'],
     ['sub_category_type_id' => 178,'name' => 'LG'],
@@ -901,6 +901,82 @@ $tab_model = [
     ['sub_category_type_one_id' => 88,'name' => 'Tablet V7 Pro'],
     ['sub_category_type_one_id' => 88,'name' => 'Tablet X7'],
     ['sub_category_type_one_id' => 88,'name' => 'V6'],
+
+    ['sub_category_type_one_id' => 89,'name' => '10 Plus'],/*255*/
+    ['sub_category_type_one_id' => 89,'name' => '7 Plus'],
+    ['sub_category_type_one_id' => 89,'name' => '8'],
+    ['sub_category_type_one_id' => 89,'name' => 'Pro Slate 10 EE G1'],
+    ['sub_category_type_one_id' => 89,'name' => 'Pro Slate 12'],
+    ['sub_category_type_one_id' => 89,'name' => 'Pro Slate 8'],
+    ['sub_category_type_one_id' => 89,'name' => 'Slate 17'],
+    ['sub_category_type_one_id' => 89,'name' => 'Slate 7'],
+    ['sub_category_type_one_id' => 89,'name' => 'Slate10 HD'],
+    ['sub_category_type_one_id' => 89,'name' => 'Slate7 Extreme'],
+    ['sub_category_type_one_id' => 89,'name' => 'Slate7 Plus'],
+    ['sub_category_type_one_id' => 89,'name' => 'Slate8 Pro'],
+    ['sub_category_type_one_id' => 89,'name' => 'TouchPad'],
+
+    ['sub_category_type_one_id' => 90,'name' => 'EVO View 4G'],/*id 268*/
+    ['sub_category_type_one_id' => 90,'name' => 'Flyer'],
+    ['sub_category_type_one_id' => 90,'name' => 'Jetstream'],
+    ['sub_category_type_one_id' => 90,'name' => 'Nexus 9'],
+    ['sub_category_type_one_id' => 90,'name' => 'Shift'],
+
+    ['sub_category_type_one_id' => 91,'name' => 'Enjoy Tablet 2'],/*id 273*/
+    ['sub_category_type_one_id' => 91,'name' => 'IDEOS S7'],
+    ['sub_category_type_one_id' => 91,'name' => 'IDEOS S7 Slim'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad 10.4'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad 10.4 (2022)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad 10.8'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad 11 (2021)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad 5G'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad Pro'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad Pro 10.8 (2019)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad Pro 10.8 (2021)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad Pro 11 (2022)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad Pro 12.6 (2021)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad Pro 5G'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad SE'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad T 10'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad T 10s'],
+    ['sub_category_type_one_id' => 91,'name' => 'MatePad T8'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 10 FHD'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 10 Link'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 10 Link+'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 7 Lite'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 7 Vogue'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 7 Youth'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad 7 Youth2'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M1'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M2 10.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M2 7.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M2 8.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M3 8.4'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M3 Lite 10'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M3 Lite 8'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M5 10'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M5 10 (Pro)'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M5 8'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M5 lite'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M5 Lite 8'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M6 10.8'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M6 8.4'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad M6 Turbo 8.4'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad S7-301w'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T1 10'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T1 7.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T1 7.0 Plus'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T1 8.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T2 10.0 Pro'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T2 7.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T2 7.0 Pro'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T3 10'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T3 7.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad T3 8.0'],
+    ['sub_category_type_one_id' => 91,'name' => 'Mediapad T5'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad X1'],
+    ['sub_category_type_one_id' => 91,'name' => 'MediaPad X2'],
 ];
 
 $tab_option = [
@@ -1789,80 +1865,338 @@ $tab_option = [
     ['tab_model_id' => 241,'color' => 'Black'],/*Dell*/
     ['tab_model_id' => 241,'memory' => '32GB/2GB'],
     ['tab_model_id' => 241,'memory' => '64GB/2GB'],
-
     ['tab_model_id' => 242,'color' => 'Silver Aluminum'],/*Google*/
     ['tab_model_id' => 242,'memory' => '32GB/3GB'],
     ['tab_model_id' => 242,'memory' => '64GB/3GB'],
-
     ['tab_model_id' => 243,'color' => 'Gold'],/*Honor*/
     ['tab_model_id' => 243,'color' => 'White'],
     ['tab_model_id' => 243,'memory' => '16GB/3GB'],
     ['tab_model_id' => 243,'memory' => '32GB/3GB'],
-
     ['tab_model_id' => 244,'color' => 'Glacial Blue'],/*Honor*/
     ['tab_model_id' => 244,'memory' => '32GB/3GB'],
     ['tab_model_id' => 244,'memory' => '64GB/4GB'],
-
     ['tab_model_id' => 245,'color' => 'Champagne Gold'],/*Honor*/
     ['tab_model_id' => 245,'color' => 'Dark Gray'],
     ['tab_model_id' => 245,'color' => 'Glacial Blue'],
     ['tab_model_id' => 245,'memory' => '32GB/3GB'],
     ['tab_model_id' => 245,'memory' => '64GB/4GB'],
-
     ['tab_model_id' => 246,'color' => 'Space Gray'],/*Honor*/
     ['tab_model_id' => 246,'memory' => '64GB/4GB'],
     ['tab_model_id' => 246,'memory' => '128GB/4GB'],
-
     ['tab_model_id' => 247,'color' => 'Gold'],/*Honor*/
     ['tab_model_id' => 247,'color' => 'Mint'],
     ['tab_model_id' => 247,'color' => 'Dark Blue'],
     ['tab_model_id' => 247,'memory' => '128GB/6GB'],
     ['tab_model_id' => 247,'memory' => '128GB/4GB'],
-
     ['tab_model_id' => 248,'color' => 'Neo Mint'],/*Honor*/
     ['tab_model_id' => 248,'memory' => '32GB/3GB'],
     ['tab_model_id' => 248,'memory' => '64GB/4GB'],
-
     ['tab_model_id' => 249,'color' => 'Silver'],/*Honor*/
     ['tab_model_id' => 249,'color' => 'Blue'],
     ['tab_model_id' => 249,'memory' => '32GB/3GB'],
     ['tab_model_id' => 249,'memory' => '64GB/4GB'],
-
     ['tab_model_id' => 250,'color' => 'Mint Green'],/*Honor*/
     ['tab_model_id' => 250,'color' => 'Space Gray'],
     ['tab_model_id' => 250,'memory' => '64GB/4GB'],
     ['tab_model_id' => 250,'memory' => '128GB/4GB'],
-
     ['tab_model_id' => 251,'color' => 'Blue'],/*Honor*/
     ['tab_model_id' => 251,'color' => 'Gold'],
     ['tab_model_id' => 251,'color' => 'Silver'],
     ['tab_model_id' => 251,'memory' => '128GB/8GB'],
     ['tab_model_id' => 251,'memory' => '128GB/6GB'],
-
     ['tab_model_id' => 252,'color' => 'Gold'],/*Honor*/
     ['tab_model_id' => 252,'color' => 'Blue'],
     ['tab_model_id' => 252,'color' => 'Silver'],
     ['tab_model_id' => 252,'memory' => '256GB/8GB'],
     ['tab_model_id' => 252,'memory' => '128GB/6GB'],
     ['tab_model_id' => 252,'memory' => '128GB/8GB'],
-
     ['tab_model_id' => 253,'color' => 'Dark Blue'],/*Honor*/
     ['tab_model_id' => 253,'memory' => '32GB/3GB'],
-
     ['tab_model_id' => 254,'color' => 'Green'],/*Honor*/
     ['tab_model_id' => 254,'color' => 'Silver'],
     ['tab_model_id' => 254,'color' => 'Black'],
     ['tab_model_id' => 254,'memory' => '64GB/6GB'],
     ['tab_model_id' => 254,'memory' => '128GB/6GB'],
     ['tab_model_id' => 254,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 255,'color' => 'Black/Silver'],/*HP*/
+    ['tab_model_id' => 255,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 256,'color' => 'Silver'],/*HP*/
+    ['tab_model_id' => 256,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 257,'color' => 'Silver'],/*HP*/
+    ['tab_model_id' => 257,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 258,'color' => 'Black'],/*HP*/
+    ['tab_model_id' => 258,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 258,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 259,'color' => 'Silver'],/*HP*/
+    ['tab_model_id' => 259,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 260,'color' => 'Gray'],/*HP*/
+    ['tab_model_id' => 260,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 260,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 261,'color' => 'Snow White'],/*HP*/
+    ['tab_model_id' => 261,'color' => 'Sweet Yellow'],/*HP*/
+    ['tab_model_id' => 261,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 262,'color' => 'Black/Silver'],/*HP*/
+    ['tab_model_id' => 262,'color' => 'Red'],
+    ['tab_model_id' => 262,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 263,'color' => 'Black/Silver'],/*HP*/
+    ['tab_model_id' => 263,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 264,'color' => 'Black/Silver'],/*HP*/
+    ['tab_model_id' => 264,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 265,'color' => 'Black/Silver'],/*HP*/
+    ['tab_model_id' => 265,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 266,'color' => 'Black/White'],/*HP*/
+    ['tab_model_id' => 266,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 267,'color' => 'Black'],/*HP*/
+    ['tab_model_id' => 267,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 267,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 268,'color' => 'Silver'],/*HTC*/
+    ['tab_model_id' => 268,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 269,'color' => 'Silver'],/*HTC*/
+    ['tab_model_id' => 269,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 269,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 270,'color' => 'Black'],/*HTC*/
+    ['tab_model_id' => 270,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 271,'color' => 'Indigo Black'],/*HTC*/
+    ['tab_model_id' => 271,'color' => 'Lunar White'],
+    ['tab_model_id' => 271,'color' => 'Sand'],
+    ['tab_model_id' => 271,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 271,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 272,'color' => 'Black'],/*HTC*/
+    ['tab_model_id' => 272,'color' => 'Silver'],
+    ['tab_model_id' => 272,'color' => 'Bronze'],
+    ['tab_model_id' => 272,'memory' => '40GB/1GB'],
+    ['tab_model_id' => 272,'memory' => '80GB/1GB'],
+    ['tab_model_id' => 273,'color' => 'Gold'],/*HUAWEI*/
+    ['tab_model_id' => 273,'color' => 'Dark Blue'],
+    ['tab_model_id' => 273,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 273,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 274,'color' => 'Black'],/*HUAWEI*/
+    ['tab_model_id' => 274,'memory' => '8GB'],
+    ['tab_model_id' => 275,'color' => 'Black'],/*HUAWEI*/
+    ['tab_model_id' => 275,'memory' => '8GB'],
+    ['tab_model_id' => 276,'color' => 'White'],/*HUAWEI*/
+    ['tab_model_id' => 276,'color' => 'Gray'],
+    ['tab_model_id' => 276,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 276,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 276,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 277,'color' => 'Midnight Grey'],/*HUAWEI*/
+    ['tab_model_id' => 277,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 277,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 278,'color' => 'Gold'],/*HUAWEI*/
+    ['tab_model_id' => 278,'color' => 'Gray'],
+    ['tab_model_id' => 278,'color' => 'Black'],
+    ['tab_model_id' => 278,'memory' => '64GB/6GB'],
+    ['tab_model_id' => 278,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 279,'color' => 'Matte Gray'],/*HUAWEI*/
+    ['tab_model_id' => 279,'memory' => '64GB/6GB'],
+    ['tab_model_id' => 279,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 280,'color' => 'White'],/*HUAWEI*/
+    ['tab_model_id' => 280,'color' => 'Dark Blue'],
+    ['tab_model_id' => 280,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 281,'color' => 'Gray'],/*HUAWEI*/
+    ['tab_model_id' => 281,'color' => 'White'],
+    ['tab_model_id' => 281,'color' => 'Green'],
+    ['tab_model_id' => 281,'color' => 'Orange'],
+    ['tab_model_id' => 281,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 281,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 281,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 282,'color' => 'Gray'],/*HUAWEI*/
+    ['tab_model_id' => 282,'color' => 'White'],
+    ['tab_model_id' => 282,'color' => 'Green'],
+    ['tab_model_id' => 282,'color' => 'Orange'],
+    ['tab_model_id' => 282,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 282,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 282,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 283,'color' => 'Dark Blue'],/*HUAWEI*/
+    ['tab_model_id' => 283,'color' => 'White'],
+    ['tab_model_id' => 283,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 283,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 284,'color' => 'Golden Black'],/*HUAWEI*/
+    ['tab_model_id' => 284,'color' => 'Crystal White'],
+    ['tab_model_id' => 284,'color' => 'Galaxy Blue'],
+    ['tab_model_id' => 284,'color' => 'Brocade White'],
+    ['tab_model_id' => 284,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 284,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 284,'memory' => '512GB/12GB'],
+    ['tab_model_id' => 285,'color' => 'Matte Gray'],/*HUAWEI*/
+    ['tab_model_id' => 285,'color' => 'Green'],
+    ['tab_model_id' => 285,'color' => 'Silver'],
+    ['tab_model_id' => 285,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 285,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 286,'color' => 'Gray'],/*HUAWEI*/
+    ['tab_model_id' => 286,'color' => 'White'],
+    ['tab_model_id' => 286,'color' => 'Green'],
+    ['tab_model_id' => 286,'color' => 'Orange'],
+    ['tab_model_id' => 286,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 286,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 286,'memory' => '512GB/12GB'],
+    ['tab_model_id' => 287,'color' => 'Dark Blue'],/*HUAWEI*/
+    ['tab_model_id' => 287,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 288,'color' => 'Deepsea Blue'],/*HUAWEI*/
+    ['tab_model_id' => 288,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 288,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 288,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 289,'color' => 'Gold'],/*HUAWEI*/
+    ['tab_model_id' => 289,'color' => 'Deepsea Blue'],
+    ['tab_model_id' => 289,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 289,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 289,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 290,'color' => 'Deepsea Blue'],/*HUAWEI*/
+    ['tab_model_id' => 290,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 290,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 291,'color' => 'shadow Black'],/*HUAWEI*/
+    ['tab_model_id' => 291,'color' => 'classic brown'],
+    ['tab_model_id' => 291,'color' => 'passion Pink'],
+    ['tab_model_id' => 291,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 292,'color' => 'White'],/*HUAWEI*/
+    ['tab_model_id' => 292,'memory' => '8GB/2GB'],
+    ['tab_model_id' => 292,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 292,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 292,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 293,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 293,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 293,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 293,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 294,'color' => 'Black/Champagne'],/*HUAWEI*/
+    ['tab_model_id' => 294,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 294,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 295,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 295,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 296,'color' => 'Black'],/*HUAWEI*/
+    ['tab_model_id' => 296,'color' => 'White'],
+    ['tab_model_id' => 296,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 297,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 297,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 298,'color' => 'Black/Gold'],/*HUAWEI*/
+    ['tab_model_id' => 298,'memory' => '4GB'],
+    ['tab_model_id' => 298,'memory' => '8GB'],
+    ['tab_model_id' => 299,'color' => 'White'],/*HUAWEI*/
+    ['tab_model_id' => 299,'color' => 'Tulip'],
+    ['tab_model_id' => 299,'color' => 'Carnation'],
+    ['tab_model_id' => 299,'color' => 'Lily/Lotus'],
+    ['tab_model_id' => 299,'color' => 'Titanium Gray'],
+    ['tab_model_id' => 299,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 300,'color' => 'Moonlight Silver'],/*HUAWEI*/
+    ['tab_model_id' => 300,'color' => 'Luxurious Gold'],
+    ['tab_model_id' => 300,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 300,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 301,'color' => 'White'],/*HUAWEI*/
+    ['tab_model_id' => 301,'color' => 'Blue'],
+    ['tab_model_id' => 301,'color' => 'Gold'],
+    ['tab_model_id' => 301,'color' => 'Pink'],
+    ['tab_model_id' => 301,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 301,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 302,'color' => 'Silver'],/*HUAWEI*/
+    ['tab_model_id' => 302,'color' => 'Gold'],
+    ['tab_model_id' => 302,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 302,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 303,'color' => 'Silver'],/*HUAWEI*/
+    ['tab_model_id' => 303,'color' => 'Gold'],
+    ['tab_model_id' => 303,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 303,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 304,'color' => 'Gold'],/*HUAWEI*/
+    ['tab_model_id' => 304,'color' => 'White'],
+    ['tab_model_id' => 304,'color' => 'Space Grey'],
+    ['tab_model_id' => 304,'memory' => '16GB/4GB'],
+    ['tab_model_id' => 304,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 304,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 305,'color' => 'Gold'],/*HUAWEI*/
+    ['tab_model_id' => 305,'color' => 'White'],
+    ['tab_model_id' => 305,'color' => 'Space Grey'],
+    ['tab_model_id' => 305,'memory' => '16GB/4GB'],
+    ['tab_model_id' => 305,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 305,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 306,'color' => 'Space Gray'],/*HUAWEI*/
+    ['tab_model_id' => 306,'color' => 'Champagne Gold'],
+    ['tab_model_id' => 306,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 306,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 306,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 307,'color' => 'Space Gray'],/*HUAWEI*/
+    ['tab_model_id' => 307,'color' => 'Champagne Gold'],
+    ['tab_model_id' => 307,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 307,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 308,'color' => 'Space Gray'],/*HUAWEI*/
+    ['tab_model_id' => 308,'color' => 'Champagne Gold'],
+    ['tab_model_id' => 308,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 308,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 308,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 309,'color' => 'Space Gray'],/*HUAWEI*/
+    ['tab_model_id' => 309,'color' => 'Champagne Gold'],
+    ['tab_model_id' => 309,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 309,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 310,'color' => 'Champagne Gold'],/*HUAWEI*/
+    ['tab_model_id' => 310,'color' => 'Space Gray'],
+    ['tab_model_id' => 310,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 310,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 311,'color' => 'Champagne Gold'],/*HUAWEI*/
+    ['tab_model_id' => 311,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 311,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 312,'color' => 'Champagne Gold'],/*HUAWEI*/
+    ['tab_model_id' => 312,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 312,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 313,'color' => 'Phantom Red'],/*HUAWEI*/
+    ['tab_model_id' => 313,'color' => 'Phantom Blue'],
+    ['tab_model_id' => 313,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 314,'color' => 'shadow Black'],/*HUAWEI*/
+    ['tab_model_id' => 314,'color' => 'classic brown'],
+    ['tab_model_id' => 314,'color' => 'passion Pink'],
+    ['tab_model_id' => 314,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 315,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 315,'color' => 'White/Silver'],
+    ['tab_model_id' => 315,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 316,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 316,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 317,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 317,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 318,'color' => 'White/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 318,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 318,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 319,'color' => 'Pearl White'],/*HUAWEI*/
+    ['tab_model_id' => 319,'color' => 'Charcoal Black'],
+    ['tab_model_id' => 319,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 319,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 319,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 320,'color' => 'Black/Silver'],/*HUAWEI*/
+    ['tab_model_id' => 320,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 320,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 320,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 321,'color' => 'White'],/*HUAWEI*/
+    ['tab_model_id' => 321,'color' => 'Gold'],
+    ['tab_model_id' => 321,'color' => 'Blue'],
+    ['tab_model_id' => 321,'color' => 'Pink'],
+    ['tab_model_id' => 321,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 321,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 321,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 321,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 322,'color' => 'Space Gray'],/*HUAWEI*/
+    ['tab_model_id' => 322,'color' => 'Luxurious Gold'],
+    ['tab_model_id' => 322,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 322,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 323,'color' => 'Gray'],/*HUAWEI*/
+    ['tab_model_id' => 323,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 323,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 324,'color' => 'Space Gray'],/*HUAWEI*/
+    ['tab_model_id' => 324,'color' => 'Luxurious Gold'],
+    ['tab_model_id' => 324,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 324,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 325,'color' => 'Black'],/*HUAWEI*/
+    ['tab_model_id' => 325,'color' => 'Champagne Gold'],
+    ['tab_model_id' => 325,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 325,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 325,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 325,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 326,'color' => 'Snow White'],/*HUAWEI*/
+    ['tab_model_id' => 326,'color' => 'Diamond Black'],
+    ['tab_model_id' => 326,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 327,'color' => 'Moonlight Silver'],/*HUAWEI*/
+    ['tab_model_id' => 327,'color' => 'Amber Gold'],
+    ['tab_model_id' => 327,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 327,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 327,'memory' => '32GB/3GB'],
 ];
 
 
-
-
-
-
-// Asus 7 ciden bashla
+// Icemobile den bashla
 
 
 $woman_clothing_type = [
