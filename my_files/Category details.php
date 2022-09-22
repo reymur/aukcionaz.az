@@ -293,7 +293,7 @@ $sub_category_type = [
     ['sub_category_id' => 37,'name' => 'Sərt disklər (HDD, SSD)'],
     ['sub_category_id' => 37,'name' => 'Video kartlar'],
     ['sub_category_id' => 38,'name' => 'Aksesuarlar'],
-    ['sub_category_id' => 38,'name' => 'Planşetlər'],178
+    ['sub_category_id' => 38,'name' => 'Planşetlər'],/*178*/
     ['sub_category_id' => 38,'name' => 'Elektron kitablar'],
     ['sub_category_id' => 39,'name' => 'Acer'],
     ['sub_category_id' => 39,'name' => 'Apple Macbook'],
@@ -607,18 +607,20 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 136,'name' => 'Kürəklər'],
     ['sub_category_type_id' => 136,'name' => 'Qiyməkeşlər və toxalar'],
     ['sub_category_type_id' => 136,'name' => 'Yabalar, külünglər və kultivatorlar'],
-    ['sub_category_type_id' => 178,'name' => 'Acer'],75
+    ['sub_category_type_id' => 178,'name' => 'Acer'],
     ['sub_category_type_id' => 178,'name' => 'Alcatel'],
     ['sub_category_type_id' => 178,'name' => 'Allview'],
     ['sub_category_type_id' => 178,'name' => 'Amazon'],
+    ['sub_category_type_id' => 178,'name' => 'Apple'],
     ['sub_category_type_id' => 178,'name' => 'Archos'],
+    ['sub_category_type_id' => 178,'name' => 'Asus'],
     ['sub_category_type_id' => 178,'name' => 'BlackBerry'],
     ['sub_category_type_id' => 178,'name' => 'BLU'],
     ['sub_category_type_id' => 178,'name' => 'BQ'],
     ['sub_category_type_id' => 178,'name' => 'Celkon'],
     ['sub_category_type_id' => 178,'name' => 'Dell'],
     ['sub_category_type_id' => 178,'name' => 'Google'],
-    ['sub_category_type_id' => 178,'name' => 'Honor'],
+    ['sub_category_type_id' => 178,'name' => 'Honor'],/*88*/
     ['sub_category_type_id' => 178,'name' => 'HP'],
     ['sub_category_type_id' => 178,'name' => 'HTC'],
     ['sub_category_type_id' => 178,'name' => 'Huawei'],
@@ -641,6 +643,1226 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 178,'name' => 'ZTE'],
 ];
 
+
+$tab_model = [
+    ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia A1-830'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia B1-720'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia B1-721'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia One 7 B1-730'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia One 8 B1-820'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab 10 A3-A30'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab 10 A3-A40'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab 7 A1-713'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab 7 A1-713HD'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab 8 A1-840FHD'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A1-810'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A1-811'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A100'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A101'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A110'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A200'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A210'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A3'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A3-A20'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A3-A20FHD'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A500'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A501'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A510'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A511'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A700'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab A701'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab B1-710'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Tab B1-A71'],
+    ['sub_category_type_one_id' => 75,'name' => 'Iconia Talk S'],
+    ['sub_category_type_one_id' => 75,'name' => 'Predator 8'],/*1*/
+    ['sub_category_type_one_id' => 76,'name' => '1T 10'],/*Alcatel 28 dene*/
+    ['sub_category_type_one_id' => 76,'name' => '1T 7'],
+    ['sub_category_type_one_id' => 76,'name' => '3T 10'],
+    ['sub_category_type_one_id' => 76,'name' => '3T 8'],
+    ['sub_category_type_one_id' => 76,'name' => 'Hero 8'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch Evo 7'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch Evo 7 HD'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch Evo 8HD'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch T10'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch Tab 7'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch Tab 7 HD'],
+    ['sub_category_type_one_id' => 76,'name' => 'One Touch Tab 8 HD'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 3 (10)'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 3 (7)'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 3 (7) 3G'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 3 (7) LTE'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 3 (8) 3G'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 3 (8) LTE'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 4 (7)'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 7'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pixi 8'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pop 10'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pop 7'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pop 7 LTE'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pop 7S'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pop 8'],
+    ['sub_category_type_one_id' => 76,'name' => 'Pop 8S'],
+    ['sub_category_type_one_id' => 76,'name' => 'Smart Tab 7'],/*2*/
+    ['sub_category_type_one_id' => 77,'name' => '2 Speed Quad'],/*Allview 29 dene*/
+    ['sub_category_type_one_id' => 77,'name' => '3 Speed Quad HD'],
+    ['sub_category_type_one_id' => 77,'name' => 'AX3 Party'],
+    ['sub_category_type_one_id' => 77,'name' => 'AX4 Nano'],
+    ['sub_category_type_one_id' => 77,'name' => 'AX4 Nano Plus'],
+    ['sub_category_type_one_id' => 77,'name' => 'AX501Q'],
+    ['sub_category_type_one_id' => 77,'name' => 'City Life'],
+    ['sub_category_type_one_id' => 77,'name' => 'City+'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva 1003G'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva 1003G Lite'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva 803G'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva C701'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva C703'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva D8'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H10 HD'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H10 LTE'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H1001 LTE'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H7 LTE'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H7S'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H8'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva H8 LTE'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva Home'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva i10G'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva i8'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva Q7 Life'],
+    ['sub_category_type_one_id' => 77,'name' => 'Viva Q8'],
+    ['sub_category_type_one_id' => 77,'name' => 'Wi10N PRO'],
+    ['sub_category_type_one_id' => 77,'name' => 'Wi7'],
+    ['sub_category_type_one_id' => 77,'name' => 'Wi8G'],/*3*/
+    ['sub_category_type_one_id' => 78,'name' => 'Fire 7'],/*Amazon 21*/
+    ['sub_category_type_one_id' => 78,'name' => 'Fire 7 (2017)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 10'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 10 (2017)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 10 (2019)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 10 (2021)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 10 Plus (2021)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 6'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 7'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 8'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 8 (2017)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 8 (2020)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HD 8 Plus (2020)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Fire HDX 8.9 (2014)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire HD'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire HD (2013)'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire HD 8.9'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire HD 8.9 LTE'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire HDX'],
+    ['sub_category_type_one_id' => 78,'name' => 'Kindle Fire HDX 8.9'],/*4*/
+    ['sub_category_type_one_id' => 79,'name' => 'iPad'],/*id=110 Apple 36 dene */
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 10.2 (2019)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 10.2 (2020)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 10.2 (2021)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 2'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 2 3G'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 2 CDMA'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 3'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 3 3G'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 3G'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 4'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 4 3G'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 9.7 (2017)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad 9.7 (2018)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Air'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Air (2022)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Air 2'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Air 3 (2019)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Air 4 (2020)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini (2019)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini (2021)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini 2'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini 3'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini 3G'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad mini 4 (2015)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 10.5 (2017)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 11 (2018)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 11 (2020)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 11 (2021)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 12.9 (2015)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 12.9 (2017)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 12.9 (2018)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 12.9 (2020)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 12.9 (2021)'],
+    ['sub_category_type_one_id' => 79,'name' => 'iPad Pro 9.7 (2016)'],
+    ['sub_category_type_one_id' => 80,'name' => '80 Helium 4G'],/*id 146*/
+    ['sub_category_type_one_id' => 80,'name' => 'Diamond Tab'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad'],/*id 148*/
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 7'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 7 (2014)'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 7 FE171CG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 7 FE375CG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 7 FE375CL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 7 FE375CXG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Fonepad 8 FE380CG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Google Nexus 7'],
+    ['sub_category_type_one_id' => 80,'name' => 'Google Nexus 7 (2013)'],
+    ['sub_category_type_one_id' => 80,'name' => 'Google Nexus 7 Cellular'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 10'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 10 ME103K'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 7 ME176C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 7 ME572C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 7 ME572CL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 8 ME180A'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 8 ME181C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad 8 ME581CL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad FHD10'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad HD7 16 GB'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad HD7 8 GB'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad ME172V'],
+    ['sub_category_type_one_id' => 80,'name' => 'Memo Pad Smart 10'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Book Trio'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad Infinity 700'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad Infinity 700 3G'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad Infinity 700 LTE'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad TF103C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad TF300T'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad TF300TG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad TF303CL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Pad TF701T'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Prime TF201'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer Prime TF700T'],
+    ['sub_category_type_one_id' => 80,'name' => 'Transformer TF101'],
+    ['sub_category_type_one_id' => 80,'name' => 'VivoTab RT TF600T'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenfone Go ZB690KG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 10 Z300C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 10 Z300M'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 3 8.0 Z581KL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 3S 10 Z500KL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 3S 10 Z500M'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 3s 8.0 Z582KL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 7.0 Z370CG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 8.0 Z380C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 8.0 Z380KL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad 8.0 Z380M'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad C 7.0'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad C 7.0 Z170MG'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad S 8.0 Z580C'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad S 8.0 Z580CA'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad Z10 ZT500KL'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad Z8'],
+    ['sub_category_type_one_id' => 80,'name' => 'Zenpad Z8s ZT582KL'],
+    ['sub_category_type_one_id' => 82,'name' => '4G LTE Playbook'],/*id 204*/
+    ['sub_category_type_one_id' => 82,'name' => '4G Playbook HSPA+'],
+    ['sub_category_type_one_id' => 82,'name' => 'Playbook'],
+    ['sub_category_type_one_id' => 82,'name' => 'Playbook Wimax'],
+    ['sub_category_type_one_id' => 83,'name' => 'Life View 8.0'],/*id 208*/
+    ['sub_category_type_one_id' => 83,'name' => 'Life View Tab'],
+    ['sub_category_type_one_id' => 83,'name' => 'M7L'],
+    ['sub_category_type_one_id' => 83,'name' => 'M8L'],
+    ['sub_category_type_one_id' => 83,'name' => 'M8L 2022'],
+    ['sub_category_type_one_id' => 83,'name' => 'M8L Plus'],
+    ['sub_category_type_one_id' => 83,'name' => 'Studio 7.0 II'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touch Book 7.0'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touch Book 7.0 Lite'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touch Book 7.0 Plus'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touch Book 9.7'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touch Book M7'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touchbook G7'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touchbook M7'],
+    ['sub_category_type_one_id' => 83,'name' => 'Touchbook M7 Pro'],
+    ['sub_category_type_one_id' => 84,'name' => 'Aquaris M10'],/*223*/
+    ['sub_category_type_one_id' => 85,'name' => 'CT 1'],/*224*/
+    ['sub_category_type_one_id' => 85,'name' => 'CT 2'],
+    ['sub_category_type_one_id' => 85,'name' => 'CT 7'],
+    ['sub_category_type_one_id' => 85,'name' => 'CT 9'],
+    ['sub_category_type_one_id' => 85,'name' => 'CT-888'],
+    ['sub_category_type_one_id' => 85,'name' => 'CT-910'],
+    ['sub_category_type_one_id' => 85,'name' => 'CT-910+'],
+    ['sub_category_type_one_id' => 85,'name' => 'C720'],
+    ['sub_category_type_one_id' => 85,'name' => 'C820'],
+    ['sub_category_type_one_id' => 86,'name' => 'Streak 10 Pro'],/*233*/
+    ['sub_category_type_one_id' => 86,'name' => 'Streak 7'],
+    ['sub_category_type_one_id' => 86,'name' => 'Streak 7'],
+    ['sub_category_type_one_id' => 86,'name' => 'Venue 10 7000'],
+    ['sub_category_type_one_id' => 86,'name' => 'Venue 7'],
+    ['sub_category_type_one_id' => 86,'name' => 'Venue 7 8 GB'],
+    ['sub_category_type_one_id' => 86,'name' => 'Venue 8'],
+    ['sub_category_type_one_id' => 86,'name' => 'Venue 8 7000'],
+    ['sub_category_type_one_id' => 86,'name' => 'XPS 10'],
+
+    ['sub_category_type_one_id' => 87,'name' => 'Pixel C'],/*242*/
+
+    ['sub_category_type_one_id' => 88,'name' => 'Pad 2'],/*243*/
+    ['sub_category_type_one_id' => 88,'name' => 'Pad 5 10.1'],
+    ['sub_category_type_one_id' => 88,'name' => 'Pad 5 8'],
+    ['sub_category_type_one_id' => 88,'name' => 'Pad 6'],
+    ['sub_category_type_one_id' => 88,'name' => 'Pad 8'],
+    ['sub_category_type_one_id' => 88,'name' => 'Pad X6'],
+    ['sub_category_type_one_id' => 88,'name' => 'Tab 5'],
+    ['sub_category_type_one_id' => 88,'name' => 'Tab 7'],
+    ['sub_category_type_one_id' => 88,'name' => 'Tablet V7'],
+    ['sub_category_type_one_id' => 88,'name' => 'Tablet V7 Pro'],
+    ['sub_category_type_one_id' => 88,'name' => 'Tablet X7'],
+    ['sub_category_type_one_id' => 88,'name' => 'V6'],
+];
+
+$tab_option = [
+    ['tab_model_id' => 1,'color' => 'Black'],/*Acer*/
+    ['tab_model_id' => 1,'color' => 'Blue'],
+    ['tab_model_id' => 1,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 2,'color' => 'White'],
+    ['tab_model_id' => 2,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 3,'color' => 'Black'],
+    ['tab_model_id' => 3,'color' => 'Gold'],
+    ['tab_model_id' => 3,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 3,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 4,'color' => 'Black/Red'],
+    ['tab_model_id' => 4,'color' => 'Black/Silver'],
+    ['tab_model_id' => 4,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 5,'color' => 'Red'],
+    ['tab_model_id' => 5,'color' => 'White'],
+    ['tab_model_id' => 5,'color' => 'Black'],
+    ['tab_model_id' => 5,'color' => 'Blue'],
+    ['tab_model_id' => 5,'color' => 'Pink'],
+    ['tab_model_id' => 5,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 6,'color' => 'Black'],
+    ['tab_model_id' => 6,'color' => 'White'],
+    ['tab_model_id' => 6,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 6,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 7,'color' => 'Black'],
+    ['tab_model_id' => 7,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 7,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 7,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 8,'color' => 'Black'],
+    ['tab_model_id' => 8,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 8,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 8,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 9,'color' => 'Black'],
+    ['tab_model_id' => 9,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 10,'color' => 'Black'],
+    ['tab_model_id' => 10,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 11,'color' => 'Silver'],
+    ['tab_model_id' => 11,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 11,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 12,'color' => 'Black'],
+    ['tab_model_id' => 12,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 12,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 13,'color' => 'White'],
+    ['tab_model_id' => 13,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 14,'color' => 'Black/Red'],
+    ['tab_model_id' => 14,'color' => 'Black/Blue'],
+    ['tab_model_id' => 14,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 14,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 15,'color' => 'Black/Red'],
+    ['tab_model_id' => 15,'color' => 'Black/Blue'],
+    ['tab_model_id' => 15,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 15,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 16,'color' => 'Black/Silver'],
+    ['tab_model_id' => 16,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 17,'color' => 'Black'],
+    ['tab_model_id' => 17,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 17,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 18,'color' => 'Titanium/Gray'],
+    ['tab_model_id' => 18,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 18,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 19,'color' => 'Black/Silver'],
+    ['tab_model_id' => 19,'color' => 'White'],
+    ['tab_model_id' => 19,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 19,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 20,'color' => 'Black'],
+    ['tab_model_id' => 20,'color' => 'White'],
+    ['tab_model_id' => 20,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 21,'color' => 'Black'],
+    ['tab_model_id' => 21,'color' => 'White'],
+    ['tab_model_id' => 21,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 22,'color' => 'Black'],
+    ['tab_model_id' => 22,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 22,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 23,'color' => 'Black'],
+    ['tab_model_id' => 23,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 23,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 23,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 24,'color' => 'Black'],
+    ['tab_model_id' => 24,'color' => 'Silver'],
+    ['tab_model_id' => 24,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 24,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 25,'color' => 'Black'],
+    ['tab_model_id' => 25,'color' => 'Silver'],
+    ['tab_model_id' => 25,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 25,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 26,'color' => 'Titanium Gray'],
+    ['tab_model_id' => 26,'color' => 'Metallic Red'],
+    ['tab_model_id' => 26,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 26,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 26,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 27,'color' => 'Titanium Gray'],
+    ['tab_model_id' => 27,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 27,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 27,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 28,'color' => 'Titanium Gray'],
+    ['tab_model_id' => 28,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 28,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 28,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 29,'color' => 'Black'],
+    ['tab_model_id' => 29,'memory' => '8GB'],
+    ['tab_model_id' => 29,'memory' => '16GB'],
+    ['tab_model_id' => 30,'color' => 'Black'],
+    ['tab_model_id' => 30,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 30,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 31,'color' => 'Black/Silver'],
+    ['tab_model_id' => 31,'memory' => '32GB/12GB'],
+    ['tab_model_id' => 31,'memory' => '64GB/12GB'],/*1*/
+    ['tab_model_id' => 32,'color' => 'Gray'],
+    ['tab_model_id' => 32,'color' => 'Dark Blue'],
+    ['tab_model_id' => 32,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 33,'color' => 'Gray'],
+    ['tab_model_id' => 33,'color' => 'Dark Blue'],
+    ['tab_model_id' => 33,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 34,'color' => 'Prime Black'],
+    ['tab_model_id' => 34,'color' => 'Midnight Blue'],
+    ['tab_model_id' => 34,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 35,'color' => 'Black'],
+    ['tab_model_id' => 35,'color' => 'Blue'],
+    ['tab_model_id' => 35,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 35,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 35,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 36,'color' => 'Dark Gray'],
+    ['tab_model_id' => 36,'memory' => '8GB/2GB'],
+    ['tab_model_id' => 36,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 36,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 37,'color' => 'Twilight Blue'],
+    ['tab_model_id' => 37,'color' => 'Black'],
+    ['tab_model_id' => 37,'color' => 'Vermillion'],
+    ['tab_model_id' => 38,'color' => 'Black'],
+    ['tab_model_id' => 38,'color' => 'White'],
+    ['tab_model_id' => 39,'color' => 'Black'],
+    ['tab_model_id' => 39,'color' => 'Silver'],
+    ['tab_model_id' => 40,'color' => 'Black/Silver'],
+    ['tab_model_id' => 41,'color' => 'Black'],
+    ['tab_model_id' => 42,'color' => 'Black'],
+    ['tab_model_id' => 42,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 43,'color' => 'Black'],
+    ['tab_model_id' => 43,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 44,'color' => 'Black'],
+    ['tab_model_id' => 44,'color' => 'White'],
+    ['tab_model_id' => 44,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 45,'color' => 'Yellow'],
+    ['tab_model_id' => 45,'color' => 'Blue'],
+    ['tab_model_id' => 45,'color' => 'Red'],
+    ['tab_model_id' => 45,'color' => 'Pink'],
+    ['tab_model_id' => 46,'color' => 'Yellow'],
+    ['tab_model_id' => 46,'color' => 'Blue'],
+    ['tab_model_id' => 46,'color' => 'Red'],
+    ['tab_model_id' => 46,'color' => 'Pink'],
+    ['tab_model_id' => 47,'color' => 'Yellow'],
+    ['tab_model_id' => 47,'color' => 'Blue'],
+    ['tab_model_id' => 47,'color' => 'Red'],
+    ['tab_model_id' => 47,'color' => 'Pink'],
+    ['tab_model_id' => 48,'color' => 'Yellow'],
+    ['tab_model_id' => 48,'color' => 'Blue'],
+    ['tab_model_id' => 48,'color' => 'Red'],
+    ['tab_model_id' => 48,'color' => 'Black'],
+    ['tab_model_id' => 48,'color' => 'White'],
+    ['tab_model_id' => 49,'color' => 'Smoky Grey'],
+    ['tab_model_id' => 49,'color' => 'Soft Gold'],
+    ['tab_model_id' => 49,'color' => 'White'],
+    ['tab_model_id' => 49,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 50,'color' => 'Grey'],
+    ['tab_model_id' => 50,'color' => 'White'],
+    ['tab_model_id' => 50,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 51,'color' => 'Bluish Black'],
+    ['tab_model_id' => 51,'color' => 'Gun Gray'],
+    ['tab_model_id' => 52,'color' => 'Bluish Black'],
+    ['tab_model_id' => 52,'color' => 'Chocolate'],
+    ['tab_model_id' => 52,'color' => 'Aubergine'],
+    ['tab_model_id' => 52,'memory' => '4GB'],
+    ['tab_model_id' => 52,'memory' => '8GB'],
+    ['tab_model_id' => 53,'color' => 'White'],
+    ['tab_model_id' => 53,'color' => 'Dark grey'],
+    ['tab_model_id' => 53,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 54,'color' => 'White'],
+    ['tab_model_id' => 55,'color' => 'White'],
+    ['tab_model_id' => 55,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 56,'color' => 'White'],
+    ['tab_model_id' => 56,'color' => 'Black'],
+    ['tab_model_id' => 57,'color' => 'White'],
+    ['tab_model_id' => 58,'color' => 'White'],
+    ['tab_model_id' => 58,'color' => 'Black'],
+    ['tab_model_id' => 58,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 58,'color' => 'Black'],
+    ['tab_model_id' => 58,'memory' => '16GB/1.5GB'],/*2*/
+    ['tab_model_id' => 59,'color' => 'White'],
+    ['tab_model_id' => 59,'color' => 'Black'],
+    ['tab_model_id' => 59,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 60,'color' => 'White'],
+    ['tab_model_id' => 60,'color' => 'Black'],
+    ['tab_model_id' => 60,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 61,'color' => 'Black'],
+    ['tab_model_id' => 61,'color' => 'White'],
+    ['tab_model_id' => 62,'color' => 'Black'],
+    ['tab_model_id' => 62,'color' => 'White'],
+    ['tab_model_id' => 63,'color' => 'Black'],
+    ['tab_model_id' => 63,'color' => 'White'],
+    ['tab_model_id' => 63,'memory' => '8GB'],
+    ['tab_model_id' => 64,'color' => 'Black'],
+    ['tab_model_id' => 64,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 65,'color' => 'White'],
+    ['tab_model_id' => 65,'color' => 'Black'],
+    ['tab_model_id' => 65,'memory' => '8GB'],
+    ['tab_model_id' => 66,'color' => 'White'],
+    ['tab_model_id' => 66,'color' => 'Black'],
+    ['tab_model_id' => 66,'memory' => '8GB'],
+    ['tab_model_id' => 67,'color' => 'Black'],
+    ['tab_model_id' => 67,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 68,'color' => 'Black'],
+    ['tab_model_id' => 68,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 69,'color' => 'Black'],
+    ['tab_model_id' => 69,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 70,'color' => 'White'],
+    ['tab_model_id' => 70,'color' => 'Black'],
+    ['tab_model_id' => 70,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 71,'color' => 'Black'],
+    ['tab_model_id' => 71,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 72,'color' => 'Black'],
+    ['tab_model_id' => 73,'color' => 'Black'],
+    ['tab_model_id' => 73,'color' => 'White'],
+    ['tab_model_id' => 73,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 74,'color' => 'Black'],
+    ['tab_model_id' => 74,'color' => 'White'],
+    ['tab_model_id' => 74,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 75,'color' => 'Black'],
+    ['tab_model_id' => 75,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 76,'color' => 'Black'],
+    ['tab_model_id' => 76,'color' => 'White'],
+    ['tab_model_id' => 76,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 77,'color' => 'Black'],
+    ['tab_model_id' => 77,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 78,'color' => 'Black'],
+    ['tab_model_id' => 78,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 79,'color' => 'Black'],
+    ['tab_model_id' => 79,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 80,'color' => 'Black'],
+    ['tab_model_id' => 80,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 81,'color' => 'White'],
+    ['tab_model_id' => 81,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 82,'color' => 'White'],
+    ['tab_model_id' => 82,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 83,'color' => 'White'],
+    ['tab_model_id' => 83,'color' => 'Black'],
+    ['tab_model_id' => 83,'memory' => '8GB/1GB'],/*3*/
+    ['tab_model_id' => 84,'color' => 'Black'],
+    ['tab_model_id' => 84,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 85,'color' => 'Black'],
+    ['tab_model_id' => 85,'color' => 'Canary Yellow'],
+    ['tab_model_id' => 85,'color' => 'Marine Blue'],
+    ['tab_model_id' => 85,'color' => 'Punch Red'],
+    ['tab_model_id' => 85,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 85,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 86,'color' => 'Black'],
+    ['tab_model_id' => 86,'color' => 'White'],
+    ['tab_model_id' => 86,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 86,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 87,'color' => 'Black'],
+    ['tab_model_id' => 87,'color' => 'Marine Blue'],
+    ['tab_model_id' => 87,'color' => 'Punch Red'],
+    ['tab_model_id' => 87,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 87,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 88,'color' => 'Black'],
+    ['tab_model_id' => 88,'color' => 'Plum'],
+    ['tab_model_id' => 88,'color' => 'Twilight Blue'],
+    ['tab_model_id' => 88,'color' => 'White'],
+    ['tab_model_id' => 88,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 88,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 89,'color' => 'Denim'],
+    ['tab_model_id' => 89,'color' => 'Black'],
+    ['tab_model_id' => 89,'color' => 'Olive'],
+    ['tab_model_id' => 89,'color' => 'Lavender'],
+    ['tab_model_id' => 89,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 89,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 90,'color' => 'Slate'],
+    ['tab_model_id' => 90,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 90,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 91,'color' => 'Black'],
+    ['tab_model_id' => 91,'color' => 'White'],
+    ['tab_model_id' => 91,'color' => 'Cobalt'],
+    ['tab_model_id' => 91,'color' => 'Magenta'],
+    ['tab_model_id' => 91,'color' => 'Citron'],
+    ['tab_model_id' => 91,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 91,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 92,'color' => 'Black'],
+    ['tab_model_id' => 92,'color' => 'White'],
+    ['tab_model_id' => 92,'color' => 'Cobalt'],
+    ['tab_model_id' => 92,'color' => 'Magenta'],
+    ['tab_model_id' => 92,'color' => 'Citron'],
+    ['tab_model_id' => 92,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 92,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 93,'color' => 'Blue'],
+    ['tab_model_id' => 93,'color' => 'Black'],
+    ['tab_model_id' => 93,'color' => 'Tangerine'],
+    ['tab_model_id' => 93,'color' => 'Magenta'],
+    ['tab_model_id' => 93,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 93,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 93,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 94,'color' => 'Black'],
+    ['tab_model_id' => 94,'color' => 'Canary Yellow'],
+    ['tab_model_id' => 94,'color' => 'Marine Blue'],
+    ['tab_model_id' => 94,'color' => 'Punch Red'],
+    ['tab_model_id' => 94,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 94,'memory' => '32GB/1.5GB'],
+    ['tab_model_id' => 95,'color' => 'White'],
+    ['tab_model_id' => 95,'color' => 'Black'],
+    ['tab_model_id' => 95,'color' => 'Twilight Blue'],
+    ['tab_model_id' => 95,'color' => 'Plum'],
+    ['tab_model_id' => 95,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 95,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 96,'color' => 'White'],
+    ['tab_model_id' => 96,'color' => 'Black'],
+    ['tab_model_id' => 96,'color' => 'Twilight Blue'],
+    ['tab_model_id' => 96,'color' => 'Plum'],
+    ['tab_model_id' => 96,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 96,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 97,'color' => 'Black'],
+    ['tab_model_id' => 97,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 97,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 97,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 98,'color' => 'Black'],
+    ['tab_model_id' => 98,'memory' => '8GB'],
+    ['tab_model_id' => 99,'color' => 'Black'],
+    ['tab_model_id' => 99,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 99,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 100,'color' => 'Black'],
+    ['tab_model_id' => 100,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 100,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 101,'color' => 'Black'],
+    ['tab_model_id' => 101,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 101,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 102,'color' => 'Black'],
+    ['tab_model_id' => 102,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 102,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 103,'color' => 'Black'],
+    ['tab_model_id' => 103,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 103,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 103,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 104,'color' => 'Black'],
+    ['tab_model_id' => 104,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 104,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 104,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 110,'color' => 'Silver'],
+    ['tab_model_id' => 110,'memory' => '16GB'],
+    ['tab_model_id' => 110,'memory' => '32GB'],
+    ['tab_model_id' => 110,'memory' => '64GB'],
+    ['tab_model_id' => 111,'color' => 'Silver'],
+    ['tab_model_id' => 111,'color' => 'Gold'],
+    ['tab_model_id' => 111,'color' => 'Space Gray'],
+    ['tab_model_id' => 111,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 111,'memory' => '128GB/3GB'],
+    ['tab_model_id' => 112,'color' => 'Silver'],
+    ['tab_model_id' => 112,'color' => 'Gold'],
+    ['tab_model_id' => 112,'color' => 'Space Gray'],
+    ['tab_model_id' => 112,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 112,'memory' => '128GB/3GB'],
+    ['tab_model_id' => 113,'color' => 'Silver'],
+    ['tab_model_id' => 113,'color' => 'Space Gray'],
+    ['tab_model_id' => 113,'memory' => '64GB'],
+    ['tab_model_id' => 113,'memory' => '256GB'],
+    ['tab_model_id' => 114,'color' => 'Black'],
+    ['tab_model_id' => 114,'color' => 'White'],
+    ['tab_model_id' => 114,'memory' => '16GB'],
+    ['tab_model_id' => 114,'memory' => '32GB'],
+    ['tab_model_id' => 114,'memory' => '64GB'],
+    ['tab_model_id' => 115,'color' => 'Black'],
+    ['tab_model_id' => 115,'color' => 'White'],
+    ['tab_model_id' => 115,'memory' => '16GB'],
+    ['tab_model_id' => 115,'memory' => '32GB'],
+    ['tab_model_id' => 115,'memory' => '64GB'],
+    ['tab_model_id' => 116,'color' => 'Black'],
+    ['tab_model_id' => 116,'color' => 'White'],
+    ['tab_model_id' => 116,'memory' => '16GB/1'],
+    ['tab_model_id' => 116,'memory' => '32GB/1'],
+    ['tab_model_id' => 116,'memory' => '64GB/1'],
+    ['tab_model_id' => 117,'color' => 'Black'],
+    ['tab_model_id' => 117,'color' => 'White'],
+    ['tab_model_id' => 117,'memory' => '16GB/1'],
+    ['tab_model_id' => 117,'memory' => '32GB/1'],
+    ['tab_model_id' => 117,'memory' => '64GB/1'],
+    ['tab_model_id' => 118,'color' => 'Silver'],
+    ['tab_model_id' => 118,'memory' => '16GB'],
+    ['tab_model_id' => 118,'memory' => '32GB'],
+    ['tab_model_id' => 118,'memory' => '64GB'],
+    ['tab_model_id' => 119,'color' => 'Black'],
+    ['tab_model_id' => 119,'color' => 'White'],
+    ['tab_model_id' => 119,'memory' => '16GB/1'],
+    ['tab_model_id' => 119,'memory' => '32GB/1'],
+    ['tab_model_id' => 119,'memory' => '64GB/1'],
+    ['tab_model_id' => 119,'memory' => '128GB/1'],
+    ['tab_model_id' => 120,'color' => 'Black'],
+    ['tab_model_id' => 120,'color' => 'White'],
+    ['tab_model_id' => 120,'memory' => '16GB/1'],
+    ['tab_model_id' => 120,'memory' => '32GB/1'],
+    ['tab_model_id' => 120,'memory' => '64GB/1'],
+    ['tab_model_id' => 120,'memory' => '128GB/1'],
+    ['tab_model_id' => 121,'color' => 'Silver'],
+    ['tab_model_id' => 121,'color' => 'Gold'],
+    ['tab_model_id' => 121,'color' => 'Space Gray'],
+    ['tab_model_id' => 121,'memory' => '32GB/2'],
+    ['tab_model_id' => 121,'memory' => '128GB/2'],
+    ['tab_model_id' => 122,'color' => 'Silver'],
+    ['tab_model_id' => 122,'color' => 'Gold'],
+    ['tab_model_id' => 122,'color' => 'Space Gray'],
+    ['tab_model_id' => 122,'memory' => '32GB/2'],
+    ['tab_model_id' => 122,'memory' => '128GB/2'],
+    ['tab_model_id' => 123,'color' => 'Space Gray'],
+    ['tab_model_id' => 123,'color' => 'Silver'],
+    ['tab_model_id' => 123,'memory' => '16GB/1'],
+    ['tab_model_id' => 123,'memory' => '32GB/1'],
+    ['tab_model_id' => 123,'memory' => '64GB/1'],
+    ['tab_model_id' => 123,'memory' => '128GB/1'],
+    ['tab_model_id' => 124,'color' => 'Starlight'],
+    ['tab_model_id' => 124,'color' => 'Space Gray'],
+    ['tab_model_id' => 124,'color' => 'Blue'],
+    ['tab_model_id' => 124,'color' => 'Purple'],
+    ['tab_model_id' => 124,'color' => 'Pink'],
+    ['tab_model_id' => 124,'memory' => '64GB/1'],
+    ['tab_model_id' => 124,'memory' => '256GB/8'],
+    ['tab_model_id' => 125,'color' => 'Silver'],
+    ['tab_model_id' => 125,'color' => 'Space Gray'],
+    ['tab_model_id' => 125,'color' => 'Gold'],
+    ['tab_model_id' => 125,'memory' => '16GB/2'],
+    ['tab_model_id' => 125,'memory' => '32GB/2'],
+    ['tab_model_id' => 125,'memory' => '64GB/2'],
+    ['tab_model_id' => 125,'memory' => '128GB/2'],
+    ['tab_model_id' => 126,'color' => 'Space Gray'],
+    ['tab_model_id' => 126,'color' => 'Silver'],
+    ['tab_model_id' => 126,'color' => 'Gold'],
+    ['tab_model_id' => 126,'memory' => '64GB/3'],
+    ['tab_model_id' => 126,'memory' => '256GB/3'],
+    ['tab_model_id' => 127,'color' => 'Rose Gold'],
+    ['tab_model_id' => 127,'color' => 'Space Gray'],
+    ['tab_model_id' => 127,'color' => 'Sky Blue'],
+    ['tab_model_id' => 127,'color' => 'Green'],
+    ['tab_model_id' => 127,'color' => 'Silver'],
+    ['tab_model_id' => 127,'memory' => '64GB/4'],
+    ['tab_model_id' => 127,'memory' => '256GB/4'],
+    ['tab_model_id' => 128,'color' => 'Black/Slate'],
+    ['tab_model_id' => 128,'color' => 'White/Silver'],
+    ['tab_model_id' => 128,'memory' => '16GB'],
+    ['tab_model_id' => 128,'memory' => '32GB'],
+    ['tab_model_id' => 128,'memory' => '64GB'],
+    ['tab_model_id' => 129,'color' => 'Space Gray'],
+    ['tab_model_id' => 129,'color' => 'Silver'],
+    ['tab_model_id' => 129,'color' => 'Gold'],
+    ['tab_model_id' => 129,'memory' => '64GB/3'],
+    ['tab_model_id' => 129,'memory' => '256GB/3'],
+    ['tab_model_id' => 130,'color' => 'Pink'],
+    ['tab_model_id' => 130,'color' => 'Purple'],
+    ['tab_model_id' => 130,'color' => 'Starlight'],
+    ['tab_model_id' => 130,'color' => 'Space Gray'],
+    ['tab_model_id' => 130,'memory' => '64GB/4'],
+    ['tab_model_id' => 130,'memory' => '256GB/4'],
+    ['tab_model_id' => 131,'color' => 'Space Gray'],
+    ['tab_model_id' => 131,'color' => 'Silver'],
+    ['tab_model_id' => 131,'memory' => '16GB/1'],
+    ['tab_model_id' => 131,'memory' => '32GB/1'],
+    ['tab_model_id' => 131,'memory' => '64GB/1'],
+    ['tab_model_id' => 131,'memory' => '128GB/1'],
+    ['tab_model_id' => 132,'color' => 'Space Gray'],
+    ['tab_model_id' => 132,'color' => 'Silver'],
+    ['tab_model_id' => 132,'color' => 'Gold'],
+    ['tab_model_id' => 132,'memory' => '16GB/1'],
+    ['tab_model_id' => 132,'memory' => '64GB/1'],
+    ['tab_model_id' => 132,'memory' => '128GB/1'],
+    ['tab_model_id' => 133,'color' => 'Black/Slate'],
+    ['tab_model_id' => 133,'color' => 'White/Silver'],
+    ['tab_model_id' => 133,'memory' => '16GB'],
+    ['tab_model_id' => 133,'memory' => '32GB'],
+    ['tab_model_id' => 133,'memory' => '64GB'],
+    ['tab_model_id' => 134,'color' => 'Gold'],
+    ['tab_model_id' => 134,'color' => 'Space Gray'],
+    ['tab_model_id' => 134,'color' => 'Silver'],
+    ['tab_model_id' => 134,'memory' => '16GB/2'],
+    ['tab_model_id' => 134,'memory' => '32GB/2'],
+    ['tab_model_id' => 134,'memory' => '64GB/2'],
+    ['tab_model_id' => 134,'memory' => '128GB/2'],
+    ['tab_model_id' => 135,'color' => 'Silver'],
+    ['tab_model_id' => 135,'color' => 'Gold'],
+    ['tab_model_id' => 135,'color' => 'Rose Gold'],
+    ['tab_model_id' => 135,'color' => 'Space Gray'],
+    ['tab_model_id' => 135,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 135,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 135,'memory' => '512GB/4GB'],
+    ['tab_model_id' => 136,'color' => 'Silver'],
+    ['tab_model_id' => 136,'color' => 'Space Gray'],
+    ['tab_model_id' => 136,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 136,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 136,'memory' => '512GB/4GB'],
+    ['tab_model_id' => 136,'memory' => '1TB/6GB<'],
+    ['tab_model_id' => 137,'color' => 'Silver'],
+    ['tab_model_id' => 137,'color' => 'Space Gray'],
+    ['tab_model_id' => 137,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 137,'memory' => '256GB/6GB'],
+    ['tab_model_id' => 137,'memory' => '512GB/6GB'],
+    ['tab_model_id' => 137,'memory' => '1TB/6GB'],
+    ['tab_model_id' => 138,'color' => 'Silver'],
+    ['tab_model_id' => 138,'color' => 'Space Gray'],
+    ['tab_model_id' => 138,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 138,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 138,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 138,'memory' => '1TB/16GB'],
+    ['tab_model_id' => 138,'memory' => '2TB/16GB'],
+    ['tab_model_id' => 139,'color' => 'Space Gray'],
+    ['tab_model_id' => 139,'color' => 'Silver'],
+    ['tab_model_id' => 139,'color' => 'Gold'],
+    ['tab_model_id' => 139,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 139,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 139,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 139,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 140,'color' => 'Space Gray'],
+    ['tab_model_id' => 140,'color' => 'Gold'],
+    ['tab_model_id' => 140,'color' => 'Silver'],
+    ['tab_model_id' => 140,'color' => 'Space Gray'],
+    ['tab_model_id' => 140,'color' => 'Silver'],
+    ['tab_model_id' => 140,'color' => 'Gold'],
+    ['tab_model_id' => 140,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 140,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 140,'memory' => '512GB/4GB'],
+    ['tab_model_id' => 140,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 140,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 140,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 141,'color' => 'Silver'],
+    ['tab_model_id' => 141,'color' => 'Space Gray'],
+    ['tab_model_id' => 141,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 141,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 141,'memory' => '512GB/4GB'],
+    ['tab_model_id' => 141,'memory' => '1TB/6GB'],
+    ['tab_model_id' => 142,'color' => 'Silver'],
+    ['tab_model_id' => 142,'color' => 'Space Gray'],
+    ['tab_model_id' => 142,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 142,'memory' => '256GB/6GB'],
+    ['tab_model_id' => 142,'memory' => '512GB/6GB'],
+    ['tab_model_id' => 142,'memory' => '1TB/6GB'],
+    ['tab_model_id' => 143,'color' => 'Silver'],
+    ['tab_model_id' => 143,'color' => 'Space Gray'],
+    ['tab_model_id' => 143,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 143,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 143,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 143,'memory' => '1TB/16GB'],
+    ['tab_model_id' => 143,'memory' => '2TB/16GB'],
+    ['tab_model_id' => 144,'color' => 'Rose Gold'],
+    ['tab_model_id' => 144,'color' => 'Gold'],
+    ['tab_model_id' => 144,'color' => 'Silver'],
+    ['tab_model_id' => 144,'color' => 'Space Gray'],
+    ['tab_model_id' => 144,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 144,'memory' => '128GB/2GB'],
+    ['tab_model_id' => 144,'memory' => '256GB/2GB'],
+    ['tab_model_id' => 146,'color' => 'White/Silver'],
+    ['tab_model_id' => 146,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 147,'color' => 'Black'],
+    ['tab_model_id' => 147,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 148,'color' => 'Titanium Gray'],/*Asus*/
+    ['tab_model_id' => 148,'color' => 'Champagne Gold'],
+    ['tab_model_id' => 148,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 148,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 149,'color' => 'Sapphire Black'],/*Asus*/
+    ['tab_model_id' => 149,'color' => 'Diamond White'],
+    ['tab_model_id' => 149,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 149,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 149,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 150,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 150,'color' => 'White'],
+    ['tab_model_id' => 150,'color' => 'Red'],
+    ['tab_model_id' => 150,'color' => 'Blue'],
+    ['tab_model_id' => 150,'memory' => '4GB/1GB'],
+    ['tab_model_id' => 150,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 150,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 150,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 150,'color' => 'Gold'],/*Asus*/
+    ['tab_model_id' => 150,'color' => 'Red'],/*Asus*/
+    ['tab_model_id' => 150,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 150,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 151,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 151,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 151,'color' => 'Red'],/*Asus*/
+    ['tab_model_id' => 151,'color' => 'Gold'],/*Asus*/
+    ['tab_model_id' => 151,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 151,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 152,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 152,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 152,'memory' => '8GB/2GB'],
+    ['tab_model_id' => 152,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 153,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 153,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 153,'color' => 'Red'],/*Asus*/
+    ['tab_model_id' => 153,'color' => 'Gold'],/*Asus*/
+    ['tab_model_id' => 153,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 153,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 154,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 154,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 154,'color' => 'Red'],/*Asus*/
+    ['tab_model_id' => 154,'color' => 'Gold'],/*Asus*/
+    ['tab_model_id' => 154,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 154,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 155,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 155,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 155,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 155,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 156,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 156,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 156,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 157,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 157,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 157,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 158,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 158,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 158,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 159,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 159,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 159,'color' => 'Pink'],/*Asus*/
+    ['tab_model_id' => 159,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 159,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 160,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 160,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 160,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 160,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 160,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 161,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 161,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 161,'color' => 'Red'],/*Asus*/
+    ['tab_model_id' => 161,'color' => 'Blue'],/*Asus*/
+    ['tab_model_id' => 161,'color' => 'Yellow'],/*Asus*/
+    ['tab_model_id' => 161,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 161,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 162,'color' => 'Burgundy Red'],/*Asus*/
+    ['tab_model_id' => 162,'color' => 'Champagne Gold'],/*Asus*/
+    ['tab_model_id' => 162,'color' => 'Gentle Black'],/*Asus*/
+    ['tab_model_id' => 162,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 162,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 163,'color' => 'Burgundy Red'],/*Asus*/
+    ['tab_model_id' => 163,'color' => 'Champagne Gold'],/*Asus*/
+    ['tab_model_id' => 163,'color' => 'Gentle Black'],/*Asus*/
+    ['tab_model_id' => 163,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 163,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 164,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 164,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 164,'color' => 'Pink'],/*Asus*/
+    ['tab_model_id' => 164,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 165,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 165,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 165,'color' => 'Purple'],/*Asus*/
+    ['tab_model_id' => 165,'color' => 'Gold'],/*Asus*/
+    ['tab_model_id' => 165,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 166,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 166,'color' => 'Pink'],/*Asus*/
+    ['tab_model_id' => 166,'color' => 'Blue'],/*Asus*/
+    ['tab_model_id' => 166,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 166,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 167,'color' => 'Royal Blue'],/*Asus*/
+    ['tab_model_id' => 167,'color' => 'Silk White'],/*Asus*/
+    ['tab_model_id' => 167,'color' => 'Vivid Pink'],/*Asus*/
+    ['tab_model_id' => 167,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 167,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 168,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 168,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 168,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 168,'color' => 'Pink'],/*Asus*/
+    ['tab_model_id' => 168,'color' => 'Green'],/*Asus*/
+    ['tab_model_id' => 168,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 169,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 169,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 169,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 169,'color' => 'Pink'],/*Asus*/
+    ['tab_model_id' => 169,'color' => 'Green'],/*Asus*/
+    ['tab_model_id' => 169,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 170,'color' => 'Sugar White'],/*Asus*/
+    ['tab_model_id' => 170,'color' => 'Titanium Gray'],/*Asus*/
+    ['tab_model_id' => 170,'color' => 'Cherry Pink'],/*Asus*/
+    ['tab_model_id' => 170,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 170,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 171,'color' => 'Crystal White'],/*Asus*/
+    ['tab_model_id' => 171,'color' => 'Midnight Blue'],/*Asus*/
+    ['tab_model_id' => 171,'color' => 'Fuchsia Pink'],/*Asus*/
+    ['tab_model_id' => 171,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 172,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 172,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 172,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 172,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 173,'color' => 'Amethyst Gray'],/*Asus*/
+    ['tab_model_id' => 173,'color' => 'Champagne Gold'],/*Asus*/
+    ['tab_model_id' => 173,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 173,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 174,'color' => 'Amethyst Gray'],/*Asus*/
+    ['tab_model_id' => 174,'color' => 'Champagne Gold'],/*Asus*/
+    ['tab_model_id' => 174,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 174,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 175,'color' => 'Amethyst Gray'],/*Asus*/
+    ['tab_model_id' => 175,'color' => 'Champagne Gold'],/*Asus*/
+    ['tab_model_id' => 175,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 175,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 176,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 176,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 176,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 176,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 177,'color' => 'Royal Blue'],/*Asus*/
+    ['tab_model_id' => 177,'color' => 'Iceberg White'],/*Asus*/
+    ['tab_model_id' => 177,'color' => 'Torch Red'],/*Asus*/
+    ['tab_model_id' => 177,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 177,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 178,'color' => 'Royal Blue'],/*Asus*/
+    ['tab_model_id' => 178,'color' => 'Iceberg White'],/*Asus*/
+    ['tab_model_id' => 178,'color' => 'Torch Red'],/*Asus*/
+    ['tab_model_id' => 178,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 178,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 179,'color' => 'Blue'],/*Asus*/
+    ['tab_model_id' => 179,'color' => 'Gold'],/*Asus*/
+    ['tab_model_id' => 179,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 179,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 180,'color' => 'Silver'],/*Asus*/
+    ['tab_model_id' => 180,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 180,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 181,'color' => 'Amethyst Gray'],/*Asus*/
+    ['tab_model_id' => 181,'color' => 'Champagne Gold'],/*Asus*/
+    ['tab_model_id' => 181,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 181,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 182,'color' => 'Silver'],/*Asus*/
+    ['tab_model_id' => 182,'color' => 'Purple'],/*Asus*/
+    ['tab_model_id' => 182,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 182,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 183,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 183,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 183,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 184,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 184,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 184,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 185,'color' => 'Glacier Grey'],/*Asus*/
+    ['tab_model_id' => 185,'color' => 'Pearl White'],/*Asus*/
+    ['tab_model_id' => 185,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 186,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 186,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 186,'color' => 'Aurora Metallic'],/*Asus*/
+    ['tab_model_id' => 186,'memory' => '8GB/2GB'],
+    ['tab_model_id' => 186,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 186,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 187,'color' => 'Dark Gray'],/*Asus*/
+    ['tab_model_id' => 187,'color' => 'Pearl White'],/*Asus*/
+    ['tab_model_id' => 187,'color' => 'Rose Gold'],/*Asus*/
+    ['tab_model_id' => 187,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 187,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 188,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 188,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 189,'color' => 'Silver'],/*Asus*/
+    ['tab_model_id' => 189,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 189,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 190,'color' => 'Silver'],/*Asus*/
+    ['tab_model_id' => 190,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 190,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 190,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 191,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 191,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 191,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 192,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 192,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 192,'color' => 'Aurora Metallic'],/*Asus*/
+    ['tab_model_id' => 192,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 193,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 193,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 193,'color' => 'Aurora Metallic'],/*Asus*/
+    ['tab_model_id' => 193,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 193,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 194,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 194,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 194,'color' => 'Aurora Metallic'],/*Asus*/
+    ['tab_model_id' => 194,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 194,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 195,'color' => 'Dark Gray'],/*Asus*/
+    ['tab_model_id' => 195,'color' => 'Pearl White'],/*Asus*/
+    ['tab_model_id' => 195,'color' => 'Rose Gold'],/*Asus*/
+    ['tab_model_id' => 195,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 195,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 196,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 196,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 196,'color' => 'Red'],/*Asus*/
+    ['tab_model_id' => 196,'color' => 'Aurora Metallic'],/*Asus*/
+    ['tab_model_id' => 196,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 196,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 197,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 197,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 197,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 197,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 198,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 198,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 198,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 198,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 199,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 199,'color' => 'White'],/*Asus*/
+    ['tab_model_id' => 199,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 199,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 199,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 200,'color' => 'Gray'],/*Asus*/
+    ['tab_model_id' => 200,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 201,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 201,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 202,'color' => 'Black'],/*Asus*/
+    ['tab_model_id' => 202,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 204,'color' => 'Black'],/*BlackBerry*/
+    ['tab_model_id' => 204,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 205,'color' => 'Black'],/*BlackBerry*/
+    ['tab_model_id' => 205,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 205,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 205,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 206,'color' => 'Black'],/*BlackBerry*/
+    ['tab_model_id' => 206,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 206,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 206,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 207,'color' => 'Black'],/*BlackBerry*/
+    ['tab_model_id' => 207,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 207,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 207,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 208,'color' => 'Blue'],/*BLU*/
+    ['tab_model_id' => 208,'color' => 'White'],
+    ['tab_model_id' => 208,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 209,'color' => 'Blue'],/*BLU*/
+    ['tab_model_id' => 209,'color' => 'White'],
+    ['tab_model_id' => 209,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 210,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 210,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 211,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 211,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 212,'color' => 'Bronze'],/*BLU*/
+    ['tab_model_id' => 212,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 212,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 213,'color' => 'Blue'],/*BLU*/
+    ['tab_model_id' => 213,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 214,'color' => 'Blue'],/*BLU*/
+    ['tab_model_id' => 214,'color' => 'Gold'],/*BLU*/
+    ['tab_model_id' => 214,'color' => 'Grey'],/*BLU*/
+    ['tab_model_id' => 214,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 215,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 216,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 216,'color' => 'White'],/*BLU*/
+    ['tab_model_id' => 217,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 218,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 219,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 219,'color' => 'White'],/*BLU*/
+    ['tab_model_id' => 219,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 220,'color' => 'White'],/*BLU*/
+    ['tab_model_id' => 220,'color' => 'Gold'],/*BLU*/
+    ['tab_model_id' => 220,'color' => 'Grey'],/*BLU*/
+    ['tab_model_id' => 221,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 221,'color' => 'White'],/*BLU*/
+    ['tab_model_id' => 221,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 222,'color' => 'Black'],/*BLU*/
+    ['tab_model_id' => 222,'color' => 'Gold'],/*BLU*/
+    ['tab_model_id' => 222,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 223,'color' => 'Black'],/*BQ*/
+    ['tab_model_id' => 223,'color' => 'White'],/*BQ*/
+    ['tab_model_id' => 223,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 224,'color' => 'Black'],/*Celkon*/
+    ['tab_model_id' => 224,'color' => 'Red'],
+    ['tab_model_id' => 225,'color' => 'Black'],/*Celkon*/
+    ['tab_model_id' => 226,'color' => 'Black'],/*Celkon*/
+    ['tab_model_id' => 226,'color' => 'White'],
+    ['tab_model_id' => 226,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 227,'color' => 'White/Black'],/*Celkon*/
+    ['tab_model_id' => 228,'color' => 'Black'],/*Celkon*/
+    ['tab_model_id' => 228,'color' => 'White'],
+    ['tab_model_id' => 229,'color' => 'Gray'],/*Celkon*/
+    ['tab_model_id' => 230,'color' => 'Gray'],/*Celkon*/
+    ['tab_model_id' => 231,'color' => 'White'],/*Celkon*/
+    ['tab_model_id' => 232,'color' => 'Black'],/*Celkon*/
+    ['tab_model_id' => 232,'color' => 'Silver'],
+    ['tab_model_id' => 233,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 233,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 234,'color' => 'Gray'],/*Dell*/
+    ['tab_model_id' => 234,'memory' => '16GB'],
+    ['tab_model_id' => 235,'color' => 'Gray'],/*Dell*/
+    ['tab_model_id' => 235,'memory' => '16GB'],
+    ['tab_model_id' => 236,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 236,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 237,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 237,'color' => 'Red'],/*Dell*/
+    ['tab_model_id' => 237,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 238,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 238,'color' => 'Red'],
+    ['tab_model_id' => 238,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 239,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 239,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 239,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 240,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 240,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 240,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 241,'color' => 'Black'],/*Dell*/
+    ['tab_model_id' => 241,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 241,'memory' => '64GB/2GB'],
+
+    ['tab_model_id' => 242,'color' => 'Silver Aluminum'],/*Google*/
+    ['tab_model_id' => 242,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 242,'memory' => '64GB/3GB'],
+
+    ['tab_model_id' => 243,'color' => 'Gold'],/*Honor*/
+    ['tab_model_id' => 243,'color' => 'White'],
+    ['tab_model_id' => 243,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 243,'memory' => '32GB/3GB'],
+
+    ['tab_model_id' => 244,'color' => 'Glacial Blue'],/*Honor*/
+    ['tab_model_id' => 244,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 244,'memory' => '64GB/4GB'],
+
+    ['tab_model_id' => 245,'color' => 'Champagne Gold'],/*Honor*/
+    ['tab_model_id' => 245,'color' => 'Dark Gray'],
+    ['tab_model_id' => 245,'color' => 'Glacial Blue'],
+    ['tab_model_id' => 245,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 245,'memory' => '64GB/4GB'],
+
+    ['tab_model_id' => 246,'color' => 'Space Gray'],/*Honor*/
+    ['tab_model_id' => 246,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 246,'memory' => '128GB/4GB'],
+
+    ['tab_model_id' => 247,'color' => 'Gold'],/*Honor*/
+    ['tab_model_id' => 247,'color' => 'Mint'],
+    ['tab_model_id' => 247,'color' => 'Dark Blue'],
+    ['tab_model_id' => 247,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 247,'memory' => '128GB/4GB'],
+
+    ['tab_model_id' => 248,'color' => 'Neo Mint'],/*Honor*/
+    ['tab_model_id' => 248,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 248,'memory' => '64GB/4GB'],
+
+    ['tab_model_id' => 249,'color' => 'Silver'],/*Honor*/
+    ['tab_model_id' => 249,'color' => 'Blue'],
+    ['tab_model_id' => 249,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 249,'memory' => '64GB/4GB'],
+
+    ['tab_model_id' => 250,'color' => 'Mint Green'],/*Honor*/
+    ['tab_model_id' => 250,'color' => 'Space Gray'],
+    ['tab_model_id' => 250,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 250,'memory' => '128GB/4GB'],
+
+    ['tab_model_id' => 251,'color' => 'Blue'],/*Honor*/
+    ['tab_model_id' => 251,'color' => 'Gold'],
+    ['tab_model_id' => 251,'color' => 'Silver'],
+    ['tab_model_id' => 251,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 251,'memory' => '128GB/6GB'],
+
+    ['tab_model_id' => 252,'color' => 'Gold'],/*Honor*/
+    ['tab_model_id' => 252,'color' => 'Blue'],
+    ['tab_model_id' => 252,'color' => 'Silver'],
+    ['tab_model_id' => 252,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 252,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 252,'memory' => '128GB/8GB'],
+
+    ['tab_model_id' => 253,'color' => 'Dark Blue'],/*Honor*/
+    ['tab_model_id' => 253,'memory' => '32GB/3GB'],
+
+    ['tab_model_id' => 254,'color' => 'Green'],/*Honor*/
+    ['tab_model_id' => 254,'color' => 'Silver'],
+    ['tab_model_id' => 254,'color' => 'Black'],
+    ['tab_model_id' => 254,'memory' => '64GB/6GB'],
+    ['tab_model_id' => 254,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 254,'memory' => '256GB/8GB'],
+];
+
+
+
+
+
+
+// Asus 7 ciden bashla
 
 
 $woman_clothing_type = [
@@ -1272,8 +2494,6 @@ $objects_and_offices = [
     ['sub_category_id' => 65, 'name' => 'Mağaza'],
 ];
 
-
-//saat ve zinet esiyslari bashla
 
 
 
