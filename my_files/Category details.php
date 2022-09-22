@@ -623,9 +623,9 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 178,'name' => 'Honor'],
     ['sub_category_type_id' => 178,'name' => 'HP'],
     ['sub_category_type_id' => 178,'name' => 'HTC'],
-    ['sub_category_type_id' => 178,'name' => 'Huawei'],/*91*/
+    ['sub_category_type_id' => 178,'name' => 'Huawei'],
     ['sub_category_type_id' => 178,'name' => 'Icemobile'],
-    ['sub_category_type_id' => 178,'name' => 'Lenovo'],
+    ['sub_category_type_id' => 178,'name' => 'Lenovo'],/*93*/
     ['sub_category_type_id' => 178,'name' => 'LG'],
     ['sub_category_type_id' => 178,'name' => 'Maxwest'],
     ['sub_category_type_id' => 178,'name' => 'Micromax'],
@@ -886,9 +886,7 @@ $tab_model = [
     ['sub_category_type_one_id' => 86,'name' => 'Venue 8'],
     ['sub_category_type_one_id' => 86,'name' => 'Venue 8 7000'],
     ['sub_category_type_one_id' => 86,'name' => 'XPS 10'],
-
     ['sub_category_type_one_id' => 87,'name' => 'Pixel C'],/*242*/
-
     ['sub_category_type_one_id' => 88,'name' => 'Pad 2'],/*243*/
     ['sub_category_type_one_id' => 88,'name' => 'Pad 5 10.1'],
     ['sub_category_type_one_id' => 88,'name' => 'Pad 5 8'],
@@ -901,7 +899,6 @@ $tab_model = [
     ['sub_category_type_one_id' => 88,'name' => 'Tablet V7 Pro'],
     ['sub_category_type_one_id' => 88,'name' => 'Tablet X7'],
     ['sub_category_type_one_id' => 88,'name' => 'V6'],
-
     ['sub_category_type_one_id' => 89,'name' => '10 Plus'],/*255*/
     ['sub_category_type_one_id' => 89,'name' => '7 Plus'],
     ['sub_category_type_one_id' => 89,'name' => '8'],
@@ -915,13 +912,11 @@ $tab_model = [
     ['sub_category_type_one_id' => 89,'name' => 'Slate7 Plus'],
     ['sub_category_type_one_id' => 89,'name' => 'Slate8 Pro'],
     ['sub_category_type_one_id' => 89,'name' => 'TouchPad'],
-
     ['sub_category_type_one_id' => 90,'name' => 'EVO View 4G'],/*id 268*/
     ['sub_category_type_one_id' => 90,'name' => 'Flyer'],
     ['sub_category_type_one_id' => 90,'name' => 'Jetstream'],
     ['sub_category_type_one_id' => 90,'name' => 'Nexus 9'],
     ['sub_category_type_one_id' => 90,'name' => 'Shift'],
-
     ['sub_category_type_one_id' => 91,'name' => 'Enjoy Tablet 2'],/*id 273*/
     ['sub_category_type_one_id' => 91,'name' => 'IDEOS S7'],
     ['sub_category_type_one_id' => 91,'name' => 'IDEOS S7 Slim'],
@@ -977,7 +972,88 @@ $tab_model = [
     ['sub_category_type_one_id' => 91,'name' => 'Mediapad T5'],
     ['sub_category_type_one_id' => 91,'name' => 'MediaPad X1'],
     ['sub_category_type_one_id' => 91,'name' => 'MediaPad X2'],
+
+    ['sub_category_type_one_id' => 92,'name' => 'G10'],/*328*/
+    ['sub_category_type_one_id' => 92,'name' => 'G2'],
+    ['sub_category_type_one_id' => 92,'name' => 'G3'],
+    ['sub_category_type_one_id' => 92,'name' => 'G5'],
+    ['sub_category_type_one_id' => 92,'name' => 'G7'],
+    ['sub_category_type_one_id' => 92,'name' => 'G7 Pro'],
+    ['sub_category_type_one_id' => 92,'name' => 'G8'],
+    ['sub_category_type_one_id' => 92,'name' => 'G8 LTE'],
+
+    ['sub_category_type_one_id' => 93,'name' => 'A10-70 A7600'],/*336*/
+    ['sub_category_type_one_id' => 93,'name' => 'A7-30 A3300'],
+    ['sub_category_type_one_id' => 93,'name' => 'A7-50 A3500'],
+    ['sub_category_type_one_id' => 93,'name' => 'A8-50 A5500'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaPad A1'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaPad K1'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaPad S2'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab A1000'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab A2107'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab A3000'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab S6000'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab S6000F'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab S6000H'],
+    ['sub_category_type_one_id' => 93,'name' => 'IdeaTab S6000L'],
+    ['sub_category_type_one_id' => 93,'name' => 'Legion Y700'],
+    ['sub_category_type_one_id' => 93,'name' => 'LePad S2007'],
+    ['sub_category_type_one_id' => 93,'name' => 'LePad S2010'],
+    ['sub_category_type_one_id' => 93,'name' => 'M10 FHD REL'],
+    ['sub_category_type_one_id' => 93,'name' => 'M10 Plus'],
+    ['sub_category_type_one_id' => 93,'name' => 'moto tab'],
+    ['sub_category_type_one_id' => 93,'name' => 'Pad'],
+    ['sub_category_type_one_id' => 93,'name' => 'Pad Plus'],
+    ['sub_category_type_one_id' => 93,'name' => 'Pad Pro'],
+    ['sub_category_type_one_id' => 93,'name' => 'Pad Pro 2022'],
+    ['sub_category_type_one_id' => 93,'name' => 'S5000'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 2 A10-70'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 2 A7-10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 2 A7-20'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 2 A7-30'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 2 A8-50'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 3 10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 3 7'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 3 8'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 3 8 Plus'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 4 10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 4 10 Plus'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 4 8'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 4 8 Plus'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 7'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab 7 Essential'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab K10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab M10 HD Gen 2'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab M10 Plus (3rd Gen)'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab M7'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab M8 (3rd Gen)'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab M8 (FHD)'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab M8 (HD)'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab P10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab P11'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab P11 5G'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab P11 Pro'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab P11 Pro Gen 2'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab P12 Pro'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab S8'],
+    ['sub_category_type_one_id' => 93,'name' => 'Tab V7'],
+    ['sub_category_type_one_id' => 93,'name' => 'ThinKPad'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Pad Pro'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Smart Tab'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tab 3 10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tab 3 8.0'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tab 3 Plus'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tab 3 Pro'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 10'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 10 HD+'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 2 10.1'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 2 8.0'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 2 Pro'],
+    ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 8'],
 ];
+
+
+
 
 $tab_option = [
     ['tab_model_id' => 1,'color' => 'Black'],/*Acer*/
@@ -2193,10 +2269,94 @@ $tab_option = [
     ['tab_model_id' => 327,'memory' => '16GB/2GB'],
     ['tab_model_id' => 327,'memory' => '16GB/2GB'],
     ['tab_model_id' => 327,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 328,'color' => 'Black'],/*Icemobile*/
+    ['tab_model_id' => 328,'color' => 'White'],
+    ['tab_model_id' => 329,'color' => 'White'],/*Icemobile*/
+    ['tab_model_id' => 329,'color' => 'Black'],
+    ['tab_model_id' => 330,'color' => 'Black'],/*Icemobile*/
+    ['tab_model_id' => 330,'color' => 'Red'],
+    ['tab_model_id' => 330,'color' => 'White'],
+    ['tab_model_id' => 331,'color' => 'White/Black'],/*Icemobile*/
+    ['tab_model_id' => 332,'color' => 'White'],/*Icemobile*/
+    ['tab_model_id' => 332,'color' => 'Black'],
+    ['tab_model_id' => 333,'color' => 'Black'],/*Icemobile*/
+    ['tab_model_id' => 333,'color' => 'Red'],
+    ['tab_model_id' => 333,'color' => 'White'],
+    ['tab_model_id' => 333,'color' => 'Gray'],
+    ['tab_model_id' => 334,'color' => 'White'],/*Icemobile*/
+    ['tab_model_id' => 334,'color' => 'Black'],
+    ['tab_model_id' => 334,'color' => 'Blue'],
+    ['tab_model_id' => 335,'color' => 'Black'],/*Icemobile*/
+    ['tab_model_id' => 335,'color' => 'Silver'],
+    ['tab_model_id' => 335,'color' => 'Gold'],
+
+    ['tab_model_id' => 336,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 336,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 336,'memory' => '32GB/1GB'],
+
+    ['tab_model_id' => 337,'color' => 'Silver'],/*Lenovo*/
+    ['tab_model_id' => 337,'memory' => '8GB/1GB'],
+
+    ['tab_model_id' => 338,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 338,'color' => 'White'],
+    ['tab_model_id' => 338,'color' => 'Yellow'],
+    ['tab_model_id' => 338,'color' => 'Red'],
+    ['tab_model_id' => 338,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 338,'memory' => '16GB/1GB'],
+
+    ['tab_model_id' => 339,'color' => 'Pink'],/*Lenovo*/
+    ['tab_model_id' => 339,'color' => 'White'],
+    ['tab_model_id' => 339,'color' => 'Black'],
+    ['tab_model_id' => 339,'color' => 'Blue'],
+    ['tab_model_id' => 339,'memory' => '16GB'],
+
+    ['tab_model_id' => 340,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 340,'color' => 'Black'],
+    ['tab_model_id' => 340,'color' => 'Red'],
+    ['tab_model_id' => 340,'color' => 'Brown'],
+    ['tab_model_id' => 340,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 340,'memory' => '32GB/1GB'],
+
+    ['tab_model_id' => 341,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 341,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 341,'memory' => '64GB/1GB'],
+
+    ['tab_model_id' => 342,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 342,'color' => 'White'],
+    ['tab_model_id' => 342,'memory' => '4GB'],
+    ['tab_model_id' => 342,'memory' => '16GB'],
+
+    ['tab_model_id' => 343,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 343,'memory' => '16GB/1GB'],
+
+    ['tab_model_id' => 344,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 344,'memory' => '16GB/1GB'],
+
+    ['tab_model_id' => 345,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 345,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 345,'memory' => '32GB/1GB'],
+
+    ['tab_model_id' => 346,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 346,'memory' => '16GB/1GB'],
+
+    ['tab_model_id' => 347,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 347,'memory' => '32GB/1GB'],
+
+    ['tab_model_id' => 348,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 348,'memory' => '16GB/1GB'],
+
+    ['tab_model_id' => 349,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 349,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 349,'memory' => '256GB/12GB'],
+
+    ['tab_model_id' => 350,'color' => 'Black/Orange'],/*Lenovo*/
+    ['tab_model_id' => 350,'memory' => '16GB/1GB']
 ];
 
 
-// Icemobile den bashla
+
+
+// Lenovo "LePad S2010" den bashla
 
 
 $woman_clothing_type = [
