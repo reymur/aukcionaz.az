@@ -625,24 +625,23 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 178,'name' => 'HTC'],
     ['sub_category_type_id' => 178,'name' => 'Huawei'],
     ['sub_category_type_id' => 178,'name' => 'Icemobile'],
-    ['sub_category_type_id' => 178,'name' => 'Lenovo'],/*93*/
-    ['sub_category_type_id' => 178,'name' => 'LG'],
-    ['sub_category_type_id' => 178,'name' => 'Maxwest'],
-    ['sub_category_type_id' => 178,'name' => 'Micromax'],
-    ['sub_category_type_id' => 178,'name' => 'Microsoft'],
-    ['sub_category_type_id' => 178,'name' => 'Motorola'],
-    ['sub_category_type_id' => 178,'name' => 'Nokia'],
-    ['sub_category_type_id' => 178,'name' => 'Panasonic'],
-    ['sub_category_type_id' => 178,'name' => 'Prestigio'],
-    ['sub_category_type_id' => 178,'name' => 'QMobile'],
-    ['sub_category_type_id' => 178,'name' => 'Samsung'],
+    ['sub_category_type_id' => 178,'name' => 'Lenovo'],
+    ['sub_category_type_id' => 178,'name' => 'LG'],/*94*/
+    ['sub_category_type_id' => 178,'name' => 'Maxwest'],/*95*/
+    ['sub_category_type_id' => 178,'name' => 'Micromax'],/*96*/
+    ['sub_category_type_id' => 178,'name' => 'Microsoft'],/*97*/
+    ['sub_category_type_id' => 178,'name' => 'Motorola'],/*98*/
+    ['sub_category_type_id' => 178,'name' => 'Nokia'],/*99*/
+    ['sub_category_type_id' => 178,'name' => 'Panasonic'],/*100*/
+    ['sub_category_type_id' => 178,'name' => 'Prestigio'],/*101*/
+    ['sub_category_type_id' => 178,'name' => 'QMobile'],/*102*/
+    ['sub_category_type_id' => 178,'name' => 'Samsung'],/*103*/
     ['sub_category_type_id' => 178,'name' => 'Sony'],
     ['sub_category_type_id' => 178,'name' => 'TCL'],
     ['sub_category_type_id' => 178,'name' => 'Toshiba'],
     ['sub_category_type_id' => 178,'name' => 'Xiaomi'],
     ['sub_category_type_id' => 178,'name' => 'ZTE'],
 ];
-
 
 $tab_model = [
     ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
@@ -972,7 +971,6 @@ $tab_model = [
     ['sub_category_type_one_id' => 91,'name' => 'Mediapad T5'],
     ['sub_category_type_one_id' => 91,'name' => 'MediaPad X1'],
     ['sub_category_type_one_id' => 91,'name' => 'MediaPad X2'],
-
     ['sub_category_type_one_id' => 92,'name' => 'G10'],/*328*/
     ['sub_category_type_one_id' => 92,'name' => 'G2'],
     ['sub_category_type_one_id' => 92,'name' => 'G3'],
@@ -981,7 +979,6 @@ $tab_model = [
     ['sub_category_type_one_id' => 92,'name' => 'G7 Pro'],
     ['sub_category_type_one_id' => 92,'name' => 'G8'],
     ['sub_category_type_one_id' => 92,'name' => 'G8 LTE'],
-
     ['sub_category_type_one_id' => 93,'name' => 'A10-70 A7600'],/*336*/
     ['sub_category_type_one_id' => 93,'name' => 'A7-30 A3300'],
     ['sub_category_type_one_id' => 93,'name' => 'A7-50 A3500'],
@@ -1050,10 +1047,207 @@ $tab_model = [
     ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 2 8.0'],
     ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 2 Pro'],
     ['sub_category_type_one_id' => 93,'name' => 'Yoga Tablet 8'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 10.1'],/*id 404*/
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 10.1 LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 5 10.1'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 7.0'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 7.0 LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 8.0'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 8.0 LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 8.3'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad 8.3 LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad II 10.1'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad II 8.0 LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad II 8.3 LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad III 10.1 FHD'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad III 8.0 FHD'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad IV 8.0 FHD'],
+    ['sub_category_type_one_id' => 94,'name' => 'G Pad X 8.0'],
+    ['sub_category_type_one_id' => 94,'name' => 'Optimus Pad LTE'],
+    ['sub_category_type_one_id' => 94,'name' => 'Optimus Pad V900'],
+    ['sub_category_type_one_id' => 94,'name' => 'Ultra Tab'],
+    ['sub_category_type_one_id' => 95,'name' => 'Tab Phone 72DC'],/*423*/
+
+    ['sub_category_type_one_id' => 96,'name' => 'Canvas Tab P470'],/*424*/
+    ['sub_category_type_one_id' => 96,'name' => 'Canvas Tab P650'],
+    ['sub_category_type_one_id' => 96,'name' => 'Canvas Tab P666'],
+    ['sub_category_type_one_id' => 96,'name' => 'Canvas Tab P690'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook 3G P560'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook 3G P600'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook Alfa P250'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook Infinity P275'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook P300'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook Pro'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook Talk P360'],
+    ['sub_category_type_one_id' => 96,'name' => 'Funbook Talk P362'],
+    ['sub_category_type_one_id' => 97,'name' => 'Surface'],/*436*/
+    ['sub_category_type_one_id' => 97,'name' => 'Surface 2'],
+    ['sub_category_type_one_id' => 97,'name' => 'Surface Duo'],
+    ['sub_category_type_one_id' => 97,'name' => 'Surface Duo 2'],
+    ['sub_category_type_one_id' => 97,'name' => 'Surface Go 2'],
+    ['sub_category_type_one_id' => 98,'name' => 'DROID XYBOARD 10.1 MZ617'],/*441*/
+    ['sub_category_type_one_id' => 98,'name' => 'DROID XYBOARD 8.2 MZ609'],
+    ['sub_category_type_one_id' => 98,'name' => 'Moto Tab G62'],
+    ['sub_category_type_one_id' => 98,'name' => 'Moto Tab G70'],
+    ['sub_category_type_one_id' => 98,'name' => 'Tab G20'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM 2 3G MZ616'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM 2 Media Edition 3G MZ608'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM 2 Media Edition MZ607'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM 2 MZ615'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM Media Edition MZ505'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM MZ600'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM MZ601'],
+    ['sub_category_type_one_id' => 98,'name' => 'XOOM MZ604'],
+    ['sub_category_type_one_id' => 99,'name' => 'Lumia 2520'],/*454*/
+    ['sub_category_type_one_id' => 99,'name' => 'N1'],
+    ['sub_category_type_one_id' => 99,'name' => 'N800'],
+    ['sub_category_type_one_id' => 99,'name' => 'N810'],
+    ['sub_category_type_one_id' => 99,'name' => 'T10'],
+    ['sub_category_type_one_id' => 99,'name' => 'T20'],
+    ['sub_category_type_one_id' => 99,'name' => 'T21'],
+    ['sub_category_type_one_id' => 100,'name' => 'Toughpad FZ-A1'],/*461*/
+    ['sub_category_type_one_id' => 100,'name' => 'Toughpad JT-B1'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 10.1 Ultimate'],/*463*/
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 10.1 Ultimate 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 2 Prime Duo 8.0'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 2 Pro Duo 8.0 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 2 Ultra Duo 8.0'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 2 Ultra Duo 8.0 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'Multipad 4 Quantum 10.1'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 4 Quantum 10.1 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'Multipad 4 Quantum 7.85'],
+    ['sub_category_type_one_id' => 101,'name' => 'Multipad 4 Quantum 9.7'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 4 Quantum 9.7 Colombia'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 4 Ultimate 8.0 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 4 Ultra Quad 8.0 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 HD'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 HD +'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Prime'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Prime +'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Prime 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Prime Duo'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Prime Duo 3G'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Pro'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Pro Duo'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Ultra'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Ultra +'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Ultra + New'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 7.0 Ultra Duo'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 8.0 HD'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 8.0 Pro Duo'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 8.0 Ultra Duo'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad 9.7 Ultra Duo'],
+    ['sub_category_type_one_id' => 101,'name' => 'MultiPad Note 8.0 3G'],
+
+    ['sub_category_type_one_id' => 102,'name' => 'QTab V10'],/*94*/
+    ['sub_category_type_one_id' => 102,'name' => 'QTab X50'],
+
+    ['sub_category_type_one_id' => 103,'name' => 'Ativ Tab P8510'],/*96*/
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 10.1 (2014)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 10.1 N8000'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 10.1 N8010'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 8.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note LTE 10.1 N8020'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note Pro 12.2'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note Pro 12.2 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note Pro 12.2 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 10.1 LTE I905'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 10.1 P7510'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 2 10.1 CDMA'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 2 10.1 P5100'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 2 10.1 P5110'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 2 7.0 I705'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 2 7.0 P3100'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 2 7.0 P3110'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 10.1 P5200'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 10.1 P5210'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 10.1 P5220'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 7.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 7.0 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 8.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 Lite 7.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 Lite 7.0 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 Lite 7.0 VE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 3 V'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 10.1'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 10.1 (2015)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 10.1 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 10.1 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 7.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 7.0 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 7.0 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 8.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 8.0 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 4 8.0 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 7.7 LTE I815'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 8.9 4G P7320T'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 8.9 LTE I957'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 8.9 P7300'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab 8.9 P7310'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 10.1 (2016)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 10.1 (2019)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 10.5'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 7.0 (2016)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.0 (2015)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.0 (2017)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.0 (2018)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.0 (2019)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.0 S & Pen (2015)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.0 S & Pen (2019)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 8.4 (2020)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 9.7'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A 9.7 S Pen'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A7 10.4 (2020)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A7 Lite'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab A8 10.5 (2021)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Active'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Active 2'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Active 3'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Active 4 Pro'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Active LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Active Pro'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Advanced 2'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab E 8.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab E 9.6'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab J'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 10.1'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 10.1 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 12.2'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 12.2 3G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 12.2 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 8.4'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab Pro 8.4 3G/LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S 10.5'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S 10.5 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S 8.4'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S 8.4 LTE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S2 8.0'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S2 9.7'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S3 9.7'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S4 10.5'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S5e'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S6'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S6 5G'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S6 Lite'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S6 Lite (2022)'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S7'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S7 FE'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S7+'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S8'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S8 Ultra'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab S8+'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy Tab T-Mobile T849'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy View'],
+    ['sub_category_type_one_id' => 103,'name' => 'Galaxy View2'],
+    ['sub_category_type_one_id' => 103,'name' => 'Google Nexus 10 P8110'],
+    ['sub_category_type_one_id' => 103,'name' => 'P1000 Galaxy Tab'],
+    ['sub_category_type_one_id' => 103,'name' => 'P1010 Galaxy Tab'],
+    ['sub_category_type_one_id' => 103,'name' => 'P6200 Galaxy Tab 7.0 Plus'],
+    ['sub_category_type_one_id' => 103,'name' => 'P6210 Galaxy Tab 7.0 Plus'],
+    ['sub_category_type_one_id' => 103,'name' => 'P6800 Galaxy Tab 7.7'],
+    ['sub_category_type_one_id' => 103,'name' => 'P6810 Galaxy Tab 7.7'],
+    ['sub_category_type_one_id' => 103,'name' => 'P7500 Galaxy Tab 10.1 3G'],
 ];
-
-
-
 
 $tab_option = [
     ['tab_model_id' => 1,'color' => 'Black'],/*Acer*/
@@ -2289,74 +2483,457 @@ $tab_option = [
     ['tab_model_id' => 335,'color' => 'Black'],/*Icemobile*/
     ['tab_model_id' => 335,'color' => 'Silver'],
     ['tab_model_id' => 335,'color' => 'Gold'],
-
     ['tab_model_id' => 336,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 336,'memory' => '16GB/1GB'],
     ['tab_model_id' => 336,'memory' => '32GB/1GB'],
-
     ['tab_model_id' => 337,'color' => 'Silver'],/*Lenovo*/
     ['tab_model_id' => 337,'memory' => '8GB/1GB'],
-
     ['tab_model_id' => 338,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 338,'color' => 'White'],
     ['tab_model_id' => 338,'color' => 'Yellow'],
     ['tab_model_id' => 338,'color' => 'Red'],
     ['tab_model_id' => 338,'memory' => '8GB/1GB'],
     ['tab_model_id' => 338,'memory' => '16GB/1GB'],
-
     ['tab_model_id' => 339,'color' => 'Pink'],/*Lenovo*/
     ['tab_model_id' => 339,'color' => 'White'],
     ['tab_model_id' => 339,'color' => 'Black'],
     ['tab_model_id' => 339,'color' => 'Blue'],
     ['tab_model_id' => 339,'memory' => '16GB'],
-
     ['tab_model_id' => 340,'color' => 'White'],/*Lenovo*/
     ['tab_model_id' => 340,'color' => 'Black'],
     ['tab_model_id' => 340,'color' => 'Red'],
     ['tab_model_id' => 340,'color' => 'Brown'],
     ['tab_model_id' => 340,'memory' => '16GB/1GB'],
     ['tab_model_id' => 340,'memory' => '32GB/1GB'],
-
     ['tab_model_id' => 341,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 341,'memory' => '32GB/1GB'],
     ['tab_model_id' => 341,'memory' => '64GB/1GB'],
-
     ['tab_model_id' => 342,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 342,'color' => 'White'],
     ['tab_model_id' => 342,'memory' => '4GB'],
     ['tab_model_id' => 342,'memory' => '16GB'],
-
     ['tab_model_id' => 343,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 343,'memory' => '16GB/1GB'],
-
     ['tab_model_id' => 344,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 344,'memory' => '16GB/1GB'],
-
     ['tab_model_id' => 345,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 345,'memory' => '16GB/1GB'],
     ['tab_model_id' => 345,'memory' => '32GB/1GB'],
-
     ['tab_model_id' => 346,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 346,'memory' => '16GB/1GB'],
-
     ['tab_model_id' => 347,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 347,'memory' => '32GB/1GB'],
-
     ['tab_model_id' => 348,'color' => 'Black'],/*Lenovo*/
     ['tab_model_id' => 348,'memory' => '16GB/1GB'],
-
     ['tab_model_id' => 349,'color' => 'Gray'],/*Lenovo*/
     ['tab_model_id' => 349,'memory' => '128GB/8GB'],
     ['tab_model_id' => 349,'memory' => '256GB/12GB'],
-
     ['tab_model_id' => 350,'color' => 'Black/Orange'],/*Lenovo*/
-    ['tab_model_id' => 350,'memory' => '16GB/1GB']
+    ['tab_model_id' => 350,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 351,'color' => 'Black/Orange'],/*Lenovo*/
+    ['tab_model_id' => 351,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 352,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 352,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 353,'color' => 'Iron/Grey'],/*Lenovo*/
+    ['tab_model_id' => 353,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 353,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 353,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 354,'color' => 'Aurora Black'],/*Lenovo*/
+    ['tab_model_id' => 354,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 355,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 355,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 355,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 356,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 356,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 357,'color' => 'Silver'],/*Lenovo*/
+    ['tab_model_id' => 357,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 358,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 358,'color' => 'Gold'],/*Lenovo*/
+    ['tab_model_id' => 358,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 358,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 359,'color' => 'Silver Grey'],/*Lenovo*/
+    ['tab_model_id' => 359,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 360,'color' => 'Pearl White'],/*Lenovo*/
+    ['tab_model_id' => 360,'color' => 'Midnight Blue'],/*Lenovo*/
+    ['tab_model_id' => 360,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 361,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 361,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 361,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 362,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 362,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 362,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 363,'color' => 'Pearl White'],/*Lenovo*/
+    ['tab_model_id' => 363,'color' => 'Ebony Black'],/*Lenovo*/
+    ['tab_model_id' => 363,'color' => 'Aqua Blue'],/*Lenovo*/
+    ['tab_model_id' => 363,'color' => 'Cotton Candy'],/*Lenovo*/
+    ['tab_model_id' => 363,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 364,'color' => 'Pearl White'],/*Lenovo*/
+    ['tab_model_id' => 364,'color' => 'Ebony'],/*Lenovo*/
+    ['tab_model_id' => 364,'color' => 'Midnight Blue'],/*Lenovo*/
+    ['tab_model_id' => 364,'color' => 'Neon Pink'],/*Lenovo*/
+    ['tab_model_id' => 364,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 364,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 364,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 364,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 364,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 365,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 365,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 365,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 366,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 366,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 366,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 366,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 367,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 367,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 367,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 368,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 368,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 368,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 368,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 369,'color' => 'Aurora Black'],/*Lenovo*/
+    ['tab_model_id' => 369,'color' => 'Sparkling White'],/*Lenovo*/
+    ['tab_model_id' => 369,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 369,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 370,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 370,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 370,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 370,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 371,'color' => 'Aurora Black'],/*Lenovo*/
+    ['tab_model_id' => 371,'color' => 'Sparkling White'],/*Lenovo*/
+    ['tab_model_id' => 371,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 371,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 372,'color' => 'Slate Black'],/*Lenovo*/
+    ['tab_model_id' => 372,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 372,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 372,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 373,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 373,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 374,'color' => 'Abyss Blue'],/*Lenovo*/
+    ['tab_model_id' => 374,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 374,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 374,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 375,'color' => 'Iron Gray'],/*Lenovo*/
+    ['tab_model_id' => 375,'color' => 'Platinum Gray'],/*Lenovo*/
+    ['tab_model_id' => 375,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 375,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 376,'color' => 'Storm Grey'],/*Lenovo*/
+    ['tab_model_id' => 376,'color' => 'Frost Blue'],/*Lenovo*/
+    ['tab_model_id' => 376,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 376,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 376,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 376,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 377,'color' => 'Iron Grey'],/*Lenovo*/
+    ['tab_model_id' => 377,'color' => 'Platinum Grey'],/*Lenovo*/
+    ['tab_model_id' => 377,'color' => 'Onyx Black'],/*Lenovo*/
+    ['tab_model_id' => 377,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 377,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 377,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 378,'color' => 'Platinum Grey'],/*Lenovo*/
+    ['tab_model_id' => 378,'color' => 'Iron Grey'],/*Lenovo*/
+    ['tab_model_id' => 378,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 378,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 379,'color' => 'Iron Grey'],/*Lenovo*/
+    ['tab_model_id' => 379,'color' => 'Platinum Grey'],/*Lenovo*/
+    ['tab_model_id' => 379,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 379,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 380,'color' => 'Iron Grey'],/*Lenovo*/
+    ['tab_model_id' => 380,'color' => 'Platinum Grey'],/*Lenovo*/
+    ['tab_model_id' => 380,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 380,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 381,'color' => 'Aurora Black'],/*Lenovo*/
+    ['tab_model_id' => 381,'color' => 'Shine White'],/*Lenovo*/
+    ['tab_model_id' => 381,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 381,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 382,'color' => 'Slate Grey'],/*Lenovo*/
+    ['tab_model_id' => 382,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 382,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 382,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 382,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 383,'color' => 'Moon White'],/*Lenovo*/
+    ['tab_model_id' => 383,'color' => 'Modernist Teal'],/*Lenovo*/
+    ['tab_model_id' => 383,'color' => 'Storm Grey'],/*Lenovo*/
+    ['tab_model_id' => 383,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 383,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 384,'color' => 'Slate Grey'],/*Lenovo*/
+    ['tab_model_id' => 384,'color' => 'Platinum Grey'],/*Lenovo*/
+    ['tab_model_id' => 384,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 384,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 385,'color' => 'Oat'],/*Lenovo*/
+    ['tab_model_id' => 385,'color' => 'Storm Grey'],/*Lenovo*/
+    ['tab_model_id' => 385,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 385,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 385,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 386,'color' => 'Storm Grey'],/*Lenovo*/
+    ['tab_model_id' => 386,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 386,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 387,'color' => 'Ebony'],/*Lenovo*/
+    ['tab_model_id' => 387,'color' => 'Blue'],/*Lenovo*/
+    ['tab_model_id' => 387,'color' => 'Canary Yellow'],/*Lenovo*/
+    ['tab_model_id' => 387,'color' => 'White'],/*Lenovo*/
+    ['tab_model_id' => 387,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 388,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 388,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 388,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 389,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 389,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 389,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 389,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 390,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 390,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 391,'color' => 'Iron Grey'],/*Lenovo*/
+    ['tab_model_id' => 391,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 392,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 392,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 393,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 393,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 394,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 394,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 395,'color' => 'Black'],/*Lenovo*/
+    ['tab_model_id' => 395,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 396,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 396,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 396,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 397,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 397,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 397,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 398,'color' => 'Platinum'],/*Lenovo*/
+    ['tab_model_id' => 398,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 399,'color' => 'Platinum'],/*Lenovo*/
+    ['tab_model_id' => 399,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 400,'color' => 'Platinum'],/*Lenovo*/
+    ['tab_model_id' => 400,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 401,'color' => 'Gray'],/*Lenovo*/
+    ['tab_model_id' => 401,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 401,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 404,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 404,'color' => 'Red'],
+    ['tab_model_id' => 404,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 405,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 405,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 406,'color' => 'Silver'],/*LG*/
+    ['tab_model_id' => 406,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 407,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 407,'color' => 'White'],/*LG*/
+    ['tab_model_id' => 407,'color' => 'Luminous Orange'],/*LG*/
+    ['tab_model_id' => 407,'color' => 'Luminous Blue'],/*LG*/
+    ['tab_model_id' => 407,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 408,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 408,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 409,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 409,'color' => 'White'],
+    ['tab_model_id' => 409,'color' => 'Luminous Orange'],
+    ['tab_model_id' => 409,'color' => 'Luminous Blue'],
+    ['tab_model_id' => 409,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 410,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 410,'color' => 'White'],
+    ['tab_model_id' => 410,'color' => 'Luminous Orange'],
+    ['tab_model_id' => 410,'color' => 'Luminous Blue'],
+    ['tab_model_id' => 410,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 410,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 411,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 411,'color' => 'White'],
+    ['tab_model_id' => 411,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 412,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 412,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 413,'color' => 'Brilliant Bronze'],/*LG*/
+    ['tab_model_id' => 413,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 414,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 414,'color' => 'White'],
+    ['tab_model_id' => 414,'memory' => '32GB/1.5GB'],
+    ['tab_model_id' => 415,'color' => 'Brown Gold'],/*LG*/
+    ['tab_model_id' => 415,'color' => 'Black'],
+    ['tab_model_id' => 415,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 416,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 416,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 417,'color' => 'Dark Blue'],/*LG*/
+    ['tab_model_id' => 417,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 418,'color' => 'Dark Brown'],/*LG*/
+    ['tab_model_id' => 418,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 419,'color' => 'White/Gold'],/*LG*/
+    ['tab_model_id' => 419,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 419,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 420,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 420,'memory' => '32GB'],
+    ['tab_model_id' => 421,'color' => 'Black'],/*LG*/
+    ['tab_model_id' => 421,'memory' => '32GB'],
+    ['tab_model_id' => 422,'color' => 'Charcoal Gray'],/*LG*/
+    ['tab_model_id' => 422,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 423,'color' => 'Black/White'],/*Maxwest*/
+    ['tab_model_id' => 423,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 424,'color' => 'Classy Silver'],/*Micromax*/
+    ['tab_model_id' => 424,'color' => 'Mystic Grey'],
+    ['tab_model_id' => 424,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 425,'color' => 'Black'],/*Maxwest*/
+    ['tab_model_id' => 425,'color' => 'White'],
+    ['tab_model_id' => 425,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 426,'color' => 'Magnetic Black'],/*Maxwest*/
+    ['tab_model_id' => 426,'color' => 'Puritan White'],
+    ['tab_model_id' => 426,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 427,'color' => 'Gray'],/*Maxwest*/
+    ['tab_model_id' => 427,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 428,'color' => 'Black'],/*Maxwest*/
+    ['tab_model_id' => 429,'color' => 'Black'],/*Maxwest*/
+    ['tab_model_id' => 430,'color' => 'Gray'],/*Maxwest*/
+    ['tab_model_id' => 431,'color' => 'Black'],/*Maxwest*/
+    ['tab_model_id' => 432,'color' => 'Suave Silver'],/*Maxwest*/
+    ['tab_model_id' => 432,'color' => 'Brilliant Black'],
+    ['tab_model_id' => 433,'color' => 'Silver'],/*Maxwest*/
+    ['tab_model_id' => 433,'color' => 'Black'],
+    ['tab_model_id' => 433,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 434,'color' => 'Black'],/*Maxwest*/
+    ['tab_model_id' => 435,'color' => 'Black'],/*Maxwest*/
+    ['tab_model_id' => 436,'color' => 'Dark Titanium'],/*Microsoft*/
+    ['tab_model_id' => 436,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 436,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 437,'color' => 'Dark Titanium'],/*Microsoft*/
+    ['tab_model_id' => 437,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 437,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 438,'color' => 'White'],/*Microsoft*/
+    ['tab_model_id' => 438,'memory' => '256GB/6GB'],
+    ['tab_model_id' => 438,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 439,'color' => 'Glacier'],/*Microsoft*/
+    ['tab_model_id' => 439,'color' => 'Obsidian'],
+    ['tab_model_id' => 439,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 439,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 439,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 440,'color' => 'Platinum'],/*Microsoft*/
+    ['tab_model_id' => 440,'memory' => '4GB/64GB'],
+    ['tab_model_id' => 440,'memory' => '64GB/8GB'],
+    ['tab_model_id' => 440,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 440,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 441,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 441,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 441,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 441,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 442,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 442,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 442,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 443,'color' => 'Gray'],/*Motorola*/
+    ['tab_model_id' => 443,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 444,'color' => 'Blue'],/*Motorola*/
+    ['tab_model_id' => 444,'color' => 'Modernist Teal'],
+    ['tab_model_id' => 445,'color' => 'Platinum Grey'],/*Motorola*/
+    ['tab_model_id' => 445,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 446,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 446,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 446,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 447,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 447,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 448,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 448,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 448,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 449,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 449,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 449,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 450,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 450,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 451,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 451,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 451,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 451,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 452,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 452,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 452,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 452,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 453,'color' => 'Black'],/*Motorola*/
+    ['tab_model_id' => 453,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 453,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 453,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 454,'color' => 'Cyan'],/*Nokia*/
+    ['tab_model_id' => 454,'color' => 'Red'],
+    ['tab_model_id' => 454,'color' => 'Black'],
+    ['tab_model_id' => 454,'color' => 'White'],
+    ['tab_model_id' => 454,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 455,'color' => 'Natural Aluminum'],/*Nokia*/
+    ['tab_model_id' => 455,'color' => 'Lava Gray'],
+    ['tab_model_id' => 455,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 456,'color' => 'Black'],/*Nokia*/
+    ['tab_model_id' => 456,'color' => 'Silver'],
+    ['tab_model_id' => 457,'color' => 'Silver'],/*Nokia*/
+    ['tab_model_id' => 457,'color' => 'Black'],
+    ['tab_model_id' => 458,'color' => 'Ocean Blue'],/*Nokia*/
+    ['tab_model_id' => 458,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 458,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 459,'color' => 'Deep Ocean'],/*Nokia*/
+    ['tab_model_id' => 459,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 459,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 460,'color' => 'Charcoal Grey'],/*Nokia*/
+    ['tab_model_id' => 460,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 460,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 461,'color' => 'White'],/*Panasonic*/
+    ['tab_model_id' => 461,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 462,'color' => 'White'],/*Panasonic*/
+    ['tab_model_id' => 462,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 463,'color' => 'Gray'],/*Prestigio*/
+    ['tab_model_id' => 463,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 464,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 464,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 465,'color' => 'Gray'],/*Prestigio*/
+    ['tab_model_id' => 465,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 466,'color' => 'Black/Silver'],/*Prestigio*/
+    ['tab_model_id' => 466,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 467,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 467,'color' => 'White'],
+    ['tab_model_id' => 467,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 468,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 468,'color' => 'White'],
+    ['tab_model_id' => 468,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 469,'color' => 'Black/Deep Blue'],/*Prestigio*/
+    ['tab_model_id' => 469,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 470,'color' => 'Black/Deep Blue'],/*Prestigio*/
+    ['tab_model_id' => 470,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 471,'color' => 'Black/Deep Blue'],/*Prestigio*/
+    ['tab_model_id' => 471,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 472,'color' => 'Black/Deep Blue'],/*Prestigio*/
+    ['tab_model_id' => 472,'memory' => '8GB/2GB'],
+    ['tab_model_id' => 473,'color' => 'Black/Deep Blue'],/*Prestigio*/
+    ['tab_model_id' => 473,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 474,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 474,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 475,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 475,'color' => 'White'],
+    ['tab_model_id' => 475,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 476,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 477,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 477,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 478,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 479,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 480,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 481,'color' => 'Gray'],/*Prestigio*/
+    ['tab_model_id' => 481,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 482,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 483,'color' => 'Gray'],/*Prestigio*/
+    ['tab_model_id' => 484,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 484,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 485,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 486,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 486,'memory' => '8GB'],
+    ['tab_model_id' => 487,'color' => 'White'],/*Prestigio*/
+    ['tab_model_id' => 487,'color' => 'Black'],
+    ['tab_model_id' => 487,'color' => 'Red'],
+    ['tab_model_id' => 488,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 488,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 489,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 489,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 490,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 490,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 491,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 491,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 492,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 492,'color' => 'Red'],
+    ['tab_model_id' => 492,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 493,'color' => 'Black'],/*Prestigio*/
+    ['tab_model_id' => 493,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 494,'color' => 'Black'],/*QMobile*/
+    ['tab_model_id' => 494,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 495,'color' => 'Black'],/*QMobile*/
+    ['tab_model_id' => 495,'color' => 'White'],/*QMobile*/
+    ['tab_model_id' => 495,'memory' => '16GB/1GB'],
+
 ];
 
 
-
-
-// Lenovo "LePad S2010" den bashla
+// Samsung den bashla
 
 
 $woman_clothing_type = [
