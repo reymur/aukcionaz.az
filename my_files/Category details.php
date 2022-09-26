@@ -2929,11 +2929,428 @@ $tab_option = [
     ['tab_model_id' => 495,'color' => 'Black'],/*QMobile*/
     ['tab_model_id' => 495,'color' => 'White'],/*QMobile*/
     ['tab_model_id' => 495,'memory' => '16GB/1GB'],
-
+    ['tab_model_id' => 496,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 496,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 496,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 497,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 497,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 497,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 497,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 497,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 498,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 498,'color' => 'White/Silver'],
+    ['tab_model_id' => 498,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 498,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 498,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 499,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 499,'color' => 'White/Silver'],
+    ['tab_model_id' => 499,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 499,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 499,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 500,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 500,'color' => 'White/Silver'],
+    ['tab_model_id' => 500,'color' => 'Brown'],
+    ['tab_model_id' => 500,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 500,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 501,'color' => 'Gray'],/*Samsung*/
+    ['tab_model_id' => 501,'color' => 'White'],
+    ['tab_model_id' => 501,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 501,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 501,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 502,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 502,'color' => 'White'],
+    ['tab_model_id' => 502,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 502,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 503,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 503,'color' => 'White'],
+    ['tab_model_id' => 503,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 503,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 504,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 504,'color' => 'White'],
+    ['tab_model_id' => 504,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 504,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 505,'color' => 'Metallic Gray'],/*Samsung*/
+    ['tab_model_id' => 505,'color' => 'Metallic White'],
+    ['tab_model_id' => 505,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 505,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 506,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 506,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 506,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 506,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 507,'color' => 'Black/Silver'],/*Samsung*/
+    ['tab_model_id' => 507,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 507,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 508,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 508,'color' => 'White'],
+    ['tab_model_id' => 508,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 508,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 509,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 509,'color' => 'White'],
+    ['tab_model_id' => 509,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 509,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 509,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 510,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 510,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 511,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 511,'color' => 'White'],
+    ['tab_model_id' => 511,'color' => 'Red'],
+    ['tab_model_id' => 511,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 511,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 511,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 512,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 512,'color' => 'White'],
+    ['tab_model_id' => 512,'color' => 'Red'],
+    ['tab_model_id' => 512,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 512,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 512,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 513,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 513,'color' => 'White'],
+    ['tab_model_id' => 513,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 513,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 514,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 514,'color' => 'White'],
+    ['tab_model_id' => 514,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 514,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 515,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 515,'color' => 'Gold Brown'],
+    ['tab_model_id' => 515,'color' => 'Garnet Red'],
+    ['tab_model_id' => 515,'color' => 'Midnight Black'],
+    ['tab_model_id' => 515,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 515,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 516,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 516,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 516,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 517,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 517,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 517,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 518,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 518,'color' => 'Gold'],/*Samsung*/
+    ['tab_model_id' => 518,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 518,'memory' => '32GB/1.5GB'],
+    ['tab_model_id' => 519,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 519,'color' => 'Black'],
+    ['tab_model_id' => 519,'color' => 'Green'],
+    ['tab_model_id' => 519,'color' => 'Pink'],
+    ['tab_model_id' => 519,'color' => 'Yellow'],
+    ['tab_model_id' => 519,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 520,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 520,'color' => 'Black'],
+    ['tab_model_id' => 520,'color' => 'Green'],
+    ['tab_model_id' => 520,'color' => 'Pink'],
+    ['tab_model_id' => 520,'color' => 'Yellow'],
+    ['tab_model_id' => 520,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 521,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 521,'color' => 'Black'],
+    ['tab_model_id' => 521,'color' => 'Green'],
+    ['tab_model_id' => 521,'color' => 'Pink'],
+    ['tab_model_id' => 521,'color' => 'Yellow'],
+    ['tab_model_id' => 521,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 522,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 522,'color' => 'Black'],
+    ['tab_model_id' => 522,'memory' => '8GB/1GB'],
+    ['tab_model_id' => 523,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 523,'color' => 'Black'],
+    ['tab_model_id' => 523,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 524,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 524,'color' => 'Black'],
+    ['tab_model_id' => 524,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 525,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 525,'color' => 'Black'],
+    ['tab_model_id' => 525,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 526,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 526,'color' => 'Black'],
+    ['tab_model_id' => 526,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 527,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 527,'color' => 'Black'],
+    ['tab_model_id' => 527,'memory' => '8GB/1.5GB'],
+    ['tab_model_id' => 527,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 528,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 528,'color' => 'Black'],
+    ['tab_model_id' => 528,'memory' => '8GB/1.5GB'],
+    ['tab_model_id' => 528,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 529,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 529,'color' => 'Black'],
+    ['tab_model_id' => 529,'memory' => '8GB/1.5GB'],
+    ['tab_model_id' => 529,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 530,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 530,'color' => 'Black'],
+    ['tab_model_id' => 530,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 531,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 531,'color' => 'Black'],
+    ['tab_model_id' => 531,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 532,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 532,'color' => 'Black'],
+    ['tab_model_id' => 532,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 533,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 533,'color' => 'Metallic Gray'],
+    ['tab_model_id' => 533,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 533,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 534,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 534,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 534,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 535,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 535,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 535,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 536,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 536,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 536,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 536,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 537,'color' => 'Metallic Gray'],/*Samsung*/
+    ['tab_model_id' => 537,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 537,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 537,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 538,'color' => 'Pearl White'],/*Samsung*/
+    ['tab_model_id' => 538,'color' => 'Metallic Black'],
+    ['tab_model_id' => 538,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 538,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 539,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 539,'color' => 'Gold '],
+    ['tab_model_id' => 539,'color' => 'Silver '],
+    ['tab_model_id' => 539,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 539,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 539,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 539,'memory' => '128GB/3GB'],
+    ['tab_model_id' => 540,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 540,'color' => 'Blue '],
+    ['tab_model_id' => 540,'color' => 'White '],
+    ['tab_model_id' => 540,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 541,'color' => 'Pearl White'],/*Samsung*/
+    ['tab_model_id' => 541,'color' => 'Metallic Black'],
+    ['tab_model_id' => 541,'memory' => '8GB/1.5GB'],
+    ['tab_model_id' => 542,'color' => 'Smoky Titanium'],/*Samsung*/
+    ['tab_model_id' => 542,'color' => 'Smoky Blue'],
+    ['tab_model_id' => 542,'color' => 'White'],
+    ['tab_model_id' => 542,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 542,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 543,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 543,'color' => 'Gold'],
+    ['tab_model_id' => 543,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 544,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 544,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 545,'color' => 'Carbon Black'],/*Samsung*/
+    ['tab_model_id' => 545,'color' => 'Silver Gray'],/*Samsung*/
+    ['tab_model_id' => 545,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 546,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 546,'color' => 'Gray'],
+    ['tab_model_id' => 546,'color' => 'White'],
+    ['tab_model_id' => 546,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 547,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 547,'color' => 'Gray'],
+    ['tab_model_id' => 547,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 548,'color' => 'Mocha'],/*Samsung*/
+    ['tab_model_id' => 548,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 549,'color' => 'Smoky Titanium'],/*Samsung*/
+    ['tab_model_id' => 549,'color' => 'Smoky Blue'],
+    ['tab_model_id' => 549,'color' => 'White'],
+    ['tab_model_id' => 549,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 549,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 549,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 550,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 550,'color' => 'White'],
+    ['tab_model_id' => 550,'color' => 'Gray'],
+    ['tab_model_id' => 550,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 551,'color' => 'Dark Gray'],/*Samsung*/
+    ['tab_model_id' => 551,'color' => 'Silver '],
+    ['tab_model_id' => 551,'color' => 'Gold '],
+    ['tab_model_id' => 551,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 551,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 552,'color' => 'Gray'],/*Samsung*/
+    ['tab_model_id' => 552,'color' => 'Silver '],
+    ['tab_model_id' => 552,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 552,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 553,'color' => 'Gray'],/*Samsung*/
+    ['tab_model_id' => 553,'color' => 'Silver'],
+    ['tab_model_id' => 553,'color' => 'Pink Gold'],
+    ['tab_model_id' => 553,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 553,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 553,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 554,'color' => 'Titanium Green'],/*Samsung*/
+    ['tab_model_id' => 554,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 555,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 555,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 556,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 556,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 566,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 557,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 557,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 567,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 558,'color' => 'Titanium Green'],/*Samsung*/
+    ['tab_model_id' => 558,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 559,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 559,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 560,'color' => 'Gray'],/*Samsung*/
+    ['tab_model_id' => 560,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 561,'color' => 'Pearl White'],/*Samsung*/
+    ['tab_model_id' => 561,'color' => 'Metallic Black'],
+    ['tab_model_id' => 561,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 562,'color' => 'Pearl White'],/*Samsung*/
+    ['tab_model_id' => 562,'color' => 'Metallic Black'],
+    ['tab_model_id' => 562,'memory' => '8GB/1.5GB'],
+    ['tab_model_id' => 562,'memory' => '16GB/1.5GB'],
+    ['tab_model_id' => 563,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 563,'color' => 'Gold'],
+    ['tab_model_id' => 563,'memory' => '8GB/1.5GB'],
+    ['tab_model_id' => 564,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 564,'color' => 'White'],
+    ['tab_model_id' => 564,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 564,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 565,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 565,'color' => 'Black'],
+    ['tab_model_id' => 565,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 565,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 566,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 566,'color' => 'White'],
+    ['tab_model_id' => 566,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 566,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 567,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 567,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 567,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 568,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 568,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 568,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 569,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 569,'color' => 'White'],
+    ['tab_model_id' => 569,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 569,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 570,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 570,'color' => 'White'],
+    ['tab_model_id' => 570,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 570,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 571,'color' => 'Dazzling White'],/*Samsung*/
+    ['tab_model_id' => 571,'color' => 'Titanium Bronze'],
+    ['tab_model_id' => 571,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 571,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 572,'color' => 'Dazzling White'],/*Samsung*/
+    ['tab_model_id' => 572,'color' => 'Titanium Bronze'],
+    ['tab_model_id' => 572,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 572,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 573,'color' => 'Dazzling White'],/*Samsung*/
+    ['tab_model_id' => 573,'color' => 'Titanium Bronze'],
+    ['tab_model_id' => 573,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 573,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 574,'color' => 'Dazzling White'],/*Samsung*/
+    ['tab_model_id' => 574,'color' => 'Titanium Bronze'],
+    ['tab_model_id' => 574,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 574,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 575,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 575,'color' => 'Black Gold'],
+    ['tab_model_id' => 575,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 575,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 576,'color' => 'Gold'],/*Samsung*/
+    ['tab_model_id' => 576,'color' => 'White'],
+    ['tab_model_id' => 576,'color' => 'Black'],
+    ['tab_model_id' => 576,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 576,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 577,'color' => 'White'],/*Samsung*/
+    ['tab_model_id' => 577,'color' => 'Black'],
+    ['tab_model_id' => 577,'memory' => '32GB/4GB'],
+    ['tab_model_id' => 578,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 578,'color' => 'White'],
+    ['tab_model_id' => 578,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 578,'memory' => '256GB/4GB'],
+    ['tab_model_id' => 578,'memory' => '256GB/6GB'],
+    ['tab_model_id' => 579,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 579,'color' => 'Gold'],
+    ['tab_model_id' => 579,'color' => 'Silver'],
+    ['tab_model_id' => 579,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 579,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 580,'color' => 'Mountain Gray'],/*Samsung*/
+    ['tab_model_id' => 580,'color' => 'Cloud Blue'],
+    ['tab_model_id' => 580,'color' => 'Rose Blush'],
+    ['tab_model_id' => 580,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 580,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 581,'color' => 'Mountain Gray'],/*Samsung*/
+    ['tab_model_id' => 581,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 582,'color' => 'Chiffon Pink'],/*Samsung*/
+    ['tab_model_id' => 582,'color' => 'Angora Blue'],
+    ['tab_model_id' => 582,'color' => 'Oxford Gray'],
+    ['tab_model_id' => 582,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 582,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 583,'color' => 'Oxford Gray'],/*Samsung*/
+    ['tab_model_id' => 583,'color' => 'Chiffon Pink'],
+    ['tab_model_id' => 583,'color' => 'Angora Blue'],
+    ['tab_model_id' => 583,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 583,'memory' => '128GB/4GB'],
+    ['tab_model_id' => 584,'color' => 'Mystic Black'],/*Samsung*/
+    ['tab_model_id' => 584,'color' => 'Mystic Bronze'],
+    ['tab_model_id' => 584,'color' => 'Mystic Silver'],
+    ['tab_model_id' => 584,'color' => 'Phantom Navy'],
+    ['tab_model_id' => 584,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 584,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 584,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 585,'color' => 'Mystic Black'],/*Samsung*/
+    ['tab_model_id' => 585,'color' => 'Mystic Silver'],
+    ['tab_model_id' => 585,'color' => 'Mystic Green'],
+    ['tab_model_id' => 585,'color' => 'Mystic Pink'],
+    ['tab_model_id' => 585,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 585,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 586,'color' => 'Mystic Black'],/*Samsung*/
+    ['tab_model_id' => 586,'color' => 'Mystic Bronze'],
+    ['tab_model_id' => 586,'color' => 'Mystic Silver'],
+    ['tab_model_id' => 586,'color' => 'Phantom Navy'],
+    ['tab_model_id' => 586,'memory' => '128GB/6GB'],
+    ['tab_model_id' => 586,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 586,'memory' => '512GB/8GB'],
+    ['tab_model_id' => 587,'color' => 'Graphite'],/*Samsung*/
+    ['tab_model_id' => 587,'color' => 'Pink Gold'],
+    ['tab_model_id' => 587,'color' => 'Silver'],
+    ['tab_model_id' => 587,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 587,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 587,'memory' => '256GB/12GB'],
+    ['tab_model_id' => 588,'color' => 'Graphite'],/*Samsung*/
+    ['tab_model_id' => 588,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 588,'memory' => '256GB/12GB'],
+    ['tab_model_id' => 588,'memory' => '256GB/16GB'],
+    ['tab_model_id' => 588,'memory' => '512GB/12GB'],
+    ['tab_model_id' => 588,'memory' => '512GB/16GB'],
+    ['tab_model_id' => 589,'color' => 'Graphite'],/*Samsung*/
+    ['tab_model_id' => 589,'color' => 'Gold'],
+    ['tab_model_id' => 589,'color' => 'Silver'],
+    ['tab_model_id' => 589,'color' => 'Pink'],
+    ['tab_model_id' => 589,'memory' => '128GB/8GB'],
+    ['tab_model_id' => 589,'memory' => '256GB/8GB'],
+    ['tab_model_id' => 589,'memory' => '256GB/12GB'],
+    ['tab_model_id' => 590,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 590,'memory' => '16GB'],
+    ['tab_model_id' => 591,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 591,'color' => 'White'],
+    ['tab_model_id' => 591,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 591,'memory' => '64GB/2GB'],
+    ['tab_model_id' => 592,'color' => 'Dark Grey'],/*Samsung*/
+    ['tab_model_id' => 592,'memory' => '64GB/3GB'],
+    ['tab_model_id' => 593,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 593,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 593,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 594,'color' => 'Black and Grey'],/*Samsung*/
+    ['tab_model_id' => 594,'memory' => '16GB'],
+    ['tab_model_id' => 594,'memory' => '32GB'],
+    ['tab_model_id' => 595,'color' => 'Black and Grey'],/*Samsung*/
+    ['tab_model_id' => 595,'memory' => '16GB'],
+    ['tab_model_id' => 596,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 596,'color' => 'White'],
+    ['tab_model_id' => 596,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 596,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 597,'color' => 'Gray'],/*Samsung*/
+    ['tab_model_id' => 597,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 597,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 597,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 597,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 597,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 597,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 598,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 598,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 598,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 598,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 599,'color' => 'Black'],/*Samsung*/
+    ['tab_model_id' => 599,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 599,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 599,'memory' => '64GB/1GB'],
 ];
 
 
-// Samsung den bashla
+
+
+// Sony den bashla
 
 
 $woman_clothing_type = [
