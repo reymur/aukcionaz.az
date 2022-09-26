@@ -636,8 +636,8 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 178,'name' => 'Prestigio'],/*101*/
     ['sub_category_type_id' => 178,'name' => 'QMobile'],/*102*/
     ['sub_category_type_id' => 178,'name' => 'Samsung'],/*103*/
-    ['sub_category_type_id' => 178,'name' => 'Sony'],
-    ['sub_category_type_id' => 178,'name' => 'TCL'],
+    ['sub_category_type_id' => 178,'name' => 'Sony'],/*104*/
+    ['sub_category_type_id' => 178,'name' => 'TCL'],/*105*/
     ['sub_category_type_id' => 178,'name' => 'Toshiba'],
     ['sub_category_type_id' => 178,'name' => 'Xiaomi'],
     ['sub_category_type_id' => 178,'name' => 'ZTE'],
@@ -1138,11 +1138,9 @@ $tab_model = [
     ['sub_category_type_one_id' => 101,'name' => 'MultiPad 8.0 Ultra Duo'],
     ['sub_category_type_one_id' => 101,'name' => 'MultiPad 9.7 Ultra Duo'],
     ['sub_category_type_one_id' => 101,'name' => 'MultiPad Note 8.0 3G'],
-
-    ['sub_category_type_one_id' => 102,'name' => 'QTab V10'],/*94*/
+    ['sub_category_type_one_id' => 102,'name' => 'QTab V10'],/*494*/
     ['sub_category_type_one_id' => 102,'name' => 'QTab X50'],
-
-    ['sub_category_type_one_id' => 103,'name' => 'Ativ Tab P8510'],/*96*/
+    ['sub_category_type_one_id' => 103,'name' => 'Ativ Tab P8510'],/*496*/
     ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 10.1 (2014)'],
     ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 10.1 N8000'],
     ['sub_category_type_one_id' => 103,'name' => 'Galaxy Note 10.1 N8010'],
@@ -1247,7 +1245,32 @@ $tab_model = [
     ['sub_category_type_one_id' => 103,'name' => 'P6800 Galaxy Tab 7.7'],
     ['sub_category_type_one_id' => 103,'name' => 'P6810 Galaxy Tab 7.7'],
     ['sub_category_type_one_id' => 103,'name' => 'P7500 Galaxy Tab 10.1 3G'],
+
+    ['sub_category_type_one_id' => 104,'name' => 'Tablet P'],/*id 601*/
+    ['sub_category_type_one_id' => 104,'name' => 'Tablet P 3G'],
+    ['sub_category_type_one_id' => 104,'name' => 'Tablet S'],
+    ['sub_category_type_one_id' => 104,'name' => 'Tablet S 3G'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Tablet S'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Tablet S 3G'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Tablet Z'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Tablet Z LTE'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Z2 Tablet'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Z2 Tablet LTE'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Z3 Tablet Compact'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Z4 Tablet'],
+    ['sub_category_type_one_id' => 104,'name' => 'Xperia Z4 Tablet LTE'],
+
+    ['sub_category_type_one_id' => 105,'name' => '10 TabMax'],/*614*/
+    ['sub_category_type_one_id' => 105,'name' => '10 TabMid'],
+    ['sub_category_type_one_id' => 105,'name' => 'NxtPaper'],
+    ['sub_category_type_one_id' => 105,'name' => 'NxtPaper 10s'],
+    ['sub_category_type_one_id' => 105,'name' => 'Tab 10 HD 4G'],
+    ['sub_category_type_one_id' => 105,'name' => 'Tab 10L'],
+    ['sub_category_type_one_id' => 105,'name' => 'Tab 10s'],
+    ['sub_category_type_one_id' => 105,'name' => 'Tab 10s 5G'],
+    ['sub_category_type_one_id' => 105,'name' => 'Tab 8 4G'],
 ];
+
 
 $tab_option = [
     ['tab_model_id' => 1,'color' => 'Black'],/*Acer*/
@@ -3345,12 +3368,73 @@ $tab_option = [
     ['tab_model_id' => 599,'memory' => '16GB/1GB'],
     ['tab_model_id' => 599,'memory' => '32GB/1GB'],
     ['tab_model_id' => 599,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 601,'color' => 'Silver/Black'],
+    ['tab_model_id' => 602,'color' => 'Silver/Black'],
+    ['tab_model_id' => 603,'color' => 'Black'],
+    ['tab_model_id' => 603,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 603,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 604,'color' => 'Black'],
+    ['tab_model_id' => 604,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 604,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 605,'color' => 'Black/Silver'],
+    ['tab_model_id' => 605,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 605,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 605,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 606,'color' => 'Black/Silver'],
+    ['tab_model_id' => 606,'memory' => '16GB/1GB'],
+    ['tab_model_id' => 606,'memory' => '32GB/1GB'],
+    ['tab_model_id' => 606,'memory' => '64GB/1GB'],
+    ['tab_model_id' => 607,'color' => 'Black'],
+    ['tab_model_id' => 607,'color' => 'White'],
+    ['tab_model_id' => 607,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 607,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 608,'color' => 'Black'],
+    ['tab_model_id' => 608,'color' => 'White'],
+    ['tab_model_id' => 608,'memory' => '16GB/2GB'],
+    ['tab_model_id' => 609,'color' => 'Black'],
+    ['tab_model_id' => 609,'color' => 'White'],
+    ['tab_model_id' => 609,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 609,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 610,'color' => 'Black'],
+    ['tab_model_id' => 610,'color' => 'White'],
+    ['tab_model_id' => 610,'color' => 'Black'],
+    ['tab_model_id' => 610,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 611,'color' => 'Black'],
+    ['tab_model_id' => 611,'color' => 'White'],
+    ['tab_model_id' => 611,'memory' => '16GB/3GB'],
+    ['tab_model_id' => 612,'color' => 'Black'],
+    ['tab_model_id' => 612,'color' => 'White'],
+    ['tab_model_id' => 612,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 613,'color' => 'Black'],
+    ['tab_model_id' => 613,'color' => 'White'],
+    ['tab_model_id' => 613,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 614,'color' => 'Dark/Blue'],
+    ['tab_model_id' => 614,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 615,'color' => 'Prime/Black'],
+    ['tab_model_id' => 615,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 616,'color' => 'Ultramarine Green'],
+    ['tab_model_id' => 616,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 617,'color' => 'Dark Gray'],
+    ['tab_model_id' => 617,'color' => 'Ethereal Green'],
+    ['tab_model_id' => 617,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 618,'color' => 'Dark Gray'],
+    ['tab_model_id' => 618,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 619,'color' => 'Prime Black'],
+    ['tab_model_id' => 619,'memory' => '32GB/2GB'],
+    ['tab_model_id' => 620,'color' => 'Gray'],
+    ['tab_model_id' => 620,'color' => 'Silver'],
+    ['tab_model_id' => 620,'memory' => '32GB/3GB'],
+    ['tab_model_id' => 620,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 621,'color' => 'Dark Gray'],
+    ['tab_model_id' => 621,'memory' => '64GB/4GB'],
+    ['tab_model_id' => 622,'color' => 'Prime Black'],
+    ['tab_model_id' => 622,'memory' => '32GB/2GB'],
 ];
 
 
 
 
-// Sony den bashla
+// Toshiba den bashla
 
 
 $woman_clothing_type = [
