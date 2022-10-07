@@ -311,41 +311,40 @@ $sub_category_type = [
     ['sub_category_id' => 39,'name' => 'Toshiba'],
     ['sub_category_id' => 39,'name' => 'Digər'],
     ['sub_category_id' => 39,'name' => 'Noutbuklar üçün aksessuarlar'],
-
     ['sub_category_id' => 40,'name' => 'Surət çıxardan və skanerlər'],
     ['sub_category_id' => 40,'name' => 'Printerlər'],
     ['sub_category_id' => 40,'name' => 'İstehlak və aksesuarlar'],
     ['sub_category_id' => 40,'name' => 'Digər'],
-
     ['sub_category_id' => 41,'name' => 'Acer'],/*id 200 Telefonlar*/
-    ['sub_category_id' => 41,'name' => 'Aiek'],
-    ['sub_category_id' => 41,'name' => 'Alcatel'],
-    ['sub_category_id' => 41,'name' => 'Apple iPhone'],
-    ['sub_category_id' => 41,'name' => 'Asus'],
-    ['sub_category_id' => 41,'name' => 'Blackberry'],
-    ['sub_category_id' => 41,'name' => 'Doogee'],
-    ['sub_category_id' => 41,'name' => 'Dublikat'],
-    ['sub_category_id' => 41,'name' => 'Ericsson'],
-    ['sub_category_id' => 41,'name' => 'Fly'],
-    ['sub_category_id' => 41,'name' => 'Hisense'],
-    ['sub_category_id' => 41,'name' => 'Hoffmann'],
-    ['sub_category_id' => 41,'name' => 'Homtom'],
-    ['sub_category_id' => 41,'name' => 'Honor'],
-    ['sub_category_id' => 41,'name' => 'Hope'],
-    ['sub_category_id' => 41,'name' => 'HTC'],
-    ['sub_category_id' => 41,'name' => 'Huawei'],
-    ['sub_category_id' => 41,'name' => 'Jinga'],
-    ['sub_category_id' => 41,'name' => 'Keneksi'],
-    ['sub_category_id' => 41,'name' => 'Kgtel'],
-    ['sub_category_id' => 41,'name' => 'Leagoo'],
-    ['sub_category_id' => 41,'name' => 'Lenovo'],
-    ['sub_category_id' => 41,'name' => 'LG'],
-    ['sub_category_id' => 41,'name' => 'Meizu'],
-    ['sub_category_id' => 41,'name' => 'Motorola'],
-    ['sub_category_id' => 41,'name' => 'Nokia'],
-    ['sub_category_id' => 41,'name' => 'OnePlus'],
-    ['sub_category_id' => 41,'name' => 'Oukitel'],
-    ['sub_category_id' => 41,'name' => 'Philips'],
+    ['sub_category_id' => 41,'name' => 'Aiek'],/*id 201 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Alcatel'],/*id 202 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Apple iPhone'],/*id 203 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Asus'],/*id 204 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Blackberry'],/*id 205 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Doogee'],/*id 206 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Dublikat'],/*id 207 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Ericsson'],/*id 208 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Fly'],/*id 209 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Hisense'],/*id 210 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Hoffmann'],/*id 211 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Homtom'],/*id 212 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Honor'],/*id 213 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Hope'],/*id 214 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'HTC'],/*id 215 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Huawei'],/*id 216 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Jinga'],/*id 217 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Keneksi'],/*id 218 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Kgtel'],/*id 219 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Leagoo'],/*id 220 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Lenovo'],/*id 221 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'LG'],/*id 222 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Meizu'],/*id 223 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Micromax'],/*id 224 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Motorola'],/*id 225 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Nokia'],/*id 226 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'OnePlus'],/*id 227 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Oukitel'],/*id 228 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Philips'],/*id 229 Telefonlar*/
     ['sub_category_id' => 41,'name' => 'Realme'],
     ['sub_category_id' => 41,'name' => 'Samsung'],
     ['sub_category_id' => 41,'name' => 'Siemens'],
@@ -359,39 +358,32 @@ $sub_category_type = [
     ['sub_category_id' => 41,'name' => 'Aksesuarlar'],
     ['sub_category_id' => 41,'name' => 'Ehtiyat hissələri'],
     ['sub_category_id' => 41,'name' => 'Ehtiyat hissələri'],
-
     ['sub_category_id' => 42,'name' => 'Azercell'],
     ['sub_category_id' => 42,'name' => 'Bakcell'],
     ['sub_category_id' => 42,'name' => 'Nar'],
     ['sub_category_id' => 42,'name' => 'Naxtel'],
     ['sub_category_id' => 42,'name' => 'Katel CDMA'],
-
     ['sub_category_id' => 43,'name' => 'Binokl və teleskoplar'],
     ['sub_category_id' => 43,'name' => 'Fotoaparatlar'],
     ['sub_category_id' => 43,'name' => 'Avadanlıq və aksesuarlar'],
     ['sub_category_id' => 43,'name' => 'Linzalar'],
-
     ['sub_category_id' => 44,'name' => 'Kəmərlər, aksesuarlar'],
     ['sub_category_id' => 44,'name' => 'Smart qolbaqlar'],
     ['sub_category_id' => 44,'name' => 'Smart saatlar'],
-
     ['sub_category_id' => 45,'name' => 'Televizorlar'],
     ['sub_category_id' => 45,'name' => 'Antenlər'],
     ['sub_category_id' => 45,'name' => 'Kronşteynlər'],
     ['sub_category_id' => 45,'name' => 'Pultlar'],
     ['sub_category_id' => 45,'name' => 'Televizor altlıqları və stendlər'],
     ['sub_category_id' => 45,'name' => 'Tünerlər'],
-
     ['sub_category_id' => 46,'name' => 'Konsertlər'],
     ['sub_category_id' => 46,'name' => 'Teatr'],
     ['sub_category_id' => 46,'name' => 'Səyahət'],
     ['sub_category_id' => 46,'name' => 'Səyahət'],
-
     ['sub_category_id' => 47,'name' => 'BMX'],
     ['sub_category_id' => 47,'name' => 'Dağ'],
     ['sub_category_id' => 47,'name' => 'Yol'],
     ['sub_category_id' => 47,'name' => 'Ehtiyat hissələri və aksesuarlar'],
-
     ['sub_category_id' => 48,'name' => 'Qramplastinka'],
     ['sub_category_id' => 48,'name' => 'Nişanlar, medallar, döş nişanları'],
     ['sub_category_id' => 48,'name' => 'Kolleksiya silahları'],
@@ -400,14 +392,12 @@ $sub_category_type = [
     ['sub_category_id' => 48,'name' => 'Modellər'],
     ['sub_category_id' => 48,'name' => 'Pullar'],
     ['sub_category_id' => 48,'name' => 'Əl işləri'],
-
     ['sub_category_id' => 49,'name' => 'Aksesuarlar'],
     ['sub_category_id' => 49,'name' => 'Gitara və digər simlilər'],
     ['sub_category_id' => 49,'name' => 'Studia və konsertlər üçün'],
     ['sub_category_id' => 49,'name' => 'Pianino və digər klavişnilər'],
     ['sub_category_id' => 49,'name' => 'Skripkalar və digər yaylılar'],
     ['sub_category_id' => 49,'name' => 'Zərb alətləri'],
-
     ['sub_category_id' => 50,'name' => 'Bilyard və boulinq'],
     ['sub_category_id' => 50,'name' => 'Fitnes və trenajorlar'],
     ['sub_category_id' => 50,'name' => 'İdman qidası və əlavələr'],
@@ -417,10 +407,8 @@ $sub_category_type = [
     ['sub_category_id' => 50,'name' => 'Su idmanı və hovuzlar'],
     ['sub_category_id' => 50,'name' => 'Topla oyunlar'],
     ['sub_category_id' => 50,'name' => 'Təkbətək döyüş'],
-
     ['sub_category_id' => 51,'name' => 'Jurnallar'],
     ['sub_category_id' => 51,'name' => 'Kitablar'],
-
     ['sub_category_id' => 55,'name' => 'Aksesuarlar'],
     ['sub_category_id' => 55,'name' => 'Audio və video texnika'],
     ['sub_category_id' => 55,'name' => 'Avto kosmetika və kimya'],
@@ -431,24 +419,20 @@ $sub_category_type = [
     ['sub_category_id' => 55,'name' => 'Şinlər, disklər və təkərlər'],
     ['sub_category_id' => 55,'name' => 'Siqnalizasiyalar'],
     ['sub_category_id' => 55,'name' => 'Videoqeydiyyatçılar'],
-
     ['sub_category_id' => 56,'name' => 'Hidrosikllar'],
     ['sub_category_id' => 56,'name' => 'Ehtiyat hissələri və aksesuarlar'],
     ['sub_category_id' => 56,'name' => 'Katerlər və yaxtalar'],
     ['sub_category_id' => 56,'name' => 'Mühərrikli qayıqlar'],
     ['sub_category_id' => 56,'name' => 'Hava qayıqları'],
-
     ['sub_category_id' => 59,'name' => 'Traktorlar'],
     ['sub_category_id' => 59,'name' => 'Kombaynlar'],
     ['sub_category_id' => 59,'name' => 'Köməkçi qoşqular'],
     ['sub_category_id' => 59,'name' => 'Kultivatorlar'],
     ['sub_category_id' => 59,'name' => 'Motobloklar'],
     ['sub_category_id' => 59,'name' => 'Digər texnika'],
-
     ['sub_category_id' => 64,'name' => 'Satış'],
     ['sub_category_id' => 64,'name' => 'Kirayə'],
     ['sub_category_id' => 64,'name' => 'İcarə'],
-
     ['sub_category_id' => 68,'name' => 'Akita-inu'],
     ['sub_category_id' => 68,'name' => 'Alabay'],
     ['sub_category_id' => 68,'name' => 'Alman ovçarkası'],
@@ -475,7 +459,6 @@ $sub_category_type = [
     ['sub_category_id' => 68,'name' => 'Samoyed'],
     ['sub_category_id' => 68,'name' => 'Şpits'],
     ['sub_category_id' => 68,'name' => 'Yorkşir teryer'],
-
     ['sub_category_id' => 69,'name' => 'Avropa'],
     ['sub_category_id' => 69,'name' => 'Benqal'],
     ['sub_category_id' => 69,'name' => 'Britan'],
@@ -484,7 +467,6 @@ $sub_category_type = [
     ['sub_category_id' => 69,'name' => 'Sibir'],['sub_category_id' => 23,'name' => 'Çarpayılar'],
     ['sub_category_id' => 69,'name' => 'Şotland'],
     ['sub_category_id' => 69,'name' => 'Türk anqorı'],
-
     ['sub_category_id' => 74,'name' => 'Baytarlıq apteki'],
     ['sub_category_id' => 74,'name' => 'Bio-tualetlər və doldurucular'],
     ['sub_category_id' => 74,'name' => 'Daşıma konteynerləri və çantaları'],
@@ -495,14 +477,12 @@ $sub_category_type = [
     ['sub_category_id' => 74,'name' => 'Xaltalar və qayışlar'],
     ['sub_category_id' => 74,'name' => 'Yem və su qabları'],
     ['sub_category_id' => 74,'name' => 'Yəhərlər'],
-
     ['sub_category_id' => 79,'name' => 'Gözəllik salonu üçün'],
     ['sub_category_id' => 79,'name' => 'Mağaza üçün'],
     ['sub_category_id' => 79,'name' => 'Ofis üçün'],
     ['sub_category_id' => 79,'name' => 'Restoran üçün'],
     ['sub_category_id' => 79,'name' => 'Sənaye'],
     ['sub_category_id' => 79,'name' => 'Tibbi avadanlıqlar'],
-
     ['sub_category_id' => 94,'name' => 'Dam və çardaq'],
     ['sub_category_id' => 94,'name' => 'Darvaza və avtomatik qapıların sifarişi'],
     ['sub_category_id' => 94,'name' => 'Dekor, dizayn, smeta və planlama'],
@@ -520,7 +500,6 @@ $sub_category_type = [
     ['sub_category_id' => 94,'name' => 'Pəncərə, qapı, eyvan'],
     ['sub_category_id' => 94,'name' => 'Təmir xidmətləri'],
     ['sub_category_id' => 94,'name' => 'Tikinti xidmətləri'],
-
     ['sub_category_id' => 97,'name' => 'Audio və video cihazların təmiri'],
     ['sub_category_id' => 97,'name' => 'Kombi və su qızdırıcılarının təmiri'],
     ['sub_category_id' => 97,'name' => 'Kompüter və noutbukların təmiri'],
@@ -607,8 +586,8 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 136,'name' => 'Kürəklər'],
     ['sub_category_type_id' => 136,'name' => 'Qiyməkeşlər və toxalar'],
     ['sub_category_type_id' => 136,'name' => 'Yabalar, külünglər və kultivatorlar'],
-    ['sub_category_type_id' => 178,'name' => 'Acer'],/*id 76*/
-    ['sub_category_type_id' => 178,'name' => 'Alcatel'],
+    ['sub_category_type_id' => 178,'name' => 'Acer'],/*id 75*/
+    ['sub_category_type_id' => 178,'name' => 'Alcatel'],/*id 76*/
     ['sub_category_type_id' => 178,'name' => 'Allview'],
     ['sub_category_type_id' => 178,'name' => 'Amazon'],
     ['sub_category_type_id' => 178,'name' => 'Apple'],
@@ -641,7 +620,6 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 178,'name' => 'Toshiba'],/*106*/
     ['sub_category_type_id' => 178,'name' => 'Xiaomi'],/*107*/
     ['sub_category_type_id' => 178,'name' => 'ZTE'],/*108*/
-
     ['sub_category_type_id' => 179,'name' => 'AirOn'],/*109*/
     ['sub_category_type_id' => 179,'name' => 'Amazon'],/*110*/
     ['sub_category_type_id' => 179,'name' => 'Barnes&Noble'],/*111*/
@@ -654,9 +632,1896 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 179,'name' => 'Wexler'],/*118*/
 ];
 
-// Telefon Acer den basla
+$phone_marka = [
+    ['sub_category_id' => 200,'name' => 'DX650'],/*Acer*/
+    ['sub_category_id' => 200,'name' => 'M900'],/*Acer*/
+    ['sub_category_id' => 200,'name' => 'Predator 8'],/*Acer*/
+    ['sub_category_id' => 201,'name' => 'C6'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'E1'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'M3'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'M4'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'M5'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'M7'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'M9'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'Q1'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'V5'],/*Aiek*/
+    ['sub_category_id' => 201,'name' => 'X6'],/*Aiek*/
+    ['sub_category_id' => 202,'name' => '1'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1B (2020)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1c (2019)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1s'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1S (2020)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1SE (2020)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1T 10'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1T 7'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1v (2019)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1V (2020)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1x'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '1x (2019)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3 (2019)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3088'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3c'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3L'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3L (2020)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3T 10'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3T 8'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3v'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3v (2019)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3x'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3x (2019)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '3X (2020)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '5'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '5v'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => '7'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Idol 4'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Idol 4s'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Idol 5'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Idol 5s'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Fire C'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Fire C 2G'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Fire E'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Fire S'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Flash'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Flash (2017)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Flash 2'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Flash Plus'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Flash Plus 2'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol 2'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol 2 Mini'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol 3 (4.7)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol 3 (5.5)'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol Alpha'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol S'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol X'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Idol X+'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop 4'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop 4+'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop 4S'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop C3'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop C5'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop C7'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'OneTouch Pop C9'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Pixi 3'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Pixi 4'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Shine Lite'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Tetra'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'Tiger XTM 2008G'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'U3'],/*Alcatel*/
+    ['sub_category_id' => 202,'name' => 'U5'],/*Alcatel*/
+    ['sub_category_id' => 203,'name' => '11'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '11 Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '11 Pro Max'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '12'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '12 Mini'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '12 Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '12 Pro Max'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '13'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '13 Mini'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '13 Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '13 Pro Max'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '14'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '14 Plus'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '14 Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '14 Pro Max'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '3GS'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '4'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '4S'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '5'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '5C'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '5S'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '6'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '6 Plus'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '6S'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '6S Plus'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '7'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '7 Plus'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '8'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => '8 Plus'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'SE'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'SE (2020)'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'SE (2022)'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'X'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'XR'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'XS'],/*Appl IPhone*/
+    ['sub_category_id' => 203,'name' => 'XS Max'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'ROG Phone'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'ROG Phone 3'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'ROG Phone 3 Strix'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'ROG Phone II'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 3 Zoom'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 3s Max'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Max'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Max Plus'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Max Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Selfie'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Selfie Lite'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 4 Selfie Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 5'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 5 Lite'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 5z'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 6'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 7'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone 7 Pro'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone AR'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Go'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Live'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'ZenFone Live (L1)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max (M1)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max (M2)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max Plus (M1)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max Plus (M2)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max Pro (M1)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max Pro (M2)'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone Max Shot'],/*Appl IPhone*/
+    ['sub_category_id' => 204,'name' => 'Zenfone V'],/*Appl IPhone*/
+    ['sub_category_id' => 205,'name' => '4G LTE Playbook'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => '9720'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Aurora'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Bold 9790'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Bold Touch 9900'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Bold Touch 9930'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Classic'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Classic Non Camera'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 8980'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 9220'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 9320'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 9350'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 9360'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 9370'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve 9380'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Curve Touch'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'DTEK50'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'DTEK60'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Evolve'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Evolve X'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'KEY2'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'KEY2 LE'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Keyone'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Leap'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Motion'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => 'Passport'],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Porsche Design P'9531"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Porsche Design P'9981"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Porsche Design P'9982"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Porsche Design P'9983"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Priv"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Q10"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Q5"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Storm3"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Torch 9810"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Torch 9850"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Torch 9860"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Volt"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Z10"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Z3"],/*Blackberry*/
+    ['sub_category_id' => 205,'name' => "Z30"],/*Blackberry*/
+    ['sub_category_id' => 206,'name' => "BL12000"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "BL12000 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "BL5000"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "BL5500 Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "BL7000"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "BL9000"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Mix"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Mix 2"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Mix Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "N10"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "N100"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "N20 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "N30"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S30"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S35 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S40"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S40 Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S40 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S50"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S55"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S55 Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S58 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S60"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S60 Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S68 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S70"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S70 Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S80"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S80 Lite"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S88 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S90"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S90 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S90C"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S95 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "S96 Pro"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Shoot 2"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X10"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X100"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X10S"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X20"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X20L"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X30"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X30L"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X50"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X50L"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X53"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X55"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X60"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X60L"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X70"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X90"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X90L"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "X95"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Y7"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Y7 Plus"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Y8"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Y8 Plus"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Y8C"],/*Doogee*/
+    ['sub_category_id' => 206,'name' => "Y9 Plus"],/*Doogee*/
+    ['sub_category_id' => 208,'name' => "GF 788"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "GF 788e"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "R310s"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "R320"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "R380"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "R600"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "S 868"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T28 World"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T28s"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T29s"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T39"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T65"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T66"],/*Ericsson*/
+    ['sub_category_id' => 208,'name' => "T68"],/*Ericsson*/
+    ['sub_category_id' => 209,'name' => "B240"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Champ"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 1"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 11"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 12"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 13"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 14"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 16"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 3"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 6"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 7"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 8"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Cirrus 9"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Ego Art 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 1"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 10"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 3"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 4"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 6"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 7"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 8"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Era Nano 9"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Ezzy Trendy"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Ezzy Trendy 3"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "F195"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "F196"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "FF177"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "FF179"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "FF180"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "FF301"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Flip"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "IQ237 Dynamic"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Ace"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Compact"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Geo"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Jet"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Mega"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Play"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Life Sky"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "M90"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Memory Plus"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "MX330"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 1"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 10"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 11"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 12"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 14"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 15"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 16"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 17"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 3"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 4"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 7"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 8"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Nimbus 9"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Power Plus 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Power Plus 3"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Power Plus 5000"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "S285"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Slimline"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 1"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 2"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 3"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 4"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 5"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 6"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 7"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Stratus 9"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Tornado One"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Tornado Slim"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "Tornado TS113"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "View"],/*Fly*/
+    ['sub_category_id' => 209,'name' => "View Max"],/*Fly*/
+    ['sub_category_id' => 210,'name' => "C20"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "C30"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F10"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F17 Pro"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F20"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F22"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F23"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F23 Plus"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F24"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F27"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "F32"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "Infinity E9"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "Infinity F17 Pro"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "Infinity H12"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "Infinity H12 Lite F35"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "Infinity Lite S L675"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "L830"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "T5"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "T5 Plus"],/*Hisense*/
+    ['sub_category_id' => 210,'name' => "T5 Pro"],/*Hisense*/
+    ['sub_category_id' => 211,'name' => "Neo A100"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "Neo A300"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "Neo A700"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "Neo A900"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "X Go"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "X Max"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "X Play"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "X Prime"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "X Pro"],/*Hoffmann*/
+    ['sub_category_id' => 211,'name' => "X Ultra"],/*Hoffmann*/
+    ['sub_category_id' => 212,'name' => "HT16"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT16 Pro"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT16S"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT17"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT3"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT3 Pro"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT7"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "HT7 Pro"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "S16"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "S17"],/*Homtom*/
+    ['sub_category_id' => 212,'name' => "S9 Plus"],/*Homtom*/
+    ['sub_category_id' => 213,'name' => "10"],/*Honor*/
+    ['sub_category_id' => 213,'name' => "10 Lite"],/*Honor*/
+    ['sub_category_id' => 213,'name' => "10X Lite"],/*Honor*/
+    ['sub_category_id' => 213,'name' => '2'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '20'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '20 Lite'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '20 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '20e'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '20i'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '20S'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '3'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '30'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '30 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '30 Pro+'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '30 Youth'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '30i'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '30S'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '3C'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '3C 4G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '3C Play'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '3X G750'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '3X Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '4 Play'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '4C'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '4X'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '50'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '50 Lite'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '50 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '50 SE'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '5A'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '5c'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '5X'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '6'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '6 Plus'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '60'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '60 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '60 SE'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '6A (Pro)'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '6C Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '6X'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '7'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '70'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '70 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '70 Pro +'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '7A'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '7C'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '7i'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '7S'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '7X'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8A 2020'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8A Prime'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8A Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8C'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8S'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8S 2020'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8X'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8X 5G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '8X Max'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9 Lite'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9A'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9C'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9N (9i)'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9S'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9X'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9X Lite'],/*Honor*/
+    ['sub_category_id' => 213,'name' => '9X Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Bee'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Holly'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Holly 2 Plus'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Holly 3'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 2'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 2 3D'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 3'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 3 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 3 Pro+'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 4'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 4 Lite'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 4 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Magic 4 Ultimate'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Note 10'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Note 8'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 20'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 3'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 30'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 30 Plus'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 3e'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 4T'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 4T Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 5 5G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 5 Youth'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 5T Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 5T Youth'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 6T'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 6T Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 8A'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play 9A'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play4'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Play4 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'Tab 5'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'U8860'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'V30'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'V30 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'V40 5G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'V40 Lite'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'V8'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'View 10'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'View 20'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'View 30'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'View 30 Pro'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'View 40'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X10 5G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X10 Max 5G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X20 SE'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X30'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X30 Max'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X30i'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X40'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X40i'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X7'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X8'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X8 5G'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X9'],/*Honor*/
+    ['sub_category_id' => 213,'name' => 'X9 5G'],/*Honor*/
+    ['sub_category_id' => 214,'name' => '2019'],/*Hope*/
+    ['sub_category_id' => 214,'name' => '2020'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'A10'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'A8'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'Aura'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'B82'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'BM10'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'F1'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'F35'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'K19'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'K2021'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'K21'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'K35 Plus'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'M130'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'M60'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S1'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S15'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S15 Mini'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S16'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S17'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S19'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S2'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S23'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S29'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S35'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S66 Mini'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S68 Mini'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S70'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S77'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'S800'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'SQ'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'SQ92'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'T22'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'T55'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'V1'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'V3'],/*Hope*/
+    ['sub_category_id' => 214,'name' => 'V8'],/*Hope*/
+    ['sub_category_id' => 215,'name' => '10'],/*HTC*/
+    ['sub_category_id' => 215,'name' => '10 evo'],/*HTC*/
+    ['sub_category_id' => 215,'name' => '7 Pro'],/*HTC*/
+    ['sub_category_id' => 215,'name' => '7 Surround'],/*HTC*/
+    ['sub_category_id' => 215,'name' => '7 Trophy'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Advantage X7510'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Arrive'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 10 Pro'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 12'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 12+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 12s'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 19+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 19s'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 20 Pro'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 20+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 21 Pro 5G'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 210 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 22 Pro'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 300'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 326G Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 520'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 526'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 526G'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 526G+ Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 530'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 600 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 601'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 601 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 616 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 620'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 620G Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 626'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 626G+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 626s'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 628'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 630'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 650'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 700'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 728 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 728 Ultra'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 816'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 816 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 816G Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 820 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 820G+ Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 820q Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 820s Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 825'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 828 Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire 830'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire C'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire Eye'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire L'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire U'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Desire X'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'DROID DNA'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'DROID Incredible 4G LTE'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'EVO 3D'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'EVO View 4G'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Exodus 1'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Exodus 1s'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Flyer Wi-Fi'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Hero S'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Inspire 4G'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'J'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Jetstream'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'MAX 4G'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Nexus 9'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (E8)'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (E8) CDMA'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (M7)'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (M8 Eye)'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (M8) CDMA'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (M8) Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One (M8) for Windows'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One A9'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One A9s'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One E9'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One E9+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One E9s Dual Sim'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One M8'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One M8s'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One M9'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One M9+ Supreme Camera'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One Mini'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One Mini 2'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One S'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One S9'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One X'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One X10'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'One X9'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Rezound'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Trophy'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U Play'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U Ultra'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U11'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U11 Eyes'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U11 Life'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U11+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U12 Life'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U12+'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U19e'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'U20 5G'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Wildfire E1 Lite'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Wildfire E2'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Wildfire E2 Plus'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Wildfire E3'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Wildfire R70'],/*HTC*/
+    ['sub_category_id' => 215,'name' => 'Wildfire X'],/*HTC*/
+    ['sub_category_id' => 216,'name' => 'Ascend D quad'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend D quad XL'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend D2'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G300'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G312'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G330'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G330D'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G350'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G500'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G510'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G525'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G526'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G535'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G6'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G6 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G600'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G615'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G620s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G630'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G7'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G700'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G730'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend G740'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend GX1'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend II'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Mate'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Mate2 4G'],/*Huawei */
+    ['sub_category_id' => 216,'name' => 'Ascend Mate7'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Mate7 Monarch'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P1'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P1 LTE'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P1s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P2'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P6'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P6 S'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P7'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P7 mini'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P7 Sapphire Edition'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend W1'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend W2'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y100'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y200'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y201 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y210D'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y220'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y221'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y300'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y320'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y330'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y511'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y520'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y530'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y540'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y550'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend Y600'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'D51 Discovery'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 10'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 10 Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 10s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 20 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 20 Plus 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 20 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 20e'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 5s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 6'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 6s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 9'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 9e'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy 9s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Enjoy Z 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Fit'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Fusion 2 U8665'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'G3621L'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'G610s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'G7 Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'G8'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'G9 Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'IDEOS S7'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'IDEOS S7 Slim'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Impulse 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'M886 Mercury'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 10'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 10 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 10 Porsche Design'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 10 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 20'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 20 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 20 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 20 RS Porsche Design'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 20 X'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 20 X (5G)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 30'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 30 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 30E Pro 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40 Pro 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40 Pro+'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40 RS Porsche Design'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40E'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 40E 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 50 RS Porsche Design'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 8'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 9'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 9 Porsche Design'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate 9 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate RS Porsche Design'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate S'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate X'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate X2'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate X2 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Mate Xs'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'MatePad Pro 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nexus 6P'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 10'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 10 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 10z'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 2'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 2 plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 2s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 3'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 3i'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 4'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 4e'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5i'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5i Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5T'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5z'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 6'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 6 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 6 SE'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 7 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 7 Pro 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 7 SE 5G Youth'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 7i'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 8'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 8 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 8 Pro 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 8 SE'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 8 SE 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 8i'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 9'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 9 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 9 SE'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'nova 9 SE 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova Y60'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova Y70 Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'nova Y90'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P smart 2019'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart 2020'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart 2021'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart Pro 2019'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart S'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart Z'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P Smart+ 2019'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P10'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P10 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P10 Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P20'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P20 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P20 Lite (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P20 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P30'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P30 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P30 Lite New Edition'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P30 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P30 Pro New Edition'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 4G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 Lite 5G'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 Lite E'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 Pro+'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P50'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P50 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P50E'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P8'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P8 Lite (2017)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P8Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P8Lite ALE-L04'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P8max'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P9'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P9 Lite'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P9 Lite mini'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P9 Plus'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Premia 4G M931'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'SnapTo'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'U8687 Cronos'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y Max'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y3 (2017)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y3 (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y300II'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y360'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y3II'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y5 (2017)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y5 (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y5 Lite (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y5 Prime (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y560'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y5II'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y5p'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6 (2017)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6 (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6 (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6 Prime (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6 Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6 Pro (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y625'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y635'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6II Compact'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6p'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y6s (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 Prime'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 Prime (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 Prime (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 Pro (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7 Pro (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7a'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7p'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y8p'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y8s'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y9 (2018)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y9 (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y9 Prime (2019)'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y9a'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y9s'],/*Huawei*/
+    ['sub_category_id' => 217,'name' => 'Goal Plus'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Hit'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Joy'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Joy Pro'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'M240'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'M245'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Neon'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Optim 4G'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Pass'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Pass 3G'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Pass Plus'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Picasso Note'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Simple 2.4'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Simple F100'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Simple F110'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Simple F140'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Simple F200n'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Simple F215'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Start'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Start LTE'],/*Jinga*/
+    ['sub_category_id' => 217,'name' => 'Win Pro'],/*Jinga*/
+    ['sub_category_id' => 218,'name' => 'Art'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'E2'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'K7'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'Q3'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'Q5'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'S10'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'S8'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'T2'],/*Keneksi*/
+    ['sub_category_id' => 218,'name' => 'X9'],/*Keneksi*/
+    ['sub_category_id' => 219,'name' => '9300'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'A310'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'B110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'B310'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'B360'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'C2-01'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'C3521'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'E1200'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'E1205'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'E1272'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'GX200'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I6'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I7'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I9'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K-L100'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K105'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K1205'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K1510'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K1803'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2-02'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K20'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2090'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2100'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2130'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2160'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2171'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2180'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2190'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K30'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K301'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K3100'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K312'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K313'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K349'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K350'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K351 Mini'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K371'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K3800'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K3900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K401'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K453'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K465'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K484'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K50'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5231'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5232'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K528'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K560'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5600'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5606'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5615'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5616'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5620'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5624'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5625'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5625 Mini'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K60'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K6800'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K6900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K7000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K80'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K8000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K8110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K8800'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K9000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K9900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG1000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG103'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG105'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG106'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG1110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG1280'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG18'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG2000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG2720'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG301'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG3310'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG360'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG465'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG528'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG528M'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG660'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG8110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT200'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT2175'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT390'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT5607'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'N110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'N220'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'S3600'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'Storm 4'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'Storm 6'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'T401'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'X2-02'],/*Kgtel*/
+    ['sub_category_id' => 220,'name' => 'Kiicaa Mix'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Kiicaa Power'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M10'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M11'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M12'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M13'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M8'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M8 Pro'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M9'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'M9 Pro'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'S11'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'T5c'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'T8s'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Z10'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Z5'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Z5c'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Z6'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Z9'],/*Leagoo*/
+    ['sub_category_id' => 221,'name' => 'A10-70 A7600'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A1000'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A185'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A1900'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A2010'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A269i'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A316i'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A319'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A328'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A335'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A336'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A3690'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A369i'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A390'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A3900'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A5'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A5000'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A516'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A526'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A536'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A60'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A60'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A6000'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A6000 Plus'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A6010'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A6010 Plus'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A606'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A616'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A630'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A65'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A660'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A680'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A690'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A7'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A7-30 A3300'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A7-50 A3500'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A7000'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A7000 Plus'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A706'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A789'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A8 2020'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A8-50 A5500'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A800'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A820'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A830'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A850'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A850+'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A859'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A880'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A889'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A916'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'C2 Power'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'E156'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Golden Warrior A8'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Golden Warrior Note 8'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Golden Warrior S8'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K12'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K12 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K13'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K13 Note'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K13 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K3'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K3 Note'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K320t'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K5 Note (2018)'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K5 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K6'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K6 Note'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K6 Power'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K80'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K800'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K860'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K9'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'K900'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Legion 2 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Legion Duel'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Legion Duel 2'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Legion Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Legion Y70'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Legion Y90'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'LePhone S2'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'M10 FHD REL'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'P2'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'P70'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'P700i'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'P770'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'P780'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'P90'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Phab'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Phab Plus'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Phab2 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Q330'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Q350'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S5 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S5000'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S560'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S580'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S650'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S660'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S720'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S750'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S800'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S820'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S850'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S856'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S860'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S880'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S890'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S90 Sisley'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S920'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S930'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'S939'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe P1'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe P1m'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe S1'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe Shot'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe X S960'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe X2'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe X2 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe X3'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe X3 c78'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe Z K910'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe Z2'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Vibe Z2 Pro'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Z5'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Z5 Pro GT'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'Z6'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'ZUK Edge'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'ZUK Z1'],/*Lenovo*/
+    ['sub_category_id' => 222,'name' => 'AKA'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Aristo 2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Bello II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Enact VS890'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'F60'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'F70 D315'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Fireweb'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Folder 2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Flex'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Flex2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Pro 2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Pro Lite'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Pro Lite Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Stylo'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Vista'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Vista 2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Watch R W110'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G Watch W100'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G2 Lite'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G2 Mini'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G3'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G3 A'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G3 S'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G3 S Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G3 Screen'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G3 Stylus'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G4'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G4 Beat'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G4 Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G4 Stylus'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G4c'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G7 One'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G7 ThinQ'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'G8S ThinQ'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'GX F310L'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Joy'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K10 (2018)'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K11 Plus'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K20 Plus'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K22'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K30'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K31'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K41S'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K42'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K51S'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K52'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K61'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K62'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K71'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K8 (2018)'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'K92 5G'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L Bello'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L Fino'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L Prime'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L20'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L30'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L35'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L40 D160'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L40 Dual D170'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L45 Dual X132'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L50'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L60'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L60 Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L65 D280'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L65 Dual D285'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L70 D320N'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L70 Dual D325'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L80'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L80 Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L90 D405'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'L90 Dual D410'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Leon'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Lucid 3 VS876'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Lucid2 VS870'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Magna'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Nexus 5'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Nexus 5X'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus F3'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus F3Q'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus F5'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus F6'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus F7'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus G Pro'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus GJ'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L1 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L1 II Tri'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L2 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L3 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L3 II Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L4 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L4 II Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L4 II Tri'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L5 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L5 II Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L7 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L7 II Dual'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus L9 II'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Optimus Zone VS410'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q Stylo 4'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q31'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q51'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q52'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q61'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q7'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q9'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Q92 5G'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Spirit'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Stylo 5'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Stylo 6'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Tribute'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Tribute 2'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Tribute Empire'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'U'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'V10'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'V35 ThinQ'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'V40 ThinQ'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'V60 ThinQ 5G'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'V60 ThinQ 5G UW'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Velvet'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Velvet 5G'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Velvet 5G UW'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Volt'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Vu 3 F300L'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W10'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W10 Alpha'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W30'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W31'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W31'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W41'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W41 Pro'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'W41+'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Wine Smart'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Wing 5G'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'X Max'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'X Power 3'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'X Screen'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'X4+'],/*LG*/
+    ['sub_category_id' => 222,'name' => 'Zero'],/*LG*/
+    ['sub_category_id' => 223,'name' => '15'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '15 Lite'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '15 Plus'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16 Plus'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16s'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16s Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16T'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16X'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '16Xs'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '17'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '17 Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '18 Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '18s'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '18s Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => '18x'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'C9'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'C9 Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'E2'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'E3'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M1'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M1 Metal'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M1 Note'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M10'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M2'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M2 Note'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M3'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M3 Max'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M3 Note'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M3e'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M3s'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M3x'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M5'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M5 Note'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M5c'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M5s'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M6'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M6 Note'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M6s'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M6T'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'M8c'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX 4-core'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX2'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX3'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX4'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX4 Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX5'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX5e'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'MX6'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Note 8'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Note 9'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'PRO 5'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Pro 6'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Pro 6 Plus'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Pro 6s'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Pro 7'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'Pro 7 Plus'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'U10'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'U20'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'V8'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'V8 Pro'],/*Meizu*/
+    ['sub_category_id' => 223,'name' => 'X8'],/*Meizu*/
+    ['sub_category_id' => 224,'name' => 'Bharat 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 2 Ultra'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 2+'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 3'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 5'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 5 Infinity'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 5 Plus'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat 5 Pro'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bharat Go'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt A82'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt D303'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt D320'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt D321'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Q324'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Q331'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Q332'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Q338'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Q339'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Q381'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt S300'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt S301'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt S302'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Selfie'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Supreme'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Supreme 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Bolt Supreme 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 1'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 1 2018'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 5'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 5 Lite'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 6'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas 6 Pro'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas A1'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Amaze'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Amaze 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Amaze 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Blaze 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Blaze 4G+'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Doodle 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Evok'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Evok Note'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Evok Power'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Fire 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Fire 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Fire 4G Plus'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Fire 5'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Fire 6'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Hue'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Infinity'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Infinity Life'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Infinity Pro'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Juice 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Juice 3'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Juice 3+'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Juice 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Juice 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Knight 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Mega'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Mega 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Mega 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Nitro 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Nitro 3'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Nitro 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Pace 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Pep'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Play'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Play 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Pulse 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Selfie 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Selfie 3 Q348'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Selfie 3 Q460'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Selfie 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Selfie Lens'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Sliver 5'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Spark'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Spark 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Spark 2 Plus'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Spark 3'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Spark 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Unite 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Unite 4 Pro'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas xp 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Xpress 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Canvas Xpress 4G'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Dual 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Dual 5'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Evok Dual Note'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'In 1b'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'In 2c'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'In note 1'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'In note 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Infinity N11'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Infinity N12'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Selfie 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Selfie 2 Note'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Spark Vdeo'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Unite 3'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Unite 4 plus'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Vdeo 1'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Vdeo 2'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Vdeo 3'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Vdeo 4'],/*Micromax*/
+    ['sub_category_id' => 224,'name' => 'Vdeo 5'],/*Micromax*/
+    ['sub_category_id' => 225,'name' => 'A1010'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Defy (2021)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Droid Bionic XT865'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Droid XTreme'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'E1060'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'E1120'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'E390'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge (2021)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge (2022)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 20'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 20 Fusion'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 20 Lite'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 20 Pro'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 30'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 30 Fusion'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 30 Pro'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge 30 Ultra'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge S'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge S30'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge X30'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge+'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Edge+ 5G UW (2022)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'G Pure'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'MicroTAC Pro'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E (2020)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E20'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E30'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E32'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E32s'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E40'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E5'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E5 Cruise'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E5 Play'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E5 Plus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E6i'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E6s (2020)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E7'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E7 Plus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E7 Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto E7i Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G (2022)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G 5G Plus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Fast'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Play (2021)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Power (2021)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Power (2022)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Pro'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Stylus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Stylus (2021)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Stylus (2022)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Stylus 2021'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Stylus 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G Stylus 5G (2022)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G10'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G10 Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G100'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G20'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G200 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G22'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G30'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G31'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G32'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G40 Fusion'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G41'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G42'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G50'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G50 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G51 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G52'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G6 Play'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G6 Plus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G60'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G60S'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G62 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G7 Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G71 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G71s'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G8'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G8 Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G8 Power Lite'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G82'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G9'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G9 Play'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G9 Plus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto G9 Power'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto S30 Pro'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto X30 Pro'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto X5'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto Z3 Play'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto Z4'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto Z4 Force'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Moto Z4 Play'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'MPx100'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One (P30 Play)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One 5G Ace'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One 5G UW'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One 5G UW Ace'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One Fusion'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One Fusion+'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One Hyper'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One Power (P30 Note)'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'One Vision Plus'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'P40'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr 2 V8'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr 2 V9'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr 2019'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr 5G'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr V3'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr V3i'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'Razr V3xx'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'V1000'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'V295'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'V560'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'W160'],/*Mototrola*/
+    ['sub_category_id' => 225,'name' => 'W377'],/*Mototrola*/
 
-$phone_marka = [];
+    ['sub_category_id' => 226,'name' => '1 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1.4'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '101'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105 (2015)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105 (2017)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105 (2019)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105 (2022)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '105+ (2022)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '106'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '106 (2018)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '107 Dual SIM'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '110'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '110 (2019)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '110 (2022)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '110 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1100'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '112'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '113'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1200'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1202'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1208'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '125'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1280'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '130'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '130 (2017)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '150'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '150 (2020)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1600'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1616'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1680 Classic'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '1800'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2.1'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '206'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '208'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '210'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2100'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '215 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '216'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '220'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '220 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '225 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '230 Dual Sim'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2300'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2310'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2600'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2610'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2630'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2660 Flip'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2690'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2720 Flip'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2720 V Flip'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2760'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '2760 Flip'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3.1'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3.1 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3.2'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '301'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3100'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3120'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3200'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3220'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3230'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3250'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3300'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '3310'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5.1'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5.4'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '500'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5110'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '515'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5210'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5230'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5700'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '5710 XpressAudio'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6.1'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6.2'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6020'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6021'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6070'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6080'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6100'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6101'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6120 Classic'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6131'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6150'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6170'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6210'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6220'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6230'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6233'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6280'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6300'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6301'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6310 (2021)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6500'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6500 Slide'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6555'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6600'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6610'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6630'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6680'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6700'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '6800'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7 plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7.1'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7.3'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '700'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7020'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7100 Supernova'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7200'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7210'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7230'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7250'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7260'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7270'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7270 Limited Edition By Versace'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7360'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7373'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '7610'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '808 PureView'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8110'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8110 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8210'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8210 4G'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8250'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8310'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8600 Luna'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800 Arte'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800 Carbon Arte'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800 Gold Arte'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800 Sapphire Arte'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800 Sapphire Arte Black'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8800 Sirocco'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8810'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8850'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8855'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '8910'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => '9300'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C01 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C1 2nd Edition'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C1 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C10'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C100'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C2'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C2 2nd Edition'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C2 Tava'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C2 Tennen'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C20'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C20 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C200'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C21'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C21 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C3'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C30'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C31'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C5 Endi'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'C7'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'E51'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'E52'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'E71'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G10'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G11'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G11 Plus'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G20'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G21'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G300'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G400'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G50'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'G60'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 1020'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 1320'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 1520'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 2520'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 505'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 510'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 520'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 610'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 620'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 625'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 630'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 635'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 710'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 720'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 800'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 810'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 820'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 822'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 900'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 920'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 925'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 928'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Lumia 930'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'N73'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'N9'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'N900'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'N91'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'N95 8GB'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'N97'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'Oro'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X+'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X10'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X100'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X2 Dual Sim'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X20'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X30'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X5'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X6'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X6 (2009)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X6 (2010)'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'X7'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'XL'],/*Nokia*/
+    ['sub_category_id' => 226,'name' => 'XR20'],/*Nokia*/
+    ['sub_category_id' => 227,'name' => '10 Pro'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '10R'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '10R 150W'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '10T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '2'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '3'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '3T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '5'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '5T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '6'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '6T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '6T McLaren'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '7'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '7 Pro'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '7 Pro 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '7T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '7T Pro'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '7T Pro 5G McLaren'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '8'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '8 5G (T-Mobile)'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '8 Pro'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '8T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '8T+ 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '9'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '9 Pro'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '9R'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => '9RT 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Ace'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Ace Pro'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Ace Racing'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Clover'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord 2 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord 2T'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord CE 2 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord CE 2 Lite 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord CE 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord N10 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord N100'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord N20 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord N20 SE'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'Nord N200 5G'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'One'],/*OnePlus*/
+    ['sub_category_id' => 227,'name' => 'X'],/*OnePlus*/
+
+    ['sub_category_id' => 228,'name' => 'C10'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C11 Pro'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C12 Pro'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C15 Pro'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C3'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C4'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C5'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C8'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'C9'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'K10000'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'K10000 Max'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'K10000 Pro'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'K6000'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'U11 Plus'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'U16 Max'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'U20 Plus'],/*Oukitel*/
+    ['sub_category_id' => 228,'name' => 'U7 Max'],/*Oukitel*/
+
+    ['sub_category_id' => 229,'name' => 'E160'],/*Philips*/
+    ['sub_category_id' => 229,'name' => 'E181'],/*Philips*/
+    ['sub_category_id' => 229,'name' => 'E580'],/*Philips*/
+    ['sub_category_id' => 229,'name' => 'PH1'],/*Philips*/
+    ['sub_category_id' => 229,'name' => 'PH2'],/*Philips*/
+    ['sub_category_id' => 229,'name' => 'S326'],/*Philips*/
+    ['sub_category_id' => 229,'name' => 'Xenium x818'],/*Philips*/
+];
+
+
+
+
+
+// Philips den basla
 
 $tab_model = [
     ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
