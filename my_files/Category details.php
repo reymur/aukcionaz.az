@@ -345,14 +345,14 @@ $sub_category_type = [
     ['sub_category_id' => 41,'name' => 'OnePlus'],/*id 227 Telefonlar*/
     ['sub_category_id' => 41,'name' => 'Oukitel'],/*id 228 Telefonlar*/
     ['sub_category_id' => 41,'name' => 'Philips'],/*id 229 Telefonlar*/
-    ['sub_category_id' => 41,'name' => 'Realme'],
-    ['sub_category_id' => 41,'name' => 'Samsung'],
-    ['sub_category_id' => 41,'name' => 'Siemens'],
-    ['sub_category_id' => 41,'name' => 'Sony'],
-    ['sub_category_id' => 41,'name' => 'Sony Ericsson'],
-    ['sub_category_id' => 41,'name' => 'Umi'],
-    ['sub_category_id' => 41,'name' => 'Vertu'],
-    ['sub_category_id' => 41,'name' => 'Xiaomi'],
+    ['sub_category_id' => 41,'name' => 'Realme'],/*id 230 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Samsung'],/*id 231 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Siemens'],/*id 232 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Sony'],/*id 233 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Sony Ericsson'],/*id 234 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Umi'],/*id 235 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Vertu'],/*id 236 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Xiaomi'],/*id 237 Telefonlar*/
     ['sub_category_id' => 41,'name' => 'ZTE'],
     ['sub_category_id' => 41,'name' => 'Stasionar telefonlar'],
     ['sub_category_id' => 41,'name' => 'Aksesuarlar'],
@@ -2223,7 +2223,6 @@ $phone_marka = [
     ['sub_category_id' => 225,'name' => 'V560'],/*Mototrola*/
     ['sub_category_id' => 225,'name' => 'W160'],/*Mototrola*/
     ['sub_category_id' => 225,'name' => 'W377'],/*Mototrola*/
-
     ['sub_category_id' => 226,'name' => '1 Plus'],/*Nokia*/
     ['sub_category_id' => 226,'name' => '1.4'],/*Nokia*/
     ['sub_category_id' => 226,'name' => '101'],/*Nokia*/
@@ -2489,7 +2488,6 @@ $phone_marka = [
     ['sub_category_id' => 227,'name' => 'Nord N200 5G'],/*OnePlus*/
     ['sub_category_id' => 227,'name' => 'One'],/*OnePlus*/
     ['sub_category_id' => 227,'name' => 'X'],/*OnePlus*/
-
     ['sub_category_id' => 228,'name' => 'C10'],/*Oukitel*/
     ['sub_category_id' => 228,'name' => 'C11 Pro'],/*Oukitel*/
     ['sub_category_id' => 228,'name' => 'C12 Pro'],/*Oukitel*/
@@ -2507,7 +2505,6 @@ $phone_marka = [
     ['sub_category_id' => 228,'name' => 'U16 Max'],/*Oukitel*/
     ['sub_category_id' => 228,'name' => 'U20 Plus'],/*Oukitel*/
     ['sub_category_id' => 228,'name' => 'U7 Max'],/*Oukitel*/
-
     ['sub_category_id' => 229,'name' => 'E160'],/*Philips*/
     ['sub_category_id' => 229,'name' => 'E181'],/*Philips*/
     ['sub_category_id' => 229,'name' => 'E580'],/*Philips*/
@@ -2515,13 +2512,1046 @@ $phone_marka = [
     ['sub_category_id' => 229,'name' => 'PH2'],/*Philips*/
     ['sub_category_id' => 229,'name' => 'S326'],/*Philips*/
     ['sub_category_id' => 229,'name' => 'Xenium x818'],/*Philips*/
+    ['sub_category_id' => 230,'name' => '1'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '2'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '2 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '3'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '3 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '3i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '5'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '5 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '5i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '5s'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '6'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '6 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '6i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '6S'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '7'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '7 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '7 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '7i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '8'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '8 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '8 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '8i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '8s 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9 5G Speed'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9 Pro+'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => '9i 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C1'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C1 (2019)'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C11'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C11 (2021)'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C12'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C15'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C15 Qualcomm Edition'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C17'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C2'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C2 2020'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C20'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C20A'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C21'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C21Y'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C25'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C25s'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C25Y'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C2s'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C3'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C30'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C30s'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C31'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C33'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C35'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'C3i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Master'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Master Explorer'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo 2'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo 2T'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo 3'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo 3 150W'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo 3T'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT Neo Flash'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT2'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT2 Explorer Master'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'GT2 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 10'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 10A'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 20'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 20 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 20A'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 30'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 30 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 30 Pro 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 30A'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50 Pr'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50A'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50A Prime'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Narzo 50i Prime'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q2'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q2 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q2i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q3 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q3 Pro 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q3 Pro Carnival'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q3i 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q3s'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q3t'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q5'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q5 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'Q5i'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'U1'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V11 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V13 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V13 V15 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V23'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V25'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V3'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'V5 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X2'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X2 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X3'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X3 SuperZoom'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X50 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X50 Pro 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X50 Pro Player'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X50m 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X7'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X7 Max 5G'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X7 Pro'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'X7 Pro Ultra'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'XT'],/*Realme*/
+    ['sub_category_id' => 230,'name' => 'XT 730G'],/*Realme*/
+    ['sub_category_id' => 231,'name' => 'C5212'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'E1202'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A01'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A01 Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A02'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A02s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A03'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A03 Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A03s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A04s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A10'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A10e'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A10s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A11'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A12'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A13'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A13 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A2 Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A20'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A20e'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A20s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A21'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A21s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A22'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A22 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A23'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A23 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A3 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A3 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A3 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A30'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A30s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A31'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A32'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A32 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A33 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A40'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A41'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A42 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A5 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A5 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A5 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A50'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A50s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A51'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A51 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A52'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A52 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A52s 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A53 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A6 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A6+ (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A60'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A6s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A7 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A7 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A7 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A7 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A70'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A70s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A71'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A71 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A72'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A73 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8 Star (A9 Star)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8+ (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A80'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A8s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A9 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A9 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A9 Pro (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A90 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy A91'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace 3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace 4'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace NXT'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Ace Style'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Alpha'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Alpha (S801)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy C5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy C5 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy C7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy C7 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy C7 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy C9 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core Advance'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core II'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core Lite LTE'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core LTE'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Core Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy E5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy E7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Express Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F02s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F12'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F13'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F22'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F23'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F41'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F42 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F52 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy F62'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Fold'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Fold 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Folder'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Folder 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand Max'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand Neo'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand Prime Duos TV'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Grand Prime Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J Max'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J1'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J1 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J1 4G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J1 Ace'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J1 mini prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J1 Nxt'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 Core (2020)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 Pro (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J2 Pro (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J3 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J3 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J3 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J3 Emerge'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J3 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J4'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J4 Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J4+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J5 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J5 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J5 Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J5 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J6'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J6+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 (2017)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 (2018)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 Duo'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 Max'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 Nxt'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 Prime 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J7 V'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy J8'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy K zoom'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M01'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M01 Core'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M01s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M02'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M02s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M10'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M10s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M11'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M12'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M13'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M13 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M20'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M21'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M21s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M22'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M23'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M30'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M30s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M31'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M31 Prime'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M31s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M32'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M32 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M33'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M40'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M42 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M51'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M52 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M53'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy M62'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Mega 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Mega 5.8'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Mega 6.3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Mini'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Mini 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Neo'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Nexus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Nexus I9250M'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 10'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 10 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 10 Lite'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 10+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 10+ 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 20'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 20 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 20 Ultra'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 20 Ultra 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 3 Neo'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 3 Neo Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 4'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 4 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 5 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 8'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note 9'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note Edge'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note FE'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note I717'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note II'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note II N7100'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note LTE 10.1 N8020'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Note N7000'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 5 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 6'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 7 (2016)'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 7 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy On 8'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Pocket 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Quantum 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S Advance'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S Duos 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S Duos 3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S Light Luxury'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S10'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S10 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S10 Lite'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S10+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S10e'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20 FE'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20 FE 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20 Ultra'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20 Ultra 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S20+ 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S21'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S21 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S21 FE 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S21 Plus 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S21 Ultra 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S22 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S22+ 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S3 mini'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S3 mini VE'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S3 Neo'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S3 Slim'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S4'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S4 Active'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S4 mini'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S4 zoom'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5 Active'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5 mini'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5 mini Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5 Neo'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S5 Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S6'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S6 active'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S6 Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S6 edge'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S6 edge+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S6 edge+ Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S7'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S7 active'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S7 edge'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S8'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S8 Active'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S8+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S9'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy S9+'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Star'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Star 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Star 2 Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Star Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Trend II Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy V'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy V Plus'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy View'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy View2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy W'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Win'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover 3'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover 4'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover 4s'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover 5'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover 6 Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover FieldPro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Xcover Pro'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Y Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Y Pro Duos'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Young'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Young 2'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Flip'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Flip 3 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Flip 4'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Flip 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Fold 2 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Fold 3 5G'],/*Samsung*/
+    ['sub_category_id' => 231,'name' => 'Galaxy Z Fold 4'],/*Samsung*/
+    ['sub_category_id' => 233,'name' => 'Xperia 1'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 1 II'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 1 III'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 1 IV'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 10'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 10 II'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 10 III'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 10 III Lite'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 10 IV'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 10 Plus'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 5'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 5 II'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 5 III'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia 5 IV'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia acro HD SO-03D'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia acro HD SOI12'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Acro S'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C3'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C3 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C4'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C4 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C5 Ultra'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C5 Ultra Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia C670X'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E1'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E1 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E3'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E3 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E4'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E4 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E4g'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E4g Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia E5'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia go'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia GX SO-04D'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia ion HSPA'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia ion LTE'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia J'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia L'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia L1'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia L2'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia L3'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia L4'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia LT29i Hayabusa'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M2'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M2 Aqua'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M2 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M4 Aqua'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M4 Aqua Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M5'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia M5 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Miro'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia neo L'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia P'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Pro'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Pro-I'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia R1 (Plus)'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia S'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia SL'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Sola'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia SP'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia SX SO-05D'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia T'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia T LTE'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia T2 Ultra Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia T3'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Tipo'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Tipo Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia TX'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia U'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia V'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia X'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia X Compact'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia X Performance'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA Ultra'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA1'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA1 Plus'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA1 Ultra'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA2'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA2 Plus'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XA2 Ultra'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ Premium'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ1'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ1 Compact'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ2'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ2 Compact'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ2 Premium'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZ3'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia XZs'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z Ultra'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z1'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z1 Compact'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z1s'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z2'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z2a'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z3'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z3 Compact'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z3 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z3+'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z3+ Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z3v'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z5'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z5 Compact'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z5 Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z5 Premium'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia Z5 Premium Dual'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia ZL'],/*Sony*/
+    ['sub_category_id' => 233,'name' => 'Xperia ZR'],/*Sony*/
+    ['sub_category_id' => 234,'name' => 'A8i'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Aino'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Aspen'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Bravia S004'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C510'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C702'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C901'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C901 GreenHeart'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C902'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C903'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'C905'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Cedar'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'D750'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Elm'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'F305'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'F500i'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'G502'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'G700'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'G700 Business Edition'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'G705'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'G900'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Hazel'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J100'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J105 Naite'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J110'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J120'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J132'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J200'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J210'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J220'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J230'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'J300'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Jalou'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Jalou D&G edition'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K200'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K205'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K220'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K300'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K310'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K320'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K330'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K500'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K508'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K510'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K530'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K550'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K550im'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K600'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K608'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K610'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K618'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K630'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K660'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K700'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K750'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K770'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K790'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K790'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K810'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'K850'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Live with Walkman'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'M600'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'M608'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Mix Walkman'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'P1'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'P800'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'P900'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'P910'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'P990'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'R300 Radio'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'R306 Radio'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'S003'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'S302'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'S312'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'S500'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'S700'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'S710'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Satio'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Spiro'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T100'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T105'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T200'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T230'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T250'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T270'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T280'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T290'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T300'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T303'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T310'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T600'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T610'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T630'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T650'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T68i'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T700'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T707'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'T715'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'TM506'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'txt'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'txt pro'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'V600'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'V630'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'V640'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'V800'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Vivaz'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Vivaz pro'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W200'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W205'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W300'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W302'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W350'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W380'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W395'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W508'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W550'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W580'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W595'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W595s'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W600'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W610'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W660'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W700'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W705'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W710'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W715'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W760'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W8'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W800'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W810'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W830'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W850'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W880'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W888'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W890'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W900'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W902'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W910'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W950'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W960'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W980'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'W995'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'WT18i'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia active'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Arc'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Arc S'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Mini'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Mini Pro'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Neo'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Neo V'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Play'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Pro'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Pureness'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia Ray'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia X1'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia X10'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia X10 Mini'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia X10 Mini Pro'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia X2'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Xperia X8'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Yari'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Yendo'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z1010'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z200'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z250'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z300'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z310'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z320'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z500'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z520'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z525'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z530'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z550'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z555'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z558'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z600'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z610'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z710'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z750'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z770'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z780'],/*Sony Ericsson*/
+    ['sub_category_id' => 234,'name' => 'Z800'],/*Sony Ericsson*/
+    ['sub_category_id' => 235,'name' => 'A3 Pro'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'A5 Pro'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'Diamond X'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'F2'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'London'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'S2'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'X'],/*Umi*/
+    ['sub_category_id' => 235,'name' => 'Z2'],/*Umi*/
+    ['sub_category_id' => 236,'name' => 'Ascent'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Ascent 2010'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Ascent Ferrari GT'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Ascent Ti'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Ascent Ti Damascus Steel'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Constellation 2006'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Constellation 2013'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Constellation Ayxta'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Constellation Quest'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Constellation Touch'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Constellation V'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Diamond'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Signature M Design'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Signature S Design'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Signature Touch'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Signature Touch (2015)'],/*Vertu*/
+    ['sub_category_id' => 236,'name' => 'Ti'],/*Vertu*/
+    ['sub_category_id' => 237,'name' => '11 Lite 5G NE'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '11i'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '11i HyperCharge'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '11i HyperCharge 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '11T'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '11T Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12S Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12S Ultra'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12T'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12T Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => '12X'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 2 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 3 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 3S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 4'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 4 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 4S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 4S Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 5'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 5 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark 5 RS'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Black Shark Helo'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Civi'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Civi 1S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Civi 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10 Lite 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10 Ultra'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10 Youth 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10i 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10T 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10T Lite 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 10T Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11 Lite 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11 Ultra'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11i'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11X'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 11X Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 1S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 2A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 2S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 4'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 4 LTE'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 4c'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 4i'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 4s'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 5'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 5c'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 5s'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 5s Plus'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 6'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 8'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 8 Explorer'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 8 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 8 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 8 SE'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9 Explorer'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9 SE'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9T'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi 9T Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi A1'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi A2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi A2 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi A3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi CC9'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi CC9 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi CC9e'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Max'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Max 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Max 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Mix'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Mix 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Mix 2S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Mix 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Mix 3 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Mix Fold'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note 10'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note 10 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note 10 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Note Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Mi Play'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco C3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco C31'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco C40'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco F2 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco F3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco F3 GT'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco F4'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco F4 GT'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M2 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M2 Reloaded'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M3 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M4 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M4 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M4 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M5'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco M5s'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X3 GT'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X3 NFC'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X3 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X4 GT'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Poco X4 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Pocophone F1'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10 2022'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10 Power'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10 Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10 Prime 2022'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10C'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10X 4G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10X 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 10X Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 11 Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 11 Prime 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 1S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 2 Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 2 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 2A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 3 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 3s'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 3s Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 3x'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 4'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 4 (4X)'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 4 Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 4A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 5'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 5 Plus'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 5A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 6'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 6 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 6A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 7'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 7A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 8'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 8A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 8A Dual'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 8A Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9 Activ'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9 Power'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9 Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9A'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9A Sport'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9AT'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9C'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9C NFC'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9i'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9i Sport'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi 9T'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi A1'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi A1+'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Go'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K20'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K20 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K20 Pro Premium'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30 5G Racing'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30 Pro Zoom'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30 Ultra'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30i 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K30S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K40'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K40 Gaming'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K40 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K40 Pro+'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K40S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K50'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K50 Gaming'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K50 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K50 Ultra'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi K50i'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10 Pro Max'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 10T 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11 4G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11 Pro+'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11 Pro+ 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11E'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11E Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11R'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11S 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11SE'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11T 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11T Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 11T Pro+'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 3'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 3 (MediaTek)'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 4'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 4 (MediaTek)'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 4G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 4X'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 5'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 5 AI Dual Camera'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 5 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 6 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 7'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 7 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 7S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 8'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 8 2021'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 8 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 8T'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9 4G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9 Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9 Pro 5G'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9 Pro Max'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9S'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note 9T'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Note Prime'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Pro'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Pro 2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi S2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Y1 (Note 5A)'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Y1 Lite'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Y2'],/*Xiaomi*/
+    ['sub_category_id' => 237,'name' => 'Redmi Y3'],/*Xiaomi*/
 ];
 
 
 
 
-
-// Philips den basla
+// Xiaomi Ericsson den basla
 
 $tab_model = [
     ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
