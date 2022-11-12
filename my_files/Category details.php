@@ -4088,12 +4088,159 @@ $phone_model_option = [
 
     ['phone_model_id' => 76, 'color' => 'Black'],/*Alcatel U5*/
     ['phone_model_id' => 76, 'memory' => '8GB/1GB'],/*Alcatel U5*/
+
+    ['phone_model_id' => 77, 'color' => 'Black'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'color' => 'Green'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'color' => 'Purple'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'color' => 'Red'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'color' => 'White'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'color' => 'Yellow'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'memory' => '64GB/4GB'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'memory' => '128GB/4GB'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'memory' => '256GB/4GB'],/*Apple Iphone 11*/
+    ['phone_model_id' => 77, 'sim' => 'Dual Sim'],/*Apple Iphone 11*/
+
+    ['phone_model_id' => 78, 'color' => 'Gold'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'color' => 'Midnight Green'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'color' => 'Silver'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'color' => 'Space Gray'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'memory' => '64GB/4GB'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'memory' => '256GB/4GB'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'memory' => '512GB/4GB'],/*Apple Iphone 11 Pro*/
+    ['phone_model_id' => 78, 'sim' => 'Dual Sim'],/*Apple Iphone 11 Pro*/
+
+    ['phone_model_id' => 79, 'color' => 'Gold'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'color' => 'Midnight Green'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'color' => 'Silver'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'color' => 'Space Gray'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'memory' => '64GB/4GB'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'memory' => '256GB/4GB'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'memory' => '512GB/4GB'],/*Apple Iphone 11 Pro Max*/
+    ['phone_model_id' => 79, 'sim' => 'Dual Sim'],/*Apple Iphone 11 Pro Max*/
+
+    ['phone_model_id' => 80, 'color' => 'White'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'color' => 'Purple'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'color' => 'Black'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'color' => 'Blue'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'color' => 'Green'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'color' => 'Red'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'memory' => '64GB/4GB'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'memory' => '128GB/4GB'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'memory' => '256GB/4GB'],/*Apple Iphone 12*/
+    ['phone_model_id' => 80, 'sim' => 'Dual Sim'],/*Apple Iphone 12*/
+
+    ['phone_model_id' => 81, 'color' => 'Red'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'color' => 'Purple'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'color' => 'White'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'color' => 'Black'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'color' => 'Blue'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'color' => 'Green'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'memory' => '64GB/4GB'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'memory' => '128GB/4GB'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'memory' => '256GB/4GB'],/*Apple Iphone 12 Mini*/
+    ['phone_model_id' => 81, 'sim' => 'Dual Sim'],/*Apple Iphone 12 Mini*/
+
+    ['phone_model_id' => 82, 'color' => 'Gold'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'color' => 'Graphite'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'color' => 'Pacific Blue'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'color' => 'Silver'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'memory' => '256GB/6GB'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'memory' => '512GB/6GB'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'memory' => '128GB/6GB'],/*Apple Iphone 12 Pro*/
+    ['phone_model_id' => 82, 'sim' => 'Dual Sim'],/*Apple Iphone 12 Pro*/
+
+    ['phone_model_id' => 83, 'color' => 'Gold'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'color' => 'Silver'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'color' => 'Graphite'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'color' => 'Pacific Blue'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'memory' => '128GB/6GB'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'memory' => '256GB/6GB'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'memory' => '512GB/6GB'],/*Apple Iphone 12 Pro Max*/
+    ['phone_model_id' => 83, 'sim' => 'Dual Sim'],/*Apple Iphone 12 Pro Max*/
+
+    ['phone_model_id' => 84, 'color' => 'Starlight'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'color' => 'Blue'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'color' => 'Green'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'color' => 'Midnight'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'color' => 'Pink'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'color' => 'Red'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'memory' => '256GB/4GB'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'memory' => '128GB/4GB'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'memory' => '512GB/4GB'],/*Apple Iphone 13*/
+    ['phone_model_id' => 84, 'sim' => 'Dual Sim'],/*Apple Iphone 13*/
+
+    ['phone_model_id' => 85, 'color' => 'Midnight'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'color' => 'Pink'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'color' => 'Red'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'color' => 'Green'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'color' => 'Blue'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'color' => 'Starlight'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'memory' => '128GB/4GB'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'memory' => '256GB/4GB'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'memory' => '512GB/4GB'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'memory' => '512GB/4GB'],/*Apple Iphone 13 Mini*/
+    ['phone_model_id' => 85, 'sim' => 'Dual Sim'],/*Apple Iphone 13 Mini*/
+
+    ['phone_model_id' => 86, 'color' => 'Sierra Blue'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'color' => 'Gold'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'color' => 'Silver'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'color' => 'Alpine Green'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'color' => 'Graphite'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'memory' => '128GB/6GB'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'memory' => '256GB/6GB'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'memory' => '512GB/6GB'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'memory' => '1TB'],/*Apple Iphone 13 Pro*/
+    ['phone_model_id' => 86, 'sim' => 'Dual Sim'],/*Apple Iphone 13 Pro*/
+
+    ['phone_model_id' => 87, 'color' => 'Gold'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'color' => 'Graphite'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'color' => 'Sierra Blue'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'color' => 'Silver'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'color' => 'Alpine Green'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'memory' => '128GB/6GB'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'memory' => '256GB/6GB'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'memory' => '512GB/6GB'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'memory' => '1TB'],/*Apple Iphone 13 Pro Max*/
+    ['phone_model_id' => 87, 'sim' => 'Dual Sim'],/*Apple Iphone 13 Pro Max*/
+
+    ['phone_model_id' => 88, 'color' => 'GoMidnightld'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'color' => 'Purple'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'color' => 'Starlight'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'color' => 'Blue'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'color' => 'Red'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'memory' => '512GB/4GB'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'memory' => '256GB/4GB'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'memory' => '128GB/4GB'],/*Apple Iphone 14*/
+    ['phone_model_id' => 88, 'sim' => 'Dual Sim'],/*Apple Iphone 14*/
+
+    ['phone_model_id' => 89, 'color' => 'Blue'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'color' => 'Purple'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'color' => 'Starlight'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'color' => 'Red'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'color' => 'Midnight'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'memory' => '512GB/4GB'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'memory' => '256GB/4GB'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'memory' => '128GB/4GB'],/*Apple Iphone 14 Plus*/
+    ['phone_model_id' => 89, 'sim' => 'Dual Sim'],/*Apple Iphone 14 Plus*/
+
+    ['phone_model_id' => 90, 'color' => 'Gold'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'color' => 'Gold'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'color' => 'Silver'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'color' => 'Space Black'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'color' => 'Deep Purple'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'memory' => '128GB/6GB'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'memory' => '256GB/6GB'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'memory' => '512GB/6GB'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'memory' => '1TB/6GB'],/*Apple Iphone 14 Pro*/
+    ['phone_model_id' => 90, 'sim' => 'Dual Sim'],/*Apple Iphone 14 Pro*/
 ];
 
+19"></option></select> 
 
 
 
-//Alcatel den basla
+
+//Iphone den basla
 
 $tab_model = [
     ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
