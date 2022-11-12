@@ -353,23 +353,22 @@ $sub_category_type = [
     ['sub_category_id' => 41,'name' => 'Umi'],/*id 235 Telefonlar*/
     ['sub_category_id' => 41,'name' => 'Vertu'],/*id 236 Telefonlar*/
     ['sub_category_id' => 41,'name' => 'Xiaomi'],/*id 237 Telefonlar*/
-    ['sub_category_id' => 41,'name' => 'ZTE'],
-    ['sub_category_id' => 41,'name' => 'Stasionar telefonlar'],
-    ['sub_category_id' => 41,'name' => 'Aksesuarlar'],
-    ['sub_category_id' => 41,'name' => 'Ehtiyat hissələri'],
-    ['sub_category_id' => 41,'name' => 'Ehtiyat hissələri'],
-    ['sub_category_id' => 42,'name' => 'Azercell'],
-    ['sub_category_id' => 42,'name' => 'Bakcell'],
-    ['sub_category_id' => 42,'name' => 'Nar'],
-    ['sub_category_id' => 42,'name' => 'Naxtel'],
-    ['sub_category_id' => 42,'name' => 'Katel CDMA'],
-    ['sub_category_id' => 43,'name' => 'Binokl və teleskoplar'],
-    ['sub_category_id' => 43,'name' => 'Fotoaparatlar'],
-    ['sub_category_id' => 43,'name' => 'Avadanlıq və aksesuarlar'],
-    ['sub_category_id' => 43,'name' => 'Linzalar'],
-    ['sub_category_id' => 44,'name' => 'Kəmərlər, aksesuarlar'],
-    ['sub_category_id' => 44,'name' => 'Smart qolbaqlar'],
-    ['sub_category_id' => 44,'name' => 'Smart saatlar'],
+    ['sub_category_id' => 41,'name' => 'ZTE'],/*id 238 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Stasionar telefonlar'],/*id 239 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Ehtiyat hissələri'],/*id 240 Telefonlar*/
+    ['sub_category_id' => 41,'name' => 'Aksesuarlar'],/*id 241 Telefonlar*/
+    ['sub_category_id' => 42,'name' => 'Azercell'],/*id 242 NOMRELER VE SIM-KARTLAR*/
+    ['sub_category_id' => 42,'name' => 'Bakcell'],/*id 243 NOMRELER VE SIM-KARTLAR*/
+    ['sub_category_id' => 42,'name' => 'Nar'],/*id 244 NOMRELER VE SIM-KARTLAR*/
+    ['sub_category_id' => 42,'name' => 'Naxtel'],/*id 245 NOMRELER VE SIM-KARTLAR*/
+    ['sub_category_id' => 42,'name' => 'Katel CDMA'],/*id 246 NOMRELER VE SIM-KARTLAR*/
+    ['sub_category_id' => 43,'name' => 'Binokl və teleskoplar'],/*id 247 Foto texnika*/
+    ['sub_category_id' => 43,'name' => 'Fotoaparatlar'],/*id 248 Foto texnika*/
+    ['sub_category_id' => 43,'name' => 'Avadanlıq və aksesuarlar'],/*id 249 Foto texnika*/
+    ['sub_category_id' => 43,'name' => 'Linzalar'],/*id 250 Foto texnika*/
+    ['sub_category_id' => 44,'name' => 'Kəmərlər, aksesuarlar'],/*id 251 Smart saat ve qolbaglqr*/
+    ['sub_category_id' => 44,'name' => 'Smart qolbaqlar'],/*id 252 Smart saat ve qolbaglqr*/
+    ['sub_category_id' => 44,'name' => 'Smart saatlar'],/*id 253 Smart saat ve qolbaglqr*/
     ['sub_category_id' => 45,'name' => 'Televizorlar'],
     ['sub_category_id' => 45,'name' => 'Antenlər'],
     ['sub_category_id' => 45,'name' => 'Kronşteynlər'],
@@ -632,10 +631,10 @@ $sub_category_type_one = [
     ['sub_category_type_id' => 179,'name' => 'Wexler'],/*118*/
 ];
 
-$phone_marka = [
-    ['sub_category_id' => 200,'name' => 'DX650'],/*Acer*/
-    ['sub_category_id' => 200,'name' => 'M900'],/*Acer*/
-    ['sub_category_id' => 200,'name' => 'Predator 8'],/*Acer*/
+$phone_model = [
+    ['sub_category_id' => 200,'name' => 'DX650'],/*1 Acer*/
+    ['sub_category_id' => 200,'name' => 'M900'],/*2Acer*/
+    ['sub_category_id' => 200,'name' => 'Predator 8'],/*3 Acer*/
     ['sub_category_id' => 201,'name' => 'C6'],/*Aiek*/
     ['sub_category_id' => 201,'name' => 'E1'],/*Aiek*/
     ['sub_category_id' => 201,'name' => 'M3'],/*Aiek*/
@@ -3546,12 +3545,555 @@ $phone_marka = [
     ['sub_category_id' => 237,'name' => 'Redmi Y1 Lite'],/*Xiaomi*/
     ['sub_category_id' => 237,'name' => 'Redmi Y2'],/*Xiaomi*/
     ['sub_category_id' => 237,'name' => 'Redmi Y3'],/*Xiaomi*/
+    ['sub_category_id' => 238,'name' => 'Avid 589'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 10 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 10 Pro 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 11 4G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 11 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 11 SE 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 20 4G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 20 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 20 5G Extreme'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 30 Pro 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 30 Ultra 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 30S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 40 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 40 SE'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 40 Ultra'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 7'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 7 Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 7 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 7S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon 9 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon ELite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon Lux'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon M'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Axon Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade 11 Prime'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade 20'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade 20 Pro 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A2 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A3 (2019)'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A3 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A31'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A31 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A31 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A452'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A5 (2019)'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A51'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A512'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A52'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A52 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A520'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A6'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A610'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A7 Prime'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A7 Vita'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A71'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A72'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A72 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A7P'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A7s 2020'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade A910'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Apex 3'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade D6'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Force'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade L110'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade L3'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade L3 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade L5 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade L8'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade L9'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Max View'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Q Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Qlux 4G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade S6'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade S6 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade S7'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V10'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V10 Vita'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V2020 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V30'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V40 Vita'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V40s'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V7'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V7 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V7 Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V7 Plus'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V8'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V8 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V8 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V8 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V9'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade V9 Vita'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Vec 3G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Vec 4G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade X'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade X1 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade X3'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade X5'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade X9'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Blade Z Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Boost Max+'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Cymbal U'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Grand Memo II LTE'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Link II'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Maven'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Maven 2'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Max XL'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Alpha'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia M2'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia M2 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia M2 Play'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia My Prague'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia N1'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia N1 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia N2'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia N3'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Play'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Prague S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 3'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 3S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 5G Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 5S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 6'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 6 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 6R'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 6S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 6S Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'nubia Red Magic 7'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'nubia Red Magic 7 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 7S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic 7S Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Red Magic Mars'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia V18'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Watch'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia X'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia X 5G'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia X6'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z11'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z11 Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z11 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z11 Mini S'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z17'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z17 Lite'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z17 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z17 MiniS'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z17s'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z18'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z18 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z20'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z30 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'nubia Z40 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z40S Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z5S Mini NX405H'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z7'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z7 Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z7 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z9'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z9 Max'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Nubia Z9 Mini'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Open C'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Open L'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'PF 100'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'PF112 HD'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'S30'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'S30 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'S30 SE'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Speed'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Star 1'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Star 2'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Style Messanger'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Tempo Go'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Tempo X'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'V40 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'V5 Lux'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Voyage 20 Pro'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Warp 7'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Zmax'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Zmax 2'],/*ZTE*/
+    ['sub_category_id' => 238,'name' => 'Zmax Pro'],/*ZTE*/
+];
+
+$phone_model_option = [
+    ['phone_model_id' => 1, 'color' => 'Black'],
+    ['phone_model_id' => 2, 'color' => 'Black'],
+    ['phone_model_id' => 3, 'color' => 'Black/Silver'],
+    ['phone_model_id' => 3, 'memory' => '32GB/2GB'],
+    ['phone_model_id' => 3, 'memory' => '64GB/2GB'],
+
+    ['phone_model_id' => 4, 'color' => 'Black'],
+    ['phone_model_id' => 4, 'color' => 'White'],
+
+    ['phone_model_id' => 5, 'color' => 'Black'],
+    ['phone_model_id' => 5, 'color' => 'Gold'],
+    ['phone_model_id' => 5, 'color' => 'White'],
+
+    ['phone_model_id' => 6, 'color' => 'Black'],
+    ['phone_model_id' => 6, 'color' => 'Gold'],
+    ['phone_model_id' => 6, 'color' => 'White'],
+
+    ['phone_model_id' => 7, 'color' => 'Blue'],
+
+    ['phone_model_id' => 8, 'color' => 'Black'],
+    ['phone_model_id' => 8, 'color' => 'Blue'],
+    ['phone_model_id' => 8, 'color' => 'Green'],
+    ['phone_model_id' => 8, 'color' => 'Pink'],
+    ['phone_model_id' => 8, 'color' => 'White'],
+
+    ['phone_model_id' => 9, 'color' => 'Black'],
+    ['phone_model_id' => 9, 'color' => 'Gold'],
+    ['phone_model_id' => 9, 'color' => 'White'],
+
+    ['phone_model_id' => 10, 'color' => 'Black'],
+    ['phone_model_id' => 10, 'color' => 'White'],
+
+    ['phone_model_id' => 11, 'color' => 'Black'],
+    ['phone_model_id' => 11, 'color' => 'Gold'],
+    ['phone_model_id' => 11, 'color' => 'Purple'],
+    ['phone_model_id' => 11, 'color' => 'White'],
+
+    ['phone_model_id' => 12, 'color' => 'Black'],
+    ['phone_model_id' => 12, 'color' => 'Gold'],
+    ['phone_model_id' => 12, 'color' => 'White'],
+
+    ['phone_model_id' => 13, 'color' => 'Black'],
+    ['phone_model_id' => 13, 'color' => 'Blue'],
+    ['phone_model_id' => 13, 'color' => 'Green'],
+    ['phone_model_id' => 13, 'color' => 'White'],
+    ['phone_model_id' => 13, 'color' => 'Yellow'],
+
+    ['phone_model_id' => 14, 'color' => 'Black'],/*Alcatel 1*/
+    ['phone_model_id' => 14, 'color' => 'Blue'],/*Alcatel 1*/
+    ['phone_model_id' => 14, 'color' => 'Gold'],/*Alcatel 1*/
+    ['phone_model_id' => 14, 'color' => 'Pink'],/*Alcatel 1*/
+    ['phone_model_id' => 14, 'memory' => '8GB'],/*Alcatel 1*/
+    ['phone_model_id' => 15, 'color' => 'Prime Black'],/*Alcatel 1B (2020)*/
+    ['phone_model_id' => 15, 'color' => 'Pine Green'],/*Alcatel 1B (2020)*/
+    ['phone_model_id' => 15, 'memory' => '16GB/2GB'],/*Alcatel 1B (2020)*/
+    ['phone_model_id' => 16, 'color' => 'Enamel Blue'],/*Alcatel 1c (2019)*/
+    ['phone_model_id' => 16, 'color' => 'Blush Pink'],/*Alcatel 1c (2019)*/
+    ['phone_model_id' => 16, 'color' => 'Volcano Black'],/*Alcatel 1c (2019)*/
+    ['phone_model_id' => 16, 'memory' => '8GB'],/*Alcatel 1c (2019)*/
+    ['phone_model_id' => 17, 'color' => 'Blue'],/*Alcatel 1s*/
+    ['phone_model_id' => 17, 'color' => 'Black'],/*Alcatel 1s*/
+    ['phone_model_id' => 17, 'color' => 'Rose'],/*Alcatel 1s*/
+    ['phone_model_id' => 17, 'color' => 'Gold'],/*Alcatel 1s*/
+    ['phone_model_id' => 17, 'memory' => '32GB/3GB'],/*Alcatel 1s*/
+    ['phone_model_id' => 17, 'memory' => '64GB/4GB'],/*Alcatel 1s*/
+    ['phone_model_id' => 18, 'color' => 'Agate Green'],/*Alcatel 1S (2020)*/
+    ['phone_model_id' => 18, 'color' => 'Power Gray'],/*Alcatel 1S (2020)*/
+    ['phone_model_id' => 18, 'memory' => '32GB/3GB'],/*Alcatel 1S (2020)*/
+    ['phone_model_id' => 19, 'color' => 'Agate Green'],/*Alcatel 1SE (2020)*/
+    ['phone_model_id' => 19, 'color' => 'Power Gray'],/*Alcatel 1SE (2020)*/
+    ['phone_model_id' => 19, 'memory' => '32GB/3GB'],/*Alcatel 1SE (2020)*/
+    ['phone_model_id' => 19, 'memory' => '128GB/4GB'],/*Alcatel 1SE (2020)*/
+    ['phone_model_id' => 20, 'color' => 'Gray'],/*Alcatel 1T 10*/
+    ['phone_model_id' => 20, 'color' => 'Dark Blue'],/*Alcatel 1T 10*/
+    ['phone_model_id' => 20, 'memory' => '16GB'],/*Alcatel 1T 10*/
+    ['phone_model_id' => 21, 'color' => 'Gray'],/*Alcatel 1T 7*/
+    ['phone_model_id' => 21, 'color' => 'Dark Blue'],/*Alcatel 1T 7*/
+    ['phone_model_id' => 21, 'memory' => '8GB'],/*Alcatel 1T 7*/
+
+    ['phone_model_id' => 22, 'color' => 'Anthracite Black'],/*Alcatel 1v (2019)*/
+    ['phone_model_id' => 22, 'color' => 'Metallic Blue'],/*Alcatel 1v (2019)*/
+    ['phone_model_id' => 22, 'color' => 'Metallic Gold'],/*Alcatel 1v (2019)*/
+    ['phone_model_id' => 22, 'color' => 'Metallic Rose'],/*Alcatel 1v (2019)*/
+    ['phone_model_id' => 22, 'memory' => '16GB/1GB'],/*Alcatel 1v (2019)*/
+    ['phone_model_id' => 22, 'memory' => '16GB/2GB'],/*Alcatel 1v (2019)*/
+    ['phone_model_id' => 22, 'memory' => '16GB/3GB'],/*Alcatel 1v (2019)*/
+
+    ['phone_model_id' => 23, 'color' => 'Prime Black'],/*Alcatel 1V (2020)*/
+    ['phone_model_id' => 23, 'color' => 'Pine Green'],/*Alcatel 1V (2020)*/
+    ['phone_model_id' => 23, 'color' => 'Metallic Black'],/*Alcatel 1V (2020)*/
+    ['phone_model_id' => 23, 'color' => 'Agate Green'],/*Alcatel 1V (2020)*/
+    ['phone_model_id' => 23, 'memory' => '32GB/2GB'],/*Alcatel 1V (2020)*/
+
+    ['phone_model_id' => 24, 'color' => 'Black'],/*Alcatel 1x*/
+    ['phone_model_id' => 24, 'color' => 'Blue'],/*Alcatel 1x*/
+    ['phone_model_id' => 24, 'color' => 'Gold'],/*Alcatel 1x*/
+    ['phone_model_id' => 24, 'color' => 'Rose Gold'],/*Alcatel 1x*/
+    ['phone_model_id' => 24, 'memory' => '16GB/1GB'],/*Alcatel 1x*/
+    ['phone_model_id' => 24, 'memory' => '16GB/2GB'],/*Alcatel 1x*/
+
+    ['phone_model_id' => 25, 'color' => 'Pebble Blue'],/*Alcatel 1x (2019)*/
+    ['phone_model_id' => 25, 'color' => 'Pebble Black'],/*Alcatel 1x (2019)*/
+    ['phone_model_id' => 25, 'memory' => '16GB'],/*Alcatel 1x (2019)*/
+
+    ['phone_model_id' => 26, 'color' => 'Spectrum Black'],/*Alcatel 3*/
+    ['phone_model_id' => 26, 'color' => 'Spectrum Gold'],/*Alcatel 3*/
+    ['phone_model_id' => 26, 'color' => 'Spectrum Blue'],/*Alcatel 3*/
+    ['phone_model_id' => 24, 'memory' => '16GB/2GB'],/*Alcatel 3*/
+
+    ['phone_model_id' => 27, 'color' => 'Blue-purple Gradient'],/*Alcatel 3 (2019)*/
+    ['phone_model_id' => 27, 'color' => 'Black-blue Gradient'],/*Alcatel 3 (2019)*/
+    ['phone_model_id' => 27, 'memory' => '32GB/3GB'],/*Alcatel 3 (2019)*/
+    ['phone_model_id' => 27, 'memory' => '64GB/4GB'],/*Alcatel 3 (2019)*/
+
+    ['phone_model_id' => 28, 'color' => 'Black'],/*Alcatel 3088*/
+    ['phone_model_id' => 28, 'color' => 'Gray'],/*Alcatel 3088*/
+    ['phone_model_id' => 28, 'color' => 'Blue'],/*Alcatel 3088*/
+    ['phone_model_id' => 28, 'memory' => '4GB'],/*Alcatel 3088*/
+
+    ['phone_model_id' => 29, 'color' => 'Black'],/*Alcatel 3c*/
+    ['phone_model_id' => 29, 'color' => 'Blue'],/*Alcatel 3c*/
+    ['phone_model_id' => 29, 'color' => 'Gold'],/*Alcatel 3c*/
+    ['phone_model_id' => 29, 'memory' => '16GB'],/*Alcatel 3c*/
+
+    ['phone_model_id' => 30, 'color' => 'Anthracite Black'],/*Alcatel 3L*/
+    ['phone_model_id' => 30, 'color' => 'Metallic Blue'],/*Alcatel 3L*/
+    ['phone_model_id' => 30, 'memory' => '16GB'],/*Alcatel 3L*/
+
+    ['phone_model_id' => 31, 'color' => 'Chameleon Blue'],/*Alcatel 3L (2020)*/
+    ['phone_model_id' => 31, 'color' => 'Dark Chrome'],/*Alcatel 3L (2020)*/
+    ['phone_model_id' => 31, 'color' => 'Agate Green'],/*Alcatel 3L (2020)*/
+    ['phone_model_id' => 31, 'memory' => '64GB/4GB'],/*Alcatel 3L (2020)*/
+
+    ['phone_model_id' => 32, 'color' => 'Prime Black'],/*Alcatel 3T 10*/
+    ['phone_model_id' => 32, 'color' => 'Midnight Blue'],/*Alcatel 3T 10*/
+    ['phone_model_id' => 32, 'memory' => '16GB'],/*Alcatel 3T 10*/
+
+    ['phone_model_id' => 33, 'color' => 'Black'],/*Alcatel 3T 8*/
+    ['phone_model_id' => 33, 'color' => 'Blue'],/*Alcatel 3T 8*/
+    ['phone_model_id' => 33, 'memory' => '16GB/1GB'],/*Alcatel 3T 8*/
+    ['phone_model_id' => 33, 'memory' => '32GB/2GB'],/*Alcatel 3T 8*/
+    ['phone_model_id' => 33, 'memory' => '32GB/3GB'],/*Alcatel 3T 8*/
+
+    ['phone_model_id' => 34, 'color' => 'Spectrum Black'],/*Alcatel 3v*/
+    ['phone_model_id' => 34, 'color' => 'Spectrum Blue'],/*Alcatel 3v*/
+    ['phone_model_id' => 34, 'color' => 'Spectrum Gold'],/*Alcatel 3v*/
+    ['phone_model_id' => 34, 'memory' => '16GB/2GB'],/*Alcatel 3v*/
+    ['phone_model_id' => 34, 'memory' => '32GB/2GB'],/*Alcatel 3v*/
+
+    ['phone_model_id' => 35, 'color' => 'Elegant Black'],/*Alcatel 3v (2019)*/
+    ['phone_model_id' => 35, 'memory' => '32GB/3GB'],/*Alcatel 3v (2019)*/
+
+    ['phone_model_id' => 36, 'color' => 'Metallic Black'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'color' => 'Metallic Blue'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'color' => 'Metallic Gold'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'color' => 'Spectrum Black'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'color' => 'Spectrum Blue'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'color' => 'Spectrum Gold'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'memory' => '16GB/2GB'],/*Alcatel 3x*/
+    ['phone_model_id' => 36, 'memory' => '32GB/3GB'],/*Alcatel 3x*/
+
+    ['phone_model_id' => 37, 'color' => 'Jewelry Black'],/*Alcatel 3x (2019)*/
+    ['phone_model_id' => 37, 'color' => 'Jewelry Green'],/*Alcatel 3x (2019)*/
+    ['phone_model_id' => 37, 'color' => 'Jewelry Rose'],/*Alcatel 3x (2019)*/
+    ['phone_model_id' => 37, 'memory' => '64GB/4GB'],/*Alcatel 3x (2019)*/
+    ['phone_model_id' => 37, 'memory' => '128GB/6GB'],/*Alcatel 3x (2019)*/
+
+    ['phone_model_id' => 38, 'color' => 'Black'],/*Alcatel 3x (2020)*/
+    ['phone_model_id' => 38, 'color' => 'Blue'],/*Alcatel 3x (2020)*/
+    ['phone_model_id' => 38, 'memory' => '64GB/4GB'],/*Alcatel 3x (2020)*/
+    ['phone_model_id' => 38, 'memory' => '128GB/4GB'],/*Alcatel 3x (2020)*/
+    ['phone_model_id' => 38, 'memory' => '128GB/6GB'],/*Alcatel 3x (2020)*/
+
+    ['phone_model_id' => 39, 'color' => 'Metallic Gold'],/*Alcatel 5*/
+    ['phone_model_id' => 39, 'color' => 'Metallic Black'],/*Alcatel 5*/
+    ['phone_model_id' => 39, 'memory' => '16GB/2GB'],/*Alcatel 5*/
+    ['phone_model_id' => 39, 'memory' => '32GB/3GB'],/*Alcatel 5*/
+
+    ['phone_model_id' => 40, 'color' => 'Black'],/*Alcatel 5v*/
+    ['phone_model_id' => 40, 'color' => 'Blue'],/*Alcatel 5v*/
+    ['phone_model_id' => 40, 'memory' => '32GB/3GB'],/*Alcatel 5v*/
+
+    ['phone_model_id' => 41, 'color' => 'Black'],/*Alcatel */
+    ['phone_model_id' => 41, 'memory' => '32GB/2GB'],/*Alcatel 7*/
+
+    ['phone_model_id' => 42, 'color' => 'Rose Gold'],/*Alcatel Idol 4*/
+    ['phone_model_id' => 42, 'color' => 'Gold'],/*Alcatel Idol 4*/
+    ['phone_model_id' => 42, 'color' => 'Dark Gray'],/*Alcatel Idol 4*/
+    ['phone_model_id' => 42, 'color' => 'Metal Silver'],/*Alcatel Idol 4*/
+    ['phone_model_id' => 42, 'memory' => '16GB/2GB'],/*Alcatel Idol 4*/
+    ['phone_model_id' => 42, 'memory' => '16GB/3GB'],/*Alcatel Idol 4*/
+
+    ['phone_model_id' => 43, 'color' => 'Dark Gray'],/*Alcatel Idol 4s*/
+    ['phone_model_id' => 43, 'color' => 'Gold'],/*Alcatel Idol 4s*/
+    ['phone_model_id' => 43, 'color' => 'Metal Silver'],/*Alcatel Idol 4s*/
+    ['phone_model_id' => 43, 'color' => 'Rose Gold'],/*Alcatel Idol 4s*/
+    ['phone_model_id' => 43, 'memory' => '16GB/3GB'],/*Alcatel Idol 4s*/
+    ['phone_model_id' => 43, 'memory' => '16GB/2GB'],/*Alcatel Idol 4s*/
+
+    ['phone_model_id' => 44, 'color' => 'Metal Black'],/*Alcatel Idol 5*/
+    ['phone_model_id' => 44, 'color' => 'Metal Silver'],/*Alcatel Idol 5*/
+    ['phone_model_id' => 44, 'memory' => '16GB/3GB'],/*Alcatel Idol 5*/
+
+    ['phone_model_id' => 45, 'color' => 'Dark Gray'],/*Alcatel Idol 5s*/
+    ['phone_model_id' => 45, 'memory' => '32GB/3GB'],/*Alcatel Idol 5s*/
+
+    ['phone_model_id' => 46, 'color' => 'White'],/*Alcatel OneTouch Fire C*/
+    ['phone_model_id' => 46, 'color' => 'White/Bluish Black'],/*Alcatel OneTouch Fire C*/
+    ['phone_model_id' => 46, 'color' => 'Mozilla Orange'],/*Alcatel OneTouch Fire C*/
+    ['phone_model_id' => 46, 'memory' => '4GB'],/*Alcatel OneTouch Fire C*/
+
+    ['phone_model_id' => 47, 'color' => 'Dark Chocolate'],/*Alcatel OneTouch Fire C2G*/
+    ['phone_model_id' => 47, 'color' => 'Bluish Black'],/*Alcatel OneTouch Fire C2G*/
+
+    ['phone_model_id' => 48, 'color' => 'Slate'],/*Alcatel OneTouch Fire E*/
+    ['phone_model_id' => 48, 'color' => 'Mozilla Orange'],/*Alcatel OneTouch Fire E*/
+    ['phone_model_id' => 48, 'color' => 'Dark Chocolate'],/*Alcatel OneTouch Fire E*/
+    ['phone_model_id' => 48, 'memory' => '4GB'],/*Alcatel OneTouch Fire E*/
+
+    ['phone_model_id' => 49, 'color' => 'Black'],/*Alcatel OneTouch Fire S*/
+    ['phone_model_id' => 49, 'memory' => '4GB/1GB'],/*Alcatel OneTouch Fire S*/
+
+    ['phone_model_id' => 50, 'color' => 'Slate/White'],/*Alcatel OneTouch Flash*/
+    ['phone_model_id' => 50, 'memory' => '8GB/1GB'],/*Alcatel OneTouch Flash*/
+
+    ['phone_model_id' => 51, 'color' => 'Titanium Grey'],/*Alcatel OneTouch Flash (2017)*/
+    ['phone_model_id' => 51, 'memory' => '32GB/3GB'],/*Alcatel OneTouch Flash (2017)*/
+
+    ['phone_model_id' => 52, 'color' => 'Mica White'],/*Alcatel OneTouch Flash 2*/
+    ['phone_model_id' => 52, 'color' => 'Volcanic Grey'],/*Alcatel OneTouch Flash 2*/
+    ['phone_model_id' => 52, 'memory' => '16GB/2GB'],/*Alcatel OneTouch Flash 2*/
+
+    ['phone_model_id' => 53, 'color' => 'Slate/Gold'],/*Alcatel OneTouch Flash Plus*/
+    ['phone_model_id' => 53, 'memory' => '16GB/2GB'],/*Alcatel OneTouch Flash Plus*/
+
+    ['phone_model_id' => 54, 'color' => 'Luna Silver'],/*Alcatel OneTouch Flash Plus 2*/
+    ['phone_model_id' => 54, 'color' => 'Venus Gold'],/*Alcatel OneTouch Flash Plus 2*/
+    ['phone_model_id' => 54, 'memory' => '16GB/2GB'],/*Alcatel OneTouch Flash Plus 2*/
+    ['phone_model_id' => 54, 'memory' => '32GB/3GB'],/*Alcatel OneTouch Flash Plus 2*/
+
+    ['phone_model_id' => 55, 'color' => 'Slate'],/*Alcatel OneTouch Flash Ibol 2*/
+    ['phone_model_id' => 55, 'color' => 'Chocolate'],/*Alcatel OneTouch Flash Ibol 2*/
+    ['phone_model_id' => 55, 'color' => 'Hot pink'],/*Alcatel OneTouch Flash Ibol 2*/
+    ['phone_model_id' => 55, 'color' => 'White'],/*Alcatel OneTouch Flash Ibol 2*/
+    ['phone_model_id' => 55, 'memory' => '8GB/1GB'],/*Alcatel OneTouch Flash Ibol 2*/
+    ['phone_model_id' => 55, 'memory' => '16GB/1GB'],/*Alcatel OneTouch Flash Ibol 2*/
+
+    ['phone_model_id' => 56, 'color' => 'White'],/*Alcatel OneTouch Flash Ibol Mini*/
+    ['phone_model_id' => 56, 'color' => 'Hot Pink'],/*Alcatel OneTouch Flash Ibol Mini*/
+    ['phone_model_id' => 56, 'color' => 'Cloudy'],/*Alcatel OneTouch Flash Ibol Mini*/
+    ['phone_model_id' => 56, 'color' => 'Slate'],/*Alcatel OneTouch Flash Ibol Mini*/
+    ['phone_model_id' => 56, 'memory' => '4GB/1GB'],/*Alcatel OneTouch Flash Ibol Mini*/
+
+    ['phone_model_id' => 57, 'color' => 'Black'],/*Alcatel OneTouch Flash Ibol 3 (4.7)*/
+    ['phone_model_id' => 57, 'color' => 'Gold'],/*Alcatel OneTouch Flash Ibol 3 (4.7)*/
+    ['phone_model_id' => 57, 'color' => 'Sliver'],/*Alcatel OneTouch Flash Ibol 3 (4.7)*/
+    ['phone_model_id' => 57, 'memory' => '8GB/1.5GB'],/*Alcatel OneTouch Flash Ibol 3 (4.7)*/
+    ['phone_model_id' => 57, 'memory' => '16GB/1.5GB'],/*Alcatel OneTouch Flash Ibol 3 (4.7)*/
+
+    ['phone_model_id' => 58, 'color' => 'Sliver'],/*Alcatel OneTouch Flash Ibol 3 (5.5)*/
+    ['phone_model_id' => 58, 'color' => 'Gold'],/*Alcatel OneTouch Flash Ibol 3 (5.5)*/
+    ['phone_model_id' => 58, 'color' => 'Black'],/*Alcatel OneTouch Flash Ibol 3 (5.5)*/
+    ['phone_model_id' => 58, 'memory' => '32GB/2GB'],/*Alcatel OneTouch Flash Ibol 3 (5.5)*/
+    ['phone_model_id' => 58, 'memory' => '16GB/2GB'],/*Alcatel OneTouch Flash Ibol 3 (5.5)*/
+
+    ['phone_model_id' => 59, 'color' => 'Slate'],/*Alcatel OneTouch Flash Ibol Alpha*/
+    ['phone_model_id' => 59, 'color' => 'Pink Gold/Brushed'],/*Alcatel OneTouch Flash Ibol Alpha*/
+    ['phone_model_id' => 59, 'color' => 'Soft Gold/Matte'],/*Alcatel OneTouch Flash Ibol Alpha*/
+    ['phone_model_id' => 59, 'color' => 'Soft Gold/Brushed'],/*Alcatel OneTouch Flash Ibol Alpha*/
+    ['phone_model_id' => 59, 'memory' => '16GB/1GB'],/*Alcatel OneTouch Flash Ibol Alpha*/
+
+    ['phone_model_id' => 60, 'color' => 'Cherry Red'],/*Alcatel OneTouch Flash Ibol S*/
+    ['phone_model_id' => 60, 'color' => 'Slate'],/*Alcatel OneTouch Flash Ibol S*/
+    ['phone_model_id' => 60, 'color' => 'Fresh Rose'],/*Alcatel OneTouch Flash Ibol S*/
+    ['phone_model_id' => 60, 'memory' => '4GB/1GB'],/*Alcatel OneTouch Flash Ibol S*/
+
+    ['phone_model_id' => 61, 'color' => 'Yellow'],/*Alcatel OneTouch Flash Ibol X*/
+    ['phone_model_id' => 61, 'color' => 'Blue'],/*Alcatel OneTouch Flash Ibol X*/
+    ['phone_model_id' => 61, 'color' => 'Black'],/*Alcatel OneTouch Flash Ibol X*/
+    ['phone_model_id' => 61, 'color' => 'Red'],/*Alcatel OneTouch Flash Ibol X*/
+    ['phone_model_id' => 61, 'memory' => '8GB/2GB'],/*Alcatel OneTouch Flash Ibol X*/
+    ['phone_model_id' => 61, 'memory' => '16GB/2GB'],/*Alcatel OneTouch Flash Ibol X*/
+
+    ['phone_model_id' => 62, 'color' => 'Black'],/*Alcatel OneTouch Flash Ibol X+*/
+    ['phone_model_id' => 62, 'color' => 'White'],/*Alcatel OneTouch Flash Ibol X+*/
+    ['phone_model_id' => 62, 'memory' => '32GB/2GB'],/*Alcatel OneTouch Flash Ibol X+*/
+    ['phone_model_id' => 62, 'memory' => '16GB/2GB'],/*Alcatel OneTouch Flash Ibol X+*/
+
+    ['phone_model_id' => 63, 'color' => 'Blue'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'Silver'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'Turquoise'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'Black'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'Gold'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'White'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'Red'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'color' => 'Yellow'],/*Alcatel OneTouch Pop 4*/
+    ['phone_model_id' => 63, 'memory' => '8GB/1GB'],/*Alcatel OneTouch Pop 4*/
+
+    ['phone_model_id' => 64, 'color' => 'Silver'],/*Alcatel OneTouch Pop 4+*/
+    ['phone_model_id' => 64, 'color' => 'Gold'],/*Alcatel OneTouch Pop 4+*/
+    ['phone_model_id' => 64, 'color' => 'Black'],/*Alcatel OneTouch Pop 4+*/
+    ['phone_model_id' => 64, 'memory' => '16GB/1.5GB'],/*Alcatel OneTouch Pop 4+*/
+
+    ['phone_model_id' => 65, 'color' => 'Red'],/*Alcatel OneTouch Pop 4S*/
+    ['phone_model_id' => 65, 'color' => 'Black'],/*Alcatel OneTouch Pop 4S*/
+    ['phone_model_id' => 65, 'color' => 'Blue'],/*Alcatel OneTouch Pop 4S*/
+    ['phone_model_id' => 65, 'color' => 'Brown'],/*Alcatel OneTouch Pop 4S*/
+    ['phone_model_id' => 65, 'color' => 'Green'],/*Alcatel OneTouch Pop 4S*/
+    ['phone_model_id' => 65, 'memory' => '16GB/1.5GB'],/*Alcatel OneTouch Pop 4S*/
+
+    ['phone_model_id' => 66, 'color' => 'Bluish Black'],/*Alcatel OneTouch Pop C3*/
+    ['phone_model_id' => 66, 'color' => 'Hot Pink'],/*Alcatel OneTouch Pop C3*/
+    ['phone_model_id' => 66, 'color' => 'Pure White'],/*Alcatel OneTouch Pop C3*/
+    ['phone_model_id' => 66, 'memory' => '4GB'],/*Alcatel OneTouch Pop C3*/
+
+    ['phone_model_id' => 67, 'color' => 'White'],/*Alcatel OneTouch Pop C5*/
+    ['phone_model_id' => 67, 'memory' => '4GB'],/*Alcatel OneTouch Pop C5*/
+
+    ['phone_model_id' => 68, 'color' => 'Black'],/*Alcatel OneTouch Pop C7*/
+    ['phone_model_id' => 68, 'memory' => '4GB'],/*Alcatel OneTouch Pop C7*/
+
+    ['phone_model_id' => 69, 'color' => 'Full White'],/*Alcatel OneTouch Pop C9*/
+    ['phone_model_id' => 69, 'color' => 'Bluish Black'],/*Alcatel OneTouch Pop C9*/
+    ['phone_model_id' => 69, 'color' => 'Cherry Red'],/*Alcatel OneTouch Pop C9*/
+    ['phone_model_id' => 69, 'color' => 'Hot Pink'],/*Alcatel OneTouch Pop C9*/
+    ['phone_model_id' => 69, 'color' => 'Fresh Turquoise'],/*Alcatel OneTouch Pop C9*/
+    ['phone_model_id' => 69, 'memory' => '4GB/1GB'],/*Alcatel OneTouch Pop C9*/
+
+    ['phone_model_id' => 70, 'color' => 'Volcano Black'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'White'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Amber Orange'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Sharp Blue'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Tango Red'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Neon Pink'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Laser Yellow'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Vivid Green'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'color' => 'Metallic Silver'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'memory' => '4GB'],/*Alcatel OneTouch Pixi 3*/
+    ['phone_model_id' => 70, 'memory' => '8GB/1GB'],/*Alcatel OneTouch Pixi 3*/
+
+    ['phone_model_id' => 71, 'color' => 'Green'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => 'Purple'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => 'Black'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => 'White'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => 'Gray'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => 'Silver'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => 'Red'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => '4GB'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => '8GB'],/*Alcatel OneTouch Pixi 4*/
+    ['phone_model_id' => 71, 'color' => '16GB'],/*Alcatel OneTouch Pixi 4*/
+
+    ['phone_model_id' => 72, 'color' => 'Satin Gold'],/*Alcatel OneTouch Shine Lite*/
+    ['phone_model_id' => 72, 'color' => 'Pure White'],/*Alcatel OneTouch Shine Lite*/
+    ['phone_model_id' => 72, 'color' => 'Prime Black'],/*Alcatel OneTouch Shine Lite*/
+    ['phone_model_id' => 72, 'color' => '16GB'],/*Alcatel OneTouch Shine Lite*/
+
+    ['phone_model_id' => 73, 'color' => 'Stealth Black'],/*Alcatel Tetra*/
+    ['phone_model_id' => 73, 'color' => '16GB'],/*Alcatel Tetra*/
+
+    ['phone_model_id' => 74, 'color' => 'White'],/*Alcatel Tetra XTM 2008G*/
+    ['phone_model_id' => 74, 'color' => 'Black'],/*Alcatel Tetra XTM 2008G*/
+
+    ['phone_model_id' => 75, 'color' => 'Black'],/*Alcatel U3*/
+    ['phone_model_id' => 75, 'color' => '4GB'],/*Alcatel U3*/
+
+    ['phone_model_id' => 76, 'color' => 'Black'],/*Alcatel U5*/
+    ['phone_model_id' => 76, 'memory' => '8GB/1GB'],/*Alcatel U5*/
 ];
 
 
 
 
-// Xiaomi Ericsson den basla
+//Alcatel den basla
 
 $tab_model = [
     ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
