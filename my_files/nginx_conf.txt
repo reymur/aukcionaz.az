@@ -1,0 +1,56 @@
+link https://www.youtube.com/watch?v=66WZ7mN4rm0
+
+sudo chown -R $USER:$USER html/
+mkdir your folder name (example.loc)
+cd /etc/nginx/sites-available/
+sudo cp default example.loc
+sudo nano example.loc
+
+############################################################################
+server {
+    listen 80;
+    listen [::]:80;
+    server_name avtobazar.loc;
+    root /var/www/html/avtobazar.loc/public;
+ 
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+ 
+    index index.php;
+ 
+    charset utf-8;
+ 
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+ 
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+ 
+    error_page 404 /index.php;
+ 
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+ 
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+###########################################################################
+
+
+save and exit (ctrl o and ctrl x)
+
+cd ../sites-enabled/
+ls -la
+sudo ln -s /etc/nginx/sites-available/example.loc /etc/nginx/sites-enabled/
+ls -la (for lok your new created domen example.loc)
+sudo nginx -s reload or sudo service nginx restart
+
+
+
+
+
