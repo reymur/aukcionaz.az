@@ -4603,14 +4603,147 @@ $phone_model_option = [
 
     ['phone_model_id' => 512, 'color' => 'Black'],/*HTC 7 Pro*/
     ['phone_model_id' => 512, 'memory' => '8GB'],/*HTC 7 Pro*/
+
+    ['phone_model_id' => 513, 'color' => 'Black'],/*HTC 7 Surround*/
+    ['phone_model_id' => 513, 'memory' => '16GB'],/*HTC 7 Surround*/
+
+    ['phone_model_id' => 514, 'color' => 'Black'],/*HTC 7 Trophy*/
+    ['phone_model_id' => 514, 'memory' => '64GB/4GB'],/*HTC 7 Trophy*/
+    ['phone_model_id' => 514, 'memory' => '128GB/6GB'],/*HTC 7 Trophy*/
+
+    ['phone_model_id' => 515, 'color' => 'Black'],/*HTC Advantage X7510*/
+    ['phone_model_id' => 515, 'memory' => '16GB'],/*HTC Advantage X7510*/
+
+    ['phone_model_id' => 516, 'color' => 'Black'],/*HTC Arrive*/
+    ['phone_model_id' => 516, 'memory' => '8GB'],/*HTC Arrive*/
+    ['phone_model_id' => 516, 'memory' => '16GB'],/*HTC Arrive*/
+
+    ['phone_model_id' => 517, 'color' => 'Stone Black'],/*HTC 10 Pro*/
+    ['phone_model_id' => 517, 'color' => 'Polar White'],/*HTC 10 Pro*/
+    ['phone_model_id' => 517, 'color' => 'Royal Blue'],/*HTC 10 Pro*/
+    ['phone_model_id' => 517, 'color' => 'Valentine Lux'],/*HTC 10 Pro*/
+    ['phone_model_id' => 517, 'color' => 'Mint Green'],/*HTC 10 Pro*/
+    ['phone_model_id' => 517, 'memory' => '64GB/4GB'],/*HTC 10 Pro*/
+
+    ['phone_model_id' => 518, 'color' => 'Cool Black'],/*HTC Desire 12*/
+    ['phone_model_id' => 518, 'color' => 'Warm Silver'],/*HTC Desire 12*/
+    ['phone_model_id' => 518, 'memory' => '16GB/2GB'],/*HTC Desire 12*/
+    ['phone_model_id' => 518, 'memory' => '32GB/3GB'],/*HTC Desire 12*/
+
+    ['phone_model_id' => 519, 'color' => 'Black'],/*HTC Desire 12+*/
+    ['phone_model_id' => 519, 'color' => 'Silver'],/*HTC Desire 12+*/
+    ['phone_model_id' => 519, 'color' => 'Gold'],/*HTC Desire 12+*/
+    ['phone_model_id' => 519, 'memory' => '32GB/3GB'],/*HTC Desire 12+*/
+
+    ['phone_model_id' => 520, 'color' => 'Black'],/*HTC Desire 12s*/
+    ['phone_model_id' => 520, 'color' => 'Silver'],/*HTC Desire 12s*/
+    ['phone_model_id' => 520, 'color' => 'Red'],/*HTC Desire 12s*/
+    ['phone_model_id' => 520, 'memory' => '32GB/3GB'],/*HTC Desire 12s*/
+    ['phone_model_id' => 520, 'memory' => '64GB/4GB'],/*HTC Desire 12s*/
+
+    ['phone_model_id' => 521, 'color' => 'Star Can Blue'],/*HTC Desire 19+*/
+    ['phone_model_id' => 521, 'color' => 'Jasmine White'],/*HTC Desire 19+*/
+    ['phone_model_id' => 521, 'memory' => '64GB/4GB'],/*HTC Desire 19+*/
+    ['phone_model_id' => 521, 'memory' => '128GB/6GB'],/*HTC Desire 19+*/
+
+    ['phone_model_id' => 522, 'color' => 'Blue'],/*HTC Desire 19s*/
+    ['phone_model_id' => 522, 'color' => 'Black'],/*HTC Desire 19s*/
+    ['phone_model_id' => 522, 'memory' => '32GB/3GB'],/*HTC Desire 19s*/
+
+    ['phone_model_id' => 523, 'color' => 'Smoky Black'],/*HTC Desire 20 Pro*/
+    ['phone_model_id' => 523, 'color' => 'Pretty Blue'],/*HTC Desire 20 Pro*/
+    ['phone_model_id' => 523, 'color' => 'Crystal Green'],/*HTC Desire 20 Pro*/
+    ['phone_model_id' => 523, 'memory' => '128GB/6GB'],/*HTC Desire 20 Pro*/
+
+    ['phone_model_id' => 524, 'color' => 'Dawn Orange'],/*HTC Desire 20+*/
+    ['phone_model_id' => 524, 'color' => 'Twilight Black'],/*HTC Desire 20+*/
+    ['phone_model_id' => 524, 'color' => 'Blue'],/*HTC Desire 20+*/
+    ['phone_model_id' => 524, 'memory' => '128GB/6GB'],/*HTC Desire 20+*/
+
+    ['phone_model_id' => 525, 'color' => 'Purple'],/*HTC Desire 21 Pro 5G*/
+    ['phone_model_id' => 525, 'color' => 'Blue'],/*HTC Desire 21 Pro 5G*/
+    ['phone_model_id' => 525, 'memory' => '128GB/8GB'],/*HTC Desire 21 Pro 5G*/
+
+    ['phone_model_id' => 526, 'color' => 'Black'],/*HTC Desire 210 Dual Sim*/
+    ['phone_model_id' => 526, 'color' => 'White'],/*HTC Desire 210 Dual Sim*/
+    ['phone_model_id' => 526, 'color' => 'Red'],/*HTC Desire 210 Dual Sim*/
+    ['phone_model_id' => 526, 'memory' => '4GB'],/*HTC Desire 210 Dual Sim*/
+
+    ['phone_model_id' => 527, 'color' => 'Starry Night Black'],/*HTC Desire 22 Pro*/
+    ['phone_model_id' => 527, 'color' => 'Wave Gold'],/*HTC Desire 22 Pro*/
+    ['phone_model_id' => 527, 'memory' => '128GB/8GB'],/*HTC Desire 22 Pro*/
+
+    ['phone_model_id' => 528, 'color' => 'Black'],/*HTC Desire 300*/
+    ['phone_model_id' => 528, 'color' => 'White'],/*HTC Desire 300*/
+    ['phone_model_id' => 528, 'memory' => '4GB'],/*HTC Desire 300*/
+
+    ['phone_model_id' => 529, 'color' => 'White Birch'],/*HTC Desire 326G Dual Sim*/
+    ['phone_model_id' => 529, 'color' => 'Black Onyx'],/*HTC Desire 326G Dual Sim*/
+    ['phone_model_id' => 529, 'memory' => '8GB'],/*HTC Desire 326G Dual Sim*/
+
+    ['phone_model_id' => 530, 'color' => 'Slate Gray'],/*HTC Desire 520*/
+    ['phone_model_id' => 530, 'memory' => '8GB'],/*HTC Desire 520*/
+
+    ['phone_model_id' => 531, 'color' => 'Black'],/*HTC Desire 526*/
+    ['phone_model_id' => 531, 'memory' => '8GB'],/*HTC Desire 526*/
+
+    ['phone_model_id' => 532, 'color' => 'Glacier Blue'],/*HTC Desire 526G*/
+    ['phone_model_id' => 532, 'color' => 'Stealth Black'],/*HTC Desire 526G*/
+
+    ['phone_model_id' => 533, 'color' => 'Glacier Blue'],/*HTC Desire 526G+ Dual Sim*/
+    ['phone_model_id' => 533, 'color' => 'Stealth Black'],/*HTC Desire 526G+ Dual Sim*/
+    ['phone_model_id' => 533, 'color' => 'Lacquer Black'],/*HTC Desire 526G+ Dual Sim*/
+    ['phone_model_id' => 533, 'color' => 'Fervor Red'],/*HTC Desire 526G+ Dual Sim*/
+    ['phone_model_id' => 533, 'color' => 'Fervor Red'],/*HTC Desire 526G+ */
+    ['phone_model_id' => 533, 'memory' => '8GB'],/*HTC Desire 526G+ Dual Sim*/
+    ['phone_model_id' => 533, 'memory' => '16GB'],/*HTC Desire 526G+ Dual Sim*/
+
+    ['phone_model_id' => 534, 'color' => 'Black'],/*HTC Desire 530*/
+    ['phone_model_id' => 534, 'color' => 'White'],/*HTC Desire 530*/
+    ['phone_model_id' => 534, 'memory' => '16GB'],/*HTC Desire 530*/
+
+    ['phone_model_id' => 535, 'color' => 'Black'],/*HTC Desire 600 Dual Sim*/
+    ['phone_model_id' => 535, 'color' => 'White'],/*HTC Desire 600 Dual Sim*/
+    ['phone_model_id' => 535, 'memory' => '8GB'],/*HTC Desire 600 Dual Sim*/
+
+    ['phone_model_id' => 536, 'color' => 'Black'],/*HTC Desire 601*/
+    ['phone_model_id' => 536, 'color' => 'Silver'],/*HTC Desire 601*/
+    ['phone_model_id' => 536, 'color' => 'Red'],/*HTC Desire 601*/
+    ['phone_model_id' => 536, 'memory' => '8GB'],/*HTC Desire 601*/
+
+    ['phone_model_id' => 537, 'color' => 'Black'],/*HTC Desire 601 Dual Sim*/
+    ['phone_model_id' => 537, 'color' => 'Red'],/*HTC Desire 601 Dual Sim*/
+    ['phone_model_id' => 537, 'color' => 'White'],/*HTC Desire 601 Dual Sim*/
+    ['phone_model_id' => 537, 'memory' => '4GB'],/*HTC Desire 601 Dual Sim*/
+
+    ['phone_model_id' => 538, 'color' => 'Black'],/*HTC Desire 616 Dual Sim*/
+    ['phone_model_id' => 538, 'color' => 'White'],/*HTC Desire 616 Dual Sim*/
+    ['phone_model_id' => 538, 'color' => 'Red'],/*HTC Desire 616 Dual Sim*/
+    ['phone_model_id' => 538, 'memory' => '4GB'],/*HTC Desire 616 Dual Sim*/
+
+    ['phone_model_id' => 539, 'color' => 'Blue'],/*HTC Desire 620*/
+    ['phone_model_id' => 539, 'color' => 'Black'],/*HTC Desire 620*/
+    ['phone_model_id' => 539, 'color' => 'Gray'],/*HTC Desire 620*/
+    ['phone_model_id' => 539, 'color' => 'White'],/*HTC Desire 620*/
+    ['phone_model_id' => 539, 'memory' => '8GB'],/*HTC Desire 620*/
+
+    ['phone_model_id' => 540, 'color' => 'Marble White'],/*HTC Desire 620G Dual Sim*/
+    ['phone_model_id' => 540, 'color' => 'Milkyway Gray'],/*HTC Desire 620G Dual Sim*/
+    ['phone_model_id' => 540, 'color' => 'Saffron Gray'],/*HTC Desire 620G Dual Sim*/
+    ['phone_model_id' => 540, 'color' => 'Santorini White'],/*HTC Desire 620G Dual Sim*/
+    ['phone_model_id' => 540, 'color' => 'Tangerine White'],/*HTC Desire 620G Dual Sim*/
+    ['phone_model_id' => 540, 'color' => 'Tuxedo Gray'],/*HTC Desire 620G Dual Sim*/
+    ['phone_model_id' => 540, 'memory' => '8GB'],/*HTC Desire 620G Dual Sim*/
+
+    ['phone_model_id' => 541, 'color' => 'Black'],/*HTC Desire 626*/
+    ['phone_model_id' => 541, 'color' => 'White'],/*HTC Desire 626*/
+    ['phone_model_id' => 541, 'color' => 'Gray'],/*HTC Desire 626*/
+    ['phone_model_id' => 541, 'color' => 'Blue'],/*HTC Desire 626*/
+    ['phone_model_id' => 541, 'memory' => '16GB/2GB'],/*HTC Desire 626*/
+    ['phone_model_id' => 541, 'memory' => '16GB/1GB'],/*HTC Desire 626*/
 ];
 
-
-
-
-
-
-//Iphone den basla
+//HTC den basla
 
 $tab_model = [
     ['sub_category_type_one_id' => 75,'name' => 'Chromebook Tab 10'],/*Acer 31 dene*/
