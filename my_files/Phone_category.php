@@ -4485,8 +4485,742 @@ $phone_model_option = [
     ['phone_model_id' => 620, 'color' => 'Sapphire Blue'],/*HTC Wildfire X*/
     ['phone_model_id' => 620, 'memory' => '32GB/3GB'],/*HTC Wildfire X*/
     ['phone_model_id' => 620, 'memory' => '128GB/4GB'],/*HTC Wildfire X*/
-];
 
+    ['phone_model_id' => 621, 'color' => 'Metallic black'],/*Huawei Ascend D quad*/
+    ['phone_model_id' => 621, 'color' => 'Ceramic white'],/*Huawei Ascend D quad*/
+    ['phone_model_id' => 621, 'memory' => '8GB/1GB'],/*Huawei Ascend D quad*/
+
+    ['phone_model_id' => 622, 'color' => 'Metallic black'],/*Huawei Ascend D quad XL*/
+    ['phone_model_id' => 622, 'color' => 'Ceramic white'],/*Huawei Ascend D quad XL*/
+    ['phone_model_id' => 622, 'memory' => '8GB/1GB'],/*Huawei Ascend D quad XL*/
+
+    ['phone_model_id' => 623, 'color' => 'Crystal Blue'],/*Huawei Ascend D2*/
+    ['phone_model_id' => 623, 'color' => 'Pure White'],/*Huawei Ascend D2*/
+    ['phone_model_id' => 623, 'memory' => '32GB/2GB'],/*Huawei Ascend D2*/
+
+    ['phone_model_id' => 624, 'color' => 'Black'],/*Huawei Ascend G300*/
+    ['phone_model_id' => 624, 'color' => 'Silver'],/*Huawei Ascend G300*/
+    ['phone_model_id' => 624, 'memory' => '4GB'],/*Huawei Ascend G300*/
+
+    ['phone_model_id' => 625, 'color' => 'Black'],/*Huawei Ascend G312*/
+    ['phone_model_id' => 625, 'memory' => '4GB'],/*Huawei Ascend G312*/
+
+    ['phone_model_id' => 626, 'color' => 'Matt Black'],/*Huawei Ascend G330*/
+    ['phone_model_id' => 626, 'color' => 'Luxury Silver'],/*Huawei Ascend G330*/
+    ['phone_model_id' => 626, 'memory' => '4GB'],/*Huawei Ascend G330*/
+
+    ['phone_model_id' => 627, 'color' => 'Black'],/*Huawei Ascend G330D*/
+    ['phone_model_id' => 627, 'memory' => '4GB'],/*Huawei Ascend G330D*/
+
+    ['phone_model_id' => 628, 'color' => 'Black'],/*Huawei Ascend G350*/
+    ['phone_model_id' => 628, 'color' => 'Black/Red'],/*Huawei Ascend G350*/
+    ['phone_model_id' => 628, 'color' => 'Black/Green'],/*Huawei Ascend G350*/
+    ['phone_model_id' => 628, 'memory' => '4GB'],/*Huawei Ascend G350*/
+
+    ['phone_model_id' => 629, 'color' => 'Black'],/*Huawei Ascend G500*/
+    ['phone_model_id' => 629, 'memory' => '4GB'],/*Huawei Ascend G500*/
+
+    ['phone_model_id' => 630, 'color' => 'Black'],/*Huawei Ascend G510*/
+    ['phone_model_id' => 630, 'color' => 'White'],/*Huawei Ascend G510*/
+    ['phone_model_id' => 630, 'memory' => '4GB'],/*Huawei Ascend G510*/
+    ['phone_model_id' => 630, 'sim' => 'Dual Sim'],/*Huawei Ascend G510*/
+
+    ['phone_model_id' => 631, 'color' => 'Black'],/*Huawei Ascend G525*/
+    ['phone_model_id' => 631, 'color' => 'White'],/*Huawei Ascend G525*/
+    ['phone_model_id' => 631, 'memory' => '4GB/1GB'],/*Huawei Ascend G525*/
+
+    ['phone_model_id' => 632, 'color' => 'Black'],/*Huawei Ascend G526*/
+    ['phone_model_id' => 632, 'color' => 'White'],/*Huawei Ascend G526*/
+    ['phone_model_id' => 632, 'memory' => '4GB/1GB'],/*Huawei Ascend G526*/
+
+    ['phone_model_id' => 633, 'color' => 'Black'],/*Huawei Ascend G535*/
+    ['phone_model_id' => 633, 'color' => 'White'],/*Huawei Ascend G535*/
+    ['phone_model_id' => 633, 'memory' => '8GB/1GB'],/*Huawei Ascend G535*/
+
+    ['phone_model_id' => 634, 'color' => 'Black'],/*Huawei Ascend G6*/
+    ['phone_model_id' => 634, 'color' => 'White'],/*Huawei Ascend G6*/
+    ['phone_model_id' => 634, 'color' => 'Blue'],/*Huawei Ascend G6*/
+    ['phone_model_id' => 634, 'color' => 'Gold'],/*Huawei Ascend G6*/
+    ['phone_model_id' => 634, 'color' => 'Pink'],/*Huawei Ascend G6*/
+    ['phone_model_id' => 634, 'memory' => '4GB/1GB'],/*Huawei Ascend G6*/
+
+    ['phone_model_id' => 635, 'color' => 'Black'],/*Huawei Ascend G6 4G*/
+    ['phone_model_id' => 635, 'color' => 'White/ Color sides'],/*Huawei Ascend G6 4G*/
+    ['phone_model_id' => 635, 'memory' => '8GB/1GB'],/*Huawei Ascend G6 4G*/
+
+    ['phone_model_id' => 636, 'color' => 'Black'],/*Huawei Ascend G600*/
+    ['phone_model_id' => 636, 'color' => 'White'],/*Huawei Ascend G600*/
+    ['phone_model_id' => 636, 'memory' => '4GB'],/*Huawei Ascend G600*/
+
+    ['phone_model_id' => 637, 'color' => 'Metallic Black'],/*Huawei Ascend G615*/
+    ['phone_model_id' => 637, 'color' => 'Ceic White'],/*Huawei Ascend G615*/
+    ['phone_model_id' => 637, 'memory' => '8GB/1GB'],/*Huawei Ascend G615*/
+
+    ['phone_model_id' => 638, 'color' => 'Black'],/*Huawei Ascend G620s*/
+    ['phone_model_id' => 638, 'color' => 'White'],/*Huawei Ascend G620s*/
+    ['phone_model_id' => 638, 'memory' => '8GB/1GB'],/*Huawei Ascend G620s*/
+
+    ['phone_model_id' => 639, 'color' => 'Black'],/*Huawei Ascend G630*/
+    ['phone_model_id' => 639, 'color' => 'White'],/*Huawei Ascend G630*/
+    ['phone_model_id' => 639, 'memory' => '4GB/1GB'],/*Huawei Ascend G630*/
+
+    ['phone_model_id' => 640, 'color' => 'Black'],/*Huawei Ascend G7*/
+    ['phone_model_id' => 640, 'color' => 'White'],/*Huawei Ascend G7*/
+    ['phone_model_id' => 640, 'memory' => '16GB/2GB'],/*Huawei Ascend G7*/
+
+    ['phone_model_id' => 641, 'color' => 'Black'],/*Huawei Ascend G700*/
+    ['phone_model_id' => 641, 'color' => 'White'],/*Huawei Ascend G700*/
+    ['phone_model_id' => 641, 'memory' => '8GB/2GB'],/*Huawei Ascend G700*/
+
+    ['phone_model_id' => 642, 'color' => 'Black'],/*Huawei Ascend G730*/
+    ['phone_model_id' => 642, 'color' => 'White'],/*Huawei Ascend G730*/
+    ['phone_model_id' => 642, 'memory' => '4GB/1GB'],/*Huawei Ascend G730*/
+
+    ['phone_model_id' => 643, 'color' => 'Black/White'],/*Huawei Ascend G740*/
+    ['phone_model_id' => 643, 'memory' => '8GB/1GB'],/*Huawei Ascend G740*/
+
+    ['phone_model_id' => 644, 'color' => 'White'],/*Huawei Ascend GX1*/
+    ['phone_model_id' => 644, 'color' => 'Black'],/*Huawei Ascend GX1*/
+    ['phone_model_id' => 644, 'memory' => '8GB/1GB'],/*Huawei Ascend GX1*/
+
+    ['phone_model_id' => 645, 'color' => 'Black/White'],/*Huawei Ascend II*/
+
+    ['phone_model_id' => 646, 'color' => 'Crystal Black'],/*Huawei Ascend Mate*/
+    ['phone_model_id' => 646, 'color' => 'Pure White'],/*Huawei Ascend Mate*/
+    ['phone_model_id' => 646, 'memory' => '8GB/2GB'],/*Huawei Ascend Mate*/
+
+    ['phone_model_id' => 646, 'color' => 'Crystal Black'],/*Huawei Ascend Mate2 4G*/
+    ['phone_model_id' => 646, 'color' => 'Pure White'],/*Huawei Ascend Mate2 4G*/
+    ['phone_model_id' => 646, 'memory' => '8GB/2GB'],/*Huawei Ascend Mate2 4G*/
+
+    ['phone_model_id' => 647, 'color' => 'Obsidian Black'],/*Huawei Ascend Mate7*/
+    ['phone_model_id' => 647, 'color' => 'Moonlight Silver'],/*Huawei Ascend Mate7*/
+    ['phone_model_id' => 647, 'color' => 'Amber Gold'],/*Huawei Ascend Mate7*/
+    ['phone_model_id' => 647, 'memory' => '16GB/2GB'],/*Huawei Ascend Mate7*/
+    ['phone_model_id' => 647, 'memory' => '32GB/3GB'],/*Huawei Ascend Mate7*/
+
+    ['phone_model_id' => 648, 'color' => 'Obsidian Black'],/*Huawei Ascend Mate7 Monarch*/
+    ['phone_model_id' => 648, 'color' => 'Moonlight Silver'],/*Huawei Ascend Mate7 Monarch*/
+    ['phone_model_id' => 648, 'color' => 'Amber Gold'],/*Huawei Ascend Mate7 Monarch*/
+    ['phone_model_id' => 648, 'memory' => '64GB/3GB'],/*Huawei Ascend Mate7 Monarch*/
+
+    ['phone_model_id' => 649, 'color' => 'Metallic black'],/*Huawei Ascend P1*/
+    ['phone_model_id' => 649, 'color' => 'Ceramic white'],/*Huawei Ascend P1*/
+    ['phone_model_id' => 649, 'color' => 'Soft pink'],/*Huawei Ascend P1*/
+    ['phone_model_id' => 649, 'memory' => '4GB'],/*Huawei Ascend P1*/
+
+    ['phone_model_id' => 650, 'color' => 'Metallic black'],/*Huawei Ascend P1 LTE*/
+    ['phone_model_id' => 650, 'color' => 'Ceramic white'],/*Huawei Ascend P1 LTE*/
+    ['phone_model_id' => 650, 'color' => 'Soft pink'],/*Huawei Ascend P1 LTE*/
+    ['phone_model_id' => 650, 'memory' => '4GB'],/*Huawei Ascend P1 LTE*/
+
+    ['phone_model_id' => 651, 'color' => 'Metallic black'],/*Huawei Ascend P1s*/
+    ['phone_model_id' => 651, 'color' => 'Ceramic white'],/*Huawei Ascend P1s*/
+    ['phone_model_id' => 651, 'color' => 'Soft pink'],/*Huawei Ascend P1s*/
+    ['phone_model_id' => 651, 'memory' => '4GB'],/*Huawei Ascend P1s*/
+
+    ['phone_model_id' => 652, 'color' => 'black'],/*Huawei Ascend P2*/
+    ['phone_model_id' => 652, 'color' => 'white'],/*Huawei Ascend P2*/
+    ['phone_model_id' => 652, 'memory' => '16GB/1GB'],/*Huawei Ascend P2*/
+
+    ['phone_model_id' => 653, 'color' => 'black'],/*Huawei Ascend P6*/
+    ['phone_model_id' => 653, 'color' => 'white'],/*Huawei Ascend P6*/
+    ['phone_model_id' => 653, 'color' => 'Pink'],/*Huawei Ascend P6*/
+    ['phone_model_id' => 653, 'memory' => '8GB/2GB'],/*Huawei Ascend P6*/
+    ['phone_model_id' => 653, 'memory' => '16GB/2GB'],/*Huawei Ascend P6*/
+    ['phone_model_id' => 653, 'sim' => 'Dual Sim'],/*Huawei Ascend P6*/
+
+    ['phone_model_id' => 654, 'color' => 'black'],/*Huawei Ascend P6 S*/
+    ['phone_model_id' => 654, 'color' => 'white'],/*Huawei Ascend P6 S*/
+    ['phone_model_id' => 654, 'memory' => '16GB/2GB'],/*Huawei Ascend P6 S*/
+
+    ['phone_model_id' => 655, 'color' => 'black'],/*Huawei Ascend P7*/
+    ['phone_model_id' => 655, 'color' => 'white'],/*Huawei Ascend P7*/
+    ['phone_model_id' => 655, 'color' => 'Pink'],/*Huawei Ascend P7*/
+    ['phone_model_id' => 655, 'memory' => '16GB/2GB'],/*Huawei Ascend P7*/
+    ['phone_model_id' => 655, 'sim' => 'Dual Sim'],/*Huawei Ascend P7*/
+
+    ['phone_model_id' => 656, 'color' => 'black'],/*Huawei Ascend P7 mini*/
+    ['phone_model_id' => 656, 'color' => 'white'],/*Huawei Ascend P7 mini*/
+    ['phone_model_id' => 656, 'memory' => '8GB/1GB'],/*Huawei Ascend P7 mini*/
+
+    ['phone_model_id' => 657, 'color' => 'black'],/*Huawei Ascend P7 Sapphire Edition*/
+    ['phone_model_id' => 657, 'color' => 'white'],/*Huawei Ascend P7 Sapphire Edition*/
+    ['phone_model_id' => 657, 'color' => 'Pink'],/*Huawei Ascend P7 Sapphire Edition*/
+    ['phone_model_id' => 657, 'memory' => '16GB/2GB'],/*Huawei Ascend P7 Sapphire Edition*/
+
+    ['phone_model_id' => 658, 'color' => 'black'],/*Huawei Ascend Plus*/
+
+    ['phone_model_id' => 659, 'color' => 'Blue'],/*Huawei Ascend W1*/
+    ['phone_model_id' => 659, 'color' => 'Red'],/*Huawei Ascend W1*/
+    ['phone_model_id' => 659, 'color' => 'Black'],/*Huawei Ascend W1*/
+    ['phone_model_id' => 659, 'color' => 'White'],/*Huawei Ascend W1*/
+    ['phone_model_id' => 659, 'memory' => '4GB'],/*Huawei Ascend W1*/
+
+    ['phone_model_id' => 660, 'color' => 'Black'],/*Huawei Ascend W2*/
+    ['phone_model_id' => 660, 'color' => 'Blue'],/*Huawei Ascend W2*/
+    ['phone_model_id' => 660, 'color' => 'Red'],/*Huawei Ascend W2*/
+    ['phone_model_id' => 660, 'color' => 'Yellow'],/*Huawei Ascend W2*/
+    ['phone_model_id' => 660, 'memory' => '8GB'],/*Huawei Ascend W2*/
+
+    ['phone_model_id' => 661, 'color' => 'Black'],/*Huawei Ascend Y*/
+
+    ['phone_model_id' => 662, 'color' => 'Black'],/*Huawei Ascend Y100*/
+    ['phone_model_id' => 662, 'color' => 'White'],/*Huawei Ascend Y100*/
+
+    ['phone_model_id' => 663, 'color' => 'Black'],/*Huawei Ascend Y200*/
+
+    ['phone_model_id' => 664, 'color' => 'Black'],/*Huawei Ascend Y201 Pro*/
+    ['phone_model_id' => 664, 'memory' => '4GB'],/*Huawei Ascend Y201 Pro*/
+
+    ['phone_model_id' => 665, 'color' => 'Black'],/*Huawei Ascend Y210D*/
+
+    ['phone_model_id' => 666, 'color' => 'Black'],/*Huawei Ascend Y220*/
+    ['phone_model_id' => 666, 'color' => 'White'],/*Huawei Ascend Y220*/
+
+    ['phone_model_id' => 667, 'color' => 'Black'],/*Huawei Ascend Y221*/
+    ['phone_model_id' => 667, 'color' => 'White'],/*Huawei Ascend Y221*/
+    ['phone_model_id' => 667, 'memory' => '4GB'],/*Huawei Ascend Y221*/
+    ['phone_model_id' => 667, 'sim' => 'Dual Sim'],/*Huawei Ascend Y221*/
+
+    ['phone_model_id' => 668, 'color' => 'Black'],/*Huawei Ascend Y300*/
+    ['phone_model_id' => 668, 'color' => 'White'],/*Huawei Ascend Y300*/
+    ['phone_model_id' => 668, 'memory' => '4GB'],/*Huawei Ascend Y300*/
+
+    ['phone_model_id' => 669, 'color' => 'Black'],/*Huawei Ascend Y320*/
+    ['phone_model_id' => 669, 'color' => 'White'],/*Huawei Ascend Y320*/
+    ['phone_model_id' => 669, 'memory' => '4GB'],/*Huawei Ascend Y320*/
+
+    ['phone_model_id' => 670, 'color' => 'Black'],/*Huawei Ascend Y330*/
+    ['phone_model_id' => 670, 'color' => 'White'],/*Huawei Ascend Y330*/
+    ['phone_model_id' => 670, 'color' => 'Blue'],/*Huawei Ascend Y330*/
+    ['phone_model_id' => 670, 'color' => 'Coral Pink'],/*Huawei Ascend Y330*/
+    ['phone_model_id' => 670, 'color' => 'Yellow'],/*Huawei Ascend Y330*/
+    ['phone_model_id' => 670, 'memory' => '4GB'],/*Huawei Ascend Y330*/
+
+    ['phone_model_id' => 671, 'color' => 'Black'],/*Huawei Ascend Y511*/
+    ['phone_model_id' => 671, 'color' => 'White'],/*Huawei Ascend Y511*/
+    ['phone_model_id' => 671, 'memory' => '4GB'],/*Huawei Ascend Y511*/
+
+    ['phone_model_id' => 672, 'color' => 'Black'],/*Huawei Ascend Y520*/
+    ['phone_model_id' => 672, 'color' => 'White'],/*Huawei Ascend Y520*/
+    ['phone_model_id' => 672, 'color' => 'Blue'],/*Huawei Ascend Y520*/
+    ['phone_model_id' => 672, 'color' => 'Pink'],/*Huawei Ascend Y520*/
+    ['phone_model_id' => 672, 'memory' => '4GB'],/*Huawei Ascend Y520*/
+
+    ['phone_model_id' => 673, 'color' => 'Black'],/*Huawei Ascend Y530*/
+    ['phone_model_id' => 673, 'color' => 'White'],/*Huawei Ascend Y530*/
+    ['phone_model_id' => 673, 'color' => 'Red'],/*Huawei Ascend Y530*/
+    ['phone_model_id' => 673, 'color' => 'Yellow'],/*Huawei Ascend Y530*/
+    ['phone_model_id' => 673, 'memory' => '4GB'],/*Huawei Ascend Y530*/
+
+    ['phone_model_id' => 674, 'color' => 'Black'],/*Huawei Ascend Y540*/
+    ['phone_model_id' => 674, 'color' => 'White'],/*Huawei Ascend Y540*/
+    ['phone_model_id' => 674, 'memory' => '4GB/1GB'],/*Huawei Ascend Y540*/
+
+    ['phone_model_id' => 675, 'color' => 'Black'],/*Huawei Ascend Y550*/
+    ['phone_model_id' => 675, 'color' => 'White'],/*Huawei Ascend Y550*/
+    ['phone_model_id' => 675, 'memory' => '4GB/1GB'],/*Huawei Ascend Y550*/
+
+    ['phone_model_id' => 676, 'color' => 'Black'],/*Huawei Ascend Y600*/
+    ['phone_model_id' => 676, 'color' => 'White'],/*Huawei Ascend Y600*/
+    ['phone_model_id' => 676, 'memory' => '4GB'],/*Huawei Ascend Y600*/
+
+    ['phone_model_id' => 677, 'color' => 'Black/Orange'],/*Huawei D51 Discovery*/
+
+    ['phone_model_id' => 678, 'color' => 'Sky blue'],/*Huawei Enjoy 10*/
+    ['phone_model_id' => 678, 'color' => 'Acacia red'],/*Huawei Enjoy 10*/
+    ['phone_model_id' => 678, 'color' => 'Magic night black'],/*Huawei Enjoy 10*/
+    ['phone_model_id' => 678, 'memory' => '64GB/4GB'],/*Huawei Enjoy 10*/
+    ['phone_model_id' => 678, 'memory' => '64GB/6GB'],/*Huawei Enjoy 10*/
+    ['phone_model_id' => 678, 'memory' => '128GB/4GB'],/*Huawei Enjoy 10*/
+
+    ['phone_model_id' => 679, 'color' => 'Red Tea Orange'],/*Huawei Enjoy 10 Plus*/
+    ['phone_model_id' => 679, 'color' => 'Emerald'],/*Huawei Enjoy 10 Plus*/
+    ['phone_model_id' => 679, 'color' => 'Gradient'],/*Huawei Enjoy 10 Plus*/
+    ['phone_model_id' => 679, 'color' => 'Magic Night Black'],/*Huawei Enjoy 10 Plus*/
+    ['phone_model_id' => 679, 'memory' => '128GB/4GB'],/*Huawei Enjoy 10 Plus*/
+    ['phone_model_id' => 679, 'memory' => '128GB/6GB'],/*Huawei Enjoy 10 Plus*/
+    ['phone_model_id' => 679, 'memory' => '128GB/8GB'],/*Huawei Enjoy 10 Plus*/
+
+    ['phone_model_id' => 680, 'color' => 'Black'],/*Huawei Enjoy 10s*/
+    ['phone_model_id' => 680, 'color' => 'Green'],/*Huawei Enjoy 10s*/
+    ['phone_model_id' => 680, 'color' => 'Blue/Pink'],/*Huawei Enjoy 10s*/
+    ['phone_model_id' => 680, 'memory' => '64GB/6GB'],/*Huawei Enjoy 10s*/
+
+    ['phone_model_id' => 681, 'color' => 'Black'],/*Huawei Enjoy 20 5G*/
+    ['phone_model_id' => 681, 'color' => 'Gold'],/*Huawei Enjoy 20 5G*/
+    ['phone_model_id' => 681, 'color' => 'Green'],/*Huawei Enjoy 20 5G*/
+    ['phone_model_id' => 681, 'color' => 'Pink'],/*Huawei Enjoy 20 5G*/
+    ['phone_model_id' => 681, 'memory' => '64GB/4GB'],/*Huawei Enjoy 20 5G*/
+    ['phone_model_id' => 681, 'memory' => '128GB/4GB'],/*Huawei Enjoy 20 5G*/
+    ['phone_model_id' => 681, 'memory' => '128GB/6GB'],/*Huawei Enjoy 20 5G*/
+
+    ['phone_model_id' => 682, 'color' => 'Black'],/*Huawei Enjoy 20 Plus 5G*/
+    ['phone_model_id' => 682, 'color' => 'Blue'],/*Huawei Enjoy 20 Plus 5G*/
+    ['phone_model_id' => 682, 'color' => 'Green'],/*Huawei Enjoy 20 Plus 5G*/
+    ['phone_model_id' => 682, 'color' => 'Pink'],/*Huawei Enjoy 20 Plus 5G*/
+    ['phone_model_id' => 682, 'memory' => '128GB/6GB'],/*Huawei Enjoy 20 Plus 5G*/
+    ['phone_model_id' => 682, 'memory' => '128GB/8GB'],/*Huawei Enjoy 20 Plus 5G*/
+
+    ['phone_model_id' => 683, 'color' => 'Magic Night Black'],/*Huawei Enjoy 20 Pro*/
+    ['phone_model_id' => 683, 'color' => 'Dark Blue'],/*Huawei Enjoy 20 Pro*/
+    ['phone_model_id' => 683, 'color' => 'Galaxy Silver'],/*Huawei Enjoy 20 Pro*/
+    ['phone_model_id' => 683, 'memory' => '128GB/6GB'],/*Huawei Enjoy 20 Pro*/
+    ['phone_model_id' => 683, 'memory' => '128GB/8GB'],/*Huawei Enjoy 20 Pro*/
+
+    ['phone_model_id' => 684, 'color' => 'Violet'],/*Huawei Enjoy 20e*/
+    ['phone_model_id' => 684, 'color' => 'Black'],/*Huawei Enjoy 20e*/
+    ['phone_model_id' => 684, 'color' => 'Green'],/*Huawei Enjoy 20e*/
+    ['phone_model_id' => 684, 'color' => '64GB/4GB'],/*Huawei Enjoy 20e*/
+    ['phone_model_id' => 684, 'color' => '128GB/6GB'],/*Huawei Enjoy 20e*/
+    ['phone_model_id' => 684, 'color' => '128GB/4GB'],/*Huawei Enjoy 20e*/
+
+    ['phone_model_id' => 685, 'color' => 'Gold'],/*Huawei Enjoy 5s*/
+    ['phone_model_id' => 685, 'color' => 'Silver'],/*Huawei Enjoy 5s*/
+    ['phone_model_id' => 685, 'memory' => '16GB/2GB'],/*Huawei Enjoy 5s*/
+
+    ['phone_model_id' => 686, 'color' => 'Pink'],/*Huawei Enjoy 6*/
+    ['phone_model_id' => 686, 'color' => 'White'],/*Huawei Enjoy 6*/
+    ['phone_model_id' => 686, 'color' => 'Gold'],/*Huawei Enjoy 6*/
+    ['phone_model_id' => 686, 'color' => 'Blue'],/*Huawei Enjoy 6*/
+    ['phone_model_id' => 686, 'color' => 'Gray'],/*Huawei Enjoy 6*/
+    ['phone_model_id' => 686, 'memory' => '16GB/3GB'],/*Huawei Enjoy 6*/
+
+    ['phone_model_id' => 687, 'color' => 'Gold'],/*Huawei Enjoy 6s*/
+    ['phone_model_id' => 687, 'color' => 'Silver'],/*Huawei Enjoy 6s*/
+    ['phone_model_id' => 687, 'color' => 'Pink'],/*Huawei Enjoy 6s*/
+    ['phone_model_id' => 687, 'memory' => '16GB/2GB'],/*Huawei Enjoy 6s*/
+    ['phone_model_id' => 687, 'memory' => '32GB/3GB'],/*Huawei Enjoy 6s*/
+
+    ['phone_model_id' => 688, 'color' => 'Black'],/*Huawei Enjoy 9*/
+    ['phone_model_id' => 688, 'color' => 'Red'],/*Huawei Enjoy 9*/
+    ['phone_model_id' => 688, 'color' => 'Aurora Blue'],/*Huawei Enjoy 9*/
+    ['phone_model_id' => 688, 'color' => 'Aurora Purple'],/*Huawei Enjoy 9*/
+    ['phone_model_id' => 688, 'memory' => '32GB/3GB'],/*Huawei Enjoy 9*/
+    ['phone_model_id' => 688, 'memory' => '64GB/4GB'],/*Huawei Enjoy 9*/
+
+    ['phone_model_id' => 689, 'color' => 'Midnight Black'],/*Huawei Enjoy 9e*/
+    ['phone_model_id' => 689, 'color' => 'Sapphire Blue'],/*Huawei Enjoy 9e*/
+    ['phone_model_id' => 689, 'color' => 'Gold'],/*Huawei Enjoy 9e*/
+    ['phone_model_id' => 689, 'memory' => '32GB/3GB'],/*Huawei Enjoy 9e*/
+    ['phone_model_id' => 689, 'memory' => '64GB/3GB'],/*Huawei Enjoy 9e*/
+
+    ['phone_model_id' => 690, 'color' => 'Aurora Blue'],/*Huawei Enjoy 9s*/
+    ['phone_model_id' => 690, 'color' => 'Coral Red'],/*Huawei Enjoy 9s*/
+    ['phone_model_id' => 690, 'color' => 'Nebula Blue'],/*Huawei Enjoy 9s*/
+    ['phone_model_id' => 690, 'color' => 'Phantom Black'],/*Huawei Enjoy 9s*/
+    ['phone_model_id' => 690, 'memory' => '64GB/4GB'],/*Huawei Enjoy 9s*/
+    ['phone_model_id' => 690, 'memory' => '64GB/6GB'],/*Huawei Enjoy 9s*/
+    ['phone_model_id' => 690, 'memory' => '128GB/4GB'],/*Huawei Enjoy 9s*/
+
+    ['phone_model_id' => 691, 'color' => 'Breathing Crystal'],/*Huawei Enjoy Z 5G*/
+    ['phone_model_id' => 691, 'color' => 'Midnight Black'],/*Huawei Enjoy Z 5G*/
+    ['phone_model_id' => 691, 'color' => 'Dark Blue'],/*Huawei Enjoy Z 5G*/
+    ['phone_model_id' => 691, 'memory' => '64GB/6GB'],/*Huawei Enjoy Z 5G*/
+    ['phone_model_id' => 691, 'memory' => '128GB/6GB'],/*Huawei Enjoy Z 5G*/
+    ['phone_model_id' => 691, 'memory' => '128GB/8GB'],/*Huawei Enjoy Z 5G*/
+
+    ['phone_model_id' => 692, 'color' => 'Titanium Gray'],/*Huawei Fit*/
+    ['phone_model_id' => 692, 'color' => 'Moonlight Silver'],/*Huawei Fit*/
+    ['phone_model_id' => 692, 'color' => 'Orange'],/*Huawei Fit*/
+
+    ['phone_model_id' => 693, 'color' => 'Black'],/*Huawei Fusion 2 U8665*/
+    ['phone_model_id' => 693, 'color' => 'Black'],/*Huawei Fusion 2 U8665*/
+    ['phone_model_id' => 693, 'memory' => '4GB'],/*Huawei Fusion 2 U8665*/
+
+    ['phone_model_id' => 694, 'color' => 'Black'],/*Huawei G3621L*/
+    ['phone_model_id' => 694, 'color' => 'Red'],/*Huawei G3621L*/
+
+    ['phone_model_id' => 695, 'color' => 'Black'],/*Huawei G610s*/
+    ['phone_model_id' => 695, 'color' => 'White'],/*Huawei G610s*/
+    ['phone_model_id' => 695, 'memory' => '4GB/1GB'],/*Huawei G610s*/
+
+    ['phone_model_id' => 696, 'color' => 'Gray'],/*Huawei G7 Plus*/
+    ['phone_model_id' => 696, 'color' => 'Silver'],/*Huawei G7 Plus*/
+    ['phone_model_id' => 696, 'color' => 'Gold'],/*Huawei G7 Plus*/
+    ['phone_model_id' => 696, 'memory' => '32GB/3GB'],/*Huawei G7 Plus*/
+
+    ['phone_model_id' => 697, 'color' => 'Black'],/*Huawei G8*/
+    ['phone_model_id' => 697, 'color' => 'White'],/*Huawei G8*/
+    ['phone_model_id' => 697, 'color' => 'Gold'],/*Huawei G8*/
+    ['phone_model_id' => 697, 'memory' => '16GB/2GB'],/*Huawei G8*/
+    ['phone_model_id' => 697, 'memory' => '32GB/3GB'],/*Huawei G8*/
+
+    ['phone_model_id' => 698, 'color' => 'Black'],/*Huawei G9 Plus*/
+    ['phone_model_id' => 698, 'color' => 'White'],/*Huawei G9 Plus*/
+    ['phone_model_id' => 698, 'color' => 'Gold'],/*Huawei G9 Plus*/
+    ['phone_model_id' => 698, 'memory' => '32GB/3GB'],/*Huawei G9 Plus*/
+    ['phone_model_id' => 698, 'memory' => '32GB/4GB'],/*Huawei G9 Plus*/
+    ['phone_model_id' => 698, 'memory' => '64GB/4GB'],/*Huawei G9 Plus*/
+
+    ['phone_model_id' => 699, 'color' => 'Black'],/*Huawei ISEOS S7*/
+    ['phone_model_id' => 699, 'memory' => '8GB'],/*Huawei ISEOS S7*/
+
+    ['phone_model_id' => 700, 'color' => 'Black'],/*Huawei ISEOS S7 Slim*/
+    ['phone_model_id' => 700, 'memory' => '8GB'],/*Huawei ISEOS S7 Slim*/
+
+    ['phone_model_id' => 701, 'color' => 'Black'],/*Huawei Impulse 4G*/
+
+    ['phone_model_id' => 702, 'color' => 'Black'],/*Huawei M886 Mercury*/
+    ['phone_model_id' => 702, 'memory' => '4GB'],/*Huawei M886 Mercury*/
+
+    ['phone_model_id' => 703, 'color' => 'Mocha Brown'],/*Huawei Mate 10*/
+    ['phone_model_id' => 703, 'color' => 'Black'],/*Huawei Mate 10*/
+    ['phone_model_id' => 703, 'color' => 'Champagne Gold'],/*Huawei Mate 10*/
+    ['phone_model_id' => 703, 'color' => 'Pink Gold'],/*Huawei Mate 10*/
+    ['phone_model_id' => 703, 'memory' => '64GB/4GB'],/*Huawei Mate 10*/
+    ['phone_model_id' => 703, 'sim' => 'Dual Sim'],/*Huawei Mate 10*/
+
+    ['phone_model_id' => 704, 'color' => 'Graphite Black'],/*Huawei Mate 10 Lite*/
+    ['phone_model_id' => 704, 'color' => 'Prestige Gold'],/*Huawei Mate 10 Lite*/
+    ['phone_model_id' => 704, 'color' => 'Aurora Blue'],/*Huawei Mate 10 Lite*/
+    ['phone_model_id' => 704, 'memory' => '64GB/4GB'],/*Huawei Mate 10 Lite*/
+    ['phone_model_id' => 704, 'sim' => 'Dual Sim'],/*Huawei Mate 10 Lite*/
+
+    ['phone_model_id' => 705, 'color' => 'Diamond Black'],/*Huawei Mate 10 Porsche Design*/
+    ['phone_model_id' => 705, 'memory' => '256GB/6GB'],/*Huawei Mate 10 Porsche Design*/
+
+    ['phone_model_id' => 706, 'color' => 'Mocha Brown'],/*Huawei Mate 10 Pro*/
+    ['phone_model_id' => 706, 'color' => 'Midnight Blue'],/*Huawei Mate 10 Pro*/
+    ['phone_model_id' => 706, 'color' => 'Pink Gold'],/*Huawei Mate 10 Pro*/
+    ['phone_model_id' => 706, 'color' => 'Titanium Gray'],/*Huawei Mate 10 Pro*/
+    ['phone_model_id' => 706, 'memory' => '64GB/4GB'],/*Huawei Mate 10 Pro*/
+    ['phone_model_id' => 706, 'memory' => '128GB/6GB'],/*Huawei Mate 10 Pro*/
+    ['phone_model_id' => 706, 'sim' => 'Dual Sim'],/*Huawei Mate 10 Pro*/
+
+    ['phone_model_id' => 707, 'color' => 'Emerald Green'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'color' => 'Pink Gold'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'color' => 'Midnight Blue'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'color' => 'Twilight'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'color' => 'Black'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'memory' => '64GB/6GB'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'memory' => '128GB/4GB'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'memory' => '128GB/6GB'],/*Huawei Mate 20*/
+    ['phone_model_id' => 707, 'sim' => 'Dual Sim'],/*Huawei Mate 20*/
+
+    ['phone_model_id' => 708, 'color' => 'Sapphire Blue'],/*Huawei Mate 20 Lite*/
+    ['phone_model_id' => 708, 'color' => 'Black'],/*Huawei Mate 20 Lite*/
+    ['phone_model_id' => 708, 'color' => 'Platinum gold'],/*Huawei Mate 20 Lite*/
+    ['phone_model_id' => 708, 'memory' => '64GB/4GB'],/*Huawei Mate 20 Lite*/
+    ['phone_model_id' => 708, 'memory' => '64GB/6GB'],/*Huawei Mate 20 Lite*/
+    ['phone_model_id' => 708, 'sim' => 'Dual Sim'],/*Huawei Mate 20 Lite*/
+
+    ['phone_model_id' => 709, 'color' => 'Emerald Green'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'color' => 'Midnight Blue'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'color' => 'Twilight'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'color' => 'Pink Gold'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'color' => 'Black'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'memory' => '128GB/6GB'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'memory' => '128GB/8GB'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'memory' => '256GB/8GB'],/*Huawei Mate 20 Pro*/
+    ['phone_model_id' => 709, 'sim' => 'Dual Sim'],/*Huawei Mate 20 Pro*/
+
+    ['phone_model_id' => 710, 'color' => 'Black'],/*Huawei Mate 20 RS Porsche Design*/
+    ['phone_model_id' => 710, 'color' => 'Red (China only)'],/*Huawei Mate 20 RS Porsche Design*/
+    ['phone_model_id' => 710, 'memory' => '256GB/8GB'],/*Huawei Mate 20 RS Porsche Design*/
+    ['phone_model_id' => 710, 'memory' => '512GB/8GB'],/*Huawei Mate 20 RS Porsche Design*/
+    ['phone_model_id' => 710, 'sim' => 'Dual Sim'],/*Huawei Mate 20 RS Porsche Design*/
+
+    ['phone_model_id' => 711, 'color' => 'Midnight Blue'],/*Huawei Mate 20 X*/
+    ['phone_model_id' => 711, 'color' => 'Phantom Silver'],/*Huawei Mate 20 X*/
+    ['phone_model_id' => 711, 'memory' => '128GB/6GB'],/*Huawei Mate 20 X*/
+    ['phone_model_id' => 711, 'memory' => '256GB/8GB'],/*Huawei Mate 20 X*/
+
+    ['phone_model_id' => 712, 'color' => 'Emerald Green'],/*Huawei Mate 20 X (5G)*/
+    ['phone_model_id' => 712, 'memory' => '256GB/8GB'],/*Huawei Mate 20 X (5G)*/
+
+    ['phone_model_id' => 713, 'color' => 'Black'],/*Huawei Mate 30*/
+    ['phone_model_id' => 713, 'color' => 'Space Silver'],/*Huawei Mate 30*/
+    ['phone_model_id' => 713, 'color' => 'Cosmic Purple'],/*Huawei Mate 30*/
+    ['phone_model_id' => 713, 'color' => 'Emerald Green'],/*Huawei Mate 30*/
+    ['phone_model_id' => 713, 'memory' => '128GB/6GB'],/*Huawei Mate 30*/
+    ['phone_model_id' => 713, 'memory' => '128GB/8GB'],/*Huawei Mate 30*/
+    ['phone_model_id' => 713, 'sim' => 'Dual Sim'],/*Huawei Mate 30*/
+
+    ['phone_model_id' => 714, 'color' => 'Emerald Green'],/*Huawei Mate 30 Pro*/
+    ['phone_model_id' => 714, 'color' => 'Cosmic Purple'],/*Huawei Mate 30 Pro*/
+    ['phone_model_id' => 714, 'color' => 'Space Silver'],/*Huawei Mate 30 Pro*/
+    ['phone_model_id' => 714, 'color' => 'Black'],/*Huawei Mate 30 Pro*/
+    ['phone_model_id' => 714, 'memory' => '256GB/8GB'],/*Huawei Mate 30 Pro*/
+    ['phone_model_id' => 714, 'memory' => '128GB/8GB'],/*Huawei Mate 30 Pro*/
+
+    ['phone_model_id' => 715, 'color' => 'Black'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'color' => 'Space Silver'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'color' => 'Cosmic Purple'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'color' => 'Emerald Green'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'color' => 'Orange'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'color' => 'Forest Green'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'memory' => '128GB/8GB'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'memory' => '256GB/8GB'],/*Huawei Mate 30E Pro 5G*/
+    ['phone_model_id' => 715, 'sim' => 'Dual Sim'],/*Huawei Mate 30E Pro 5G*/
+
+    ['phone_model_id' => 716, 'color' => 'Mystic Silver'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'color' => 'White'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'color' => 'Black'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'color' => 'Green'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'color' => 'Yellow'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'memory' => '128GB/8GB'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'memory' => '256GB/8GB'],/*Huawei Mate 40*/
+    ['phone_model_id' => 716, 'sim' => 'Dual Sim'],/*Huawei Mate 40*/
+
+    ['phone_model_id' => 717, 'color' => 'Mystic Silver'],/*Huawei Mate 40 Pro*/
+    ['phone_model_id' => 717, 'color' => 'White'],/*Huawei Mate 40 Pro*/
+    ['phone_model_id' => 717, 'color' => 'Black'],/*Huawei Mate 40 Pro*/
+    ['phone_model_id' => 717, 'color' => 'Green'],/*Huawei Mate 40 Pro*/
+    ['phone_model_id' => 717, 'memory' => '256GB/8GB'],/*Huawei Mate 40 Pro*/
+    ['phone_model_id' => 717, 'memory' => '512GB/8GB'],/*Huawei Mate 40 Pro*/
+    ['phone_model_id' => 717, 'sim' => 'Dual Sim'],/*Huawei Mate 40 Pro*/
+
+    ['phone_model_id' => 718, 'color' => 'Yellow'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'color' => 'White'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'color' => 'Black'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'color' => 'Mystic Silver'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'color' => 'Green'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'memory' => '512GB/8GB'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'memory' => '128GB/8GB'],/*Huawei Mate 40 Pro 4G*/
+    ['phone_model_id' => 718, 'memory' => '256GB/8GB'],/*Huawei Mate 40 Pro 4G*/
+
+    ['phone_model_id' => 719, 'color' => 'Ceic White'],/*Huawei Mate 40 Pro+ */
+    ['phone_model_id' => 719, 'color' => 'Ceic Black'],/*Huawei Mate 40 Pro+ */
+    ['phone_model_id' => 719, 'memory' => '256GB/8GB'],/*Huawei Mate 40 Pro+ */
+    ['phone_model_id' => 719, 'memory' => '256GB/12GB'],/*Huawei Mate 40 Pro+ */
+    ['phone_model_id' => 719, 'sim' => 'Dual Sim'],/*Huawei Mate 40 Pro+ */
+
+    ['phone_model_id' => 720, 'color' => 'Ceic White'],/*Huawei Mate 40 RS Porsche Design*/
+    ['phone_model_id' => 720, 'color' => 'Ceic Black'],/*Huawei Mate 40 RS Porsche Design*/
+    ['phone_model_id' => 720, 'color' => 'Collector Edition'],/*Huawei Mate 40 RS Porsche Design*/
+    ['phone_model_id' => 720, 'memory' => '256GB/12GB'],/*Huawei Mate 40 RS Porsche Design*/
+    ['phone_model_id' => 720, 'memory' => '512GB/12GB'],/*Huawei Mate 40 RS Porsche Design*/
+    ['phone_model_id' => 720, 'sim' => 'Dual Sim'],/*Huawei Mate 40 RS Porsche Design*/
+
+    ['phone_model_id' => 721, 'color' => 'Silver'],/*Huawei Mate 40E */
+    ['phone_model_id' => 721, 'color' => 'White'],/*Huawei Mate 40E */
+    ['phone_model_id' => 721, 'color' => 'Black'],/*Huawei Mate 40E */
+    ['phone_model_id' => 721, 'memory' => '128GB/8GB'],/*Huawei Mate 40E */
+    ['phone_model_id' => 721, 'memory' => '256GB/8GB'],/*Huawei Mate 40E */
+    ['phone_model_id' => 721, 'sim' => 'Dual Sim'],/*Huawei Mate 40E */
+
+    ['phone_model_id' => 722, 'color' => 'Black'],/*Huawei Mate 40E 4G*/
+    ['phone_model_id' => 722, 'color' => 'White'],/*Huawei Mate 40E 4G*/
+    ['phone_model_id' => 722, 'color' => 'Silver'],/*Huawei Mate 40E 4G*/
+    ['phone_model_id' => 722, 'memory' => '128GB/8GB'],/*Huawei Mate 40E 4G*/
+    ['phone_model_id' => 722, 'memory' => '256GB/8GB'],/*Huawei Mate 40E 4G*/
+
+    ['phone_model_id' => 723, 'color' => 'Black'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'color' => 'Orange'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'color' => 'Purple'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'color' => 'Silver'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'memory' => '128GB/8GB'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'memory' => '512GB/8GB'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'memory' => '256GB/8GB'],/*Huawei Mate 50*/
+    ['phone_model_id' => 723, 'sim' => 'Dual Sim'],/*Huawei Mate 50*/
+
+    ['phone_model_id' => 724, 'color' => 'Orange'],/*Huawei Mate 50 Pro*/
+    ['phone_model_id' => 724, 'color' => 'Black'],/*Huawei Mate 50 Pro*/
+    ['phone_model_id' => 724, 'color' => 'Purple'],/*Huawei Mate 50 Pro*/
+    ['phone_model_id' => 724, 'color' => 'Silver'],/*Huawei Mate 50 Pro*/
+    ['phone_model_id' => 724, 'memory' => '256GB/8GB'],/*Huawei Mate 50 Pro*/
+    ['phone_model_id' => 724, 'memory' => '512GB/8GB'],/*Huawei Mate 50 Pro*/
+    ['phone_model_id' => 724, 'sim' => 'Dual Sim'],/*Huawei Mate 50 Pro*/
+
+    ['phone_model_id' => 725, 'color' => 'Ink Blue'],/*Huawei Mate 50 RS Porsche Design*/
+    ['phone_model_id' => 725, 'color' => 'Purple'],/*Huawei Mate 50 RS Porsche Design*/
+    ['phone_model_id' => 725, 'memory' => '512GB/12GB'],/*Huawei Mate 50 RS Porsche Design*/
+    ['phone_model_id' => 725, 'sim' => 'Dual Sim'],/*Huawei Mate 50 RS Porsche Design*/
+
+    ['phone_model_id' => 726, 'color' => 'Black'],/*Huawei Mate 50E*/
+    ['phone_model_id' => 726, 'color' => 'Silver'],/*Huawei Mate 50E*/
+    ['phone_model_id' => 726, 'color' => 'Purple'],/*Huawei Mate 50E*/
+    ['phone_model_id' => 726, 'memory' => '256GB/8GB'],/*Huawei Mate 50E*/
+    ['phone_model_id' => 726, 'memory' => '128GB/8GB'],/*Huawei Mate 50E*/
+    ['phone_model_id' => 726, 'sim' => 'Dual Sim'],/*Huawei Mate 50E*/
+
+    ['phone_model_id' => 727, 'color' => 'Champagne Gold'],/*Huawei Mate 8*/
+    ['phone_model_id' => 727, 'color' => 'Moonlight Silver'],/*Huawei Mate 8*/
+    ['phone_model_id' => 727, 'color' => 'Space Gray'],/*Huawei Mate 8*/
+    ['phone_model_id' => 727, 'color' => 'Mocha Brown'],/*Huawei Mate 8*/
+    ['phone_model_id' => 727, 'memory' => '32GB/3GB'],/*Huawei Mate 8*/
+    ['phone_model_id' => 727, 'memory' => '64GB/4GB'],/*Huawei Mate 8*/
+
+    ['phone_model_id' => 728, 'color' => 'Agate Red'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Topaz Blue'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Space Gray'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Moonlight Silver'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Champagne Gold'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Mocha Brown'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Ceic White'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Black'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'color' => 'Obsidian Black'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'memory' => '64GB/4GB'],/*Huawei Mate 9*/
+    ['phone_model_id' => 728, 'sim' => 'Dual Sim'],/*Huawei Mate 9*/
+
+    ['phone_model_id' => 729, 'color' => 'Graphite Black'],/*Huawei Mate 9 Porsche Design*/
+    ['phone_model_id' => 729, 'memory' => '256GB/6GB'],/*Huawei Mate 9 Porsche Design*/
+
+    ['phone_model_id' => 730, 'color' => 'Haze Gold'],/*Huawei Mate 9 Pro*/
+    ['phone_model_id' => 730, 'color' => 'Titanium Gray'],/*Huawei Mate 9 Pro*/
+    ['phone_model_id' => 730, 'memory' => '64GB/4GB'],/*Huawei Mate 9 Pro*/
+    ['phone_model_id' => 730, 'memory' => '128GB/6GB'],/*Huawei Mate 9 Pro*/
+    ['phone_model_id' => 730, 'sim' => 'Dual Sim'],/*Huawei Mate 9 Pro*/
+
+    ['phone_model_id' => 731, 'color' => 'Black'],/*Huawei Mate RS Porsche Design*/
+    ['phone_model_id' => 731, 'color' => 'Red'],/*Huawei Mate RS Porsche Design*/
+    ['phone_model_id' => 731, 'memory' => '256GB/6GB'],/*Huawei Mate RS Porsche Design*/
+    ['phone_model_id' => 731, 'memory' => '512GB/6GB'],/*Huawei Mate RS Porsche Design*/
+
+    ['phone_model_id' => 732, 'color' => 'Luxurious Gold'],/*Huawei Mate S*/
+    ['phone_model_id' => 732, 'color' => 'Titanium Gray'],/*Huawei Mate S*/
+    ['phone_model_id' => 732, 'color' => 'Mystic Champagne'],/*Huawei Mate S*/
+    ['phone_model_id' => 732, 'memory' => '32GB/3GB'],/*Huawei Mate S*/
+    ['phone_model_id' => 732, 'memory' => '64GB/3GB'],/*Huawei Mate S*/
+    ['phone_model_id' => 732, 'memory' => '128GB/3GB'],/*Huawei Mate S*/
+    ['phone_model_id' => 732, 'sim' => 'Dual Sim'],/*Huawei Mate S*/
+
+    ['phone_model_id' => 733, 'color' => 'Interstellar Blue'],/*Huawei Mate X*/
+    ['phone_model_id' => 733, 'memory' => '512GB/8GB'],/*Huawei Mate X*/
+
+    ['phone_model_id' => 734, 'color' => 'Black'],/*Huawei Mate X2*/
+    ['phone_model_id' => 734, 'color' => 'White'],/*Huawei Mate X2*/
+    ['phone_model_id' => 734, 'color' => 'Light Blue'],/*Huawei Mate X2*/
+    ['phone_model_id' => 734, 'color' => 'Rose Gold'],/*Huawei Mate X2*/
+    ['phone_model_id' => 734, 'memory' => '256GB/8GB'],/*Huawei Mate X2*/
+    ['phone_model_id' => 734, 'memory' => '512GB/8GB'],/*Huawei Mate X2*/
+
+    ['phone_model_id' => 735, 'color' => 'Black'],/*Huawei Mate X2 4G*/
+    ['phone_model_id' => 735, 'color' => 'White'],/*Huawei Mate X2 4G*/
+    ['phone_model_id' => 735, 'color' => 'Light Blue'],/*Huawei Mate X2 4G*/
+    ['phone_model_id' => 735, 'memory' => '512GB/8GB'],/*Huawei Mate X2 4G*/
+    ['phone_model_id' => 735, 'memory' => '256GB/8GB'],/*Huawei Mate X2 4G*/
+
+    ['phone_model_id' => 736, 'color' => 'Interstellar Blue'],/*Huawei Mate Xs*/
+    ['phone_model_id' => 736, 'memory' => '512GB/8GB'],/*Huawei Mate Xs*/
+
+    ['phone_model_id' => 737, 'color' => 'Gray'],/*Huawei MatePad Pro 5G*/
+    ['phone_model_id' => 737, 'color' => 'White'],/*Huawei MatePad Pro 5G*/
+    ['phone_model_id' => 737, 'color' => 'Green'],/*Huawei MatePad Pro 5G*/
+    ['phone_model_id' => 737, 'color' => 'Orange'],/*Huawei MatePad Pro 5G*/
+    ['phone_model_id' => 737, 'memory' => '128GB/6GB'],/*Huawei MatePad Pro 5G*/
+    ['phone_model_id' => 737, 'memory' => '256GB/8GB'],/*Huawei MatePad Pro 5G*/
+    ['phone_model_id' => 737, 'memory' => '512GB/8GB'],/*Huawei MatePad Pro 5G*/
+
+    ['phone_model_id' => 738, 'color' => 'Aluminium'],/*Huawei Nexus 6P*/
+    ['phone_model_id' => 738, 'color' => 'Graphite'],/*Huawei Nexus 6P*/
+    ['phone_model_id' => 738, 'color' => 'Frost'],/*Huawei Nexus 6P*/
+    ['phone_model_id' => 738, 'memory' => '32GB/3GB'],/*Huawei Nexus 6P*/
+    ['phone_model_id' => 738, 'memory' => '64GB/3GB'],/*Huawei Nexus 6P*/
+    ['phone_model_id' => 738, 'memory' => '128GB/3GB'],/*Huawei Nexus 6P*/
+
+    ['phone_model_id' => 739, 'color' => 'Prestige Gold'],/*Huawei Nova*/
+    ['phone_model_id' => 739, 'color' => 'Mystic Silver'],/*Huawei Nova*/
+    ['phone_model_id' => 739, 'color' => 'Titanium Grey'],/*Huawei Nova*/
+    ['phone_model_id' => 739, 'color' => 'Obsidian Black'],/*Huawei Nova*/
+    ['phone_model_id' => 739, 'memory' => '32GB/3GB'],/*Huawei Nova*/
+    ['phone_model_id' => 739, 'sim' => 'Dual Sim'],/*Huawei Nova*/
+
+    ['phone_model_id' => 740, 'color' => 'Black'],/*Huawei Nova 10*/
+    ['phone_model_id' => 740, 'color' => 'Silver'],/*Huawei Nova 10*/
+    ['phone_model_id' => 740, 'color' => 'Green'],/*Huawei Nova 10*/
+    ['phone_model_id' => 740, 'color' => 'Violet'],/*Huawei Nova 10*/
+    ['phone_model_id' => 740, 'memory' => '128GB/8GB'],/*Huawei Nova 10*/
+    ['phone_model_id' => 740, 'memory' => '256GB/8GB'],/*Huawei Nova 10*/
+    ['phone_model_id' => 740, 'sim' => 'Dual Sim'],/*Huawei Nova 10*/
+
+    ['phone_model_id' => 741, 'color' => 'Violet'],/*Huawei Nova 10 Pro*/
+    ['phone_model_id' => 741, 'color' => 'Black'],/*Huawei Nova 10 Pro*/
+    ['phone_model_id' => 741, 'color' => 'Silver'],/*Huawei Nova 10 Pro*/
+    ['phone_model_id' => 741, 'color' => 'Green'],/*Huawei Nova 10 Pro*/
+    ['phone_model_id' => 741, 'memory' => '128GB/8GB'],/*Huawei Nova 10 Pro*/
+    ['phone_model_id' => 741, 'memory' => '256GB/8GB'],/*Huawei Nova 10 Pro*/
+
+    ['phone_model_id' => 742, 'color' => 'Starry Silver'],/*Huawei Nova 10 SE*/
+    ['phone_model_id' => 742, 'color' => 'Starry Black'],/*Huawei Nova 10 SE*/
+    ['phone_model_id' => 742, 'color' => 'Mint Green'],/*Huawei Nova 10 SE*/
+    ['phone_model_id' => 742, 'memory' => '128GB/6GB'],/*Huawei Nova 10 SE*/
+    ['phone_model_id' => 742, 'memory' => '256GB/8GB'],/*Huawei Nova 10 SE*/
+    ['phone_model_id' => 742, 'memory' => '128GB/8GB'],/*Huawei Nova 10 SE*/
+    ['phone_model_id' => 742, 'sim' => 'Dual Sim'],/*Huawei Nova 10 SE*/
+
+    ['phone_model_id' => 743, 'color' => 'Black'],/*Huawei Nova 10z*/
+    ['phone_model_id' => 743, 'color' => 'Green'],/*Huawei Nova 10z*/
+    ['phone_model_id' => 743, 'memory' => '128GB'],/*Huawei Nova 10z*/
+    ['phone_model_id' => 743, 'memory' => '256GB'],/*Huawei Nova 10z*/
+
+    ['phone_model_id' => 744, 'color' => 'Aurora Blue'],/*Huawei Nova 2*/
+    ['phone_model_id' => 744, 'color' => 'Grass Green'],/*Huawei Nova 2*/
+    ['phone_model_id' => 744, 'color' => 'Streamer Gold'],/*Huawei Nova 2*/
+    ['phone_model_id' => 744, 'color' => 'Obsidian Black'],/*Huawei Nova 2*/
+    ['phone_model_id' => 744, 'color' => 'Rose Gold'],/*Huawei Nova 2*/
+    ['phone_model_id' => 744, 'memory' => '64GB/4GB'],/*Huawei Nova 2*/
+    ['phone_model_id' => 744, 'sim' => 'Dual Sim'],/*Huawei Nova 2*/
+
+    ['phone_model_id' => 745, 'color' => 'Streamer Gold'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'color' => 'Obsidian Black'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'color' => 'Rose Gold'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'color' => 'Aurora Blue'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'color' => 'Grass Green'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'memory' => '64GB/4GB'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'memory' => '128GB/4GB'],/*Huawei Nova 2 Plus*/
+    ['phone_model_id' => 745, 'sim' => 'Dual Sim'],/*Huawei Nova 2 Plus*/
+
+    ['phone_model_id' => 746, 'color' => 'Rose Gold'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'color' => 'Black'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'color' => 'Light Blue'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'color' => 'Gray'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'color' => 'Red'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'memory' => '64GB/4GB'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'memory' => '64GB/6GB'],/*Huawei Nova 2s*/
+    ['phone_model_id' => 746, 'memory' => '128GB/6GB'],/*Huawei Nova 2s*/
+
+    ['phone_model_id' => 747, 'color' => 'Iris Purple'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'color' => 'Airy blue'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'color' => 'Primrose Gold'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'color' => 'Red'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'color' => 'Black'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'memory' => '64GB/6GB'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'memory' => '128GB/4GB'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'memory' => '128GB/6GB'],/*Huawei Nova 3*/
+    ['phone_model_id' => 747, 'sim' => 'Dual Sim'],/*Huawei Nova 3*/
+
+    ['phone_model_id' => 748, 'color' => 'Black'],/*Huawei Nova 3i*/
+    ['phone_model_id' => 748, 'color' => 'Pearl White'],/*Huawei Nova 3i*/
+    ['phone_model_id' => 748, 'color' => 'Iris Purple'],/*Huawei Nova 3i*/
+    ['phone_model_id' => 748, 'memory' => '128GB/4GB'],/*Huawei Nova 3i*/
+    ['phone_model_id' => 748, 'memory' => '128GB/6GB'],/*Huawei Nova 3i*/
+
+    ['phone_model_id' => 749, 'color' => 'Aurora Blue'],/*Huawei Nova 4*/
+    ['phone_model_id' => 749, 'color' => 'Red'],/*Huawei Nova 4*/
+    ['phone_model_id' => 749, 'color' => 'White'],/*Huawei Nova 4*/
+    ['phone_model_id' => 749, 'color' => 'Black'],/*Huawei Nova 4*/
+    ['phone_model_id' => 749, 'memory' => '128GB/6GB'],/*Huawei Nova 4*/
+    ['phone_model_id' => 749, 'memory' => '128GB/8GB'],/*Huawei Nova 4*/
+
+    ['phone_model_id' => 750, 'color' => 'Peacock Blue'],/*Huawei Nova 4e*/
+    ['phone_model_id' => 750, 'color' => 'Midnight Black'],/*Huawei Nova 4e*/
+    ['phone_model_id' => 750, 'color' => 'Pearl White'],/*Huawei Nova 4e*/
+    ['phone_model_id' => 750, 'memory' => '128GB/4GB'],/*Huawei Nova 4e*/
+    ['phone_model_id' => 750, 'memory' => '128GB/8GB'],/*Huawei Nova 4e*/
+
+    ['phone_model_id' => 751, 'color' => 'Black'],/*Huawei Nova 5*/
+    ['phone_model_id' => 751, 'color' => 'Purple'],/*Huawei Nova 5*/
+    ['phone_model_id' => 751, 'color' => 'Green'],/*Huawei Nova 5*/
+    ['phone_model_id' => 751, 'memory' => '128GB/8GB'],/*Huawei Nova 5*/
+
+    ['phone_model_id' => 752, 'color' => 'Black'],/*Huawei Nova 5 Pro*/
+    ['phone_model_id' => 752, 'color' => 'Purple'],/*Huawei Nova 5 Pro*/
+    ['phone_model_id' => 752, 'color' => 'Green'],/*Huawei Nova 5 Pro*/
+    ['phone_model_id' => 752, 'color' => 'Orange'],/*Huawei Nova 5 Pro*/
+    ['phone_model_id' => 752, 'color' => 'Orange'],/*Huawei Nova 5 Pro*/
+    ['phone_model_id' => 752, 'memory' => '128GB/8GB'],/*Huawei Nova 5 Pro*/
+    ['phone_model_id' => 752, 'memory' => '256GB/8GB'],/*Huawei Nova 5 Pro*/
+
+    ['phone_model_id' => 753, 'color' => 'Black'],/*Huawei Nova 5i*/
+    ['phone_model_id' => 753, 'color' => 'Gradient Blue'],/*Huawei Nova 5i*/
+    ['phone_model_id' => 753, 'color' => 'Red'],/*Huawei Nova 5i*/
+    ['phone_model_id' => 753, 'memory' => '128GB/6GB'],/*Huawei Nova 5i*/
+    ['phone_model_id' => 753, 'memory' => '128GB/8GB'],/*Huawei Nova 5i*/
+
+];
 
 
 
