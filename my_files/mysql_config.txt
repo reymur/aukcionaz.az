@@ -1,0 +1,6 @@
+Installing Nginx, PHP, MySQL and PHPMyAdmin on Ubuntu 20.04 / 18.04 within 10min:
+	https://www.youtube.com/watch?v=V_vGAiLTxA0
+
+Install MySQL 8.0.28 on Linux Ubuntu 20.04LTS [Step-by-Step]:
+	https://www.youtube.com/watch?v=BDShK0w1zAg
+	
