@@ -653,7 +653,7 @@ $phone_model = [
     ['sub_category_id' => 215,'name' => 'Wildfire E3'],/*HTC*/
     ['sub_category_id' => 215,'name' => 'Wildfire R70'],/*HTC*/
     ['sub_category_id' => 215,'name' => 'Wildfire X'],/*HTC*/
-    ['sub_category_id' => 216,'name' => 'Ascend D quad'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend D quad'],/*id 620 Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend D quad XL'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend D2'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend G300'],/*Huawei*/
@@ -683,7 +683,7 @@ $phone_model = [
     ['sub_category_id' => 216,'name' => 'Ascend Mate7'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend Mate7 Monarch'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend P1'],/*Huawei*/
-    ['sub_category_id' => 216,'name' => 'Ascend P1 LTE'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Ascend P1 LTE'],/*id 650 Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend P1s'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend P2'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Ascend P6'],/*Huawei*/
@@ -733,7 +733,7 @@ $phone_model = [
     ['sub_category_id' => 216,'name' => 'G8'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'G9 Plus'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'IDEOS S7'],/*Huawei*/
-    ['sub_category_id' => 216,'name' => 'IDEOS S7 Slim'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'IDEOS S7 Slim'],/* 700 Huawei*/
     ['sub_category_id' => 216,'name' => 'Impulse 4G'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'M886 Mercury'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Mate 10'],/*Huawei*/
@@ -783,7 +783,7 @@ $phone_model = [
     ['sub_category_id' => 216,'name' => 'Nova 5'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Nova 5 Pro'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Nova 5i'],/*Huawei*/
-    ['sub_category_id' => 216,'name' => 'Nova 5i Pro'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Nova 5i Pro'],/* 750 Huawei*/
     ['sub_category_id' => 216,'name' => 'Nova 5T'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Nova 5z'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Nova 6'],/*Huawei*/
@@ -833,7 +833,7 @@ $phone_model = [
     ['sub_category_id' => 216,'name' => 'P40 Lite 5G'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'P40 Lite E'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'P40 Pro'],/*Huawei*/
-    ['sub_category_id' => 216,'name' => 'P40 Pro+'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'P40 Pro+'],/*800 Huawei*/
     ['sub_category_id' => 216,'name' => 'P50'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'P50 Pro'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'P50E'],/*Huawei*/
@@ -883,7 +883,7 @@ $phone_model = [
     ['sub_category_id' => 216,'name' => 'Y7 Pro (2018)'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Y7 Pro (2019)'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Y7a'],/*Huawei*/
-    ['sub_category_id' => 216,'name' => 'Y7p'],/*Huawei*/
+    ['sub_category_id' => 216,'name' => 'Y7p'],/*id 850 Huawei*/
     ['sub_category_id' => 216,'name' => 'Y8p'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Y8s'],/*Huawei*/
     ['sub_category_id' => 216,'name' => 'Y9 (2018)'],/*Huawei*/
@@ -933,7 +933,7 @@ $phone_model = [
     ['sub_category_id' => 219,'name' => 'E1272'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'GX200'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'I6'],/*Kgtel*/
-    ['sub_category_id' => 219,'name' => 'I7'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I7'],/*id 900 Kgtel*/
     ['sub_category_id' => 219,'name' => 'I9'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'K-L100'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'K105'],/*Kgtel*/
@@ -983,7 +983,7 @@ $phone_model = [
     ['sub_category_id' => 219,'name' => 'K6800'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'K6900'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'K7000'],/*Kgtel*/
-    ['sub_category_id' => 219,'name' => 'K80'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K80'],/*id 950 Kgtel*/
     ['sub_category_id' => 219,'name' => 'K8000'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'K8110'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'K8800'],/*Kgtel*/
@@ -1018,7 +1018,7 @@ $phone_model = [
     ['sub_category_id' => 219,'name' => 'Storm 6'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'T401'],/*Kgtel*/
     ['sub_category_id' => 219,'name' => 'X2-02'],/*Kgtel*/
-    ['sub_category_id' => 220,'name' => 'Kiicaa Mix'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Kiicaa Mix'],/*id 985 Leagoo*/
     ['sub_category_id' => 220,'name' => 'Kiicaa Power'],/*Leagoo*/
     ['sub_category_id' => 220,'name' => 'M10'],/*Leagoo*/
     ['sub_category_id' => 220,'name' => 'M11'],/*Leagoo*/
@@ -1033,10 +1033,10 @@ $phone_model = [
     ['sub_category_id' => 220,'name' => 'T8s'],/*Leagoo*/
     ['sub_category_id' => 220,'name' => 'Z10'],/*Leagoo*/
     ['sub_category_id' => 220,'name' => 'Z5'],/*Leagoo*/
-    ['sub_category_id' => 220,'name' => 'Z5c'],/*Leagoo*/
+    ['sub_category_id' => 220,'name' => 'Z5c'],/*id 1000 Leagoo*/
     ['sub_category_id' => 220,'name' => 'Z6'],/*Leagoo*/
     ['sub_category_id' => 220,'name' => 'Z9'],/*Leagoo*/
-    ['sub_category_id' => 221,'name' => 'A10-70 A7600'],/*Lenovo*/
+    ['sub_category_id' => 221,'name' => 'A10-70 A7600'],/*id 1003 Lenovo*/
     ['sub_category_id' => 221,'name' => 'A1000'],/*Lenovo*/
     ['sub_category_id' => 221,'name' => 'A185'],/*Lenovo*/
     ['sub_category_id' => 221,'name' => 'A1900'],/*Lenovo*/
@@ -5903,10 +5903,172 @@ $phone_model_option = [
     ['phone_model_id' => 857, 'color' => 'Breathing Crystal'],/*Huawei Y9s*/
     ['phone_model_id' => 857, 'color' => 'Midnight Black'],/*Huawei Y9s*/
     ['phone_model_id' => 857, 'memory' => '128GB/6GB'],/*Huawei Y9s*/
+
+    ['phone_model_id' => 1003, 'color' => 'Black'],/*Lenovo A10-70 A7600*/
+    ['phone_model_id' => 1003, 'memory' => '16GB/1GB'],/*Lenovo A10-70 A7600*/
+    ['phone_model_id' => 1003, 'memory' => '32GB/1GB'],/*Lenovo A10-70 A7600*/
+
+    ['phone_model_id' => 1004, 'color' => 'Onyx Black'],/*Lenovo A1000*/
+    ['phone_model_id' => 1004, 'color' => 'Pearl White'],/*Lenovo A1000*/
+    ['phone_model_id' => 1004, 'memory' => '8GB/1GB'],/*Lenovo A1000*/
+
+    ['phone_model_id' => 1005, 'color' => 'Black'],/*Lenovo A185*/
+
+    ['phone_model_id' => 1006, 'color' => 'Black'],/*Lenovo A1900*/
+    ['phone_model_id' => 1006, 'memory' => '4GB'],/*Lenovo A1900*/
+
+    ['phone_model_id' => 1007, 'color' => 'Black'],/*Lenovo A2010*/
+    ['phone_model_id' => 1007, 'color' => 'Pearl White'],/*Lenovo A2010*/
+    ['phone_model_id' => 1007, 'memory' => '8GB/1GB'],/*Lenovo A2010*/
+
+    ['phone_model_id' => 1008, 'color' => 'Black'],/*Lenovo A269i*/
+
+    ['phone_model_id' => 1009, 'color' => 'Black'],/*Lenovo A316i*/
+    ['phone_model_id' => 1009, 'memory' => '4GB'],/*Lenovo A316i*/
+
+    ['phone_model_id' => 1010, 'color' => 'White'],/*Lenovo A319*/
+    ['phone_model_id' => 1010, 'color' => 'Black'],/*Lenovo A319*/
+    ['phone_model_id' => 1010, 'color' => 'Red'],/*Lenovo A319*/
+    ['phone_model_id' => 1010, 'memory' => '4GB'],/*Lenovo A319*/
+
+    ['phone_model_id' => 1011, 'color' => 'Black'],/*Lenovo A328*/
+    ['phone_model_id' => 1011, 'color' => 'White'],/*Lenovo A328*/
+    ['phone_model_id' => 1011, 'memory' => '4GB/1GB'],/*Lenovo A328*/
+
+    ['phone_model_id' => 1012, 'color' => 'Black'],/*Lenovo A335*/
+    ['phone_model_id' => 1012, 'color' => 'White'],/*Lenovo A335*/
+
+    ['phone_model_id' => 1013, 'color' => 'Orange'],/*Lenovo A336*/
+    ['phone_model_id' => 1013, 'color' => 'Green'],/*Lenovo A336*/
+
+    ['phone_model_id' => 1014, 'color' => 'Black'],/*Lenovo A3690*/
+    ['phone_model_id' => 1014, 'color' => 'Green'],/*Lenovo A3690*/
+    ['phone_model_id' => 1014, 'memory' => '8GB/1GB'],/*Lenovo A3690*/
+
+    ['phone_model_id' => 1015, 'color' => 'Black'],/*Lenovo A369i*/
+    ['phone_model_id' => 1015, 'memory' => '4GB'],/*Lenovo A369i*/
+
+    ['phone_model_id' => 1016, 'color' => 'Black'],/*Lenovo A390*/
+    ['phone_model_id' => 1016, 'color' => 'White'],/*Lenovo A390*/
+    ['phone_model_id' => 1016, 'memory' => '4GB'],/*Lenovo A390*/
+
+    ['phone_model_id' => 1017, 'color' => 'Black'],/*Lenovo A3900*/
+    ['phone_model_id' => 1017, 'color' => 'Pearl White'],/*Lenovo A3900*/
+    ['phone_model_id' => 1017, 'color' => 'Silver'],/*Lenovo A3900*/
+    ['phone_model_id' => 1017, 'memory' => '4GB'],/*Lenovo A3900*/
+
+    ['phone_model_id' => 1018, 'color' => 'Black'],/*Lenovo A5*/
+    ['phone_model_id' => 1018, 'color' => 'Gold'],/*Lenovo A5*/
+    ['phone_model_id' => 1018, 'color' => 'Rose Gold'],/*Lenovo A5*/
+    ['phone_model_id' => 1018, 'memory' => '16GB/3GB'],/*Lenovo A5*/
+    ['phone_model_id' => 1018, 'memory' => '16GB/2GB'],/*Lenovo A5*/
+    ['phone_model_id' => 1018, 'memory' => '32GB/3GB'],/*Lenovo A5*/
+
+    ['phone_model_id' => 1019, 'color' => 'Black'],/*Lenovo A5000*/
+    ['phone_model_id' => 1019, 'color' => 'White'],/*Lenovo A5000*/
+    ['phone_model_id' => 1019, 'memory' => '8GB/1GB'],/*Lenovo A5000*/
+
+    ['phone_model_id' => 1020, 'color' => 'Black'],/*Lenovo A516*/
+    ['phone_model_id' => 1020, 'color' => 'Pink'],/*Lenovo A516*/
+    ['phone_model_id' => 1020, 'color' => 'White'],/*Lenovo A516*/
+    ['phone_model_id' => 1020, 'memory' => '4GB'],/*Lenovo A516*/
+
+    ['phone_model_id' => 1021, 'color' => 'Blue'],/*Lenovo A526*/
+    ['phone_model_id' => 1021, 'memory' => '4GB/1GB'],/*Lenovo A526*/
+
+    ['phone_model_id' => 1022, 'color' => 'Black'],/*Lenovo A536*/
+    ['phone_model_id' => 1022, 'color' => 'White'],/*Lenovo A536*/
+    ['phone_model_id' => 1022, 'memory' => '8GB/1GB'],/*Lenovo A536*/
+
+    ['phone_model_id' => 1023, 'color' => 'Gray'],/*Lenovo A60*/
+
+    ['phone_model_id' => 1024, 'color' => 'Black'],/*Lenovo A60+ */
+
+    ['phone_model_id' => 1025, 'color' => 'Black'],/*Lenovo A6000 */
+    ['phone_model_id' => 1025, 'memory' => '8GB/1GB'],/*Lenovo A6000 */
+
+    ['phone_model_id' => 1026, 'color' => 'Black'],/*Lenovo A6000 Plus*/
+    ['phone_model_id' => 1026, 'color' => 'White'],/*Lenovo A6000 Plus*/
+    ['phone_model_id' => 1026, 'color' => 'Yellow'],/*Lenovo A6000 Plus*/
+    ['phone_model_id' => 1026, 'color' => 'Red'],/*Lenovo A6000 Plus*/
+    ['phone_model_id' => 1026, 'memory' => '16GB/2GB'],/*Lenovo A6000 Plus*/
+
+    ['phone_model_id' => 1027, 'color' => 'Black'],/*Lenovo A6010*/
+    ['phone_model_id' => 1027, 'color' => 'White'],/*Lenovo A6010*/
+    ['phone_model_id' => 1027, 'color' => 'Yellow'],/*Lenovo A6010*/
+    ['phone_model_id' => 1027, 'memory' => '8GB/1GB'],/*Lenovo A6010*/
+
+    ['phone_model_id' => 1027, 'color' => 'Black'],/*Lenovo A6010 Plus*/
+    ['phone_model_id' => 1027, 'color' => 'White'],/*Lenovo A6010 Plus*/
+    ['phone_model_id' => 1027, 'color' => 'Yellow'],/*Lenovo A6010 Plus*/
+    ['phone_model_id' => 1027, 'memory' => '16GB/2GB'],/*Lenovo A6010 Plus*/
+
+    ['phone_model_id' => 1028, 'color' => 'Black'],/*Lenovo A606*/
+    ['phone_model_id' => 1028, 'color' => 'White'],/*Lenovo A606*/
+    ['phone_model_id' => 1028, 'memory' => '8GB/1GB'],/*Lenovo A606*/
+
+    ['phone_model_id' => 1029, 'color' => 'Black'],/*Lenovo A616*/
+    ['phone_model_id' => 1029, 'color' => 'White'],/*Lenovo A616*/
+    ['phone_model_id' => 1029, 'memory' => '4GB'],/*Lenovo A616*/
+
+    ['phone_model_id' => 1030, 'color' => 'Black'],/*Lenovo A630*/
+    ['phone_model_id' => 1030, 'memory' => '4GB'],/*Lenovo A630*/
+
+    ['phone_model_id' => 1031, 'color' => 'Black'],/*Lenovo A65*/
+
+    ['phone_model_id' => 1032, 'color' => 'Black'],/*Lenovo A660*/
+    ['phone_model_id' => 1032, 'color' => 'Orange'],/*Lenovo A660*/
+    ['phone_model_id' => 1032, 'memory' => '4GB'],/*Lenovo A660*/
+
+    ['phone_model_id' => 1033, 'color' => 'Black'],/*Lenovo A680*/
+    ['phone_model_id' => 1033, 'color' => 'White'],/*Lenovo A680*/
+    ['phone_model_id' => 1033, 'memory' => '4GB/1GB'],/*Lenovo A680*/
+
+    ['phone_model_id' => 1034, 'color' => 'Black'],/*Lenovo A690*/
+
+    ['phone_model_id' => 1035, 'color' => 'Black'],/*Lenovo A7*/
+    ['phone_model_id' => 1035, 'color' => 'Blue'],/*Lenovo A7*/
+    ['phone_model_id' => 1035, 'memory' => '64GB/4GB'],/*Lenovo A7*/
+
+    ['phone_model_id' => 1036, 'color' => 'Silver'],/*Lenovo A7-30 A3300*/
+    ['phone_model_id' => 1036, 'memory' => '8GB/1GB'],/*Lenovo A7-30 A3300*/
+
+    ['phone_model_id' => 1037, 'color' => 'Blue'],/*Lenovo A7-50 A3500*/
+    ['phone_model_id' => 1037, 'memory' => '8GB/1GB'],/*Lenovo A7-50 A3500*/
+    ['phone_model_id' => 1037, 'memory' => '16GB/1GB'],/*Lenovo A7-50 A3500*/
+
+    ['phone_model_id' => 1038, 'color' => 'Onyx Black'],/*Lenovo A7000*/
+    ['phone_model_id' => 1038, 'color' => 'Pearl White'],/*Lenovo A7000*/
+    ['phone_model_id' => 1038, 'color' => 'Yellow'],/*Lenovo A7000*/
+    ['phone_model_id' => 1038, 'memory' => '8GB/2GB'],/*Lenovo A7000*/
+
+    ['phone_model_id' => 1039, 'color' => 'Onyx Black'],/*Lenovo A7000 Plus*/
+    ['phone_model_id' => 1039, 'color' => 'Pearl White'],/*Lenovo A7000 Plus*/
+    ['phone_model_id' => 1039, 'color' => 'Yellow'],/*Lenovo A7000 Plus*/
+    ['phone_model_id' => 1039, 'memory' => '16GB/2GB'],/*Lenovo A7000 Plus*/
+
+    ['phone_model_id' => 1040, 'color' => 'Black'],/*Lenovo A706*/
+    ['phone_model_id' => 1040, 'color' => 'White/Gray'],/*Lenovo A706*/
+    ['phone_model_id' => 1040, 'memory' => '4GB/1GB'],/*Lenovo A706*/
+
+    ['phone_model_id' => 1041, 'color' => 'Black'],/*Lenovo A789*/
+    ['phone_model_id' => 1041, 'memory' => '4GB'],/*Lenovo A789*/
+
+    ['phone_model_id' => 1042, 'color' => 'Blue'],/*Lenovo A8 2020*/
+    ['phone_model_id' => 1042, 'color' => 'Black'],/*Lenovo A8 2020*/
+    ['phone_model_id' => 1042, 'memory' => '64GB/4GB'],/*Lenovo A8 2020*/
+
+    ['phone_model_id' => 1043, 'color' => 'Black'],/*Lenovo A8-50 A5500*/
+    ['phone_model_id' => 1043, 'color' => 'White'],/*Lenovo A8-50 A5500*/
+    ['phone_model_id' => 1043, 'color' => 'Yellow'],/*Lenovo A8-50 A5500*/
+    ['phone_model_id' => 1043, 'color' => 'Red'],/*Lenovo A8-50 A5500*/
+    ['phone_model_id' => 1043, 'memory' => '8GB/1GB'],/*Lenovo A8-50 A5500*/
+    ['phone_model_id' => 1043, 'memory' => '16GB/1GB'],/*Lenovo A8-50 A5500*/
 ];
 
 
+e="12783"></option><option value="12784"></option></select>
 
 
 
-//Huawei den basla
+//Lenovo den basla
