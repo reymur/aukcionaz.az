@@ -6257,10 +6257,205 @@ $phone_model_option = [
     ['phone_model_id' => 1084, 'color' => 'Dark Blue'],/*Lenovo P700i*/
     ['phone_model_id' => 1084, 'color' => 'White'],/*Lenovo P700i*/
     ['phone_model_id' => 1084, 'memory' => '4GB'],/*Lenovo P700i*/
+
+    ['phone_model_id' => 1085, 'color' => 'Black'],/*Lenovo P770*/
+    ['phone_model_id' => 1085, 'memory' => '4GB/1GB'],/*Lenovo P770*/
+
+    ['phone_model_id' => 1086, 'color' => 'Black'],/*Lenovo P780*/
+    ['phone_model_id' => 1086, 'memory' => '4GB/1GB'],/*Lenovo P780*/
+    ['phone_model_id' => 1086, 'memory' => '8GB/1GB'],/*Lenovo P780*/
+
+    ['phone_model_id' => 1087, 'color' => 'Pearl White'],/*Lenovo P790*/
+    ['phone_model_id' => 1087, 'color' => 'Lava Red'],/*Lenovo P790*/
+    ['phone_model_id' => 1087, 'color' => 'Onyx Black'],/*Lenovo P790*/
+    ['phone_model_id' => 1087, 'memory' => '32GB/2GB'],/*Lenovo P790*/
+
+    ['phone_model_id' => 1088, 'color' => 'Tuxedo Black'],/*Lenovo Phab*/
+    ['phone_model_id' => 1088, 'color' => 'Polar White'],/*Lenovo Phab*/
+    ['phone_model_id' => 1088, 'color' => 'Aqua Blue'],/*Lenovo Phab*/
+    ['phone_model_id' => 1088, 'color' => 'Cherry Red'],/*Lenovo Phab*/
+    ['phone_model_id' => 1088, 'memory' => '16GB/1GB'],/*Lenovo Phab*/
+
+    ['phone_model_id' => 1089, 'color' => 'Gunmetal Gray'],/*Lenovo Phab Plus*/
+    ['phone_model_id' => 1089, 'color' => 'Titanium Silver'],/*Lenovo Phab Plus*/
+    ['phone_model_id' => 1089, 'color' => 'Champagne Gold'],/*Lenovo Phab Plus*/
+    ['phone_model_id' => 1089, 'memory' => '32GB/2GB'],/*Lenovo Phab Plus*/
+
+    ['phone_model_id' => 1090, 'color' => 'Gunmetal Gray'],/*Lenovo Phab2 Pro*/
+    ['phone_model_id' => 1090, 'color' => 'Titanium Silver'],/*Lenovo Phab2 Pro*/
+    ['phone_model_id' => 1090, 'color' => 'Champagne Gold'],/*Lenovo Phab2 Pro*/
+    ['phone_model_id' => 1090, 'color' => 'Gunmetal Gray'],/*Lenovo Phab2 Pro*/
+    ['phone_model_id' => 1090, 'color' => 'Champagne Gold'],/*Lenovo Phab2 Pro*/
+    ['phone_model_id' => 1090, 'memory' => '32GB/2GB'],/*Lenovo Phab2 Pro*/
+    ['phone_model_id' => 1090, 'memory' => '64GB/4GB'],/*Lenovo Phab2 Pro*/
+
+    ['phone_model_id' => 1091, 'color' => 'Black'],/*Lenovo Q330*/
+    ['phone_model_id' => 1091, 'color' => 'White'],/*Lenovo Q330*/
+
+    ['phone_model_id' => 1092, 'color' => 'Red'],/*Lenovo Q350*/
+
+    ['phone_model_id' => 1093, 'color' => 'Black'],/*Lenovo S5 Pro*/
+    ['phone_model_id' => 1093, 'color' => 'Gold'],/*Lenovo S5 Pro*/
+    ['phone_model_id' => 1093, 'color' => 'Blue'],/*Lenovo S5 Pro*/
+    ['phone_model_id' => 1093, 'memory' => '64GB/6GB'],/*Lenovo S5 Pro*/
+    ['phone_model_id' => 1093, 'memory' => '128GB/6GB'],/*Lenovo S5 Pro*/
+
+    ['phone_model_id' => 1094, 'color' => 'Silver Gray'],/*Lenovo S5000*/
+    ['phone_model_id' => 1094, 'memory' => '16GB/1GB'],/*Lenovo S5000*/
+
+    ['phone_model_id' => 1095, 'color' => 'Deep Blue'],/*Lenovo S560*/
+    ['phone_model_id' => 1095, 'memory' => '4GB'],/*Lenovo S560*/
+
+    ['phone_model_id' => 1096, 'color' => 'Black'],/*Lenovo S580*/
+    ['phone_model_id' => 1096, 'memory' => '8GB/1GB'],/*Lenovo S580*/
+
+    ['phone_model_id' => 1097, 'color' => 'Pearl White'],/*Lenovo S60*/
+    ['phone_model_id' => 1097, 'color' => 'Graphite Gray'],/*Lenovo S60*/
+    ['phone_model_id' => 1097, 'color' => 'Yellow'],/*Lenovo S60*/
+    ['phone_model_id' => 1097, 'memory' => '8GB/2GB'],/*Lenovo S60*/
+
+    ['phone_model_id' => 1098, 'color' => 'Silver'],/*Lenovo S650*/
+    ['phone_model_id' => 1098, 'color' => 'White'],/*Lenovo S650*/
+    ['phone_model_id' => 1098, 'memory' => '8GB/1GB'],/*Lenovo S650*/
+
+    ['phone_model_id' => 1099, 'color' => 'Titanium'],/*Lenovo S660*/
+    ['phone_model_id' => 1099, 'memory' => '8GB/1GB'],/*Lenovo S660*/
+
+    ['phone_model_id' => 1100, 'color' => 'Pink'],/*Lenovo S720*/
+    ['phone_model_id' => 1100, 'color' => 'White'],/*Lenovo S720*/
+    ['phone_model_id' => 1100, 'memory' => '4GB'],/*Lenovo S720*/
+
+    ['phone_model_id' => 1101, 'color' => 'Black/Orange'],/*Lenovo S750*/
+    ['phone_model_id' => 1101, 'memory' => '4GB/1GB'],/*Lenovo S750*/
+
+    ['phone_model_id' => 1102, 'color' => 'Black'],/*Lenovo S800*/
+    ['phone_model_id' => 1102, 'color' => 'White'],/*Lenovo S800*/
+
+    ['phone_model_id' => 1103, 'color' => 'Flamingo red'],/*Lenovo S820*/
+    ['phone_model_id' => 1103, 'color' => 'Charcoal Black'],/*Lenovo S820*/
+    ['phone_model_id' => 1103, 'color' => 'Pearl White'],/*Lenovo S820*/
+    ['phone_model_id' => 1103, 'memory' => '4GB/1GB'],/*Lenovo S820*/
+    ['phone_model_id' => 1103, 'memory' => '8GB/1GB'],/*Lenovo S820*/
+
+    ['phone_model_id' => 1104, 'color' => 'Pink'],/*Lenovo S850*/
+    ['phone_model_id' => 1104, 'color' => 'White'],/*Lenovo S850*/
+    ['phone_model_id' => 1104, 'memory' => '16GB/1GB'],/*Lenovo S850*/
+
+    ['phone_model_id' => 1105, 'color' => 'Silver'],/*Lenovo S856*/
+    ['phone_model_id' => 1105, 'memory' => '8GB/1GB'],/*Lenovo S856*/
+
+    ['phone_model_id' => 1106, 'color' => 'Titanium'],/*Lenovo S860*/
+    ['phone_model_id' => 1106, 'memory' => '16GB/2GB'],/*Lenovo S860*/
+
+    ['phone_model_id' => 1107, 'color' => 'Black'],/*Lenovo S880*/
+    ['phone_model_id' => 1107, 'color' => 'White'],/*Lenovo S880*/
+    ['phone_model_id' => 1107, 'memory' => '4GB'],/*Lenovo S880*/
+
+    ['phone_model_id' => 1108, 'color' => 'Black'],/*Lenovo S890*/
+    ['phone_model_id' => 1108, 'color' => 'Blue'],/*Lenovo S890*/
+    ['phone_model_id' => 1108, 'color' => 'White'],/*Lenovo S890*/
+    ['phone_model_id' => 1108, 'memory' => '4GB/1GB'],/*Lenovo S890*/
+
+    ['phone_model_id' => 1109, 'color' => 'White/Silver'],/*Lenovo S90 Sisley*/
+    ['phone_model_id' => 1109, 'color' => 'Gray'],/*Lenovo S90 Sisley*/
+    ['phone_model_id' => 1109, 'color' => 'Pink'],/*Lenovo S90 Sisley*/
+    ['phone_model_id' => 1109, 'color' => 'Soft Orange'],/*Lenovo S90 Sisley*/
+    ['phone_model_id' => 1109, 'color' => 'Blue'],/*Lenovo S90 Sisley*/
+    ['phone_model_id' => 1109, 'memory' => '16GB/1GB'],/*Lenovo S90 Sisley*/
+    ['phone_model_id' => 1109, 'memory' => '32GB/2GB'],/*Lenovo S90 Sisley*/
+
+    ['phone_model_id' => 1110, 'color' => 'White'],/*Lenovo S920*/
+    ['phone_model_id' => 1110, 'color' => 'Blue'],/*Lenovo S920*/
+    ['phone_model_id' => 1110, 'memory' => '4GB/1GB'],/*Lenovo S920*/
+
+    ['phone_model_id' => 1111, 'color' => 'Silver'],/*Lenovo S930*/
+    ['phone_model_id' => 1111, 'memory' => '8GB/1GB'],/*Lenovo S930*/
+
+    ['phone_model_id' => 1112, 'color' => 'Dark Gray'],/*Lenovo S939*/
+    ['phone_model_id' => 1112, 'memory' => '8GB/1GB'],/*Lenovo S939*/
+
+    ['phone_model_id' => 1113, 'color' => 'Platinum'],/*Lenovo Vibe P1*/
+    ['phone_model_id' => 1113, 'color' => 'Graphite Gray'],/*Lenovo Vibe P1*/
+    ['phone_model_id' => 1113, 'memory' => '32GB/2GB'],/*Lenovo Vibe P1*/
+
+    ['phone_model_id' => 1114, 'color' => 'Onyx Black'],/*Lenovo Vibe P1m */
+    ['phone_model_id' => 1114, 'color' => 'Pearl White'],/*Lenovo Vibe P1m */
+    ['phone_model_id' => 1114, 'memory' => '16GB/2GB'],/*Lenovo Vibe P1m */
+
+    ['phone_model_id' => 1115, 'color' => 'Pearl White'],/*Lenovo Vibe S1 */
+    ['phone_model_id' => 1115, 'color' => 'Midnight Blue'],/*Lenovo Vibe S1 */
+    ['phone_model_id' => 1115, 'memory' => '32GB/3GB'],/*Lenovo Vibe S1 */
+
+    ['phone_model_id' => 1116, 'color' => 'Crimson'],/*Lenovo Vibe Shot */
+    ['phone_model_id' => 1116, 'color' => 'Pearl White'],/*Lenovo Vibe Shot */
+    ['phone_model_id' => 1116, 'color' => 'Graphite Gray'],/*Lenovo Vibe Shot */
+    ['phone_model_id' => 1116, 'memory' => '32GB/3GB'],/*Lenovo Vibe Shot */
+
+    ['phone_model_id' => 1117, 'color' => 'Black/Silver'],/*Lenovo Vibe X S960 */
+    ['phone_model_id' => 1117, 'memory' => '16GB/2GB'],/*Lenovo Vibe X S960 */
+    ['phone_model_id' => 1117, 'memory' => '32GB/2GB'],/*Lenovo Vibe X S960 */
+
+    ['phone_model_id' => 1118, 'color' => 'White'],/*Lenovo Vibe X2 */
+    ['phone_model_id' => 1118, 'color' => 'Gold'],/*Lenovo Vibe X2 */
+    ['phone_model_id' => 1118, 'color' => 'Red'],/*Lenovo Vibe X2 */
+    ['phone_model_id' => 1118, 'color' => 'Charcoal'],/*Lenovo Vibe X2 */
+    ['phone_model_id' => 1118, 'memory' => '32GB/2GB'],/*Lenovo Vibe X2 */
+
+    ['phone_model_id' => 1119, 'color' => 'Champagne Gold'],/*Lenovo Vibe X2 Pro*/
+    ['phone_model_id' => 1119, 'color' => 'Rock Pink'],/*Lenovo Vibe X2 Pro*/
+    ['phone_model_id' => 1119, 'color' => 'Electric Blue'],/*Lenovo Vibe X2 Pro*/
+    ['phone_model_id' => 1119, 'memory' => '32GB/2GB'],/*Lenovo Vibe X2 Pro*/
+
+    ['phone_model_id' => 1120, 'color' => 'White'],/*Lenovo Vibe X3*/
+    ['phone_model_id' => 1120, 'color' => 'Black'],/*Lenovo Vibe X3*/
+    ['phone_model_id' => 1120, 'memory' => '32GB/3GB'],/*Lenovo Vibe X3*/
+    ['phone_model_id' => 1120, 'memory' => '64GB/3GB'],/*Lenovo Vibe X3*/
+
+    ['phone_model_id' => 1121, 'color' => 'White'],/*Lenovo Vibe X3 c78*/
+    ['phone_model_id' => 1121, 'color' => 'Black'],/*Lenovo Vibe X3 c78*/
+    ['phone_model_id' => 1121, 'memory' => '16GB/2GB'],/*Lenovo Vibe X3 c78*/
+
+    ['phone_model_id' => 1122, 'color' => 'Silver'],/*Lenovo Vibe Z k910*/
+    ['phone_model_id' => 1122, 'color' => 'Titanium'],/*Lenovo Vibe Z k910*/
+    ['phone_model_id' => 1122, 'memory' => '16GB/2GB'],/*Lenovo Vibe Z k910*/
+
+    ['phone_model_id' => 1123, 'color' => 'White'],/*Lenovo Vibe Z2*/
+    ['phone_model_id' => 1123, 'color' => 'Gold'],/*Lenovo Vibe Z2*/
+    ['phone_model_id' => 1123, 'color' => 'Titanium'],/*Lenovo Vibe Z2*/
+    ['phone_model_id' => 1123, 'memory' => '32GB/2GB'],/*Lenovo Vibe Z2*/
+
+    ['phone_model_id' => 1124, 'color' => 'Black'],/*Lenovo Vibe Z2 Pro*/
+    ['phone_model_id' => 1124, 'color' => 'Gold'],/*Lenovo Vibe Z2 Pro*/
+    ['phone_model_id' => 1124, 'color' => 'White'],/*Lenovo Vibe Z2 Pro*/
+    ['phone_model_id' => 1124, 'memory' => '32GB/3GB'],/*Lenovo Vibe Z2 Pro*/
+
+    ['phone_model_id' => 1125, 'color' => 'Black'],/*Lenovo Z5*/
+    ['phone_model_id' => 1125, 'color' => 'Aurora'],/*Lenovo Z5*/
+    ['phone_model_id' => 1125, 'color' => 'Blue'],/*Lenovo Z5*/
+    ['phone_model_id' => 1125, 'memory' => '64GB/6GB'],/*Lenovo Z5*/
+    ['phone_model_id' => 1125, 'memory' => '128GB/6GB'],/*Lenovo Z5*/
+
+    ['phone_model_id' => 1126, 'color' => 'Carbon Black'],/*Lenovo Z5 Pro GT*/
+    ['phone_model_id' => 1126, 'memory' => '128GB/6GB'],/*Lenovo Z5 Pro GT*/
+    ['phone_model_id' => 1126, 'memory' => '128GB/8GB'],/*Lenovo Z5 Pro GT*/
+    ['phone_model_id' => 1126, 'memory' => '256GB/8GB'],/*Lenovo Z5 Pro GT*/
+    ['phone_model_id' => 1126, 'memory' => '512GB/12GB'],/*Lenovo Z5 Pro GT*/
+
+    ['phone_model_id' => 1127, 'color' => 'Blue'],/*Lenovo Z6*/
+    ['phone_model_id' => 1127, 'memory' => '64GB/6GB'],/*Lenovo Z6*/
+    ['phone_model_id' => 1127, 'memory' => '128GB/6GB'],/*Lenovo Z6*/
+    ['phone_model_id' => 1127, 'memory' => '128GB/8GB'],/*Lenovo Z6*/
+
+    ['phone_model_id' => 1128, 'color' => 'Ceic White'],/*Lenovo ZUK Edge*/
+    ['phone_model_id' => 1128, 'color' => 'Titanium Black'],/*Lenovo ZUK Edge*/
+    ['phone_model_id' => 1128, 'memory' => '64GB/4GB'],/*Lenovo ZUK Edge*/
+    ['phone_model_id' => 1128, 'memory' => '64GB/6GB'],/*Lenovo ZUK Edge*/
+
+    ['phone_model_id' => 1129, 'color' => 'White'],/*Lenovo ZUK Z1*/
+    ['phone_model_id' => 1129, 'color' => 'Dark Gray'],/*Lenovo ZUK Z1*/
+    ['phone_model_id' => 1129, 'memory' => '64GB/3GB'],/*Lenovo ZUK Z1*/
 ];
 
-
-"></option><option value="12937"></option></select>
-
+alue="13131"></option></select>
 
 //Lenovo den basla
