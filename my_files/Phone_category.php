@@ -6833,8 +6833,97 @@ $phone_model_option = [
 
     ['phone_model_id' => 1212, 'color' => 'Blue'],/*LG Optimus F3Q*/
     ['phone_model_id' => 1212, 'memory' => '4GB/1GB'],/*LG */
-];
 
+    ['phone_model_id' => 1213, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1213, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1213, 'memory' => '8GB/1GB'],/*LG */
+
+    ['phone_model_id' => 1214, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1214, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1214, 'memory' => '4GB/1GB'],/*LG */
+    ['phone_model_id' => 1214, 'memory' => '8GB/1GB'],/*LG */
+
+    ['phone_model_id' => 1215, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1215, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1215, 'memory' => '8GB/1GB'],/*LG */
+
+    ['phone_model_id' => 1216, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1216, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1216, 'memory' => '16GB/2GB'],/*LG */
+    ['phone_model_id' => 1216, 'memory' => '32GB/2GB'],/*LG */
+
+    ['phone_model_id' => 1217, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1217, 'color' => 'Red'],/*LG */
+    ['phone_model_id' => 1217, 'memory' => '16GB/2GB'],/*LG */
+
+    ['phone_model_id' => 1218, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1218, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1218, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1219, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1219, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1219, 'color' => 'Pink'],/*LG */
+    ['phone_model_id' => 1219, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1220, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1220, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1220, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1221, 'color' => 'Indigo Black'],/*LG */
+    ['phone_model_id' => 1221, 'color' => 'Titanium silver'],/*LG */
+    ['phone_model_id' => 1221, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1221, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1222, 'color' => 'Indigo Black'],/*LG */
+    ['phone_model_id' => 1222, 'color' => 'Titanium silver'],/*LG */
+    ['phone_model_id' => 1222, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1222, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1223, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1223, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1223, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1224, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1224, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1224, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1225, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1225, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1225, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1226, 'color' => 'Indigo Black'],/*LG */
+    ['phone_model_id' => 1226, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1226, 'color' => 'Pink'],/*LG */
+    ['phone_model_id' => 1226, 'color' => 'Titan'],/*LG */
+    ['phone_model_id' => 1226,  'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1227, 'color' => 'Indigo Black'],/*LG */
+    ['phone_model_id' => 1227, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1227, 'color' => 'Pink'],/*LG */
+    ['phone_model_id' => 1227, 'color' => 'Titan'],/*LG */
+    ['phone_model_id' => 1227,  'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1228, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1228, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1228, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1229, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1229, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1229, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1230, 'color' => 'White'],/*LG */
+    ['phone_model_id' => 1230, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1230, 'memory' => '8GB/1GB'],/*LG */
+
+    ['phone_model_id' => 1231, 'color' => 'Black'],/*LG */
+    ['phone_model_id' => 1231, 'memory' => '4GB'],/*LG */
+
+    ['phone_model_id' => 1232, 'color' => 'Aurora Black'],/*LG */
+    ['phone_model_id' => 1232, 'memory' => '32GB/2GB'],/*LG */
+
+    ['phone_model_id' => 1233, 'color' => 'Silver'],/*LG Q31*/
+    ['phone_model_id' => 1233, 'memory' => '32GB/3GB'],/*LG */
+];
 
 
 
