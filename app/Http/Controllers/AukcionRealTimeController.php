@@ -36,9 +36,9 @@ class AukcionRealTimeController extends Controller
 
         $pass = $user->password;
 
-        dispatch(
-            new AddProductInAukcionJob($user, $pass))->delay(now()->addMinute(1)
-        );
+//        dispatch(
+//            new AddProductInAukcionJob($user, $pass))->delay(now()->addMinute(1)
+//        );
 
         $users = $this->getAukcionGamers();
         return view('pages.real_time_aukcion', ['users' => $users]);
