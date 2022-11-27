@@ -30,7 +30,6 @@
         "vue-axios": "^3.4.1",
         "vue-flip": "^2.2.0",
         "vue-router": "^3.5.3",
-        "vue-slicksort": "^1.2.0",
         "vue3-photo-preview": "^0.2.5"
     }
 }

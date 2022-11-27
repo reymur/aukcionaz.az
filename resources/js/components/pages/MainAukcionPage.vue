@@ -160,12 +160,11 @@
 </template>
 
 <script>
-import { SlickList, SlickItem } from 'vue-slicksort';
 
 export default {
+    props:['users'],
     components: {
-        SlickItem,
-        SlickList,
+       
     },
     data() {
         return {
@@ -194,9 +193,9 @@ export default {
                     this.aukcionUsers = res.data.users
                     // console.log('Relarion = ', this.aukcionUsers)
                     this.upPrice()
-                    console.log("RES1 === ", res.data.users)
+                    console.log("RES2 === ", res.data.users)
                 }).catch(err => {
-                    console.log("ERROR1 === ", err)
+                    console.log("ERROR2 === ", err)
                 })
         },
         upPrice: function () {
@@ -219,13 +218,13 @@ export default {
         axios.post('/get-auksion-users')
             .then(res => {
                 this.aukcionUsers = res.data.users
-                console.log('RELATIONS = ', res.data.users )
+                console.log('RELATIONS222 = ', res.data.users )
                 this.upPrice();
             }).catch(err => {
             console.log("ERROR2 === ", err)
         })
 
-        // console.log('RELATIONS = ', res.data.users )
+        console.log("UUUUUUU === ", this.users )
         // console.log('ELEM = ', document.getElementsByTagName('li') )
     }
 }
