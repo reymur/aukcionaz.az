@@ -1,0 +1,10 @@
+<?php   $category = [   ['name' => 'Uşaq aləmi'],
+    ['name' => 'Şəxsi əşyalar'],
+    ['name' => 'Ev və bağ üçün'],
+    ['name' => 'Elektronika'],
+    ['name' => 'Hobbi və asudə'],
+    ['name' => 'Nəqliyyat'],
+    ['name' => 'Daşınmaz əmlak'],
+    ['name' => 'İş elanları'],
+    ['name' => 'Heyvanlar'],
+    ['name' => 'Xidmətlər və biznes']     ];
