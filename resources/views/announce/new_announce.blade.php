@@ -4,7 +4,7 @@
    <div class="">
 
         <div class="col-12">
-            <div class="bg-white w-100 mt-1 mb-2 p-0">
+            <div class="bg-white w-100 mt-1 mb-3 p-0">
                 @include('announce.modals.modal_category')
             </div>
 
@@ -17,6 +17,14 @@
 
                 <div class="">
                     @include('announce.modals.modal_city')
+                </div>
+
+                <div class="mt-3">
+                    @include('announce.modals.modal_about')
+                </div>
+                
+                <div class="mt-3">
+                    <input-phone-number></input-phone-number>
                 </div>
             </div>
         </div>

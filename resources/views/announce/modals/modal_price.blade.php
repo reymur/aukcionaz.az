@@ -8,7 +8,8 @@
       </div>
       
       <div class="col-10 text-black-50 fs-5">
-        Qiymət
+        Qiymət, AZN
+        <span class="text-danger text-opacity-75">*</span>
       </div>
 
       <div class="col-1 text-end">
