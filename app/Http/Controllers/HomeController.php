@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.main_aukcion_page');
+        return view('home');
     }
 }
