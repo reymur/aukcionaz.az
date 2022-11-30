@@ -1,0 +1,1 @@
+<?php $doogee_options = [        ];

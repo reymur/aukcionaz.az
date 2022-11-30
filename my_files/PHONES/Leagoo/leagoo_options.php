@@ -1,0 +1,1 @@
+<?php   $leagoo_options = [        ];

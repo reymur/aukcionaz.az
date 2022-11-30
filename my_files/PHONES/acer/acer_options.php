@@ -1,0 +1,1 @@
+<?php   $acer_options = [        ];

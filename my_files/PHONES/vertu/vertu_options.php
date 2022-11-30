@@ -1,0 +1,1 @@
+<?php   $vertu_options = [      ];

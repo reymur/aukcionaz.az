@@ -1,0 +1,1 @@
+<?php   $hoffmann_options = [        ];

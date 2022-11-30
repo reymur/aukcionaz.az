@@ -1,0 +1,1 @@
+<?php   $kgtel_options = [        ];

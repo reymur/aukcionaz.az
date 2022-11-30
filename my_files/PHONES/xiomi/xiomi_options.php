@@ -1,0 +1,1 @@
+<?php   $xiomi_options = [      ];

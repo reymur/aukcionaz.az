@@ -1,0 +1,97 @@
+<?php   $kgtel = [        ['sub_category_id' => 219,'name' => '9300'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'A310'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'B110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'B310'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'B360'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'C2-01'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'C3521'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'E1200'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'E1205'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'E1272'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'GX200'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I6'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I7'],/*id 900 Kgtel*/
+    ['sub_category_id' => 219,'name' => 'I9'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K-L100'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K105'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K1205'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K1510'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K1803'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2-02'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K20'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2090'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2100'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2130'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2160'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2171'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2180'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2190'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K2900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K30'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K301'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K3100'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K312'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K313'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K349'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K350'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K351 Mini'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K371'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K3800'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K3900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K401'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K453'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K465'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K484'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K50'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5231'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5232'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K528'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K560'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5600'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5606'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5615'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5616'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5620'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5624'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5625'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K5625 Mini'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K60'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K6800'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K6900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K7000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K80'],/*id 950 Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K8000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K8110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K8800'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K9000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'K9900'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG1000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG103'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG105'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG106'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG1110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG1280'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG18'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG2000'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG2720'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG301'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG3310'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG360'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG465'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG528'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG528M'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG660'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KG8110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT200'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT2175'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT390'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'KT5607'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'N110'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'N220'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'S3600'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'Storm 4'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'Storm 6'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'T401'],/*Kgtel*/
+    ['sub_category_id' => 219,'name' => 'X2-02'],/*Kgtel*/   ];

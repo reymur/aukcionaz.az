@@ -1,0 +1,1 @@
+<?php   $samsung_options = [        ];

@@ -1,0 +1,1 @@
+<?php   $micromax_options = [        ];
