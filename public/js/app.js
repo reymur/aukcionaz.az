@@ -23504,7 +23504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container"
+  "class": ""
 };
 var _hoisted_2 = {
   "class": "row justify-content-center"
@@ -23516,7 +23516,7 @@ var _hoisted_4 = {
   "class": "form-floating"
 };
 var _hoisted_5 = {
-  "class": "form-control",
+  "class": "form-control rounded-0 border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white",
   placeholder: "+994 (000) 000-00-00"
 };
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -23529,7 +23529,7 @@ var _hoisted_7 = {
   "class": "form-floating"
 };
 var _hoisted_8 = {
-  "class": "form-control",
+  "class": "form-control rounded-0 form-control border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white",
   placeholder: "+994 (000) 000-00-00"
 };
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -23542,7 +23542,7 @@ var _hoisted_10 = {
   "class": "form-floating"
 };
 var _hoisted_11 = {
-  "class": "form-control",
+  "class": "form-control rounded-0 form-control border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white",
   placeholder: "+994 (000) 000-00-00"
 };
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
