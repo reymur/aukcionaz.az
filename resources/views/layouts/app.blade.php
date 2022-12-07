@@ -113,6 +113,10 @@
         <main class="py-xl-4 py-lg-4">
             @yield('content')
         </main>
+
+        <footer class="">
+            @include('pages.footer')
+        </footer>
     </div>
 </body>
 </html>

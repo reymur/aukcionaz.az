@@ -26,9 +26,21 @@
                 <div class="mt-3">
                     <input-phone-number></input-phone-number>
                 </div>
+
+                <div class="p-3 mb-4 border-bottom-danger">
+                    <button type="button" class="btn announce__btn-color w-100">
+                        <p class="fs-5 p-2 m-auto text-white">Davam et</p>
+                    </button>
+
+                    <div class="p-3 text-secondary text-opacity-50">
+                        <p class="">Elan yrlərşdirərkən siz "Aukcionaz.az" saytının 
+                            <a href="" class="text-secondary text-opacity-75">müşəri razılaşmasıyla</a>  
+                            avtomatik razılaşırsınız.</table></p>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-   </div>
+    </div>
 @endsection
 

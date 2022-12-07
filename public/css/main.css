@@ -20,3 +20,35 @@
 .chat-input {
     border: 1px solid lightgray;
 }
+
+.announce__btn-color {
+    background-color: #009512;
+}
+
+.category__image_li-styles {
+    display: table;
+    margin-right: 23px;
+    width: 60px;
+}
+    .category__image-styles {
+        width: 60px;
+        height: 60px;
+        padding: 15px;
+        margin-bottom: 5px;
+        border-radius: 17px;
+        background-color: #f5f5f5;
+    }
+    .border__bottom_opacity-10 {
+        border-bottom: 0.5px solid #f1f1f1;
+    }
+
+.vip__announces_bg {
+    background-color: #f1f3f49e;
+}
+
+
+
+
+
+
+
