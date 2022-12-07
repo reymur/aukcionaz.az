@@ -46,9 +46,46 @@
     background-color: #f1f3f49e;
 }
 
+.scroll__hide::-webkit-scrollbar {
+    display: none;
+}
 
+.scroll__hide {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 
+.form-control:focus
+{
+  border-color: #ccc;  
+  box-shadow:  #ccc;
+  border: 1px solid #ccc;
+  outline:none;
+}
 
+input:focus
+{
+  border-color: #ccc;  
+  box-shadow:  #ccc;
+  border: 1px solid #ccc;
+  outline:none;
+}
 
+.footer__styles {
+    height: 70px;
+    background-color: #f6f7fa;
+    margin-top: 40px;
+    padding: 15px;
+    border-top: 0.1px solid #dee0e5;
+}
+    .footer__icon_style {
+        margin: 0.5rem !important;
+        padding: 0.8rem !important;
+        border-radius: 33px;
+        background-color: #ddebeb;
+    }
+        .insta__bg {
+            color: rgb(220 2 47 / 65%);
+        }
 
 
