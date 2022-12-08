@@ -8,7 +8,7 @@
             @include('home.forms.search_home_input')
 
             <!-- CATEGORY -->
-            <div class="mt-3"> 
+            <div class="mt-3 mb-2"> 
                 <div class="col-11 m-auto scroll__hide overflow-scroll ">
                     <ul class="list-group list-group-horizontal">
                         
@@ -16,18 +16,12 @@
                         @include('home.modals.modal_home_category')
 
                         <!-- Category child elements -->
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
-                        @include('home.crumbs.category_child_elements')
+                        
+                        @isset( $images )
+                            @foreach ( $images as $image )
+                                @include('home.crumbs.category_child_elements', [$image])
+                            @endforeach
+                        @endisset
                     </ul>
                 </div>
             </div>

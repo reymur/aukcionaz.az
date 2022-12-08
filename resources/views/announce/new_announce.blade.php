@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="p-3 mb-4 border-bottom-danger">
-                    <button type="button" class="btn announce__btn-color w-100">
+                    <button type="button" class="btn aukcionaz__main-color w-100">
                         <p class="fs-5 p-2 m-auto text-white">Davam et</p>
                     </button>
 

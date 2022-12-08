@@ -21,24 +21,42 @@
     border: 1px solid lightgray;
 }
 
-.announce__btn-color {
+.aukcionaz__main-color {
     background-color: #009512;
 }
 
-.category__image_li-styles {
+.all__category_image_li-styles {
     display: table;
     margin-right: 23px;
     width: 60px;
 }
-    .category__image-div-styles {
+    .all__category_image-div-styles {
         padding: 19px;
-        border-radius: 30px;
+        border-radius: 80px;
         background-color: #f5f5f5;
         margin-bottom: 5px;
     }
-        .category__image-styles {
-            width: 27px;
-            height: 27px;
+        .all__category_image-styles {
+            width: 40px;
+            height: 40px;
+        }
+        .border__bottom_opacity-10 {
+            border-bottom: 0.5px solid #f1f1f1;
+        }
+.category__child_image_li-styles {
+    display: table;
+    margin-right: 23px;
+    width: 60px;
+}
+    .category__child_image-div-styles {
+        padding: 10px;
+        border-radius: 50px;
+        background-color: #f5f5f5;
+        margin-bottom: 5px;
+    }
+        .category__child_image-styles {
+            width: 55px;
+            height: 55px;
         }
         .border__bottom_opacity-10 {
             border-bottom: 0.5px solid #f1f1f1;
