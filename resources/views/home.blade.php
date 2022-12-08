@@ -8,8 +8,8 @@
             @include('home.forms.search_home_input')
 
             <!-- CATEGORY -->
-            <div class="mt-3 mb-2"> 
-                <div class="col-11 m-auto scroll__hide overflow-scroll ">
+            <div class="mt-3 mt-lg-4 mt-xl-4 mb-2"> 
+                <div class="col-12 col-lg-10 col-xl-10 m-auto px-3 scroll__hide overflow-scroll ">
                     <ul class="list-group list-group-horizontal">
                         
                         <!-- Modals Kataloq category -->

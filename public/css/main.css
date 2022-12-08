@@ -92,15 +92,12 @@ input:focus
 }
 
 .footer__styles {
-    height: 70px;
     background-color: #f6f7fa;
-    margin-top: 40px;
-    padding: 15px;
     border-top: 0.1px solid #dee0e5;
 }
     .footer__icon_style {
         margin: 0.5rem !important;
-        padding: 0.8rem !important;
+        padding: 0.6rem !important;
         border-radius: 33px;
         background-color: #ddebeb;
     }

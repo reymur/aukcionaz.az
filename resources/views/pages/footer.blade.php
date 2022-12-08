@@ -1,6 +1,6 @@
 
-    <div class="item-align-end footer__styles">
-        <div class="d-flex">
+    <div class="footer__styles">
+        <div class="col d-flex p-3 justify-content-center">
             <div class="footer__icon_style">
                 <a href="" class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">

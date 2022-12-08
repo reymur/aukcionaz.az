@@ -1,6 +1,6 @@
 
 
-<div class="col-11 m-auto">
+<div class="col-12 col-lg-10 col-xl-10 m-auto px-3">
     <div class="input-group ">
         <input type="text" class="form-control border-0 input" aria-label="Text input with radio button">
 
