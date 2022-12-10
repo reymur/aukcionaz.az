@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/my_custom.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-alpha.2/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
     
@@ -56,7 +57,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-white pt-3 pb-3 pt-lg-2 pt-xl-2 pb-lg-2 pb-xl-2">
+        <nav id="navbar" class="navbar navbar-expand-lg bg-white pt-3 pb-3 pt-lg-2 pt-xl-2 pb-lg-2 pb-xl-2">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-list" viewBox="0 0 16 16">
@@ -65,15 +66,22 @@
                 </button>
 
                 <div class="justify-content-center">
-                    <a class="navbar-brand fs-4 fw-bolder" href="{{ url('/') }}">
+                    <a class="navbar-brand fs-4 fw-bolder ms-lg-5 ms-xl-5" href="{{ url('/') }}">
                         {{ config('app.name', 'Auksionaz.az') }}
                     </a>
                 </div>
 
-                <div class="me-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-plus-lg aukcionaz__main-color" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                    </svg>
+                <!-- NEW ANNOUBCE ADD BUTTON -->
+                <div class="me-2 new__announce_btn_div">
+                    <a href="" class="new__announce_btn_a">    
+                        <div class="new__announce_btn_icon_div">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-plus-lg aukcionaz__main-color new__announce_small_btn_icon" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                            </svg>
+                        </div>
+    
+                        <div class="new__announce_btn_text">Yeni Elan</div>
+                    </a>
                 </div>
                 
 

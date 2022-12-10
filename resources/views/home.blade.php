@@ -8,7 +8,7 @@
             @include('home.forms.search_home_input')
 
             <!-- CATEGORY -->
-            <div class="mt-3 mt-lg-4 mt-xl-4 mb-2"> 
+            <div class="mt-3 mt-lg-5 mt-xl-5 mb-2 main__category_div"> 
                 <div class="col-12 col-lg-10 col-xl-10 m-auto px-3 scroll__hide overflow-scroll ">
                     <ul class="list-group list-group-horizontal">
                         

@@ -1,8 +1,8 @@
 
 
-<div class="col-12 col-lg-10 col-xl-10 m-auto px-3">
-    <div class="input-group ">
-        <input type="text" class="form-control border-0 input" aria-label="Text input with radio button">
+<div class="col-12 col-lg-10 col-xl-10 m-auto px-3 pt-lg-2 pt-xl-2">
+    <div class="input-group main__search_div">
+        <input type="text" class="form-control border-0 input main__search_input" aria-label="Text input with radio button">
 
         <div class="input-group-text border-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
