@@ -114,9 +114,10 @@ input:focus
             text-decoration: none;
             overflow: hidden;
             position: relative;
+            border: 1px solid #10101014;
         }
         .product__card:hover {
-            box-shadow: 1px 1px 3px 4px #1c1b1b17;
+            box-shadow: 1px 1px 4px 2px #1c1b1b17;
         }
             .product__a_link {
                 display: block;
