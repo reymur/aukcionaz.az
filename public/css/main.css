@@ -105,6 +105,42 @@ input:focus
             color: rgb(220 2 47 / 65%);
         }
 
+.product__card_div {
+   
+}
+        .product__card {
+            display: inline-block;
+            vertical-align: top;
+            text-decoration: none;
+            overflow: hidden;
+            position: relative;
+        }
+        .product__card:hover {
+            box-shadow: 1px 1px 3px 4px #1c1b1b17;
+        }
+            .product__a_link {
+                display: block;
+                text-decoration: none;
+            }
+                .product__image_div {
+                    height: 224px;
+                    position: relative;
+                    z-index: 1;
+                    margin-bottom: 10px;
+                    overflow: hidden;
+                }
+                    .product__image_style {
+                        
+                    }
+                .product__price {
+
+                }
+                .product__name {
+
+                }
+                .product__created {
+
+                }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {

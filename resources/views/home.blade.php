@@ -27,10 +27,10 @@
             </div>
         </div>
 
-        <!-- ANNOUNCES -->
+        <!-- ANNOUNCE PRODUCTS -->
         <div class="col-12">
 
-            <!-- ANNOUNCE CARDS -->
+            <!-- ANNOUNCE PRODUCT CARDS -->
             @include('announce.announce_card')
 
         </div>
