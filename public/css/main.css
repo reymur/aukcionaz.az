@@ -47,20 +47,26 @@
     display: table;
     margin-right: 23px;
     width: 60px;
+    padding: 2px;
 }
-    .category__child_image-div-styles {
-        padding: 10px;
-        border-radius: 50px;
-        background-color: #f5f5f5;
-        margin-bottom: 5px;
+    .category__child_image_a {
+        color: #212c3a;
+        text-decoration: none;
     }
-        .category__child_image-styles {
-            width: 55px;
-            height: 55px;
+        .category__child_image-div-styles {
+            padding: 12px;
+            border-radius: 50px;
+            background-color: #f5f5f5;
+            margin-bottom: 5px;
         }
-        .border__bottom_opacity-10 {
-            border-bottom: 0.5px solid #f1f1f1;
-        }
+            
+            .category__child_image-styles {
+                width: 55px;
+                height: 55px;
+            }
+            .border__bottom_opacity-10 {
+                border-bottom: 0.5px solid #f1f1f1;
+            }
 
 .vip__announces_bg {
     background-color: #f1f3f49e;

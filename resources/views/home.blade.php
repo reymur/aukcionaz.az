@@ -18,9 +18,11 @@
                         <!-- Category child elements -->
                         
                         @isset( $images )
-                            @foreach ( $images as $image )
-                                @include('home.crumbs.category_child_elements', [$image])
-                            @endforeach
+                            <div class="d-flex category__child_div" id="category__child_div">
+                                @foreach ( $images as $key => $image )
+                                    @include('home.crumbs.category_child_elements', ['id' => $key,'image' => $image])
+                                @endforeach
+                            </div>
                         @endisset
                     </ul>
                 </div>
