@@ -21,8 +21,8 @@
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F11%2F21%2F27%2F51%2Fbbf9f656-8d0c-4d88-aed3-04f6709f8d44%2F37633_nP-UfArxUCsV0In2BmMfiA.jpg" class="card-img-top product__image_style" alt="...">
                         </div>
                         <div class="card-body">
-                            <p class="product__price">Card title</p>
-                            <p class="product__name">This is a wider card with content. This content is a little bit longer.</p>
+                            <p class="product__price product__word_style">Card title</p>
+                            <p class="product__name product__word_style">This is a wider card with content. This content is a little bit longer.</p>
                             <p class="product__created"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </a>
@@ -36,8 +36,8 @@
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F11%2F21%2F27%2F51%2Fbbf9f656-8d0c-4d88-aed3-04f6709f8d44%2F37633_nP-UfArxUCsV0In2BmMfiA.jpg" class="card-img-top product__image_style" alt="...">
                         </div>
                         <div class="card-body">
-                            <p class="product__price">Card title</p>
-                            <p class="product__name">This is a wider card with content. This content is a little bit longer.</p>
+                            <p class="product__price product__word_style">Card title</p>
+                            <p class="product__name product__word_style">This is a wider card with content. This content is a little bit longer.</p>
                             <p class="product__created"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </a>
@@ -51,8 +51,8 @@
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F11%2F21%2F27%2F51%2Fbbf9f656-8d0c-4d88-aed3-04f6709f8d44%2F37633_nP-UfArxUCsV0In2BmMfiA.jpg" class="card-img-top product__image_style" alt="...">
                         </div>
                         <div class="card-body">
-                            <p class="product__price">Card title</p>
-                            <p class="product__name">This is a wider card with content. This content is a little bit longer.</p>
+                            <p class="product__price product__word_style">Card title</p>
+                            <p class="product__name product__word_style">This is a wider card with content. This content is a little bit longer.</p>
                             <p class="product__created"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </a>
@@ -66,13 +66,14 @@
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F11%2F21%2F27%2F51%2Fbbf9f656-8d0c-4d88-aed3-04f6709f8d44%2F37633_nP-UfArxUCsV0In2BmMfiA.jpg" class="card-img-top product__image_style" alt="...">
                         </div>
                         <div class="card-body">
-                            <p class="product__price">Card title</p>
-                            <p class="product__name">This is a wider card with content. This content is a little bit longer.</p>
+                            <p class="product__price product__word_style">Card title</p>
+                            <p class="product__name product__word_style">This is a wider card with content. This content is a little bit longer.</p>
                             <p class="product__created"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </a>
                 </div>
             </div>
+
         </div>
       </div>
 </div>

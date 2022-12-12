@@ -115,12 +115,7 @@ input:focus
    
 }
         .product__card {
-            display: inline-block;
-            vertical-align: top;
-            text-decoration: none;
-            overflow: hidden;
-            position: relative;
-            border: 1px solid #10101014;
+           
         }
         .product__card:hover {
             box-shadow: 1px 1px 4px 2px #1c1b1b17;
@@ -130,7 +125,7 @@ input:focus
                 text-decoration: none;
             }
                 .product__image_div {
-                    height: 224px;
+                    height: auto;
                     position: relative;
                     z-index: 1;
                     margin-bottom: 10px;
