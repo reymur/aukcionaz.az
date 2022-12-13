@@ -13,8 +13,10 @@
                     <ul class="list-group list-group-horizontal">
                         
                         <!-- Modals Kataloq category -->
-                        @include('home.modals.modal_home_category')
-
+                        <div class="">
+                            @include('home.modals.modal_home_category')
+                        </div>
+                        
                         <!-- Category child elements -->
                         
                         @isset( $images )
