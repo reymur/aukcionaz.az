@@ -12,7 +12,7 @@
     </div>
 
     <!-- PRODUCT IMAGE -->
-    <div class="col-sm-11 col-md-11 col-lg-10 m-auto">
+    <div class="col-sm-11 col-md-11 col-lg-10 m-auto py-2">
         
         <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 rows-cols-xl-4 g-3">
             <div class="col">
@@ -78,6 +78,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
     </div>
 </div>
