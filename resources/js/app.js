@@ -24,6 +24,7 @@ import AukcionNegotiation from './components/crumbs/AukcionNegotiation.vue';
 import AukcionСompletion from './components/crumbs/AukcionСompletion.vue';
 import OnAukcion from './components/elements/OnAukcionProduct.vue';
 import InputPhoneNumber from './components/elements/InputPhoneNumber.vue';
+import ProductShow from './components/announce/products/ProductShow.vue';
 
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
@@ -35,5 +36,6 @@ app.component('auksion-negotiation' , AukcionNegotiation);
 app.component('auksion-completion' , AukcionСompletion);
 app.component('on-aukcion-product' , OnAukcionProduct);
 app.component('input-phone-number' , InputPhoneNumber);
+app.component('product-show' , ProductShow);
 
 app.mount("#app")

@@ -1,7 +1,7 @@
 <template>
-    <div class="">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    <div class="col-12">
+        <div class="col">
+            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 m-auto">
 
                     <div class="form-floating">
                         <input class="form-control rounded-0 border-top-0 border-start-0 border-opacity-25

@@ -4,10 +4,17 @@
    <div class="">
 
         <div class="col-12">
-            <div class="bg-white w-100 mt-1 mb-3 p-0">
-                @include('announce.modals.modal_category')
+            <!-- NEW ANNOUNCE ADD TOP ELEMENT-->
+            <div class="bg-white w-100 p-0 new_announce_add_top_element_div_style">
+                @include('announce.elements.new_announce_add_top_element')
             </div>
 
+            <!-- NEW ANNOUNCE ADD CATEGORIES-->
+            <div class="bg-white w-100 mt-0 mb-3 p-0">
+                @include('announce.modals.modal_category')
+            </div>
+            
+            <!-- NEW ANNOUNCE ADD INPUTS-->
             <div class="cbg-white w-100 mt-1 mb-2 p-0">
                 <div class="border-0 ">
                     @include('announce.modals.modal_price')
@@ -28,7 +35,7 @@
                 </div>
 
                 <div class="p-3 mb-4 border-bottom-danger">
-                    <button type="button" class="btn aukcionaz__main-color w-100">
+                    <button type="button" class="btn btn-success aukcionaz__main-color w-100">
                         <p class="fs-5 p-2 m-auto text-white">Davam et</p>
                     </button>
 

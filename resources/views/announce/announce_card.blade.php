@@ -17,7 +17,7 @@
         <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 rows-cols-xl-4 g-3">
             <div class="col">
                 <div class="card h-100 product__card">
-                    <a href="" class="text-decoration-none">
+                    <a href="{{ route('product') }}" class="text-decoration-none">
                         <div class="product__image_div">
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F01%2F17%2F17%2F02%2F6f8e2caf-1c6e-422e-b53e-ee377f3b2a05%2F91017_vmTKd7z5pZpnltR1ZDq4sQ.jpg" class="card-img-top" alt="...">
                         </div>

@@ -1,40 +1,23 @@
 <template>
     <div class="col-12">
-        <div class="col-12">
-            <div class="text-decoration-none d-flex" type="button">
-                <div class="col-12 d-flex p-4 justify-content-center product__info">
-                    <div class="col-1 me-2">
-                        <photo-provider>
-                            <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="src" :id="id" :src="src">
-                                <img :src="src" class="view-box rounded-circle product__avatar">
-                            </photo-consumer>
-                        </photo-provider>
-                    </div>
-
-                    <div class="col-8 d-flex align-items-center">
-                        Range rover voge / 2005 / 12000 km
-                    </div>
-                </div>
+        <div class="d-flex bg-secondary">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 d-flex justify-content-center">
+                <photo-provider>
+                    <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="id" :src="src">
+                        <img v-if="id == 0" :src="imgList[0]" class="">
+                    </photo-consumer>   
+                </photo-provider>
+            </div>
+            <div class="col-6 d-flex p-3">
+                    <photo-provider>
+                        <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-'+id" :intro="src" :src="src">
+                            <div class="col-12 p-2" key="id">
+                                <img v-if="id> 0" :src="src"  class="w-100">
+                            </div>
+                        </photo-consumer>
+                    </photo-provider>
             </div>
         </div>
-
-<!--        <div class="collapse" id="collapseExample">-->
-<!--            <div class="d-flex justify-content-center pt-3">-->
-<!--                <div class="card w-auto">-->
-<!--                    <photo-provider>-->
-<!--                        <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="src" :id="id" :src="src">-->
-<!--                            <img :src="src" class="view-box">-->
-<!--                        </photo-consumer>-->
-<!--                    </photo-provider>-->
-
-<!--                    <div class="card-body">-->
-<!--                        <h5 class="card-title">Range Rove Voqe</h5>-->
-<!--                        <p class="card-text"> 2005 </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
     </div>
 </template>
 
@@ -43,12 +26,15 @@
 import {PhotoProvider, PhotoConsumer, PhotoSlider } from 'vue3-photo-preview';
 
 export default {
-    name: "OnAukcion",
+    name: "ProductShow",
     data() {
         return { 
             imgList: [
                 'https://i.ytimg.com/vi/LfO2U9gw2iE/hqdefault.jpg',
                 'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png',
+                'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png',
+                'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png',
+                'https://cdn.jdpower.com/ChromeImageGallery/Expanded/White/640/2014DOD004b_640/2014DOD004b_640_05.jpg',
                 'https://cdn.jdpower.com/ChromeImageGallery/Expanded/White/640/2014DOD004b_640/2014DOD004b_640_05.jpg',
             ],
         }
@@ -80,6 +66,10 @@ export default {
     },
     mounted () {
         this.showOneImage;
+        
+        if(document.getElementById('img-0') ){
+            document.getElementById('img-0').style.display = 'none'
+        }
 
         // console.log('PhotoConsumer - ',
         //     document.getElementsByClassName('PhotoConsumer')
@@ -89,19 +79,18 @@ export default {
 </script>
 
 <style scoped>
-.product__info {
+/* .product__info {
     background-color: #fff;
     text-transform: capitalize;
     font-size: 21px;
     color: #000;
     letter-spacing: 1px;
     font-family: sans-serif;
-}
+} */
 
-.close__style {
+/* .close__style {
     color: #fa1f1f;
-}
-.product__avatar {
-    width: 60px;
-}
+} */
+
+
 </style>

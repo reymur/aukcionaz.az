@@ -36,18 +36,21 @@ let all__category_image_li_styles = document.querySelector('.all__category_image
 let all__category_image_div_styles = document.querySelector('.all__category_image-div-styles')
 let all__category_image_li_text = document.querySelector('.all__category_image_li-text')
 
-all__category_image_li_styles.onmouseover = function() {
-    // console.log('AAAAA = ', all__category_image_li_styles )
-    all__category_image_li_styles.style.cursor = 'pointer'
-    all__category_image_div_styles.style.border = '1px solid #009512b8';
-    all__category_image_div_styles.style.padding = '18px';
-    all__category_image_li_text.style.color = '#009512';
-}
-all__category_image_li_styles.onmouseout = function() {
-    all__category_image_li_styles.style
-    all__category_image_div_styles.style.border = 'none';
-    all__category_image_div_styles.style.padding = '19px';
-    all__category_image_li_text.style.color = '#212c3a';
+if( all__category_image_li_styles !== null )
+{
+    all__category_image_li_styles.onmouseover = function() {
+        // console.log('AAAAA = ', all__category_image_li_styles )
+        all__category_image_li_styles.style.cursor = 'pointer'
+        all__category_image_div_styles.style.border = '1px solid #009512b8';
+        all__category_image_div_styles.style.padding = '18px';
+        all__category_image_li_text.style.color = '#009512';
+    }
+    all__category_image_li_styles.onmouseout = function() {
+        all__category_image_li_styles.style
+        all__category_image_div_styles.style.border = 'none';
+        all__category_image_div_styles.style.padding = '19px';
+        all__category_image_li_text.style.color = '#212c3a';
+    }
 }
 
 
@@ -58,13 +61,9 @@ let category__child_image_div_styles = document.querySelector('.category__child_
 let category__child_image_a = document.querySelector('.category__child_image_a')
 
 addBorderOnCategoryImageA = event => {
-
-        event.target.children[1].style.color = '#009512b8'
-
-        event.target.children[0].style.padding = '11px'
-        event.target.children[0].style.border = '1px solid #009512b8'
-
-    
+    event.target.children[1].style.color = '#009512b8';
+    event.target.children[0].style.padding = '11px';
+    event.target.children[0].style.border = '1px solid #009512b8';
     console.log( 'this = ', event.target.children[1]  )
 }
 rmBorderOnCategoryImageA = event => {
@@ -73,7 +72,13 @@ rmBorderOnCategoryImageA = event => {
     event.target.children[1].style.color = 'rgb(33, 44, 58)'
 }
 
+// DONT SHOW "NAVBAR" 
+var path_name = document.location.pathname;
 
+if( path_name.indexOf('announce/') === 1 ) {
+    var navbar = document.getElementById('navbar');
+    navbar.style.display = 'none';
+}
 
 
 

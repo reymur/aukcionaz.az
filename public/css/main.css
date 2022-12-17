@@ -241,30 +241,38 @@ input:focus
 
     }
 
-    .new__announce_btn_a {
-        display: flex;
-        text-decoration: none;
-    } 
-        .new__announce_btn_div {
-            display: flex;
-            background-color: #009512;
-            width: 185px;
-            height: 50px;
-            margin-top: 146px;
-            right: 108px;
-            padding: 7px 28px 7px 25px;
-            position: absolute;
+    .new_announce_add_top_element_div_style {
+        border: none;
+        border-bottom: 1px solid #ffffff;
+    }
+        .new_announce_add_top_element_li_style {
+            border: none;
         }
-            .new__announce_btn_icon_div {
-                margin: 6px 8px 0 0;
+        .new__announce_btn_a {
+            display: flex;
+            text-decoration: none;
+        } 
+            .new__announce_btn_div {
+                display: none;
+                background-color: #009512;
+                width: 185px;
+                height: 50px;
+                margin-top: 146px;
+                right: 108px;
+                padding: 7px 28px 7px 25px;
+                position: absolute;
             }
-            .new__announce_btn_text {
-                color: #fff;
-                font-size: 19px;
-                font-weight: 500;
-                text-transform: uppercase;
-                margin-top: 4px
-            }
+                .new__announce_btn_icon_div {
+                    margin: 6px 8px 0 0;
+                }
+                .new__announce_btn_text {
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin-top: 5px;
+                }
+
 .main__search_div {
     width: 300px;
 }  

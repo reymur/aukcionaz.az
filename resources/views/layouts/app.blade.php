@@ -72,17 +72,7 @@
                 </div>
 
                 <!-- NEW ANNOUBCE ADD BUTTON -->
-                <div class="me-2 new__announce_btn_div">
-                    <a href="" class="new__announce_btn_a">    
-                        <div class="new__announce_btn_icon_div">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-plus-lg aukcionaz__main-color new__announce_small_btn_icon" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                            </svg>
-                        </div>
-    
-                        <div class="new__announce_btn_text">Yeni Elan</div>
-                    </a>
-                </div>
+                @include('announce.buttons.new_announce_add_buton')
                 
 
                 <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
