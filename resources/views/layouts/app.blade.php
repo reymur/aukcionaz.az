@@ -21,8 +21,9 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
         $(function (){
+            // alert( window.location.protocol+'//'+window.location.hostname )
             // let ip_address = '127.0.0.1';
-            let ip_address = document.location.hostname;
+            let ip_address = window.location.protocol+'//'+window.location.hostname ;
             let socket_port = '3000';
             let socket = io(ip_address + ':' + socket_port);
 

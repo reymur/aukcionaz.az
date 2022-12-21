@@ -82,6 +82,18 @@ if( path_name.indexOf('announce/') === 1 ) {
 
 
 
+var p_text = document.getElementById('product-about-text');
+var p_full_text = document.getElementById('product-about-full-text');
+
+p_full_text.style.display = 'none';
+p_text.style.display = 'block';
+
+function showProductAboutText() {
+    p_text.style.display = 'none';
+    p_full_text.style.display = 'block';
+
+    console.log(p_full_text)
+}
 
 
 

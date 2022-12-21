@@ -264,9 +264,34 @@ input:focus
                                 }
                             .product__number_sien_updated_div {
                                 border-bottom: 1px solid #00000014;
-                                border-bottom: 1px solid #00000014;
                                 margin: 22px 0 5px 0;
                             }
+                            .product__tez_sat_div {
+                                color: #ff00009c;
+                            }
+                                .product__tez_sat_text {
+
+                                }
+                            .product__tez_sat_bussines_div {
+                                background-color: #eff8ff;
+                            }
+                                .product__tez_sat_do_first_div {
+                                    height: 25px;
+                                }
+                                    .product__tez_sat_do_first_price_parent_div {
+                                        background-color: #4f9714;
+                                        align-self: center;
+                                        display: flex;
+                                        border-radius: 30px;
+                                    }
+                                        .product__tez_sat_do_first_price_div {
+                                            width: 100%;
+                                            margin: auto;
+                                            justify-content: center;
+                                            display: flex;     
+                                            color: white;     
+                                            padding: 10px 20px;                              
+                                        }
 
                 .card__footer_style {
                     background-color: white;
