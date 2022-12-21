@@ -1,34 +1,37 @@
 <template>
-    <div class="col-12">
-        <div class="d-flex bg-secondary">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 d-flex justify-content-center">
-                <photo-provider>
-                    <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="id" :src="src">
-                        <img v-if="id == 0" :src="imgList[0]" class="">
-                    </photo-consumer>   
-                </photo-provider>
-            </div>
-            <div class="col-6 d-flex p-3">
-                    <photo-provider>
-                        <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-'+id" :intro="src" :src="src">
-                            <div class="col-12 p-2" key="id">
-                                <img v-if="id> 0" :src="src"  class="w-100">
-                            </div>
-                        </photo-consumer>
-                    </photo-provider>
-            </div>
+<div class="col-12">
+    <div class="d-flex bg-secondary">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 d-flex justify-content-center">
+            <photo-provider>
+                <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="id" :src="src">
+                    <img v-if="id == 0" :src="imgList[0]" class="">
+                </photo-consumer>
+            </photo-provider>
+        </div>
+        <div class="col-6 d-flex p-3">
+            <photo-provider>
+                <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-'+id" :intro="src" :src="src">
+                    <div class="col-12 p-2" key="id">
+                        <img v-if="id> 0" :src="src" class="w-100">
+                    </div>
+                </photo-consumer>
+            </photo-provider>
         </div>
     </div>
+</div>
 </template>
 
 <script>
-
-import {PhotoProvider, PhotoConsumer, PhotoSlider } from 'vue3-photo-preview';
+import {
+    PhotoProvider,
+    PhotoConsumer,
+    PhotoSlider
+} from 'vue3-photo-preview';
 
 export default {
     name: "ProductShow",
     data() {
-        return { 
+        return {
             imgList: [
                 'https://i.ytimg.com/vi/LfO2U9gw2iE/hqdefault.jpg',
                 'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png',
@@ -51,8 +54,8 @@ export default {
         showOneImage() {
             let el = document.getElementsByClassName('PhotoConsumer');
 
-            if( el !== undefined && el !== null ) {
-                if( el.length === this.imgList.length ) {
+            if (el !== undefined && el !== null) {
+                if (el.length === this.imgList.length) {
                     for (let i = 0; i < el.length; i++) {
                         if (el[i].id > 0) {
                             if (el[i].classList !== undefined && el[i].classList !== null) {
@@ -64,10 +67,10 @@ export default {
             }
         }
     },
-    mounted () {
+    mounted() {
         this.showOneImage;
-        
-        if(document.getElementById('img-0') ){
+
+        if (document.getElementById('img-0')) {
             document.getElementById('img-0').style.display = 'none'
         }
 
@@ -91,6 +94,4 @@ export default {
 /* .close__style {
     color: #fa1f1f;
 } */
-
-
 </style>

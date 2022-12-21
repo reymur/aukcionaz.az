@@ -224,6 +224,46 @@ input:focus
                         padding: 2px 40px 0 10px;
                         color: #bcbcbc;
                     }
+                        .product__show_city_and_type {
+                            border-bottom: 1px solid #00000014;
+                        }
+                        .product__show_about_text {
+                            border-bottom: 1px solid #00000014;
+                            border-bottom: 1px solid #00000014;
+                            padding: 5px 0 15px 0px;
+                        }
+                        .product__user_info {
+                            border-bottom: 1px solid #00000014;
+                            padding: 15px 0 15px 0px;
+                            margin: 16px 0 0 0;
+                        }  
+                            .product__user_info_avatar_div {
+                                width: 60px;
+                                height: 55px;
+                                border-bottom: 1px solid #00000014;
+                            }
+                                .product__user_info_avatar {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50px;
+                                }
+                            .product__user_phone_div {
+                                margin: 17px 0 0 0;
+                                background-color: aliceblue;
+                            }
+                                .product__user_phone_icon_number_div {
+
+                                }
+                                    .product__user_phone_icon {
+                                        margin: 0 10px 0 6px;
+                                    }
+                                    .product__user_phone_number {
+
+                                    }
+                                .product__user_phone {
+
+                                }
+
                 .card__footer_style {
                     background-color: white;
                     border-top: none;
