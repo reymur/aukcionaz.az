@@ -292,6 +292,33 @@ input:focus
                                             color: white;     
                                             padding: 10px 20px;                              
                                         }
+                                .product__tez_sat_first_icon_div {
+                                    align-self: center;
+                                    display: flex;
+                                    padding: 0 0 2px 5px;
+                                    width: 32px;
+                                }
+                                    .product__tez_sat_first_icon {
+                                        width: 100%;
+                                    }
+                                .product__tez_sat_vip_icon_div {
+                                    align-self: center;
+                                    display: flex;
+                                    padding: 0 0 2px 5px;
+                                    width: 33px;
+                                }
+                                    .product__tez_sat_vip_icon {
+                                        width: 100%;
+                                    }
+                                .product__tez_sat_premium_icon_div {
+                                    align-self: center;
+                                    display: flex;
+                                    padding: 0 0 2px 5px;
+                                    width: 32px;
+                                }
+                                    .product__tez_sat_premium_icon {
+                                        width: 100%;
+                                    }
 
                 .card__footer_style {
                     background-color: white;

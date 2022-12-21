@@ -137,11 +137,9 @@
                 <div class="d-flex px-3 mb-2 product__tez_sat_bussines_div">
                     <div class="col p-2 ">
                         <div class="d-flex product__tez_sat_do_first_div">
-                            <div class=" fw-bolder fs-5">İrəli çək</div>
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up-short pb-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
-                                </svg>
+                            <div class=" fw-bolder fs-5">İRƏLİ çək</div>
+                            <div class="product__tez_sat_first_icon_div">
+                                <img src="{{ asset('/images/icons/first-icon.png') }}" alt="" class="product__tez_sat_first_icon">
                             </div>
                         </div>
                         <div class=""> Elanın 1-ci sıraya qaldırılması </div>
@@ -155,14 +153,12 @@
                 <div class="d-flex px-3 mb-2 product__tez_sat_bussines_div">
                     <div class="col p-2 ">
                         <div class="d-flex product__tez_sat_do_first_div">
-                            <div class=" fw-bolder fs-5">İrəli çək</div>
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up-short pb-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
-                                </svg>
+                            <div class=" fw-bolder fs-5">VIP et</div>
+                            <div class="product__tez_sat_vip_icon_div">
+                                <img src="{{ asset('/images/icons/vip-icon_1.png') }}" alt="" class="product__tez_sat_vip_icon">
                             </div>
                         </div>
-                        <div class=""> Elanın 1-ci sıraya qaldırılması </div>
+                        <div class=""> Yuxarı hissədə, VIP blokunda görünür </div>
                     </div>
 
                     <div class="product__tez_sat_do_first_price_parent_div">
@@ -173,14 +169,12 @@
                 <div class="d-flex px-3 product__tez_sat_bussines_div">
                     <div class="col p-2 ">
                         <div class="d-flex product__tez_sat_do_first_div">
-                            <div class=" fw-bolder fs-5">İrəli çək</div>
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up-short pb-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
-                                </svg>
+                            <div class=" fw-bolder fs-5">PREMIUM et</div>
+                            <div class="product__tez_sat_premium_icon_div">
+                                <img src="{{ asset('/images/icons/premium-icon.png') }}" alt="" class="product__tez_sat_premium_icon">
                             </div>
                         </div>
-                        <div class=""> Elanın 1-ci sıraya qaldırılması </div>
+                        <div class=""> Premium bloku: İRƏLİ + VİP + PREMİUM edir </div>
                     </div>
 
                     <div class="product__tez_sat_do_first_price_parent_div">
