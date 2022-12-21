@@ -175,7 +175,7 @@
                             </div>
                         </div>
                         <div class=""> Premium bloku: İRƏLİ + VİP + PREMİUM edir </div>
-                    </div>
+                    </div> 
 
                     <div class="product__tez_sat_do_first_price_parent_div">
                         <div class="product__tez_sat_do_first_price_div"> 1 AZN </div>
