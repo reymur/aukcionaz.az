@@ -12,20 +12,19 @@
                 <div class="col-12 col-lg-10 col-xl-10 m-auto px-3 scroll__hide overflow-scroll ">
                     <ul class="list-group list-group-horizontal">
                         
-                        <!-- Modals Kataloq category -->
+                        <!-- Modals Kataloq all category -->
                         <div class="">
-                            @include('home.modals.modal_home_category')
+                            @include('home.modals.modal_home_category', [$categories])
                         </div>
                         
                         <!-- Category child elements -->
-                        
-                        @isset( $images )
+                        @if( isset($categories) && $categories->count() > 0 )
                             <div class="d-flex category__child_div" id="category__child_div">
-                                @foreach ( $images as $key => $image )
-                                    @include('home.crumbs.category_child_elements', ['id' => $key,'image' => $image])
+                                @foreach ( $categories as $key => $category )
+                                    @include('home.crumbs.category_child_elements', ['id' => $key,'category' => $category])
                                 @endforeach
                             </div>
-                        @endisset
+                        @endif
                     </ul>
                 </div>
             </div>

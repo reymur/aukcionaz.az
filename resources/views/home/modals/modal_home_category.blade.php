@@ -6,7 +6,7 @@
       <img src="{{ asset('images/category/all__category_img.png') }}" alt="" class="all__category_image-styles bg-s">
     </div>
 
-    <p class="text-center lh-1 all__category_image_li-text">Kataloq</p>
+    <p class="text-center lh-1 all__category_image_li-text">Kataloq1</p>
   </li>
 
   <!-- offcanvas -->
@@ -24,32 +24,15 @@
       </div>
       
       <div class="py-1 bg-light"></div>
-
+      
       <div class="offcanvas-body p-0">
           <div class="">
               <ul class="list-group">
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
-                  @include('home.modals.modal_crumbs._vertical_all_catalog_element')
+                @if( isset($categories) && $categories->count() > 0 )
+                  @foreach ( $categories as $category )
+                    @include('home.modals.modal_crumbs._vertical_all_catalog_element', [$category])
+                  @endforeach
+                @endif
               </ul>
           </div>
       </div>

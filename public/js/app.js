@@ -29399,7 +29399,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47425,13 +47425,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e");
 /* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ExampleComponent.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ExampleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ExampleComponent_vue_vue_type_template_id_299e239e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ExampleComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47454,7 +47454,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductShow_vue_vue_type_template_id_08b62728_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductShow.vue?vue&type=template&id=08b62728&scoped=true */ "./resources/js/components/announce/products/ProductShow.vue?vue&type=template&id=08b62728&scoped=true");
 /* harmony import */ var _ProductShow_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductShow.vue?vue&type=script&lang=js */ "./resources/js/components/announce/products/ProductShow.vue?vue&type=script&lang=js");
 /* harmony import */ var _ProductShow_vue_vue_type_style_index_0_id_08b62728_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductShow.vue?vue&type=style&index=0&id=08b62728&scoped=true&lang=css */ "./resources/js/components/announce/products/ProductShow.vue?vue&type=style&index=0&id=08b62728&scoped=true&lang=css");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -47462,7 +47462,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ProductShow_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ProductShow_vue_vue_type_template_id_08b62728_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-08b62728"],['__file',"resources/js/components/announce/products/ProductShow.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ProductShow_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ProductShow_vue_vue_type_template_id_08b62728_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-08b62728"],['__file',"resources/js/components/announce/products/ProductShow.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47484,13 +47484,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AukcionContionue_vue_vue_type_template_id_65bd7e86__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionContionue.vue?vue&type=template&id=65bd7e86 */ "./resources/js/components/crumbs/AukcionContionue.vue?vue&type=template&id=65bd7e86");
 /* harmony import */ var _AukcionContionue_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AukcionContionue.vue?vue&type=script&lang=js */ "./resources/js/components/crumbs/AukcionContionue.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionContionue_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionContionue_vue_vue_type_template_id_65bd7e86__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionContionue.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionContionue_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionContionue_vue_vue_type_template_id_65bd7e86__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionContionue.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47512,13 +47512,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AukcionNegotiation_vue_vue_type_template_id_48c1ae41__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionNegotiation.vue?vue&type=template&id=48c1ae41 */ "./resources/js/components/crumbs/AukcionNegotiation.vue?vue&type=template&id=48c1ae41");
 /* harmony import */ var _AukcionNegotiation_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AukcionNegotiation.vue?vue&type=script&lang=js */ "./resources/js/components/crumbs/AukcionNegotiation.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionNegotiation_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionNegotiation_vue_vue_type_template_id_48c1ae41__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionNegotiation.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionNegotiation_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionNegotiation_vue_vue_type_template_id_48c1ae41__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionNegotiation.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47540,13 +47540,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionСompletion.vue?vue&type=template&id=ecfd07e4 */ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4");
 /* harmony import */ var _Aukcion_ompletion_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AukcionСompletion.vue?vue&type=script&lang=js */ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Aukcion_ompletion_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionСompletion.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Aukcion_ompletion_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionСompletion.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47568,13 +47568,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AukcionUserInfoModal_vue_vue_type_template_id_68737475__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionUserInfoModal.vue?vue&type=template&id=68737475 */ "./resources/js/components/elements/AukcionUserInfoModal.vue?vue&type=template&id=68737475");
 /* harmony import */ var _AukcionUserInfoModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AukcionUserInfoModal.vue?vue&type=script&lang=js */ "./resources/js/components/elements/AukcionUserInfoModal.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionUserInfoModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionUserInfoModal_vue_vue_type_template_id_68737475__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/AukcionUserInfoModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionUserInfoModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionUserInfoModal_vue_vue_type_template_id_68737475__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/AukcionUserInfoModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47596,13 +47596,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AukcionUserOffersModal_vue_vue_type_template_id_3a34662c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionUserOffersModal.vue?vue&type=template&id=3a34662c */ "./resources/js/components/elements/AukcionUserOffersModal.vue?vue&type=template&id=3a34662c");
 /* harmony import */ var _AukcionUserOffersModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AukcionUserOffersModal.vue?vue&type=script&lang=js */ "./resources/js/components/elements/AukcionUserOffersModal.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionUserOffersModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionUserOffersModal_vue_vue_type_template_id_3a34662c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/AukcionUserOffersModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AukcionUserOffersModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AukcionUserOffersModal_vue_vue_type_template_id_3a34662c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/AukcionUserOffersModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47624,13 +47624,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AuksionUserReitingInfoModal_vue_vue_type_template_id_3abf7df6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AuksionUserReitingInfoModal.vue?vue&type=template&id=3abf7df6 */ "./resources/js/components/elements/AuksionUserReitingInfoModal.vue?vue&type=template&id=3abf7df6");
 /* harmony import */ var _AuksionUserReitingInfoModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AuksionUserReitingInfoModal.vue?vue&type=script&lang=js */ "./resources/js/components/elements/AuksionUserReitingInfoModal.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AuksionUserReitingInfoModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AuksionUserReitingInfoModal_vue_vue_type_template_id_3abf7df6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/AuksionUserReitingInfoModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AuksionUserReitingInfoModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AuksionUserReitingInfoModal_vue_vue_type_template_id_3abf7df6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/AuksionUserReitingInfoModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47652,13 +47652,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _InputPhoneNumber_vue_vue_type_template_id_0d1b3fac__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputPhoneNumber.vue?vue&type=template&id=0d1b3fac */ "./resources/js/components/elements/InputPhoneNumber.vue?vue&type=template&id=0d1b3fac");
 /* harmony import */ var _InputPhoneNumber_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputPhoneNumber.vue?vue&type=script&lang=js */ "./resources/js/components/elements/InputPhoneNumber.vue?vue&type=script&lang=js");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_InputPhoneNumber_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_InputPhoneNumber_vue_vue_type_template_id_0d1b3fac__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/InputPhoneNumber.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_InputPhoneNumber_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_InputPhoneNumber_vue_vue_type_template_id_0d1b3fac__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/elements/InputPhoneNumber.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47681,7 +47681,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _OnAukcionProduct_vue_vue_type_template_id_476092e2_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OnAukcionProduct.vue?vue&type=template&id=476092e2&scoped=true */ "./resources/js/components/elements/OnAukcionProduct.vue?vue&type=template&id=476092e2&scoped=true");
 /* harmony import */ var _OnAukcionProduct_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./OnAukcionProduct.vue?vue&type=script&lang=js */ "./resources/js/components/elements/OnAukcionProduct.vue?vue&type=script&lang=js");
 /* harmony import */ var _OnAukcionProduct_vue_vue_type_style_index_0_id_476092e2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./OnAukcionProduct.vue?vue&type=style&index=0&id=476092e2&scoped=true&lang=css */ "./resources/js/components/elements/OnAukcionProduct.vue?vue&type=style&index=0&id=476092e2&scoped=true&lang=css");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -47689,7 +47689,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_OnAukcionProduct_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_OnAukcionProduct_vue_vue_type_template_id_476092e2_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-476092e2"],['__file',"resources/js/components/elements/OnAukcionProduct.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_OnAukcionProduct_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_OnAukcionProduct_vue_vue_type_template_id_476092e2_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-476092e2"],['__file',"resources/js/components/elements/OnAukcionProduct.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -47712,7 +47712,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true */ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true");
 /* harmony import */ var _MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainAukcionPage.vue?vue&type=script&lang=js */ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js");
 /* harmony import */ var _MainAukcionPage_vue_vue_type_style_index_0_id_e7c747e8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css */ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css");
-/* harmony import */ var _var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -47720,7 +47720,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_projects_aukcionaz_loc_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-e7c747e8"],['__file',"resources/js/components/pages/MainAukcionPage.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-e7c747e8"],['__file',"resources/js/components/pages/MainAukcionPage.vue"]])
 /* hot reload */
 if (false) {}
 

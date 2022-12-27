@@ -55,7 +55,8 @@ body {
 
     }
         .vertical__all_catalog_img {
-            width: 50px;
+            width: 55px;
+            height: 55px;
             padding: 6px;
             border-radius: 50px;
             background-color: #efefef;
@@ -172,6 +173,26 @@ input:focus
         .product__card:hover {
             box-shadow: 1px 1px 4px 2px #1c1b1b17;
         }
+            .product__on_auktion_icon {
+                transform: rotateY(165deg);
+                display: inline-table;
+                position: absolute;
+                width: 30px;
+                z-index: 11;
+                right: 0;
+                margin: 8px 10px 0 0;
+                border-radius: 50px;
+                background-color: aliceblue;
+                padding: 5px;
+            }
+                /* IF PRODUCT IS ACTIVE REALTIME ON AUKTION */
+                @keyframes box-shadow {
+                    100% {
+                        margin-top: 1px;
+                        box-shadow: 1px 0px 14px 3px red;
+                    }
+                }
+               
             .product__a_link {
                 display: block;
                 text-decoration: none;
@@ -319,7 +340,6 @@ input:focus
                                     .product__tez_sat_premium_icon {
                                         width: 100%;
                                     }
-
                 .card__footer_style {
                     background-color: white;
                     border-top: none;
@@ -376,3 +396,10 @@ input:focus
 
     }
 }
+
+/* PRODUCT SHOW AUKCION BUTTON START */
+.aukcion-is-active-btn {
+    
+}
+
+/* PRODUCT SHOW AUKCION BUTTON END */

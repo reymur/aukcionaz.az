@@ -5,29 +5,30 @@
 //         event
 //     )
 // }, true);
-let main__category_div = document.querySelector('.main__category_div')
-let new__announce_btn_div = document.querySelector('.new__announce_btn_div')
-let new__announce_small_btn_icon_div = document.querySelector('.new__announce_small_btn_icon_div')
-let new__announce_btn_text = document.querySelector('.new__announce_btn_text')
+let main__category_div = document.querySelector('.main__category_div');
+let new__announce_btn_div = document.querySelector('.new__announce_btn_div');
+let new__announce_small_btn_icon_div = document.querySelector('.new__announce_small_btn_icon_div');
+let new__announce_btn_text = document.querySelector('.new__announce_btn_text');
 
-let main__search_large_icon = document.querySelector('.main__search_large_icon')
-let main__search_small_icon = document.querySelector('.main__search_small_icon')
+let main__search_large_icon = document.querySelector('.main__search_large_icon');
+let main__search_small_icon = document.querySelector('.main__search_small_icon');
 
 if( window.innerWidth >= 992 ) {
     new__announce_btn_text.style.display = 'block'
 }
-else {
+else if( window.innerWidth < 992 ) {
     new__announce_btn_text.style.display = 'none'
 }
 
 onresize = (event) => {
     
     if( window.innerWidth >= 992 ) {
-        // console.log('main__category_div == ', main__category_div.classList)
+        console.log('window size == ', window.innerWidth)
         new__announce_btn_text.style.display = 'block'
     }
-    else {
-        new__announce_btn_text.style.display = 'none'
+    else if( window.innerWidth < 992 ) {
+        new__announce_btn_text.style.display = 'none';
+        console.log('window size == ', window.innerWidth )
     }
 };
 
@@ -74,28 +75,83 @@ rmBorderOnCategoryImageA = event => {
 
 // DONT SHOW "NAVBAR" 
 var path_name = document.location.pathname;
+var navbar = document.getElementById('navbar');
 
-if( path_name.indexOf('announce/') === 1 ) {
-    var navbar = document.getElementById('navbar');
+if( path_name.indexOf('announce') === 1 ) {
     navbar.style.display = 'none';
+}else{
+    navbar.style.display = 'block';
 }
 
 
-
+// PRUDUCT ABOUT TEXT ...more 
 var p_text = document.getElementById('product-about-text');
 var p_full_text = document.getElementById('product-about-full-text');
 
-p_full_text.style.display = 'none';
-p_text.style.display = 'block';
+if( path_name.indexOf('product') === 1 ) {
+    p_full_text.style.display = 'none';
+    p_text.style.display = 'block';
+    
+    function showProductAboutText() {
+        p_text.style.display = 'none';
+        p_full_text.style.display = 'block';
+    
+        console.log(p_full_text)
+    }
+}
 
-function showProductAboutText() {
-    p_text.style.display = 'none';
-    p_full_text.style.display = 'block';
+// PRODUCT SHOW BUTTON
+aukcion_btn = document.getElementById('product__show_aukcion_btn');
 
-    console.log(p_full_text)
+
+ /* IF THE PRODUCT IS ACTIVE IN REALTIME ON THE AUKTION THEN ADD ANIMATION START */
+// IS ACTIVE ICON
+ var is_active_icon = document.getElementsByClassName('product__on_auktion_icon');
+ var product_card = document.getElementsByClassName('product-card');
+//  console.log('product_card - ', product_card[0].childNodes[0].childNodes[0].childNodes )
+console.log( 'WWWW - ', product_card[0].childNodes)
+
+recursionRes(product_card);
+
+function recursionRes(product_card) {
+    for(var i=0; i < product_card.length; i++ ) {
+        if( product_card[i].childElementCount > 1 ) {
+            console.log( 'one - '+  product_card[i].childNodes.childElementCount );
+            recursionRes( product_card[i].childNodes );
+        } else {
+            console.log( 'two - '+ product_card[i].childNodes.childElementCount )
+        }
+     }
 }
 
 
+ if( typeof Array && is_active_icon.length > 0 ) {
+    for( var i=0; i <= is_active_icon.length; i++ ) 
+    {
+        if( is_active_icon[0].classList[i] !== undefined && is_active_icon[0].classList[i] !== null )
+        {
+            if( is_active_icon[0].classList[i] == 'active-aukcion' ) {
+                is_active_icon[0].style.animation = 'box-shadow 1s linear infinite';
+            // console.log('AAASSSS - '+i+' = ', is_active_icon[0].classList[i] )
+            }
+        }
+    }
+ }
+
+//  IS ACTIVE BUTTON
+ var is_active_btn = document.getElementsByClassName('aukcion__is_active_btn');
+//  console.log('BBBSSSS - '+i+' = ', is_active_btn[0].classList )
+
+ if( typeof Array && is_active_btn.length > 0 ) {
+    if( is_active_btn[0].classList !== undefined && is_active_btn[0].classList !== null && is_active_btn[0].classList.length > 0 ) {
+        for(var i=0; i <= is_active_btn[0].classList.length; i++ ) {
+            if( is_active_btn[0].classList[i] !==  undefined && is_active_btn[0].classList[i] !== null ) {
+                is_active_btn[0].style.animation = 'box-shadow 1s linear infinite';
+            }
+        }
+    } 
+ }
+  /* IF THE PRODUCT IS ACTIVE IN REALTIME ON THE AUKTION THEN ADD ANIMATION END */
 
 
 

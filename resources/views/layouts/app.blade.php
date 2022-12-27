@@ -20,31 +20,31 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        $(function (){
-            // alert( window.location.protocol+'//'+window.location.hostname )
-            // let ip_address = '127.0.0.1';
-            let ip_address = window.location.protocol+'//'+window.location.hostname ;
-            let socket_port = '3000';
-            let socket = io(ip_address + ':' + socket_port);
+    //     $(function (){
+    //         // alert( window.location.protocol+'//'+window.location.hostname )
+    //         // let ip_address = '127.0.0.1';
+    //         let ip_address = window.location.protocol+'//'+window.location.hostname ;
+    //         let socket_port = '3000';
+    //         let socket = io(ip_address + ':' + socket_port);
 
-            let chatInput = $('#chatInput');
+    //         let chatInput = $('#chatInput');
 
-            chatInput.keypress( function (e) {
-                let message = $(this).html();
-                console.log(message)
-                if(e.which === 13 && !e.shiftKey) {
-                    socket.emit('sendMessageToServer', message);
-                    chatInput.html('');
-                    return false;
-                }
-            });
+    //         chatInput.keypress( function (e) {
+    //             let message = $(this).html();
+    //             console.log(message)
+    //             if(e.which === 13 && !e.shiftKey) {
+    //                 socket.emit('sendMessageToServer', message);
+    //                 chatInput.html('');
+    //                 return false;
+    //             }
+    //         });
 
-            socket.on('sendMessageToClient', (message) => {
-                console.log('MMM = ', message)
-                $('.chat-ul').append(`<li>`+ message+ `</li>`)
-            })
-        })
-    </script>
+    //         socket.on('sendMessageToClient', (message) => {
+    //             console.log('MMM = ', message)
+    //             $('.chat-ul').append(`<li>`+ message+ `</li>`)
+    //         })
+    //     })
+    // </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

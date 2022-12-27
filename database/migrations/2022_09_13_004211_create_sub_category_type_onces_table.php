@@ -15,6 +15,8 @@ class CreateSubCategoryTypeOncesTable extends Migration
     {
         Schema::create('sub_category_type_onces', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignIdFor(App\Models\SubCategoryType::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

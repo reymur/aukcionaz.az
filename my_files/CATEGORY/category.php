@@ -1,0 +1,12 @@
+<?php   $category = [   ['name' => 'Elektronika', 'image' => 'electronics.png'],
+    ['name' => 'Nəqliyyat', 'image' => 'transportation.png'],
+    ['name' => 'Daşınmaz əmlak', 'image' => 'real_state.png'],
+    ['name' => 'Ev və bağ üçün', 'image' => 'home_and_garden.png'],
+    ['name' => 'Şəxsi əşyalar', 'image' => 'personal_items.png'],
+    ['name' => 'Hobbi və asudə', 'image' => 'hobbies_and_leisure.png '],
+    ['name' => 'Uşaq aləmi', 'image' => 'childrens_world.png'],
+    ['name' => 'İş elanları', 'image' => 'job_announcements.png'],
+    ['name' => 'Heyvanlar', 'image' => 'animals.png'],
+    ['name' => 'Xidmətlər və biznes', 'image' => 'services_and_business.png'], 
+    ['name' => 'Mağazalar', 'image' => 'stores.png'], 
+];

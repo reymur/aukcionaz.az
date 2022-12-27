@@ -10,12 +10,18 @@
 
         <div class="p-3">  
             <!-- PRODUCT PRICE AND TITLE SECTION -->
-            <div class="p-2 mb-3"> 
-                <div class="">
+            <div class=" d-flex p-2 mb-3"> 
+                <div class="col-5">
                     <p class="h5 fw-bolder text-bold pb-0 mb-1">
                         43 <span class=" text-uppercase">azn</span>
                     </p>
                     <span class="h5 text-black">Title</span>
+                </div>
+
+                <div class="col-7">
+                    <a href="" type="button" class="btn btn-danger text-uppercase fw-bolder px-4 py-2 aukcion__is_active_btn active-aukcion">
+                        Auksiyon
+                    </a>
                 </div>
             </div>
 
@@ -137,7 +143,7 @@
                 <div class="d-flex px-3 mb-2 product__tez_sat_bussines_div">
                     <div class="col p-2 ">
                         <div class="d-flex product__tez_sat_do_first_div">
-                            <div class=" fw-bolder fs-5">İRƏLİ çək</div>
+                            <div class=" fw-bolder fs-6">İRƏLİ çək</div>
                             <div class="product__tez_sat_first_icon_div">
                                 <img src="{{ asset('/images/icons/first-icon.png') }}" alt="" class="product__tez_sat_first_icon">
                             </div>
@@ -153,7 +159,7 @@
                 <div class="d-flex px-3 mb-2 product__tez_sat_bussines_div">
                     <div class="col p-2 ">
                         <div class="d-flex product__tez_sat_do_first_div">
-                            <div class=" fw-bolder fs-5">VIP et</div>
+                            <div class=" fw-bolder fs-6">VIP et</div>
                             <div class="product__tez_sat_vip_icon_div">
                                 <img src="{{ asset('/images/icons/vip-icon_1.png') }}" alt="" class="product__tez_sat_vip_icon">
                             </div>
@@ -169,7 +175,7 @@
                 <div class="d-flex px-3 product__tez_sat_bussines_div">
                     <div class="col p-2 ">
                         <div class="d-flex product__tez_sat_do_first_div">
-                            <div class=" fw-bolder fs-5">PREMIUM et</div>
+                            <div class=" fw-bolder fs-6">PREMIUM et</div>
                             <div class="product__tez_sat_premium_icon_div">
                                 <img src="{{ asset('/images/icons/premium-icon.png') }}" alt="" class="product__tez_sat_premium_icon">
                             </div>
