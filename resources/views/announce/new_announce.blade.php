@@ -4,14 +4,16 @@
    <div class="">
 
         <div class="col-12">
-            <!-- NEW ANNOUNCE ADD TOP ELEMENT-->
+            <!-- NEW ANNOUNCE ADD TOP TITLE ELEMENT-->
             <div class="bg-white w-100 p-0 new_announce_add_top_element_div_style">
                 @include('announce.elements.new_announce_add_top_element')
             </div>
 
-            <!-- NEW ANNOUNCE ADD CATEGORIES-->
+            <!-- NEW ANNOUNCE ADD CATEGORIES -->
             <div class="bg-white w-100 mt-0 mb-3 p-0">
-                @include('announce.modals.modal_category')
+                <modal-category
+                    :categories="{{ $categories }}"
+                ></modal-category>
             </div>
             
             <!-- NEW ANNOUNCE ADD INPUTS-->

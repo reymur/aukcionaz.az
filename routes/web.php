@@ -6,6 +6,7 @@ use App\Http\Controllers\NewAnnounceController;
 use App\Http\Controllers\ProductController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -15,6 +16,7 @@ Auth::routes();
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index');
+    Route::get('/category/{id}/{name}', 'showSubCategories')->name('sub_category');
 });
 
 Route::prefix('announce')->controller(NewAnnounceController::class)->group(function(){

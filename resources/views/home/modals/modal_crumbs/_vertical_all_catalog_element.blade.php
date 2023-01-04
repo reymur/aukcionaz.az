@@ -34,15 +34,14 @@
                 <div class="modal-body pt-0">
                     <div class="">
                         <ul class="list-group">
-
-                            @foreach ( $category->subCategory as $sub_category)
-                            <div class="">
-                                <!-- <a href="" class=" text-decoration-none"> -->
-                                <li class="list-group-item fs-5 py-2 mt-3 all_catalog_category_items_style" id="category.id">
-                                    {{ $sub_category->name }}
-                                </li>
-                                <!-- </a> -->
-                            </div>  
+                            @foreach ( $category->subCategories as $sub_category)
+                                <div class="">
+                                    <!-- <a href="" class=" text-decoration-none"> -->
+                                    <li class="list-group-item fs-5 py-2 mt-3 all_catalog_category_items_style" id="category.id">
+                                        {{ $sub_category->name }}
+                                    </li>
+                                    <!-- </a> -->
+                                </div>  
                             @endforeach
                            
 

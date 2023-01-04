@@ -120,6 +120,15 @@ body {
             .border__bottom_opacity-10 {
                 border-bottom: 0.5px solid #f1f1f1;
             }
+    .show__sub_category_li {
+        margin-left: 2px;
+    }
+        .show__sub_category_a {
+            align-self: center;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #6765653b;
+        }
 
 .vip__announces_bg {
     background-color: #f1f3f49e;

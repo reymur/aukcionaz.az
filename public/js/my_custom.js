@@ -109,7 +109,7 @@ aukcion_btn = document.getElementById('product__show_aukcion_btn');
  var is_active_icon = document.getElementsByClassName('product__on_auktion_icon');
  var product_card = document.getElementsByClassName('product-card');
 //  console.log('product_card - ', product_card[0].childNodes[0].childNodes[0].childNodes )
-console.log( 'WWWW - ', product_card[0].childNodes)
+// console.log( 'WWWW - ', product_card[0].childNodes)
 
 recursionRes(product_card);
 
@@ -155,3 +155,7 @@ function recursionRes(product_card) {
 
 
 
+
+// function showSubCategoryElement() {
+//     alert(222222)
+// }

@@ -28,61 +28,44 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // include('../MY_FILES/CATEGORY/sub_category_type_one.php');
+        // include('../MY_FILES/CATEGORY/sub_category_type.php');
 
         // // dd( $category );
-        // foreach( $sub_category_type_one as $cat ) {
-        //     SubCategoryTypeOnce::create([
+        // foreach( $sub_category_type as $cat ) {
+        //     SubCategoryType::create([
         //         // 'sub_category_type_id' => $cat['sub_category_type_id'],
                 
         //         'name' => $cat['name'],
-        //         'sub_category_type_id' => $cat['sub_category_type_id']
+        //         'sub_category_id' => $cat['sub_category_id']
         //     ]);
         // }
 
-        $categories = Category::all();
-        // dd( $categories->load('subcategories') );
-        return view('home', ['categories' => $categories->load('subCategory')]);
+        $categories = $this->getAllCategories();
+       
+        return view('home', ['categories' => $categories->load('subCategories')]);
     }
 
-    public function getImages() {
-        $images = collect([
-            (object) [
-                'name' => 'for_house_category.png'
-            ],
-            (object) [
-                'name' => 'car_category1.png'
-            ],
-            (object) [
-                'name' => 'd2.png'
-            ],
-            (object) [
-                'name' => 'house_category.png'
-            ],
-            (object) [
-                'name' => 'clothes_category3.png'
-            ],
-            (object) [
-                'name' => 'services_business_category2.png'
-            ],
-            (object) [
-                'name' => 'hobi_category.png'
-            ],
-            (object) [
-                'name' => 'children_world_category.png'
-            ],
-            (object) [
-                'name' => 'animals_category.png'
-            ],
-            (object) [
-                'name' => 'work_category.png'
-            ],
-             (object) [
-                'name' => 'stores_category.png'
-            ],
-        ]);
+    public function showSubCategories( $id, $name  ) {
+        // dd(  $id );
+        $category = $this->getCategoryWithRelations($id, 'subCategories');
+        
+        return view('home.categories.show_sub_categories', [ 'category' => $category ]);
+    }
 
+    protected function getCategoryWithRelations($id, $relation) {
 
-        return $images;
+        if( is_string($id) && is_string($relation) ) {
+            $category = Category::where('id', $id)->first();
+            // dd(  $category );
+            if( $category && $category->count() > 0 && $category->load($relation) ) return $category->load($relation) ;
+
+            return false;
+        }
+
+        return false;
+    }
+
+    protected function getAllCategories() {
+        return $categories = Category::all();
     }
 }

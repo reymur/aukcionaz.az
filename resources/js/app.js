@@ -1,6 +1,6 @@
-import OnAukcionProduct from "./components/elements/OnAukcionProduct";
-
 require('./bootstrap');
+
+import OnAukcionProduct from "./components/elements/OnAukcionProduct";
 
 import { createApp } from 'vue';
 let app=createApp({})
@@ -25,6 +25,8 @@ import AukcionСompletion from './components/crumbs/AukcionСompletion.vue';
 import OnAukcion from './components/elements/OnAukcionProduct.vue';
 import InputPhoneNumber from './components/elements/InputPhoneNumber.vue';
 import ProductShow from './components/announce/products/ProductShow.vue';
+import ModalCategory from './components/announce/new/modals/new/ModalCategory.vue';
+import ModalShowCategoryElements from './components/announce/new/modals/new/crumbs/ModalShowCategoryElements.vue';
 
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
@@ -37,5 +39,7 @@ app.component('auksion-completion' , AukcionСompletion);
 app.component('on-aukcion-product' , OnAukcionProduct);
 app.component('input-phone-number' , InputPhoneNumber);
 app.component('product-show' , ProductShow);
+app.component('modal-category' , ModalCategory);
+app.component('modal-show-category-elements' , ModalShowCategoryElements);
 
 app.mount("#app")

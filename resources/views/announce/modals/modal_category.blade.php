@@ -1,3 +1,4 @@
+
 <!-- Button trigger modal -->
 <ul class="list-group" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <li class="list-group-item col-12 d-flex border-0 p-3 shadow-sm ">
@@ -29,8 +30,17 @@
         </svg>
       </h5>
     </div>
-    <div class="offcanvas-body">
-       AAAAAAAA
+
+    <div class="offcanvas-body p-0">
+      <div class="">
+          <ul class="list-group">
+            @if( isset($categories) && $categories->count() > 0 )
+              @foreach ( $categories as $category )
+                @include('home.modals.modal_crumbs._vertical_all_catalog_element', [$category])
+              @endforeach
+            @endif
+          </ul>
+      </div>
     </div>
   </div>
 
