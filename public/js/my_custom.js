@@ -119,7 +119,8 @@ function recursionRes(product_card) {
             console.log( 'one - '+  product_card[i].childNodes.childElementCount );
             recursionRes( product_card[i].childNodes );
         } else {
-            console.log( 'two - '+ product_card[i].childNodes.childElementCount )
+            if( product_card[i].childNodes.childElementCount !== undefined )
+                console.log( 'two - '+ product_card[i].childNodes.childElementCount )
         }
      }
 }
@@ -156,6 +157,3 @@ function recursionRes(product_card) {
 
 
 
-// function showSubCategoryElement() {
-//     alert(222222)
-// }

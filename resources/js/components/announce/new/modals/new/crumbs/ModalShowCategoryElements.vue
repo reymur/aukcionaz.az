@@ -38,7 +38,7 @@
                                         v-for="sub_category in category.sub_categories" 
                                         :key="sub_category.id" 
                                         v-on:click="getSubCategoryName" 
-                                        :id="sub_category.id"
+                                        :id="category.name"
                                         role="button"
                                         class="list-group-item fs-5 py-2 mt-3 pointer-event all_catalog_category_items_style" 
                                     >
@@ -64,52 +64,52 @@ export default {
     methods: {
         getSubCategoryName(event) {
             this.$emit('sendSubCategoryName', {
-                name: this.transliteToLatinWords(event.target.innerText)
+                name: this.makeSlug(event.target.innerText),
+                category: this.makeSlug(event.target.id)
             })
-            // console.log( event.target.innerText )
         },
-        transliteToLatinWords(word) {
-            var res = "", a = {};
+        makeSlug(word) {
+            let latina_words = this.convertToLatinLetters(word);
+                latina_words = latina_words.replace(/[^A-Za-z0-9]+/gi, ' ');
+                latina_words = latina_words.toLowerCase();
+                latina_words = latina_words.split(' ');
 
-            a['ü'] = 'u'; a['ö'] = 'o'; a['ğ'] = 'q';a['ə'] = 'e';
-            a['ı'] = 'i'; a['ş'] = 's'; a['ç'] = 's';
+            return this.toCapitalize( latina_words );
+        },
+        convertToLatinLetters(word) {
+            if( typeof word === 'string' ) {
+                var new_word = "", obj = {};
 
-            for(i in word) {
-                if( word.hasOwnProperty(i) ) {
-                    if( a[word[i]] === undefined ) {
-                        res += word[i];
-                    } else {
-                        res += a[word[i]];
+                obj['ü'] = 'u'; obj['ö'] = 'o'; obj['ğ'] = 'q';obj['ə'] = 'e';
+                obj['Ü'] = 'u'; obj['Ö'] = 'o'; obj['Ğ'] = 'q';obj['Ə'] = 'e';
+                obj['ı'] = 'i'; obj['ş'] = 'sh'; obj['ç'] = 'c';obj['i'] = 'i';
+                obj['I'] = 'i'; obj['Ş'] = 'sh'; obj['Ç'] = 'c';obj['İ'] = 'i';
+
+                for(i in word) {
+                    if( word.hasOwnProperty(i) ) {
+                        if( obj[word[i]] === undefined ) {
+                            new_word += word[i];
+                        } else {
+                            new_word += obj[word[i]];
+                        }
                     }
                 }
             }
-            var el =  res.split(' ');
-            return this.deleteSybolsInWord( el );
+            return new_word;
         },
-        deleteSybolsInWord(word) {
-            var res = '';
-
-            if( Array.isArray(word) ) {
-                for(var i=0; i < word.length; i++ ) {
-                    console.log('indexOf - ', word[i].indexOf('-'))
-                    if( word[i].indexOf(',') !== -1 ) {
-                        // console.log('111 --- ', word[i])
-                       res += word[i].replace(',','');
-                    } else if( word[i].indexOf('-') !== -1 ){
-                        res += word[i].replace('-','');
-                        // console.log('222 --- ', res )
-                    } else{
-                        res += word[i]
-                    }
+        toCapitalize(word) {
+            let new_str = '';
+            if( typeof word === 'object' ) {
+                for( i in word ) {
+                    if( word[i] !== undefined )
+                        new_str += word[i].charAt(0).toUpperCase() + word[i].slice(1);
                 }
             }
-            return res;
+            return new_str;
         }
     },
     computed: {
-        // showSubCategoryElement() {
-        //     alert(222222)
-        // }
+        
     },
     mounted() {
         

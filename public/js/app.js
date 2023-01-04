@@ -22906,7 +22906,9 @@ __webpack_require__.r(__webpack_exports__);
   props: ['categories'],
   methods: {
     callSubCategoryComponent: function callSubCategoryComponent(data) {
-      console.log(data.name);
+      if (data !== undefined) {
+        console.log('name =', data.category.toLowerCase());
+      }
     }
   },
   mounted: function mounted() {
@@ -22927,61 +22929,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['category'],
   methods: {
     getSubCategoryName: function getSubCategoryName(event) {
       this.$emit('sendSubCategoryName', {
-        name: this.transliteToLatinWords(event.target.innerText)
+        name: this.makeSlug(event.target.innerText),
+        category: this.makeSlug(event.target.id)
       });
-      // console.log( event.target.innerText )
     },
-    transliteToLatinWords: function transliteToLatinWords(word) {
-      var res = "",
-        a = {};
-      a['ü'] = 'u';
-      a['ö'] = 'o';
-      a['ğ'] = 'q';
-      a['ə'] = 'e';
-      a['ı'] = 'i';
-      a['ş'] = 's';
-      a['ç'] = 's';
-      for (i in word) {
-        if (word.hasOwnProperty(i)) {
-          if (a[word[i]] === undefined) {
-            res += word[i];
-          } else {
-            res += a[word[i]];
+    makeSlug: function makeSlug(word) {
+      var latina_words = this.convertToLatinLetters(word);
+      latina_words = latina_words.replace(/[^A-Za-z0-9]+/gi, ' ');
+      latina_words = latina_words.toLowerCase();
+      latina_words = latina_words.split(' ');
+      return this.toCapitalize(latina_words);
+    },
+    convertToLatinLetters: function convertToLatinLetters(word) {
+      if (typeof word === 'string') {
+        var new_word = "",
+          obj = {};
+        obj['ü'] = 'u';
+        obj['ö'] = 'o';
+        obj['ğ'] = 'q';
+        obj['ə'] = 'e';
+        obj['Ü'] = 'u';
+        obj['Ö'] = 'o';
+        obj['Ğ'] = 'q';
+        obj['Ə'] = 'e';
+        obj['ı'] = 'i';
+        obj['ş'] = 'sh';
+        obj['ç'] = 'c';
+        obj['i'] = 'i';
+        obj['I'] = 'i';
+        obj['Ş'] = 'sh';
+        obj['Ç'] = 'c';
+        obj['İ'] = 'i';
+        for (i in word) {
+          if (word.hasOwnProperty(i)) {
+            if (obj[word[i]] === undefined) {
+              new_word += word[i];
+            } else {
+              new_word += obj[word[i]];
+            }
           }
         }
       }
-      var el = res.split(' ');
-      return this.deleteSybolsInWord(el);
+      return new_word;
     },
-    deleteSybolsInWord: function deleteSybolsInWord(word) {
-      var res = '';
-      if (Array.isArray(word)) {
-        for (var i = 0; i < word.length; i++) {
-          console.log('indexOf - ', word[i].indexOf('-'));
-          if (word[i].indexOf(',') !== -1) {
-            // console.log('111 --- ', word[i])
-            res += word[i].replace(',', '');
-          } else if (word[i].indexOf('-') !== -1) {
-            res += word[i].replace('-', '');
-            // console.log('222 --- ', res )
-          } else {
-            res += word[i];
-          }
+    toCapitalize: function toCapitalize(word) {
+      var new_str = '';
+      if (_typeof(word) === 'object') {
+        for (i in word) {
+          if (word[i] !== undefined) new_str += word[i].charAt(0).toUpperCase() + word[i].slice(1);
         }
       }
-      return res;
+      return new_str;
     }
   },
-  computed: {
-    // showSubCategoryElement() {
-    //     alert(222222)
-    // }
-  },
+  computed: {},
   mounted: function mounted() {}
 });
 
@@ -23418,6 +23425,10 @@ var _hoisted_6 = {
 var _hoisted_7 = {
   "class": "list-group"
 };
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": ""
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <component :is=\"componentId\"></component> ")], -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_modal_show_category_elements = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal-show-category-elements");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [$props.categories !== undefined && $props.categories !== null && $props.categories.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.categories, function (category) {
@@ -23428,7 +23439,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       category: category,
       onSendSubCategoryName: $options.callSubCategoryComponent
     }, null, 8 /* PROPS */, ["category", "onSendSubCategoryName"])]);
-  }), 128 /* KEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
+  }), 128 /* KEYED_FRAGMENT */)), _hoisted_8])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
 /***/ }),
@@ -23514,7 +23525,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: _cache[0] || (_cache[0] = function () {
         return $options.getSubCategoryName && $options.getSubCategoryName.apply($options, arguments);
       }),
-      id: sub_category.id,
+      id: $props.category.name,
       role: "button",
       "class": "list-group-item fs-5 py-2 mt-3 pointer-event all_catalog_category_items_style"
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sub_category.name), 9 /* TEXT, PROPS */, _hoisted_18);

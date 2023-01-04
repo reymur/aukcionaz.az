@@ -45,6 +45,10 @@
                                 @sendSubCategoryName="callSubCategoryComponent"
                             ></modal-show-category-elements>
                         </li>
+
+                        <li class="">
+                            <!-- <component :is="componentId"></component> -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -57,7 +61,9 @@ export default {
     props: ['categories'],
     methods: {
         callSubCategoryComponent(data){
-            console.log(data.name)
+            if(data !== undefined ) {
+                console.log('name =', data.category.toLowerCase())
+            }
         }
     },
     mounted() {
