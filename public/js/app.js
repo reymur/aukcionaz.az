@@ -22906,8 +22906,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['categories'],
   methods: {
     callSubCategoryComponent: function callSubCategoryComponent(data) {
-      if (data !== undefined) {
-        console.log('name =', data.category.toLowerCase());
+      if (data.sub_category_name !== undefined) {
+        console.log('name =', data.sub_category_name);
       }
     }
   },
@@ -22935,7 +22935,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
   methods: {
     getSubCategoryName: function getSubCategoryName(event) {
       this.$emit('sendSubCategoryName', {
-        name: this.makeSlug(event.target.innerText),
+        sub_category_name: this.makeSlug(event.target.innerText),
         category: this.makeSlug(event.target.id)
       });
     },

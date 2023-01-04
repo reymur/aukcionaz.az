@@ -61,8 +61,8 @@ export default {
     props: ['categories'],
     methods: {
         callSubCategoryComponent(data){
-            if(data !== undefined ) {
-                console.log('name =', data.category.toLowerCase())
+            if(data.sub_category_name !== undefined ) {
+                console.log('name =', data.sub_category_name )
             }
         }
     },

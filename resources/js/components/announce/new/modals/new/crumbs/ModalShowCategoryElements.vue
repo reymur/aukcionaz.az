@@ -64,7 +64,7 @@ export default {
     methods: {
         getSubCategoryName(event) {
             this.$emit('sendSubCategoryName', {
-                name: this.makeSlug(event.target.innerText),
+                sub_category_name: this.makeSlug(event.target.innerText),
                 category: this.makeSlug(event.target.id)
             })
         },
