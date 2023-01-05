@@ -42,12 +42,8 @@
                         >
                             <modal-show-category-elements
                                 :category="category"
-                                @sendSubCategoryName="callSubCategoryComponent"
+                                @sendSubCategoryNameToModalCategoryComponent="sendSubCategoryNameToNewAnnounceComponent"
                             ></modal-show-category-elements>
-                        </li>
-
-                        <li class="">
-                            <!-- <component :is="componentId"></component> -->
                         </li>
                     </ul>
                 </div>
@@ -59,11 +55,17 @@
 <script>
 export default {
     props: ['categories'],
+    data() {
+        return {
+            loadFirst: false
+        }
+    },
     methods: {
-        callSubCategoryComponent(data){
-            if(data.sub_category_name !== undefined ) {
-                console.log('name =', data.sub_category_name )
-            }
+        sendSubCategoryNameToNewAnnounceComponent(data){
+            // console.log('data = ', data)
+            this.$emit('sendSubCategoryNameToNewAnnounceComponent', {
+                new_data: data
+            })
         }
     },
     mounted() {

@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- Modal button -->
-        <a href="#offcanvasExample" class="text-decoration-none" data-bs-toggle="modal" :data-bs-target="'#id-'+category.id" data-bs-whatever="@mdo">
+        <a href="" class="text-decoration-none" data-bs-toggle="modal" :data-bs-target="'#id-'+category.name" data-bs-whatever="">
             <div class="col-12 d-flex py-2 ps-3">
                 <div class="col-1 vertical__all_catalog_img_div">
                     <img :src="'/images/category/'+ category.image" class="card-img-top vertical__all_catalog_img" alt="...">
@@ -15,7 +15,7 @@
         </a>
     
         <!-- Modal -->
-        <div class="modal fade modal-right all__catalog_z_index" :id="'id-'+category.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade modal-right all__catalog_z_index" :id="'id-'+category.name" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xxl-down">
                 <div class="modal-content">
                     <div class="col-12 modal-header border-0">
@@ -63,10 +63,11 @@ export default {
     props: ['category'],
     methods: {
         getSubCategoryName(event) {
-            this.$emit('sendSubCategoryName', {
-                sub_category_name: this.makeSlug(event.target.innerText),
-                category: this.makeSlug(event.target.id)
+            this.$emit('sendSubCategoryNameToModalCategoryComponent', {
+                category_name: this.makeSlug(event.target.id),
+                sub_category_name: this.makeSlug(event.target.innerText)
             })
+            // console.log('dddd = ', event.target)
         },
         makeSlug(word) {
             let latina_words = this.convertToLatinLetters(word);

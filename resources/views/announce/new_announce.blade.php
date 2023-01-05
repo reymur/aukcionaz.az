@@ -11,13 +11,13 @@
 
             <!-- NEW ANNOUNCE ADD CATEGORIES -->
             <div class="bg-white w-100 mt-0 mb-3 p-0">
-                <modal-category
+                <new-announce
                     :categories="{{ $categories }}"
-                ></modal-category>
+                ></new-announce>
             </div>
             
             <!-- NEW ANNOUNCE ADD INPUTS-->
-            <div class="cbg-white w-100 mt-1 mb-2 p-0">
+            {{-- <div class="cbg-white w-100 mt-1 mb-2 p-0">
                 <div class="border-0 ">
                     @include('announce.modals.modal_price')
                 </div>
@@ -44,11 +44,12 @@
                     <div class="p-3 text-secondary text-opacity-50">
                         <p class="">Elan yrlərşdirərkən siz "Aukcionaz.az" saytının 
                             <a href="" class="text-secondary text-opacity-75">müşəri razılaşmasıyla</a>  
-                            avtomatik razılaşırsınız.</table></p>
+                            avtomatik razılaşırsınız.
+                        </p>
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
