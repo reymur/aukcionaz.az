@@ -11,8 +11,8 @@
             ></modal-category>
         </div>
             
-        <!-- ANNOUNCE NEW COMPONENT  COLLAPSE-->
-        <div class="mb-3">
+        <!-- ANNOUNCE NEW  COMPONENT  COLLAPSE-->
+        <div class="border__color" :style="load_component_border">
             <div class="collapse announce__new_collapse border-0" id="announce-new-collapse">
                 <div class="card card-body border-0">
                     <component :is="loadComponent"></component>
@@ -20,21 +20,26 @@
             </div>
         </div>
 
+        <div class="py-1" style="background-color:rgb(15 48 126 / 3%)"></div>
+
         <!-- NEW ANNOUNCE ADD INPUTS-->
         <div class="cbg-white w-100 mt-1 mb-2 p-0">
-            <!-- <div class="border-0 ">
-                @include('announce.modals.modal_price')
-            </div> -->
-
-            <!-- <div class="ms-3 border-bottom border-secondary border-opacity-10"></div> -->
-
-            <!-- <div class="">
-                @include('announce.modals.modal_city')
+            <!-- ANNOUNCE NEW NEW PRICE -->
+            <div class="border-0 ">
+                <announce-new-modal-price></announce-new-modal-price>
             </div>
 
+            <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
+
+            <!-- ANNOUNCE NEW NEW CITY -->
+            <div class="">
+                <announce-new-modal-city :cities="cities"></announce-new-modal-city>
+            </div>
+
+            <!-- ANNOUNCE NEW NEW ABOUT -->
             <div class="mt-3">
-                @include('announce.modals.modal_about')
-            </div> -->
+                <announce-new-modal-about></announce-new-modal-about>
+            </div>
             
             <div class="mt-3">
                 <input-phone-number></input-phone-number>
@@ -62,10 +67,11 @@ import { defineComponent, defineAsyncComponent } from "vue";
 import * as bootstrap from 'bootstrap';
 
 export default {
-    props: ['categories'],
+    props: ['categories','cities'],
     data() {
         return {
-            loadComponentData: ''
+            loadComponentData: '',
+            load_component_border: ''
         }
     },
     computed: {
@@ -79,6 +85,7 @@ export default {
 
                     this.closeBeforeVisibleModals(sub_category_modal_id);
                     this.openAnnounceNewCollapse('announce-new-collapse');
+                    this.load_component_border = 'border:1px solid rgb(0 0 0 / 6%)';
 
                     return defineAsyncComponent( () => 
                             import(`../new/forms/category/${category_name}/${folder_name}/${sub_category_name}`)
@@ -119,13 +126,18 @@ export default {
             }
         },
         closeCategoryModal(id){
+            let body_style = document.querySelector('body');
             let category_modal_id = document.getElementById('announce-new-category');
             category_modal_id.classList.remove('show');
             new bootstrap.Offcanvas(category_modal_id, {
                 toggle: false
             });
             this.removeBackDrops('offcanvas-backdrop');
-            // console.log( 'XXXXXX = ', offcanvas )
+            
+            setTimeout( () => {
+                body_style.removeAttribute("style")
+            },400);
+            console.log( 'XXXXXX = ', body_style.style.overflow = 'auto' )
         },
         // closeSubCategoryModal(id) {
         //     if( id !== undefined ) {
@@ -152,7 +164,9 @@ export default {
             }
         },
     },
-    
+    mounted() {
+        
+    }
 }
 </script>
 

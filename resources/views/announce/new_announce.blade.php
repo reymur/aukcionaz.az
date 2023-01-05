@@ -2,12 +2,13 @@
 
 @section('content')
    <div class="">
-
+    {{-- {{ dd( $cities ) }} --}}
         <div class="col-12">
             <!-- NEW ANNOUNCE ADD CATEGORIES -->
             <div class="bg-white w-100 mt-0 mb-3 p-0">
                 <new-announce
                     :categories="{{ $categories }}"
+                    :cities="{{ $cities }}"
                 ></new-announce>
             </div>
             

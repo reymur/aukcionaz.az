@@ -21,7 +21,7 @@
                     <span class="text-danger text-opacity-75">*</span>
                 </div>
 
-                <div class="text-end">
+                <div class="d-flex align-self-center text-end">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>
@@ -31,12 +31,16 @@
     
         <!-- offcanvas -->
         <div class="offcanvas offcanvas-end w-100" tabindex="-1" id="announce-new-category" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header"> 
-                <h5 class="offcanvas-title" id="offcanvasRightLabel"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" type="button" data-bs-dismiss="offcanvas" aria-label="Close" width="22" height="22" fill="currentColor" class="bi bi-chevron-left text-black-50" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                    </svg>
-                </h5>
+            <div class="offcanvas-header shadow-sm mb-1"> 
+                <div class="col">
+                    <h5 class="offcanvas-title m-auto" id="offcanvasRightLabel"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" type="button" data-bs-dismiss="offcanvas" aria-label="Close" width="22" height="22" fill="currentColor" class="bi bi-chevron-left text-black-50" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </h5>
+                </div>
+                <div class="col fs-5 d-flex justify-content-center">Kataloq</div>
+                <div class="col"></div>
             </div>
 
             <div class="offcanvas-body p-0">
@@ -45,6 +49,7 @@
                         <li 
                             v-for="category in categories" 
                             :key="category.id" 
+                            :id="category.id" 
                             class="list-item"
                         >
                             <modal-show-category-elements
@@ -67,7 +72,8 @@ export default {
             loadFirst: false,
             category_name: null,
             category_image: null,
-            image_padding: 'p-3'
+            image_padding: 'p-3',
+            first_category_top_padding: 'p-3',
         }
     },
     methods: {
@@ -84,9 +90,14 @@ export default {
             if( this.category_image !== null ) {
                return this.image_padding = 'ps-2 py-1';
             }
+        },
+        changeFirstCategoryStyle() {
+            let first_category = document.getElementById('1');
+            console.log('first_category = ', first_category.classList.add('pt-2') )
         }
     },
     mounted() {
+        this.changeFirstCategoryStyle();
         // alert(this.categories[0].name)
     }
 }

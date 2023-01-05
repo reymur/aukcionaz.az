@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
@@ -28,15 +29,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // include('../MY_FILES/CATEGORY/sub_category_type.php');
+        // include('../MY_FILES/select.php');
 
         // // dd( $category );
-        // foreach( $sub_category_type as $cat ) {
-        //     SubCategoryType::create([
+        // foreach( $cities as $city ) {
+        //     City::create([
         //         // 'sub_category_type_id' => $cat['sub_category_type_id'],
                 
-        //         'name' => $cat['name'],
-        //         'sub_category_id' => $cat['sub_category_id']
+        //         'name' => $city['name'],
+        //         // 'sub_category_id' => $cat['sub_category_id']
         //     ]);
         // }
 
