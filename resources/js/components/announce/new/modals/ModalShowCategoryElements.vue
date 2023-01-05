@@ -19,8 +19,8 @@
             <div class="modal-dialog modal-fullscreen-xxl-down">
                 <div class="modal-content">
                     <div class="col-12 modal-header border-0">
-                        <div class="col-5 m-0" data-bs-dismiss="modal" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <div class="col-5 text-black-50 m-0" data-bs-dismiss="modal" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                             </svg>
                         </div>
@@ -41,10 +41,11 @@
                                         :id="category.name"
                                         role="button"
                                         class="list-group-item fs-5 py-2 mt-3 pointer-event all_catalog_category_items_style" 
-                                    >
+                                        data-bs-dismiss="modal" aria-label="Close"
+                                        >
                                         {{ sub_category.name }}
                                     </li>
-                                </div>  
+                                </div>      
                             </ul>
                         </div>
                     </div>
@@ -65,9 +66,10 @@ export default {
         getSubCategoryName(event) {
             this.$emit('sendSubCategoryNameToModalCategoryComponent', {
                 category_name: this.makeSlug(event.target.id),
-                sub_category_name: this.makeSlug(event.target.innerText)
+                sub_category_name: this.makeSlug(event.target.innerText),
+                category: this.category
             })
-            // console.log('dddd = ', event.target)
+            // console.log('category = ', this.category)
         },
         makeSlug(word) {
             let latina_words = this.convertToLatinLetters(word);

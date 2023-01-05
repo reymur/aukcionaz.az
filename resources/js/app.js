@@ -28,6 +28,7 @@ import ProductShow from './components/announce/products/ProductShow.vue';
 import NewAnnounce from './components/announce/new/NewAnnounce.vue';
 import ModalCategory from './components/announce/new/modals/ModalCategory.vue';
 import ModalShowCategoryElements from './components/announce/new/modals/ModalShowCategoryElements.vue';
+import AnnounceNewTopSection from './components/announce/new/crumbs/AnnounceNewTopSection.vue';
 
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
@@ -43,5 +44,6 @@ app.component('product-show' , ProductShow);
 app.component('new-announce' , NewAnnounce);
 app.component('modal-category' , ModalCategory);
 app.component('modal-show-category-elements' , ModalShowCategoryElements);
+app.component('announce-new-top-elements' , AnnounceNewTopSection);
 
 app.mount("#app")

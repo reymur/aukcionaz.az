@@ -1,5 +1,8 @@
 <template>
     <div class="col-12">
+         <!-- ANNOUNCE NEW TOP ELEMENTS-->
+        <announce-new-top-elements></announce-new-top-elements>
+
         <!-- NEW ANNOUNCE ADD CATEGORIES -->
         <div class="bg-white w-100 mt-0 mb-3 p-0">
             <modal-category
@@ -8,10 +11,10 @@
             ></modal-category>
         </div>
             
-        <!-- ANNOUNCE NEW  COLLAPSE-->
-        <div class="">
-            <div class="collapse announce__new_collapse" id="announce-new-collapse">
-                <div class="card card-body">
+        <!-- ANNOUNCE NEW COMPONENT  COLLAPSE-->
+        <div class="mb-3">
+            <div class="collapse announce__new_collapse border-0" id="announce-new-collapse">
+                <div class="card card-body border-0">
                     <component :is="loadComponent"></component>
                 </div>
             </div>
@@ -23,7 +26,7 @@
                 @include('announce.modals.modal_price')
             </div> -->
 
-            <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
+            <!-- <div class="ms-3 border-bottom border-secondary border-opacity-10"></div> -->
 
             <!-- <div class="">
                 @include('announce.modals.modal_city')
@@ -90,13 +93,12 @@ export default {
         },
         closeBeforeVisibleModals(sub_category_id){
             this.closeCategoryModal('announce-new-category');
-            this.closeSubCategoryModal(sub_category_id);
+            // this.closeSubCategoryModal(sub_category_id);
         },
         openAnnounceNewCollapse(id){
             let collapse_id = document.getElementById(id);
             if( collapse_id !== undefined  ) {
                 this.closeAnnounceNewCollapse('announce__new_collapse');
-
                 setTimeout(() => {
                     new bootstrap.Collapse(collapse_id, {
                         toggle: true
@@ -119,26 +121,26 @@ export default {
         closeCategoryModal(id){
             let category_modal_id = document.getElementById('announce-new-category');
             category_modal_id.classList.remove('show');
-            let offcanvas = new bootstrap.Offcanvas(category_modal_id, {
+            new bootstrap.Offcanvas(category_modal_id, {
                 toggle: false
             });
             this.removeBackDrops('offcanvas-backdrop');
             // console.log( 'XXXXXX = ', offcanvas )
         },
-        closeSubCategoryModal(id) {
-            if( id !== undefined ) {
-                let new_id = document.getElementById('id-'+id);
-                let modal = new bootstrap.Modal(new_id, {
-                    toggle: false,
-                    ariaHidden: 'true'
-                });
-                new_id.classList.remove("show");
-                setTimeout( () => {
-                    new_id.style.display = 'none';
-                },120);
-                this.removeBackDrops('modal-backdrop')
-            }
-        },
+        // closeSubCategoryModal(id) {
+        //     if( id !== undefined ) {
+        //         let new_id = document.getElementById('id-'+id);
+        //         let modal = new bootstrap.Modal(new_id, {
+        //             toggle: false,
+        //             ariaHidden: 'true'
+        //         });
+        //         new_id.classList.remove("show");
+        //         setTimeout( () => {
+        //             new_id.style.display = 'none';
+        //         },120);
+        //         this.removeBackDrops('modal-backdrop')
+        //     }
+        // },
         removeBackDrops(backdrop_name){
             let backdrops = document.getElementsByClassName(backdrop_name);
             if( backdrops !== undefined && backdrops.length > 0 ) {
