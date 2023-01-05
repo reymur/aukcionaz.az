@@ -10,7 +10,7 @@
             
         <!-- ANNOUNCE NEW  COLLAPSE-->
         <div class="">
-            <div class="collapse" id="announce-new-collapse">
+            <div class="collapse announce__new_collapse" id="announce-new-collapse">
                 <div class="card card-body">
                     <component :is="loadComponent"></component>
                 </div>
@@ -75,7 +75,6 @@ export default {
                     let sub_category_name = this.loadComponentData.new_data.sub_category_name;
 
                     this.closeBeforeVisibleModals(sub_category_modal_id);
-
                     this.openAnnounceNewCollapse('announce-new-collapse');
 
                     return defineAsyncComponent( () => 
@@ -95,12 +94,26 @@ export default {
         },
         openAnnounceNewCollapse(id){
             let collapse_id = document.getElementById(id);
-            if( collapse_id !== undefined ) {
+            if( collapse_id !== undefined  ) {
+                this.closeAnnounceNewCollapse('announce__new_collapse');
+
                 setTimeout(() => {
                     new bootstrap.Collapse(collapse_id, {
                         toggle: true
                     });
-                }, 150);
+                }, 400);
+            }
+        },
+        closeAnnounceNewCollapse(collapse_class_name){
+            if( collapse_class_name !== undefined ) {
+                let collapse_class = document.getElementsByClassName(collapse_class_name);
+                if( collapse_class !== undefined && collapse_class[0] !== undefined ) {
+                    if( collapse_class[0].classList !== undefined ) {
+                        if( collapse_class[0].classList.contains('show') ) {
+                            collapse_class[0].classList.remove('show')
+                        }
+                    }
+                }
             }
         },
         closeCategoryModal(id){
@@ -110,7 +123,7 @@ export default {
                 toggle: false
             });
             this.removeBackDrops('offcanvas-backdrop');
-            console.log( 'XXXXXX = ', offcanvas )
+            // console.log( 'XXXXXX = ', offcanvas )
         },
         closeSubCategoryModal(id) {
             if( id !== undefined ) {

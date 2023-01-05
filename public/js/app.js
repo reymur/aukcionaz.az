@@ -22941,11 +22941,24 @@ __webpack_require__.r(__webpack_exports__);
     openAnnounceNewCollapse: function openAnnounceNewCollapse(id) {
       var collapse_id = document.getElementById(id);
       if (collapse_id !== undefined) {
+        this.closeAnnounceNewCollapse('announce__new_collapse');
         setTimeout(function () {
           new bootstrap__WEBPACK_IMPORTED_MODULE_1__.Collapse(collapse_id, {
             toggle: true
           });
-        }, 150);
+        }, 400);
+      }
+    },
+    closeAnnounceNewCollapse: function closeAnnounceNewCollapse(collapse_class_name) {
+      if (collapse_class_name !== undefined) {
+        var collapse_class = document.getElementsByClassName(collapse_class_name);
+        if (collapse_class !== undefined && collapse_class[0] !== undefined) {
+          if (collapse_class[0].classList !== undefined) {
+            if (collapse_class[0].classList.contains('show')) {
+              collapse_class[0].classList.remove('show');
+            }
+          }
+        }
       }
     },
     closeCategoryModal: function closeCategoryModal(id) {
@@ -22955,7 +22968,7 @@ __webpack_require__.r(__webpack_exports__);
         toggle: false
       });
       this.removeBackDrops('offcanvas-backdrop');
-      console.log('XXXXXX = ', offcanvas);
+      // console.log( 'XXXXXX = ', offcanvas )
     },
     closeSubCategoryModal: function closeSubCategoryModal(id) {
       if (id !== undefined) {
@@ -23462,7 +23475,7 @@ var _hoisted_3 = {
   "class": ""
 };
 var _hoisted_4 = {
-  "class": "collapse",
+  "class": "collapse announce__new_collapse",
   id: "announce-new-collapse"
 };
 var _hoisted_5 = {
