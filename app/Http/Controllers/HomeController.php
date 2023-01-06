@@ -29,15 +29,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // include('../MY_FILES/select.php');
+        // include('../MY_FILES/CATEGORY/sub_category_type.php');
 
         // // dd( $category );
-        // foreach( $cities as $city ) {
-        //     City::create([
+        // foreach( $sub_category_type as $item ) {
+        //     SubCategoryType::create([
         //         // 'sub_category_type_id' => $cat['sub_category_type_id'],
                 
-        //         'name' => $city['name'],
-        //         // 'sub_category_id' => $cat['sub_category_id']
+        //         'name' => $item['name'],
+        //         'sub_category_id' => $item['sub_category_id']
         //     ]);
         // }
 

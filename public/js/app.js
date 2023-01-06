@@ -22911,7 +22911,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       loadComponentData: '',
-      load_component_border: ''
+      load_component_border: '',
+      sub_category_id: null
     };
   },
   computed: {
@@ -22924,9 +22925,12 @@ __webpack_require__.r(__webpack_exports__);
           var sub_category_name = this.loadComponentData.new_data.sub_category_name;
           this.closeBeforeVisibleModals(sub_category_modal_id);
           this.openAnnounceNewCollapse('announce-new-collapse');
+          this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
           this.load_component_border = 'border:1px solid rgb(0 0 0 / 6%)';
+          // console.log( 'XXXXXX = ',  this.loadComponentData.new_data.sub_category_id )
+
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.defineAsyncComponent)(function () {
-            return __webpack_require__("./resources/js/components/announce/new/forms/category lazy recursive ^\\.\\/.*$")("./".concat(category_name, "/").concat(folder_name, "/").concat(sub_category_name));
+            return __webpack_require__("./resources/js/components/announce/new/category lazy recursive ^\\.\\/.*$")("./".concat(category_name, "/").concat(folder_name, "/").concat(sub_category_name));
           });
         }
       }
@@ -22974,7 +22978,7 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         body_style.removeAttribute("style");
       }, 400);
-      console.log('XXXXXX = ', body_style.style.overflow = 'auto');
+      // console.log( 'XXXXXX = ', body_style.style.overflow = 'auto' )
     },
     // closeSubCategoryModal(id) {
     //     if( id !== undefined ) {
@@ -23002,6 +23006,108 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['sub_category_id'],
+  data: function data() {
+    return {
+      id: null,
+      sub_category_name: null,
+      sub_category_types: null,
+      font_size: ''
+    };
+  },
+  methods: {
+    getSubCategoryTypes: function getSubCategoryTypes() {
+      var _this = this;
+      if (this.sub_category_id !== undefined) {
+        this.id = this.sub_category_id;
+        axios({
+          method: "POST",
+          url: '/announce/new/get_sub_category_types',
+          data: {
+            id: this.id
+          }
+        }).then(function (res) {
+          if (res.data !== undefined && res.data.sub_category_types !== undefined) {
+            _this.sub_category_types = res.data.sub_category_types;
+          }
+          console.log('RES = ', res.data.sub_category_types);
+        })["catch"](function (err) {
+          console.log('ERR = ', err);
+        });
+      }
+    },
+    changeSubCategoryTypeName: function changeSubCategoryTypeName(event) {
+      if (event !== undefined && event.target.innerText !== undefined) {
+        this.sub_category_name = event.target.innerText;
+        this.font_size = 'fs-6';
+      }
+      this.changeColorToGreenOnClickLi(event);
+    },
+    changeColorToGreenOnClickLi: function changeColorToGreenOnClickLi(event) {
+      if (event !== undefined && event.target !== undefined) {
+        if (event.target.tagName !== undefined && event.target.tagName == 'LI') {
+          this.deleteGreenColorTextOnLi();
+          if (event.target !== undefined && event.target.childNodes !== undefined) {
+            if (event.target.childNodes[1] !== undefined && event.target.childNodes[1].classList !== undefined) {
+              if (event.target.childNodes[1].classList.contains('green_color') != true) {
+                event.target.childNodes[1].classList.add('green_color');
+                event.target.childNodes[1].classList.add('d-block');
+              }
+            }
+          }
+          if (event.target !== undefined && event.target.classList !== undefined) {
+            if (event.target.classList.contains('green_color') != true) {
+              event.target.classList.add('green_color');
+            }
+          }
+        }
+      }
+      console.log('lastChild = ', event.target.tagName);
+    },
+    deleteGreenColorTextOnLi: function deleteGreenColorTextOnLi() {
+      var el = document.getElementsByClassName('sub_category_type_li');
+      if (el !== undefined && el.length !== undefined) {
+        for (var i = 0; i < el.length; i++) {
+          if (el[i].classList !== undefined && el[i].classList.contains('green_color')) {
+            el[i].classList.remove('green_color');
+
+            // IF LI CLHILD ICON IS GREEN TO REMOVE GREEN COLOR
+            if (el[i].children !== undefined && el[i].children[0] !== undefined) {
+              if (el[i].children[0].classList !== undefined) {
+                if (el[i].children[0].classList.contains('green_color')) {
+                  el[i].children[0].classList.remove('green_color');
+                }
+                if (el[i].children[0].classList.contains('d-block')) {
+                  el[i].children[0].classList.remove('d-block');
+                }
+              }
+            }
+            console.log('lastChild = ', el[i].children[0].classList);
+          }
+        }
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.getSubCategoryTypes();
+    // console.log( 'XXXXXX = ',  this.id )
+  }
 });
 
 /***/ }),
@@ -23116,6 +23222,7 @@ __webpack_require__.r(__webpack_exports__);
       loadFirst: false,
       category_name: null,
       category_image: null,
+      sub_category_name: null,
       image_padding: 'p-3',
       first_category_top_padding: 'p-3'
     };
@@ -23124,9 +23231,10 @@ __webpack_require__.r(__webpack_exports__);
     sendSubCategoryNameToNewAnnounceComponent: function sendSubCategoryNameToNewAnnounceComponent(data) {
       this.category_name = data.category.name;
       this.category_image = data.category.image.toLowerCase();
+      this.sub_category_name = data.original_sub_category_name;
       this.changeImagePadding();
-      // console.log('category = ', this.category)
-      this.$emit('sendSubCategoryNameToNewAnnounceComponent', {
+      // console.log('sub_category_name = ', data.original_sub_category_name )
+      this.$emit('sendSubCategoryInfoToNewAnnounceComponent', {
         new_data: data
       });
     },
@@ -23171,10 +23279,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     getSubCategoryName: function getSubCategoryName(event) {
       this.$emit('sendSubCategoryNameToModalCategoryComponent', {
         category_name: this.makeSlug(event.target.id),
+        sub_category_id: event.target.value,
         sub_category_name: this.makeSlug(event.target.innerText),
+        original_sub_category_name: event.target.innerText,
         category: this.category
       });
-      // console.log('category = ', this.category)
+      // console.log('ID === = ', event.target.value )
     },
     makeSlug: function makeSlug(word) {
       var latina_words = this.convertToLatinLetters(word);
@@ -23608,7 +23718,7 @@ var _hoisted_3 = {
   id: "announce-new-collapse"
 };
 var _hoisted_4 = {
-  "class": "card card-body border-0"
+  "class": "border-0"
 };
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "py-1",
@@ -23644,13 +23754,135 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_input_phone_number = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("input-phone-number");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW TOP ELEMENTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_top_elements), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD CATEGORIES "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_category, {
     categories: $props.categories,
-    onSendSubCategoryNameToNewAnnounceComponent: $options.callSubCategoryComponent
-  }, null, 8 /* PROPS */, ["categories", "onSendSubCategoryNameToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW  COMPONENT  COLLAPSE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onSendSubCategoryInfoToNewAnnounceComponent: $options.callSubCategoryComponent
+  }, null, 8 /* PROPS */, ["categories", "onSendSubCategoryInfoToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "border__color",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)($data.load_component_border)
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.loadComponent)))])])], 4 /* STYLE */), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price)]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.loadComponent), {
+    sub_category_id: $data.sub_category_id
+  }, null, 8 /* PROPS */, ["sub_category_id"]))])])], 4 /* STYLE */), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price)]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
     cities: $props.cities
   }, null, 8 /* PROPS */, ["cities"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW ABOUT "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_about)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_input_phone_number)]), _hoisted_12])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-141b70b4"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+var _hoisted_1 = {
+  "class": "",
+  id: "new-announce-category"
+};
+var _hoisted_2 = {
+  "class": "list-group",
+  "data-bs-toggle": "offcanvas",
+  "data-bs-target": "#sub-category-type",
+  "aria-controls": "offcanvasRight"
+};
+var _hoisted_3 = {
+  "class": "list-group-item col-12 d-flex border-0"
+};
+var _hoisted_4 = {
+  "class": "col"
+};
+var _hoisted_5 = {
+  key: 0,
+  "class": "col lh-1 align-self-center py-2",
+  role: "button"
+};
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-danger text-opacity-75"
+  }, "*", -1 /* HOISTED */);
+});
+var _hoisted_7 = {
+  "class": "fs-5"
+};
+var _hoisted_8 = {
+  key: 1,
+  "class": "col text-black-50 align-self-center py-2 fs-5",
+  role: "button"
+};
+var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-danger text-opacity-75"
+  }, "*", -1 /* HOISTED */);
+});
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "d-flex align-self-center text-end"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "20",
+    height: "20",
+    fill: "gray",
+    "class": "bi bi-chevron-right",
+    viewBox: "0 0 16 16"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+    "fill-rule": "evenodd",
+    d: "M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+  })])], -1 /* HOISTED */);
+});
+var _hoisted_11 = {
+  "class": "offcanvas offcanvas-end w-100",
+  tabindex: "-1",
+  id: "sub-category-type",
+  "aria-labelledby": "offcanvasRightLabel"
+};
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"offcanvas-header shadow-sm mb-1\" data-v-141b70b4><div class=\"col\" data-v-141b70b4><h5 class=\"offcanvas-title m-auto\" id=\"offcanvasRightLabel\" data-v-141b70b4><svg xmlns=\"http://www.w3.org/2000/svg\" type=\"button\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\" width=\"22\" height=\"22\" fill=\"currentColor\" class=\"bi bi-chevron-left text-black-50\" viewBox=\"0 0 16 16\" data-v-141b70b4><path fill-rule=\"evenodd\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z\" data-v-141b70b4></path></svg></h5></div><div class=\"col fs-5 d-flex justify-content-center\" data-v-141b70b4>Kataloq</div><div class=\"col\" data-v-141b70b4></div></div>", 1);
+var _hoisted_13 = {
+  "class": "offcanvas-body p-0"
+};
+var _hoisted_14 = {
+  "class": ""
+};
+var _hoisted_15 = {
+  key: 0,
+  "class": "list-group"
+};
+var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "22",
+    height: "22",
+    fill: "currentColor",
+    "class": "select_icon bi bi-check2",
+    viewBox: "0 0 16 16"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+    d: "M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+  })], -1 /* HOISTED */);
+});
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [$data.sub_category_name !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('col text-black-50 mb-1 align-self-center ' + $data.font_size + 'py-2'),
+    role: "button"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Malın tipi "), _hoisted_6], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.sub_category_name), 1 /* TEXT */)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Malın tipi "), _hoisted_9]))]), _hoisted_10])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [$data.sub_category_types !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.sub_category_types, function (item) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      key: item.id,
+      role: "button",
+      "class": "col d-flex list-group-item fs-5 py-2 pt-3 pointer-event justify-content-between all_catalog_category_items_style sub_category_type_li",
+      "data-bs-dismiss": "offcanvas",
+      "aria-label": "Close",
+      onClick: _cache[0] || (_cache[0] = function () {
+        return $options.changeSubCategoryTypeName && $options.changeSubCategoryTypeName.apply($options, arguments);
+      })
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.name) + " ", 1 /* TEXT */), _hoisted_16]);
+  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
 }
 
 /***/ }),
@@ -23903,21 +24135,27 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_7 = [_hoisted_6];
 var _hoisted_8 = {
   key: 2,
-  "class": "col text-black-50 align-self-center fs-5",
+  "class": "col lh-1 ms-2 align-self-center",
   role: "button"
 };
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_9 = {
+  "class": "d-block mb-1 text-black-50 fs-6"
+};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-danger text-opacity-75"
 }, "*", -1 /* HOISTED */);
-var _hoisted_10 = {
+var _hoisted_11 = {
+  "class": "d-block fs-5"
+};
+var _hoisted_12 = {
   key: 3,
   "class": "col text-black-50 align-self-center fs-5",
   role: "button"
 };
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-danger text-opacity-75"
 }, "*", -1 /* HOISTED */);
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "d-flex align-self-center text-end"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
@@ -23930,24 +24168,24 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "fill-rule": "evenodd",
   d: "M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
 })])], -1 /* HOISTED */);
-var _hoisted_13 = {
+var _hoisted_15 = {
   "class": "offcanvas offcanvas-end w-100",
   tabindex: "-1",
   id: "announce-new-category",
   "aria-labelledby": "offcanvasRightLabel"
 };
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"offcanvas-header shadow-sm mb-1\"><div class=\"col\"><h5 class=\"offcanvas-title m-auto\" id=\"offcanvasRightLabel\"><svg xmlns=\"http://www.w3.org/2000/svg\" type=\"button\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\" width=\"22\" height=\"22\" fill=\"currentColor\" class=\"bi bi-chevron-left text-black-50\" viewBox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z\"></path></svg></h5></div><div class=\"col fs-5 d-flex justify-content-center\">Kataloq</div><div class=\"col\"></div></div>", 1);
-var _hoisted_15 = {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"offcanvas-header shadow-sm mb-1\"><div class=\"col\"><h5 class=\"offcanvas-title m-auto\" id=\"offcanvasRightLabel\"><svg xmlns=\"http://www.w3.org/2000/svg\" type=\"button\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\" width=\"22\" height=\"22\" fill=\"currentColor\" class=\"bi bi-chevron-left text-black-50\" viewBox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z\"></path></svg></h5></div><div class=\"col fs-5 d-flex justify-content-center\">Kataloq</div><div class=\"col\"></div></div>", 1);
+var _hoisted_17 = {
   "class": "offcanvas-body p-0"
 };
-var _hoisted_16 = {
+var _hoisted_18 = {
   key: 0,
   "class": ""
 };
-var _hoisted_17 = {
+var _hoisted_19 = {
   "class": "list-group"
 };
-var _hoisted_18 = ["id"];
+var _hoisted_20 = ["id"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_modal_show_category_elements = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal-show-category-elements");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
@@ -23956,7 +24194,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     src: '/images/category/' + $data.category_image,
     "class": "card-img-top vertical__all_catalog_img",
     alt: "..."
-  }, null, 8 /* PROPS */, _hoisted_4)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, _hoisted_7)), $data.category_name !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.category_name) + " ", 1 /* TEXT */), _hoisted_9])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Kateqoriya "), _hoisted_11])), _hoisted_12], 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [$props.categories !== undefined && $props.categories !== null && $props.categories.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.categories, function (category) {
+  }, null, 8 /* PROPS */, _hoisted_4)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, _hoisted_7)), $data.category_name !== null && $data.sub_category_name !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.category_name) + " ", 1 /* TEXT */), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.sub_category_name), 1 /* TEXT */)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Kateqoriya "), _hoisted_13])), _hoisted_14], 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [$props.categories !== undefined && $props.categories !== null && $props.categories.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_19, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.categories, function (category) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: category.id,
       id: category.id,
@@ -23964,7 +24202,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_show_category_elements, {
       category: category,
       onSendSubCategoryNameToModalCategoryComponent: $options.sendSubCategoryNameToNewAnnounceComponent
-    }, null, 8 /* PROPS */, ["category", "onSendSubCategoryNameToModalCategoryComponent"])], 8 /* PROPS */, _hoisted_18);
+    }, null, 8 /* PROPS */, ["category", "onSendSubCategoryNameToModalCategoryComponent"])], 8 /* PROPS */, _hoisted_20);
   }), 128 /* KEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
 
@@ -24045,7 +24283,7 @@ var _hoisted_18 = {
   "class": "",
   id: "sub-category-div-id"
 };
-var _hoisted_19 = ["id"];
+var _hoisted_19 = ["value", "id"];
 var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "modal-footer"
 }, null, -1 /* HOISTED */);
@@ -24070,6 +24308,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.category.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.category.sub_categories, function (sub_category) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: sub_category.id,
+      value: sub_category.id,
       onClick: _cache[0] || (_cache[0] = function () {
         return $options.getSubCategoryName && $options.getSubCategoryName.apply($options, arguments);
       }),
@@ -24910,6 +25149,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_announce_new_modals_AnnounceNewModalPrice_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalPrice.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalPrice.vue");
 /* harmony import */ var _components_announce_new_modals_AnnounceNewModalCity_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalCity.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalCity.vue");
 /* harmony import */ var _components_announce_new_modals_AnnounceNewModalAbout_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalAbout.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalAbout.vue");
+/* harmony import */ var _components_announce_new_category_elektronika_audiovevideo_modals_SubCategoryTypeModal_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -24920,6 +25160,7 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_1__.createApp)({});
 
 app.use(vue_axios__WEBPACK_IMPORTED_MODULE_2__["default"], (axios__WEBPACK_IMPORTED_MODULE_3___default()));
 app.use(vue3_photo_preview__WEBPACK_IMPORTED_MODULE_4__["default"]);
+
 
 
 
@@ -24956,6 +25197,7 @@ app.component('announce-new-top-elements', _components_announce_new_crumbs_Annou
 app.component('announce-new-modal-price', _components_announce_new_modals_AnnounceNewModalPrice_vue__WEBPACK_IMPORTED_MODULE_20__["default"]);
 app.component('announce-new-modal-city', _components_announce_new_modals_AnnounceNewModalCity_vue__WEBPACK_IMPORTED_MODULE_21__["default"]);
 app.component('announce-new-modal-about', _components_announce_new_modals_AnnounceNewModalAbout_vue__WEBPACK_IMPORTED_MODULE_22__["default"]);
+app.component('sub-category-type-modal', _components_announce_new_category_elektronika_audiovevideo_modals_SubCategoryTypeModal_vue__WEBPACK_IMPORTED_MODULE_23__["default"]);
 app.mount("#app");
 
 /***/ }),
@@ -30247,6 +30489,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "@keyframes PhotoView__rotate {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes PhotoView__delayShow {\n  0%, 50% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.PhotoView__Spinner {\n  animation: PhotoView__delayShow 0.4s linear both;\n}\n.PhotoView__Spinner svg {\n  display: block;\n  animation: PhotoView__rotate 0.6s linear infinite;\n}\n@keyframes PhotoView__animateIn {\n  from {\n    opacity: 0.4;\n    transform: scale(0.2);\n  }\n  to {\n    opacity: 1;\n    transform: scale(1);\n  }\n}\n@keyframes PhotoView__animateOut {\n  from {\n    opacity: 1;\n    transform: scale(1);\n  }\n  to {\n    opacity: 0;\n    transform: scale(0.2);\n  }\n}\n.PhotoView__PhotoWrap {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.PhotoView__PhotoWrap .PhotoView__PhotoBox {\n  width: 0;\n  height: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.PhotoView__PhotoWrap .PhotoView__PhotoBox.PhotoView__animateIn {\n  opacity: 0.4;\n  animation: PhotoView__animateIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;\n}\n.PhotoView__PhotoWrap .PhotoView__PhotoBox.PhotoView__animateOut {\n  opacity: 1;\n  animation: PhotoView__animateOut 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) both;\n}\n.PhotoView__PhotoWrap .PhotoView__PhotoBox .PhotoView__Photo {\n  touch-action: none;\n  cursor: grab;\n  display: block;\n}\n.PhotoView__PhotoWrap .PhotoView__PhotoBox .PhotoView__Photo:active {\n  cursor: grabbing;\n}\n@keyframes PhotoView__fade {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__BannerWrap,\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowLeft,\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowRight,\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__FooterWrap {\n  opacity: 0;\n}\n@media (any-hover: hover) {\n  .PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__BannerWrap:hover,\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowLeft:hover,\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__ArrowRight:hover,\n.PhotoSlider__Wrapper.PhotoSlider__Clean .PhotoSlider__FooterWrap:hover {\n    opacity: 0;\n  }\n}\n\n.PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__BannerWrap,\n.PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__ArrowLeft,\n.PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__ArrowRight,\n.PhotoSlider__Wrapper.PhotoSlider__Hide .PhotoSlider__FooterWrap {\n  opacity: 0;\n}\n\n.PhotoSlider__Wrapper {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  z-index: 2000;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n          user-select: none;\n}\n.PhotoSlider__Wrapper .PhotoSlider__Backdrop {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n.PhotoSlider__Wrapper .PhotoSlider__Backdrop.PhotoSlider__fadeIn {\n  opacity: 0;\n  animation: PhotoView__fade 0.4s linear both;\n}\n.PhotoSlider__Wrapper .PhotoSlider__Backdrop.PhotoSlider__fadeOut {\n  opacity: 1;\n  animation: PhotoView__fade 0.4s linear both reverse;\n}\n.PhotoSlider__Wrapper .PhotoSlider__BannerWrap {\n  position: absolute;\n  left: 0;\n  top: 0;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: 44px;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.5);\n  transition: opacity 0.2s ease-out;\n  z-index: 20;\n}\n@media (any-hover: hover) {\n  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap:hover {\n    opacity: 1;\n  }\n}\n.PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__Counter {\n  padding: 0 10px;\n  font-size: 14px;\n  opacity: 0.75;\n}\n.PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n}\n.PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight .PhotoSlider__BannerIcon {\n  vertical-align: top;\n  box-sizing: border-box;\n  padding: 10px;\n  opacity: 0.75;\n  cursor: pointer;\n  transition: all 0.2s linear;\n}\n@media (any-hover: hover) {\n  .PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight .PhotoSlider__BannerIcon:hover {\n    opacity: 1;\n  }\n}\n.PhotoSlider__Wrapper .PhotoSlider__PhotoBox {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 10;\n  overflow: hidden;\n}\n.PhotoSlider__Wrapper .PhotoSlider__ArrowLeft {\n  left: 0;\n}\n.PhotoSlider__Wrapper .PhotoSlider__ArrowRight {\n  right: 0;\n}\n.PhotoSlider__Wrapper .PhotoSlider__ArrowLeft,\n.PhotoSlider__Wrapper .PhotoSlider__ArrowRight {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  margin: auto 0 auto 0;\n  width: 70px;\n  height: 100px;\n  opacity: 0.7;\n  z-index: 20;\n  cursor: pointer;\n  transition: opacity 0.2s linear;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (any-hover: hover) {\n  .PhotoSlider__Wrapper .PhotoSlider__ArrowLeft:hover,\n.PhotoSlider__Wrapper .PhotoSlider__ArrowRight:hover {\n    opacity: 1;\n  }\n}\n.PhotoSlider__Wrapper .PhotoSlider__ArrowLeft svg,\n.PhotoSlider__Wrapper .PhotoSlider__ArrowRight svg {\n  box-sizing: content-box;\n  padding: 10px;\n  width: 24px;\n  height: 24px;\n  fill: white;\n  background: rgba(0, 0, 0, 0.3);\n}\n.PhotoSlider__Wrapper .PhotoSlider__FooterWrap {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 44px;\n  padding: 10px;\n  line-height: 1.5;\n  font-size: 14px;\n  text-align: justify;\n  color: #ccc;\n  background-color: rgba(0, 0, 0, 0.5);\n  transition: opacity 0.2s ease-out;\n  z-index: 20;\n}\n@media (any-hover: hover) {\n  .PhotoSlider__Wrapper .PhotoSlider__FooterWrap:hover {\n    opacity: 1;\n  }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.select_icon[data-v-141b70b4] {\n        display: none;\n}\n.green_color[data-v-141b70b4] {\n        color: #179604;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47876,6 +48142,36 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_style_index_0_id_141b70b4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_style_index_0_id_141b70b4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_style_index_0_id_141b70b4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/products/ProductShow.vue?vue&type=style&index=0&id=08b62728&scoped=true&lang=css":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/products/ProductShow.vue?vue&type=style&index=0&id=08b62728&scoped=true&lang=css ***!
@@ -48331,6 +48627,37 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_NewAnnounce_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_NewAnnounce_vue_vue_type_template_id_0b543fbf__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/announce/new/NewAnnounce.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SubCategoryTypeModal_vue_vue_type_template_id_141b70b4_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true");
+/* harmony import */ var _SubCategoryTypeModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SubCategoryTypeModal.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=script&lang=js");
+/* harmony import */ var _SubCategoryTypeModal_vue_vue_type_style_index_0_id_141b70b4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SubCategoryTypeModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SubCategoryTypeModal_vue_vue_type_template_id_141b70b4_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-141b70b4"],['__file',"resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -48828,6 +49155,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=script&lang=js":
+/*!****************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=script&lang=js ***!
+  \****************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SubCategoryTypeModal.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/new/crumbs/AnnounceNewTopSection.vue?vue&type=script&lang=js":
 /*!*******************************************************************************************************!*\
   !*** ./resources/js/components/announce/new/crumbs/AnnounceNewTopSection.vue?vue&type=script&lang=js ***!
@@ -49116,6 +49459,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true ***!
+  \**********************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_template_id_141b70b4_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_template_id_141b70b4_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=template&id=141b70b4&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/new/crumbs/AnnounceNewTopSection.vue?vue&type=template&id=2329356c":
 /*!*************************************************************************************************************!*\
   !*** ./resources/js/components/announce/new/crumbs/AnnounceNewTopSection.vue?vue&type=template&id=2329356c ***!
@@ -49368,6 +49727,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SubCategoryTypeModal_vue_vue_type_style_index_0_id_141b70b4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue?vue&type=style&index=0&id=141b70b4&scoped=true&lang=css");
 
 
 /***/ }),
@@ -52051,116 +52423,122 @@ var index = { install: install };
 
 /***/ }),
 
-/***/ "./resources/js/components/announce/new/forms/category lazy recursive ^\\.\\/.*$":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/components/announce/new/forms/category/ lazy ^\.\/.*$ namespace object ***!
-  \*********************************************************************************************/
+/***/ "./resources/js/components/announce/new/category lazy recursive ^\\.\\/.*$":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/ lazy ^\.\/.*$ namespace object ***!
+  \***************************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
 	"./elektronika/audiovevideo/AudioVeVideo": [
-		"./resources/js/components/announce/new/forms/category/elektronika/audiovevideo/AudioVeVideo.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_audiovevideo_AudioVeVideo_vue"
+		"./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue",
+		"resources_js_components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue"
 	],
 	"./elektronika/audiovevideo/AudioVeVideo.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/audiovevideo/AudioVeVideo.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_audiovevideo_AudioVeVideo_vue"
+		"./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue",
+		"resources_js_components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue"
+	],
+	"./elektronika/audiovevideo/modals/SubCategoryTypeModal": [
+		"./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue"
+	],
+	"./elektronika/audiovevideo/modals/SubCategoryTypeModal.vue": [
+		"./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue"
 	],
 	"./elektronika/fototexnika/FotoTexnika": [
-		"./resources/js/components/announce/new/forms/category/elektronika/fototexnika/FotoTexnika.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_fototexnika_FotoTexnika_vue"
+		"./resources/js/components/announce/new/category/elektronika/fototexnika/FotoTexnika.vue",
+		"resources_js_components_announce_new_category_elektronika_fototexnika_FotoTexnika_vue"
 	],
 	"./elektronika/fototexnika/FotoTexnika.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/fototexnika/FotoTexnika.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_fototexnika_FotoTexnika_vue"
+		"./resources/js/components/announce/new/category/elektronika/fototexnika/FotoTexnika.vue",
+		"resources_js_components_announce_new_category_elektronika_fototexnika_FotoTexnika_vue"
 	],
 	"./elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_komponentlervemonitorlar_Komp-1c7f92"
+		"./resources/js/components/announce/new/category/elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue",
+		"resources_js_components_announce_new_category_elektronika_komponentlervemonitorlar_Komponentl-9a8e31"
 	],
 	"./elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_komponentlervemonitorlar_Komp-1c7f92"
+		"./resources/js/components/announce/new/category/elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue",
+		"resources_js_components_announce_new_category_elektronika_komponentlervemonitorlar_Komponentl-9a8e31"
 	],
 	"./elektronika/komputeraksesuarlari/KomputerAksesuarlari": [
-		"./resources/js/components/announce/new/forms/category/elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_komputeraksesuarlari_Komputer-c3a9aa"
+		"./resources/js/components/announce/new/category/elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue",
+		"resources_js_components_announce_new_category_elektronika_komputeraksesuarlari_KomputerAksesu-bf1a27"
 	],
 	"./elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_komputeraksesuarlari_Komputer-c3a9aa"
+		"./resources/js/components/announce/new/category/elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue",
+		"resources_js_components_announce_new_category_elektronika_komputeraksesuarlari_KomputerAksesu-bf1a27"
 	],
 	"./elektronika/masaustukomputerler/MasaustuKomputerler": [
-		"./resources/js/components/announce/new/forms/category/elektronika/masaustukomputerler/MasaustuKomputerler.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_masaustukomputerler_MasaustuK-3010d9"
+		"./resources/js/components/announce/new/category/elektronika/masaustukomputerler/MasaustuKomputerler.vue",
+		"resources_js_components_announce_new_category_elektronika_masaustukomputerler_MasaustuKompute-ea4b23"
 	],
 	"./elektronika/masaustukomputerler/MasaustuKomputerler.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/masaustukomputerler/MasaustuKomputerler.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_masaustukomputerler_MasaustuK-3010d9"
+		"./resources/js/components/announce/new/category/elektronika/masaustukomputerler/MasaustuKomputerler.vue",
+		"resources_js_components_announce_new_category_elektronika_masaustukomputerler_MasaustuKompute-ea4b23"
 	],
 	"./elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_nomrelervesimkartlar_Nomreler-6fddb1"
+		"./resources/js/components/announce/new/category/elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue",
+		"resources_js_components_announce_new_category_elektronika_nomrelervesimkartlar_NomrelerVeSimK-c1a5e3"
 	],
 	"./elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_nomrelervesimkartlar_Nomreler-6fddb1"
+		"./resources/js/components/announce/new/category/elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue",
+		"resources_js_components_announce_new_category_elektronika_nomrelervesimkartlar_NomrelerVeSimK-c1a5e3"
 	],
 	"./elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_noutbuklarvenetbuklar_Noutbuk-9d476f"
+		"./resources/js/components/announce/new/category/elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue",
+		"resources_js_components_announce_new_category_elektronika_noutbuklarvenetbuklar_NoutbuklarVeN-bdc70f"
 	],
 	"./elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_noutbuklarvenetbuklar_Noutbuk-9d476f"
+		"./resources/js/components/announce/new/category/elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue",
+		"resources_js_components_announce_new_category_elektronika_noutbuklarvenetbuklar_NoutbuklarVeN-bdc70f"
 	],
 	"./elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak": [
-		"./resources/js/components/announce/new/forms/category/elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_ofisavadanliqiveistehlak_Ofis-dca8b6"
+		"./resources/js/components/announce/new/category/elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue",
+		"resources_js_components_announce_new_category_elektronika_ofisavadanliqiveistehlak_OfisAvadan-d8a1a6"
 	],
 	"./elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_ofisavadanliqiveistehlak_Ofis-dca8b6"
+		"./resources/js/components/announce/new/category/elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue",
+		"resources_js_components_announce_new_category_elektronika_ofisavadanliqiveistehlak_OfisAvadan-d8a1a6"
 	],
 	"./elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_oyunlarpultlarveproqramlar_Oy-9aafc4"
+		"./resources/js/components/announce/new/category/elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue",
+		"resources_js_components_announce_new_category_elektronika_oyunlarpultlarveproqramlar_OyunlarP-379e35"
 	],
 	"./elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_oyunlarpultlarveproqramlar_Oy-9aafc4"
+		"./resources/js/components/announce/new/category/elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue",
+		"resources_js_components_announce_new_category_elektronika_oyunlarpultlarveproqramlar_OyunlarP-379e35"
 	],
 	"./elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_planshetveelektronkitablar_Pl-349360"
+		"./resources/js/components/announce/new/category/elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue",
+		"resources_js_components_announce_new_category_elektronika_planshetveelektronkitablar_Planshet-e8b827"
 	],
 	"./elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_planshetveelektronkitablar_Pl-349360"
+		"./resources/js/components/announce/new/category/elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue",
+		"resources_js_components_announce_new_category_elektronika_planshetveelektronkitablar_Planshet-e8b827"
 	],
 	"./elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_smartsaatveqolbaqlar_SmartSaa-e46462"
+		"./resources/js/components/announce/new/category/elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue",
+		"resources_js_components_announce_new_category_elektronika_smartsaatveqolbaqlar_SmartSaatVeQol-b6cc19"
 	],
 	"./elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_smartsaatveqolbaqlar_SmartSaa-e46462"
+		"./resources/js/components/announce/new/category/elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue",
+		"resources_js_components_announce_new_category_elektronika_smartsaatveqolbaqlar_SmartSaatVeQol-b6cc19"
 	],
 	"./elektronika/telefonlar/Telefonlar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/telefonlar/Telefonlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_telefonlar_Telefonlar_vue"
+		"./resources/js/components/announce/new/category/elektronika/telefonlar/Telefonlar.vue",
+		"resources_js_components_announce_new_category_elektronika_telefonlar_Telefonlar_vue"
 	],
 	"./elektronika/telefonlar/Telefonlar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/telefonlar/Telefonlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_telefonlar_Telefonlar_vue"
+		"./resources/js/components/announce/new/category/elektronika/telefonlar/Telefonlar.vue",
+		"resources_js_components_announce_new_category_elektronika_telefonlar_Telefonlar_vue"
 	],
 	"./elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar": [
-		"./resources/js/components/announce/new/forms/category/elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_televizorlarveaksesuarlar_Tel-f03829"
+		"./resources/js/components/announce/new/category/elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue",
+		"resources_js_components_announce_new_category_elektronika_televizorlarveaksesuarlar_Televizor-dace40"
 	],
 	"./elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue": [
-		"./resources/js/components/announce/new/forms/category/elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue",
-		"resources_js_components_announce_new_forms_category_elektronika_televizorlarveaksesuarlar_Tel-f03829"
+		"./resources/js/components/announce/new/category/elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue",
+		"resources_js_components_announce_new_category_elektronika_televizorlarveaksesuarlar_Televizor-dace40"
 	]
 };
 function webpackAsyncContext(req) {
@@ -52173,12 +52551,12 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(() => {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(() => {
 		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
-webpackAsyncContext.id = "./resources/js/components/announce/new/forms/category lazy recursive ^\\.\\/.*$";
+webpackAsyncContext.id = "./resources/js/components/announce/new/category lazy recursive ^\\.\\/.*$";
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -52306,7 +52684,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_announce_new_forms_category_elektronika_audiovevideo_AudioVeVideo_vue":1,"resources_js_components_announce_new_forms_category_elektronika_fototexnika_FotoTexnika_vue":1,"resources_js_components_announce_new_forms_category_elektronika_komponentlervemonitorlar_Komp-1c7f92":1,"resources_js_components_announce_new_forms_category_elektronika_komputeraksesuarlari_Komputer-c3a9aa":1,"resources_js_components_announce_new_forms_category_elektronika_masaustukomputerler_MasaustuK-3010d9":1,"resources_js_components_announce_new_forms_category_elektronika_nomrelervesimkartlar_Nomreler-6fddb1":1,"resources_js_components_announce_new_forms_category_elektronika_noutbuklarvenetbuklar_Noutbuk-9d476f":1,"resources_js_components_announce_new_forms_category_elektronika_ofisavadanliqiveistehlak_Ofis-dca8b6":1,"resources_js_components_announce_new_forms_category_elektronika_oyunlarpultlarveproqramlar_Oy-9aafc4":1,"resources_js_components_announce_new_forms_category_elektronika_planshetveelektronkitablar_Pl-349360":1,"resources_js_components_announce_new_forms_category_elektronika_smartsaatveqolbaqlar_SmartSaa-e46462":1,"resources_js_components_announce_new_forms_category_elektronika_telefonlar_Telefonlar_vue":1,"resources_js_components_announce_new_forms_category_elektronika_televizorlarveaksesuarlar_Tel-f03829":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue":1,"resources_js_components_announce_new_category_elektronika_fototexnika_FotoTexnika_vue":1,"resources_js_components_announce_new_category_elektronika_komponentlervemonitorlar_Komponentl-9a8e31":1,"resources_js_components_announce_new_category_elektronika_komputeraksesuarlari_KomputerAksesu-bf1a27":1,"resources_js_components_announce_new_category_elektronika_masaustukomputerler_MasaustuKompute-ea4b23":1,"resources_js_components_announce_new_category_elektronika_nomrelervesimkartlar_NomrelerVeSimK-c1a5e3":1,"resources_js_components_announce_new_category_elektronika_noutbuklarvenetbuklar_NoutbuklarVeN-bdc70f":1,"resources_js_components_announce_new_category_elektronika_ofisavadanliqiveistehlak_OfisAvadan-d8a1a6":1,"resources_js_components_announce_new_category_elektronika_oyunlarpultlarveproqramlar_OyunlarP-379e35":1,"resources_js_components_announce_new_category_elektronika_planshetveelektronkitablar_Planshet-e8b827":1,"resources_js_components_announce_new_category_elektronika_smartsaatveqolbaqlar_SmartSaatVeQol-b6cc19":1,"resources_js_components_announce_new_category_elektronika_telefonlar_Telefonlar_vue":1,"resources_js_components_announce_new_category_elektronika_televizorlarveaksesuarlar_Televizor-dace40":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -32,6 +32,7 @@ import AnnounceNewTopSection from './components/announce/new/crumbs/AnnounceNewT
 import AnnounceNewModalPrice from './components/announce/new/modals/AnnounceNewModalPrice.vue';
 import AnnounceNewModalCity from './components/announce/new/modals/AnnounceNewModalCity.vue';
 import AnnounceNewModalAbout from './components/announce/new/modals/AnnounceNewModalAbout.vue';
+import SubCategoryTypeModal from './components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue';
 
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
@@ -51,5 +52,6 @@ app.component('announce-new-top-elements' , AnnounceNewTopSection);
 app.component('announce-new-modal-price' , AnnounceNewModalPrice);
 app.component('announce-new-modal-city' , AnnounceNewModalCity);
 app.component('announce-new-modal-about' , AnnounceNewModalAbout);
+app.component('sub-category-type-modal' , SubCategoryTypeModal);
 
 app.mount("#app")

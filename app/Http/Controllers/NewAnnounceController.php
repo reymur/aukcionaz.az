@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\SubCategoryType;
 
 class NewAnnounceController extends Controller
 {
@@ -16,6 +17,16 @@ class NewAnnounceController extends Controller
         return view('announce.new_announce', [
             'categories' => $categories,
             'cities' => $cities,
+        ]);
+    }
+
+    public function getSubCategoryTypes(Request $request) {
+
+        if( isset($request->id) ) {
+            $res = SubCategoryType::where('sub_category_id', $request->id )->get();
+        }
+        return response()->json([
+             "sub_category_types" => $res
         ]);
     }
 

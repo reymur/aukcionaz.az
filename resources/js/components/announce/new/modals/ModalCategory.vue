@@ -12,9 +12,14 @@
                     </svg>
                 </div>
                 
-                <div v-if="category_name !== null" class="col text-black-50 align-self-center fs-5" role="button">
-                    {{ category_name }}
-                    <span class="text-danger text-opacity-75">*</span>
+                <div v-if="category_name !== null && sub_category_name !== null" class="col lh-1 ms-2 align-self-center" role="button">
+                    <div class="d-block mb-1 text-black-50 fs-6">
+                        {{ category_name }}
+                        <span class="text-danger text-opacity-75">*</span>
+                    </div>
+                    <div class="d-block fs-5">
+                        {{ sub_category_name }}
+                    </div>
                 </div>
                 <div v-else class="col text-black-50 align-self-center fs-5" role="button">
                     Kateqoriya
@@ -61,7 +66,7 @@
                 </div>
             </div>
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -72,6 +77,7 @@ export default {
             loadFirst: false,
             category_name: null,
             category_image: null,
+            sub_category_name: null,
             image_padding: 'p-3',
             first_category_top_padding: 'p-3',
         }
@@ -80,9 +86,10 @@ export default {
         sendSubCategoryNameToNewAnnounceComponent(data){
             this.category_name = data.category.name;
             this.category_image = data.category.image.toLowerCase();
+            this.sub_category_name = data.original_sub_category_name;
             this.changeImagePadding();
-            // console.log('category = ', this.category)
-            this.$emit('sendSubCategoryNameToNewAnnounceComponent', {
+            // console.log('sub_category_name = ', data.original_sub_category_name )
+            this.$emit('sendSubCategoryInfoToNewAnnounceComponent', {
                 new_data: data
             });
         },

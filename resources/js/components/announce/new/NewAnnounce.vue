@@ -7,15 +7,18 @@
         <div class="bg-white w-100 mt-0 mb-3 p-0">
             <modal-category
                 :categories="categories"
-                @sendSubCategoryNameToNewAnnounceComponent="callSubCategoryComponent"
+                @sendSubCategoryInfoToNewAnnounceComponent="callSubCategoryComponent"
             ></modal-category>
         </div>
             
-        <!-- ANNOUNCE NEW  COMPONENT  COLLAPSE-->
+        <!-- ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE-->
         <div class="border__color" :style="load_component_border">
             <div class="collapse announce__new_collapse border-0" id="announce-new-collapse">
-                <div class="card card-body border-0">
-                    <component :is="loadComponent"></component>
+                <div class="border-0">
+                    <component 
+                        :is="loadComponent"
+                        :sub_category_id="sub_category_id"
+                    ></component>
                 </div>
             </div>
         </div>
@@ -71,7 +74,8 @@ export default {
     data() {
         return {
             loadComponentData: '',
-            load_component_border: ''
+            load_component_border: '',
+            sub_category_id: null
         }
     },
     computed: {
@@ -85,10 +89,12 @@ export default {
 
                     this.closeBeforeVisibleModals(sub_category_modal_id);
                     this.openAnnounceNewCollapse('announce-new-collapse');
+                    this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
                     this.load_component_border = 'border:1px solid rgb(0 0 0 / 6%)';
+                    // console.log( 'XXXXXX = ',  this.loadComponentData.new_data.sub_category_id )
 
                     return defineAsyncComponent( () => 
-                            import(`../new/forms/category/${category_name}/${folder_name}/${sub_category_name}`)
+                            import(`../new/category/${category_name}/${folder_name}/${sub_category_name}`)
                         )
                 }
             }
@@ -137,7 +143,7 @@ export default {
             setTimeout( () => {
                 body_style.removeAttribute("style")
             },400);
-            console.log( 'XXXXXX = ', body_style.style.overflow = 'auto' )
+            // console.log( 'XXXXXX = ', body_style.style.overflow = 'auto' )
         },
         // closeSubCategoryModal(id) {
         //     if( id !== undefined ) {

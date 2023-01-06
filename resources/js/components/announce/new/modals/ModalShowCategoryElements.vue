@@ -37,6 +37,7 @@
                                     <li 
                                         v-for="sub_category in category.sub_categories" 
                                         :key="sub_category.id" 
+                                        :value="sub_category.id"
                                         v-on:click="getSubCategoryName" 
                                         :id="category.name"
                                         role="button"
@@ -71,10 +72,12 @@ export default {
         getSubCategoryName(event) {
             this.$emit('sendSubCategoryNameToModalCategoryComponent', {
                 category_name: this.makeSlug(event.target.id),
+                sub_category_id: event.target.value,
                 sub_category_name: this.makeSlug(event.target.innerText),
+                original_sub_category_name: event.target.innerText,
                 category: this.category
             })
-            // console.log('category = ', this.category)
+            // console.log('ID === = ', event.target.value )
         },
         makeSlug(word) {
             let latina_words = this.convertToLatinLetters(word);
