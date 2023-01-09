@@ -22,6 +22,7 @@ Route::controller(HomeController::class)->group(function(){
 Route::prefix('announce')->controller(NewAnnounceController::class)->group(function(){
     Route::get('/new', 'index')->name('new_announce');
     Route::post('/new/get_sub_category_types', 'getSubCategoryTypes');
+    Route::post('/new/create', 'createNewAnnounce');
 });
 
 Route::controller(AukcionRealTimeController::class)->group(function () {

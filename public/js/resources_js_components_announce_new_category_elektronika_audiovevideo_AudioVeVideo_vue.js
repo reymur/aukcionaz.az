@@ -14,9 +14,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['sub_category_id'],
   data: function data() {
-    return {};
+    return {
+      announce_title: '',
+      checkBoxElem: []
+    };
   },
-  methods: {},
+  watch: {
+    announce_title: function announce_title() {
+      this.$emit('sendAnnounceTitleToNewAnnounceComponent', {
+        announce_title: this.announce_title
+      });
+    },
+    checkBoxElem: function checkBoxElem() {
+      this.$emit('sendCheckBoxVarsToNewAnnounceComponent', {
+        checkBox: this.checkBoxElem
+      });
+    }
+  },
+  methods: {
+    getSubCategoryTypeNameFromSubCategoryTypeComponent: function getSubCategoryTypeNameFromSubCategoryTypeComponent(data) {
+      if (data !== undefined && data.name !== undefined) {
+        this.$emit('sendSubCategoryTypeNameToNewAnnounceComponent', {
+          name: data.name
+        });
+      }
+    }
+  },
   mounted: function mounted() {
     // console.log( 'XXXXXX = ',  this.id )
   }
@@ -46,12 +69,78 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": ""
 };
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"\" data-v-39f0e4fe><form class=\"form-floating\" data-v-39f0e4fe><input type=\"email\" class=\"form-control border-0\" id=\"floatingInputValue\" placeholder=\"name@example.com\" value=\"\" data-v-39f0e4fe><label class=\"fs-5 text-black-50\" for=\"floatingInputValue\" data-v-39f0e4fe> Elanını başlığı <span class=\"text-danger text-opacity-75\" data-v-39f0e4fe>*</span></label></form></div><div class=\"form-check d-flex ps-2\" data-v-39f0e4fe><div class=\"col\" data-v-39f0e4fe><label class=\"form-check-label fs-5 w-100 p-3\" for=\"new\" data-v-39f0e4fe> Yeni ? </label></div><div class=\"d-flex align-self-center\" data-v-39f0e4fe><input class=\"form-check-input p-3 me-4 my_border\" type=\"checkbox\" value=\"\" id=\"new\" data-v-39f0e4fe></div></div><div class=\"form-check d-flex ps-2\" data-v-39f0e4fe><div class=\"col\" data-v-39f0e4fe><label class=\"form-check-label fs-5 w-100 p-3\" for=\"goto\" data-v-39f0e4fe> Çatdırılma ? </label></div><div class=\"d-flex align-self-center\" data-v-39f0e4fe><input class=\"form-check-input p-3 me-4 my_border\" type=\"checkbox\" value=\"\" id=\"goto\" data-v-39f0e4fe></div></div>", 3);
+var _hoisted_3 = {
+  "class": "px-2"
+};
+var _hoisted_4 = {
+  "class": "form-floating"
+};
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "fs-5 text-black-50",
+    "for": "floatingInputValue"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Elanını başlığı "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-danger text-opacity-75"
+  }, "*")], -1 /* HOISTED */);
+});
+var _hoisted_6 = {
+  "class": "form-check d-flex ps-2"
+};
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "col"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "form-check-label fs-5 w-100 p-3",
+    "for": "new"
+  }, " Yeni ? ")], -1 /* HOISTED */);
+});
+var _hoisted_8 = {
+  "class": "d-flex align-self-center"
+};
+var _hoisted_9 = {
+  "class": "form-check d-flex ps-2"
+};
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "col"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "form-check-label fs-5 w-100 p-3",
+    "for": "goto"
+  }, " Çatdırılma ? ")], -1 /* HOISTED */);
+});
+var _hoisted_11 = {
+  "class": "d-flex align-self-center"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_sub_category_type_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("sub-category-type-modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sub_category_type_modal, {
-    sub_category_id: $props.sub_category_id
-  }, null, 8 /* PROPS */, ["sub_category_id"])]), _hoisted_3]);
+    sub_category_id: $props.sub_category_id,
+    onGetSubCategoryTypeNameFromSubCategoryTypeModalComponent: $options.getSubCategoryTypeNameFromSubCategoryTypeComponent
+  }, null, 8 /* PROPS */, ["sub_category_id", "onGetSubCategoryTypeNameFromSubCategoryTypeModalComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.announce_title = $event;
+    }),
+    type: "email",
+    "class": "form-control pb-0 rounded-0 fs-5",
+    id: "floatingInputValue",
+    placeholder: "name@example.com"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.announce_title]]), _hoisted_5])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-check-input p-3 me-4 my_border",
+    type: "checkbox",
+    value: "new",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.checkBoxElem = $event;
+    }),
+    id: "new"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.checkBoxElem]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-check-input p-3 me-4 my_border",
+    type: "checkbox",
+    value: "delivery",
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.checkBoxElem = $event;
+    }),
+    id: "goto"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.checkBoxElem]])])])]);
 }
 
 /***/ }),
@@ -72,7 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.my_border[data-v-39f0e4fe] {\n        border: 1px solid #d3d0d0;\n}\n.form-check-input[data-v-39f0e4fe]:checked {\n        background-color: green!important;\n        border: none;\n}\n.form-check-input[data-v-39f0e4fe]:active {\n        border: none;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.my_border[data-v-39f0e4fe] {\n        border: 1px solid #d3d0d0;\n}\n.form-check-input[data-v-39f0e4fe]:checked {\n        background-color: green!important;\n        border: none;\n}\n.form-check-input[data-v-39f0e4fe]:active {\n        border: none;\n}\n.form-control[data-v-39f0e4fe] {\n        border: none;\n        padding-bottom: 0;\n}\n.form-control[data-v-39f0e4fe]:focus, .form-control[data-v-39f0e4fe]:active {\n        outline: none;\n        border-bottom: 1px solid #000;\n        box-shadow: none !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

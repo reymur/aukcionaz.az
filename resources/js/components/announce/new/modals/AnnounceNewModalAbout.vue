@@ -5,16 +5,19 @@
             <li class="list-group-item shadow-sm col-12 d-flex border-0 pt-2 pb-0">
                 <div class="col-6 d-inline-flex text-black-50 fs-5">
                     Məzmun
-                </div> 
+                </div>
             </li>
 
             <li class="list-group-item shadow-sm  col-12 d-flex border-0 px-3 pt-1">
                 <div class="col-12 text-black-50 fs-5">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Comments</label>
-                    </div>
-                </div> 
+                    <textarea
+                        class="form-control"
+                        placeholder='Elan haqqında məlumat yazarkən qiymət yazmayın, qiymət üçün yuxarıda "Qiymət" xanəsi qeyd edilib...'
+                        id="floatingTextarea2"
+                        style="height: 100px"
+                        v-model="about"
+                    ></textarea>
+                </div>
             </li>
         </ul>
     </div>
@@ -22,10 +25,27 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            about: null,
+        }
+    },
+    watch: {
+        about() {
+            this.$emit('sendAboutToNewAnnounceComponent', {
+                about: this.about
+            })
+        }
+    },
 }
 </script>
 
 <style>
+    .form-control:focus, .form-control:active {
+        outline: none;
 
+
+        box-shadow: none !important;
+
+    }
 </style>

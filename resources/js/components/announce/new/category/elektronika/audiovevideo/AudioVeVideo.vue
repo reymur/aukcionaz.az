@@ -2,19 +2,26 @@
     <div class="" id="new-announce-category">
         <!-- Button trigger modal -->
         <div class="">
-                <sub-category-type-modal
-                    :sub_category_id="sub_category_id"
-                ></sub-category-type-modal>
+            <sub-category-type-modal
+                :sub_category_id="sub_category_id"
+                @getSubCategoryTypeNameFromSubCategoryTypeModalComponent="getSubCategoryTypeNameFromSubCategoryTypeComponent"
+            ></sub-category-type-modal>
         </div>
 
-        <div class="">
-                <form class="form-floating">
-                    <input type="email" class="form-control border-0" id="floatingInputValue" placeholder="name@example.com" value="">
-                    <label class="fs-5 text-black-50" for="floatingInputValue">
-                        Elanını başlığı
-                        <span class="text-danger text-opacity-75">*</span>
-                    </label>
-                </form>
+        <div class="px-2">
+            <form class="form-floating">
+                <input
+                    v-model="announce_title"
+                    type="email"
+                    class="form-control pb-0 rounded-0 fs-5"
+                    id="floatingInputValue"
+                    placeholder="name@example.com"
+                >
+                <label class="fs-5 text-black-50" for="floatingInputValue">
+                    Elanını başlığı
+                    <span class="text-danger text-opacity-75">*</span>
+                </label>
+            </form>
         </div>
 
         <div class="form-check d-flex ps-2">
@@ -24,7 +31,7 @@
                 </label>
             </div>
             <div class="d-flex align-self-center">
-                <input class="form-check-input p-3 me-4 my_border" type="checkbox" value="" id="new">
+                <input class="form-check-input p-3 me-4 my_border" type="checkbox" value="new" v-model="checkBoxElem" id="new">
             </div>
         </div>
 
@@ -35,10 +42,9 @@
                 </label>
             </div>
             <div class="d-flex align-self-center">
-                <input class="form-check-input p-3 me-4 my_border" type="checkbox" value="" id="goto">
+                <input class="form-check-input p-3 me-4 my_border" type="checkbox" value="delivery" v-model="checkBoxElem" id="goto">
             </div>
         </div>
-
     </div>
 </template>
 
@@ -47,11 +53,30 @@ export default {
     props: ['sub_category_id'],
     data() {
         return {
-           
+            announce_title: '',
+            checkBoxElem: [],
+        }
+    },
+    watch: {
+        announce_title() {
+            this.$emit('sendAnnounceTitleToNewAnnounceComponent', {
+                announce_title: this.announce_title
+            })
+        },
+        checkBoxElem() {
+            this.$emit('sendCheckBoxVarsToNewAnnounceComponent', {
+                checkBox: this.checkBoxElem
+            })
         }
     },
     methods:{
-        
+        getSubCategoryTypeNameFromSubCategoryTypeComponent(data){
+            if( data !== undefined && data.name !== undefined ) {
+                this.$emit('sendSubCategoryTypeNameToNewAnnounceComponent', {
+                    name: data.name,
+                })
+            }
+        }
     },
     mounted() {
         // console.log( 'XXXXXX = ',  this.id )
@@ -73,4 +98,14 @@ export default {
         border: none;
     }
 
+    .form-control {
+        border: none;
+        padding-bottom: 0;
+    }
+    .form-control:focus, .form-control:active {
+        outline: none;
+        border-bottom: 1px solid #000;
+        box-shadow: none !important;
+
+    }
 </style>

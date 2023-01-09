@@ -20,8 +20,13 @@ class NewAnnounceController extends Controller
         ]);
     }
 
-    public function getSubCategoryTypes(Request $request) {
+    public function createNewAnnounce(Request $request): \Illuminate\Http\JsonResponse
+    {
+        return response()->json( $request->data );
+    }
 
+    public function getSubCategoryTypes(Request $request): \Illuminate\Http\JsonResponse
+    {
         if( isset($request->id) ) {
             $res = SubCategoryType::where('sub_category_id', $request->id )->get();
         }
