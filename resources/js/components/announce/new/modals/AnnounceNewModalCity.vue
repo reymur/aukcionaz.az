@@ -81,7 +81,7 @@ export default {
                 this.custom__padding = 'py-3'
                 this.custom__margin = ''
             } else {
-                this.custom__padding = 'py-2'
+                this.custom__padding = 'py-2 pt-3'
                 this.custom__margin = 'mb-2'
             }
         }
