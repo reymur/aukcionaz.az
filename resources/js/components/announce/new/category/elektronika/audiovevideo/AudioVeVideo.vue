@@ -12,10 +12,10 @@
             <form class="form-floating">
                 <input
                     v-model="announce_title"
-                    type="email"
+                    type="text"
                     class="form-control pb-0 rounded-0 fs-5"
                     id="floatingInputValue"
-                    placeholder="name@example.com"
+                    placeholder="Elanını başlığı"
                 >
                 <label class="fs-5 text-black-50" for="floatingInputValue">
                     Elanını başlığı
