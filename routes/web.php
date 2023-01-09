@@ -3,6 +3,7 @@
 use App\Http\Controllers\AukcionRealTimeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewAnnounceController;
+use App\Http\Controllers\NewAnnounceElektronikaController;
 use App\Http\Controllers\ProductController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
@@ -19,11 +20,20 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/category/{id}/{name}', 'showSubCategories')->name('sub_category');
 });
 
-Route::prefix('announce')->controller(NewAnnounceController::class)->group(function(){
-    Route::get('/new', 'index')->name('new_announce');
-    Route::post('/new/get_sub_category_types', 'getSubCategoryTypes');
-    Route::post('/new/create', 'createNewAnnounce');
+
+Route::prefix('announce')->group(function(){
+    Route::prefix('new')->controller(NewAnnounceController::class)->group(function (){
+        Route::get('/','index')->name('new_announce');
+        Route::post('/get_sub_category_types', 'getSubCategoryTypes');
+    });
+
+    Route::prefix('new/create')->group(function (){
+        Route::prefix('electronica')->controller(NewAnnounceElektronikaController::class)->group(function (){
+            Route::post('/audio-ve-video', 'audioVeVideo');
+        });
+    });
 });
+
 
 Route::controller(AukcionRealTimeController::class)->group(function () {
     Route::get('/realtime', 'index');

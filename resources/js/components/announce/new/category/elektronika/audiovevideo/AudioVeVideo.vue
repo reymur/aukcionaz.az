@@ -4,7 +4,7 @@
         <div class="">
             <sub-category-type-modal
                 :sub_category_id="sub_category_id"
-                @getSubCategoryTypeNameFromSubCategoryTypeModalComponent="getSubCategoryTypeNameFromSubCategoryTypeComponent"
+                @sendSubCategoryTypeNameToAudioVeVideoComponent="getSubCategoryTypeNameFromSubCategoryTypeComponent"
             ></sub-category-type-modal>
         </div>
 
@@ -14,10 +14,10 @@
                     v-model="announce_title"
                     type="text"
                     class="form-control pb-0 rounded-0 fs-5"
-                    id="floatingInputValue"
+                    id="title"
                     placeholder="Elanını başlığı"
                 >
-                <label class="fs-5 text-black-50" for="floatingInputValue">
+                <label class="fs-5 text-black-50" for="title">
                     Elanını başlığı
                     <span class="text-danger text-opacity-75">*</span>
                 </label>
@@ -72,14 +72,14 @@ export default {
     methods:{
         getSubCategoryTypeNameFromSubCategoryTypeComponent(data){
             if( data !== undefined && data.name !== undefined ) {
-                this.$emit('sendSubCategoryTypeNameToNewAnnounceComponent', {
+                this.$emit('sendSubCategoryTypeNameToIndexAudioVeVideoComponent', {
                     name: data.name,
                 })
             }
         }
     },
     mounted() {
-        // console.log( 'XXXXXX = ',  this.id )
+        console.log( 'sub_category_id =-- ',  this.sub_category_id )
     }
 
 }

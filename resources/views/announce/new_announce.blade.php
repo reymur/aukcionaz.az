@@ -6,12 +6,12 @@
         <div class="col-12">
             <!-- NEW ANNOUNCE ADD CATEGORIES -->
             <div class="bg-white w-100 mt-0 mb-3 p-0">
-                <new-announce
+                <index-audio-ve-video
                     :categories="{{ $categories }}"
                     :cities="{{ $cities }}"
-                ></new-announce>
+                ></index-audio-ve-video>
             </div>
-            
+
             <!-- NEW ANNOUNCE ADD INPUTS-->
             {{-- <div class="cbg-white w-100 mt-1 mb-2 p-0">
                 <div class="border-0 ">
@@ -27,7 +27,7 @@
                 <div class="mt-3">
                     @include('announce.modals.modal_about')
                 </div>
-                
+
                 <div class="mt-3">
                     <input-phone-number></input-phone-number>
                 </div>
@@ -38,8 +38,8 @@
                     </button>
 
                     <div class="p-3 text-secondary text-opacity-50">
-                        <p class="">Elan yrlərşdirərkən siz "Aukcionaz.az" saytının 
-                            <a href="" class="text-secondary text-opacity-75">müşəri razılaşmasıyla</a>  
+                        <p class="">Elan yrlərşdirərkən siz "Aukcionaz.az" saytının
+                            <a href="" class="text-secondary text-opacity-75">müşəri razılaşmasıyla</a>
                             avtomatik razılaşırsınız.
                         </p>
                     </div>

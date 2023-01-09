@@ -72,8 +72,15 @@ export default {
             font_size: ''
         }
     },
+    watch: {
+        sub_category_id() {
+            this.id = this.sub_category_id;
+            this.getSubCategoryTypes();
+        }
+    },
     methods:{
         getSubCategoryTypes(){
+            // console.log('AAAAAAAAAAAAQQQQ = ', this.sub_category_id  )
             if( this.sub_category_id !== undefined ) {
                 this.id = this.sub_category_id;
 
@@ -103,7 +110,7 @@ export default {
         },
         sendSubCategoryTypeNameToAudioVeVideo(name){
             if( name !== undefined ) {
-                this.$emit('getSubCategoryTypeNameFromSubCategoryTypeModalComponent', {
+                this.$emit('sendSubCategoryTypeNameToAudioVeVideoComponent', {
                     name: name
                 })
             }
@@ -155,8 +162,7 @@ export default {
         }
     },
     mounted() {
-        this.getSubCategoryTypes();
-        // console.log( 'XXXXXX = ',  this.id )
+        // console.log( 'sub_category_id ====== ',  this.sub_category_id )
     }
 
 }

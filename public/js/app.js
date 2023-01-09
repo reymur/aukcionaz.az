@@ -22891,10 +22891,57 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=script&lang=js":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=script&lang=js ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['sub_category_id'],
+  data: function data() {
+    return {
+      announce_title: '',
+      checkBoxElem: []
+    };
+  },
+  watch: {
+    announce_title: function announce_title() {
+      this.$emit('sendAnnounceTitleToNewAnnounceComponent', {
+        announce_title: this.announce_title
+      });
+    },
+    checkBoxElem: function checkBoxElem() {
+      this.$emit('sendCheckBoxVarsToNewAnnounceComponent', {
+        checkBox: this.checkBoxElem
+      });
+    }
+  },
+  methods: {
+    getSubCategoryTypeNameFromSubCategoryTypeComponent: function getSubCategoryTypeNameFromSubCategoryTypeComponent(data) {
+      if (data !== undefined && data.name !== undefined) {
+        this.$emit('sendSubCategoryTypeNameToIndexAudioVeVideoComponent', {
+          name: data.name
+        });
+      }
+    }
+  },
+  mounted: function mounted() {
+    console.log('sub_category_id =-- ', this.sub_category_id);
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22923,7 +22970,17 @@ __webpack_require__.r(__webpack_exports__);
       phone: null
     };
   },
-  computed: {
+  watch: {
+    loadComponentData: function loadComponentData() {
+      this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
+    }
+  },
+  computed: {},
+  methods: {
+    callSubCategoryComponent: function callSubCategoryComponent(data) {
+      this.loadComponentData = data;
+      this.loadComponent();
+    },
     loadComponent: function loadComponent() {
       if (this.loadComponentData !== undefined && this.loadComponentData.new_data !== undefined) {
         if (this.loadComponentData.new_data.category_name !== undefined && this.loadComponentData.new_data.sub_category_name !== undefined) {
@@ -22935,20 +22992,8 @@ __webpack_require__.r(__webpack_exports__);
           this.openAnnounceNewCollapse('announce-new-collapse');
           this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
           this.load_component_border = 'border:1px solid rgb(0 0 0 / 6%)';
-          // console.log( 'XXXXXX = ',  this.loadComponentData.new_data.sub_category_id )
-
-          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.defineAsyncComponent)(function () {
-            return __webpack_require__("./resources/js/components/announce/new/category lazy recursive ^\\.\\/.*$")("./".concat(category_name, "/").concat(folder_name, "/").concat(sub_category_name));
-          });
         }
       }
-    }
-  },
-  methods: {
-    callSubCategoryComponent: function callSubCategoryComponent(data) {
-      this.loadComponentData = data;
-      // console.log('AAAAAA = ', this.loadComponentData.new_data.category_name)
-      // console.log('BBBBBB = ', this.loadComponentData.new_data.original_sub_category_name)
     },
     getSubCategoryTypeNameFromAudioVeVideoComponent: function getSubCategoryTypeNameFromAudioVeVideoComponent(data) {
       if (data !== undefined && data.name !== undefined) {
@@ -23002,7 +23047,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log('Create res = ', this.checkBoxElems[0]);
       axios({
         method: "POST",
-        url: '/announce/new/create',
+        url: '/announce/new/create/electronica/audio-ve-video',
         data: {
           data: {
             category: this.if_isset_category_name(this.loadComponentData),
@@ -23080,22 +23125,7 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         body_style.removeAttribute("style");
       }, 400);
-      // console.log( 'XXXXXX = ', body_style.style.overflow = 'auto' )
     },
-    // closeSubCategoryModal(id) {
-    //     if( id !== undefined ) {
-    //         let new_id = document.getElementById('id-'+id);
-    //         let modal = new bootstrap.Modal(new_id, {
-    //             toggle: false,
-    //             ariaHidden: 'true'
-    //         });
-    //         new_id.classList.remove("show");
-    //         setTimeout( () => {
-    //             new_id.style.display = 'none';
-    //         },120);
-    //         this.removeBackDrops('modal-backdrop')
-    //     }
-    // },
     removeBackDrops: function removeBackDrops(backdrop_name) {
       var backdrops = document.getElementsByClassName(backdrop_name);
       if (backdrops !== undefined && backdrops.length > 0) {
@@ -23108,7 +23138,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    // console.log('AAAAAA = ', this.loadComponentData.data.sub_category_name)
+    this.loadComponent();
+    // console.log('AAAAAA = ', this.categories )
   }
 });
 
@@ -23135,9 +23166,16 @@ __webpack_require__.r(__webpack_exports__);
       font_size: ''
     };
   },
+  watch: {
+    sub_category_id: function sub_category_id() {
+      this.id = this.sub_category_id;
+      this.getSubCategoryTypes();
+    }
+  },
   methods: {
     getSubCategoryTypes: function getSubCategoryTypes() {
       var _this = this;
+      // console.log('AAAAAAAAAAAAQQQQ = ', this.sub_category_id  )
       if (this.sub_category_id !== undefined) {
         this.id = this.sub_category_id;
         axios({
@@ -23168,7 +23206,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     sendSubCategoryTypeNameToAudioVeVideo: function sendSubCategoryTypeNameToAudioVeVideo(name) {
       if (name !== undefined) {
-        this.$emit('getSubCategoryTypeNameFromSubCategoryTypeModalComponent', {
+        this.$emit('sendSubCategoryTypeNameToAudioVeVideoComponent', {
           name: name
         });
       }
@@ -23219,8 +23257,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.getSubCategoryTypes();
-    // console.log( 'XXXXXX = ',  this.id )
+    // console.log( 'sub_category_id ====== ',  this.sub_category_id )
   }
 });
 
@@ -23303,7 +23340,7 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     city_name: function city_name() {
       if (this.city_name === '') {
-        this.custom__padding = 'py-3';
+        this.custom__padding = 'py-3 pt-3';
         this.custom__margin = '';
       } else {
         this.custom__padding = 'py-2 pt-3';
@@ -23397,13 +23434,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    sendSubCategoryNameToNewAnnounceComponent: function sendSubCategoryNameToNewAnnounceComponent(data) {
+    getSubCategoryNameFromNewAnnounceComponent: function getSubCategoryNameFromNewAnnounceComponent(data) {
       this.category_name = data.category.name;
       this.category_image = data.category.image.toLowerCase();
       this.sub_category_name = data.original_sub_category_name;
       this.changeImagePadding();
       // console.log('sub_category_name = ', data.original_sub_category_name )
-      this.$emit('sendSubCategoryInfoToNewAnnounceComponent', {
+      this.$emit('sendSubCategoryTypeNameToIndexAudioVeVideoComponent', {
         new_data: data
       });
     },
@@ -23883,10 +23920,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23897,51 +23934,153 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _withScopeId = function _withScopeId(n) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-0b543fbf"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-39f0e4fe"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 var _hoisted_1 = {
-  "class": "col-12"
+  "class": "",
+  id: "new-announce-category"
 };
 var _hoisted_2 = {
-  "class": "bg-white w-100 mt-0 mb-2 p-0"
+  "class": ""
 };
 var _hoisted_3 = {
+  "class": "px-2"
+};
+var _hoisted_4 = {
+  "class": "form-floating"
+};
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "fs-5 text-black-50",
+    "for": "title"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Elanını başlığı "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "text-danger text-opacity-75"
+  }, "*")], -1 /* HOISTED */);
+});
+var _hoisted_6 = {
+  "class": "form-check d-flex ps-2"
+};
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "col"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "form-check-label fs-5 w-100 p-3",
+    "for": "new"
+  }, " Yeni ? ")], -1 /* HOISTED */);
+});
+var _hoisted_8 = {
+  "class": "d-flex align-self-center"
+};
+var _hoisted_9 = {
+  "class": "form-check d-flex ps-2"
+};
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "col"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "form-check-label fs-5 w-100 p-3",
+    "for": "goto"
+  }, " Çatdırılma ? ")], -1 /* HOISTED */);
+});
+var _hoisted_11 = {
+  "class": "d-flex align-self-center"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_sub_category_type_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("sub-category-type-modal");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sub_category_type_modal, {
+    sub_category_id: $props.sub_category_id,
+    onSendSubCategoryTypeNameToAudioVeVideoComponent: $options.getSubCategoryTypeNameFromSubCategoryTypeComponent
+  }, null, 8 /* PROPS */, ["sub_category_id", "onSendSubCategoryTypeNameToAudioVeVideoComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.announce_title = $event;
+    }),
+    type: "text",
+    "class": "form-control pb-0 rounded-0 fs-5",
+    id: "title",
+    placeholder: "Elanını başlığı"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.announce_title]]), _hoisted_5])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-check-input p-3 me-4 my_border",
+    type: "checkbox",
+    value: "new",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.checkBoxElem = $event;
+    }),
+    id: "new"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.checkBoxElem]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-check-input p-3 me-4 my_border",
+    type: "checkbox",
+    value: "delivery",
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.checkBoxElem = $event;
+    }),
+    id: "goto"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.checkBoxElem]])])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-003d5c60"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+var _hoisted_1 = {
+  "class": ""
+};
+var _hoisted_2 = {
+  "class": "col-12"
+};
+var _hoisted_3 = {
+  "class": "bg-white w-100 mt-0 mb-2 p-0"
+};
+var _hoisted_4 = {
   "class": "collapse announce__new_collapse border-0",
   id: "announce-new-collapse"
 };
-var _hoisted_4 = {
-  "class": "border-0"
-};
 var _hoisted_5 = {
-  "class": "cbg-white w-100 mb-2 p-0 custom__border"
+  "class": "border-0"
 };
 var _hoisted_6 = {
+  "class": "cbg-white w-100 mb-2 p-0 custom__border"
+};
+var _hoisted_7 = {
   "class": "border-0"
 };
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "ms-3 border-bottom border-secondary border-opacity-10"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": ""
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "mt-3"
 };
-var _hoisted_10 = {
+var _hoisted_11 = {
   "class": "mt-2"
 };
-var _hoisted_11 = {
+var _hoisted_12 = {
   "class": "p-3 mb-4 border-bottom-danger"
 };
-var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "fs-5 p-2 m-auto text-white"
   }, "Davam et", -1 /* HOISTED */);
 });
-var _hoisted_13 = [_hoisted_12];
-var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_14 = [_hoisted_13];
+var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "p-3 text-secondary text-opacity-50"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -23955,39 +24094,40 @@ var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_announce_new_top_elements = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("announce-new-top-elements");
   var _component_modal_category = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal-category");
+  var _component_audio_ve_video = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("audio-ve-video");
   var _component_announce_new_modal_price = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("announce-new-modal-price");
   var _component_announce_new_modal_city = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("announce-new-modal-city");
   var _component_announce_new_modal_about = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("announce-new-modal-about");
   var _component_new_announce_user_info = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("new-announce-user-info");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW TOP ELEMENTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_top_elements), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD CATEGORIES "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_category, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW TOP ELEMENTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_top_elements), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD CATEGORIES "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_category, {
     categories: $props.categories,
-    onSendSubCategoryInfoToNewAnnounceComponent: $options.callSubCategoryComponent
-  }, null, 8 /* PROPS */, ["categories", "onSendSubCategoryInfoToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onSendSubCategoryTypeNameToIndexAudioVeVideoComponent: $options.callSubCategoryComponent
+  }, null, 8 /* PROPS */, ["categories", "onSendSubCategoryTypeNameToIndexAudioVeVideoComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "border__color shadow-sm mb-2",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)($data.load_component_border)
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.loadComponent), {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_audio_ve_video, {
     sub_category_id: $data.sub_category_id,
-    onSendSubCategoryTypeNameToNewAnnounceComponent: $options.getSubCategoryTypeNameFromAudioVeVideoComponent,
+    onSendSubCategoryTypeNameToIndexAudioVeVideoComponent: $options.getSubCategoryTypeNameFromAudioVeVideoComponent,
     onSendAnnounceTitleToNewAnnounceComponent: $options.getAnnounceTitleFromAudioVeVideoComponent,
     onSendCheckBoxVarsToNewAnnounceComponent: $options.getCheckBoxVarsFromAudioVeVideoComponent
-  }, null, 40 /* PROPS, HYDRATE_EVENTS */, ["sub_category_id", "onSendSubCategoryTypeNameToNewAnnounceComponent", "onSendAnnounceTitleToNewAnnounceComponent", "onSendCheckBoxVarsToNewAnnounceComponent"]))])])], 4 /* STYLE */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price, {
+  }, null, 8 /* PROPS */, ["sub_category_id", "onSendSubCategoryTypeNameToIndexAudioVeVideoComponent", "onSendAnnounceTitleToNewAnnounceComponent", "onSendCheckBoxVarsToNewAnnounceComponent"])])])], 4 /* STYLE */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price, {
     onSendPriceToNewAnnounceComponent: $options.getPriceFromAnnounceNewPriceComponent
-  }, null, 8 /* PROPS */, ["onSendPriceToNewAnnounceComponent"])]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
+  }, null, 8 /* PROPS */, ["onSendPriceToNewAnnounceComponent"])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
     cities: $props.cities,
     onSendCityNameToNewAnnounceComponent: $options.getCityNameFromAnnounceNewModalCity
-  }, null, 8 /* PROPS */, ["cities", "onSendCityNameToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW ABOUT "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_about, {
+  }, null, 8 /* PROPS */, ["cities", "onSendCityNameToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW ABOUT "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_about, {
     onSendAboutToNewAnnounceComponent: $options.getAboutFromAnnounceNewModalAbout
-  }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
+  }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
     onSendUserNameToNewAnnounceComponent: $options.getUserNameFromNewAnnounceUserInfoComponent,
     onSendUserEmailToNewAnnounceComponent: $options.getUserEmailFromNewAnnounceUserInfoComponent,
     onSendUserPhoneNumberToNewAnnounceComponent: $options.getUserPhoneNumberFromNewAnnounceUserInfoComponent
-  }, null, 8 /* PROPS */, ["onSendUserNameToNewAnnounceComponent", "onSendUserEmailToNewAnnounceComponent", "onSendUserPhoneNumberToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SEND BUTTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, null, 8 /* PROPS */, ["onSendUserNameToNewAnnounceComponent", "onSendUserEmailToNewAnnounceComponent", "onSendUserPhoneNumberToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SEND BUTTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.createNewAnnounce && $options.createNewAnnounce.apply($options, arguments);
     }),
     type: "button",
     "class": "btn btn-success aukcionaz__main-color w-100"
-  }, _hoisted_13), _hoisted_14])])]);
+  }, _hoisted_14), _hoisted_15])])])]);
 }
 
 /***/ }),
@@ -24494,7 +24634,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "list-item"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_show_category_elements, {
       category: category,
-      onSendSubCategoryNameToModalCategoryComponent: $options.sendSubCategoryNameToNewAnnounceComponent
+      onSendSubCategoryNameToModalCategoryComponent: $options.getSubCategoryNameFromNewAnnounceComponent
     }, null, 8 /* PROPS */, ["category", "onSendSubCategoryNameToModalCategoryComponent"])], 8 /* PROPS */, _hoisted_20);
   }), 128 /* KEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
 }
@@ -25459,14 +25599,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_crumbs_Aukcion_ompletion_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/crumbs/AukcionСompletion.vue */ "./resources/js/components/crumbs/AukcionСompletion.vue");
 /* harmony import */ var _components_elements_NewAnnounceUserInfo_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/elements/NewAnnounceUserInfo.vue */ "./resources/js/components/elements/NewAnnounceUserInfo.vue");
 /* harmony import */ var _components_announce_products_ProductShow_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/announce/products/ProductShow.vue */ "./resources/js/components/announce/products/ProductShow.vue");
-/* harmony import */ var _components_announce_new_NewAnnounce_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/announce/new/NewAnnounce.vue */ "./resources/js/components/announce/new/NewAnnounce.vue");
-/* harmony import */ var _components_announce_new_modals_ModalCategory_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/announce/new/modals/ModalCategory.vue */ "./resources/js/components/announce/new/modals/ModalCategory.vue");
-/* harmony import */ var _components_announce_new_modals_ModalShowCategoryElements_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/announce/new/modals/ModalShowCategoryElements.vue */ "./resources/js/components/announce/new/modals/ModalShowCategoryElements.vue");
-/* harmony import */ var _components_announce_new_crumbs_AnnounceNewTopSection_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/announce/new/crumbs/AnnounceNewTopSection.vue */ "./resources/js/components/announce/new/crumbs/AnnounceNewTopSection.vue");
-/* harmony import */ var _components_announce_new_modals_AnnounceNewModalPrice_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalPrice.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalPrice.vue");
-/* harmony import */ var _components_announce_new_modals_AnnounceNewModalCity_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalCity.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalCity.vue");
-/* harmony import */ var _components_announce_new_modals_AnnounceNewModalAbout_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalAbout.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalAbout.vue");
-/* harmony import */ var _components_announce_new_category_elektronika_audiovevideo_modals_SubCategoryTypeModal_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue");
+/* harmony import */ var _components_announce_new_modals_ModalCategory_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/announce/new/modals/ModalCategory.vue */ "./resources/js/components/announce/new/modals/ModalCategory.vue");
+/* harmony import */ var _components_announce_new_modals_ModalShowCategoryElements_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/announce/new/modals/ModalShowCategoryElements.vue */ "./resources/js/components/announce/new/modals/ModalShowCategoryElements.vue");
+/* harmony import */ var _components_announce_new_crumbs_AnnounceNewTopSection_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/announce/new/crumbs/AnnounceNewTopSection.vue */ "./resources/js/components/announce/new/crumbs/AnnounceNewTopSection.vue");
+/* harmony import */ var _components_announce_new_modals_AnnounceNewModalPrice_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalPrice.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalPrice.vue");
+/* harmony import */ var _components_announce_new_modals_AnnounceNewModalCity_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalCity.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalCity.vue");
+/* harmony import */ var _components_announce_new_modals_AnnounceNewModalAbout_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/announce/new/modals/AnnounceNewModalAbout.vue */ "./resources/js/components/announce/new/modals/AnnounceNewModalAbout.vue");
+/* harmony import */ var _components_announce_new_category_elektronika_audiovevideo_modals_SubCategoryTypeModal_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue");
+/* harmony import */ var _components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue");
+/* harmony import */ var _components_announce_new_category_elektronika_audiovevideo_IndexAudioVeVideo_vue__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -25488,11 +25629,15 @@ app.use(vue3_photo_preview__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
 
 
+// import NewAnnounce from './components/announce/new/NewAnnounce1.vue';
 
 
 
 
 
+
+
+// ELEKTRONIKA AUDIO VE VIDEO FOLDER
 
 
 
@@ -25507,14 +25652,18 @@ app.component('auksion-completion', _components_crumbs_Aukcion_ompletion_vue__WE
 app.component('on-aukcion-product', _components_elements_OnAukcionProduct__WEBPACK_IMPORTED_MODULE_0__["default"]);
 app.component('new-announce-user-info', _components_elements_NewAnnounceUserInfo_vue__WEBPACK_IMPORTED_MODULE_14__["default"]);
 app.component('product-show', _components_announce_products_ProductShow_vue__WEBPACK_IMPORTED_MODULE_15__["default"]);
-app.component('new-announce', _components_announce_new_NewAnnounce_vue__WEBPACK_IMPORTED_MODULE_16__["default"]);
-app.component('modal-category', _components_announce_new_modals_ModalCategory_vue__WEBPACK_IMPORTED_MODULE_17__["default"]);
-app.component('modal-show-category-elements', _components_announce_new_modals_ModalShowCategoryElements_vue__WEBPACK_IMPORTED_MODULE_18__["default"]);
-app.component('announce-new-top-elements', _components_announce_new_crumbs_AnnounceNewTopSection_vue__WEBPACK_IMPORTED_MODULE_19__["default"]);
-app.component('announce-new-modal-price', _components_announce_new_modals_AnnounceNewModalPrice_vue__WEBPACK_IMPORTED_MODULE_20__["default"]);
-app.component('announce-new-modal-city', _components_announce_new_modals_AnnounceNewModalCity_vue__WEBPACK_IMPORTED_MODULE_21__["default"]);
-app.component('announce-new-modal-about', _components_announce_new_modals_AnnounceNewModalAbout_vue__WEBPACK_IMPORTED_MODULE_22__["default"]);
-app.component('sub-category-type-modal', _components_announce_new_category_elektronika_audiovevideo_modals_SubCategoryTypeModal_vue__WEBPACK_IMPORTED_MODULE_23__["default"]);
+// app.component('new-announce' , NewAnnounce);
+app.component('modal-category', _components_announce_new_modals_ModalCategory_vue__WEBPACK_IMPORTED_MODULE_16__["default"]);
+app.component('modal-show-category-elements', _components_announce_new_modals_ModalShowCategoryElements_vue__WEBPACK_IMPORTED_MODULE_17__["default"]);
+app.component('announce-new-top-elements', _components_announce_new_crumbs_AnnounceNewTopSection_vue__WEBPACK_IMPORTED_MODULE_18__["default"]);
+app.component('announce-new-modal-price', _components_announce_new_modals_AnnounceNewModalPrice_vue__WEBPACK_IMPORTED_MODULE_19__["default"]);
+app.component('announce-new-modal-city', _components_announce_new_modals_AnnounceNewModalCity_vue__WEBPACK_IMPORTED_MODULE_20__["default"]);
+app.component('announce-new-modal-about', _components_announce_new_modals_AnnounceNewModalAbout_vue__WEBPACK_IMPORTED_MODULE_21__["default"]);
+
+// ELEKTRONIKA AUDIO VE VIDEO FOLDER
+app.component('sub-category-type-modal', _components_announce_new_category_elektronika_audiovevideo_modals_SubCategoryTypeModal_vue__WEBPACK_IMPORTED_MODULE_22__["default"]);
+app.component('audio-ve-video', _components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue__WEBPACK_IMPORTED_MODULE_23__["default"]);
+app.component('index-audio-ve-video', _components_announce_new_category_elektronika_audiovevideo_IndexAudioVeVideo_vue__WEBPACK_IMPORTED_MODULE_24__["default"]);
 app.mount("#app");
 
 /***/ }),
@@ -30812,10 +30961,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@keyframes PhotoView__rotate {\n  from
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -30823,13 +30972,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.custom__border[data-v-0b543fbf] {\n        border: 1px solid rgb(240 240 240);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.my_border[data-v-39f0e4fe] {\n        border: 1px solid #d3d0d0;\n}\n.form-check-input[data-v-39f0e4fe]:checked {\n        background-color: green!important;\n        border: none;\n}\n.form-check-input[data-v-39f0e4fe]:active {\n        border: none;\n}\n.form-control[data-v-39f0e4fe] {\n        border: none;\n        padding-bottom: 0;\n}\n.form-control[data-v-39f0e4fe]:focus, .form-control[data-v-39f0e4fe]:active {\n        outline: none;\n        border-bottom: 1px solid #000;\n        box-shadow: none !important;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.custom__border[data-v-003d5c60] {\n    border: 1px solid rgb(240 240 240);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48555,10 +48728,10 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -48566,9 +48739,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_style_index_0_id_0b543fbf_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_style_index_0_id_39f0e4fe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css");
 
             
 
@@ -48577,11 +48750,41 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_style_index_0_id_0b543fbf_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_style_index_0_id_39f0e4fe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_style_index_0_id_0b543fbf_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_style_index_0_id_39f0e4fe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_style_index_0_id_003d5c60_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_style_index_0_id_003d5c60_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_style_index_0_id_003d5c60_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -49140,10 +49343,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/announce/new/NewAnnounce.vue":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/announce/new/NewAnnounce.vue ***!
-  \**************************************************************/
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue ***!
+  \*************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -49151,9 +49354,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _NewAnnounce_vue_vue_type_template_id_0b543fbf_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true */ "./resources/js/components/announce/new/NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true");
-/* harmony import */ var _NewAnnounce_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewAnnounce.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/NewAnnounce.vue?vue&type=script&lang=js");
-/* harmony import */ var _NewAnnounce_vue_vue_type_style_index_0_id_0b543fbf_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css */ "./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css");
+/* harmony import */ var _AudioVeVideo_vue_vue_type_template_id_39f0e4fe_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true");
+/* harmony import */ var _AudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AudioVeVideo.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=script&lang=js");
+/* harmony import */ var _AudioVeVideo_vue_vue_type_style_index_0_id_39f0e4fe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css");
 /* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
@@ -49162,7 +49365,38 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_NewAnnounce_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_NewAnnounce_vue_vue_type_template_id_0b543fbf_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0b543fbf"],['__file',"resources/js/components/announce/new/NewAnnounce.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_AudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AudioVeVideo_vue_vue_type_template_id_39f0e4fe_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-39f0e4fe"],['__file',"resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _IndexAudioVeVideo_vue_vue_type_template_id_003d5c60_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true");
+/* harmony import */ var _IndexAudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IndexAudioVeVideo.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=script&lang=js");
+/* harmony import */ var _IndexAudioVeVideo_vue_vue_type_style_index_0_id_003d5c60_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css */ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css");
+/* harmony import */ var _Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_Users_kun_Sites_aukcionaz_aukcionaz_az_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_IndexAudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_IndexAudioVeVideo_vue_vue_type_template_id_003d5c60_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-003d5c60"],['__file',"resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -49684,18 +49918,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/announce/new/NewAnnounce.vue?vue&type=script&lang=js":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/components/announce/new/NewAnnounce.vue?vue&type=script&lang=js ***!
-  \**************************************************************************************/
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./NewAnnounce.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AudioVeVideo.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=script&lang=js":
+/*!******************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./IndexAudioVeVideo.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -49988,18 +50238,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/announce/new/NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true":
-/*!********************************************************************************************************!*\
-  !*** ./resources/js/components/announce/new/NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true ***!
-  \********************************************************************************************************/
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true ***!
+  \*******************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_template_id_0b543fbf_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_template_id_39f0e4fe_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_template_id_0b543fbf_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=template&id=0b543fbf&scoped=true");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_template_id_39f0e4fe_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=template&id=39f0e4fe&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true":
+/*!************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true ***!
+  \************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_template_id_003d5c60_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_template_id_003d5c60_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=template&id=003d5c60&scoped=true");
 
 
 /***/ }),
@@ -50276,15 +50542,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css":
-/*!**********************************************************************************************************************!*\
-  !*** ./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css ***!
-  \**********************************************************************************************************************/
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NewAnnounce_vue_vue_type_style_index_0_id_0b543fbf_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/NewAnnounce.vue?vue&type=style&index=0&id=0b543fbf&scoped=true&lang=css");
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AudioVeVideo_vue_vue_type_style_index_0_id_39f0e4fe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue?vue&type=style&index=0&id=39f0e4fe&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexAudioVeVideo_vue_vue_type_style_index_0_id_003d5c60_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue?vue&type=style&index=0&id=003d5c60&scoped=true&lang=css");
 
 
 /***/ }),
@@ -53020,144 +53299,6 @@ var index = { install: install };
 
 /***/ }),
 
-/***/ "./resources/js/components/announce/new/category lazy recursive ^\\.\\/.*$":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/announce/new/category/ lazy ^\.\/.*$ namespace object ***!
-  \***************************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var map = {
-	"./elektronika/audiovevideo/AudioVeVideo": [
-		"./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue",
-		"resources_js_components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue"
-	],
-	"./elektronika/audiovevideo/AudioVeVideo.vue": [
-		"./resources/js/components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue",
-		"resources_js_components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue"
-	],
-	"./elektronika/audiovevideo/modals/SubCategoryTypeModal": [
-		"./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue"
-	],
-	"./elektronika/audiovevideo/modals/SubCategoryTypeModal.vue": [
-		"./resources/js/components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue"
-	],
-	"./elektronika/fototexnika/FotoTexnika": [
-		"./resources/js/components/announce/new/category/elektronika/fototexnika/FotoTexnika.vue",
-		"resources_js_components_announce_new_category_elektronika_fototexnika_FotoTexnika_vue"
-	],
-	"./elektronika/fototexnika/FotoTexnika.vue": [
-		"./resources/js/components/announce/new/category/elektronika/fototexnika/FotoTexnika.vue",
-		"resources_js_components_announce_new_category_elektronika_fototexnika_FotoTexnika_vue"
-	],
-	"./elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar": [
-		"./resources/js/components/announce/new/category/elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue",
-		"resources_js_components_announce_new_category_elektronika_komponentlervemonitorlar_Komponentl-9a8e31"
-	],
-	"./elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/komponentlervemonitorlar/KomponentlerVeMonitorlar.vue",
-		"resources_js_components_announce_new_category_elektronika_komponentlervemonitorlar_Komponentl-9a8e31"
-	],
-	"./elektronika/komputeraksesuarlari/KomputerAksesuarlari": [
-		"./resources/js/components/announce/new/category/elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue",
-		"resources_js_components_announce_new_category_elektronika_komputeraksesuarlari_KomputerAksesu-bf1a27"
-	],
-	"./elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue": [
-		"./resources/js/components/announce/new/category/elektronika/komputeraksesuarlari/KomputerAksesuarlari.vue",
-		"resources_js_components_announce_new_category_elektronika_komputeraksesuarlari_KomputerAksesu-bf1a27"
-	],
-	"./elektronika/masaustukomputerler/MasaustuKomputerler": [
-		"./resources/js/components/announce/new/category/elektronika/masaustukomputerler/MasaustuKomputerler.vue",
-		"resources_js_components_announce_new_category_elektronika_masaustukomputerler_MasaustuKompute-ea4b23"
-	],
-	"./elektronika/masaustukomputerler/MasaustuKomputerler.vue": [
-		"./resources/js/components/announce/new/category/elektronika/masaustukomputerler/MasaustuKomputerler.vue",
-		"resources_js_components_announce_new_category_elektronika_masaustukomputerler_MasaustuKompute-ea4b23"
-	],
-	"./elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar": [
-		"./resources/js/components/announce/new/category/elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue",
-		"resources_js_components_announce_new_category_elektronika_nomrelervesimkartlar_NomrelerVeSimK-c1a5e3"
-	],
-	"./elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/nomrelervesimkartlar/NomrelerVeSimKartlar.vue",
-		"resources_js_components_announce_new_category_elektronika_nomrelervesimkartlar_NomrelerVeSimK-c1a5e3"
-	],
-	"./elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar": [
-		"./resources/js/components/announce/new/category/elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue",
-		"resources_js_components_announce_new_category_elektronika_noutbuklarvenetbuklar_NoutbuklarVeN-bdc70f"
-	],
-	"./elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/noutbuklarvenetbuklar/NoutbuklarVeNetbuklar.vue",
-		"resources_js_components_announce_new_category_elektronika_noutbuklarvenetbuklar_NoutbuklarVeN-bdc70f"
-	],
-	"./elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak": [
-		"./resources/js/components/announce/new/category/elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue",
-		"resources_js_components_announce_new_category_elektronika_ofisavadanliqiveistehlak_OfisAvadan-d8a1a6"
-	],
-	"./elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue": [
-		"./resources/js/components/announce/new/category/elektronika/ofisavadanliqiveistehlak/OfisAvadanliqiVeIstehlak.vue",
-		"resources_js_components_announce_new_category_elektronika_ofisavadanliqiveistehlak_OfisAvadan-d8a1a6"
-	],
-	"./elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar": [
-		"./resources/js/components/announce/new/category/elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue",
-		"resources_js_components_announce_new_category_elektronika_oyunlarpultlarveproqramlar_OyunlarP-379e35"
-	],
-	"./elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/oyunlarpultlarveproqramlar/OyunlarPultlarVeProqramlar.vue",
-		"resources_js_components_announce_new_category_elektronika_oyunlarpultlarveproqramlar_OyunlarP-379e35"
-	],
-	"./elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar": [
-		"./resources/js/components/announce/new/category/elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue",
-		"resources_js_components_announce_new_category_elektronika_planshetveelektronkitablar_Planshet-e8b827"
-	],
-	"./elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/planshetveelektronkitablar/PlanshetVeElektronKitablar.vue",
-		"resources_js_components_announce_new_category_elektronika_planshetveelektronkitablar_Planshet-e8b827"
-	],
-	"./elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar": [
-		"./resources/js/components/announce/new/category/elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue",
-		"resources_js_components_announce_new_category_elektronika_smartsaatveqolbaqlar_SmartSaatVeQol-b6cc19"
-	],
-	"./elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/smartsaatveqolbaqlar/SmartSaatVeQolbaqlar.vue",
-		"resources_js_components_announce_new_category_elektronika_smartsaatveqolbaqlar_SmartSaatVeQol-b6cc19"
-	],
-	"./elektronika/telefonlar/Telefonlar": [
-		"./resources/js/components/announce/new/category/elektronika/telefonlar/Telefonlar.vue",
-		"resources_js_components_announce_new_category_elektronika_telefonlar_Telefonlar_vue"
-	],
-	"./elektronika/telefonlar/Telefonlar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/telefonlar/Telefonlar.vue",
-		"resources_js_components_announce_new_category_elektronika_telefonlar_Telefonlar_vue"
-	],
-	"./elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar": [
-		"./resources/js/components/announce/new/category/elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue",
-		"resources_js_components_announce_new_category_elektronika_televizorlarveaksesuarlar_Televizor-dace40"
-	],
-	"./elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue": [
-		"./resources/js/components/announce/new/category/elektronika/televizorlarveaksesuarlar/TelevizorlarVeAksesuarlar.vue",
-		"resources_js_components_announce_new_category_elektronika_televizorlarveaksesuarlar_Televizor-dace40"
-	]
-};
-function webpackAsyncContext(req) {
-	if(!__webpack_require__.o(map, req)) {
-		return Promise.resolve().then(() => {
-			var e = new Error("Cannot find module '" + req + "'");
-			e.code = 'MODULE_NOT_FOUND';
-			throw e;
-		});
-	}
-
-	var ids = map[req], id = ids[0];
-	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(() => {
-		return __webpack_require__(id);
-	});
-}
-webpackAsyncContext.keys = () => (Object.keys(map));
-webpackAsyncContext.id = "./resources/js/components/announce/new/category lazy recursive ^\\.\\/.*$";
-module.exports = webpackAsyncContext;
-
-/***/ }),
-
 /***/ "./node_modules/axios/package.json":
 /*!*****************************************!*\
   !*** ./node_modules/axios/package.json ***!
@@ -53263,39 +53404,6 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/ensure chunk */
-/******/ 	(() => {
-/******/ 		__webpack_require__.f = {};
-/******/ 		// This file contains only the entry chunk.
-/******/ 		// The chunk loading function for additional chunks
-/******/ 		__webpack_require__.e = (chunkId) => {
-/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
-/******/ 				__webpack_require__.f[key](chunkId, promises);
-/******/ 				return promises;
-/******/ 			}, []));
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/get javascript chunk filename */
-/******/ 	(() => {
-/******/ 		// This function allow to reference async chunks
-/******/ 		__webpack_require__.u = (chunkId) => {
-/******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_announce_new_category_elektronika_audiovevideo_AudioVeVideo_vue":1,"resources_js_components_announce_new_category_elektronika_fototexnika_FotoTexnika_vue":1,"resources_js_components_announce_new_category_elektronika_komponentlervemonitorlar_Komponentl-9a8e31":1,"resources_js_components_announce_new_category_elektronika_komputeraksesuarlari_KomputerAksesu-bf1a27":1,"resources_js_components_announce_new_category_elektronika_masaustukomputerler_MasaustuKompute-ea4b23":1,"resources_js_components_announce_new_category_elektronika_nomrelervesimkartlar_NomrelerVeSimK-c1a5e3":1,"resources_js_components_announce_new_category_elektronika_noutbuklarvenetbuklar_NoutbuklarVeN-bdc70f":1,"resources_js_components_announce_new_category_elektronika_ofisavadanliqiveistehlak_OfisAvadan-d8a1a6":1,"resources_js_components_announce_new_category_elektronika_oyunlarpultlarveproqramlar_OyunlarP-379e35":1,"resources_js_components_announce_new_category_elektronika_planshetveelektronkitablar_Planshet-e8b827":1,"resources_js_components_announce_new_category_elektronika_smartsaatveqolbaqlar_SmartSaatVeQol-b6cc19":1,"resources_js_components_announce_new_category_elektronika_telefonlar_Telefonlar_vue":1,"resources_js_components_announce_new_category_elektronika_televizorlarveaksesuarlar_Televizor-dace40":1}[chunkId]) return "js/" + chunkId + ".js";
-/******/ 			// return url for filenames based on template
-/******/ 			return undefined;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/get mini-css chunk filename */
-/******/ 	(() => {
-/******/ 		// This function allow to reference all chunks
-/******/ 		__webpack_require__.miniCssF = (chunkId) => {
-/******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + ".css";
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -53328,51 +53436,6 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/load script */
-/******/ 	(() => {
-/******/ 		var inProgress = {};
-/******/ 		// data-webpack is not used as build has no uniqueName
-/******/ 		// loadScript function to load a script via script tag
-/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
-/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
-/******/ 			var script, needAttach;
-/******/ 			if(key !== undefined) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				for(var i = 0; i < scripts.length; i++) {
-/******/ 					var s = scripts[i];
-/******/ 					if(s.getAttribute("src") == url) { script = s; break; }
-/******/ 				}
-/******/ 			}
-/******/ 			if(!script) {
-/******/ 				needAttach = true;
-/******/ 				script = document.createElement('script');
-/******/ 		
-/******/ 				script.charset = 'utf-8';
-/******/ 				script.timeout = 120;
-/******/ 				if (__webpack_require__.nc) {
-/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
-/******/ 				}
-/******/ 		
-/******/ 				script.src = url;
-/******/ 			}
-/******/ 			inProgress[url] = [done];
-/******/ 			var onScriptComplete = (prev, event) => {
-/******/ 				// avoid mem leaks in IE.
-/******/ 				script.onerror = script.onload = null;
-/******/ 				clearTimeout(timeout);
-/******/ 				var doneFns = inProgress[url];
-/******/ 				delete inProgress[url];
-/******/ 				script.parentNode && script.parentNode.removeChild(script);
-/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
-/******/ 				if(prev) return prev(event);
-/******/ 			};
-/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
-/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
-/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
-/******/ 			needAttach && document.head.appendChild(script);
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -53393,11 +53456,6 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		__webpack_require__.p = "/";
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -53410,44 +53468,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
-/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
-/******/ 				// JSONP chunk loading for javascript
-/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
-/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
-/******/ 		
-/******/ 					// a Promise means "currently loading".
-/******/ 					if(installedChunkData) {
-/******/ 						promises.push(installedChunkData[2]);
-/******/ 					} else {
-/******/ 						if("css/app" != chunkId) {
-/******/ 							// setup Promise in chunk cache
-/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
-/******/ 							promises.push(installedChunkData[2] = promise);
-/******/ 		
-/******/ 							// start chunk loading
-/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
-/******/ 							// create error before stack unwound to get useful stacktrace later
-/******/ 							var error = new Error();
-/******/ 							var loadingEnded = (event) => {
-/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
-/******/ 									installedChunkData = installedChunks[chunkId];
-/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
-/******/ 									if(installedChunkData) {
-/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
-/******/ 										var realSrc = event && event.target && event.target.src;
-/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
-/******/ 										error.name = 'ChunkLoadError';
-/******/ 										error.type = errorType;
-/******/ 										error.request = realSrc;
-/******/ 										installedChunkData[1](error);
-/******/ 									}
-/******/ 								}
-/******/ 							};
-/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
-/******/ 						} else installedChunks[chunkId] = 0;
-/******/ 					}
-/******/ 				}
-/******/ 		};
+/******/ 		// no chunk on demand loading
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		

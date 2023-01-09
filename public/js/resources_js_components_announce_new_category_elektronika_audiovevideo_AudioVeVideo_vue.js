@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getSubCategoryTypeNameFromSubCategoryTypeComponent: function getSubCategoryTypeNameFromSubCategoryTypeComponent(data) {
       if (data !== undefined && data.name !== undefined) {
-        this.$emit('sendSubCategoryTypeNameToNewAnnounceComponent', {
+        this.$emit('sendSubCategoryTypeNameToIndexAudioVeVideoComponent', {
           name: data.name
         });
       }
@@ -78,7 +78,7 @@ var _hoisted_4 = {
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "class": "fs-5 text-black-50",
-    "for": "floatingInputValue"
+    "for": "title"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Elanını başlığı "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "text-danger text-opacity-75"
   }, "*")], -1 /* HOISTED */);
@@ -115,14 +115,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_sub_category_type_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("sub-category-type-modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sub_category_type_modal, {
     sub_category_id: $props.sub_category_id,
-    onGetSubCategoryTypeNameFromSubCategoryTypeModalComponent: $options.getSubCategoryTypeNameFromSubCategoryTypeComponent
-  }, null, 8 /* PROPS */, ["sub_category_id", "onGetSubCategoryTypeNameFromSubCategoryTypeModalComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    onSendSubCategoryTypeNameToAudioVeVideoComponent: $options.getSubCategoryTypeNameFromSubCategoryTypeComponent
+  }, null, 8 /* PROPS */, ["sub_category_id", "onSendSubCategoryTypeNameToAudioVeVideoComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.announce_title = $event;
     }),
     type: "text",
     "class": "form-control pb-0 rounded-0 fs-5",
-    id: "floatingInputValue",
+    id: "title",
     placeholder: "Elanını başlığı"
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.announce_title]]), _hoisted_5])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "form-check-input p-3 me-4 my_border",

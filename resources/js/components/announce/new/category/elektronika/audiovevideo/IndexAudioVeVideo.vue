@@ -1,83 +1,84 @@
 <template>
-    <div class="col-12">
-         <!-- ANNOUNCE NEW TOP ELEMENTS-->
-        <announce-new-top-elements></announce-new-top-elements>
+    <div class="">
+        <div class="col-12">
+            <!-- ANNOUNCE NEW TOP ELEMENTS-->
+            <announce-new-top-elements></announce-new-top-elements>
 
-        <!-- NEW ANNOUNCE ADD CATEGORIES -->
-        <div class="bg-white w-100 mt-0 mb-2 p-0">
-            <modal-category
-                :categories="categories"
-                @sendSubCategoryInfoToNewAnnounceComponent="callSubCategoryComponent"
-            ></modal-category>
-        </div>
-
-        <!-- ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE-->
-        <div class="border__color shadow-sm mb-2" :style="load_component_border">
-            <div class="collapse announce__new_collapse border-0" id="announce-new-collapse">
-                <div class="border-0">
-                    <component
-                        :is="loadComponent"
-                        :sub_category_id="sub_category_id"
-                        @sendSubCategoryTypeNameToNewAnnounceComponent="getSubCategoryTypeNameFromAudioVeVideoComponent"
-                        @sendAnnounceTitleToNewAnnounceComponent="getAnnounceTitleFromAudioVeVideoComponent"
-                        @sendCheckBoxVarsToNewAnnounceComponent="getCheckBoxVarsFromAudioVeVideoComponent"
-                    ></component>
-                </div>
-            </div>
-        </div>
-
-        <!-- NEW ANNOUNCE ADD INPUTS-->
-        <div class="cbg-white w-100 mb-2 p-0 custom__border">
-            <!-- ANNOUNCE NEW NEW PRICE -->
-            <div class="border-0 ">
-                <announce-new-modal-price
-                    @sendPriceToNewAnnounceComponent="getPriceFromAnnounceNewPriceComponent"
-                ></announce-new-modal-price>
+            <!-- NEW ANNOUNCE ADD CATEGORIES -->
+            <div class="bg-white w-100 mt-0 mb-2 p-0">
+                <modal-category
+                    :categories="categories"
+                    @sendSubCategoryTypeNameToIndexAudioVeVideoComponent="callSubCategoryComponent"
+                ></modal-category>
             </div>
 
-            <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
-
-            <!-- ANNOUNCE NEW NEW CITY -->
-            <div class="">
-                <announce-new-modal-city
-                    :cities="cities"
-                    @sendCityNameToNewAnnounceComponent="getCityNameFromAnnounceNewModalCity"
-                ></announce-new-modal-city>
-            </div>
-
-            <!-- ANNOUNCE NEW NEW ABOUT -->
-            <div class="mt-3">
-                <announce-new-modal-about
-                    @sendAboutToNewAnnounceComponent="getAboutFromAnnounceNewModalAbout"
-                ></announce-new-modal-about>
-            </div>
-
-            <!-- ANNOUNCE NEW USER INFO -->
-            <div class="mt-2">
-                <new-announce-user-info
-                    @sendUserNameToNewAnnounceComponent="getUserNameFromNewAnnounceUserInfoComponent"
-                    @sendUserEmailToNewAnnounceComponent="getUserEmailFromNewAnnounceUserInfoComponent"
-                    @sendUserPhoneNumberToNewAnnounceComponent="getUserPhoneNumberFromNewAnnounceUserInfoComponent"
-                ></new-announce-user-info>
-            </div>
-
-            <!-- SEND BUTTON -->
-            <div class="p-3 mb-4 border-bottom-danger">
-                <button
-                    @click="createNewAnnounce"
-                    type="button" class="btn btn-success aukcionaz__main-color w-100"
-                >
-                    <p class="fs-5 p-2 m-auto text-white">Davam et</p>
-                </button>
-
-                <div class="p-3 text-secondary text-opacity-50">
-                    <p class="">Elan yrlərşdirərkən siz "Aukcionaz.az" saytının
-                        <a href="" class="text-secondary text-opacity-75">müşəri razılaşmasıyla</a>
-                        avtomatik razılaşırsınız.
-                    </p>
+            <!-- ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE-->
+            <div class="border__color shadow-sm mb-2" :style="load_component_border">
+                <div class="collapse announce__new_collapse border-0" id="announce-new-collapse">
+                    <div class="border-0">
+                        <audio-ve-video
+                            :sub_category_id="sub_category_id"
+                            @sendSubCategoryTypeNameToIndexAudioVeVideoComponent="getSubCategoryTypeNameFromAudioVeVideoComponent"
+                            @sendAnnounceTitleToNewAnnounceComponent="getAnnounceTitleFromAudioVeVideoComponent"
+                            @sendCheckBoxVarsToNewAnnounceComponent="getCheckBoxVarsFromAudioVeVideoComponent"
+                        ></audio-ve-video>
+                    </div>
                 </div>
             </div>
 
+            <!-- NEW ANNOUNCE ADD INPUTS-->
+            <div class="cbg-white w-100 mb-2 p-0 custom__border">
+                <!-- ANNOUNCE NEW NEW PRICE -->
+                <div class="border-0 ">
+                    <announce-new-modal-price
+                        @sendPriceToNewAnnounceComponent="getPriceFromAnnounceNewPriceComponent"
+                    ></announce-new-modal-price>
+                </div>
+
+                <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
+
+                <!-- ANNOUNCE NEW NEW CITY -->
+                <div class="">
+                    <announce-new-modal-city
+                        :cities="cities"
+                        @sendCityNameToNewAnnounceComponent="getCityNameFromAnnounceNewModalCity"
+                    ></announce-new-modal-city>
+                </div>
+
+                <!-- ANNOUNCE NEW NEW ABOUT -->
+                <div class="mt-3">
+                    <announce-new-modal-about
+                        @sendAboutToNewAnnounceComponent="getAboutFromAnnounceNewModalAbout"
+                    ></announce-new-modal-about>
+                </div>
+
+                <!-- ANNOUNCE NEW USER INFO -->
+                <div class="mt-2">
+                    <new-announce-user-info
+                        @sendUserNameToNewAnnounceComponent="getUserNameFromNewAnnounceUserInfoComponent"
+                        @sendUserEmailToNewAnnounceComponent="getUserEmailFromNewAnnounceUserInfoComponent"
+                        @sendUserPhoneNumberToNewAnnounceComponent="getUserPhoneNumberFromNewAnnounceUserInfoComponent"
+                    ></new-announce-user-info>
+                </div>
+
+                <!-- SEND BUTTON -->
+                <div class="p-3 mb-4 border-bottom-danger">
+                    <button
+                        @click="createNewAnnounce"
+                        type="button" class="btn btn-success aukcionaz__main-color w-100"
+                    >
+                        <p class="fs-5 p-2 m-auto text-white">Davam et</p>
+                    </button>
+
+                    <div class="p-3 text-secondary text-opacity-50">
+                        <p class="">Elan yrlərşdirərkən siz "Aukcionaz.az" saytının
+                            <a href="" class="text-secondary text-opacity-75">müşəri razılaşmasıyla</a>
+                            avtomatik razılaşırsınız.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>
@@ -103,7 +104,19 @@ export default {
             phone: null,
         }
     },
+    watch: {
+        loadComponentData() {
+            this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
+        }
+    },
     computed: {
+
+    },
+    methods: {
+        callSubCategoryComponent(data){
+            this.loadComponentData = data;
+            this.loadComponent();
+        },
         loadComponent(){
             if( this.loadComponentData !== undefined && this.loadComponentData.new_data !== undefined ) {
                 if( this.loadComponentData.new_data.category_name !== undefined && this.loadComponentData.new_data.sub_category_name !== undefined ) {
@@ -116,20 +129,8 @@ export default {
                     this.openAnnounceNewCollapse('announce-new-collapse');
                     this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
                     this.load_component_border = 'border:1px solid rgb(0 0 0 / 6%)';
-                    // console.log( 'XXXXXX = ',  this.loadComponentData.new_data.sub_category_id )
-
-                    return defineAsyncComponent( () =>
-                            import(`../new/category/${category_name}/${folder_name}/${sub_category_name}`)
-                        )
                 }
             }
-        }
-    },
-    methods: {
-        callSubCategoryComponent(data){
-            this.loadComponentData = data;
-            // console.log('AAAAAA = ', this.loadComponentData.new_data.category_name)
-            // console.log('BBBBBB = ', this.loadComponentData.new_data.original_sub_category_name)
         },
         getSubCategoryTypeNameFromAudioVeVideoComponent(data){
             if( data !== undefined && data.name !== undefined ) {
@@ -183,7 +184,7 @@ export default {
             console.log('Create res = ', this.checkBoxElems[0] )
             axios({
                 method: "POST",
-                url: '/announce/new/create',
+                url: '/announce/new/create/electronica/audio-ve-video',
                 data: {
                     data: {
                         category: this.if_isset_category_name( this.loadComponentData ) ,
@@ -263,22 +264,7 @@ export default {
             setTimeout( () => {
                 body_style.removeAttribute("style")
             },400);
-            // console.log( 'XXXXXX = ', body_style.style.overflow = 'auto' )
         },
-        // closeSubCategoryModal(id) {
-        //     if( id !== undefined ) {
-        //         let new_id = document.getElementById('id-'+id);
-        //         let modal = new bootstrap.Modal(new_id, {
-        //             toggle: false,
-        //             ariaHidden: 'true'
-        //         });
-        //         new_id.classList.remove("show");
-        //         setTimeout( () => {
-        //             new_id.style.display = 'none';
-        //         },120);
-        //         this.removeBackDrops('modal-backdrop')
-        //     }
-        // },
         removeBackDrops(backdrop_name){
             let backdrops = document.getElementsByClassName(backdrop_name);
             if( backdrops !== undefined && backdrops.length > 0 ) {
@@ -291,13 +277,14 @@ export default {
         },
     },
     mounted() {
-        // console.log('AAAAAA = ', this.loadComponentData.data.sub_category_name)
+        this.loadComponent();
+        // console.log('AAAAAA = ', this.categories )
     }
 }
 </script>
 
 <style scoped>
-    .custom__border {
-        border: 1px solid rgb(240 240 240);
-    }
+.custom__border {
+    border: 1px solid rgb(240 240 240);
+}
 </style>
