@@ -15,7 +15,7 @@
                         <span class="text-danger text-opacity-75 ps-1">*</span>
                     </div>
 
-                    <span class="text-dark fs-5">{{ city_name }}</span>
+                    <span v-if="city_name" class="text-dark fs-5">{{ city_name }}</span>
                 </div>
 
                 <div class="text-end m-auto">
@@ -51,10 +51,16 @@
                                 v-on:click="getCityName"
                                 :id="city.name"
                                 role="button"
-                                class="list-group-item fs-5 py-2 pointer-event all_catalog_category_items_style"
+                                class="col list-group-item d-flex pointer-event
+                                        justify-content-between fs-5 py-2 pointer-event
+                                        all_catalog_category_items_style city__name_li"
                                 data-bs-dismiss="offcanvas" aria-label="Close"
+                                @click="changeColorToGreenOnClickLi"
                             >
                                 {{ city.name }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="select_icon align-self-center bi bi-check2" viewBox="0 0 16 16">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
                             </li>
                         </div>
                     </ul>
@@ -78,34 +84,86 @@ export default {
     watch: {
         city_name(){
             if( this.city_name === '' ){
-                this.custom__padding = 'py-3 pt-3'
+                this.custom__padding = 'py-3'
                 this.custom__margin = ''
             } else {
-                this.custom__padding = 'py-2 pt-3'
+                this.custom__padding = 'py-2'
                 this.custom__margin = 'mb-2'
             }
         }
     },
     methods: {
         getCityName(event) {
-            if( event.target.id !== undefined ) {
+            if( event.target.innerText !== undefined ) {
+                let name = '';
                 this.city_name = '';
+                name = event.target.innerText;
                 this.font_size = 'fs-5';
                 setTimeout(() => {
-                    this.city_name = event.target.id;
+                    this.city_name = name;
                     this.font_size = 'fs-6';
+                    console.log('City - ', this.city_name )
                 }, 400);
 
                 this.$emit('sendCityNameToNewAnnounceComponent', {
                     city: event.target.id
                 });
             }
-            console.log('City - ', event.target.id )
+        },
+        changeColorToGreenOnClickLi(event){
+            if( event !== undefined && event.target !== undefined ) {
+                if( event.target.tagName !== undefined && event.target.tagName === 'LI' ) {
+                    this.deleteGreenColorTextOnLi();
+
+                    if( event.target !== undefined && event.target.childNodes !== undefined ) {
+                        if( event.target.childNodes[1] !== undefined && event.target.childNodes[1].classList !== undefined ) {
+                            if( event.target.childNodes[1].classList.contains('green_color') !== true ) {
+                                event.target.childNodes[1].classList.add('green_color');
+                                event.target.childNodes[1].classList.add('d-block');
+                            }
+                        }
+                    }
+                    if( event.target !== undefined && event.target.classList !== undefined) {
+                        if( event.target.classList.contains('green_color') !== true ) {
+                            event.target.classList.add('green_color')
+                        }
+                    }
+                }
+            }
+        },
+        deleteGreenColorTextOnLi() {
+            let el = document.getElementsByClassName('city__name_li');
+            if( el !== undefined && el.length !== undefined ) {
+                for( let i=0; i < el.length; i++ ) {
+                    if( el[i].classList !== undefined && el[i].classList.contains('green_color') ){
+                        el[i].classList.remove('green_color');
+
+                        // IF LI CLHILD ICON IS GREEN TO REMOVE GREEN COLOR
+                        if( el[i].children !== undefined &&  el[i].children[0] !== undefined ) {
+                            if( el[i].children[0].classList !== undefined ) {
+                                if( el[i].children[0].classList.contains('green_color') ) {
+                                    el[i].children[0].classList.remove('green_color')
+                                }
+                                if( el[i].children[0].classList.contains('d-block') ) {
+                                    el[i].children[0].classList.remove('d-block')
+                                }
+                            }
+                        }
+                        console.log('lastChild = ', el[i].children[0].classList )
+                    }
+                }
+            }
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
+    .select_icon {
+        display: none;
+    }
 
+    .green_color {
+        color: #179604;
+    }
 </style>

@@ -22,12 +22,15 @@ Route::controller(HomeController::class)->group(function(){
 
 
 Route::prefix('announce')->group(function(){
+    // SHOW NEW ANNOUNCE
     Route::prefix('new')->controller(NewAnnounceController::class)->group(function (){
         Route::get('/','index')->name('new_announce');
         Route::post('/get_sub_category_types', 'getSubCategoryTypes');
     });
 
+    // CREATE NEW ANNOUNCE
     Route::prefix('new/create')->group(function (){
+        // CREATE NEW ANNOUNCE BY Elektronika
         Route::prefix('electronica')->controller(NewAnnounceElektronikaController::class)->group(function (){
             Route::post('/audio-ve-video', 'audioVeVideo');
         });
