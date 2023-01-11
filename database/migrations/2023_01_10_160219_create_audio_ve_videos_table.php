@@ -15,7 +15,8 @@ class CreateAudioVeVideosTable extends Migration
     {
         Schema::create('audio_ve_videos', function (Blueprint $table) {
             $table->id();
-            $table->string('category');
+            $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\SubCategory::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('type');
             $table->string('title');
             $table->string('new')->nullable();
@@ -26,6 +27,8 @@ class CreateAudioVeVideosTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
+            $table->boolean('publish')->default(0);
+            $table->integer('pin');
             $table->timestamps();
         });
     }

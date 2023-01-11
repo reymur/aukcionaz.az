@@ -40,6 +40,7 @@ export default {
     },
     methods: {
         loadCallComponent(event){
+            console.log('WWWWWWWWW === ', event.sub_category_id )
             this.category_name = event.category_name;
             this.load_component_folder = event.load_component_folder;
             this.load_component_name = event.load_component_name;

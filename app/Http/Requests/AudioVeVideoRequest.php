@@ -25,7 +25,7 @@ class AudioVeVideoRequest extends FormRequest
     public function rules()
     {
         return [
-            'category'  => ["required","string"],
+            'sub_category_id'  => ["required","integer"],
             'type'      => ["required","string"],
             'title'     => ["required","string"],
             'check_box' => [

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Models\SubCategoryType;
@@ -29,19 +30,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-//         include('../MY_FILES/CATEGORY/sub_category_type_one.php');
-//
-//         // dd( $category );
-//         foreach( $sub_category_type_one as $item ) {
-//             SubCategoryTypeOnce::create([
-//                 // 'sub_category_type_id' => $cat['sub_category_type_id'],
-//
-//                 'name' => $item['name'],
-//                 'sub_category_type_id' => $item['sub_category_type_id'],
-////                 'sub_category_id' => $item['sub_category_id']
-//             ]);
-//         }
-
+//       $this->makeCategories();
+//        $a = Product::all();
+//        dd( $a[0]->productable->subCategory->category );
         $categories = $this->getAllCategories();
 
         return view('home', ['categories' => $categories->load('subCategories')]);
@@ -69,5 +60,55 @@ class HomeController extends Controller
 
     protected function getAllCategories() {
         return $categories = Category::all();
+    }
+
+    public function makeCategories()
+    {
+        include('../MY_FILES/CATEGORY/category.php');
+        $cat = false;
+        $sub_cat = false;
+        $sub_cat_type = false;
+
+         foreach( $category as $item ) {
+             $cat = Category::create([
+                 'name' => $item['name'],
+                 'image' => $item['image']
+             ]);
+         }
+
+         if($cat){
+             include('../MY_FILES/CATEGORY/sub_category.php');
+             foreach( $sub_category as $item ) {
+                 $sub_cat = SubCategory::create([
+                     'category_id' => $item['category_id'],
+                     'name' => $item['name']
+                 ]);
+             }
+         }
+         if($sub_cat) {
+             include('../MY_FILES/CATEGORY/sub_category_type.php');
+             foreach( $sub_category_type as $item ) {
+                 $sub_cat_type = SubCategoryType::create([
+                     'sub_category_id' => $item['sub_category_id'],
+                     'name' => $item['name']
+                 ]);
+             }
+         }
+        if($sub_cat_type) {
+            include('../MY_FILES/CATEGORY/sub_category_type_one.php');
+            foreach( $sub_category_type_one as $item ) {
+                SubCategoryTypeOnce::create([
+                    'sub_category_type_id' => $item['sub_category_type_id'],
+                    'name' => $item['name']
+                ]);
+            }
+        }
+
+        include('../MY_FILES/select.php');
+        foreach( $cities as $item ) {
+            City::create([
+                'city' => $item['city']
+            ]);
+        }
     }
 }
