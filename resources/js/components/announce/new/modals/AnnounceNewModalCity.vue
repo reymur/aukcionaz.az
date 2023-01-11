@@ -43,13 +43,13 @@
             </div>
             <div class="offcanvas-body">
                 <div class="">
-                    <ul  class="list-group">
+                    <ul v-if="cities" class="list-group">
                         <div class="">
                             <li
                                 v-for="city in cities"
                                 :key="city.id"
                                 v-on:click="getCityName"
-                                :id="city.name"
+                                :id="city.city"
                                 role="button"
                                 class="col list-group-item d-flex pointer-event
                                         justify-content-between fs-5 py-2 pointer-event
@@ -57,7 +57,7 @@
                                 data-bs-dismiss="offcanvas" aria-label="Close"
                                 @click="changeColorToGreenOnClickLi"
                             >
-                                {{ city.name }}
+                                {{ city.city }}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="select_icon align-self-center bi bi-check2" viewBox="0 0 16 16">
                                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                                 </svg>

@@ -79,7 +79,7 @@ export default {
         }
     },
     mounted() {
-        console.log( 'sub_category_id =-- ',  this.sub_category_id )
+        // console.log( 'sub_category_id =-- ',  this.sub_category_id )
     }
 
 }

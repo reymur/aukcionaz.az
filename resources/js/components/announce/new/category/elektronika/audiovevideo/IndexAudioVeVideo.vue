@@ -5,7 +5,7 @@
             <announce-new-top-elements></announce-new-top-elements>
 
             <!-- NEW ANNOUNCE ADD CATEGORIES -->
-            <div class="bg-white w-100 mt-0 mb-2 p-0">
+            <div v-if="categories" class="bg-white w-100 mt-0 mb-2 p-0">
                 <modal-category
                     :categories="categories"
                     @sendSubCategoryTypeNameToIndexAudioVeVideoComponent="callSubCategoryComponent"
@@ -13,7 +13,7 @@
             </div>
 
             <!-- ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE-->
-            <div class="border__color shadow-sm mb-2" :style="load_component_border">
+            <div v-if="sub_category_id" class="border__color shadow-sm mb-2" :style="load_component_border">
                 <div class="collapse announce__new_collapse border-0" id="announce-new-collapse">
                     <div class="border-0">
                         <audio-ve-video
@@ -38,7 +38,7 @@
                 <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
 
                 <!-- ANNOUNCE NEW NEW CITY -->
-                <div class="">
+                <div v-if="cities" class="">
                     <announce-new-modal-city
                         :cities="cities"
                         @sendCityNameToNewAnnounceComponent="getCityNameFromAnnounceNewModalCity"
@@ -102,11 +102,15 @@ export default {
             name: null,
             email: null,
             phone: null,
+            errors: [],
         }
     },
     watch: {
         loadComponentData() {
             this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
+        },
+        sub_category_id(){
+            this.loadComponent();
         }
     },
     computed: {
@@ -116,6 +120,40 @@ export default {
         callSubCategoryComponent(data){
             this.loadComponentData = data;
             this.loadComponent();
+
+            this.$emit('callComponentInNewAnnounce',{
+                category_name: this.loadComponentData.new_data.category_name.toLowerCase(),
+                load_component_name: this.loadComponentData.new_data.sub_category_name,
+                load_component_folder: this.loadComponentData.new_data.sub_category_name.toLowerCase()
+            } );
+        },
+        createNewAnnounce(){
+            this.errors = [];
+            console.log('Create res = ', this.checkBoxElems[0] )
+            axios({
+                method: "POST",
+                url: '/announce/new/create/electronica/audio-ve-video',
+                data: {
+                    // category: this.if_isset_category_name( this.loadComponentData ) ,
+                    category: this.if_isset_original_sub_category_name( this.loadComponentData ),
+                    type: this.if_isset( this.sub_category_type_name ),
+                    title: this.if_isset( this.announce_title ),
+                    check_box: this.if_isset( this.checkBoxElems ),
+                    price: this.if_isset( this.price ),
+                    city: this.if_isset( this.city_name ),
+                    about: this.if_isset( this.about ),
+                    name: this.if_isset( this.name ),
+                    email: this.if_isset( this.email ),
+                    phone: this.if_isset( this.phone ),
+                }
+            }).then( res => {
+                console.log('Create res = ', res.data )
+            }).catch( error => {
+                if( error.response.status === 422 ) {
+                    this.errors.push(error.response.data.errors);
+                    console.log('Create Err === ', this.errors )
+                }
+            })
         },
         loadComponent(){
             if( this.loadComponentData !== undefined && this.loadComponentData.new_data !== undefined ) {
@@ -126,8 +164,9 @@ export default {
                     let sub_category_name = this.loadComponentData.new_data.sub_category_name;
 
                     this.closeBeforeVisibleModals(sub_category_modal_id);
+                    // this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
+                    // console.log('sub_category_id = ',  sub_category_name  )
                     this.openAnnounceNewCollapse('announce-new-collapse');
-                    this.sub_category_id = this.loadComponentData.new_data.sub_category_id;
                     this.load_component_border = 'border:1px solid rgb(0 0 0 / 6%)';
                 }
             }
@@ -180,32 +219,6 @@ export default {
                 this.phone = data.phone;
             }
         },
-        createNewAnnounce(){
-            console.log('Create res = ', this.checkBoxElems[0] )
-            axios({
-                method: "POST",
-                url: '/announce/new/create/electronica/audio-ve-video',
-                data: {
-                    data: {
-                        category: this.if_isset_category_name( this.loadComponentData ) ,
-                        sub_category: this.if_isset_original_sub_category_name( this.loadComponentData ),
-                        sub_category_type: this.if_isset( this.sub_category_type_name ),
-                        checkBoxElems: this.if_isset( this.checkBoxElems ),
-                        city: this.if_isset( this.city_name ),
-                        price: this.if_isset( this.price ),
-                        about: this.if_isset( this.about ),
-                        announce_title: this.if_isset( this.announce_title ),
-                        name: this.if_isset( this.name ),
-                        email: this.if_isset( this.email ),
-                        phone: this.if_isset( this.phone ),
-                    }
-                }
-            }).then( res => {
-                console.log('Create res = ', res.data )
-            }).catch( err => {
-                console.log('Create Error = ', err )
-            })
-        },
         if_isset_category_name(data){
             if( data !== undefined && data.new_data !== undefined ) {
                 if( data.new_data.category_name !== undefined ){
@@ -231,10 +244,11 @@ export default {
         },
         openAnnounceNewCollapse(id){
             let collapse_id = document.getElementById(id);
-            if( collapse_id !== undefined  ) {
+            // console.log('collapse_id = ', collapse_id )
+            if( collapse_id !== undefined && collapse_id !== null ) {
                 this.closeAnnounceNewCollapse('announce__new_collapse');
                 setTimeout(() => {
-                    new bootstrap.Collapse(collapse_id, {
+                    new bootstrap.Collapse( collapse_id, {
                         toggle: true
                     });
                 }, 400);
@@ -255,7 +269,12 @@ export default {
         closeCategoryModal(id){
             let body_style = document.querySelector('body');
             let category_modal_id = document.getElementById('announce-new-category');
-            category_modal_id.classList.remove('show');
+            if( category_modal_id.classList !== undefined ){
+                if( category_modal_id.classList.contains('show') ){
+                    category_modal_id.classList.remove('show');
+                }
+            }
+
             new bootstrap.Offcanvas(category_modal_id, {
                 toggle: false
             });

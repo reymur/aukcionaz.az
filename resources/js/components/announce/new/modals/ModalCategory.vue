@@ -100,7 +100,9 @@ export default {
         },
         changeFirstCategoryStyle() {
             let first_category = document.getElementById('1');
-            console.log('first_category = ', first_category.classList.add('pt-2') )
+            // if( first_category !== undefined && first_category.classList !== undefined ) {
+            //     // console.log('first_category = ', first_category.classList.add('pt-2') )
+            // }
         }
     },
     mounted() {

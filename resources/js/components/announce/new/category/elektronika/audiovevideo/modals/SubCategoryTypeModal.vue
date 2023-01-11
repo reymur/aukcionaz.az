@@ -12,7 +12,7 @@
                         <div class="fs-5">{{ sub_category_type_name }}</div>
                     </div>
                     <div v-else class="col text-black-50 align-self-center py-2 ps-1 fs-5" role="button">
-                        Malın tipi
+                        Malın növü
                         <span class="text-danger text-opacity-75">*</span>
                     </div>
                 </div>
@@ -75,12 +75,11 @@ export default {
     watch: {
         sub_category_id() {
             this.id = this.sub_category_id;
-            this.getSubCategoryTypes();
         }
     },
     methods:{
         getSubCategoryTypes(){
-            // console.log('AAAAAAAAAAAAQQQQ = ', this.sub_category_id  )
+            console.log('AAAAAAAAAAAAQQQQ = ', this.sub_category_id  )
             if( this.sub_category_id !== undefined ) {
                 this.id = this.sub_category_id;
 
@@ -162,6 +161,7 @@ export default {
         }
     },
     mounted() {
+        this.getSubCategoryTypes();
         // console.log( 'sub_category_id ====== ',  this.sub_category_id )
     }
 

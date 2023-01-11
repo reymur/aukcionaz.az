@@ -29,27 +29,28 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // include('../MY_FILES/CATEGORY/sub_category_type.php');
-
-        // // dd( $category );
-        // foreach( $sub_category_type as $item ) {
-        //     SubCategoryType::create([
-        //         // 'sub_category_type_id' => $cat['sub_category_type_id'],
-                
-        //         'name' => $item['name'],
-        //         'sub_category_id' => $item['sub_category_id']
-        //     ]);
-        // }
+//         include('../MY_FILES/CATEGORY/sub_category_type_one.php');
+//
+//         // dd( $category );
+//         foreach( $sub_category_type_one as $item ) {
+//             SubCategoryTypeOnce::create([
+//                 // 'sub_category_type_id' => $cat['sub_category_type_id'],
+//
+//                 'name' => $item['name'],
+//                 'sub_category_type_id' => $item['sub_category_type_id'],
+////                 'sub_category_id' => $item['sub_category_id']
+//             ]);
+//         }
 
         $categories = $this->getAllCategories();
-       
+
         return view('home', ['categories' => $categories->load('subCategories')]);
     }
 
     public function showSubCategories( $id, $name  ) {
         // dd(  $id );
         $category = $this->getCategoryWithRelations($id, 'subCategories');
-        
+
         return view('home.categories.show_sub_categories', [ 'category' => $category ]);
     }
 

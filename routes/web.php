@@ -3,7 +3,7 @@
 use App\Http\Controllers\AukcionRealTimeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewAnnounceController;
-use App\Http\Controllers\NewAnnounceElektronikaController;
+use App\Http\Controllers\Electronica;
 use App\Http\Controllers\ProductController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +31,7 @@ Route::prefix('announce')->group(function(){
     // CREATE NEW ANNOUNCE
     Route::prefix('new/create')->group(function (){
         // CREATE NEW ANNOUNCE BY Elektronika
-        Route::prefix('electronica')->controller(NewAnnounceElektronikaController::class)->group(function (){
+        Route::prefix('electronica')->controller(Electronica::class)->group(function (){
             Route::post('/audio-ve-video', 'audioVeVideo');
         });
     });
