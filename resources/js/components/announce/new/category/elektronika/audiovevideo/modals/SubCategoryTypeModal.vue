@@ -5,8 +5,8 @@
             <li class="list-group-item col-12 d-flex border-0">
                 <div class="col">
                     <div v-if="sub_category_type_name !== null" class="col lh-1 align-self-center py-2" role="button">
-                        <div :class="'col text-black-50 mb-1 align-self-center '+font_size+ 'py-2'" role="button">
-                            Malın tipi
+                        <div :class="'col text-black-50 mb-1 align-self-center '+font_size+ 'py-2'" id="announce-type" role="button">
+                            Malın növü
                             <span class="text-danger text-opacity-75">*</span>
                         </div>
                         <div class="fs-5">{{ sub_category_type_name }}</div>
@@ -75,11 +75,15 @@ export default {
     watch: {
         sub_category_id() {
             this.id = this.sub_category_id;
+        },
+        sub_category_type_name() {
+            if( this.sub_category_type_name ) {
+                this.$emit('showImageUploadSection',{ data: true })
+            }
         }
     },
     methods:{
         getSubCategoryTypes(){
-            console.log('AAAAAAAAAAAAQQQQ = ', this.sub_category_id  )
             if( this.sub_category_id !== undefined ) {
                 this.id = this.sub_category_id;
 

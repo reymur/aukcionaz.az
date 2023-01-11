@@ -4,6 +4,7 @@
         <div class="">
             <sub-category-type-modal
                 :sub_category_id="sub_category_id"
+                @showImageUploadSection="showImageUploadSection"
                 @sendSubCategoryTypeNameToAudioVeVideoComponent="getSubCategoryTypeNameFromSubCategoryTypeComponent"
             ></sub-category-type-modal>
         </div>
@@ -70,6 +71,9 @@ export default {
         }
     },
     methods:{
+        showImageUploadSection(data){
+            this.$emit('showImageUploadSection', data)
+        },
         getSubCategoryTypeNameFromSubCategoryTypeComponent(data){
             if( data !== undefined && data.name !== undefined ) {
                 this.$emit('sendSubCategoryTypeNameToIndexAudioVeVideoComponent', {

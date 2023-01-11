@@ -22971,6 +22971,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    showImageUploadSection: function showImageUploadSection(data) {
+      this.$emit('showImageUploadSection', data);
+    },
     getSubCategoryTypeNameFromSubCategoryTypeComponent: function getSubCategoryTypeNameFromSubCategoryTypeComponent(data) {
       if (data !== undefined && data.name !== undefined) {
         this.$emit('sendSubCategoryTypeNameToIndexAudioVeVideoComponent', {
@@ -23017,7 +23020,8 @@ __webpack_require__.r(__webpack_exports__);
       name: null,
       email: null,
       phone: null,
-      errors: []
+      errors: [],
+      show_image_upload_section: false
     };
   },
   components: {},
@@ -23031,7 +23035,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {},
   methods: {
+    showImageUploadSection: function showImageUploadSection(data) {
+      var _this = this;
+      if (data && data.data) {
+        setTimeout(function () {
+          _this.show_image_upload_section = data.data;
+        }, 300);
+      }
+    },
     getImages: function getImages(file) {
+      var announce_type = document.getElementById('announce-type');
       if (file && file.target && file.target.files) {
         if (file.target.files.length && file.target.files.length > 0) {
           for (var i = 0; i < file.target.files.length; i++) {
@@ -23057,7 +23070,6 @@ __webpack_require__.r(__webpack_exports__);
                     var ifIssetNewImageDiv = setInterval(function () {
                       if (new_img_div.offsetWidth > 0) {
                         new_img_div.style.height = Number(new_img_div.offsetWidth) / 4 * 3 + 'px';
-                        console.log('WIDTH = ', new_img_div.offsetHeight);
                         clearInterval(ifIssetNewImageDiv);
                       }
                     }, 10);
@@ -23076,7 +23088,6 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }
-      console.log('IMAGE --- ', file.target.files[0]);
     },
     callSubCategoryComponent: function callSubCategoryComponent(data) {
       this.loadComponentData = data;
@@ -23089,7 +23100,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     createNewAnnounce: function createNewAnnounce() {
-      var _this = this;
+      var _this2 = this;
       this.errors = [];
       console.log('Create res = ', this.checkBoxElems[0]);
       axios({
@@ -23112,8 +23123,8 @@ __webpack_require__.r(__webpack_exports__);
         console.log('Create res = ', res.data);
       })["catch"](function (error) {
         if (error.response.status === 422) {
-          _this.errors.push(error.response.data.errors);
-          console.log('Create Err === ', _this.errors);
+          _this2.errors.push(error.response.data.errors);
+          console.log('Create Err === ', _this2.errors);
         }
       });
     },
@@ -23285,12 +23296,18 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     sub_category_id: function sub_category_id() {
       this.id = this.sub_category_id;
+    },
+    sub_category_type_name: function sub_category_type_name() {
+      if (this.sub_category_type_name) {
+        this.$emit('showImageUploadSection', {
+          data: true
+        });
+      }
     }
   },
   methods: {
     getSubCategoryTypes: function getSubCategoryTypes() {
       var _this = this;
-      console.log('AAAAAAAAAAAAQQQQ = ', this.sub_category_id);
       if (this.sub_category_id !== undefined) {
         this.id = this.sub_category_id;
         axios({
@@ -24178,8 +24195,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_sub_category_type_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("sub-category-type-modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sub_category_type_modal, {
     sub_category_id: $props.sub_category_id,
+    onShowImageUploadSection: $options.showImageUploadSection,
     onSendSubCategoryTypeNameToAudioVeVideoComponent: $options.getSubCategoryTypeNameFromSubCategoryTypeComponent
-  }, null, 8 /* PROPS */, ["sub_category_id", "onSendSubCategoryTypeNameToAudioVeVideoComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, ["sub_category_id", "onShowImageUploadSection", "onSendSubCategoryTypeNameToAudioVeVideoComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.announce_title = $event;
     }),
@@ -24257,9 +24275,10 @@ var _hoisted_9 = {
   "class": ""
 };
 var _hoisted_10 = {
-  "class": "mt-3"
+  "class": "mt-2"
 };
 var _hoisted_11 = {
+  key: 1,
   "class": "mt-4 pb-2 shadow-sm"
 };
 var _hoisted_12 = {
@@ -24292,7 +24311,7 @@ var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
   }, null, -1 /* HOISTED */);
 });
 var _hoisted_15 = {
-  "class": "mt-2 announce__user_info_styles"
+  "class": "mt-2 mb-3 announce__user_info_styles"
 };
 var _hoisted_16 = {
   "class": "p-3 mb-4 border-bottom-danger"
@@ -24331,17 +24350,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)($data.load_component_border)
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_audio_ve_video, {
     sub_category_id: $data.sub_category_id,
+    onShowImageUploadSection: $options.showImageUploadSection,
     onSendSubCategoryTypeNameToIndexAudioVeVideoComponent: $options.getSubCategoryTypeNameFromAudioVeVideoComponent,
     onSendAnnounceTitleToNewAnnounceComponent: $options.getAnnounceTitleFromAudioVeVideoComponent,
     onSendCheckBoxVarsToNewAnnounceComponent: $options.getCheckBoxVarsFromAudioVeVideoComponent
-  }, null, 8 /* PROPS */, ["sub_category_id", "onSendSubCategoryTypeNameToIndexAudioVeVideoComponent", "onSendAnnounceTitleToNewAnnounceComponent", "onSendCheckBoxVarsToNewAnnounceComponent"])])])], 4 /* STYLE */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price, {
+  }, null, 8 /* PROPS */, ["sub_category_id", "onShowImageUploadSection", "onSendSubCategoryTypeNameToIndexAudioVeVideoComponent", "onSendAnnounceTitleToNewAnnounceComponent", "onSendCheckBoxVarsToNewAnnounceComponent"])])])], 4 /* STYLE */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price, {
     onSendPriceToNewAnnounceComponent: $options.getPriceFromAnnounceNewPriceComponent
   }, null, 8 /* PROPS */, ["onSendPriceToNewAnnounceComponent"])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), $props.cities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
     cities: $props.cities,
     onSendCityNameToNewAnnounceComponent: $options.getCityNameFromAnnounceNewModalCity
   }, null, 8 /* PROPS */, ["cities", "onSendCityNameToNewAnnounceComponent"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW ABOUT "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_about, {
     onSendAboutToNewAnnounceComponent: $options.getAboutFromAnnounceNewModalAbout
-  }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" IMAGE UPLOADER "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" IMAGE UPLOAD SECTION "), $data.show_image_upload_section ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "file",
     onChange: _cache[0] || (_cache[0] = function () {
       return $options.getImages && $options.getImages.apply($options, arguments);
@@ -24350,7 +24370,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     tabindex: "-1",
     "class": "form-control opacity-0 border-0 bg-info rounded-0 position-absolute w-50",
     id: "formFileLg"
-  }, null, 32 /* HYDRATE_EVENTS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), _hoisted_14]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
+  }, null, 32 /* HYDRATE_EVENTS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), _hoisted_14])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
     onSendUserNameToNewAnnounceComponent: $options.getUserNameFromNewAnnounceUserInfoComponent,
     onSendUserEmailToNewAnnounceComponent: $options.getUserEmailFromNewAnnounceUserInfoComponent,
     onSendUserPhoneNumberToNewAnnounceComponent: $options.getUserPhoneNumberFromNewAnnounceUserInfoComponent
@@ -24468,8 +24488,9 @@ var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [$data.sub_category_type_name !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('col text-black-50 mb-1 align-self-center ' + $data.font_size + 'py-2'),
+    id: "announce-type",
     role: "button"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Malın tipi "), _hoisted_6], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.sub_category_type_name), 1 /* TEXT */)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Malın növü "), _hoisted_9]))]), _hoisted_10])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [$data.sub_category_types !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.sub_category_types, function (item) {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Malın növü "), _hoisted_6], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.sub_category_type_name), 1 /* TEXT */)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Malın növü "), _hoisted_9]))]), _hoisted_10])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [$data.sub_category_types !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.sub_category_types, function (item) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: item.id,
       role: "button",
@@ -24564,7 +24585,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "col-6 d-inline-flex text-black-50 fs-5"
 }, " Məzmun ")], -1 /* HOISTED */);
 var _hoisted_4 = {
-  "class": "list-group-item shadow-sm col-12 d-flex border-0 px-3 pt-1"
+  "class": "col-12 list-group-item shadow-sm d-flex border-0 px-3 pb-3"
 };
 var _hoisted_5 = {
   "class": "col-12 text-black-50 fs-5"

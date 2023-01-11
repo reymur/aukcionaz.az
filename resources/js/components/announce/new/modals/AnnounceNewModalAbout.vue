@@ -8,7 +8,7 @@
                 </div>
             </li>
 
-            <li class="list-group-item shadow-sm  col-12 d-flex border-0 px-3 pt-1">
+            <li class="col-12 list-group-item shadow-sm d-flex border-0 px-3 pb-3">
                 <div class="col-12 text-black-50 fs-5">
                     <textarea
                         class="form-control"

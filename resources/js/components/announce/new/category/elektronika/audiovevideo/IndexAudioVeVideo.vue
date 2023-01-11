@@ -18,6 +18,7 @@
                     <div class="border-0">
                         <audio-ve-video
                             :sub_category_id="sub_category_id"
+                            @showImageUploadSection="showImageUploadSection"
                             @sendSubCategoryTypeNameToIndexAudioVeVideoComponent="getSubCategoryTypeNameFromAudioVeVideoComponent"
                             @sendAnnounceTitleToNewAnnounceComponent="getAnnounceTitleFromAudioVeVideoComponent"
                             @sendCheckBoxVarsToNewAnnounceComponent="getCheckBoxVarsFromAudioVeVideoComponent"
@@ -46,14 +47,14 @@
                 </div>
 
                 <!-- ANNOUNCE NEW NEW ABOUT -->
-                <div class="mt-3">
+                <div class="mt-2">
                     <announce-new-modal-about
                         @sendAboutToNewAnnounceComponent="getAboutFromAnnounceNewModalAbout"
                     ></announce-new-modal-about>
                 </div>
 
-                <!-- IMAGE UPLOADER -->
-                <div class="mt-4 pb-2 shadow-sm">
+                <!-- IMAGE UPLOAD SECTION -->
+                <div v-if="show_image_upload_section" class="mt-4 pb-2 shadow-sm">
                     <div class="input-group control-group mb-3">
                         <label for="formFileLg" class="form-control form-control-lg d-flex mx-3 align-self-center border-0 rounded-0 lh-lg w-100 justify-content-center custom__bg_image_uploade" role="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-camera-fill color__custom_photo_camera" viewBox="0 0 16 16">
@@ -71,7 +72,7 @@
                 </div>
 
                 <!-- ANNOUNCE NEW USER INFO -->
-                <div class="mt-2 announce__user_info_styles">
+                <div class="mt-2 mb-3 announce__user_info_styles">
                     <new-announce-user-info
                         @sendUserNameToNewAnnounceComponent="getUserNameFromNewAnnounceUserInfoComponent"
                         @sendUserEmailToNewAnnounceComponent="getUserEmailFromNewAnnounceUserInfoComponent"
@@ -122,6 +123,7 @@ export default {
             email: null,
             phone: null,
             errors: [],
+            show_image_upload_section: false,
         }
     },
     components: {
@@ -139,7 +141,16 @@ export default {
 
     },
     methods: {
+        showImageUploadSection(data){
+            if( data && data.data ) {
+                setTimeout( () => {
+                    this.show_image_upload_section = data.data
+                }, 300 )
+            }
+        },
         getImages( file ){
+            let announce_type = document.getElementById('announce-type');
+
             if( file && file.target && file.target.files ) {
                 if( file.target.files.length && file.target.files.length > 0 ) {
                     for ( let i=0; i < file.target.files.length; i++ ) {
@@ -167,8 +178,6 @@ export default {
                                     let ifIssetNewImageDiv = setInterval( () => {
                                         if( new_img_div.offsetWidth > 0 ) {
                                             new_img_div.style.height = ( (Number(new_img_div.offsetWidth) / 4) * 3)+'px';
-                                            console.log('WIDTH = ', new_img_div.offsetHeight )
-
                                             clearInterval(ifIssetNewImageDiv);
                                         }
                                     }, 10)
@@ -189,8 +198,6 @@ export default {
                     }
                 }
             }
-
-            console.log('IMAGE --- ',  file.target.files[0] )
         },
         callSubCategoryComponent(data){
             this.loadComponentData = data;
