@@ -5,7 +5,7 @@
             <announce-new-top-elements></announce-new-top-elements>
 
             <!-- NEW ANNOUNCE ADD CATEGORIES -->
-            <div v-if="categories" class="bg-white w-100 mt-0 mb-2 p-0">
+            <div v-if="categories" class="bg-white position-relative w-100 mt-0 mb-2 p-0">
                 <modal-category
                     :categories="categories"
                     @sendSubCategoryTypeNameToIndexAudioVeVideoComponent="callSubCategoryComponent"
@@ -28,22 +28,24 @@
             </div>
 
             <!-- NEW ANNOUNCE ADD INPUTS-->
-            <div class="cbg-white w-100 mb-2 p-0 custom__border">
+            <div class="cbg-white position-relative w-100 mb-2 p-0 custom__border">
                 <!-- ANNOUNCE NEW NEW PRICE -->
-                <div class="border-0 ">
+                <div class="border-0 position-relative">
                     <announce-new-modal-price
                         @sendPriceToNewAnnounceComponent="getPriceFromAnnounceNewPriceComponent"
                     ></announce-new-modal-price>
+                    <div class="invalid-tooltip fs-5 start-50" id="price-error"> Qiymət mütləqdir! </div>
                 </div>
 
                 <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
 
                 <!-- ANNOUNCE NEW NEW CITY -->
-                <div v-if="cities" class="">
+                <div v-if="cities" class="position-relative">
                     <announce-new-modal-city
                         :cities="cities"
                         @sendCityNameToNewAnnounceComponent="getCityNameFromAnnounceNewModalCity"
                     ></announce-new-modal-city>
+                    <div class="invalid-tooltip fs-5 start-50" id="city-error"> Şəhər seçin! </div>
                 </div>
 
                 <!-- ANNOUNCE NEW NEW ABOUT -->
@@ -54,21 +56,12 @@
                 </div>
 
                 <!-- IMAGE UPLOAD SECTION -->
-                <div v-if="show_image_upload_section" class="mt-4 pb-2 shadow-sm">
-                    <div class="input-group control-group mb-3">
-                        <label for="formFileLg" class="form-control form-control-lg d-flex mx-3 align-self-center border-0 rounded-0 lh-lg w-100 justify-content-center custom__bg_image_uploade" role="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-camera-fill color__custom_photo_camera" viewBox="0 0 16 16">
-                                <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                                <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
-                            </svg>
-                            <span class="ms-2 fs-5 custom__image_uploade_text">Şəkil</span>
-                        </label>
-
-                        <input type="file" @change="getImages" multiple tabindex="-1" class="form-control opacity-0 border-0 bg-info rounded-0 position-absolute w-50" id="formFileLg">
-                    </div>
-
-                    <!-- APPEND UPLOAD IMAGES -->
-                    <div class="col overflow-hidden" id="image__show_div"></div>
+<!--                v-if="show_image_upload_section"-->
+                <div  class="mt-4 pb-2 shadow-sm">
+                    <new-image-upload
+                        :upload_image_id="upload_image_id"
+                        @sendUploadFile="sendUploadFile"
+                    ></new-image-upload>
                 </div>
 
                 <!-- ANNOUNCE NEW USER INFO -->
@@ -110,20 +103,23 @@ export default {
     props: ['categories','cities'],
     data() {
         return {
-            images: [],
+            upload_image_id: null,
             loadComponentData: '',
             load_component_border: '',
             sub_category_id: null,
-            sub_category_type_name: null,
+            sub_category_type_name: '',
+            title: '',
             checkBoxElems: [],
-            city_name: null,
-            price: null,
-            about: null,
-            name: null,
-            email: null,
-            phone: null,
+            city_name: '',
+            price: '',
+            about: '',
+            name: '',
+            email: '',
+            phone: '',
             errors: [],
+            sub_category_error_style: '',
             show_image_upload_section: false,
+            images: ''
         }
     },
     components: {
@@ -135,68 +131,222 @@ export default {
         },
         sub_category_id(){
             this.loadComponent();
+            this.deleteSubCategoryError();
+        },
+        sub_category_type_name(){
+            this.deleteTypeError();
+        },
+        city_name(){
+            this.deleteCityError();
+        },
+        errors() {
+            return this.errors;
         }
     },
     computed: {
 
     },
     methods: {
+        ifIsSubCategoryError() {
+            if( !this.sub_category_id ) {
+                this.errors.forEach( el => {
+                    if( el.sub_category_id ) {
+                        let element = document.getElementById('category');
+                        let category_error = document.getElementById('category-error');
+                        let category_svg = document.getElementById('category-svg');
+                        if( element && category_error && category_svg ) {
+                            let elementPosition = element.getBoundingClientRect().top;
+                            let topOffset = element.offsetHeight;
+
+                            if( element.classList && category_error && category_svg && category_svg.classList ) {
+                                if( category_svg.classList ) {
+                                    category_svg.classList.add('pt-3');
+                                    category_svg.classList.add('ps-3');
+                                }
+                                if( element.classList.contains('p-3') ){
+                                    element.classList.remove('p-3');
+                                    element.classList.add('p-1');
+                                }
+                                category_error.style.display = 'block';
+                            }
+
+                            window.scrollBy({
+                                top: elementPosition - topOffset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            }
+        },
+        ifIsTypeError() {
+            if( !this.sub_category_type_name ) {
+                this.errors.forEach( el => {
+                    if( el.type ) {
+                        let element = document.getElementById('sub-category-type-div');
+                        let element_error = document.getElementById('sub-category-type-error');
+
+                        if( element && element.classList ) {
+                            let elementPosition = element.getBoundingClientRect().top;
+                            let topOffset = element.offsetHeight;
+
+                            if( element.classList && element_error && element_error.classList ) {
+                                if( element.classList.contains('py-2') ) {
+                                    element.classList.remove('py-2');
+                                    element.classList.add('py-0');
+                                }
+                                element_error.classList.add('d-block');
+                            }
+
+                            if( elementPosition && topOffset ) {
+                                window.scrollBy({
+                                    top: elementPosition - topOffset,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        },
+        ifIsTitleError(error_name, parent, error_section, scroll) {
+            let title_form = document.getElementById(parent);
+            let title_label = document.getElementById('title-label');
+            let title_error = document.getElementById(error_section);
+
+            if( error_name ) {
+                if( title_form && title_error && title_label ){
+                    let elementPosition = title_form.getBoundingClientRect().top;
+                    let topOffset = title_form.offsetHeight;
+
+                    if( title_label.classList && title_error.classList ) {
+                        title_form.classList.add('my-2')
+                        // title_label.classList.add('pt-1')
+                        title_error.classList.add('d-block');
+                        title_error.style.margin = '0 0 0 13px';
+                    }
+
+                    if( elementPosition && topOffset ) {
+                        if( scroll ) {
+                            window.scrollBy({
+                                top: elementPosition - topOffset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            }else {
+                if( title_label.classList && title_error.classList ) {
+                    if( title_form.classList.contains('my-2') ) title_form.classList.remove('my-2')
+                    if( title_error.classList.contains('d-block') ) {
+                        title_error.classList.remove('d-block')
+                    }
+                }
+            }
+        },
+        ifIsOtherErrors() {
+            if( this.errors.length ) {
+                this.errors.forEach( error => {
+                    if( !error.sub_category_id ) {
+                        if( !error.type ) this.ifIsTitleError( error.title, 'title-form', 'title-error', true );
+                        else this.ifIsTitleError( error.title, 'title-form', 'title-error', false );
+
+                        if( !error.type &&! error.title ) this.isErrors( error.price, 'price', 'price-error', true );
+                        else this.isErrors( error.price, 'price', 'price-error', false );
+
+                        if( !error.type &&! error.title && !error.price ) this.isErrors( error.city, 'city', 'city-error', true );
+                        else this.isErrors( error.city, 'city', 'city-error', false );
+                    }
+                })
+            }
+        },
+        isErrors(error_name, parent, error_section, scroll){
+            let parent_div = document.getElementById(parent);
+            let error_div = document.getElementById(error_section);
+
+            if( error_name ) {
+                if( parent_div && error_div ){
+                    let elementPosition = parent_div.getBoundingClientRect().top;
+                    let topOffset = parent_div.offsetHeight;
+
+                    if( parent_div.classList && error_div.classList ) {
+                        error_div.style.display = 'block';
+                    }
+
+                    if( elementPosition && topOffset ) {
+                        if( scroll ) {
+                            window.scrollBy({
+                                top: elementPosition - topOffset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            }else {
+                if( parent_div.classList && parent_div.classList.contains('border-danger') ) {
+                    parent_div.classList.remove('border')
+                    parent_div.classList.remove('border-danger')
+                    error_tooltip.style.display = 'none';
+                }
+                if( error_tooltip ) error_tooltip.style.display = 'none';
+            }
+        },
+        scrollTo() {
+
+        },
+        isCityErrors(){
+
+        },
+        deleteSubCategoryError(){
+            if( this.sub_category_id ) {
+                this.errors.forEach( err => {
+                    if( err.sub_category_id ) {
+                        setTimeout( () => {
+                            return delete this.errors[0].sub_category_id;
+                        }, 200);
+                    }
+                });
+            }
+        },
+        deleteTypeError(){
+            if( this.sub_category_type_name ) {
+                let element = document.getElementById('sub_category_type');
+                let sub_category_type_invalid_tooltip = document.getElementById('sub_category_type_invalid_tooltip');
+                this.errors.forEach( el => {
+                    if( el.type ) {
+                        setTimeout( () => {
+                            if( element.classList.contains('border') ) element.classList.remove('border');
+                            sub_category_type_invalid_tooltip.style.display = 'none';
+                            return delete this.errors[0].type;
+                        }, 200);
+                    }
+                });
+            }
+        },
+        deleteCityError() {
+            if( this.city_name ) {
+                let element = document.getElementById('city');
+                let city_error = document.getElementById('city-error');
+                if( element && city_error ) {
+                    this.errors.forEach( el => {
+                        if( el.city ) {
+                            setTimeout( () => {
+                                if( element.classList.contains('border') ){
+                                    element.classList.remove('border');
+                                    city_error.style.display = 'none';
+                                    return delete this.errors[0].city;
+                                }
+                            }, 200);
+                        }
+                    });
+                }
+            }
+        },
         showImageUploadSection(data){
             if( data && data.data ) {
                 setTimeout( () => {
                     this.show_image_upload_section = data.data
                 }, 300 )
-            }
-        },
-        getImages( file ){
-            let announce_type = document.getElementById('announce-type');
-
-            if( file && file.target && file.target.files ) {
-                if( file.target.files.length && file.target.files.length > 0 ) {
-                    for ( let i=0; i < file.target.files.length; i++ ) {
-                        if( file.target.files[i] ) {
-                            let image_show_div = document.getElementById('image__show_div');
-
-                            if( image_show_div !== undefined && image_show_div !== null ) {
-                                let new_img_div = document.createElement('div');
-                                let new_img = document.createElement('img');
-                                let upload_image_src = URL.createObjectURL( file.target.files[i] );
-
-                                if( new_img_div && new_img && upload_image_src ) {
-                                    new_img_div.classList.add('m-auto');
-                                    new_img_div.classList.add('p-2');
-                                    new_img_div.classList.add('col-sm-10');
-                                    new_img_div.classList.add('col-md-6');
-                                    new_img_div.classList.add('col-lg-3');
-                                    new_img_div.classList.add('col-xl-2');
-                                    new_img_div.classList.add('col-xxl-2');
-                                    new_img_div.classList.add('float-md-start');
-                                    new_img_div.classList.add('float-lg-start');
-                                    new_img_div.classList.add('float-xl-start');
-                                    new_img_div.classList.add('float-xxl-start');
-
-                                    let ifIssetNewImageDiv = setInterval( () => {
-                                        if( new_img_div.offsetWidth > 0 ) {
-                                            new_img_div.style.height = ( (Number(new_img_div.offsetWidth) / 4) * 3)+'px';
-                                            clearInterval(ifIssetNewImageDiv);
-                                        }
-                                    }, 10)
-
-                                    new_img.src = upload_image_src;
-                                    new_img.id = file.target.files[i].name;
-                                    new_img.classList.add('w-100');
-                                    new_img.classList.add('h-100');
-                                    new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';
-
-                                    new_img_div.appendChild(new_img);
-
-                                    image_show_div.classList.add('image__show_div_styles');
-                                    image_show_div.appendChild(new_img_div);
-                                }
-                            }
-                        }
-                    }
-                }
             }
         },
         callSubCategoryComponent(data){
@@ -210,33 +360,86 @@ export default {
                 load_component_folder: this.loadComponentData.new_data.sub_category_name.toLowerCase()
             } );
         },
-        createNewAnnounce(){
+        sendUploadFile(data){
+            // let form_data = new FormData();
+            // form_data.append('images', data )
+            let dataas = new FormData();
+            this.images = data;
+            console.log('DDDDDDDDDDDCCC222 = ',  data[0] );
+        },
+        async createNewAnnounce(){
             this.errors = [];
-            console.log('Create res = ', this.checkBoxElems[0] )
-            axios({
-                method: "POST",
-                url: '/announce/new/create/electronica/audio-ve-video',
-                data: {
-                    // category: this.if_isset_category_name( this.loadComponentData ) ,
-                    sub_category_id: this.if_isset_original_sub_category_id( this.loadComponentData ),
-                    type: this.if_isset( this.sub_category_type_name ),
-                    title: this.if_isset( this.announce_title ),
-                    check_box: this.if_isset( this.checkBoxElems ),
-                    price: this.if_isset( this.price ),
-                    city: this.if_isset( this.city_name ),
-                    about: this.if_isset( this.about ),
-                    name: this.if_isset( this.name ),
-                    email: this.if_isset( this.email ),
-                    phone: this.if_isset( this.phone ),
+            let data = new FormData();
+            // console.log('FFFFFFFF = ', this.images );
+            let category =  this.if_isset_category_name( this.loadComponentData )
+            let sub_category_id =  this.if_isset_original_sub_category_id( this.loadComponentData )
+            let type =  this.if_isset( this.sub_category_type_name );
+            let title =  this.if_isset( this.title );
+            let check_box =  this.if_isset( this.checkBoxElems );
+            let price =  this.if_isset( this.price );
+            let city =  this.if_isset( this.city_name );
+            let about =  this.if_isset( this.about );
+            let name =  this.if_isset( this.name );
+            let email =  this.if_isset( this.email );
+            let phone =  this.if_isset( this.phone );
+            let images =  this.getUploadImages(this.images, data);
+
+            console.log('ALL DATAS type = ', type );
+            console.log('ALL DATAS title = ', title );
+
+            data.append('category', category );
+            data.append('sub_category_id', sub_category_id );
+            data.append('type', type );
+            data.append('title', title );
+            data.append('check_box', check_box );
+            data.append('price', price );
+            data.append('city', city );
+            data.append('about', about );
+            data.append('name', name );
+            data.append('email', email );
+            data.append('phone', phone );
+            data.append('images', images );
+
+            if( data ) {
+                console.log('DATA +++ ', data );
+                axios({
+                    method: "post",
+                    url: '/announce/new/create/electronica/audio-ve-video',
+                    data,
+                    processData: false,
+                }).then( res => {
+                    if( res.status === 200 && res.data ) {
+                        console.log('Create res + = ', res.data );
+                    }
+                }).catch( error => {
+                    if( error.response.status === 422 ) {
+                        if( error.response.data.errors ) {
+                            this.errors.push(error.response.data.errors);
+                            this.ifIsSubCategoryError();
+                            this.ifIsTypeError();
+                            this.ifIsOtherErrors();
+
+                            console.log('RRRRRRRRRRRRR = ', this.errors[0].sub_category_id )
+                            console.log('error.response.data.errors === ', error.response.data.errors )
+                        }else console.log('error.response.data === ', error.response.data )
+                    }else if( error.response.status === 500 ) {
+                        console.log('status 500 === ', error)
+                    }else{
+                        console.log('JSON.stringify(error) === ', JSON.stringify(error) )
+                    }
+                });
+            }
+
+        },
+        getUploadImages( images, data ){
+            if( images && images.length && data  ) {
+                for ( let i = 0 ; i < images.length ; i++ ) {
+                    if( images[i] ) {
+                        data.append('images[]', images[i])
+                    }
                 }
-            }).then( res => {
-                console.log('Create res = ', res.data )
-            }).catch( error => {
-                if( error.response.status === 422 ) {
-                    this.errors.push(error.response.data.errors);
-                    console.log('Create Err === ', this.errors )
-                }
-            })
+            }
+            return data.get('images');
         },
         loadComponent(){
             if( this.loadComponentData !== undefined && this.loadComponentData.new_data !== undefined ) {
@@ -266,8 +469,8 @@ export default {
             }
         },
         getAnnounceTitleFromAudioVeVideoComponent(data) {
-            if( data !== undefined && data.announce_title !== undefined ) {
-                this.announce_title = data.announce_title;
+            if( data !== undefined && data.title !== undefined ) {
+                this.title = data.title;
             }
         },
         getCityNameFromAnnounceNewModalCity(data){
@@ -319,7 +522,7 @@ export default {
         if_isset( el ) {
             if( el !== undefined && el !== null )
                 return el;
-            return false;
+            return null;
         },
         closeBeforeVisibleModals(sub_category_id){
             this.closeCategoryModal('announce-new-category');
@@ -394,12 +597,6 @@ export default {
     }
     .custom__bg_image_uploade {
         background-color: #12ae2433;
-    }
-        .color__custom_photo_camera {
-            color: #176a0bb3;
-        }
-    .custom__image_uploade_text {
-        color: #0f3f08b3;
     }
     .image__show_div_styles {
         border: 2px dashed #4cac3c45;

@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhoeModelsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +14,12 @@ class CreatePhoeModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('phoe_models', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('image');
+            $table->string('alt')->nullable();
+            $table->morphs('imageable');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreatePhoeModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phoe_models');
+        Schema::dropIfExists('images');
     }
 }

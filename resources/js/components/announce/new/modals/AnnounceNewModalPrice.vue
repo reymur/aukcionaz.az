@@ -1,7 +1,7 @@
 <template>
    <div class="">
         <!-- ANNOUNCE NEW ORICE -->
-        <ul class="list-group">
+        <ul class="list-group" id="price">
             <li class="list-group-item col-12 d-flex border-0 pt-0 px-3">
                 <div class="me-4 m-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22 " fill="gray" class="bi bi-tag-fill" viewBox="0 0 16 16">

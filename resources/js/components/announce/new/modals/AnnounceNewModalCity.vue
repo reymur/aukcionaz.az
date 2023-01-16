@@ -1,8 +1,8 @@
 <template>
    <div class="">
         <!-- ANNOUNCE NEW NEW CITY -->
-        <ul class="list-group" data-bs-toggle="offcanvas" data-bs-target="#city" aria-controls="offcanvasRight">
-            <li :class="'list-group-item shadow-sm col-12= d-flex border-0 '+custom__padding+' ps-3'">
+        <ul class="list-group" id="city" data-bs-toggle="offcanvas" data-bs-target="#cities" aria-controls="offcanvasRight">
+            <li :class="'list-group-item shadow-sm col-12 d-flex border-0 '+custom__padding+' ps-3'">
                 <div class="me-4 m-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
@@ -27,7 +27,7 @@
         </ul>
 
         <!-- offcanvas -->
-        <div class="offcanvas offcanvas-end w-100" tabindex="-1" id="city" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas offcanvas-end w-100" tabindex="-1" id="cities" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header border border-bottom-1">
                 <div class="">
                     <h5 class="offcanvas-title" id="offcanvasRightLabel">
@@ -75,7 +75,7 @@ export default {
     props: ['cities'],
     data() {
         return {
-            city_name: '',
+            city_name: null,
             font_size: 'fs-5',
             custom__padding: 'py-3',
             custom__margin: '',

@@ -28,11 +28,6 @@ class CreateSubCategoriesTable extends Migration
      */
     public function down()
     {
-//        Schema::dropIfExists('sub_categories');
-        Schema::table('sub_categories', function (Blueprint $table)
-        {
-            $table->dropForeign('cars_sub_category_id_foreign');
-            $table->dropColumn('sub_categories');
-        });
+        Schema::dropIfExists('sub_categories');
     }
 }

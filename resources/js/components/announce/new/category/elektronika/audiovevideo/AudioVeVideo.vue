@@ -1,7 +1,7 @@
 <template>
     <div class="" id="new-announce-category">
         <!-- Button trigger modal -->
-        <div class="">
+        <div class="m-0 position-relative">
             <sub-category-type-modal
                 :sub_category_id="sub_category_id"
                 @showImageUploadSection="showImageUploadSection"
@@ -9,20 +9,23 @@
             ></sub-category-type-modal>
         </div>
 
-        <div class="px-2">
-            <form class="form-floating">
+        <div class="px-2 position-relative">
+            <form class="form-floating" id="title-form">
                 <input
-                    v-model="announce_title"
+                    v-model="title"
                     type="text"
-                    class="form-control pb-0 rounded-0 fs-5"
+                    class="form-control border-0 pb-0 rounded-0 fs-5"
                     id="title"
                     placeholder="Elanını başlığı"
                 >
-                <label class="fs-5 text-black-50" for="title">
-                    Elanını başlığı
+                <label class="fs-5 text-black-50" for="title" id="title-label">
+                    Elanının başlığı
                     <span class="text-danger text-opacity-75">*</span>
                 </label>
+                <div class="invalid-feedback fs-6" id="title-error"> Elanının başlığı mütləqdir! </div>
             </form>
+
+
         </div>
 
         <div class="form-check d-flex ps-2">
@@ -54,14 +57,14 @@ export default {
     props: ['sub_category_id'],
     data() {
         return {
-            announce_title: '',
+            title: '',
             checkBoxElem: [],
         }
     },
     watch: {
-        announce_title() {
+        title() {
             this.$emit('sendAnnounceTitleToNewAnnounceComponent', {
-                announce_title: this.announce_title
+                title: this.title
             })
         },
         checkBoxElem() {
@@ -80,9 +83,14 @@ export default {
                     name: data.name,
                 })
             }
-        }
+        },
+        subCategoryTypeInvalidTooltip() {
+            let el = document.getElementById('sub_category_type_invalid_tooltip');
+            if( el ) el.style.display = 'none'
+        },
     },
     mounted() {
+        this.subCategoryTypeInvalidTooltip();
         // console.log( 'sub_category_id =-- ',  this.sub_category_id )
     }
 

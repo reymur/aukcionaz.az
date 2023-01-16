@@ -11,9 +11,11 @@
                         </div>
                         <div class="fs-5">{{ sub_category_type_name }}</div>
                     </div>
-                    <div v-else class="col text-black-50 align-self-center py-2 ps-1 fs-5" role="button">
+                    <div v-else class="col text-black-50 align-self-center py-2 ps-1 fs-5" id="sub-category-type-div" role="button">
                         Malın növü
                         <span class="text-danger text-opacity-75">*</span>
+
+                        <div class="invalid-feedback fs-6" id="sub-category-type-error"> Malın növü-nü seçin! </div>
                     </div>
                 </div>
 

@@ -42,6 +42,7 @@ class AudioVeVideoRequest extends FormRequest
             'name'  => ["required","string"],
             'email' => ["required","email:rfc"],
             'phone' => ["required","string"],
+            'images.*' => ["mimes:jpeg,png,jpg,gif,svg"],
         ];
     }
 }

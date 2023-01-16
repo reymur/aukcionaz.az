@@ -33,6 +33,7 @@ Route::prefix('announce')->group(function(){
         // CREATE NEW ANNOUNCE BY Elektronika
         Route::prefix('electronica')->controller(Electronica::class)->group(function (){
             Route::post('/audio-ve-video', 'audioVeVideo');
+            Route::post('/upload-images', 'uploadImages');
         });
     });
 });

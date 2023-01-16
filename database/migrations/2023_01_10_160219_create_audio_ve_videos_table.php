@@ -26,9 +26,9 @@ class CreateAudioVeVideosTable extends Migration
             $table->text('about');
             $table->string('name');
             $table->string('email');
-            $table->string('phone');
             $table->boolean('publish')->default(0);
-            $table->integer('pin');
+            $table->string('pin')->nullable();
+            $table->string('number')->nullable();
             $table->timestamps();
         });
     }

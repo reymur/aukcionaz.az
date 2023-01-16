@@ -32,6 +32,7 @@ import AnnounceNewTopSection from './components/announce/new/crumbs/AnnounceNewT
 import AnnounceNewModalPrice from './components/announce/new/modals/AnnounceNewModalPrice.vue';
 import AnnounceNewModalCity from './components/announce/new/modals/AnnounceNewModalCity.vue';
 import AnnounceNewModalAbout from './components/announce/new/modals/AnnounceNewModalAbout.vue';
+import NewImageUpload from './components/announce/new/category/elektronika/audiovevideo/crumbs/NewImageUpload.vue';
 
 // ELEKTRONIKA AUDIO VE VIDEO FOLDER
 import SubCategoryTypeModal from './components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue';
@@ -62,7 +63,7 @@ app.component('announce-new-modal-about' , AnnounceNewModalAbout);
 app.component('sub-category-type-modal' , SubCategoryTypeModal);
 app.component('audio-ve-video' , AudioVeVideo);
 app.component('index-audio-ve-video' , IndexAudioVeVideo);
-
+app.component('new-image-upload' , NewImageUpload);
 
 
 

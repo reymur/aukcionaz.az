@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhoneOptionsTable extends Migration
+class CreatePhonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +14,11 @@ class CreatePhoneOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('phone_options', function (Blueprint $table) {
+        Schema::create('phones', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('phone');
+            $table->morphs('phoneable');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreatePhoneOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phone_options');
+        Schema::dropIfExists('phones');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AudioVeVideo;
 use App\Models\City;
 use App\Models\Category;
 use App\Models\Product;
@@ -30,6 +31,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+//            $res = AudioVeVideo::find(2);
+
 //       $this->makeCategories();
 //        $a = Product::all();
 //        dd( $a[0]->productable->subCategory->category );

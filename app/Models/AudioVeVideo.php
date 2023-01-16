@@ -15,6 +15,14 @@ class AudioVeVideo extends Model
         return $this->morphMany(Product::class, 'productable');
     }
 
+    public function images(){
+        return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function phones(){
+        return $this->morphMany(Phone::class, 'phoneable');
+    }
+
     public function subCategory(){
         return $this->belongsTo(SubCategory::class);
     }

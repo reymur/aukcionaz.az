@@ -6,14 +6,14 @@
                 <div class="col-1 vertical__all_catalog_img_div">
                     <img :src="'/images/category/'+ category.image" class="card-img-top vertical__all_catalog_img" alt="...">
                 </div>
-                
+
                 <li class="col-11 list-group-item d-flex vertical__all_catalog_li">
                     <h5 class="col-11 vertical__all_catalog_title"> {{ category.name }} </h5>
                     <div class="col-1 m-auto">1412</div>
                 </li>
             </div>
         </a>
-    
+
         <!-- Modal -->
         <div class="modal fade modal-right all__catalog_z_index" :id="'id-'+category.name" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xxl-down">
@@ -24,7 +24,7 @@
                                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                             </svg>
                         </div>
-                        
+
                         <h1 class="col-7 modal-title fs-5 ms-3 fw-bolder all__category_image_li" id="exampleModalLabel">
                             {{ category.name }}
                         </h1>
@@ -34,19 +34,19 @@
                         <div class="">
                             <ul class="list-group">
                                 <div class="" id="sub-category-div-id">
-                                    <li 
-                                        v-for="sub_category in category.sub_categories" 
-                                        :key="sub_category.id" 
+                                    <li
+                                        v-for="sub_category in category.sub_categories"
+                                        :key="sub_category.id"
                                         :value="sub_category.id"
-                                        v-on:click="getSubCategoryName" 
+                                        v-on:click="getSubCategoryName"
                                         :id="category.name"
                                         role="button"
-                                        class="list-group-item fs-5 py-2 pt-3 pointer-event all_catalog_category_items_style" 
+                                        class="list-group-item fs-5 py-2 pt-3 pointer-event all_catalog_category_items_style"
                                         data-bs-dismiss="modal" aria-label="Close"
                                         >
                                         {{ sub_category.name }}
                                     </li>
-                                </div>      
+                                </div>
                             </ul>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default {
     props: ['category'],
     data() {
         return {
-            sub_category_id: ''
+            sub_category_id: null
         }
     },
     methods: {
@@ -128,7 +128,7 @@ export default {
         }
     },
     computed: {
-        
+
     },
     mounted() {
         this.changeFirstSubCategoryStyle();
