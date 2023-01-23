@@ -22,7 +22,7 @@
                     Elanının başlığı
                     <span class="text-danger text-opacity-75">*</span>
                 </label>
-                <div class="invalid-feedback fs-6" id="title-error"> Elanının başlığı mütləqdir! </div>
+                <div class="invalid-feedback fs-6" id="title-error"> <!-- error text--> </div>
             </form>
 
 

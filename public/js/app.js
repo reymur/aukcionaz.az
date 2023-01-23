@@ -23031,9 +23031,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       email: '',
       phone: '',
       errors: [],
+      name_error: null,
+      email_error: null,
+      phone_error: null,
+      image_errors: null,
       sub_category_error_style: '',
       show_image_upload_section: false,
-      images: ''
+      images: '',
+      submit_button_load: false,
+      submit_button_disabled: ''
     };
   },
   components: {},
@@ -23052,6 +23058,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.deleteCityError();
     },
     errors: function errors() {
+      if (this.errors) {
+        this.name_error = this.errors;
+        console.log('AAAAA - ', this.errors);
+      }
+      if (this.errors && this.errors[0] && this.errors[0].email) this.email_error = this.errors[0].email[0];
+      if (this.errors && this.errors[0] && this.errors[0].phone) this.phone_error = this.errors[0].phone[0];
       return this.errors;
     }
   },
@@ -23101,7 +23113,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   element.classList.remove('py-2');
                   element.classList.add('py-0');
                 }
-                element_error.classList.add('d-block');
+                if (el.type[0]) {
+                  element_error.innerText = el.type[0];
+                  element_error.classList.add('d-block');
+                }
               }
               if (elementPosition && topOffset) {
                 window.scrollBy({
@@ -23125,8 +23140,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           if (title_label.classList && title_error.classList) {
             title_form.classList.add('my-2');
             // title_label.classList.add('pt-1')
-            title_error.classList.add('d-block');
-            title_error.style.margin = '0 0 0 13px';
+            if (error_name[0]) {
+              title_error.innerText = error_name[0];
+              title_error.style.margin = '-4px 0px 0px 13px';
+              title_error.classList.add('d-block');
+            }
           }
           if (elementPosition && topOffset) {
             if (scroll) {
@@ -23146,14 +23164,48 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }
     },
+    ifIsImageError: function ifIsImageError(errors) {
+      var count = 30;
+      var image = document.getElementById('image');
+      // console.log(' this.image_errors --- ',   errors[0] )
+      if (errors && errors.length) {
+        var image_arr = [];
+        errors.forEach(function (error, key) {
+          if (error['images']) image_arr[key] = error.images[0];else {
+            for (var i = 0; i < count; i++) {
+              if (error['images.' + i]) image_arr[i] = error['images.' + i][0];
+              // console.log(' this.image_errors --- ',   i )
+            }
+          }
+
+          if (!error.type && !error.title && !error.price && !error.city && error.images) {
+            var elementPosition = image.getBoundingClientRect().top;
+            var topOffset = image.offsetHeight;
+            if (elementPosition && topOffset) {
+              if (scroll) {
+                window.scrollBy({
+                  top: elementPosition - topOffset,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }
+        });
+        console.log(' this.image_errors --- ', image_arr);
+        return this.image_errors = image_arr;
+      }
+    },
     ifIsOtherErrors: function ifIsOtherErrors() {
       var _this = this;
       if (this.errors.length) {
         this.errors.forEach(function (error) {
           if (!error.sub_category_id) {
             if (!error.type) _this.ifIsTitleError(error.title, 'title-form', 'title-error', true);else _this.ifIsTitleError(error.title, 'title-form', 'title-error', false);
-            if (!error.type && !error.title) _this.isErrors(error.price, 'price', 'price-error', true);else _this.isErrors(error.price, 'price', 'price-error', false);
-            if (!error.type && !error.title && !error.price) _this.isErrors(error.city, 'city', 'city-error', true);else _this.isErrors(error.city, 'city', 'city-error', false);
+            if (!error.type && !error.title && error.price) _this.isErrors(error.price, 'price', 'price-error', true);else _this.isErrors(error.price, 'price', 'price-error', false);
+            if (!error.type && !error.title && !error.price && error.city) _this.isCityErrors(error.city, 'city', 'city-error', true);else _this.isCityErrors(error.city, 'city', 'city-error', false);
+            if (!error.type && !error.title && !error.price && !error.city && error.name) _this.isErrors(error.name, 'name', 'name-error', true);else _this.isErrors(error.name, 'name', 'name-error', false);
+            if (!error.type && !error.title && !error.price && !error.city && !error.name && error.email) _this.isErrors(error.email, 'email', 'email-error', true);else _this.isErrors(error.email, 'email', 'email-error', false);
+            if (!error.type && !error.title && !error.price && !error.city && !error.name && !error.email && error.phone) _this.isErrors(error.phone, 'phone', 'phone-error', true);else _this.isErrors(error.phone, 'phone', 'phone-error', false);
           }
         });
       }
@@ -23166,7 +23218,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           var elementPosition = parent_div.getBoundingClientRect().top;
           var topOffset = parent_div.offsetHeight;
           if (parent_div.classList && error_div.classList) {
-            error_div.style.display = 'block';
+            if (error_name[0]) {
+              error_div.innerText = error_name[0];
+              error_div.style.display = 'block';
+            }
           }
           if (elementPosition && topOffset) {
             if (scroll) {
@@ -23181,13 +23236,48 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         if (parent_div.classList && parent_div.classList.contains('border-danger')) {
           parent_div.classList.remove('border');
           parent_div.classList.remove('border-danger');
-          error_tooltip.style.display = 'none';
+          error_div.style.display = 'none';
         }
-        if (error_tooltip) error_tooltip.style.display = 'none';
+        if (error_div) error_div.style.display = 'none';
       }
     },
-    scrollTo: function scrollTo() {},
-    isCityErrors: function isCityErrors() {},
+    isCityErrors: function isCityErrors(error_name, parent, error_section, scroll) {
+      var parent_div = document.getElementById(parent);
+      var error_div = document.getElementById(error_section);
+      if (error_name) {
+        if (parent_div && error_div) {
+          var elementPosition = parent_div.getBoundingClientRect().top;
+          var topOffset = parent_div.offsetHeight;
+          if (parent_div.classList && error_div.classList) {
+            if (parent_div.classList.contains('py-3')) {
+              parent_div.classList.remove('py-3');
+              parent_div.classList.add('pt-2');
+              parent_div.classList.add('pb-2');
+              if (error_name[0]) {
+                error_div.innerText = error_name[0];
+                error_div.classList.add('mt-3');
+                error_div.style.display = 'block';
+              }
+            }
+          }
+          if (elementPosition && topOffset) {
+            if (scroll) {
+              window.scrollBy({
+                top: elementPosition - topOffset,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }
+      } else {
+        if (parent_div.classList && parent_div.classList.contains('border-danger')) {
+          parent_div.classList.remove('border');
+          parent_div.classList.remove('border-danger');
+          error_div.style.display = 'none';
+        }
+        if (error_div) error_div.style.display = 'none';
+      }
+    },
     deleteSubCategoryError: function deleteSubCategoryError() {
       var _this2 = this;
       if (this.sub_category_id) {
@@ -23203,14 +23293,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     deleteTypeError: function deleteTypeError() {
       var _this3 = this;
       if (this.sub_category_type_name) {
-        var element = document.getElementById('sub_category_type');
-        var sub_category_type_invalid_tooltip = document.getElementById('sub_category_type_invalid_tooltip');
+        var element = document.getElementById('sub-category-type-div');
+        var sub_category_type_invalid_tooltip = document.getElementById('sub-category-type-error');
         this.errors.forEach(function (el) {
           if (el.type) {
             setTimeout(function () {
-              if (element.classList.contains('border')) element.classList.remove('border');
-              sub_category_type_invalid_tooltip.style.display = 'none';
-              return delete _this3.errors[0].type;
+              if (element && element.classList) {
+                if (element.classList.contains('border')) element.classList.remove('border');
+                sub_category_type_invalid_tooltip.style.display = 'none';
+                return delete _this3.errors[0].type;
+              }
             }, 200);
           }
         });
@@ -23225,11 +23317,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           this.errors.forEach(function (el) {
             if (el.city) {
               setTimeout(function () {
-                if (element.classList.contains('border')) {
-                  element.classList.remove('border');
-                  city_error.style.display = 'none';
-                  return delete _this4.errors[0].city;
-                }
+                city_error.style.display = 'none';
+                return delete _this4.errors[0].city;
               }, 200);
             }
           });
@@ -23269,6 +23358,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                _this6.submit_button_load = true;
+                _this6.submit_button_disabled = 'disabled';
                 _this6.errors = [];
                 data = new FormData(); // console.log('FFFFFFFF = ', this.images );
                 category = _this6.if_isset_category_name(_this6.loadComponentData);
@@ -23283,8 +23374,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 email = _this6.if_isset(_this6.email);
                 phone = _this6.if_isset(_this6.phone);
                 images = _this6.getUploadImages(_this6.images, data);
-                console.log('ALL DATAS type = ', type);
-                console.log('ALL DATAS title = ', title);
+                console.log('ALL DATAS images = ', images);
+                // console.log('ALL DATAS title = ', title );
+
                 data.append('category', category);
                 data.append('sub_category_id', sub_category_id);
                 data.append('type', type);
@@ -23306,26 +23398,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     processData: false
                   }).then(function (res) {
                     if (res.status === 200 && res.data) {
+                      _this6.submit_button_load = true;
+                      _this6.submit_button_disabled = 'disabled';
                       console.log('Create res + = ', res.data);
                     }
                   })["catch"](function (error) {
                     if (error.response.status === 422) {
-                      if (error.response.data.errors) {
+                      if (error.response && error.response.data && error.response.data.errors) {
                         _this6.errors.push(error.response.data.errors);
                         _this6.ifIsSubCategoryError();
                         _this6.ifIsTypeError();
                         _this6.ifIsOtherErrors();
-                        console.log('RRRRRRRRRRRRR = ', _this6.errors[0].sub_category_id);
-                        console.log('error.response.data.errors === ', error.response.data.errors);
-                      } else console.log('error.response.data === ', error.response.data);
+                        _this6.ifIsImageError(_this6.errors);
+                        console.log('ERROR RESPONSE DATA STATUS 422 === ', _this6.errors);
+                      } else console.log('ERROR RESPONSE STATUS 422 === ', error.response.data);
                     } else if (error.response.status === 500) {
-                      console.log('status 500 === ', error);
+                      console.log('ERROR STATUS 500 === ', error);
                     } else {
-                      console.log('JSON.stringify(error) === ', JSON.stringify(error));
+                      console.log('NO ERROR STATUS === ', JSON.stringify(error));
                     }
+                    _this6.submit_button_load = false;
+                    _this6.submit_button_disabled = '';
                   });
                 }
-              case 29:
+              case 30:
               case "end":
                 return _context.stop();
             }
@@ -23334,6 +23430,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     getUploadImages: function getUploadImages(images, data) {
+      var _data$get;
       if (images && images.length && data) {
         for (var i = 0; i < images.length; i++) {
           if (images[i]) {
@@ -23341,7 +23438,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }
       }
-      return data.get('images');
+      return (_data$get = data.get('images')) !== null && _data$get !== void 0 ? _data$get : '';
     },
     loadComponent: function loadComponent() {
       if (this.loadComponentData !== undefined && this.loadComponentData.new_data !== undefined) {
@@ -23500,37 +23597,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewImageUpload",
-  props: ['upload_image_id'],
+  props: ['upload_image_id', 'image_errors'],
   data: function data() {
     return {
-      images: null
+      images: '',
+      errors: null
     };
   },
   watch: {
+    image_errors: function image_errors() {
+      this.errors = this.image_errors;
+    },
     upload_image_id: function upload_image_id() {
       // this.getUploadImage();
     }
   },
   methods: {
     getImages: function getImages(file) {
-      this.$emit('sendUploadFile', file.target.files);
-      var announce_type = document.getElementById('announce-type');
+      console.log('CCCCCC - - - ', file.target.files[0].type);
+      this.images = file.target.files;
       if (file && file.target && file.target.files) {
-        if (file.target.files.length && file.target.files.length > 0) {
-          this.images = file.target.files;
-          for (var i = 0; i < file.target.files.length; i++) {
-            this.showUploadImage(file.target.files[i]);
+        this.$emit('sendUploadFile', file.target.files);
+        if (file && file.target && file.target.files) {
+          if (file.target.files.length && file.target.files.length > 0) {
+            for (var i = 0; i < file.target.files.length; i++) {
+              this.showUploadImage(file.target.files[i]);
+            }
           }
         }
       }
     },
+    removeUploadValue: function removeUploadValue(ev) {
+      if (ev && ev.target && ev.target.value) ev.target.value = null;
+    },
     showUploadImage: function showUploadImage(upload_image) {
       if (upload_image) {
+        var new_img = null;
+        var new_img_div = null;
+        var upload_image_src = null;
         var image_show_div = document.getElementById('image__show_div');
-        if (image_show_div !== undefined && image_show_div !== null) {
-          var new_img_div = document.createElement('div');
-          var new_img = document.createElement('img');
-          var upload_image_src = URL.createObjectURL(upload_image);
+        if (image_show_div) {
+          new_img = document.createElement('img');
+          new_img_div = document.createElement('div');
+          upload_image_src = URL.createObjectURL(upload_image);
           if (new_img_div && new_img && upload_image_src) {
             new_img_div.classList.add('m-auto');
             new_img_div.classList.add('p-2');
@@ -23550,7 +23659,7 @@ __webpack_require__.r(__webpack_exports__);
               }
             }, 10);
             new_img.src = upload_image_src;
-            new_img.id = upload_image.name;
+            new_img.id = upload_image.name + '_1';
             new_img.classList.add('w-100');
             new_img.classList.add('h-100');
             new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';
@@ -23761,7 +23870,7 @@ __webpack_require__.r(__webpack_exports__);
       city_name: null,
       font_size: 'fs-5',
       custom__padding: 'py-3',
-      custom__margin: ''
+      custom__margin: 'mt-1'
     };
   },
   watch: {
@@ -23770,7 +23879,7 @@ __webpack_require__.r(__webpack_exports__);
         this.custom__padding = 'py-3';
         this.custom__margin = '';
       } else {
-        this.custom__padding = 'py-2';
+        this.custom__padding = 'pt-3 pb-2';
         this.custom__margin = 'mb-2';
       }
     }
@@ -24211,9 +24320,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      name: null,
-      email: null,
-      phone: null
+      name: '',
+      email: '',
+      phone: ''
     };
   },
   watch: {
@@ -24463,7 +24572,7 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "invalid-feedback fs-6",
     id: "title-error"
-  }, " Elanının başlığı mütləqdir! ", -1 /* HOISTED */);
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
 });
 var _hoisted_7 = {
   "class": "form-check d-flex ps-2"
@@ -24569,44 +24678,41 @@ var _hoisted_7 = {
 };
 var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "invalid-tooltip fs-5 start-50",
-    id: "price-error"
-  }, " Qiymət mütləqdir! ", -1 /* HOISTED */);
-});
-var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "ms-3 border-bottom border-secondary border-opacity-10"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_10 = {
+var _hoisted_9 = {
   key: 0,
   "class": "position-relative"
 };
-var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "invalid-tooltip fs-5 start-50",
-    id: "city-error"
-  }, " Şəhər seçin! ", -1 /* HOISTED */);
-});
-var _hoisted_12 = {
+var _hoisted_10 = {
   "class": "mt-2"
 };
-var _hoisted_13 = {
+var _hoisted_11 = {
   "class": "mt-4 pb-2 shadow-sm"
 };
-var _hoisted_14 = {
+var _hoisted_12 = {
   "class": "mt-2 mb-3 announce__user_info_styles"
 };
-var _hoisted_15 = {
+var _hoisted_13 = {
   "class": "p-3 mb-4 border-bottom-danger"
 };
+var _hoisted_14 = {
+  key: 0,
+  "class": "fs-5 p-2 m-auto text-white"
+};
+var _hoisted_15 = {
+  key: 1,
+  "class": "fs-5 p-2 m-auto text-white"
+};
 var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "fs-5 p-2 m-auto text-white"
-  }, "Davam et", -1 /* HOISTED */);
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    "class": "spinner-border spinner-border-sm",
+    role: "status",
+    "aria-hidden": "true"
+  }, null, -1 /* HOISTED */);
 });
-var _hoisted_17 = [_hoisted_16];
-var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "p-3 text-secondary text-opacity-50"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -24641,25 +24747,29 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSendCheckBoxVarsToNewAnnounceComponent: $options.getCheckBoxVarsFromAudioVeVideoComponent
   }, null, 8 /* PROPS */, ["sub_category_id", "onShowImageUploadSection", "onSendSubCategoryTypeNameToIndexAudioVeVideoComponent", "onSendAnnounceTitleToNewAnnounceComponent", "onSendCheckBoxVarsToNewAnnounceComponent"])])])], 4 /* STYLE */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD INPUTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW PRICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_price, {
     onSendPriceToNewAnnounceComponent: $options.getPriceFromAnnounceNewPriceComponent
-  }, null, 8 /* PROPS */, ["onSendPriceToNewAnnounceComponent"]), _hoisted_8]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), $props.cities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
+  }, null, 8 /* PROPS */, ["onSendPriceToNewAnnounceComponent"])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), $props.cities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_city, {
     cities: $props.cities,
     onSendCityNameToNewAnnounceComponent: $options.getCityNameFromAnnounceNewModalCity
-  }, null, 8 /* PROPS */, ["cities", "onSendCityNameToNewAnnounceComponent"]), _hoisted_11])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW ABOUT "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_about, {
+  }, null, 8 /* PROPS */, ["cities", "onSendCityNameToNewAnnounceComponent"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW ABOUT "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_modal_about, {
     onSendAboutToNewAnnounceComponent: $options.getAboutFromAnnounceNewModalAbout
-  }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" IMAGE UPLOAD SECTION "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                v-if=\"show_image_upload_section\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_image_upload, {
+  }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" IMAGE UPLOAD SECTION "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                v-if=\"show_image_upload_section\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_image_upload, {
+    image_errors: $data.image_errors,
     upload_image_id: $data.upload_image_id,
     onSendUploadFile: $options.sendUploadFile
-  }, null, 8 /* PROPS */, ["upload_image_id", "onSendUploadFile"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
+  }, null, 8 /* PROPS */, ["image_errors", "upload_image_id", "onSendUploadFile"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
+    name_error: $data.name_error,
+    email_error: $data.email_error,
+    phone_error: $data.phone_error,
     onSendUserNameToNewAnnounceComponent: $options.getUserNameFromNewAnnounceUserInfoComponent,
     onSendUserEmailToNewAnnounceComponent: $options.getUserEmailFromNewAnnounceUserInfoComponent,
     onSendUserPhoneNumberToNewAnnounceComponent: $options.getUserPhoneNumberFromNewAnnounceUserInfoComponent
-  }, null, 8 /* PROPS */, ["onSendUserNameToNewAnnounceComponent", "onSendUserEmailToNewAnnounceComponent", "onSendUserPhoneNumberToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SEND BUTTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, null, 8 /* PROPS */, ["name_error", "email_error", "phone_error", "onSendUserNameToNewAnnounceComponent", "onSendUserEmailToNewAnnounceComponent", "onSendUserPhoneNumberToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SEND BUTTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.createNewAnnounce && $options.createNewAnnounce.apply($options, arguments);
     }),
     type: "button",
-    "class": "btn btn-success aukcionaz__main-color w-100"
-  }, _hoisted_17), _hoisted_18])])])]);
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('btn btn-success aukcionaz__main-color w-100 ' + $data.submit_button_disabled)
+  }, [!$data.submit_button_load ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_14, "Davam et")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Gözləyin... ")]))], 2 /* CLASS */), _hoisted_17])])])]);
 }
 
 /***/ }),
@@ -24684,7 +24794,8 @@ var _hoisted_1 = {
   "class": ""
 };
 var _hoisted_2 = {
-  "class": "input-group control-group mb-3"
+  "class": "input-group control-group mb-3",
+  id: "image"
 };
 var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -24706,7 +24817,15 @@ var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
     "class": "ms-2 fs-5 custom__image_upload_text"
   }, "Şəkil")], -1 /* HOISTED */);
 });
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_4 = {
+  key: 0,
+  "class": "invalid-feedback d-block fs-6 ms-4 mt-1",
+  id: "image-error"
+};
+var _hoisted_5 = {
+  "class": ""
+};
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col overflow-hidden",
     id: "image__show_div"
@@ -24720,10 +24839,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.getImages && $options.getImages.apply($options, arguments);
     }),
     multiple: "",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.removeUploadValue && $options.removeUploadValue.apply($options, arguments);
+    }),
+    accept: "image/*",
     tabindex: "-1",
     "class": "form-control opacity-0 border-0 bg-info rounded-0 position-absolute w-50",
     id: "formFileLg"
-  }, null, 32 /* HYDRATE_EVENTS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), _hoisted_4]);
+  }, null, 32 /* HYDRATE_EVENTS */), $data.errors && $data.errors.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error), 1 /* TEXT */);
+  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), _hoisted_6]);
 }
 
 /***/ }),
@@ -24788,7 +24913,7 @@ var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "invalid-feedback fs-6",
     id: "sub-category-type-error"
-  }, " Malın növü-nü seçin! ", -1 /* HOISTED */);
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
 });
 var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -24977,7 +25102,6 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = {
   "class": "list-group",
-  id: "city",
   "data-bs-toggle": "offcanvas",
   "data-bs-target": "#cities",
   "aria-controls": "offcanvasRight"
@@ -25013,6 +25137,12 @@ var _hoisted_7 = {
 };
 var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "invalid-feedback fs-6",
+    id: "city-error"
+  }, " Şəhər seçin! ", -1 /* HOISTED */);
+});
+var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "text-end m-auto"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -25026,28 +25156,28 @@ var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
     d: "M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
   })])], -1 /* HOISTED */);
 });
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "offcanvas offcanvas-end w-100",
   tabindex: "-1",
   id: "cities",
   "aria-labelledby": "offcanvasRightLabel"
 };
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"offcanvas-header border border-bottom-1\" data-v-4ab58f60><div class=\"\" data-v-4ab58f60><h5 class=\"offcanvas-title\" id=\"offcanvasRightLabel\" data-v-4ab58f60><svg xmlns=\"http://www.w3.org/2000/svg\" type=\"button\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\" width=\"22\" height=\"22\" fill=\"currentColor\" class=\"bi bi-chevron-left text-black-50\" viewBox=\"0 0 16 16\" data-v-4ab58f60><path fill-rule=\"evenodd\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z\" data-v-4ab58f60></path></svg></h5></div><div class=\"\" data-v-4ab58f60><h5 class=\"m-0\" data-v-4ab58f60>Şəhər və rayonlar</h5></div><div class=\"\" data-v-4ab58f60></div></div>", 1);
-var _hoisted_11 = {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"offcanvas-header border border-bottom-1\" data-v-4ab58f60><div class=\"\" data-v-4ab58f60><h5 class=\"offcanvas-title\" id=\"offcanvasRightLabel\" data-v-4ab58f60><svg xmlns=\"http://www.w3.org/2000/svg\" type=\"button\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\" width=\"22\" height=\"22\" fill=\"currentColor\" class=\"bi bi-chevron-left text-black-50\" viewBox=\"0 0 16 16\" data-v-4ab58f60><path fill-rule=\"evenodd\" d=\"M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z\" data-v-4ab58f60></path></svg></h5></div><div class=\"\" data-v-4ab58f60><h5 class=\"m-0\" data-v-4ab58f60>Şəhər və rayonlar</h5></div><div class=\"\" data-v-4ab58f60></div></div>", 1);
+var _hoisted_12 = {
   "class": "offcanvas-body"
 };
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": ""
 };
-var _hoisted_13 = {
+var _hoisted_14 = {
   key: 0,
   "class": "list-group"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": ""
 };
-var _hoisted_15 = ["id"];
-var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_16 = ["id"];
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "22",
@@ -25062,11 +25192,12 @@ var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW NEW CITY "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('list-group-item shadow-sm col-12 d-flex border-0 ' + $data.custom__padding + ' ps-3')
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('list-group-item shadow-sm col-12 d-flex border-0 ' + $data.custom__padding + ' ps-3'),
+    id: "city"
   }, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($data.font_size + ' ' + $data.custom__margin),
     "for": "floatingSelect"
-  }, "Şəhər", 2 /* CLASS */), _hoisted_6]), $data.city_name ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.city_name), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_8], 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [$props.cities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.cities, function (city) {
+  }, "Şəhər", 2 /* CLASS */), _hoisted_6]), $data.city_name ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.city_name), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8]), _hoisted_9], 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" offcanvas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [$props.cities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.cities, function (city) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: city.id,
       onClick: [_cache[0] || (_cache[0] = function () {
@@ -25079,7 +25210,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "col list-group-item d-flex pointer-event justify-content-between fs-5 py-2 pointer-event all_catalog_category_items_style city__name_li",
       "data-bs-dismiss": "offcanvas",
       "aria-label": "Close"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(city.city) + " ", 1 /* TEXT */), _hoisted_16], 8 /* PROPS */, _hoisted_15);
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(city.city) + " ", 1 /* TEXT */), _hoisted_17], 8 /* PROPS */, _hoisted_16);
   }), 128 /* KEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
 }
 
@@ -25140,17 +25271,23 @@ var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
     "class": "text-danger text-opacity-75"
   }, "*")], -1 /* HOISTED */);
 });
+var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "invalid-feedback fs-6 price__error_style",
+    id: "price-error"
+  }, " Qiymət mütləqdir! ", -1 /* HOISTED */);
+});
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _directive_maska = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDirective)("maska");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW ORICE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    "class": "form-control pb-0 rounded-0 bg-white fs-5",
+    "class": "form-control pb-0 border-0 rounded-0 bg-white fs-5",
     placeholder: "Qiymət",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.price = $event;
     }),
     tokens: $data.hexTokens
-  }, null, 8 /* PROPS */, _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.price], [_directive_maska, '##################################']]), _hoisted_8])])])])]);
+  }, null, 8 /* PROPS */, _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.price], [_directive_maska, '##################################']]), _hoisted_8, _hoisted_9])])])])]);
 }
 
 /***/ }),
@@ -25832,10 +25969,16 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
     "class": "text-danger text-opacity-75"
   }, "*")], -1 /* HOISTED */);
 });
-var _hoisted_7 = {
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "invalid-feedback fs-6 mt-1",
+    id: "name-error"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
+});
+var _hoisted_8 = {
   "class": "form-floating"
 };
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "email",
     "class": "text-secondary fs-5"
@@ -25843,16 +25986,28 @@ var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
     "class": "text-danger text-opacity-75"
   }, "*")], -1 /* HOISTED */);
 });
-var _hoisted_9 = {
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "invalid-feedback fs-6 mt-1",
+    id: "email-error"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
+});
+var _hoisted_11 = {
   "class": "form-floating"
 };
-var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "for": "floatingInput",
     "class": "text-secondary fs-5"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Mobil nömrə "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "text-danger text-opacity-75"
   }, "*")], -1 /* HOISTED */);
+});
+var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "invalid-feedback fs-6 mt-1",
+    id: "phone-error"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25865,7 +26020,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Adınız",
     type: "text",
     id: "name"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]]), _hoisted_5, _hoisted_6]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]]), _hoisted_5, _hoisted_6, _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.email = $event;
     }),
@@ -25873,13 +26028,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "E-mail",
     type: "email",
     id: "email"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]]), _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]]), _hoisted_9, _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.phone = $event;
     }),
     "class": "form-control pb-0 rounded-0 border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white fs-5",
-    placeholder: "+994 (000) 000-00-00"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone], [_directive_maska, '+994 (###) ###-##-##']]), _hoisted_10])])])]);
+    placeholder: "+994 (000) 000-00-00",
+    id: "phone"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone], [_directive_maska, '+994 (###) ###-##-##']]), _hoisted_12, _hoisted_13])])])]);
 }
 
 /***/ }),
@@ -31764,7 +31920,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control[data-v-5c507bb8]:focus, .form-control[data-v-5c507bb8]:active {\n        outline: none;\n        border-bottom: 1px solid #000;\n        box-shadow: none !important;\n        padding-bottom: 0;\n}\n.form-control[data-v-5c507bb8] {\n        border: none;\n        padding-bottom: 0;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.form-control[data-v-5c507bb8]:focus, .form-control[data-v-5c507bb8]:active {\n        outline: none;\n        border-bottom: 1px solid #000;\n        box-shadow: none !important;\n        padding-bottom: 0;\n}\n.form-control[data-v-5c507bb8] {\n        border: none;\n        padding-bottom: 0;\n}\n.price__error_style[data-v-5c507bb8] {\n        margin-top: -6px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

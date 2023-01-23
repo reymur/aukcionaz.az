@@ -15,7 +15,7 @@
                         Malın növü
                         <span class="text-danger text-opacity-75">*</span>
 
-                        <div class="invalid-feedback fs-6" id="sub-category-type-error"> Malın növü-nü seçin! </div>
+                        <div class="invalid-feedback fs-6" id="sub-category-type-error"> <!-- error text--> </div>
                     </div>
                 </div>
 

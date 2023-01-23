@@ -20,6 +20,8 @@
                         Adınız
                         <span class="text-danger text-opacity-75">*</span>
                     </label>
+
+                    <div class="invalid-feedback fs-6 mt-1" id="name-error"> <!-- error text--> </div>
                 </div>
 
                 <div class="form-floating">
@@ -36,6 +38,8 @@
                         E-mail
                         <span class="text-danger text-opacity-75">*</span>
                     </label>
+
+                    <div class="invalid-feedback fs-6 mt-1" id="email-error"> <!-- error text--> </div>
                 </div>
 
                 <div class="form-floating">
@@ -46,11 +50,14 @@
                                border-bottom-secondary bg-white fs-5"
                         placeholder="+994 (000) 000-00-00"
                         v-maska="'+994 (###) ###-##-##'"
+                        id="phone"
                     >
                     <label for="floatingInput" class="text-secondary fs-5">
                         Mobil nömrə
                         <span class="text-danger text-opacity-75">*</span>
                     </label>
+
+                    <div class="invalid-feedback fs-6 mt-1" id="phone-error"> <!-- error text--> </div>
                 </div>
 
             </div>
@@ -64,9 +71,9 @@
         directives: { maska },
         data() {
             return {
-                name: null,
-                email: null,
-                phone: null,
+                name: '',
+                email: '',
+                phone: '',
             }
         },
         watch: {

@@ -34,7 +34,6 @@
                     <announce-new-modal-price
                         @sendPriceToNewAnnounceComponent="getPriceFromAnnounceNewPriceComponent"
                     ></announce-new-modal-price>
-                    <div class="invalid-tooltip fs-5 start-50" id="price-error"> Qiymət mütləqdir! </div>
                 </div>
 
                 <div class="ms-3 border-bottom border-secondary border-opacity-10"></div>
@@ -45,7 +44,6 @@
                         :cities="cities"
                         @sendCityNameToNewAnnounceComponent="getCityNameFromAnnounceNewModalCity"
                     ></announce-new-modal-city>
-                    <div class="invalid-tooltip fs-5 start-50" id="city-error"> Şəhər seçin! </div>
                 </div>
 
                 <!-- ANNOUNCE NEW NEW ABOUT -->
@@ -59,6 +57,7 @@
 <!--                v-if="show_image_upload_section"-->
                 <div  class="mt-4 pb-2 shadow-sm">
                     <new-image-upload
+                        :image_errors="image_errors"
                         :upload_image_id="upload_image_id"
                         @sendUploadFile="sendUploadFile"
                     ></new-image-upload>
@@ -67,6 +66,9 @@
                 <!-- ANNOUNCE NEW USER INFO -->
                 <div class="mt-2 mb-3 announce__user_info_styles">
                     <new-announce-user-info
+                        :name_error="name_error"
+                        :email_error="email_error"
+                        :phone_error="phone_error"
                         @sendUserNameToNewAnnounceComponent="getUserNameFromNewAnnounceUserInfoComponent"
                         @sendUserEmailToNewAnnounceComponent="getUserEmailFromNewAnnounceUserInfoComponent"
                         @sendUserPhoneNumberToNewAnnounceComponent="getUserPhoneNumberFromNewAnnounceUserInfoComponent"
@@ -77,9 +79,13 @@
                 <div class="p-3 mb-4 border-bottom-danger">
                     <button
                         @click="createNewAnnounce"
-                        type="button" class="btn btn-success aukcionaz__main-color w-100"
+                        type="button" :class="'btn btn-success aukcionaz__main-color w-100 '+ submit_button_disabled"
                     >
-                        <p class="fs-5 p-2 m-auto text-white">Davam et</p>
+                        <p v-if="!submit_button_load" class="fs-5 p-2 m-auto text-white">Davam et</p>
+                        <p v-else class="fs-5 p-2 m-auto text-white">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Gözləyin...
+                        </p>
                     </button>
 
                     <div class="p-3 text-secondary text-opacity-50">
@@ -117,9 +123,15 @@ export default {
             email: '',
             phone: '',
             errors: [],
+            name_error: null,
+            email_error: null,
+            phone_error: null,
+            image_errors: null,
             sub_category_error_style: '',
             show_image_upload_section: false,
-            images: ''
+            images: '',
+            submit_button_load: false,
+            submit_button_disabled: '',
         }
     },
     components: {
@@ -140,6 +152,13 @@ export default {
             this.deleteCityError();
         },
         errors() {
+            if( this.errors ) {
+                this.name_error = this.errors;
+                console.log('AAAAA - ', this.errors )
+            }
+            if( this.errors && this.errors[0] && this.errors[0].email ) this.email_error = this.errors[0].email[0]
+            if( this.errors && this.errors[0] && this.errors[0].phone )  this.phone_error = this.errors[0].phone[0]
+
             return this.errors;
         }
     },
@@ -195,7 +214,11 @@ export default {
                                     element.classList.remove('py-2');
                                     element.classList.add('py-0');
                                 }
-                                element_error.classList.add('d-block');
+
+                                if( el.type[0] ) {
+                                    element_error.innerText = el.type[0] ;
+                                    element_error.classList.add('d-block');
+                                }
                             }
 
                             if( elementPosition && topOffset ) {
@@ -222,8 +245,11 @@ export default {
                     if( title_label.classList && title_error.classList ) {
                         title_form.classList.add('my-2')
                         // title_label.classList.add('pt-1')
-                        title_error.classList.add('d-block');
-                        title_error.style.margin = '0 0 0 13px';
+                        if( error_name[0] ) {
+                            title_error.innerText = error_name[0];
+                            title_error.style.margin = '-4px 0px 0px 13px';
+                            title_error.classList.add('d-block');
+                        }
                     }
 
                     if( elementPosition && topOffset ) {
@@ -244,6 +270,40 @@ export default {
                 }
             }
         },
+        ifIsImageError(errors) {
+            let count = 30;
+            let image = document.getElementById('image');
+            // console.log(' this.image_errors --- ',   errors[0] )
+            if( errors && errors.length ) {
+                let image_arr = [];
+                errors.forEach( (error, key) => {
+                    if( error['images'] ) image_arr[key] = error.images[0];
+                    else {
+                        for ( let i=0; i < count; i++ ) {
+                            if( error['images.'+i] ) image_arr[i] = error['images.'+i][0];
+                            // console.log(' this.image_errors --- ',   i )
+                        }
+                    }
+
+                    if( !error.type &&! error.title && !error.price && !error.city && error.images ) {
+                        let elementPosition = image.getBoundingClientRect().top;
+                        let topOffset = image.offsetHeight;
+
+                        if( elementPosition && topOffset ) {
+                            if( scroll ) {
+                                window.scrollBy({
+                                    top: elementPosition - topOffset,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                });
+
+                console.log(' this.image_errors --- ',   image_arr )
+                return this.image_errors = image_arr;
+            }
+        },
         ifIsOtherErrors() {
             if( this.errors.length ) {
                 this.errors.forEach( error => {
@@ -251,11 +311,20 @@ export default {
                         if( !error.type ) this.ifIsTitleError( error.title, 'title-form', 'title-error', true );
                         else this.ifIsTitleError( error.title, 'title-form', 'title-error', false );
 
-                        if( !error.type &&! error.title ) this.isErrors( error.price, 'price', 'price-error', true );
+                        if( !error.type && !error.title && error.price ) this.isErrors( error.price, 'price', 'price-error', true );
                         else this.isErrors( error.price, 'price', 'price-error', false );
 
-                        if( !error.type &&! error.title && !error.price ) this.isErrors( error.city, 'city', 'city-error', true );
-                        else this.isErrors( error.city, 'city', 'city-error', false );
+                        if( !error.type && !error.title && !error.price && error.city) this.isCityErrors( error.city, 'city', 'city-error', true );
+                        else this.isCityErrors( error.city, 'city', 'city-error', false );
+
+                        if( !error.type && !error.title && !error.price && !error.city && error.name ) this.isErrors( error.name, 'name', 'name-error', true );
+                        else this.isErrors( error.name, 'name', 'name-error', false );
+
+                        if( !error.type && !error.title && !error.price && !error.city && !error.name && error.email ) this.isErrors( error.email, 'email', 'email-error', true );
+                        else this.isErrors( error.email, 'email', 'email-error', false );
+
+                        if( !error.type && !error.title && !error.price && !error.city && !error.name && !error.email && error.phone ) this.isErrors( error.phone, 'phone', 'phone-error', true );
+                        else this.isErrors( error.phone, 'phone', 'phone-error', false );
                     }
                 })
             }
@@ -270,7 +339,10 @@ export default {
                     let topOffset = parent_div.offsetHeight;
 
                     if( parent_div.classList && error_div.classList ) {
-                        error_div.style.display = 'block';
+                        if( error_name[0] ) {
+                            error_div.innerText = error_name[0];
+                            error_div.style.display = 'block';
+                        }
                     }
 
                     if( elementPosition && topOffset ) {
@@ -286,16 +358,51 @@ export default {
                 if( parent_div.classList && parent_div.classList.contains('border-danger') ) {
                     parent_div.classList.remove('border')
                     parent_div.classList.remove('border-danger')
-                    error_tooltip.style.display = 'none';
+                    error_div.style.display = 'none';
                 }
-                if( error_tooltip ) error_tooltip.style.display = 'none';
+                if( error_div ) error_div.style.display = 'none';
             }
         },
-        scrollTo() {
+        isCityErrors( error_name, parent, error_section, scroll ){
+            let parent_div = document.getElementById(parent);
+            let error_div = document.getElementById(error_section);
 
-        },
-        isCityErrors(){
+            if( error_name ) {
+                if( parent_div && error_div ){
+                    let elementPosition = parent_div.getBoundingClientRect().top;
+                    let topOffset = parent_div.offsetHeight;
 
+                    if( parent_div.classList && error_div.classList ) {
+                        if( parent_div.classList.contains('py-3')  ) {
+                            parent_div.classList.remove('py-3');
+                            parent_div.classList.add('pt-2');
+                            parent_div.classList.add('pb-2');
+
+                            if( error_name[0] ) {
+                                error_div.innerText = error_name[0];
+                                error_div.classList.add('mt-3');
+                                error_div.style.display = 'block';
+                            }
+                        }
+                    }
+
+                    if( elementPosition && topOffset ) {
+                        if( scroll ) {
+                            window.scrollBy({
+                                top: elementPosition - topOffset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            }else {
+                if( parent_div.classList && parent_div.classList.contains('border-danger') ) {
+                    parent_div.classList.remove('border')
+                    parent_div.classList.remove('border-danger')
+                    error_div.style.display = 'none';
+                }
+                if( error_div ) error_div.style.display = 'none';
+            }
         },
         deleteSubCategoryError(){
             if( this.sub_category_id ) {
@@ -310,14 +417,16 @@ export default {
         },
         deleteTypeError(){
             if( this.sub_category_type_name ) {
-                let element = document.getElementById('sub_category_type');
-                let sub_category_type_invalid_tooltip = document.getElementById('sub_category_type_invalid_tooltip');
+                let element = document.getElementById('sub-category-type-div');
+                let sub_category_type_invalid_tooltip = document.getElementById('sub-category-type-error');
                 this.errors.forEach( el => {
                     if( el.type ) {
                         setTimeout( () => {
-                            if( element.classList.contains('border') ) element.classList.remove('border');
-                            sub_category_type_invalid_tooltip.style.display = 'none';
-                            return delete this.errors[0].type;
+                            if( element && element.classList ) {
+                                if( element.classList.contains('border') ) element.classList.remove('border');
+                                sub_category_type_invalid_tooltip.style.display = 'none';
+                                return delete this.errors[0].type;
+                            }
                         }, 200);
                     }
                 });
@@ -331,11 +440,8 @@ export default {
                     this.errors.forEach( el => {
                         if( el.city ) {
                             setTimeout( () => {
-                                if( element.classList.contains('border') ){
-                                    element.classList.remove('border');
-                                    city_error.style.display = 'none';
-                                    return delete this.errors[0].city;
-                                }
+                                city_error.style.display = 'none';
+                                return delete this.errors[0].city;
                             }, 200);
                         }
                     });
@@ -368,6 +474,8 @@ export default {
             console.log('DDDDDDDDDDDCCC222 = ',  data[0] );
         },
         async createNewAnnounce(){
+            this.submit_button_load = true;
+            this.submit_button_disabled = 'disabled';
             this.errors = [];
             let data = new FormData();
             // console.log('FFFFFFFF = ', this.images );
@@ -384,8 +492,8 @@ export default {
             let phone =  this.if_isset( this.phone );
             let images =  this.getUploadImages(this.images, data);
 
-            console.log('ALL DATAS type = ', type );
-            console.log('ALL DATAS title = ', title );
+            console.log('ALL DATAS images = ', images );
+            // console.log('ALL DATAS title = ', title );
 
             data.append('category', category );
             data.append('sub_category_id', sub_category_id );
@@ -409,24 +517,33 @@ export default {
                     processData: false,
                 }).then( res => {
                     if( res.status === 200 && res.data ) {
+                        this.submit_button_load = true;
+                        this.submit_button_disabled = 'disabled';
                         console.log('Create res + = ', res.data );
                     }
                 }).catch( error => {
                     if( error.response.status === 422 ) {
-                        if( error.response.data.errors ) {
+                        if( error.response && error.response.data && error.response.data.errors ) {
                             this.errors.push(error.response.data.errors);
                             this.ifIsSubCategoryError();
                             this.ifIsTypeError();
                             this.ifIsOtherErrors();
+                            this.ifIsImageError(this.errors);
 
-                            console.log('RRRRRRRRRRRRR = ', this.errors[0].sub_category_id )
-                            console.log('error.response.data.errors === ', error.response.data.errors )
-                        }else console.log('error.response.data === ', error.response.data )
-                    }else if( error.response.status === 500 ) {
-                        console.log('status 500 === ', error)
-                    }else{
-                        console.log('JSON.stringify(error) === ', JSON.stringify(error) )
+                            console.log('ERROR RESPONSE DATA STATUS 422 === ', this.errors )
+                        }
+
+                        else console.log('ERROR RESPONSE STATUS 422 === ', error.response.data )
                     }
+                    else if( error.response.status === 500 ) {
+                        console.log('ERROR STATUS 500 === ', error)
+                    }
+                    else{
+                        console.log('NO ERROR STATUS === ', JSON.stringify(error) )
+                    }
+
+                    this.submit_button_load = false;
+                    this.submit_button_disabled = '';
                 });
             }
 
@@ -439,7 +556,8 @@ export default {
                     }
                 }
             }
-            return data.get('images');
+
+            return data.get('images') ?? '';
         },
         loadComponent(){
             if( this.loadComponentData !== undefined && this.loadComponentData.new_data !== undefined ) {

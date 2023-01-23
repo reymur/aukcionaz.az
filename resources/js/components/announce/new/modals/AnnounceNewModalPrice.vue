@@ -12,7 +12,7 @@
                 <div class="col text-black-50 ">
                     <div class="form-floating">
                         <input
-                            class="form-control pb-0 rounded-0 bg-white fs-5"
+                            class="form-control pb-0 border-0 rounded-0 bg-white fs-5"
                             placeholder="Qiymət"
                             v-model="price"
                             v-maska="'##################################'"
@@ -22,6 +22,8 @@
                             Qiymət, AZN
                                 <span class="text-danger text-opacity-75">*</span>
                         </label>
+
+                        <div class="invalid-feedback fs-6 price__error_style" id="price-error"> Qiymət mütləqdir! </div>
                     </div>
                 </div>
             </li>
@@ -70,6 +72,10 @@ export default {
     .form-control {
         border: none;
         padding-bottom: 0;
+    }
+
+    .price__error_style {
+        margin-top: -6px;
     }
 
 </style>

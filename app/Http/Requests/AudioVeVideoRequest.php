@@ -36,13 +36,14 @@ class AudioVeVideoRequest extends FormRequest
                     'delivery' => 'nullable|string'
                 ]
             ],
-            'price' => ["required","integer"],
-            'city'  => ["required","string"],
-            'about' => ["string"],
-            'name'  => ["required","string"],
-            'email' => ["required","email:rfc"],
-            'phone' => ["required","string"],
-            'images.*' => ["mimes:jpeg,png,jpg,gif,svg"],
+            'price'    => ["required","integer"],
+            'city'     => ["required","string"],
+            'about'    => ["nullable","string"],
+            'name'     => ["required","string"],
+            'email'    => ["required","email:rfc"],
+            'phone'    => ["required","string"],
+            'images'   => ["min:1", "max:20"],
+            'images.*' => ["mimes:jpg,jpeg,png,bmp,gif,svg"],
         ];
     }
 }

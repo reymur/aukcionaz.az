@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="input-group control-group mb-3">
+        <div class="input-group control-group mb-3" id="image">
             <label for="formFileLg" class="form-control form-control-lg d-flex mx-3 align-self-center border-0 rounded-0 lh-lg w-100 justify-content-center custom__bg_image_uploade" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-camera-fill color__custom_photo_camera" viewBox="0 0 16 16">
                     <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -9,7 +9,12 @@
                 <span class="ms-2 fs-5 custom__image_upload_text">Şəkil</span>
             </label>
 
-            <input type="file" @change="getImages" multiple tabindex="-1" class="form-control opacity-0 border-0 bg-info rounded-0 position-absolute w-50" id="formFileLg">
+            <input type="file" @change="getImages" multiple @click="removeUploadValue" accept="image/*"
+                   tabindex="-1" class="form-control opacity-0 border-0 bg-info rounded-0 position-absolute w-50" id="formFileLg">
+
+            <div v-if="errors && errors.length" class="invalid-feedback d-block fs-6 ms-4 mt-1" id="image-error">
+                <div v-for="error in errors" class=""> {{ error }} </div>
+            </div>
         </div>
 
         <!-- APPEND UPLOAD IMAGES -->
@@ -20,42 +25,53 @@
 <script>
 export default {
     name: "NewImageUpload",
-    props: ['upload_image_id'],
+    props: ['upload_image_id','image_errors'],
     data() {
         return {
-            images: null,
+            images: '',
+            errors: null,
         }
     },
     watch: {
+        image_errors(){
+            this.errors = this.image_errors;
+        },
         upload_image_id() {
             // this.getUploadImage();
         }
     },
     methods: {
         getImages( file ){
-            this.$emit('sendUploadFile', file.target.files );
-
-            let announce_type = document.getElementById('announce-type');
-
+           console.log('CCCCCC - - - ', file.target.files[0].type )
+            this.images = file.target.files;
             if( file && file.target && file.target.files ) {
-                if( file.target.files.length && file.target.files.length > 0 ) {
 
-                    this.images = file.target.files;
+                this.$emit('sendUploadFile', file.target.files );
 
-                    for ( let i=0; i < file.target.files.length; i++ ) {
-                        this.showUploadImage( file.target.files[i] );
+                if( file && file.target && file.target.files ) {
+                    if( file.target.files.length && file.target.files.length > 0 ) {
+
+                        for ( let i=0; i < file.target.files.length; i++ ) {
+                            this.showUploadImage( file.target.files[i] );
+                        }
                     }
                 }
             }
         },
+        removeUploadValue(ev) {
+            if( ev && ev.target && ev.target.value ) ev.target.value = null;
+        },
         showUploadImage( upload_image ) {
             if( upload_image ) {
+                let new_img = null;
+                let new_img_div = null;
+                let upload_image_src = null;
                 let image_show_div = document.getElementById('image__show_div');
 
-                if( image_show_div !== undefined && image_show_div !== null ) {
-                    let new_img_div = document.createElement('div');
-                    let new_img = document.createElement('img');
-                    let upload_image_src = URL.createObjectURL( upload_image );
+                if( image_show_div ) {
+                    new_img = document.createElement('img');
+                    new_img_div = document.createElement('div');
+                    upload_image_src = URL.createObjectURL( upload_image );
 
                     if( new_img_div && new_img && upload_image_src ) {
                         new_img_div.classList.add('m-auto');
@@ -78,7 +94,7 @@ export default {
                         }, 10)
 
                         new_img.src = upload_image_src;
-                        new_img.id = upload_image.name;
+                        new_img.id = upload_image.name + '_1';
                         new_img.classList.add('w-100');
                         new_img.classList.add('h-100');
                         new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';

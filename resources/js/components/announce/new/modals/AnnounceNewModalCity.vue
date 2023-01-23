@@ -1,8 +1,8 @@
 <template>
    <div class="">
         <!-- ANNOUNCE NEW NEW CITY -->
-        <ul class="list-group" id="city" data-bs-toggle="offcanvas" data-bs-target="#cities" aria-controls="offcanvasRight">
-            <li :class="'list-group-item shadow-sm col-12 d-flex border-0 '+custom__padding+' ps-3'">
+        <ul class="list-group" data-bs-toggle="offcanvas" data-bs-target="#cities" aria-controls="offcanvasRight">
+            <li :class="'list-group-item shadow-sm col-12 d-flex border-0 '+custom__padding+' ps-3'" id="city">
                 <div class="me-4 m-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
@@ -16,6 +16,8 @@
                     </div>
 
                     <span v-if="city_name" class="text-dark fs-5">{{ city_name }}</span>
+
+                    <div class="invalid-feedback fs-6" id="city-error"> Şəhər seçin! </div>
                 </div>
 
                 <div class="text-end m-auto">
@@ -78,7 +80,7 @@ export default {
             city_name: null,
             font_size: 'fs-5',
             custom__padding: 'py-3',
-            custom__margin: '',
+            custom__margin: 'mt-1',
         }
     },
     watch: {
@@ -87,7 +89,7 @@ export default {
                 this.custom__padding = 'py-3'
                 this.custom__margin = ''
             } else {
-                this.custom__padding = 'py-2'
+                this.custom__padding = 'pt-3 pb-2'
                 this.custom__margin = 'mb-2'
             }
         }
