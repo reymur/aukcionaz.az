@@ -520,6 +520,7 @@ export default {
                         this.submit_button_load = true;
                         this.submit_button_disabled = 'disabled';
                         console.log('Create res + = ', res.data );
+                        document.location.href =    'https://public.test/';
                     }
                 }).catch( error => {
                     if( error.response.status === 422 ) {
@@ -536,7 +537,7 @@ export default {
                         else console.log('ERROR RESPONSE STATUS 422 === ', error.response.data )
                     }
                     else if( error.response.status === 500 ) {
-                        console.log('ERROR STATUS 500 === ', error)
+                        console.log('ERROR STATUS 500 === ', JSON.stringify(error) )
                     }
                     else{
                         console.log('NO ERROR STATUS === ', JSON.stringify(error) )

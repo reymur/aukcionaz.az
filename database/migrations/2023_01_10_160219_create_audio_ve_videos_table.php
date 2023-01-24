@@ -23,7 +23,7 @@ class CreateAudioVeVideosTable extends Migration
             $table->string('delivery')->nullable();
             $table->integer('price');
             $table->string('city');
-            $table->text('about');
+            $table->text('about')->nullable();
             $table->string('name');
             $table->string('email');
             $table->boolean('publish')->default(0);

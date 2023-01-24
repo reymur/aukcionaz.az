@@ -14,37 +14,37 @@
     <script src="{{ asset('js/my_custom.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-alpha.2/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-    //     $(function (){
-    //         // alert( window.location.protocol+'//'+window.location.hostname )
-    //         // let ip_address = '127.0.0.1';
-    //         let ip_address = window.location.protocol+'//'+window.location.hostname ;
-    //         let socket_port = '3000';
-    //         let socket = io(ip_address + ':' + socket_port);
-
-    //         let chatInput = $('#chatInput');
-
-    //         chatInput.keypress( function (e) {
-    //             let message = $(this).html();
-    //             console.log(message)
-    //             if(e.which === 13 && !e.shiftKey) {
-    //                 socket.emit('sendMessageToServer', message);
-    //                 chatInput.html('');
-    //                 return false;
-    //             }
-    //         });
-
-    //         socket.on('sendMessageToClient', (message) => {
-    //             console.log('MMM = ', message)
-    //             $('.chat-ul').append(`<li>`+ message+ `</li>`)
-    //         })
-    //     })
-    // </script>
+        // $(function (){
+        //     // alert( window.location.protocol+'//'+window.location.hostname )
+        //     // let ip_address = '127.0.0.1';
+        //     let ip_address = window.location.protocol+'//'+window.location.hostname ;
+        //     let socket_port = '3000';
+        //     let socket = io(ip_address + ':' + socket_port);
+        //
+        //     let chatInput = $('#chatInput');
+        //
+        //     chatInput.keypress( function (e) {
+        //         let message = $(this).html();
+        //         console.log(message)
+        //         if(e.which === 13 && !e.shiftKey) {
+        //             socket.emit('sendMessageToServer', message);
+        //             chatInput.html('');
+        //             return false;
+        //         }
+        //     });
+        //
+        //     socket.on('sendMessageToClient', (message) => {
+        //         console.log('MMM = ', message)
+        //         $('.chat-ul').append(`<li>`+ message+ `</li>`)
+        //     })
+        // })
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -74,7 +74,7 @@
 
                 <!-- NEW ANNOUBCE ADD BUTTON -->
                 @include('announce.buttons.new_announce_add_buton')
-                
+
 
                 <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header border border-bottom-1">
@@ -103,7 +103,7 @@
                                                 <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                               </svg>
                                         </div>
-            
+
                                         <a class="col-sm-11 col-md-11 col-lg-4 ps-lg-0 nav-link fs-5" href="{{ route('login') }}">{{ __('Giriş') }}</a>
                                     </li>
                                 @endif
@@ -116,7 +116,7 @@
                                                 <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                                             </svg>
                                         </div>
-            
+
                                         <a class="col-sm-11 col-md-11 col-lg-10 nav-link ps-lg-0 fs-5" href="{{ route('register') }}">{{ __('Reqisrasiya') }}</a>
                                     </li>
                                 @endif
@@ -125,14 +125,14 @@
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
-            
+
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-            
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>

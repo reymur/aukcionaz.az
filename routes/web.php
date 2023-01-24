@@ -3,7 +3,7 @@
 use App\Http\Controllers\AukcionRealTimeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewAnnounceController;
-use App\Http\Controllers\Electronica;
+use App\Http\Controllers\ElectronicaController;
 use App\Http\Controllers\ProductController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 Auth::routes();
 
 Route::controller(HomeController::class)->group(function(){
-    Route::get('/', 'index');
+    Route::get('/', 'index')->name('home');
     Route::get('/category/{id}/{name}', 'showSubCategories')->name('sub_category');
 });
 
@@ -31,8 +31,8 @@ Route::prefix('announce')->group(function(){
     // CREATE NEW ANNOUNCE
     Route::prefix('new/create')->group(function (){
         // CREATE NEW ANNOUNCE BY Elektronika
-        Route::prefix('electronica')->controller(Electronica::class)->group(function (){
-            Route::post('/audio-ve-video', 'audioVeVideo');
+        Route::prefix('electronica')->controller(ElectronicaController::class)->group(function (){
+            Route::post('/audio-ve-video', 'audioVeVideo')->name('audioVeVideo');
             Route::post('/upload-images', 'uploadImages');
         });
     });
