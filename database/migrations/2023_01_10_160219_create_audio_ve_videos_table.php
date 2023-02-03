@@ -24,11 +24,12 @@ class CreateAudioVeVideosTable extends Migration
             $table->integer('price');
             $table->string('city');
             $table->text('about')->nullable();
-            $table->string('name');
-            $table->string('email');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->boolean('publish')->default(0);
             $table->string('pin')->nullable();
             $table->string('number')->nullable();
+            $table->integer('seen')->default(0);
             $table->timestamps();
         });
     }

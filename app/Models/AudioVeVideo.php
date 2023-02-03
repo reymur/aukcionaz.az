@@ -11,6 +11,9 @@ class AudioVeVideo extends Model
 
     protected $guarded = [];
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
     public function products(){
         return $this->morphMany(Product::class, 'productable');
     }
@@ -25,5 +28,9 @@ class AudioVeVideo extends Model
 
     public function subCategory(){
         return $this->belongsTo(SubCategory::class);
+    }
+
+    public function productWithAll(){
+        return $this->hasOne(__CLASS__,'id')->with(['images','phones']);
     }
 }

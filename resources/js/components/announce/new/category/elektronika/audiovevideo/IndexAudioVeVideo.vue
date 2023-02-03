@@ -59,7 +59,7 @@
                     <new-image-upload
                         :image_errors="image_errors"
                         :upload_image_id="upload_image_id"
-                        @sendUploadFile="sendUploadFile"
+                        @sendUploadFile="getSendUploadFile"
                     ></new-image-upload>
                 </div>
 
@@ -129,7 +129,7 @@ export default {
             image_errors: null,
             sub_category_error_style: '',
             show_image_upload_section: false,
-            images: '',
+            images: [],
             submit_button_load: false,
             submit_button_disabled: '',
         }
@@ -466,12 +466,15 @@ export default {
                 load_component_folder: this.loadComponentData.new_data.sub_category_name.toLowerCase()
             } );
         },
-        sendUploadFile(data){
+        getSendUploadFile(data){
             // let form_data = new FormData();
             // form_data.append('images', data )
-            let dataas = new FormData();
-            this.images = data;
-            console.log('DDDDDDDDDDDCCC222 = ',  data[0] );
+            // this.images.push(data);
+            for( var i=0; i < data.length; i++ ) {
+                this.images.push(data[i])
+                console.log('DDDDDDDDDDDCCC222 = ',  data[i] );
+            }
+            console.log('AAAAAAAAAAAAAAAA = ',  this.images );
         },
         async createNewAnnounce(){
             this.submit_button_load = true;
@@ -516,14 +519,20 @@ export default {
                     data,
                     processData: false,
                 }).then( res => {
-                    if( res.status === 200 && res.data ) {
+                    if( res && res.status && res.status === 200 && res.data ) {
                         this.submit_button_load = true;
                         this.submit_button_disabled = 'disabled';
-                        console.log('Create res + = ', res.data );
-                        document.location.href =    'https://public.test/';
+                        // console.log('Create resA + = ', res.data.productable );
+                        console.log('Create resA + = ', res );
+                        if( res && res.data && res.data.productable && res.data.productable.id ) {
+                            let id = res.data.productable.id;
+                            document.location.href = 'https://public.test/product/'+id;
+                        }
+                        // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
+                        // document.location.href = 'https://public.test/product/';
                     }
                 }).catch( error => {
-                    if( error.response.status === 422 ) {
+                    if( error.response && error.response && error.response.status && error.response.status === 422 ) {
                         if( error.response && error.response.data && error.response.data.errors ) {
                             this.errors.push(error.response.data.errors);
                             this.ifIsSubCategoryError();
@@ -536,7 +545,7 @@ export default {
 
                         else console.log('ERROR RESPONSE STATUS 422 === ', error.response.data )
                     }
-                    else if( error.response.status === 500 ) {
+                    else if( error.response && error.response && error.response.status && error.response.status === 500 ) {
                         console.log('ERROR STATUS 500 === ', JSON.stringify(error) )
                     }
                     else{

@@ -28631,7 +28631,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       image_errors: null,
       sub_category_error_style: '',
       show_image_upload_section: false,
-      images: '',
+      images: [],
       submit_button_load: false,
       submit_button_disabled: ''
     };
@@ -28937,12 +28937,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         load_component_folder: this.loadComponentData.new_data.sub_category_name.toLowerCase()
       });
     },
-    sendUploadFile: function sendUploadFile(data) {
+    getSendUploadFile: function getSendUploadFile(data) {
       // let form_data = new FormData();
       // form_data.append('images', data )
-      var dataas = new FormData();
-      this.images = data;
-      console.log('DDDDDDDDDDDCCC222 = ', data[0]);
+      // this.images.push(data);
+      for (var i = 0; i < data.length; i++) {
+        this.images.push(data[i]);
+        console.log('DDDDDDDDDDDCCC222 = ', data[i]);
+      }
+      console.log('AAAAAAAAAAAAAAAA = ', this.images);
     },
     createNewAnnounce: function createNewAnnounce() {
       var _this6 = this;
@@ -28990,14 +28993,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   data: data,
                   processData: false
                 }).then(function (res) {
-                  if (res.status === 200 && res.data) {
+                  if (res && res.status && res.status === 200 && res.data) {
                     _this6.submit_button_load = true;
                     _this6.submit_button_disabled = 'disabled';
-                    console.log('Create res + = ', res.data);
-                    document.location.href = 'https://public.test/';
+                    // console.log('Create resA + = ', res.data.productable );
+                    console.log('Create resA + = ', res);
+                    if (res && res.data && res.data.productable && res.data.productable.id) {
+                      var id = res.data.productable.id;
+                      document.location.href = 'https://public.test/product/' + id;
+                    }
+                    // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
+                    // document.location.href = 'https://public.test/product/';
                   }
                 })["catch"](function (error) {
-                  if (error.response.status === 422) {
+                  if (error.response && error.response && error.response.status && error.response.status === 422) {
                     if (error.response && error.response.data && error.response.data.errors) {
                       _this6.errors.push(error.response.data.errors);
                       _this6.ifIsSubCategoryError();
@@ -29006,7 +29015,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       _this6.ifIsImageError(_this6.errors);
                       console.log('ERROR RESPONSE DATA STATUS 422 === ', _this6.errors);
                     } else console.log('ERROR RESPONSE STATUS 422 === ', error.response.data);
-                  } else if (error.response.status === 500) {
+                  } else if (error.response && error.response && error.response.status && error.response.status === 500) {
                     console.log('ERROR STATUS 500 === ', JSON.stringify(error));
                   } else {
                     console.log('NO ERROR STATUS === ', JSON.stringify(error));
@@ -29746,11 +29755,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue3_photo_preview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue3-photo-preview */ "./node_modules/vue3-photo-preview/dist/vue3-photo-preview.esm.js");
 
+// images/products/
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ProductShow",
+  props: ['product'],
   data: function data() {
     return {
-      imgList: ['https://i.ytimg.com/vi/LfO2U9gw2iE/hqdefault.jpg', 'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png', 'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png', 'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png', 'https://cdn.jdpower.com/ChromeImageGallery/Expanded/White/640/2014DOD004b_640/2014DOD004b_640_05.jpg', 'https://cdn.jdpower.com/ChromeImageGallery/Expanded/White/640/2014DOD004b_640/2014DOD004b_640_05.jpg']
+      new_image_path: location.protocol + '//' + location.host + '/storage/images/products/',
+      imgList: null
     };
   },
   components: {
@@ -29758,15 +29770,21 @@ __webpack_require__.r(__webpack_exports__);
     PhotoConsumer: vue3_photo_preview__WEBPACK_IMPORTED_MODULE_0__.PhotoConsumer,
     PhotoSlider: vue3_photo_preview__WEBPACK_IMPORTED_MODULE_0__.PhotoSlider
   },
-  methods: {},
+  methods: {
+    getImages: function getImages() {
+      if (this.product && this.product.images && this.product.images) {
+        return this.imgList = this.product.images;
+      }
+    }
+  },
   computed: {
     showOneImage: function showOneImage() {
       var el = document.getElementsByClassName('PhotoConsumer');
-      if (el !== undefined && el !== null) {
-        if (el.length === this.imgList.length) {
+      if (el && this.product && this.product.images) {
+        if (el.length === this.product.images.length) {
           for (var i = 0; i < el.length; i++) {
             if (el[i].id > 0) {
-              if (el[i].classList !== undefined && el[i].classList !== null) {
+              if (el[i].classList) {
                 el[i].classList.add('d-none');
               }
             }
@@ -29776,14 +29794,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    this.getImages();
     this.showOneImage;
     if (document.getElementById('img-0')) {
       document.getElementById('img-0').style.display = 'none';
     }
-
-    // console.log('PhotoConsumer - ',
-    //     document.getElementsByClassName('PhotoConsumer')
-    // );
+    console.log('new_image_path - ', location.protocol + '//' + this.new_image_path);
+    console.log('$product - ', this.product.images[0].image);
   }
 });
 
@@ -30348,7 +30365,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" IMAGE UPLOAD SECTION "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                v-if=\"show_image_upload_section\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_image_upload, {
     image_errors: $data.image_errors,
     upload_image_id: $data.upload_image_id,
-    onSendUploadFile: $options.sendUploadFile
+    onSendUploadFile: $options.getSendUploadFile
   }, null, 8 /* PROPS */, ["image_errors", "upload_image_id", "onSendUploadFile"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
     name_error: $data.name_error,
     email_error: $data.email_error,
@@ -31170,9 +31187,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           src: src
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [id == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
+            return [id === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
               key: 0,
-              src: $data.imgList[0],
+              src: $data.new_image_path + $data.imgList[0].image,
               "class": ""
             }, null, 8 /* PROPS */, _hoisted_4)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
@@ -31194,7 +31211,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [id > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
               key: 0,
-              src: src,
+              src: $data.new_image_path + src.image,
               "class": "w-100"
             }, null, 8 /* PROPS */, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
           }),

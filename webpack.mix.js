@@ -1,4 +1,3 @@
-const { main } = require('@popperjs/core');
 const mix = require('laravel-mix');
 
 /*

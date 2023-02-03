@@ -13,13 +13,13 @@
 
     <!-- PRODUCT IMAGE -->
     <div class="col-sm-11 col-md-11 col-lg-10 m-auto py-2">
-        
+
         <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 rows-cols-xl-4 g-3">
 
             <div class="col product-card" id="product-card">
                 <div class="card h-100 product__card">
-                    <a href="{{ route('product') }}" class="text-decoration-none">
-                       
+                    <a href="{{ route('product',['id'=>146]) }}" class="text-decoration-none">
+
                         <div class="product__on_auktion_icon active-aukcion">
                             <svg width="30px" height="30px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>gavel-line</title>
@@ -30,11 +30,11 @@
                                 <rect x="0" y="0" width="34" height="34" fill-opacity="0"/>
                             </svg>
                         </div>
-                        
+
                         <div class="product__image_div">
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F01%2F17%2F17%2F02%2F6f8e2caf-1c6e-422e-b53e-ee377f3b2a05%2F91017_vmTKd7z5pZpnltR1ZDq4sQ.jpg" class="card-img-top" alt="...">
                         </div>
-                        
+
                         <div class="card-body card__body_style">
                             <h5 class="card-title product__price">Card title</h5>
                             <p class="card-text product__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -63,7 +63,7 @@
                         <div class="product__image_div">
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F01%2F17%2F17%2F02%2F6f8e2caf-1c6e-422e-b53e-ee377f3b2a05%2F91017_vmTKd7z5pZpnltR1ZDq4sQ.jpg" class="card-img-top" alt="...">
                         </div>
-                        
+
                         <div class="card-body card__body_style">
                             <h5 class="card-title product__price">Card title</h5>
                             <p class="card-text product__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -92,7 +92,7 @@
                         <div class="product__image_div">
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F01%2F17%2F17%2F02%2F6f8e2caf-1c6e-422e-b53e-ee377f3b2a05%2F91017_vmTKd7z5pZpnltR1ZDq4sQ.jpg" class="card-img-top" alt="...">
                         </div>
-                        
+
                         <div class="card-body card__body_style">
                             <h5 class="card-title product__price">Card title</h5>
                             <p class="card-text product__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -117,11 +117,11 @@
                                 <rect x="0" y="0" width="34" height="34" fill-opacity="0"/>
                             </svg>
                         </div>
-                        
+
                         <div class="product__image_div">
                             <img src="//tap.azstatic.com/uploads/medium/2022%2F11%2F01%2F17%2F17%2F02%2F6f8e2caf-1c6e-422e-b53e-ee377f3b2a05%2F91017_vmTKd7z5pZpnltR1ZDq4sQ.jpg" class="card-img-top" alt="...">
                         </div>
-                        
+
                         <div class="card-body card__body_style">
                             <h5 class="card-title product__price">Card title</h5>
                             <p class="card-text product__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

@@ -21,7 +21,7 @@ else if( window.innerWidth < 992 ) {
 }
 
 onresize = (event) => {
-    
+
     if( window.innerWidth >= 992 ) {
         console.log('window size == ', window.innerWidth)
         new__announce_btn_text.style.display = 'block'
@@ -55,7 +55,7 @@ if( all__category_image_li_styles !== null )
 }
 
 
-// "category__child_image_li-styles" hover styles 
+// "category__child_image_li-styles" hover styles
 let category_child_div = document.getElementById('category__child_div')
 let category__child_image_li_styles = document.querySelector('.category__child_image_li-styles')
 let category__child_image_div_styles = document.querySelector('.category__child_image-div-styles')
@@ -73,7 +73,7 @@ rmBorderOnCategoryImageA = event => {
     event.target.children[1].style.color = 'rgb(33, 44, 58)'
 }
 
-// DONT SHOW "NAVBAR" 
+// DONT SHOW "NAVBAR"
 var path_name = document.location.pathname;
 var navbar = document.getElementById('navbar');
 
@@ -84,18 +84,19 @@ if( path_name.indexOf('announce') === 1 ) {
 }
 
 
-// PRUDUCT ABOUT TEXT ...more 
+// PRUDUCT ABOUT TEXT ...more
 var p_text = document.getElementById('product-about-text');
 var p_full_text = document.getElementById('product-about-full-text');
 
 if( path_name.indexOf('product') === 1 ) {
-    p_full_text.style.display = 'none';
-    p_text.style.display = 'block';
-    
+    if( p_full_text &&  p_full_text.style ) {
+        p_full_text.style.display = 'none';
+        p_text.style.display = 'block';
+    }
     function showProductAboutText() {
         p_text.style.display = 'none';
         p_full_text.style.display = 'block';
-    
+
         console.log(p_full_text)
     }
 }
@@ -127,7 +128,7 @@ function recursionRes(product_card) {
 
 
  if( typeof Array && is_active_icon.length > 0 ) {
-    for( var i=0; i <= is_active_icon.length; i++ ) 
+    for( var i=0; i <= is_active_icon.length; i++ )
     {
         if( is_active_icon[0].classList[i] !== undefined && is_active_icon[0].classList[i] !== null )
         {
@@ -150,7 +151,7 @@ function recursionRes(product_card) {
                 is_active_btn[0].style.animation = 'box-shadow 1s linear infinite';
             }
         }
-    } 
+    }
  }
   /* IF THE PRODUCT IS ACTIVE IN REALTIME ON THE AUKTION THEN ADD ANIMATION END */
 

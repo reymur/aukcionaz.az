@@ -416,3 +416,17 @@ input:focus
 .error__letter_spacing {
     letter-spacing: 1px;
 }
+
+.login__button {
+    border: none;
+    height: 2.3em;
+    background-color: #009512;
+    border-radius: 5px;
+    color: #fff;
+}
+    .login__button:hover {
+        border: none;
+        height: 2.3em;
+        color: #e3e1dc;
+        background-color: #037411;
+    }
