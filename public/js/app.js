@@ -28311,7 +28311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-08b62728] {\n        display: flex;\n        width: 100%;\n        height: 100%;\n}\n.PhotoConsumer img[data-v-08b62728] {\n            align-self: center;\n            background-size: cover;\n            margin: auto;\n            display: block;\n}\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29775,6 +29775,28 @@ __webpack_require__.r(__webpack_exports__);
       if (this.product && this.product.images && this.product.images) {
         return this.imgList = this.product.images;
       }
+    },
+    deleteFakeBigConsumerImages: function deleteFakeBigConsumerImages() {
+      var set = setInterval(function () {
+        var ids = document.querySelectorAll('.PhotoConsumer');
+        ids.forEach(function (el, i) {
+          if (el && el.id !== 'consumer-big-image-show-0') {
+            if (el.id === 'consumer-big-image-show-' + i) {
+              el.parentNode.removeChild(el);
+            }
+          }
+        });
+        if (ids) clearInterval(set);
+      }, 1);
+    },
+    deleteFakeSmallConsumerImages: function deleteFakeSmallConsumerImages() {
+      var set = setInterval(function () {
+        var id = document.getElementById('img-0');
+        if (id) {
+          id.parentNode.removeChild(id);
+          if (!id) clearInterval(set);
+        }
+      }, 1);
     }
   },
   computed: {
@@ -29794,6 +29816,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    this.deleteFakeBigConsumerImages();
+    this.deleteFakeSmallConsumerImages();
     this.getImages();
     this.showOneImage;
     if (document.getElementById('img-0')) {
@@ -31164,17 +31188,13 @@ var _hoisted_2 = {
   "class": "d-flex bg-secondary"
 };
 var _hoisted_3 = {
-  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 d-flex justify-content-center"
+  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image"
 };
 var _hoisted_4 = ["src"];
 var _hoisted_5 = {
-  "class": "col-6 d-flex p-3"
+  "class": "col-6 d-flex ps-0 pt-1 pe-3 pb-3"
 };
-var _hoisted_6 = {
-  "class": "col-12 p-2",
-  key: "id"
-};
-var _hoisted_7 = ["src"];
+var _hoisted_6 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_photo_consumer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("photo-consumer");
   var _component_photo_provider = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("photo-provider");
@@ -31182,9 +31202,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.imgList, function (src, id) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_photo_consumer, {
-          intro: src,
+          intro: src.image,
+          id: 'consumer-big-image-show-' + id,
           key: id,
-          src: src
+          src: $data.new_image_path + src.image,
+          "class": "d-flex"
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [id === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
@@ -31194,7 +31216,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 8 /* PROPS */, _hoisted_4)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
           _: 2 /* DYNAMIC */
-        }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["intro", "src"]);
+        }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["intro", "id", "src"]);
       }), 128 /* KEYED_FRAGMENT */))];
     }),
 
@@ -31205,15 +31227,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_photo_consumer, {
           key: id,
           id: 'img-' + id,
-          intro: src,
-          src: src
+          intro: src.image,
+          src: $data.new_image_path + src.image
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [id > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
-              key: 0,
+            return [id > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+              "class": "col-12 p-2",
+              key: id
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: $data.new_image_path + src.image,
               "class": "w-100"
-            }, null, 8 /* PROPS */, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
+            }, null, 8 /* PROPS */, _hoisted_6)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
           _: 2 /* DYNAMIC */
         }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["id", "intro", "src"]);

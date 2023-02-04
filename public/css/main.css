@@ -405,6 +405,15 @@ input:focus
     .main__search_input {
 
     }
+
+.product__show_image {
+    width: 465px;
+    height: 350px;
+    background-color: #322f2c;
+    margin: 15px 10px 15px 20px;
+    cursor: pointer;
+}
+
 }
 
 /* PRODUCT SHOW AUKCION BUTTON START */

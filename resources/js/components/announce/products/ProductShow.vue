@@ -1,18 +1,18 @@
 <template>
 <div class="col-12">
     <div class="d-flex bg-secondary">
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 d-flex justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image">
             <photo-provider>
-                <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="id" :src="src">
+                <photo-consumer v-for="(src, id) in imgList" :intro="src.image" :id="'consumer-big-image-show-'+id" :key="id" :src="new_image_path+src.image" class="d-flex">
                     <img v-if="id === 0" :src="new_image_path+imgList[0].image" class="">
                 </photo-consumer>
             </photo-provider>
         </div>
-        <div class="col-6 d-flex p-3">
+        <div class="col-6 d-flex ps-0 pt-1 pe-3 pb-3">
             <photo-provider>
-                <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-'+id" :intro="src" :src="src">
-                    <div class="col-12 p-2" key="id">
-                        <img v-if="id > 0" :src="new_image_path+src.image" class="w-100">
+                <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-'+id" :intro="src.image" :src="new_image_path+src.image">
+                    <div v-if="id > 0" class="col-12 p-2" :key="id">
+                        <img :src="new_image_path+src.image" class="w-100">
                     </div>
                 </photo-consumer>
             </photo-provider>
@@ -47,6 +47,30 @@ export default {
             if( this.product && this.product.images && this.product.images ) {
                 return this.imgList = this.product.images
             }
+        },
+        deleteFakeBigConsumerImages() {
+            let set = setInterval( () => {
+                let ids = document.querySelectorAll('.PhotoConsumer');
+
+                ids.forEach( (el, i) => {
+                    if( el && el.id !== 'consumer-big-image-show-0' ) {
+                        if( el.id === 'consumer-big-image-show-'+ i ){
+                            el.parentNode.removeChild(el)
+                        }
+                    }
+                });
+
+                if( ids ) clearInterval( set );
+            }, 1);
+        },
+        deleteFakeSmallConsumerImages() {
+            let set = setInterval( () => {
+                let id = document.getElementById('img-0');
+                if( id ) {
+                    id.parentNode.removeChild(id);
+                    if( !id ) clearInterval( set );
+                }
+            }, 1);
         }
     },
     computed: {
@@ -67,6 +91,8 @@ export default {
         }
     },
     mounted() {
+        this.deleteFakeBigConsumerImages();
+        this.deleteFakeSmallConsumerImages();
         this.getImages();
         this.showOneImage;
 
@@ -81,6 +107,17 @@ export default {
 </script>
 
 <style scoped>
+    .PhotoConsumer {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+        .PhotoConsumer img {
+            align-self: center;
+            background-size: cover;
+            margin: auto;
+            display: block;
+        }
 /* .product__info {
     background-color: #fff;
     text-transform: capitalize;
