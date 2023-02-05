@@ -39,6 +39,9 @@ import SubCategoryTypeModal from './components/announce/new/category/elektronika
 import AudioVeVideo from './components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue';
 import IndexAudioVeVideo from './components/announce/new/category/elektronika/audiovevideo/IndexAudioVeVideo.vue';
 
+// PRODUCTS
+import ShowForPhoneScreen from './components/announce/products/crumbs/ShowForPhoneScreen.vue';
+import ShowForDesktopScreen from './components/announce/products/crumbs/ShowForDesktopScreen.vue';
 
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
@@ -64,6 +67,10 @@ app.component('sub-category-type-modal' , SubCategoryTypeModal);
 app.component('audio-ve-video' , AudioVeVideo);
 app.component('index-audio-ve-video' , IndexAudioVeVideo);
 app.component('new-image-upload' , NewImageUpload);
+
+//  PRODUCTS
+app.component('show-for-phone-screen' , ShowForPhoneScreen);
+app.component('show-for-desktop-screen' , ShowForDesktopScreen);
 
 
 

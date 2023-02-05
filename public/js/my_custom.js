@@ -126,8 +126,25 @@ function recursionRes(product_card) {
      }
 }
 
+window.addEventListener('resize', function (e) {
+    let for__phone_image_consumer = document.getElementById('for-phone-image-consumer');
+    let for__desktop_image_consumer = document.getElementById('for-desktop-image-consumer');
 
- if( typeof Array && is_active_icon.length > 0 ) {
+    if( for__phone_image_consumer && for__desktop_image_consumer ) {
+        if( for__phone_image_consumer && window.innerWidth < 992 ) {
+            for__desktop_image_consumer.style.display = 'none';
+            for__phone_image_consumer.style.display = 'block';
+        }
+        if( for__desktop_image_consumer && window.innerWidth >= 992 ) {
+            for__phone_image_consumer.style.display = 'none';
+            for__desktop_image_consumer.style.display = 'block';
+        }
+    }
+
+    console.log('resize - ', window.innerWidth )
+})
+
+if( typeof Array && is_active_icon.length > 0 ) {
     for( var i=0; i <= is_active_icon.length; i++ )
     {
         if( is_active_icon[0].classList[i] !== undefined && is_active_icon[0].classList[i] !== null )
