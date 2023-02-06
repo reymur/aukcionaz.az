@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex bg-secondary justify-content-center">
+    <div class="bg-secondary d-flex justify-content-center">
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image">
             <photo-provider>
                 <photo-consumer v-for="(src, id) in imgList" :intro="src.image" :id="'consumer-big-image-show-'+id" :key="id" :src="new_image_path+src.image" class="d-flex">
@@ -7,12 +7,12 @@
                 </photo-consumer>
             </photo-provider>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
-            <div class="row row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-6 d-flex ps-0 pt-1 pe-3 pb-3">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5" id="for-desktop-small-image-consumer-div">
+            <div v-if="imgList" :class="'row row-cols-lg-'+num+' d-flex ps-0 pt-1 ps-2 pe-0 pb-3 desktop_small_image_div_parent'">
                 <photo-provider>
-                    <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-desktop-'+id" :intro="src.image" :src="new_image_path+src.image">
-                        <div v-if="id > 0" class="col d-flex p-2" role="button" :key="id">
-                            <img :src="new_image_path+src.image" class="w-100 h-100">
+                    <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-desktop-'+id" :intro="src.image" :src="new_image_path+src.image" class="d-flex py-2">
+                        <div v-if="id > 0" class="col d-flex desktop_small_image_div" role="button" :key="id">
+                            <img :src="new_image_path+src.image" class="w-100 h-100 small__mage_consumer">
                         </div>
                     </photo-consumer>
                 </photo-provider>
@@ -34,6 +34,7 @@ export default {
         return {
             new_image_path: location.protocol +'//'+location.host+'/storage/images/products/',
             imgList: null,
+            num: ''
         }
     },
     components: {
@@ -42,6 +43,27 @@ export default {
         PhotoSlider
     },
     methods: {
+        getImagesCount(){
+            let set_i = setInterval( () => {
+                let count = document.querySelectorAll('.small__mage_consumer');
+                if( count && count.length ) {
+                    if ( count.length > 4 && count.length <= 8 ) {
+                        this.num = count.length / 2;
+                        clearInterval(set_i);
+                    }
+                    if ( count.length > 4 && count.length > 8 && count.length <= 16 ) {
+                        this.num = count.length / 3;
+                        clearInterval(set_i);
+                    }
+                    if ( count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20 ) {
+                        this.num = count.length / 4;
+                        clearInterval(set_i);
+                    }
+                    console.log('SETINTERVAl = ', Math.floor( this.num ) )
+                    this.num = Math.floor( this.num );
+                }
+            }, 1)
+        },
         getImages() {
             if( this.product && this.product.images && this.product.images ) {
                 return this.imgList = this.product.images
@@ -97,17 +119,18 @@ export default {
         }
     },
     mounted() {
+        this.getImagesCount();
         this.deleteFakeBigConsumerImages();
         this.deleteFakeSmallConsumerImages();
         this.getImages();
-        this.showOneImage;
+        this.showOneImage
 
         if (document.getElementById('img-desktop-0')) {
             document.getElementById('img-desktop-0').style.display = 'none'
         }
 
         console.log('new_image_path - ', location.protocol +'//'+this.new_image_path );
-        console.log('$product - ', this.product.images[0].image );
+        console.log('$product - ', this.num );
     }
 }
 </script>

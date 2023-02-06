@@ -29804,7 +29804,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       new_image_path: location.protocol + '//' + location.host + '/storage/images/products/',
-      imgList: null
+      imgList: null,
+      num: ''
     };
   },
   components: {
@@ -29813,6 +29814,28 @@ __webpack_require__.r(__webpack_exports__);
     PhotoSlider: vue3_photo_preview__WEBPACK_IMPORTED_MODULE_0__.PhotoSlider
   },
   methods: {
+    getImagesCount: function getImagesCount() {
+      var _this = this;
+      var set_i = setInterval(function () {
+        var count = document.querySelectorAll('.small__mage_consumer');
+        if (count && count.length) {
+          if (count.length > 4 && count.length <= 8) {
+            _this.num = count.length / 2;
+            clearInterval(set_i);
+          }
+          if (count.length > 4 && count.length > 8 && count.length <= 16) {
+            _this.num = count.length / 3;
+            clearInterval(set_i);
+          }
+          if (count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20) {
+            _this.num = count.length / 4;
+            clearInterval(set_i);
+          }
+          console.log('SETINTERVAl = ', Math.floor(_this.num));
+          _this.num = Math.floor(_this.num);
+        }
+      }, 1);
+    },
     getImages: function getImages() {
       if (this.product && this.product.images && this.product.images) {
         return this.imgList = this.product.images;
@@ -29838,9 +29861,9 @@ __webpack_require__.r(__webpack_exports__);
       }, 1);
     },
     deleteFakeSmallConsumerImages: function deleteFakeSmallConsumerImages() {
-      var _this = this;
+      var _this2 = this;
       var set = setInterval(function () {
-        _this.bigConsumerImageStyles();
+        _this2.bigConsumerImageStyles();
         var id = document.getElementById('img-desktop-0');
         if (id) {
           id.parentNode.removeChild(id);
@@ -29866,6 +29889,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    this.getImagesCount();
     this.deleteFakeBigConsumerImages();
     this.deleteFakeSmallConsumerImages();
     this.getImages();
@@ -29874,7 +29898,7 @@ __webpack_require__.r(__webpack_exports__);
       document.getElementById('img-desktop-0').style.display = 'none';
     }
     console.log('new_image_path - ', location.protocol + '//' + this.new_image_path);
-    console.log('$product - ', this.product.images[0].image);
+    console.log('$product - ', this.num);
   }
 });
 
@@ -31342,19 +31366,17 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-1f0f06f3"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 var _hoisted_1 = {
-  "class": "d-flex bg-secondary justify-content-center"
+  "class": "bg-secondary d-flex justify-content-center"
 };
 var _hoisted_2 = {
   "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image"
 };
 var _hoisted_3 = ["src"];
 var _hoisted_4 = {
-  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5"
+  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5",
+  id: "for-desktop-small-image-consumer-div"
 };
-var _hoisted_5 = {
-  "class": "row row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-6 d-flex ps-0 pt-1 pe-3 pb-3"
-};
-var _hoisted_6 = ["src"];
+var _hoisted_5 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_photo_consumer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("photo-consumer");
   var _component_photo_provider = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("photo-provider");
@@ -31381,24 +31403,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
 
     _: 1 /* STABLE */
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_photo_provider, null, {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [$data.imgList ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    key: 0,
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('row row-cols-lg-' + $data.num + ' d-flex ps-0 pt-1 ps-2 pe-0 pb-3 desktop_small_image_div_parent')
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_photo_provider, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.imgList, function (src, id) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_photo_consumer, {
           key: id,
           id: 'img-desktop-' + id,
           intro: src.image,
-          src: $data.new_image_path + src.image
+          src: $data.new_image_path + src.image,
+          "class": "d-flex py-2"
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [id > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-              "class": "col d-flex p-2",
+              "class": "col d-flex desktop_small_image_div",
               role: "button",
               key: id
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: $data.new_image_path + src.image,
-              "class": "w-100 h-100"
-            }, null, 8 /* PROPS */, _hoisted_6)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+              "class": "w-100 h-100 small__mage_consumer"
+            }, null, 8 /* PROPS */, _hoisted_5)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
           _: 2 /* DYNAMIC */
         }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["id", "intro", "src"]);
@@ -31406,7 +31432,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
 
     _: 1 /* STABLE */
-  })])])]);
+  })], 2 /* CLASS */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
 }
 
 /***/ }),
