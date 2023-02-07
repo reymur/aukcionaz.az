@@ -28311,7 +28311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-1f0f06f3] {\n        display: flex;\n}\n.PhotoConsumer img[data-v-1f0f06f3] {\n        align-self: center;\n        background-size: cover;\n        margin: auto;\n        display: block;\n}\n    /* .product__info {\n        background-color: #fff;\n        text-transform: capitalize;\n        font-size: 21px;\n        color: #000;\n        letter-spacing: 1px;\n        font-family: sans-serif;\n    } */\n\n    /* .close__style {\n        color: #fa1f1f;\n    } */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-1f0f06f3] {\n        display: flex;\n}\n.PhotoConsumer img[data-v-1f0f06f3] {\n        align-self: center;\n        background-size: cover;\n        margin: auto;\n        display: block;\n}\n.small__mage_consumer[data-v-1f0f06f3] {\n        max-width: 100%;\n        max-height: 100%;\n}\n.big__mage_consumer[data-v-1f0f06f3] {\n        max-width: 100%;\n        max-height: 100%;\n}\n    /* .product__info {\n        background-color: #fff;\n        text-transform: capitalize;\n        font-size: 21px;\n        color: #000;\n        letter-spacing: 1px;\n        font-family: sans-serif;\n    } */\n\n    /* .close__style {\n        color: #fa1f1f;\n    } */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28335,7 +28335,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-32724685] {\n    display: flex;\n}\n.PhotoConsumer img[data-v-32724685] {\n    align-self: center;\n    background-size: cover;\n    margin: auto;\n    display: block;\n}\n.phone_image_consumer_styles[data-v-32724685] {\n    height: 150px;\n}\n.phone_image_consumer_img_div_styles[data-v-32724685] {\n    width: 200px;\n    height: 150px;\n}\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-32724685] {\n    display: flex;\n    //background-color: #322f2c;\n}\n.PhotoConsumer img[data-v-32724685] {\n    align-self: center;\n    background-size: cover;\n    margin: auto;\n    display: block;\n}\n.phone_image_consumer_styles[data-v-32724685] {\n    height: 150px;\n}\n.phone_image_consumer_img_div_styles[data-v-32724685] {\n    width: 200px;\n    height: 150px;\n    //background-color: #322f2c;\n}\n.phone__mage_consumer[data-v-32724685] {\n    //max-width: 100%;\n    //max-height: 100%;\n    width: 100%;\n    height: 100%;\n}\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29252,6 +29252,29 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }
+
+      // CLOSE UPLOAD IMAGES
+      if (document.getElementsByClassName('close-upload-image')) {
+        var close = document.getElementsByClassName('close-upload-image');
+        // console.log( 'LLLLLLLLL - ', close.length );
+        for (var _i = 0; _i < close.length; _i++) {
+          close[_i].addEventListener('click', function (e) {
+            if (e.target && e.target.parentNode && e.target.parentNode.parentNode) {
+              if (e.target.parentNode.parentNode.id) {
+                var parent_id = e.target.parentNode.parentNode.id;
+                if (parent_id.indexOf('upload-image-close') !== -1) {
+                  if (e.target.parentNode.parentNode.parentNode) e.target.parentNode.parentNode.parentNode.remove();
+                } else if (parent_id.indexOf('new_img_div-') !== -1) {
+                  if (e.target.parentNode.parentNode) e.target.parentNode.parentNode.remove();
+                } else if (parent_id.indexOf('image__show_div') !== -1) {
+                  if (e.target.childNodes) e.target.parentNode.remove();
+                }
+              }
+            }
+            //     e.target.parentNode.parentNode.remove()
+          });
+        }
+      }
     },
     removeUploadValue: function removeUploadValue(ev) {
       if (ev && ev.target && ev.target.value) ev.target.value = null;
@@ -29259,14 +29282,17 @@ __webpack_require__.r(__webpack_exports__);
     showUploadImage: function showUploadImage(upload_image) {
       if (upload_image) {
         var new_img = null;
+        var new_img_close = null;
         var new_img_div = null;
         var upload_image_src = null;
         var image_show_div = document.getElementById('image__show_div');
         if (image_show_div) {
           new_img = document.createElement('img');
+          new_img_close = document.createElement('div');
           new_img_div = document.createElement('div');
           upload_image_src = URL.createObjectURL(upload_image);
-          if (new_img_div && new_img && upload_image_src) {
+          if (new_img_div && new_img && new_img_close && upload_image_src) {
+            new_img_div.classList.add('position-relative');
             new_img_div.classList.add('m-auto');
             new_img_div.classList.add('p-2');
             new_img_div.classList.add('col-sm-10');
@@ -29278,6 +29304,7 @@ __webpack_require__.r(__webpack_exports__);
             new_img_div.classList.add('float-lg-start');
             new_img_div.classList.add('float-xl-start');
             new_img_div.classList.add('float-xxl-start');
+            new_img_close.style = 'position: absolute; z-index: 100000; top: 9px; right: 9px; cursor:pointer; padding:10px 10px;';
             var ifIssetNewImageDiv = setInterval(function () {
               if (new_img_div.offsetWidth > 0) {
                 new_img_div.style.height = Number(new_img_div.offsetWidth) / 4 * 3 + 'px';
@@ -29285,11 +29312,18 @@ __webpack_require__.r(__webpack_exports__);
               }
             }, 10);
             new_img.src = upload_image_src;
-            new_img.id = upload_image.name + '_1';
+            new_img.id = 'new_img-' + Math.floor(Math.random() * 100);
             new_img.classList.add('w-100');
             new_img.classList.add('h-100');
             new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';
+            new_img_close.id = 'upload-image-close-' + Math.floor(Math.random() * 100);
+            new_img_close.classList.add('close-upload-image');
+            new_img_close.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x" viewBox="0 0 16 16">\n' + '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n' + '</svg>';
+            new_img_div.id = 'new_img_div-' + upload_image.name + '_' + Math.floor(Math.random() * 100);
             new_img_div.appendChild(new_img);
+            new_img_div.appendChild(new_img_close);
+
+            // image_show_div.id = upload_image.name;
             image_show_div.classList.add('image__show_div_styles');
             image_show_div.appendChild(new_img_div);
           }
@@ -29819,21 +29853,22 @@ __webpack_require__.r(__webpack_exports__);
       var set_i = setInterval(function () {
         var count = document.querySelectorAll('.small__mage_consumer');
         if (count && count.length) {
-          if (count.length > 4 && count.length <= 8) {
+          if (count.length <= 4) {
+            _this.num = 4;
+            clearInterval(set_i);
+          } else if (count.length > 4 && count.length <= 8) {
             _this.num = count.length / 2;
             clearInterval(set_i);
-          }
-          if (count.length > 4 && count.length > 8 && count.length <= 16) {
+          } else if (count.length > 4 && count.length > 8 && count.length <= 16) {
             _this.num = count.length / 3;
             clearInterval(set_i);
-          }
-          if (count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20) {
+          } else if (count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20) {
             _this.num = count.length / 4;
             clearInterval(set_i);
-          }
-          console.log('SETINTERVAl = ', Math.floor(_this.num));
-          _this.num = Math.floor(_this.num);
-        }
+          } else clearInterval(set_i);
+          console.log('SETINTERVAl2222 = ', Math.floor(_this.num));
+          return _this.num = Math.floor(_this.num);
+        } else clearInterval(set_i);
       }, 1);
     },
     getImages: function getImages() {
@@ -31394,7 +31429,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             return [id === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
               key: 0,
               src: $data.new_image_path + $data.imgList[0].image,
-              "class": "w-100 h-100"
+              "class": "big__mage_consumer"
             }, null, 8 /* PROPS */, _hoisted_3)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
           _: 2 /* DYNAMIC */
@@ -31423,7 +31458,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               key: id
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: $data.new_image_path + src.image,
-              "class": "w-100 h-100 small__mage_consumer"
+              "class": "small__mage_consumer"
             }, null, 8 /* PROPS */, _hoisted_5)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
           _: 2 /* DYNAMIC */
@@ -31460,7 +31495,7 @@ var _hoisted_2 = {
   "class": "col-12 ps-3 d-flex phone_image_consumer_styles"
 };
 var _hoisted_3 = {
-  "class": "col d-flex p-1 align-self-center"
+  "class": "col d-flex p-1 align-self-center justify-content-center"
 };
 var _hoisted_4 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -31482,7 +31517,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               key: id
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: $data.new_image_path + src.image,
-              "class": "w-100 h-100"
+              "class": "phone__mage_consumer"
             }, null, 8 /* PROPS */, _hoisted_4)]))];
           }),
           _: 2 /* DYNAMIC */

@@ -3,7 +3,7 @@
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image">
             <photo-provider>
                 <photo-consumer v-for="(src, id) in imgList" :intro="src.image" :id="'consumer-big-image-show-'+id" :key="id" :src="new_image_path+src.image" class="d-flex">
-                    <img v-if="id === 0" :src="new_image_path+imgList[0].image" class="w-100 h-100">
+                    <img v-if="id === 0" :src="new_image_path+imgList[0].image" class="big__mage_consumer">
                 </photo-consumer>
             </photo-provider>
         </div>
@@ -12,7 +12,7 @@
                 <photo-provider>
                     <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-desktop-'+id" :intro="src.image" :src="new_image_path+src.image" class="d-flex py-2">
                         <div v-if="id > 0" class="col d-flex desktop_small_image_div" role="button" :key="id">
-                            <img :src="new_image_path+src.image" class="w-100 h-100 small__mage_consumer">
+                            <img :src="new_image_path+src.image" class="small__mage_consumer">
                         </div>
                     </photo-consumer>
                 </photo-provider>
@@ -47,21 +47,27 @@ export default {
             let set_i = setInterval( () => {
                 let count = document.querySelectorAll('.small__mage_consumer');
                 if( count && count.length ) {
-                    if ( count.length > 4 && count.length <= 8 ) {
+                    if ( count.length <= 4 ) {
+                        this.num = 4;
+                        clearInterval(set_i);
+                    }
+                    else if ( count.length > 4 && count.length <= 8 ) {
                         this.num = count.length / 2;
                         clearInterval(set_i);
                     }
-                    if ( count.length > 4 && count.length > 8 && count.length <= 16 ) {
+                    else if ( count.length > 4 && count.length > 8 && count.length <= 16 ) {
                         this.num = count.length / 3;
                         clearInterval(set_i);
                     }
-                    if ( count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20 ) {
+                    else if ( count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20 ) {
                         this.num = count.length / 4;
                         clearInterval(set_i);
                     }
-                    console.log('SETINTERVAl = ', Math.floor( this.num ) )
-                    this.num = Math.floor( this.num );
+                    else clearInterval(set_i);
+                    console.log('SETINTERVAl2222 = ', Math.floor( this.num ) )
+                    return this.num = Math.floor( this.num );
                 }
+                else clearInterval(set_i);
             }, 1)
         },
         getImages() {
@@ -144,6 +150,14 @@ export default {
         background-size: cover;
         margin: auto;
         display: block;
+    }
+    .small__mage_consumer {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .big__mage_consumer {
+        max-width: 100%;
+        max-height: 100%;
     }
     /* .product__info {
         background-color: #fff;

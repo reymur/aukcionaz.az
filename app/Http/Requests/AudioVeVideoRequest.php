@@ -26,11 +26,11 @@ class AudioVeVideoRequest extends FormRequest
     {
         return [
             'sub_category_id'  => ["required","integer"],
-            'type'      => ["required","string"],
-            'title'     => ["required","string"],
-            'check_box' => [
+            'type'             => ["required","string"],
+            'title'            => ["required","string"],
+            'check_box'        => [
                 [
-                    'new' => 'nullable|string'
+                    'new'      => 'nullable|string'
                 ],
                 [
                     'delivery' => 'nullable|string'
@@ -39,11 +39,11 @@ class AudioVeVideoRequest extends FormRequest
             'price'    => ["required","integer"],
             'city'     => ["required","string"],
             'about'    => ["nullable","string"],
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone'    => ["required","string"],
+            'name'     => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone'    => ["required", "string"],
             'images'   => ["min:1", "max:20"],
-            'images.*' => ["mimes:jpg,jpeg,png,bmp,gif,svg"],
+            'images.*' => ["image","dimensions:min_width=200,min_height=200", "mimes:jpg,jpeg,png,bmp,gif,svg"],
         ];
     }
 }

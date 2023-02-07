@@ -11,73 +11,74 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
 
 class ElectronicsController extends Controller
 {
     public function audioVeVideo(AudioVeVideoRequest $request)
     {
-        if( !empty($request) ) {
-            $user = User::create([
-                'name'  => $request->name,
-                'email' => $request->email,
-            ]);
-
-            Auth::login( $user );
-
-            if( $user ) {
-                $product = AudioVeVideo::create([
-                    'user_id' => Auth::check() ? Auth::user()->id : $user->id,
-                    'sub_category_id' => $request->sub_category_id,
-                    'type'            => $request->type,
-                    'title'           => $request->title,
-                    'new'             => $this->isCheckBoxName($request->check_box, 'new'),
-                    'delivery'        => $this->isCheckBoxName($request->check_box, 'delivery'),
-                    'price'           => $request->price,
-                    'city'            => $request->city,
-                    'about'           => $request->about,
-                    'publish'         => false
-                ]);
-
-                if( $product && $product->id) {
-                    $this->makePinAndNumber($product);
-
-                    $phone = $product->phones()->create([
-                        'phone' => $request->phone,
-                    ]);
-
-                    if( $phone && $product->id === $phone->phoneable_id )
-                        $productable = $product->products()->create();
-                    else return response()->json( [
-                        'status' => 422,
-                        'error' => 'phone'
-                    ] );
-
-                    if( $productable && $product->id === $productable->productable_id )
-                        $imageable = $this->saveImages( $product, $request );
-                    else return response()->json( [
-                        'status' => 422,
-                        'error' => 'productable'
-                    ] );
-
-                    if( $imageable && $product->id === $imageable->imageable_id ) {
-                        return response()->json( [
-                            'productable' => $productable
-                        ] );
-                    } else return response()->json( [
-                        'status' => 422,
-                        'error' => 'imageable'
-                    ] );
-                }
-                else return response()->json( [
-                    'status' => 422,
-                    'error' => 'product no created'
-                ] );
-            }
-            else return response()->json( [
-                'status' => 422,
-                'error' => 'user no created!'
-            ] );
-        }
+//        if( !empty($request) ) {
+//            $user = User::create([
+//                'name'  => $request->name,
+//                'email' => $request->email,
+//            ]);
+//
+//            Auth::login( $user );
+//
+//            if( $user ) {
+//                $product = AudioVeVideo::create([
+//                    'user_id' => Auth::check() ? Auth::user()->id : $user->id,
+//                    'sub_category_id' => $request->sub_category_id,
+//                    'type'            => $request->type,
+//                    'title'           => $request->title,
+//                    'new'             => $this->isCheckBoxName($request->check_box, 'new'),
+//                    'delivery'        => $this->isCheckBoxName($request->check_box, 'delivery'),
+//                    'price'           => $request->price,
+//                    'city'            => $request->city,
+//                    'about'           => $request->about,
+//                    'publish'         => false
+//                ]);
+//
+//                if( $product && $product->id) {
+//                    $this->makePinAndNumber($product);
+//
+//                    $phone = $product->phones()->create([
+//                        'phone' => $request->phone,
+//                    ]);
+//
+//                    if( $phone && $product->id === $phone->phoneable_id )
+//                        $productable = $product->products()->create();
+//                    else return response()->json( [
+//                        'status' => 422,
+//                        'error' => 'phone'
+//                    ] );
+//
+//                    if( $productable && $product->id === $productable->productable_id )
+//                        $imageable = $this->saveImages( $product, $request );
+//                    else return response()->json( [
+//                        'status' => 422,
+//                        'error' => 'productable'
+//                    ] );
+//
+//                    if( $imageable && $product->id === $imageable->imageable_id ) {
+//                        return response()->json( [
+//                            'productable' => $productable
+//                        ] );
+//                    } else return response()->json( [
+//                        'status' => 422,
+//                        'error' => 'imageable'
+//                    ] );
+//                }
+//                else return response()->json( [
+//                    'status' => 422,
+//                    'error' => 'product no created'
+//                ] );
+//            }
+//            else return response()->json( [
+//                'status' => 422,
+//                'error' => 'user no created!'
+//            ] );
+//        }
 
         return response()->json( $request );
     }
@@ -88,6 +89,7 @@ class ElectronicsController extends Controller
             $imageable = 0;
             $images = $request->file('images');
             $storage = Storage::disk('public');
+            $image_path = public_path('storage').'/images/products';
 
             foreach ( $images as $key => $image ) {
                 $time = time();
@@ -97,10 +99,9 @@ class ElectronicsController extends Controller
                     'image' => $image_name,
                     'alt' => 'alt',
                 ]);
-//
-                if( $imageable->image == $image_name ) {
-                    $storage->put('images/products/'.$image_name, file_get_contents($image) );
-                }
+
+                // IMAGE INTERVENTION
+                $this->imageInterventionMake($imageable, $image, $image_name, $image_path);
             }
             return $imageable;
         }
@@ -133,5 +134,35 @@ class ElectronicsController extends Controller
             return false;
         }
         return false;
+    }
+
+    private function imageInterventionMake($imageable, $image, string $image_name, string $image_path)
+    {
+        if( $imageable->image == $image_name ) {
+            $width = Image::make( $image )->width();
+            $height = Image::make( $image )->height();
+            $intervention = Image::make( $image->getRealPath() );
+            if( $width > 853 && $height > 501 ) {
+                $intervention->resize(853, 501, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save( $image_path.'/'.$image_name );
+            }
+            else if ( $width > 853 && $height <= 501 ) {
+                $intervention->resize(853, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save( $image_path.'/'.$image_name );
+            }
+            else if ( $width <= 853 && $height > 501 ) {
+                $intervention->resize($width, 501, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save( $image_path.'/'.$image_name );
+            }
+            else {
+                $intervention->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save( $image_path.'/'.$image_name );
+            }
+//                    $storage->put('images/products/'.$image_name, file_get_contents($image) );
+        }
     }
 }

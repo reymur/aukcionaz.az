@@ -57,6 +57,34 @@ export default {
                     }
                 }
             }
+
+            // CLOSE UPLOAD IMAGES
+            if( document.getElementsByClassName('close-upload-image') ) {
+                let close = document.getElementsByClassName('close-upload-image');
+                // console.log( 'LLLLLLLLL - ', close.length );
+                for (let i = 0; i < close.length; i++) {
+                    close[i].addEventListener('click', (e) => {
+                       if( e.target && e.target.parentNode && e.target.parentNode.parentNode ) {
+                           if( e.target.parentNode.parentNode.id ) {
+                               let parent_id = e.target.parentNode.parentNode.id;
+
+                               if( parent_id.indexOf('upload-image-close') !== -1 ) {
+                                   if( e.target.parentNode.parentNode.parentNode )
+                                       e.target.parentNode.parentNode.parentNode.remove();
+                               } else if( parent_id.indexOf('new_img_div-') !== -1 ) {
+                                   if( e.target.parentNode.parentNode )
+                                       e.target.parentNode.parentNode.remove();
+                               } else if ( parent_id.indexOf('image__show_div') !== -1 ) {
+                                   if( e.target.childNodes )
+                                       e.target.parentNode.remove();
+                               }
+                           }
+                       }
+                       //     e.target.parentNode.parentNode.remove()
+                    })
+                }
+
+            }
         },
         removeUploadValue(ev) {
             if( ev && ev.target && ev.target.value ) ev.target.value = null;
@@ -64,16 +92,19 @@ export default {
         showUploadImage( upload_image ) {
             if( upload_image ) {
                 let new_img = null;
+                let new_img_close = null;
                 let new_img_div = null;
                 let upload_image_src = null;
                 let image_show_div = document.getElementById('image__show_div');
 
                 if( image_show_div ) {
                     new_img = document.createElement('img');
+                    new_img_close = document.createElement('div');
                     new_img_div = document.createElement('div');
                     upload_image_src = URL.createObjectURL( upload_image );
 
-                    if( new_img_div && new_img && upload_image_src ) {
+                    if( new_img_div && new_img && new_img_close && upload_image_src ) {
+                        new_img_div.classList.add('position-relative');
                         new_img_div.classList.add('m-auto');
                         new_img_div.classList.add('p-2');
                         new_img_div.classList.add('col-sm-10');
@@ -85,6 +116,7 @@ export default {
                         new_img_div.classList.add('float-lg-start');
                         new_img_div.classList.add('float-xl-start');
                         new_img_div.classList.add('float-xxl-start');
+                        new_img_close.style = 'position: absolute; z-index: 100000; top: 9px; right: 9px; cursor:pointer; padding:10px 10px;'
 
                         let ifIssetNewImageDiv = setInterval( () => {
                             if( new_img_div.offsetWidth > 0 ) {
@@ -94,13 +126,22 @@ export default {
                         }, 10)
 
                         new_img.src = upload_image_src;
-                        new_img.id = upload_image.name + '_1';
+                        new_img.id = 'new_img-'+ Math.floor( Math.random() * 100 );
                         new_img.classList.add('w-100');
                         new_img.classList.add('h-100');
                         new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';
 
-                        new_img_div.appendChild(new_img);
+                        new_img_close.id = 'upload-image-close-'+Math.floor( Math.random() * 100 );
+                        new_img_close.classList.add('close-upload-image');
+                        new_img_close.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x" viewBox="0 0 16 16">\n' +
+                                                    '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n' +
+                                                  '</svg>';
 
+                        new_img_div.id = 'new_img_div-'+upload_image.name+'_'+ Math.floor( Math.random() * 100 );
+                        new_img_div.appendChild(new_img);
+                        new_img_div.appendChild(new_img_close);
+
+                        // image_show_div.id = upload_image.name;
                         image_show_div.classList.add('image__show_div_styles');
                         image_show_div.appendChild(new_img_div);
                     }
