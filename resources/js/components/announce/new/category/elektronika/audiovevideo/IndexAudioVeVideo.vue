@@ -466,15 +466,18 @@ export default {
                 load_component_folder: this.loadComponentData.new_data.sub_category_name.toLowerCase()
             } );
         },
-        getSendUploadFile(data){
-            // let form_data = new FormData();
-            // form_data.append('images', data )
-            // this.images.push(data);
-            for( var i=0; i < data.length; i++ ) {
-                this.images.push(data[i])
-                console.log('DDDDDDDDDDDCCC222 = ',  data[i] );
+        getSendUploadFile(data, index){
+            console.log('HAS = ', data, 'index = ', index );
+            if( data && index ) {
+                this.images[index] = data
             }
-            console.log('AAAAAAAAAAAAAAAA = ',  this.images );
+            else {
+                if( this.images && this.images.length ) {
+                    if( this.images[index] )
+                        delete this.images[index];
+                }
+            }
+            console.log('DELETED = ', this.images  );
         },
         async createNewAnnounce(){
             this.submit_button_load = true;
@@ -561,7 +564,7 @@ export default {
         getUploadImages( images, data ){
             if( images && images.length && data  ) {
                 for ( let i = 0 ; i < images.length ; i++ ) {
-                    if( images[i] ) {
+                    if( typeof images[i] === "object" ) {
                         data.append('images[]', images[i])
                     }
                 }

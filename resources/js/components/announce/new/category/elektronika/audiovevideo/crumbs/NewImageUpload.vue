@@ -30,6 +30,7 @@ export default {
         return {
             images: '',
             errors: null,
+            image_arr: [],
         }
     },
     watch: {
@@ -42,54 +43,90 @@ export default {
     },
     methods: {
         getImages( file ){
-           console.log('CCCCCC - - - ', file.target.files[0].type )
+            let new_image = null;
+            this.image_arr = [];
             this.images = file.target.files;
             if( file && file.target && file.target.files ) {
-
-                this.$emit('sendUploadFile', file.target.files );
 
                 if( file && file.target && file.target.files ) {
                     if( file.target.files.length && file.target.files.length > 0 ) {
 
                         for ( let i=0; i < file.target.files.length; i++ ) {
-                            this.showUploadImage( file.target.files[i] );
+                            new_image = this.showUploadImage( file.target.files[i], i );
+                            this.image_arr.push(new_image);
+
+                            setTimeout( () => {
+                                console.log('this.image_arr +++ ', new_image.id )
+                            },100)
+                        }
+
+                        if( this.image_arr && this.image_arr.length ) {
+                           setTimeout( () => {
+                                if( file.target.files.length && this.image_arr.length ) {
+                                    for (let i = 0; i < file.target.files.length; i++) {
+                                        if( file.target.files[i] && this.image_arr[i].id )
+                                            this.sendUploadImages( file.target.files[i], this.image_arr[i].id );
+                                    }
+                                }
+                            },100 )
                         }
                     }
                 }
             }
+        },
+        sendUploadImages( files, index ){
+            this.$emit('sendUploadFile', files, index );
+        },
+        closeUploadImage( element ) {
+            console.log( 'return c - ', element.target );
+            if( element ) {
+                let c = 0;
+                let image_id = null;
+                let which_image = null;
 
-            // CLOSE UPLOAD IMAGES
-            if( document.getElementsByClassName('close-upload-image') ) {
-                let close = document.getElementsByClassName('close-upload-image');
-                // console.log( 'LLLLLLLLL - ', close.length );
-                for (let i = 0; i < close.length; i++) {
-                    close[i].addEventListener('click', (e) => {
-                       if( e.target && e.target.parentNode && e.target.parentNode.parentNode ) {
-                           if( e.target.parentNode.parentNode.id ) {
-                               let parent_id = e.target.parentNode.parentNode.id;
+                if( element.target && element.target.parentNode && element.target.parentNode.parentNode ) {
+                    if( element.target.parentNode.parentNode.id ) {
+                        let parent_id = element.target.parentNode.parentNode.id;
 
-                               if( parent_id.indexOf('upload-image-close') !== -1 ) {
-                                   if( e.target.parentNode.parentNode.parentNode )
-                                       e.target.parentNode.parentNode.parentNode.remove();
-                               } else if( parent_id.indexOf('new_img_div-') !== -1 ) {
-                                   if( e.target.parentNode.parentNode )
-                                       e.target.parentNode.parentNode.remove();
-                               } else if ( parent_id.indexOf('image__show_div') !== -1 ) {
-                                   if( e.target.childNodes )
-                                       e.target.parentNode.remove();
-                               }
-                           }
-                       }
-                       //     e.target.parentNode.parentNode.remove()
-                    })
+                        if( parent_id.indexOf('upload-image-close') !== -1 ) {
+                            if( element.target.parentNode.parentNode.parentNode ) {
+                                which_image = element.target.parentNode.parentNode.parentNode.firstChild;
+                                if( which_image && which_image.id ) image_id = which_image.id;
+
+                                element.target.parentNode.parentNode.parentNode.remove();
+                            }
+                        } else if( parent_id.indexOf('new_img_div-') !== -1 ) {
+                            if( element.target.parentNode.parentNode ) {
+                                which_image = element.target.parentNode.parentNode.firstChild;
+                                if( which_image && which_image.id ) image_id = which_image.id;
+
+                                element.target.parentNode.parentNode.remove();
+                            }
+                        } else if ( parent_id.indexOf('image__show_div') !== -1 ) {
+                            if( element.target.childNodes ) {
+                                which_image = element.target.parentNode.firstChild;
+                                if( which_image && which_image.id ) image_id = which_image.id;
+
+                                element.target.parentNode.remove();
+                            }
+                        }
+
+                        if( image_id ) {
+                            let index = Number( image_id );
+                            console.log( 'NuM c - ', image_id );
+                            this.sendUploadImages( null, index );
+                        }
+                        // console.log( 'image_name - ', image_name.substring(0, 1) );
+                    }
                 }
 
+                console.log( 'return c - ', image_id );
             }
         },
         removeUploadValue(ev) {
             if( ev && ev.target && ev.target.value ) ev.target.value = null;
         },
-        showUploadImage( upload_image ) {
+        showUploadImage( upload_image, id ) {
             if( upload_image ) {
                 let new_img = null;
                 let new_img_close = null;
@@ -126,12 +163,33 @@ export default {
                         }, 10)
 
                         new_img.src = upload_image_src;
-                        new_img.id = 'new_img-'+ Math.floor( Math.random() * 100 );
+                        new_img.classList.add('has_new_img');
                         new_img.classList.add('w-100');
                         new_img.classList.add('h-100');
                         new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';
 
+                        let new_img_count = setInterval( () => {
+                            if( document.getElementsByClassName('has_new_img') ) {
+                                let has_new_img = document.getElementsByClassName('has_new_img');
+                                if (has_new_img.length) clearInterval(new_img_count);
+
+                                for ( let i = 0; i < has_new_img.length; i++ ) {
+                                    if( ! has_new_img[i].id ) {
+                                        if( has_new_img[i - 1] && has_new_img[i - 1].id ) {
+                                            has_new_img[i].id = Number(has_new_img[i - 1].id) + 1;
+                                        }
+                                        else {
+                                            has_new_img[i].id = i;
+                                        }
+
+                                    }
+                                }
+                            }
+                        }, 1);
+
+                        // CLOSE UPLOAD IMAGES
                         new_img_close.id = 'upload-image-close-'+Math.floor( Math.random() * 100 );
+                        new_img_close.addEventListener( 'click', this.closeUploadImage );
                         new_img_close.classList.add('close-upload-image');
                         new_img_close.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x" viewBox="0 0 16 16">\n' +
                                                     '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n' +
@@ -146,6 +204,8 @@ export default {
                         image_show_div.appendChild(new_img_div);
                     }
                 }
+
+                return new_img;
             }
         }
     }

@@ -74,8 +74,8 @@ rmBorderOnCategoryImageA = event => {
 }
 
 // DONT SHOW "NAVBAR"
-var path_name = document.location.pathname;
-var navbar = document.getElementById('navbar');
+let path_name = document.location.pathname;
+let navbar = document.getElementById('navbar');
 
 if( path_name.indexOf('announce') === 1 ) {
     navbar.style.display = 'none';
@@ -85,8 +85,8 @@ if( path_name.indexOf('announce') === 1 ) {
 
 
 // PRUDUCT ABOUT TEXT ...more
-var p_text = document.getElementById('product-about-text');
-var p_full_text = document.getElementById('product-about-full-text');
+let p_text = document.getElementById('product-about-text');
+let p_full_text = document.getElementById('product-about-full-text');
 
 if( path_name.indexOf('product') === 1 ) {
     if( p_full_text &&  p_full_text.style ) {
@@ -107,15 +107,15 @@ aukcion_btn = document.getElementById('product__show_aukcion_btn');
 
  /* IF THE PRODUCT IS ACTIVE IN REALTIME ON THE AUKTION THEN ADD ANIMATION START */
 // IS ACTIVE ICON
- var is_active_icon = document.getElementsByClassName('product__on_auktion_icon');
- var product_card = document.getElementsByClassName('product-card');
+ let is_active_icon = document.getElementsByClassName('product__on_auktion_icon');
+ let product_card = document.getElementsByClassName('product-card');
 //  console.log('product_card - ', product_card[0].childNodes[0].childNodes[0].childNodes )
 // console.log( 'WWWW - ', product_card[0].childNodes)
 
 recursionRes(product_card);
 
 function recursionRes(product_card) {
-    for(var i=0; i < product_card.length; i++ ) {
+    for( let i=0; i < product_card.length; i++ ) {
         if( product_card[i].childElementCount > 1 ) {
             console.log( 'one - '+  product_card[i].childNodes.childElementCount );
             recursionRes( product_card[i].childNodes );

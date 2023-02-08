@@ -28961,15 +28961,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         load_component_folder: this.loadComponentData.new_data.sub_category_name.toLowerCase()
       });
     },
-    getSendUploadFile: function getSendUploadFile(data) {
-      // let form_data = new FormData();
-      // form_data.append('images', data )
-      // this.images.push(data);
-      for (var i = 0; i < data.length; i++) {
-        this.images.push(data[i]);
-        console.log('DDDDDDDDDDDCCC222 = ', data[i]);
+    getSendUploadFile: function getSendUploadFile(data, index) {
+      console.log('HAS = ', data, 'index = ', index);
+      if (data && index) {
+        this.images[index] = data;
+      } else {
+        if (this.images && this.images.length) {
+          if (this.images[index]) delete this.images[index];
+        }
       }
-      console.log('AAAAAAAAAAAAAAAA = ', this.images);
+      console.log('DELETED = ', this.images);
     },
     createNewAnnounce: function createNewAnnounce() {
       var _this6 = this;
@@ -29059,7 +29060,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _data$get;
       if (images && images.length && data) {
         for (var i = 0; i < images.length; i++) {
-          if (images[i]) {
+          if (_typeof(images[i]) === "object") {
             data.append('images[]', images[i]);
           }
         }
@@ -29227,7 +29228,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       images: '',
-      errors: null
+      errors: null,
+      image_arr: []
     };
   },
   watch: {
@@ -29240,46 +29242,80 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getImages: function getImages(file) {
-      console.log('CCCCCC - - - ', file.target.files[0].type);
+      var _this = this;
+      var new_image = null;
+      this.image_arr = [];
       this.images = file.target.files;
       if (file && file.target && file.target.files) {
-        this.$emit('sendUploadFile', file.target.files);
         if (file && file.target && file.target.files) {
           if (file.target.files.length && file.target.files.length > 0) {
             for (var i = 0; i < file.target.files.length; i++) {
-              this.showUploadImage(file.target.files[i]);
+              new_image = this.showUploadImage(file.target.files[i], i);
+              this.image_arr.push(new_image);
+              setTimeout(function () {
+                console.log('this.image_arr +++ ', new_image.id);
+              }, 100);
+            }
+            if (this.image_arr && this.image_arr.length) {
+              setTimeout(function () {
+                if (file.target.files.length && _this.image_arr.length) {
+                  for (var _i = 0; _i < file.target.files.length; _i++) {
+                    if (file.target.files[_i] && _this.image_arr[_i].id) _this.sendUploadImages(file.target.files[_i], _this.image_arr[_i].id);
+                  }
+                }
+              }, 100);
             }
           }
         }
       }
-
-      // CLOSE UPLOAD IMAGES
-      if (document.getElementsByClassName('close-upload-image')) {
-        var close = document.getElementsByClassName('close-upload-image');
-        // console.log( 'LLLLLLLLL - ', close.length );
-        for (var _i = 0; _i < close.length; _i++) {
-          close[_i].addEventListener('click', function (e) {
-            if (e.target && e.target.parentNode && e.target.parentNode.parentNode) {
-              if (e.target.parentNode.parentNode.id) {
-                var parent_id = e.target.parentNode.parentNode.id;
-                if (parent_id.indexOf('upload-image-close') !== -1) {
-                  if (e.target.parentNode.parentNode.parentNode) e.target.parentNode.parentNode.parentNode.remove();
-                } else if (parent_id.indexOf('new_img_div-') !== -1) {
-                  if (e.target.parentNode.parentNode) e.target.parentNode.parentNode.remove();
-                } else if (parent_id.indexOf('image__show_div') !== -1) {
-                  if (e.target.childNodes) e.target.parentNode.remove();
-                }
+    },
+    sendUploadImages: function sendUploadImages(files, index) {
+      this.$emit('sendUploadFile', files, index);
+    },
+    closeUploadImage: function closeUploadImage(element) {
+      console.log('return c - ', element.target);
+      if (element) {
+        var c = 0;
+        var image_id = null;
+        var which_image = null;
+        if (element.target && element.target.parentNode && element.target.parentNode.parentNode) {
+          if (element.target.parentNode.parentNode.id) {
+            var parent_id = element.target.parentNode.parentNode.id;
+            if (parent_id.indexOf('upload-image-close') !== -1) {
+              if (element.target.parentNode.parentNode.parentNode) {
+                which_image = element.target.parentNode.parentNode.parentNode.firstChild;
+                if (which_image && which_image.id) image_id = which_image.id;
+                element.target.parentNode.parentNode.parentNode.remove();
+              }
+            } else if (parent_id.indexOf('new_img_div-') !== -1) {
+              if (element.target.parentNode.parentNode) {
+                which_image = element.target.parentNode.parentNode.firstChild;
+                if (which_image && which_image.id) image_id = which_image.id;
+                element.target.parentNode.parentNode.remove();
+              }
+            } else if (parent_id.indexOf('image__show_div') !== -1) {
+              if (element.target.childNodes) {
+                which_image = element.target.parentNode.firstChild;
+                if (which_image && which_image.id) image_id = which_image.id;
+                element.target.parentNode.remove();
               }
             }
-            //     e.target.parentNode.parentNode.remove()
-          });
+            if (image_id) {
+              var index = Number(image_id);
+              console.log('NuM c - ', image_id);
+              this.sendUploadImages(null, index);
+            }
+            // console.log( 'image_name - ', image_name.substring(0, 1) );
+          }
         }
+
+        console.log('return c - ', image_id);
       }
     },
     removeUploadValue: function removeUploadValue(ev) {
       if (ev && ev.target && ev.target.value) ev.target.value = null;
     },
-    showUploadImage: function showUploadImage(upload_image) {
+    showUploadImage: function showUploadImage(upload_image, id) {
       if (upload_image) {
         var new_img = null;
         var new_img_close = null;
@@ -29312,11 +29348,29 @@ __webpack_require__.r(__webpack_exports__);
               }
             }, 10);
             new_img.src = upload_image_src;
-            new_img.id = 'new_img-' + Math.floor(Math.random() * 100);
+            new_img.classList.add('has_new_img');
             new_img.classList.add('w-100');
             new_img.classList.add('h-100');
             new_img.style = 'box-shadow: 1px 1px 5px 1px #00000033;';
+            var new_img_count = setInterval(function () {
+              if (document.getElementsByClassName('has_new_img')) {
+                var has_new_img = document.getElementsByClassName('has_new_img');
+                if (has_new_img.length) clearInterval(new_img_count);
+                for (var i = 0; i < has_new_img.length; i++) {
+                  if (!has_new_img[i].id) {
+                    if (has_new_img[i - 1] && has_new_img[i - 1].id) {
+                      has_new_img[i].id = Number(has_new_img[i - 1].id) + 1;
+                    } else {
+                      has_new_img[i].id = i;
+                    }
+                  }
+                }
+              }
+            }, 1);
+
+            // CLOSE UPLOAD IMAGES
             new_img_close.id = 'upload-image-close-' + Math.floor(Math.random() * 100);
+            new_img_close.addEventListener('click', this.closeUploadImage);
             new_img_close.classList.add('close-upload-image');
             new_img_close.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x" viewBox="0 0 16 16">\n' + '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n' + '</svg>';
             new_img_div.id = 'new_img_div-' + upload_image.name + '_' + Math.floor(Math.random() * 100);
@@ -29328,6 +29382,7 @@ __webpack_require__.r(__webpack_exports__);
             image_show_div.appendChild(new_img_div);
           }
         }
+        return new_img;
       }
     }
   }
