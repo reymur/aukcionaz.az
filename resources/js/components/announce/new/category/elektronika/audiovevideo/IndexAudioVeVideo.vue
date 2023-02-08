@@ -60,6 +60,7 @@
                         :image_errors="image_errors"
                         :upload_image_id="upload_image_id"
                         @sendUploadFile="getSendUploadFile"
+                        @deleteAllImagesFromNewImageUpload="deleteAllImagesNow"
                     ></new-image-upload>
                 </div>
 
@@ -160,7 +161,7 @@ export default {
             if( this.errors && this.errors[0] && this.errors[0].phone )  this.phone_error = this.errors[0].phone[0]
 
             return this.errors;
-        }
+        },
     },
     computed: {
 
@@ -467,17 +468,25 @@ export default {
             } );
         },
         getSendUploadFile(data, index){
-            console.log('HAS = ', data, 'index = ', index );
-            if( data && index ) {
-                this.images[index] = data
+            let id = Number(index);
+            // console.log('HAS111 = ', data, 'index111 = ', index );
+            console.log('index111 = ', id );
+            if( data && typeof id === "number" ) {
+                console.log('data222 = ', id );
+                this.images[id] = data
             }
-            else {
+            else if( ! data && typeof id === "number" ) {
                 if( this.images && this.images.length ) {
-                    if( this.images[index] )
-                        delete this.images[index];
+                    console.log('index333 = ', id );
+                    if( this.images[id] )
+                        delete this.images[id];
                 }
             }
             console.log('DELETED = ', this.images  );
+        },
+        deleteAllImagesNow( do_delete) {
+            if( do_delete ) this.images = [];
+            console.log('deleteAllImagesNow = ', this.images );
         },
         async createNewAnnounce(){
             this.submit_button_load = true;

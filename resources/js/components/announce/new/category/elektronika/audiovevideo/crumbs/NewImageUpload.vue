@@ -18,7 +18,10 @@
         </div>
 
         <!-- APPEND UPLOAD IMAGES -->
-        <div class="col overflow-hidden" id="image__show_div"></div>
+        <div v-if="delete_all_images" @click="deleteAllImages" class="col d-flex">
+            <div class="pe-3 pb-1 delete__all_images">Bütün şəkilləri sil</div>
+        </div>
+        <div class="col overflow-hidden pt-3 mb-3" id="image__show_div"></div>
     </div>
 </template>
 
@@ -31,6 +34,7 @@ export default {
             images: '',
             errors: null,
             image_arr: [],
+            delete_all_images: null,
         }
     },
     watch: {
@@ -50,32 +54,34 @@ export default {
 
                 if( file && file.target && file.target.files ) {
                     if( file.target.files.length && file.target.files.length > 0 ) {
-
                         for ( let i=0; i < file.target.files.length; i++ ) {
                             new_image = this.showUploadImage( file.target.files[i], i );
-                            this.image_arr.push(new_image);
 
-                            setTimeout( () => {
-                                console.log('this.image_arr +++ ', new_image.id )
-                            },100)
+                            if( new_image ) this.image_arr.push( new_image );
+
+                            let id = setInterval( () => {
+                                console.log( 'ID - ', this.image_arr.length );
+                                if( id ) clearInterval(id);
+                            },1 );
                         }
 
-                        if( this.image_arr && this.image_arr.length ) {
-                           setTimeout( () => {
-                                if( file.target.files.length && this.image_arr.length ) {
-                                    for (let i = 0; i < file.target.files.length; i++) {
-                                        if( file.target.files[i] && this.image_arr[i].id )
-                                            this.sendUploadImages( file.target.files[i], this.image_arr[i].id );
+                        let sendUploadFile = setInterval( () => {
+                            if( file.target.files.length && this.image_arr.length ) {
+                                for (let i = 0; i < file.target.files.length; i++) {
+                                    if( this.image_arr[i].id ) clearInterval( sendUploadFile );
+
+                                    if( file.target.files[i] && this.image_arr[i].id ) {
+                                        this.sendUploadImages( file.target.files[i], this.image_arr[i].id );
                                     }
                                 }
-                            },100 )
-                        }
+                            }
+                        },1 );
                     }
                 }
             }
         },
-        sendUploadImages( files, index ){
-            this.$emit('sendUploadFile', files, index );
+        sendUploadImages( files, id ){
+            this.$emit('sendUploadFile', files, id );
         },
         closeUploadImage( element ) {
             console.log( 'return c - ', element.target );
@@ -112,9 +118,9 @@ export default {
                         }
 
                         if( image_id ) {
-                            let index = Number( image_id );
+                            let id = Number( image_id );
                             console.log( 'NuM c - ', image_id );
-                            this.sendUploadImages( null, index );
+                            this.sendUploadImages( null, id );
                         }
                         // console.log( 'image_name - ', image_name.substring(0, 1) );
                     }
@@ -153,7 +159,7 @@ export default {
                         new_img_div.classList.add('float-lg-start');
                         new_img_div.classList.add('float-xl-start');
                         new_img_div.classList.add('float-xxl-start');
-                        new_img_close.style = 'position: absolute; z-index: 100000; top: 9px; right: 9px; cursor:pointer; padding:10px 10px;'
+                        new_img_close.style = 'position: absolute; top: 9px; right: 9px; cursor:pointer; padding:10px 10px;'
 
                         let ifIssetNewImageDiv = setInterval( () => {
                             if( new_img_div.offsetWidth > 0 ) {
@@ -173,15 +179,24 @@ export default {
                                 let has_new_img = document.getElementsByClassName('has_new_img');
                                 if (has_new_img.length) clearInterval(new_img_count);
 
+                                //DELETE ALL IMAGES VAR delete_all_images
+                                setTimeout( () => {
+                                    if( has_new_img.length > 1 ) this.delete_all_images = true;
+                                    else this.delete_all_images = false;
+                                }, 300 )
+
+
                                 for ( let i = 0; i < has_new_img.length; i++ ) {
                                     if( ! has_new_img[i].id ) {
+                                        let id = null;
                                         if( has_new_img[i - 1] && has_new_img[i - 1].id ) {
-                                            has_new_img[i].id = Number(has_new_img[i - 1].id) + 1;
+                                            id = Number(has_new_img[i - 1].id) + 1;
+                                            has_new_img[i].id = id;
                                         }
                                         else {
+                                            id = i;
                                             has_new_img[i].id = i;
                                         }
-
                                     }
                                 }
                             }
@@ -196,6 +211,7 @@ export default {
                                                   '</svg>';
 
                         new_img_div.id = 'new_img_div-'+upload_image.name+'_'+ Math.floor( Math.random() * 100 );
+                        new_img_div.classList.add('new_img_div');
                         new_img_div.appendChild(new_img);
                         new_img_div.appendChild(new_img_close);
 
@@ -207,7 +223,21 @@ export default {
 
                 return new_img;
             }
-        }
+        },
+        deleteAllImages() {
+            let all_images = document.getElementsByClassName('new_img_div');
+            let image__show_div = document.getElementById('image__show_div');
+            console.log( 'all_images.length111 - ', all_images.length );
+            if( image__show_div && all_images && all_images.length ) {
+                image__show_div.innerHTML = '';
+            }
+            console.log( 'all_images.length222 - ', document.getElementsByClassName('new_img_div') );
+            if( ! all_images.length ) {
+                console.log( '33333333333 - ', document.querySelectorAll('.new_img_div') );
+                this.delete_all_images = false;
+                this.$emit('deleteAllImagesFromNewImageUpload', true );
+            }
+        },
     }
 }
 </script>
@@ -218,5 +248,13 @@ export default {
     }
     .color__custom_photo_camera {
         color: #176a0bb3;
+    }
+    .delete__all_images {
+        color: #6279ff;
+        text-decoration: underline;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        margin: -8px 5px 0 0;
     }
 </style>

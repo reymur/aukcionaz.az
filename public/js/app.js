@@ -28191,7 +28191,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.custom__image_upload_text[data-v-1fa7eedb] {\n        color: #0f3f08b3;\n}\n.color__custom_photo_camera[data-v-1fa7eedb] {\n        color: #176a0bb3;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.custom__image_upload_text[data-v-1fa7eedb] {\n        color: #0f3f08b3;\n}\n.color__custom_photo_camera[data-v-1fa7eedb] {\n        color: #176a0bb3;\n}\n.delete__all_images[data-v-1fa7eedb] {\n        color: #6279ff;\n        text-decoration: underline;\n        cursor: pointer;\n        position: absolute;\n        right: 0;\n        margin: -8px 5px 0 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28962,15 +28962,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     getSendUploadFile: function getSendUploadFile(data, index) {
-      console.log('HAS = ', data, 'index = ', index);
-      if (data && index) {
-        this.images[index] = data;
-      } else {
+      var id = Number(index);
+      // console.log('HAS111 = ', data, 'index111 = ', index );
+      console.log('index111 = ', id);
+      if (data && typeof id === "number") {
+        console.log('data222 = ', id);
+        this.images[id] = data;
+      } else if (!data && typeof id === "number") {
         if (this.images && this.images.length) {
-          if (this.images[index]) delete this.images[index];
+          console.log('index333 = ', id);
+          if (this.images[id]) delete this.images[id];
         }
       }
       console.log('DELETED = ', this.images);
+    },
+    deleteAllImagesNow: function deleteAllImagesNow(do_delete) {
+      if (do_delete) this.images = [];
+      console.log('deleteAllImagesNow = ', this.images);
     },
     createNewAnnounce: function createNewAnnounce() {
       var _this6 = this;
@@ -29229,7 +29237,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       images: '',
       errors: null,
-      image_arr: []
+      image_arr: [],
+      delete_all_images: null
     };
   },
   watch: {
@@ -29249,28 +29258,33 @@ __webpack_require__.r(__webpack_exports__);
       if (file && file.target && file.target.files) {
         if (file && file.target && file.target.files) {
           if (file.target.files.length && file.target.files.length > 0) {
+            var _loop = function _loop() {
+              new_image = _this.showUploadImage(file.target.files[i], i);
+              if (new_image) _this.image_arr.push(new_image);
+              var id = setInterval(function () {
+                console.log('ID - ', _this.image_arr.length);
+                if (id) clearInterval(id);
+              }, 1);
+            };
             for (var i = 0; i < file.target.files.length; i++) {
-              new_image = this.showUploadImage(file.target.files[i], i);
-              this.image_arr.push(new_image);
-              setTimeout(function () {
-                console.log('this.image_arr +++ ', new_image.id);
-              }, 100);
+              _loop();
             }
-            if (this.image_arr && this.image_arr.length) {
-              setTimeout(function () {
-                if (file.target.files.length && _this.image_arr.length) {
-                  for (var _i = 0; _i < file.target.files.length; _i++) {
-                    if (file.target.files[_i] && _this.image_arr[_i].id) _this.sendUploadImages(file.target.files[_i], _this.image_arr[_i].id);
+            var sendUploadFile = setInterval(function () {
+              if (file.target.files.length && _this.image_arr.length) {
+                for (var _i = 0; _i < file.target.files.length; _i++) {
+                  if (_this.image_arr[_i].id) clearInterval(sendUploadFile);
+                  if (file.target.files[_i] && _this.image_arr[_i].id) {
+                    _this.sendUploadImages(file.target.files[_i], _this.image_arr[_i].id);
                   }
                 }
-              }, 100);
-            }
+              }
+            }, 1);
           }
         }
       }
     },
-    sendUploadImages: function sendUploadImages(files, index) {
-      this.$emit('sendUploadFile', files, index);
+    sendUploadImages: function sendUploadImages(files, id) {
+      this.$emit('sendUploadFile', files, id);
     },
     closeUploadImage: function closeUploadImage(element) {
       console.log('return c - ', element.target);
@@ -29301,9 +29315,9 @@ __webpack_require__.r(__webpack_exports__);
               }
             }
             if (image_id) {
-              var index = Number(image_id);
+              var id = Number(image_id);
               console.log('NuM c - ', image_id);
-              this.sendUploadImages(null, index);
+              this.sendUploadImages(null, id);
             }
             // console.log( 'image_name - ', image_name.substring(0, 1) );
           }
@@ -29316,6 +29330,7 @@ __webpack_require__.r(__webpack_exports__);
       if (ev && ev.target && ev.target.value) ev.target.value = null;
     },
     showUploadImage: function showUploadImage(upload_image, id) {
+      var _this2 = this;
       if (upload_image) {
         var new_img = null;
         var new_img_close = null;
@@ -29340,7 +29355,7 @@ __webpack_require__.r(__webpack_exports__);
             new_img_div.classList.add('float-lg-start');
             new_img_div.classList.add('float-xl-start');
             new_img_div.classList.add('float-xxl-start');
-            new_img_close.style = 'position: absolute; z-index: 100000; top: 9px; right: 9px; cursor:pointer; padding:10px 10px;';
+            new_img_close.style = 'position: absolute; top: 9px; right: 9px; cursor:pointer; padding:10px 10px;';
             var ifIssetNewImageDiv = setInterval(function () {
               if (new_img_div.offsetWidth > 0) {
                 new_img_div.style.height = Number(new_img_div.offsetWidth) / 4 * 3 + 'px';
@@ -29356,11 +29371,19 @@ __webpack_require__.r(__webpack_exports__);
               if (document.getElementsByClassName('has_new_img')) {
                 var has_new_img = document.getElementsByClassName('has_new_img');
                 if (has_new_img.length) clearInterval(new_img_count);
+
+                //DELETE ALL IMAGES VAR delete_all_images
+                setTimeout(function () {
+                  if (has_new_img.length > 1) _this2.delete_all_images = true;else _this2.delete_all_images = false;
+                }, 300);
                 for (var i = 0; i < has_new_img.length; i++) {
                   if (!has_new_img[i].id) {
+                    var _id = null;
                     if (has_new_img[i - 1] && has_new_img[i - 1].id) {
-                      has_new_img[i].id = Number(has_new_img[i - 1].id) + 1;
+                      _id = Number(has_new_img[i - 1].id) + 1;
+                      has_new_img[i].id = _id;
                     } else {
+                      _id = i;
                       has_new_img[i].id = i;
                     }
                   }
@@ -29374,6 +29397,7 @@ __webpack_require__.r(__webpack_exports__);
             new_img_close.classList.add('close-upload-image');
             new_img_close.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x" viewBox="0 0 16 16">\n' + '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n' + '</svg>';
             new_img_div.id = 'new_img_div-' + upload_image.name + '_' + Math.floor(Math.random() * 100);
+            new_img_div.classList.add('new_img_div');
             new_img_div.appendChild(new_img);
             new_img_div.appendChild(new_img_close);
 
@@ -29383,6 +29407,20 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
         return new_img;
+      }
+    },
+    deleteAllImages: function deleteAllImages() {
+      var all_images = document.getElementsByClassName('new_img_div');
+      var image__show_div = document.getElementById('image__show_div');
+      console.log('all_images.length111 - ', all_images.length);
+      if (image__show_div && all_images && all_images.length) {
+        image__show_div.innerHTML = '';
+      }
+      console.log('all_images.length222 - ', document.getElementsByClassName('new_img_div'));
+      if (!all_images.length) {
+        console.log('33333333333 - ', document.querySelectorAll('.new_img_div'));
+        this.delete_all_images = false;
+        this.$emit('deleteAllImagesFromNewImageUpload', true);
       }
     }
   }
@@ -30627,8 +30665,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8 /* PROPS */, ["onSendAboutToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" IMAGE UPLOAD SECTION "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                v-if=\"show_image_upload_section\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_image_upload, {
     image_errors: $data.image_errors,
     upload_image_id: $data.upload_image_id,
-    onSendUploadFile: $options.getSendUploadFile
-  }, null, 8 /* PROPS */, ["image_errors", "upload_image_id", "onSendUploadFile"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
+    onSendUploadFile: $options.getSendUploadFile,
+    onDeleteAllImagesFromNewImageUpload: $options.deleteAllImagesNow
+  }, null, 8 /* PROPS */, ["image_errors", "upload_image_id", "onSendUploadFile", "onDeleteAllImagesFromNewImageUpload"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW USER INFO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_new_announce_user_info, {
     name_error: $data.name_error,
     email_error: $data.email_error,
     phone_error: $data.phone_error,
@@ -30699,7 +30738,13 @@ var _hoisted_5 = {
 };
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "col overflow-hidden",
+    "class": "pe-3 pb-1 delete__all_images"
+  }, "Bütün şəkilləri sil", -1 /* HOISTED */);
+});
+var _hoisted_7 = [_hoisted_6];
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "col overflow-hidden pt-3 mb-3",
     id: "image__show_div"
   }, null, -1 /* HOISTED */);
 });
@@ -30720,7 +30765,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "formFileLg"
   }, null, 32 /* HYDRATE_EVENTS */), $data.errors && $data.errors.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error), 1 /* TEXT */);
-  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), _hoisted_6]);
+  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), $data.delete_all_images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    key: 0,
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.deleteAllImages && $options.deleteAllImages.apply($options, arguments);
+    }),
+    "class": "col d-flex"
+  }, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8]);
 }
 
 /***/ }),
