@@ -1,9 +1,9 @@
-  
-  
+
+
   <!-- Button trigger modal -->
   <li class="all__category_image_li-styles" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <div class="all__category_image-div-styles aukcionaz__main-color">
-      <img src="{{ asset('images/category/all__category_img.png') }}" alt="" class="all__category_image-styles bg-s">
+      <img src="{{ asset('/images/category/all__category_img.png') }}" alt="" class="all__category_image-styles bg-s">
     </div>
 
     <p class="text-center lh-1 all__category_image_li-text">Kataloq1</p>
@@ -22,9 +22,9 @@
               Kataloq
           </h5>
       </div>
-      
+
       <div class="py-1 bg-light"></div>
-      
+
       <div class="offcanvas-body p-0">
           <div class="">
               <ul class="list-group">

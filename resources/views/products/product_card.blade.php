@@ -14,7 +14,7 @@
     <!-- PRODUCT IMAGE -->
     <div class="col-sm-11 col-md-11 col-lg-10 m-auto py-2">
 
-        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 rows-cols-xl-4 g-3">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 rows-cols-xl-6 g-2">
 
             <div class="col product-card" id="product-card">
                 <div class="card h-100 product__card">

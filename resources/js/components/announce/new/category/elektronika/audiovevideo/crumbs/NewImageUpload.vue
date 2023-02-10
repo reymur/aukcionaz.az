@@ -17,11 +17,13 @@
             </div>
         </div>
 
-        <!-- APPEND UPLOAD IMAGES -->
+        <!-- CLOSE UPLOAD IMAGES TITLE -->
         <div v-if="delete_all_images" @click="deleteAllImages" class="col d-flex">
             <div class="pe-3 pb-1 delete__all_images">Bütün şəkilləri sil</div>
         </div>
-        <div class="col overflow-hidden pt-3 mb-3" id="image__show_div"></div>
+
+        <!-- APPEND UPLOAD IMAGES -->
+        <div v-if="images.length" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 d-flex overflow-hidden pt-3 px-3 mb-3" id="image__show_div"></div>
     </div>
 </template>
 
@@ -148,13 +150,16 @@ export default {
 
                     if( new_img_div && new_img && new_img_close && upload_image_src ) {
                         new_img_div.classList.add('position-relative');
-                        new_img_div.classList.add('m-auto');
+                        // new_img_div.classList.add('m-auto');
                         new_img_div.classList.add('p-2');
-                        new_img_div.classList.add('col-sm-10');
-                        new_img_div.classList.add('col-md-6');
-                        new_img_div.classList.add('col-lg-3');
+                        new_img_div.classList.add('col-6');
+                        new_img_div.classList.add('col-sm-4');
+                        new_img_div.classList.add('col-md-3');
+                        new_img_div.classList.add('col-lg-2');
                         new_img_div.classList.add('col-xl-2');
                         new_img_div.classList.add('col-xxl-2');
+                        new_img_div.classList.add('float-start');
+                        new_img_div.classList.add('float-sm-start');
                         new_img_div.classList.add('float-md-start');
                         new_img_div.classList.add('float-lg-start');
                         new_img_div.classList.add('float-xl-start');

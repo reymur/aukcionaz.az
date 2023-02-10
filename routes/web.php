@@ -7,11 +7,11 @@ use App\Http\Controllers\ElectronicsController;
 use App\Http\Controllers\ProductController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+URL::forceRootUrl(env('APP_URL'));
+URL::forceScheme('https');
 
 //Auth::routes();
 

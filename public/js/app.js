@@ -29033,7 +29033,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     console.log('Create resA + = ', res);
                     if (res && res.data && res.data.productable && res.data.productable.id) {
                       var id = res.data.productable.id;
-                      document.location.href = 'https://public.test/product/' + id;
+                      document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/' + id;
                     }
                     // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                     // document.location.href = 'https://public.test/product/';
@@ -29344,13 +29344,16 @@ __webpack_require__.r(__webpack_exports__);
           upload_image_src = URL.createObjectURL(upload_image);
           if (new_img_div && new_img && new_img_close && upload_image_src) {
             new_img_div.classList.add('position-relative');
-            new_img_div.classList.add('m-auto');
+            // new_img_div.classList.add('m-auto');
             new_img_div.classList.add('p-2');
-            new_img_div.classList.add('col-sm-10');
-            new_img_div.classList.add('col-md-6');
-            new_img_div.classList.add('col-lg-3');
+            new_img_div.classList.add('col-6');
+            new_img_div.classList.add('col-sm-4');
+            new_img_div.classList.add('col-md-3');
+            new_img_div.classList.add('col-lg-2');
             new_img_div.classList.add('col-xl-2');
             new_img_div.classList.add('col-xxl-2');
+            new_img_div.classList.add('float-start');
+            new_img_div.classList.add('float-sm-start');
             new_img_div.classList.add('float-md-start');
             new_img_div.classList.add('float-lg-start');
             new_img_div.classList.add('float-xl-start');
@@ -30742,13 +30745,11 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   }, "Bütün şəkilləri sil", -1 /* HOISTED */);
 });
 var _hoisted_7 = [_hoisted_6];
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "col overflow-hidden pt-3 mb-3",
-    id: "image__show_div"
-  }, null, -1 /* HOISTED */);
-});
-
+var _hoisted_8 = {
+  key: 1,
+  "class": "row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 d-flex overflow-hidden pt-3 px-3 mb-3",
+  id: "image__show_div"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "file",
@@ -30765,13 +30766,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "formFileLg"
   }, null, 32 /* HYDRATE_EVENTS */), $data.errors && $data.errors.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error), 1 /* TEXT */);
-  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), $data.delete_all_images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CLOSE UPLOAD IMAGES TITLE "), $data.delete_all_images ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 0,
     onClick: _cache[2] || (_cache[2] = function () {
       return $options.deleteAllImages && $options.deleteAllImages.apply($options, arguments);
     }),
     "class": "col d-flex"
-  }, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8]);
+  }, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" APPEND UPLOAD IMAGES "), $data.images.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),

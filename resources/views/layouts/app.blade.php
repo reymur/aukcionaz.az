@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/my_custom.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.0-alpha.2/vue.min.js"></script>
@@ -67,7 +68,7 @@
             </button>
 
             <div class="justify-content-center">
-                <a class="navbar-brand fs-4 fw-bolder ms-lg-5 ms-xl-5" href="{{ url('/') }}">
+                <a class="navbar-brand fs-4 fw-bolder ms-lg-5 ms-xl-5" href="{{ env('APP_URL') }}">
                     {{ config('app.name', 'Auksionaz.az') }}
                 </a>
             </div>
@@ -82,7 +83,7 @@
                         AZ
                     </div>
                     <div class="col text-center">
-                        <a class="navbar-brand fs-4 fw-bolder" href="{{ url('/') }}">
+                        <a class="navbar-brand fs-4 fw-bolder" href="{{ env('APP_URL') }}">
                             {{ config('app.name', 'Aukcionaz.az') }}
                         </a>
                     </div>

@@ -5,16 +5,16 @@
     <a href="#offcanvasExample" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#id-{{$category->id}}" data-bs-whatever="@mdo">
         <div class="col-12 d-flex py-2 ps-3">
             <div class="col-1 vertical__all_catalog_img_div">
-                <img src="{{ asset('images/category/'.($category->image ?? 'img')) }}" class="card-img-top vertical__all_catalog_img" alt="...">
+                <img src="{{ asset('/images/category/'.($category->image ?? 'img')) }}" class="card-img-top vertical__all_catalog_img" alt="...">
             </div>
-            
+
             <li class="col-11 list-group-item d-flex vertical__all_catalog_li">
-                <h5 class="col-11 vertical__all_catalog_title">{{ $category->name ?? '' }}</h6>
+                <h5 class="col-11 vertical__all_catalog_title">{{ $category->name ?? '' }}</h5>
                 <div class="col-1 m-auto">1412</div>
             </li>
         </div>
     </a>
-  
+
     <!-- Modal -->
     <div class="modal fade modal-right all__catalog_z_index" id="id-{{$category->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-xxl-down">
@@ -25,7 +25,7 @@
                             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                         </svg>
                     </div>
-                    
+
                     <h1 class="col-7 modal-title fs-5 ms-3 fw-bolder all__category_image_li" id="exampleModalLabel">Elektronika</h1>
                 </div>
 
@@ -41,9 +41,9 @@
                                         {{ $sub_category->name }}
                                     </li>
                                     <!-- </a> -->
-                                </div>  
+                                </div>
                             @endforeach
-                           
+
 
                             {{-- <vertical-all-catalog-element-item
                                 :category="{{ $category }}"
