@@ -23,7 +23,7 @@
         </div>
 
         <!-- APPEND UPLOAD IMAGES -->
-        <div v-if="images.length" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 d-flex overflow-hidden pt-3 px-3 mb-3" id="image__show_div"></div>
+        <div v-if="display_upload_images" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 overflow-hidden pt-3 px-3 mb-3" id="image__show_div"></div>
     </div>
 </template>
 
@@ -37,6 +37,7 @@ export default {
             errors: null,
             image_arr: [],
             delete_all_images: null,
+            display_upload_images: null,
         }
     },
     watch: {
@@ -45,40 +46,51 @@ export default {
         },
         upload_image_id() {
             // this.getUploadImage();
-        }
+        },
     },
     methods: {
         getImages( file ){
             let new_image = null;
             this.image_arr = [];
             this.images = file.target.files;
+
             if( file && file.target && file.target.files ) {
+                if( file.target.files.length && file.target.files.length > 0 ) {
+                    for ( let i=0; i < file.target.files.length; i++ ) {
+                        this.display_upload_images = true;
 
-                if( file && file.target && file.target.files ) {
-                    if( file.target.files.length && file.target.files.length > 0 ) {
-                        for ( let i=0; i < file.target.files.length; i++ ) {
-                            new_image = this.showUploadImage( file.target.files[i], i );
+                        let show_append_images_div = setInterval( () => {
+                            if( document.getElementById('image__show_div') ) {
+                                clearInterval( show_append_images_div );
 
-                            if( new_image ) this.image_arr.push( new_image );
+                                new_image = this.showUploadImage( file.target.files[i], i );
 
-                            let id = setInterval( () => {
-                                console.log( 'ID - ', this.image_arr.length );
-                                if( id ) clearInterval(id);
-                            },1 );
-                        }
-
-                        let sendUploadFile = setInterval( () => {
-                            if( file.target.files.length && this.image_arr.length ) {
-                                for (let i = 0; i < file.target.files.length; i++) {
-                                    if( this.image_arr[i].id ) clearInterval( sendUploadFile );
-
-                                    if( file.target.files[i] && this.image_arr[i].id ) {
-                                        this.sendUploadImages( file.target.files[i], this.image_arr[i].id );
-                                    }
-                                }
+                                if( new_image ) this.image_arr.push( new_image );
                             }
+                        }, 1 );
+
+                        // new_image = this.showUploadImage( file.target.files[i], i );
+                        //
+                        // if( new_image ) this.image_arr.push( new_image );
+
+                        let id = setInterval( () => {
+                            console.log( 'ID - ', this.image_arr.length );
+                            if( id ) clearInterval(id);
                         },1 );
                     }
+
+                    let sendUploadFile = setInterval( () => {
+                        if( file.target.files.length && this.image_arr.length ) {
+                            for (let i = 0; i < file.target.files.length; i++) {
+                                if( this.image_arr[i].id ) clearInterval( sendUploadFile );
+
+                                if( file.target.files[i] && this.image_arr[i].id ) {
+
+                                    this.sendUploadImages( file.target.files[i], this.image_arr[i].id );
+                                }
+                            }
+                        }
+                    },1 );
                 }
             }
         },
@@ -182,14 +194,15 @@ export default {
                         let new_img_count = setInterval( () => {
                             if( document.getElementsByClassName('has_new_img') ) {
                                 let has_new_img = document.getElementsByClassName('has_new_img');
-                                if (has_new_img.length) clearInterval(new_img_count);
+                                if (has_new_img.length) {
+                                    clearInterval(new_img_count);
+                                }
 
                                 //DELETE ALL IMAGES VAR delete_all_images
                                 setTimeout( () => {
                                     if( has_new_img.length > 1 ) this.delete_all_images = true;
                                     else this.delete_all_images = false;
-                                }, 300 )
-
+                                }, 300 );
 
                                 for ( let i = 0; i < has_new_img.length; i++ ) {
                                     if( ! has_new_img[i].id ) {
