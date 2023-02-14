@@ -43,7 +43,7 @@
 
             <div class="offcanvas-body p-0">
                 <div class="">
-                    <ul v-if="sub_category_types !== null" class="list-group">
+                    <ul v-if="sub_category_types" class="list-group">
                         <li v-for="item in sub_category_types"
                             :key="item.id"
                             role="button"
@@ -86,7 +86,7 @@ export default {
     },
     methods:{
         getSubCategoryTypes(){
-            if( this.sub_category_id !== undefined ) {
+            if( this.sub_category_id ) {
                 this.id = this.sub_category_id;
 
                 axios({
@@ -94,7 +94,7 @@ export default {
                     url: '/announce/new/get_sub_category_types',
                     data: { id: this.id }
                 }).then( res => {
-                    if( res.data !== undefined && res.data.sub_category_types !== undefined ) {
+                    if( res.data && res.data.sub_category_types ) {
                         this.sub_category_types = res.data.sub_category_types;
                     }
                     console.log('RES = ', res.data.sub_category_types )
@@ -104,7 +104,7 @@ export default {
             }
         },
         changeSubCategoryTypeName(event) {
-            if( event !== undefined && event.target.innerText !== undefined ) {
+            if( event && event.target.innerText ) {
                 this.sub_category_type_name = event.target.innerText;
                 this.font_size = 'fs-6';
             }
@@ -114,7 +114,7 @@ export default {
             this.sendSubCategoryTypeNameToAudioVeVideo( this.sub_category_type_name );
         },
         sendSubCategoryTypeNameToAudioVeVideo(name){
-            if( name !== undefined ) {
+            if( name ) {
                 this.$emit('sendSubCategoryTypeNameToAudioVeVideoComponent', {
                     name: name
                 })

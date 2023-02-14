@@ -31,8 +31,9 @@ class NewAnnounceController extends Controller
     }
 
     protected function getCategoryWithRelation( $model, $relation ) {
-        if( $model::with($relation) !== null ) {
-            return  $model::with($relation)->get();
+        if( $model::with($relation ) ) {
+            $res = $model::with($relation);
+            if( $res && $res->count() ) return $model::with($relation)->get();
         }
 
         return false;

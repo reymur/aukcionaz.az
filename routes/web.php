@@ -17,19 +17,22 @@ URL::forceScheme('https');
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
-    Route::get('/category/{id}/{name}', 'showSubCategories')->name('sub_category');
+
+    // CATEGORY
+    Route::get('/category/{name}', 'showSubCategories')->name('sub_category');
+    // SUB CATEGORY
+    Route::get('/category/{category}/{sub_category}', 'showSubCategoryTypes')->name('sub_category_types');
 });
 
-
-Route::prefix('announce')->group(function(){
+Route::prefix('announce/new')->group(function(){
     // SHOW NEW ANNOUNCE
-    Route::prefix('new')->controller(NewAnnounceController::class)->group(function (){
+    Route::controller(NewAnnounceController::class)->group(function (){
         Route::get('/','index')->name('new_announce');
         Route::post('/get_sub_category_types', 'getSubCategoryTypes');
     });
 
     // CREATE NEW ANNOUNCE
-    Route::prefix('new/create')->group(function (){
+    Route::prefix('create')->group(function (){
         // CREATE NEW ANNOUNCE BY Elektronika
         Route::prefix('electronica')->controller(ElectronicsController::class)->group(function (){
             Route::post('/audio-ve-video', 'audioVeVideo')->name('audioVeVideo');
@@ -50,7 +53,3 @@ Route::prefix('product')->controller(ProductController::class)->group(function()
     Route::get('/{id}', 'index')->name('product');
 });
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

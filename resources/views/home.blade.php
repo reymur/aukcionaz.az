@@ -12,12 +12,12 @@
                 <div class="col-12 col-lg-10 col-xl-10 m-auto px-3 scroll__hide overflow-scroll ">
                     <ul class="list-group list-group-horizontal">
 
-                        <!-- Modals Kataloq all category -->
+                        <!-- Vertical Modals Kataloq all category -->
                         <div class="">
                             @include('home.modals.modal_home_category', [$categories])
                         </div>
 
-                        <!-- Category child elements -->
+                        <!-- Horizontal Modals Kataloq all category -->
                         @if( isset($categories) && $categories->count() > 0 )
                             <div class="d-flex category__child_div" id="category__child_div">
                                 @foreach ( $categories as $key => $category )

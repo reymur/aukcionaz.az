@@ -5,6 +5,12 @@
 //         event
 //     )
 // }, true);
+
+// Vertical Modals Kataloq all category START
+
+// Vertical Modals Kataloq all category END
+
+
 let main__category_div = document.querySelector('.main__category_div');
 let new__announce_btn_div = document.querySelector('.new__announce_btn_div');
 let new__announce_small_btn_icon_div = document.querySelector('.new__announce_small_btn_icon_div');

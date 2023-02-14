@@ -9,5 +9,5 @@ class SubCategoryType extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'sub_category_id'];
+    protected $fillable = ['name', 'slug', 'sub_category_id'];
 }

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\SubCategoryType;
 use App\Models\SubCategoryTypeOnce;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -36,22 +37,29 @@ class HomeController extends Controller
 //       $this->makeCategories();
 //        $a = Product::all();
 //        dd( $a[0]->productable->subCategory->category );
-        $categories = $this->getAllCategories();
+        $categories = $this->getCategoryByModelWithRelation( 'App\Models\Category', 'SubCategories');
 
-        return view('home', ['categories' => $categories->load('subCategories')]);
+        return view('home', ['categories' => $categories] );
     }
 
-    public function showSubCategories( $id, $name  ) {
+    public function showSubCategories( $name ) {
         // dd(  $id );
-        $category = $this->getCategoryWithRelations($id, 'subCategories');
+        $category = $this->getCategoryWithRelations($name, 'subCategories');
 
         return view('home.categories.show_sub_categories', [ 'category' => $category ]);
     }
 
-    protected function getCategoryWithRelations($id, $relation) {
+    public function showSubCategoryTypes( $category, $sub_category  ) {
+         dd(  $sub_category );
+//        $category = $this->getCategoryWithRelations($id, 'subCategories');
+//
+//        return view('home.categories.show_sub_categories', [ 'category' => $category ]);
+    }
 
-        if( is_string($id) && is_string($relation) ) {
-            $category = Category::where('id', $id)->first();
+    protected function getCategoryWithRelations($name, $relation) {
+
+        if( is_string($relation) ) {
+            $category = Category::where('slug', $name)->first();
             // dd(  $category );
             if( $category && $category->count() > 0 && $category->load($relation) ) return $category->load($relation) ;
 
@@ -61,8 +69,13 @@ class HomeController extends Controller
         return false;
     }
 
-    protected function getAllCategories() {
-        return $categories = Category::all();
+    protected function getCategoryByModelWithRelation( $model, $relation ) {
+        if( $model::with($relation ) ) {
+            $res = $model::with($relation);
+            if( $res && $res->count() ) return $model::with($relation)->get();
+        }
+
+        return false;
     }
 
     public function makeCategories()
@@ -75,7 +88,8 @@ class HomeController extends Controller
          foreach( $category as $item ) {
              $cat = Category::create([
                  'name' => $item['name'],
-                 'image' => $item['image']
+                 'slug' => Str::slug($item['name'], '-'),
+                 'image' => $item['image'],
              ]);
          }
 
@@ -84,7 +98,8 @@ class HomeController extends Controller
              foreach( $sub_category as $item ) {
                  $sub_cat = SubCategory::create([
                      'category_id' => $item['category_id'],
-                     'name' => $item['name']
+                     'name' => $item['name'],
+                     'slug' => Str::slug($item['name'], '-'),
                  ]);
              }
          }
@@ -93,7 +108,8 @@ class HomeController extends Controller
              foreach( $sub_category_type as $item ) {
                  $sub_cat_type = SubCategoryType::create([
                      'sub_category_id' => $item['sub_category_id'],
-                     'name' => $item['name']
+                     'name' => $item['name'],
+                     'slug' => Str::slug($item['name'], '-'),
                  ]);
              }
          }
@@ -102,7 +118,8 @@ class HomeController extends Controller
             foreach( $sub_category_type_one as $item ) {
                 SubCategoryTypeOnce::create([
                     'sub_category_type_id' => $item['sub_category_type_id'],
-                    'name' => $item['name']
+                    'name' => $item['name'],
+                    'slug' => Str::slug($item['name'], '-'),
                 ]);
             }
         }

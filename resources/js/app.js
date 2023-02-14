@@ -34,6 +34,9 @@ import AnnounceNewModalCity from './components/announce/new/modals/AnnounceNewMo
 import AnnounceNewModalAbout from './components/announce/new/modals/AnnounceNewModalAbout.vue';
 import NewImageUpload from './components/announce/new/category/elektronika/audiovevideo/crumbs/NewImageUpload.vue';
 
+// CATEGORY
+import VerticalAllCatalogElement from './components/announce/new/category/modals/VerticalAllCatalogElement.vue';
+
 // ELEKTRONIKA AUDIO VE VIDEO FOLDER
 import SubCategoryTypeModal from './components/announce/new/category/elektronika/audiovevideo/modals/SubCategoryTypeModal.vue';
 import AudioVeVideo from './components/announce/new/category/elektronika/audiovevideo/AudioVeVideo.vue';
@@ -61,6 +64,9 @@ app.component('announce-new-top-elements' , AnnounceNewTopSection);
 app.component('announce-new-modal-price' , AnnounceNewModalPrice);
 app.component('announce-new-modal-city' , AnnounceNewModalCity);
 app.component('announce-new-modal-about' , AnnounceNewModalAbout);
+
+// CATEGORY
+app.component('vertical-all-catalog-element' , VerticalAllCatalogElement);
 
 // ELEKTRONIKA AUDIO VE VIDEO FOLDER
 app.component('sub-category-type-modal' , SubCategoryTypeModal);
