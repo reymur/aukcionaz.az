@@ -20,9 +20,11 @@ let main__search_large_icon = document.querySelector('.main__search_large_icon')
 let main__search_small_icon = document.querySelector('.main__search_small_icon');
 
 if( window.innerWidth >= 992 ) {
+    new__announce_btn_div.style.display = 'block'
     new__announce_btn_text.style.display = 'block'
 }
 else if( window.innerWidth < 992 ) {
+    new__announce_btn_div.style.display = 'none'
     new__announce_btn_text.style.display = 'none'
 }
 

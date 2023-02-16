@@ -23,6 +23,8 @@ class ProductController extends Controller
     public function getProductById($id) {
         if( !empty($id) ) {
             $product = Product::where('id',$id)->first();
+//            dd( $product );
+            if( ! $product ) abort(404 );
 
             if( $product && $product->id && $product->productable ) {
                 $product_infos = $product->productable->with(['user','images','phones'])

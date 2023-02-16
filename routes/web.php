@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
-//URL::forceRootUrl(env('APP_URL'));
-//URL::forceScheme('https');
+URL::forceRootUrl(env('APP_URL'));
+URL::forceScheme('https');
 
 Auth::routes();
 
