@@ -34,7 +34,9 @@
         <div class="col-12">
 
             <!-- ANNOUNCE PRODUCT CARDS -->
-            @include('products.product_card')
+            @if( isset($products) && $products->count() )
+                @include('products.product_card', ['products' => $products])
+            @endif
 
         </div>
     </div>

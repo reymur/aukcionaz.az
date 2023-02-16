@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
-URL::forceRootUrl(env('APP_URL'));
-URL::forceScheme('https');
+//URL::forceRootUrl(env('APP_URL'));
+//URL::forceScheme('https');
 
-//Auth::routes();
+Auth::routes();
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
@@ -48,7 +48,7 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
     Route::post('/get-auksion-users',  'getResponseAukcionGamers');
 });
 
-// PRODUCTS
+// PRODUCT SHOW
 Route::prefix('product')->controller(ProductController::class)->group(function() {
     Route::get('/{id}', 'index')->name('product');
 });

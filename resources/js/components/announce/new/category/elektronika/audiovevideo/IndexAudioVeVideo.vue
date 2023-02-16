@@ -538,7 +538,9 @@ export default {
                         console.log('Create resA + = ', res );
                         if( res && res.data && res.data.productable && res.data.productable.id ) {
                             let id = res.data.productable.id;
-                            document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/'+id;
+                            // document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/'+id;
+                            console.log('Product has ben Created resA + = ', res );
+                            document.location.href = 'https://public.test/product/'+id;
                         }
                         // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                         // document.location.href = 'https://public.test/product/';

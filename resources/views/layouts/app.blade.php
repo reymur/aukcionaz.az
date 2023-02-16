@@ -42,7 +42,7 @@
             </button>
 
             <div class="justify-content-center">
-                <a class="navbar-brand fs-4 fw-bolder ms-lg-5 ms-xl-5" href="{{ env('APP_URL') }}">
+                <a class="navbar-brand fs-4 fw-bolder ms-lg-5 ms-xl-5" href="/">
                     {{ config('app.name', 'Auksionaz.az') }}
                 </a>
             </div>

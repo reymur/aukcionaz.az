@@ -1,16 +1,16 @@
 <template>
     <div class="bg-secondary d-flex justify-content-center">
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 product__show_image" id="consumer-big-image-show-div">
             <photo-provider>
                 <photo-consumer v-for="(src, id) in imgList" :intro="src.image" :id="'consumer-big-image-show-'+id" :key="id" :src="new_image_path+src.image" class="d-flex">
                     <img v-if="id === 0" :src="new_image_path+imgList[0].image" class="big__mage_consumer">
                 </photo-consumer>
             </photo-provider>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5" id="for-desktop-small-image-consumer-div">
-            <div v-if="imgList" :class="'row row-cols-lg-'+num+' d-flex ps-0 pt-1 ps-2 pe-0 pb-3 desktop_small_image_div_parent'">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-1" id="for-desktop-small-image-consumer-div">
+            <div v-if="imgList" :class="'row row-cols-lg-'+num+' d-flex ps-0 pt-2 ps-2 pe-0 pb-3 desktop_small_image_div_parent'">
                 <photo-provider>
-                    <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-desktop-'+id" :intro="src.image" :src="new_image_path+src.image" class="d-flex py-2">
+                    <photo-consumer v-for="(src, id) in imgList" :key="id" :id="'img-desktop-'+id" :intro="src.image" :src="new_image_path+src.image" class="d-flex px-1 py-1">
                         <div v-if="id > 0" class="col d-flex desktop_small_image_div" role="button" :key="id">
                             <img :src="new_image_path+src.image" class="small__mage_consumer">
                         </div>
@@ -34,38 +34,56 @@ export default {
         return {
             new_image_path: location.protocol +'//'+location.host+'/storage/images/products/',
             imgList: null,
-            num: ''
+            num: '',
+            // docResize: window,
         }
     },
     components: {
         PhotoProvider,
         PhotoConsumer,
-        PhotoSlider
+        PhotoSlider,
     },
     methods: {
         getImagesCount(){
             let set_i = setInterval( () => {
+                // console.log('resize111 - ', this.num);
                 let count = document.querySelectorAll('.small__mage_consumer');
+                let for_desktop_small_image_consumer_div = document.getElementById('for-desktop-small-image-consumer-div');
+                let consumer_big_image_show_div = document.getElementById('consumer-big-image-show-div');
+                let small__mage_consumer = document.getElementsByClassName('small__mage_consumer');
+
                 if( count && count.length ) {
-                    if ( count.length <= 4 ) {
+                    if( count.length > 20 ) clearInterval(set_i);
+
+                    // count = [1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                    if ( count.length <= 2 || count.length <= 3 ) {
                         this.num = 4;
                         clearInterval(set_i);
                     }
-                    else if ( count.length > 4 && count.length <= 8 ) {
-                        this.num = count.length / 2;
+                    if ( count.length > 3 && count.length <= 12 ) {
+                        this.num = 4;
                         clearInterval(set_i);
                     }
-                    else if ( count.length > 4 && count.length > 8 && count.length <= 16 ) {
-                        this.num = count.length / 3;
+                    if ( count.length > 12 && count.length <= 20 ) {
+                        this.num = 5;
                         clearInterval(set_i);
                     }
-                    else if ( count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20 ) {
-                        this.num = count.length / 4;
-                        clearInterval(set_i);
+
+                    if( count.length <= 12 ) {
+                        if( small__mage_consumer && consumer_big_image_show_div && for_desktop_small_image_consumer_div ) {
+                            for (let i = 0; i < small__mage_consumer.length; i++) {
+                                small__mage_consumer[i].style.width = ((for_desktop_small_image_consumer_div.offsetWidth / 4) - 5)+'px';
+                                small__mage_consumer[i].style.height = ((consumer_big_image_show_div.offsetHeight / 3) - 15)+'px';
+                            }
+                        }
+
                     }
-                    else clearInterval(set_i);
-                    console.log('SETINTERVAl2222 = ', Math.floor( this.num ) )
-                    return this.num = Math.floor( this.num );
+                    else if( count.length > 12 ) {
+                        for (let i = 0; i < small__mage_consumer.length; i++) {
+                            small__mage_consumer[i].style.width = ((for_desktop_small_image_consumer_div.offsetWidth / 5) - 5)+'px';
+                            small__mage_consumer[i].style.height = ((consumer_big_image_show_div.offsetHeight / 4) - 6.5)+'px';
+                        }
+                    }
                 }
                 else clearInterval(set_i);
             }, 1)
@@ -105,6 +123,14 @@ export default {
                     if( !id ) clearInterval( set );
                 }
             }, 1);
+        },
+        resizeDesktopSmallImages() {
+
+        }
+    },
+    watch: {
+        docResize() {
+            console.log('resize55555 - ', window.innerWidth )
         }
     },
     computed: {
@@ -129,14 +155,15 @@ export default {
         this.deleteFakeBigConsumerImages();
         this.deleteFakeSmallConsumerImages();
         this.getImages();
-        this.showOneImage
+        this.showOneImage;
+
+        window.addEventListener('resize' , (e) => {
+            this.getImagesCount();
+        })
 
         if (document.getElementById('img-desktop-0')) {
             document.getElementById('img-desktop-0').style.display = 'none'
         }
-
-        console.log('new_image_path - ', location.protocol +'//'+this.new_image_path );
-        console.log('$product - ', this.num );
     }
 }
 </script>
@@ -152,8 +179,8 @@ export default {
         display: block;
     }
     .small__mage_consumer {
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
     }
     .big__mage_consumer {
         max-width: 100%;

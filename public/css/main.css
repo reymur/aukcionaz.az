@@ -212,19 +212,43 @@ input:focus
                 text-decoration: none;
             }
                 .product__image_div {
-                    /* height: auto; */
                     position: relative;
                     z-index: 1;
-                    /* margin-bottom: 10px; */
                     overflow: hidden;
-                    /*height: 220px;*/
+                    height: 181px;
+                    /*margin-bottom: 5px;*/
                 }
                     .product__image_style {
-
+                        overflow: hidden;
+                        display: block;
+                        max-width: 100%;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0 auto;
+                        background-color: #fff;
+                        word-wrap: break-word;
+                        border-top-left-radius: 7px;
+                        border-top-right-radius: 7px;
                     }
                 .card__body_style {
-                    padding: 10px 0 0 0;
+                    padding: 5px 0 0 0;
                 }
+                    .product__title {
+                        margin: 0;
+                        display: block;
+                        display: -webkit-box;
+                        height: 39px;
+                        font-size: 17px;
+                        line-height: 1.2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        padding: 0 10px;
+                        color: #212c3a;
+                    }
                     .product__price {
                         margin: 0 10px;
                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -232,7 +256,7 @@ input:focus
                         font-size: 18px;
                         font-weight: bold;
                     }
-                    .product__name {
+                    .product__about {
                         margin: 0;
                         padding: 0;
                         display: block;

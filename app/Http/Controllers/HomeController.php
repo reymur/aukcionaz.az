@@ -37,13 +37,20 @@ class HomeController extends Controller
 //       $this->makeCategories();
 //        $a = Product::all();
 //        dd( $a[0]->productable->subCategory->category );
+        $products = $this->getAllProducts();
         $categories = $this->getCategoryByModelWithRelation( 'App\Models\Category', 'SubCategories');
 
-        return view('home', ['categories' => $categories] );
+        return view('home', ['categories' => $categories, 'products' => $products] );
+    }
+
+    public function getAllProducts() {
+        $products = Product::all();
+
+        if( $products && $products->count() ) return $products;
+        return false;
     }
 
     public function showSubCategories( $name ) {
-        // dd(  $id );
         $category = $this->getCategoryWithRelations($name, 'subCategories');
 
         return view('home.categories.show_sub_categories', [ 'category' => $category ]);

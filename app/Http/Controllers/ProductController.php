@@ -16,6 +16,7 @@ class ProductController extends Controller
     public function index($id) {
 //        dd( public_path( Storage::disk('public') ) );
         $product = $this->getProductById($id) ?? false;
+//        dd( $product );
         return view('products.product_show', ['product' => $product]);
     }
 
@@ -24,10 +25,10 @@ class ProductController extends Controller
             $product = Product::where('id',$id)->first();
 
             if( $product && $product->id && $product->productable ) {
-                $product_with_all = $product->productable->with(['user','images','phones'])
+                $product_infos = $product->productable->with(['user','images','phones'])
                     ->where('id',$product->productable->id)->first();
 
-                if( $product_with_all && $product_with_all->id ) return $product_with_all;
+                if( $product_infos && $product_infos->id ) return $product_infos;
                 else return false;
             }
             return false;

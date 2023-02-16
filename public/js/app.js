@@ -28311,7 +28311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-1f0f06f3] {\n        display: flex;\n}\n.PhotoConsumer img[data-v-1f0f06f3] {\n        align-self: center;\n        background-size: cover;\n        margin: auto;\n        display: block;\n}\n.small__mage_consumer[data-v-1f0f06f3] {\n        max-width: 100%;\n        max-height: 100%;\n}\n.big__mage_consumer[data-v-1f0f06f3] {\n        max-width: 100%;\n        max-height: 100%;\n}\n    /* .product__info {\n        background-color: #fff;\n        text-transform: capitalize;\n        font-size: 21px;\n        color: #000;\n        letter-spacing: 1px;\n        font-family: sans-serif;\n    } */\n\n    /* .close__style {\n        color: #fa1f1f;\n    } */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.PhotoConsumer[data-v-1f0f06f3] {\n        display: flex;\n}\n.PhotoConsumer img[data-v-1f0f06f3] {\n        align-self: center;\n        background-size: cover;\n        margin: auto;\n        display: block;\n}\n.small__mage_consumer[data-v-1f0f06f3] {\n        width: 100%;\n        height: 100%;\n}\n.big__mage_consumer[data-v-1f0f06f3] {\n        max-width: 100%;\n        max-height: 100%;\n}\n    /* .product__info {\n        background-color: #fff;\n        text-transform: capitalize;\n        font-size: 21px;\n        color: #000;\n        letter-spacing: 1px;\n        font-family: sans-serif;\n    } */\n\n    /* .close__style {\n        color: #fa1f1f;\n    } */\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29033,7 +29033,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     console.log('Create resA + = ', res);
                     if (res && res.data && res.data.productable && res.data.productable.id) {
                       var id = res.data.productable.id;
-                      document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/' + id;
+                      // document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/'+id;
+                      console.log('Product has ben Created resA + = ', res);
+                      document.location.href = 'https://public.test/product/' + id;
                     }
                     // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                     // document.location.href = 'https://public.test/product/';
@@ -30011,8 +30013,10 @@ __webpack_require__.r(__webpack_exports__);
       new_image_path: location.protocol + '//' + location.host + '/storage/images/products/',
       imgList: null,
       num: ''
+      // docResize: window,
     };
   },
+
   components: {
     PhotoProvider: vue3_photo_preview__WEBPACK_IMPORTED_MODULE_0__.PhotoProvider,
     PhotoConsumer: vue3_photo_preview__WEBPACK_IMPORTED_MODULE_0__.PhotoConsumer,
@@ -30022,23 +30026,40 @@ __webpack_require__.r(__webpack_exports__);
     getImagesCount: function getImagesCount() {
       var _this = this;
       var set_i = setInterval(function () {
+        // console.log('resize111 - ', this.num);
         var count = document.querySelectorAll('.small__mage_consumer');
+        var for_desktop_small_image_consumer_div = document.getElementById('for-desktop-small-image-consumer-div');
+        var consumer_big_image_show_div = document.getElementById('consumer-big-image-show-div');
+        var small__mage_consumer = document.getElementsByClassName('small__mage_consumer');
         if (count && count.length) {
-          if (count.length <= 4) {
+          if (count.length > 20) clearInterval(set_i);
+
+          // count = [1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+          if (count.length <= 2 || count.length <= 3) {
             _this.num = 4;
             clearInterval(set_i);
-          } else if (count.length > 4 && count.length <= 8) {
-            _this.num = count.length / 2;
+          }
+          if (count.length > 3 && count.length <= 12) {
+            _this.num = 4;
             clearInterval(set_i);
-          } else if (count.length > 4 && count.length > 8 && count.length <= 16) {
-            _this.num = count.length / 3;
+          }
+          if (count.length > 12 && count.length <= 20) {
+            _this.num = 5;
             clearInterval(set_i);
-          } else if (count.length > 4 && count.length > 8 && count.length > 16 && count.length <= 20) {
-            _this.num = count.length / 4;
-            clearInterval(set_i);
-          } else clearInterval(set_i);
-          console.log('SETINTERVAl2222 = ', Math.floor(_this.num));
-          return _this.num = Math.floor(_this.num);
+          }
+          if (count.length <= 12) {
+            if (small__mage_consumer && consumer_big_image_show_div && for_desktop_small_image_consumer_div) {
+              for (var i = 0; i < small__mage_consumer.length; i++) {
+                small__mage_consumer[i].style.width = for_desktop_small_image_consumer_div.offsetWidth / 4 - 5 + 'px';
+                small__mage_consumer[i].style.height = consumer_big_image_show_div.offsetHeight / 3 - 15 + 'px';
+              }
+            }
+          } else if (count.length > 12) {
+            for (var _i = 0; _i < small__mage_consumer.length; _i++) {
+              small__mage_consumer[_i].style.width = for_desktop_small_image_consumer_div.offsetWidth / 5 - 5 + 'px';
+              small__mage_consumer[_i].style.height = consumer_big_image_show_div.offsetHeight / 4 - 6.5 + 'px';
+            }
+          }
         } else clearInterval(set_i);
       }, 1);
     },
@@ -30076,6 +30097,12 @@ __webpack_require__.r(__webpack_exports__);
           if (!id) clearInterval(set);
         }
       }, 1);
+    },
+    resizeDesktopSmallImages: function resizeDesktopSmallImages() {}
+  },
+  watch: {
+    docResize: function docResize() {
+      console.log('resize55555 - ', window.innerWidth);
     }
   },
   computed: {
@@ -30095,16 +30122,18 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    var _this3 = this;
     this.getImagesCount();
     this.deleteFakeBigConsumerImages();
     this.deleteFakeSmallConsumerImages();
     this.getImages();
     this.showOneImage;
+    window.addEventListener('resize', function (e) {
+      _this3.getImagesCount();
+    });
     if (document.getElementById('img-desktop-0')) {
       document.getElementById('img-desktop-0').style.display = 'none';
     }
-    console.log('new_image_path - ', location.protocol + '//' + this.new_image_path);
-    console.log('$product - ', this.num);
   }
 });
 
@@ -31616,11 +31645,12 @@ var _hoisted_1 = {
   "class": "bg-secondary d-flex justify-content-center"
 };
 var _hoisted_2 = {
-  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5 product__show_image"
+  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 product__show_image",
+  id: "consumer-big-image-show-div"
 };
 var _hoisted_3 = ["src"];
 var _hoisted_4 = {
-  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5",
+  "class": "col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 pt-1",
   id: "for-desktop-small-image-consumer-div"
 };
 var _hoisted_5 = ["src"];
@@ -31652,7 +31682,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [$data.imgList ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 0,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('row row-cols-lg-' + $data.num + ' d-flex ps-0 pt-1 ps-2 pe-0 pb-3 desktop_small_image_div_parent')
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('row row-cols-lg-' + $data.num + ' d-flex ps-0 pt-2 ps-2 pe-0 pb-3 desktop_small_image_div_parent')
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_photo_provider, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.imgList, function (src, id) {
@@ -31661,7 +31691,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           id: 'img-desktop-' + id,
           intro: src.image,
           src: $data.new_image_path + src.image,
-          "class": "d-flex py-2"
+          "class": "d-flex px-1 py-1"
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [id > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
