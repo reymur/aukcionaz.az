@@ -76,6 +76,11 @@
                     ></new-announce-user-info>
                 </div>
 
+                <!-- ADD ON AUKCION -->
+                <div class="d-flex justify-content-center py-3">
+                    <add-on-aukcion></add-on-aukcion>
+                </div>
+
                 <!-- SEND BUTTON -->
                 <div class="p-3 mb-4 border-bottom-danger">
                     <button

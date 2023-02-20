@@ -436,8 +436,8 @@ input:focus
                 background-color: #009512;
                 width: 185px;
                 height: 50px;
-                margin-top: 146px;
-                right: 108px;
+                margin-top: 4px;
+                right: 610px;
                 padding: 7px 28px 7px 25px;
                 position: absolute;
             }
@@ -499,3 +499,15 @@ input:focus
         color: #e3e1dc;
         background-color: #037411;
     }
+    .date_and_time_pickers_titles_div {
+        margin-bottom: 15px;
+        color: #434141;
+        border-bottom: 1px solid #0000002e;
+    }
+        .aukcion__date_picker_div {
+            background-color: #f5f6fa;
+            border-right: 2px solid #ffffff;
+        }
+        .aukcion__time_picker_div {
+            background-color: #f5f6fa;
+}

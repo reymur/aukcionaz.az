@@ -3,13 +3,16 @@ require('./bootstrap');
 import OnAukcionProduct from "./components/elements/OnAukcionProduct";
 
 import { createApp } from 'vue';
-let app=createApp({})
+let app=createApp({});
 
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 
 import vue3PhotoPreview from 'vue3-photo-preview';
 import 'vue3-photo-preview/dist/index.css';
+
+import LitepieDatepicker from 'litepie-datepicker';
+app.use(LitepieDatepicker);
 
 app.use(VueAxios, axios);
 app.use(vue3PhotoPreview);
@@ -46,6 +49,13 @@ import IndexAudioVeVideo from './components/announce/new/category/elektronika/au
 import ShowForPhoneScreen from './components/announce/products/crumbs/ShowForPhoneScreen.vue';
 import ShowForDesktopScreen from './components/announce/products/crumbs/ShowForDesktopScreen.vue';
 
+// ADD ON AUKCION
+import AddOnAukcion from "./components/announce/new/modals/AddOnAukcion.vue";
+
+// DATA and TIME PICKER
+import DataPicker from "./components/announce/new/modals/DataPicker.vue";
+import TimePicker from "./components/announce/new/modals/TimePicker.vue";
+
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
 app.component('auksion-user-info-modal' , AukcionUserInfoModal);
@@ -78,6 +88,12 @@ app.component('new-image-upload' , NewImageUpload);
 app.component('show-for-phone-screen' , ShowForPhoneScreen);
 app.component('show-for-desktop-screen' , ShowForDesktopScreen);
 
+// ADD ON AUKCION
+app.component('add-on-aukcion', AddOnAukcion);
+
+// DATA PICKER
+app.component('data-picker', DataPicker);
+app.component('time-picker', TimePicker);
 
 
 app.mount("#app")
