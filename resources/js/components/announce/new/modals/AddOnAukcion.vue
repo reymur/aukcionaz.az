@@ -261,11 +261,11 @@ export default {
                     }, 300)
                 }
 
-                if( collapse_id.style.maxHeight ) {
+                // if( collapse_id.style.maxHeight ) {
                     setTimeout( () => {
                         collapse_id.style.overflow = 'unset';
-                    }, 300)
-                }
+                    }, 500)
+                // }
             }
         },
         hideDateTimePickers() {

@@ -39721,11 +39721,12 @@ __webpack_require__.r(__webpack_exports__);
             collapse_id.style.maxHeight = collapse_id.scrollHeight + 'px';
           }, 300);
         }
-        if (collapse_id.style.maxHeight) {
-          setTimeout(function () {
-            collapse_id.style.overflow = 'unset';
-          }, 300);
-        }
+
+        // if( collapse_id.style.maxHeight ) {
+        setTimeout(function () {
+          collapse_id.style.overflow = 'unset';
+        }, 500);
+        // }
       }
     },
     hideDateTimePickers: function hideDateTimePickers() {
