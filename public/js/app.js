@@ -39663,14 +39663,23 @@ __webpack_require__.r(__webpack_exports__);
     },
     runNowTimeAukcion: function runNowTimeAukcion() {
       var runNowTimeAukcionCollapse = document.getElementById('runNowTimeAukcionCollapse');
+      var runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
       var on_time_aukcion = document.getElementsByClassName('on_time_aukcion');
+      var card = document.getElementsByClassName('card');
       if (runNowTimeAukcionCollapse) {
         if (on_time_aukcion && on_time_aukcion[0] && on_time_aukcion[0].classList) {
           if (on_time_aukcion[0].style) {
             on_time_aukcion[0].style.border = 'none';
           }
         }
-        runNowTimeAukcionCollapse.style.maxHeight = runNowTimeAukcionCollapse.scrollHeight + 'px';
+        var he = setInterval(function () {
+          if (runCurrentTimeAukcion.style.maxHeight && card && card[0]) clearInterval(he);
+          console.log('card[0] - ', card[0].scrollHeight);
+          var heig = Number(runCurrentTimeAukcion.scrollHeight);
+          var heig_2 = Number(runCurrentTimeAukcion.scrollHeight);
+          runCurrentTimeAukcion.style.maxHeight = heig + heig_2 + 'px';
+          runNowTimeAukcionCollapse.style.maxHeight = runNowTimeAukcionCollapse.scrollHeight + 'px';
+        }, 0.1);
       }
     },
     runNowTimeAukcionClose: function runNowTimeAukcionClose() {

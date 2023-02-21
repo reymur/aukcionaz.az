@@ -195,7 +195,9 @@ export default {
         },
         runNowTimeAukcion() {
             let runNowTimeAukcionCollapse = document.getElementById('runNowTimeAukcionCollapse');
+            let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
             let on_time_aukcion = document.getElementsByClassName('on_time_aukcion');
+            let card = document.getElementsByClassName('card');
 
             if( runNowTimeAukcionCollapse ) {
                 if( on_time_aukcion && on_time_aukcion[0] && on_time_aukcion[0].classList ) {
@@ -204,7 +206,14 @@ export default {
                     }
                 }
 
-                runNowTimeAukcionCollapse.style.maxHeight = runNowTimeAukcionCollapse.scrollHeight+'px';
+                let he = setInterval( () => {
+                    if( runCurrentTimeAukcion.style.maxHeight && card && card[0] ) clearInterval(he);
+                    console.log('card[0] - ', card[0].scrollHeight )
+                    let heig = Number( runCurrentTimeAukcion.scrollHeight );
+                    let heig_2 = Number( runCurrentTimeAukcion.scrollHeight );
+                    runCurrentTimeAukcion.style.maxHeight = (heig+heig_2)+'px';
+                    runNowTimeAukcionCollapse.style.maxHeight = runNowTimeAukcionCollapse.scrollHeight+'px';
+                }, 0.1)
             }
         },
         runNowTimeAukcionClose() {
