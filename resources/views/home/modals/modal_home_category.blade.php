@@ -28,10 +28,10 @@
       <div class="offcanvas-body p-0">
           <div class="">
               <ul class="list-group">
-                @if( isset($categories) && $categories->count() > 0 )
-                  @foreach ( $categories as $category )
-                    @include('home.modals.modal_crumbs._vertical_all_catalog_element', [$category])
-                  @endforeach
+                @if( isset($categories) && $categories && $categories->count() > 0 )
+                    @foreach ( $categories as $category )
+                        @include('home.modals.modal_crumbs._vertical_all_catalog_element', [$category])
+                    @endforeach
                 @endif
               </ul>
           </div>

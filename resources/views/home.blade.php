@@ -18,7 +18,7 @@
                         </div>
 
                         <!-- Horizontal Modals Kataloq all category -->
-                        @if( isset($categories) && $categories->count() > 0 )
+                        @if( isset($categories) && $categories && $categories->count() > 0 )
                             <div class="d-flex category__child_div" id="category__child_div">
                                 @foreach ( $categories as $key => $category )
                                     @include('home.crumbs.category_child_elements', ['id' => $key,'category' => $category])
@@ -34,7 +34,7 @@
         <div class="col-12">
 
             <!-- ANNOUNCE PRODUCT CARDS -->
-            @if( isset($products) && $products->count() )
+            @if( isset($products) && $products && $products->count() )
                 @include('products.product_card', ['products' => $products])
             @endif
 

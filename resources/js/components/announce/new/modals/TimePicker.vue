@@ -146,7 +146,7 @@ export default {
                 if( rowOptionCustom && rowOptionCustom.length ) {
                     rowOptionCustom.forEach( (e) => {
                         if( e.style ) {
-                            e.style = "background-color: #438854b0; color: #fff; bold; padding: 5px 10px 5px 10px;";
+                            e.style = "background-color: rgb(85 83 83 / 69%); color: #fff; bold; padding: 5px 10px 5px 10px;";
                         }
                     });
                 }
@@ -198,11 +198,11 @@ export default {
 <style scoped>
 
     .double-dot {
-        margin: 4px 0 0 43px;
+        margin: 4px 0 0 42px;
         font-weight: bold;
         font-size: 20px;
         width: 7px;
-        background-color: #438854b0;
+        background-color: rgb(85 83 83 / 69%);
         height: 33px;
         color: #fff;
         position: absolute;

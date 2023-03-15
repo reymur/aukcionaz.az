@@ -33,116 +33,17 @@
                             </div>
 
                             <!-- CURRENT TIME AUKCION START -->
-                            <div class="" id="runCurrentTimeAukcion">
-                                <div class="card card-body">
-                                    <div class="col">
-                                        <div class="col">
-
-                                            <div class="d-flex ms-2 mb-3 pb-2 date_and_time_pickers_titles_div">
-                                                <div class="fs-5 d-block d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
-                                                    <div class="me-3 to_start_aukcion_title">
-                                                        <span class="auksiyon_text_style">Auksion </span>
-                                                        <span class="">başlasın:</span>
-                                                    </div>
-                                                    <div class="">
-                                                        {{ today.toLocaleDateString() }} | {{ current_time_show }}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col ms-2 mb-3 on_time_aukcion">
-                                                <div class="col pb-3 d-block d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex ">
-                                                    <div class="fs-5 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0 me-2 rounded-0 do__akcion_on_time">
-                                                        <span class="auksiyon_text_style">Auksion </span> saatla olsun?
-                                                    </div>
-                                                    <div class="col d-flex">
-                                                        <input type="radio" class="btn-check" name="on-time" id="no-time" autocomplete="off" checked>
-                                                        <label @click="runNowTimeAukcionClose" class="col btn btn-outline-danger rounded-0 px-4 w-25" for="no-time">Xeyir</label>
-
-                                                        <input type="radio" class="btn-check" name="on-time" id="yes-time" autocomplete="off">
-                                                        <label @click="runNowTimeAukcion" class="col btn btn-outline-success rounded-0 px-4 w-25" for="yes-time">Bəli</label>
-                                                    </div>
-                                                </div>
-
-                                                <!--  RUN AUKCION NEW TIME COLLAPSE START  -->
-                                                <div class="" id="runNowTimeAukcionCollapse">
-                                                    <div class="card card-body">
-                                                        <div class="col">
-                                                            <div class="col">
-
-                                                                <div class="d-flex ms-2 mb-3 pb-2 date_and_time_pickers_titles_div">
-                                                                    <div class="fs-5 d-block d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
-                                                                        <div class="me-3 to_start_aukcion_title">
-                                                                            <span class="auksiyon_text_style">Auksion </span>
-                                                                            <span class="">davam etsin:</span>
-                                                                        </div>
-                                                                        <div class="">
-                                                                            aaa
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- RUN AUKCION NEW TIME COLLAPSE END -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <current-time-aukcion></current-time-aukcion>
                             <!-- CURRENT TIME AUKCION END -->
 
                             <!-- LATER TIME DATA AND TIME PICKERS COLLAPSE START -->
-                            <div class="collapse-picker" id="collapsePicker">
-                                <div class="card card-body position-relative">
-                                    <div class="col mt-3 mb-4">
-
-                                        <div class="">
-                                            <div class="d-flex mb-2 date_and_time_pickers_titles_div">
-                                                <div class="fs-5 fw-bold m-auto">Başlama tarixi</div>
-                                                <div class="fs-5 fw-bold m-auto">Başlama saatı</div>
-                                            </div>
-                                            <div class="col d-flex">
-                                                <div class="col d-flex">
-                                                    <div class="d-flex aukcion_date_icon_div">
-                                                        <img src="/storage/images/icons/aukcion_date_icon.png" alt="" class="aukcion_date_icon">
-                                                    </div>
-
-                                                    <div class="col d-flex justify-content-center aukcion__date_picker_div">
-                                                        <data-picker
-                                                            :reset_al_time="reset_al_time"
-                                                            @timePickerIsChanged="changeValueResetAlTime"
-                                                        ></data-picker>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col d-flex">
-                                                    <div class="time-picker-svg">
-                                                        <img src="/storage/images/icons/aukcion_time_icon.png" class="aukcion_time_icon" alt="">
-                                                    </div>
-
-                                                    <div class="col d-flex justify-content-center aukcion__time_picker_div">
-                                                        <time-picker
-                                                            :reset_al_time="reset_al_time"
-                                                            @timePickerIsChanged="changeValueResetAlTime"
-                                                        ></time-picker>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div href="#" @click="resetDateAndTime" type="button" class="link-danger reset__data_time">Sıfırla</div>
-                                </div>
-                            </div>
+                                <later-time-aukcion></later-time-aukcion>
                             <!-- LATER TIME DATA AND TIME PICKERS COLLAPSE END -->
+
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success">Təstiqlə</button>
+                        <button type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
                     </div>
                 </div>
             </div>
@@ -162,7 +63,6 @@ export default {
             // bodyColor: null,
             collapse: 'collapse',
             show_later_aukcion: true,
-            reset_al_time: false,
             current_time_show: '',
             today: new Date(),
             date_format: { year: 'numeric', month: 'long', day: 'numeric' },
@@ -185,14 +85,6 @@ export default {
                 // console.log('COLOR - ', date.getSeconds() )
             }, 1000 );
         },
-        changeValueResetAlTime(data) {
-            if( data ) {
-                this.reset_al_time = false;
-            }
-        },
-        resetDateAndTime() {
-            this.reset_al_time = true;
-        },
         runNowTimeAukcion() {
             let runNowTimeAukcionCollapse = document.getElementById('runNowTimeAukcionCollapse');
             let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
@@ -201,9 +93,9 @@ export default {
 
             if( runNowTimeAukcionCollapse ) {
                 if( on_time_aukcion && on_time_aukcion[0] && on_time_aukcion[0].classList ) {
-                    if( on_time_aukcion[0].style ) {
-                        on_time_aukcion[0].style.border = 'none';
-                    }
+                        if( on_time_aukcion[0].style ) {
+                            on_time_aukcion[0].style.border = 'none';
+                        }
                 }
 
                 let he = setInterval( () => {
@@ -212,8 +104,13 @@ export default {
                     let heig = Number( runCurrentTimeAukcion.scrollHeight );
                     let heig_2 = Number( runCurrentTimeAukcion.scrollHeight );
                     runCurrentTimeAukcion.style.maxHeight = (heig+heig_2)+'px';
-                    runNowTimeAukcionCollapse.style.maxHeight = runNowTimeAukcionCollapse.scrollHeight+'px';
-                }, 0.1)
+                    runNowTimeAukcionCollapse.style.maxHeight = (runNowTimeAukcionCollapse.scrollHeight + 5 )+'px';
+                    runNowTimeAukcionCollapse.style.marginTop = '15px';
+                }, 0.1 );
+
+                setTimeout( () => {
+                    clearInterval(he);
+                }, 3000 );
             }
         },
         runNowTimeAukcionClose() {
@@ -224,11 +121,16 @@ export default {
                 if( on_time_aukcion && on_time_aukcion[0] && on_time_aukcion[0].classList ) {
                     setTimeout( () => {
                         if( on_time_aukcion[0].style ) {
-                            on_time_aukcion[0].style = 'border-bottom: 1px solid #0000002e;';
+                            on_time_aukcion[0].style.marginTop = '0';
                         }
                     }, 210 )
                 }
+
                 runNowTimeAukcionCollapse.style.maxHeight = '0';
+
+                setTimeout( () => {
+                    runNowTimeAukcionCollapse.style.marginTop = '0';
+                }, 100);
             }
         },
         newAukcion() {
@@ -255,17 +157,14 @@ export default {
                 runCurrentTimeAukcion.style.maxHeight = '0';
 
                 if( runCurrentTimeAukcion.style.maxHeight === '0px' ) {
-                    // console.log('MMMMMM = ',  runCurrentTimeAukcion.style.maxHeight )
                     setTimeout( () => {
                         collapse_id.style.maxHeight = collapse_id.scrollHeight+'px';
                     }, 300)
                 }
 
-                // if( collapse_id.style.maxHeight ) {
-                    setTimeout( () => {
-                        collapse_id.style.overflow = 'unset';
-                    }, 500)
-                // }
+                setTimeout( () => {
+                    collapse_id.style.overflow = 'unset';
+                }, 500);
             }
         },
         hideDateTimePickers() {
@@ -317,27 +216,21 @@ export default {
         overflow: hidden;
         transition: max-height 0.3s ease-out;
     }
-    #runCurrentTimeAukcion {
-        max-height: 466px;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
+    .auksiyon_text_style {
+        font-size: 1em;
+        color: #41830b;
+        font-weight: bold;
     }
-    #runNowTimeAukcionCollapse {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
-    .aukcion_date_icon {
-        width: 40px;
-        height: 43px;
-        margin: -4px 0 0 0;
-    }
-    .aukcion_time_icon {
-        position: relative;
-        width: 35px;
-        height: 40px;
-        opacity: 0.9;
-    }
+
+
+        .aukcion_date_icon {
+            height: 32px;
+            width: 29px;
+            align-self: center;
+            opacity: 0.7;
+        }
+
+
     .reset__data_time {
         bottom: 0;
         font-size: 1rem;
@@ -346,7 +239,7 @@ export default {
     }
 
     .on_time_aukcion {
-        border-bottom: 1px solid #0000002e;
+        //border-bottom: 1px solid #0000002e;
     }
 
     .do__akcion_on_time {
@@ -358,10 +251,6 @@ export default {
         color: #000;
     }
 
-    .auksiyon_text_style {
-        font-size: 1em;
-        color: #41830b;
-        font-weight: bold;
-    }
+
 </style>
 

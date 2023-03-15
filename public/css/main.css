@@ -502,12 +502,14 @@ input:focus
     .date_and_time_pickers_titles_div {
         margin-bottom: 15px;
         color: #434141;
-        border-bottom: 1px solid #0000002e;
     }
         .aukcion__date_picker_div {
+            position: relative;
+            height: 39px;
             background-color: #f5f6fa;
             border-right: 2px solid #ffffff;
         }
         .aukcion__time_picker_div {
+            position: relative;
             background-color: #f5f6fa;
-}
+        }

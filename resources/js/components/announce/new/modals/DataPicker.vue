@@ -4,10 +4,6 @@
             v-model="picked"
             placeholder="Tarix seçin"
         />
-
-<!--        <div class="aukcion_date_icon_div">-->
-<!--            <img src="/storage/images/icons/aukcion_date_icon.png" alt="" class="aukcion_date_icon">-->
-<!--        </div>-->
     </div>
 </template>
 
@@ -48,7 +44,7 @@ export default {
                 for (let i = 0; i < input_parent.length; i++) {
                     if( input_parent[i].children && input_parent[i].children[0] ) {
                         if ( input_parent[i].children[0].style ) {
-                            input_parent[i].children[0].style = 'display:block; position:relative; top:2px; cursor:pointer; background-color: rgb(245 246 250); margin-left:5px; height:37px; border:none; font-size:1.2rem; color:#7c7b7b; width:100%; text-align:center;';
+                            input_parent[i].children[0].style = 'display:block; position:relative; top:2px; cursor:pointer; background-color: rgb(245 246 250); margin-left:5px; height:37px; border:none; font-size:1.2rem; color:rgb(65 63 63); width:100%; text-align:center;';
 
                             // console.log( 'AAAAAA111 = ', input_parent[i].children )
                         }
@@ -59,10 +55,10 @@ export default {
             if( v3dp__clearable && v3dp__clearable.length ) {
                 if( v3dp__clearable[0] && v3dp__clearable[0].children ) {
                     if ( v3dp__clearable[0].children && v3dp__clearable[0].children[0] ) {
-                        v3dp__clearable[0].children[0].innerHTML =  '<div class="position-relative">'+
-                            '<img src="/storage/images/icons/aukcion_date_close_icon.png" alt="" class="aukcion_date_close_icon">'
-                            +'</div>';
-                        v3dp__clearable[0].children[0].style = 'position: absolute; margin: -39px 0px 0px 165px; padding: 8px 15px 5px 5px;';
+                        // v3dp__clearable[0].children[0].innerHTML =  '<div class="position-relative">'+
+                        //     '<img src="/storage/images/icons/aukcion_date_close_icon.png" alt="" class="aukcion_date_close_icon">'
+                        //     +'</div>';
+                        // v3dp__clearable[0].children[0].style = 'position: absolute; margin: -39px 0px 0px 165px; padding: 8px 15px 5px 5px;';
                         // console.log( 'v3dp__clearable[0].children = ', v3dp__clearable[0].children )
                     }
                     // v3dp__clearable[0].style = 'position: absolute; margin: -40px 0 0 190px; padding: 10px 17px;';
@@ -123,10 +119,6 @@ export default {
 </script>
 
 <style scoped>
-    .aukcion_date_icon_div {
-
-    }
-
     .v3dp__elements {
         --elem-font-size: 1.1em;
     }

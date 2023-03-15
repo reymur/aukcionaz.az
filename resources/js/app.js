@@ -51,10 +51,14 @@ import ShowForDesktopScreen from './components/announce/products/crumbs/ShowForD
 
 // ADD ON AUKCION
 import AddOnAukcion from "./components/announce/new/modals/AddOnAukcion.vue";
+import CurrentTimeAukcion from "./components/announce/new/modals/CurrentTimeAukcion.vue";
+import LaterTimeAukcion from "./components/announce/new/modals/LaterTimeAukcion.vue";
 
 // DATA and TIME PICKER
 import DataPicker from "./components/announce/new/modals/DataPicker.vue";
 import TimePicker from "./components/announce/new/modals/TimePicker.vue";
+import OnTimeAukcion from "./components/announce/new/modals/OnTimeAukcion.vue";
+import OnLaterTimeAukcion from "./components/announce/new/modals/OnLaterTimeAukcion.vue";
 
 app.component('example-component' , example);
 app.component('main-aukcion-page' , MainAukcionPage);
@@ -90,10 +94,14 @@ app.component('show-for-desktop-screen' , ShowForDesktopScreen);
 
 // ADD ON AUKCION
 app.component('add-on-aukcion', AddOnAukcion);
+app.component('current-time-aukcion', CurrentTimeAukcion);
+app.component('later-time-aukcion', LaterTimeAukcion);
 
 // DATA PICKER
 app.component('data-picker', DataPicker);
 app.component('time-picker', TimePicker);
+app.component('on-time-aukcion', OnTimeAukcion);
+app.component('on-later-time-aukcion', OnLaterTimeAukcion);
 
 
 app.mount("#app")
