@@ -1,16 +1,13 @@
 <template>
     <div class="collapse-picker" id="collapsePicker">
         <div class="card card-body position-relative">
-            <div class="col mt-3 mb-3">
+            <div class="col mb-3">
 
                 <div class="">
-                    <div class="d-flex mb-2 date_and_time_pickers_titles_div">
-                        <div class="fs-5 fw-bold m-auto">Başlama tarixi</div>
-                        <div class="fs-5 fw-bold m-auto">Başlama saatı</div>
-                    </div>
                     <div class="col d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
 
-                        <div class="col d-flex me-sm-2 me-md-2 me-lg-2 me-xl-2 me-xxl-2 mb-3 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
+                        <div class="col me-sm-2 me-md-2 me-lg-2 me-xl-2 me-xxl-2 mb-3 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
+                            <div class="d-flex fs-5 fw-bold mb-2 justify-content-center">Başlama tarixi</div>
                             <div class="col d-flex justify-content-center aukcion__date_picker_div">
                                 <div class="d-flex aukcion_date_icon_div">
                                     <img src="/images/icons/date_icon.png" alt="" class="aukcion_date_icon">
@@ -23,7 +20,8 @@
                             </div>
                         </div>
 
-                        <div class="col d-flex">
+                        <div class="col ">
+                            <div class="d-flex fs-5 fw-bold mb-2 justify-content-center">Başlama saatı</div>
                             <div class="col d-flex justify-content-center aukcion__time_picker_div">
                                 <div class="d-flex aukcion_time_icon_div">
                                     <img src="/images/icons/time_icon.png" class="aukcion_time_icon" alt="">
@@ -154,6 +152,13 @@ export default {
 </script>
 
 <style scoped>
+
+    .aukcion_date_icon {
+        height: 32px;
+        width: 29px;
+        align-self: center;
+        opacity: 0.7;
+    }
 
     .aukcion_time_icon {
         height: 30px;

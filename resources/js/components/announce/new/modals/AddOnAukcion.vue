@@ -237,15 +237,6 @@ export default {
         font-weight: bold;
     }
 
-
-        .aukcion_date_icon {
-            height: 32px;
-            width: 29px;
-            align-self: center;
-            opacity: 0.7;
-        }
-
-
     .reset__data_time {
         bottom: 0;
         font-size: 1rem;

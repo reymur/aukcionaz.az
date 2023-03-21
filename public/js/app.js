@@ -28239,7 +28239,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal-content[data-v-f7fe114a] {\n  box-shadow: 1px 4px 11px 0 #00000059;\n}\n.aukcion__title_div[data-v-f7fe114a] {\n  font-size: 1.3rem;\n}\n.aukcion__first_title[data-v-f7fe114a] {\n  font-size: 1.2em;\n  color: #41830b;\n  font-weight: bold;\n}\n.aukcion__second_title[data-v-f7fe114a] {\n  color: #5d5d5d;\n  font-weight: bold;\n}\n.aukcion__add_button_text[data-v-f7fe114a] {\n  font-size: 1.2rem;\n  font-weight: bold;\n  padding: 0 15px;\n}\n#collapsePicker[data-v-f7fe114a]{\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.3s ease-out;\n}\n.auksiyon_text_style[data-v-f7fe114a] {\n  font-size: 1em;\n  color: #41830b;\n  font-weight: bold;\n}\n.aukcion_date_icon[data-v-f7fe114a] {\n  height: 32px;\n  width: 29px;\n  align-self: center;\n  opacity: 0.7;\n}\n.reset__data_time[data-v-f7fe114a] {\n  bottom: 0;\n  font-size: 1rem;\n  position: absolute;\n  text-decoration: underline;\n}\n.on_time_aukcion[data-v-f7fe114a] {\n  //border-bottom: 1px solid #0000002e;\n}\n.do__akcion_on_time[data-v-f7fe114a] {\n  color: #000;\n  align-self: center;\n}\n.to_start_aukcion_title[data-v-f7fe114a] {\n  color: #000;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal-content[data-v-f7fe114a] {\n  box-shadow: 1px 4px 11px 0 #00000059;\n}\n.aukcion__title_div[data-v-f7fe114a] {\n  font-size: 1.3rem;\n}\n.aukcion__first_title[data-v-f7fe114a] {\n  font-size: 1.2em;\n  color: #41830b;\n  font-weight: bold;\n}\n.aukcion__second_title[data-v-f7fe114a] {\n  color: #5d5d5d;\n  font-weight: bold;\n}\n.aukcion__add_button_text[data-v-f7fe114a] {\n  font-size: 1.2rem;\n  font-weight: bold;\n  padding: 0 15px;\n}\n#collapsePicker[data-v-f7fe114a]{\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.3s ease-out;\n}\n.auksiyon_text_style[data-v-f7fe114a] {\n  font-size: 1em;\n  color: #41830b;\n  font-weight: bold;\n}\n.reset__data_time[data-v-f7fe114a] {\n  bottom: 0;\n  font-size: 1rem;\n  position: absolute;\n  text-decoration: underline;\n}\n.on_time_aukcion[data-v-f7fe114a] {\n  //border-bottom: 1px solid #0000002e;\n}\n.do__akcion_on_time[data-v-f7fe114a] {\n  color: #000;\n  align-self: center;\n}\n.to_start_aukcion_title[data-v-f7fe114a] {\n  color: #000;\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28383,7 +28383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".aukcion_time_icon[data-v-253505bc] {\n  height: 30px;\n  width: 30px;\n  align-self: center;\n  opacity: 0.7;\n}\n.aukcion_date_icon_div[data-v-253505bc] {\n  position: absolute;\n  left: 5px;\n  top: 3px;\n  z-index: 1;\n}\n.aukcion_time_icon_div[data-v-253505bc] {\n  position: absolute !important;\n  align-self: center;\n  left: 5px;\n}\n.auksiyon_text_style[data-v-253505bc] {\n  font-size: 1em;\n  color: #41830b;\n  font-weight: bold;\n}\n.reset__data_time[data-v-253505bc] {\n  bottom: 0;\n  font-size: 1rem;\n  position: absolute;\n  text-decoration: underline;\n}\n#runLaterTimeAukcionCollapse[data-v-253505bc] {\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.3s ease-out;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".aukcion_date_icon[data-v-253505bc] {\n  height: 32px;\n  width: 29px;\n  align-self: center;\n  opacity: 0.7;\n}\n.aukcion_time_icon[data-v-253505bc] {\n  height: 30px;\n  width: 30px;\n  align-self: center;\n  opacity: 0.7;\n}\n.aukcion_date_icon_div[data-v-253505bc] {\n  position: absolute;\n  left: 5px;\n  top: 3px;\n  z-index: 1;\n}\n.aukcion_time_icon_div[data-v-253505bc] {\n  position: absolute !important;\n  align-self: center;\n  left: 5px;\n}\n.auksiyon_text_style[data-v-253505bc] {\n  font-size: 1em;\n  color: #41830b;\n  font-weight: bold;\n}\n.reset__data_time[data-v-253505bc] {\n  bottom: 0;\n  font-size: 1rem;\n  position: absolute;\n  text-decoration: underline;\n}\n#runLaterTimeAukcionCollapse[data-v-253505bc] {\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.3s ease-out;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42473,26 +42473,22 @@ var _hoisted_2 = {
   "class": "card card-body position-relative"
 };
 var _hoisted_3 = {
-  "class": "col mt-3 mb-3"
+  "class": "col mb-3"
 };
 var _hoisted_4 = {
   "class": ""
 };
-var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "d-flex mb-2 date_and_time_pickers_titles_div"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "fs-5 fw-bold m-auto"
-  }, "Başlama tarixi"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "fs-5 fw-bold m-auto"
-  }, "Başlama saatı")], -1 /* HOISTED */);
-});
-var _hoisted_6 = {
+var _hoisted_5 = {
   "class": "col d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex"
 };
-var _hoisted_7 = {
-  "class": "col d-flex me-sm-2 me-md-2 me-lg-2 me-xl-2 me-xxl-2 mb-3 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0"
+var _hoisted_6 = {
+  "class": "col me-sm-2 me-md-2 me-lg-2 me-xl-2 me-xxl-2 mb-3 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0"
 };
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "d-flex fs-5 fw-bold mb-2 justify-content-center"
+  }, "Başlama tarixi", -1 /* HOISTED */);
+});
 var _hoisted_8 = {
   "class": "col d-flex justify-content-center aukcion__date_picker_div"
 };
@@ -42506,12 +42502,17 @@ var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
   })], -1 /* HOISTED */);
 });
 var _hoisted_10 = {
-  "class": "col d-flex"
+  "class": "col"
 };
-var _hoisted_11 = {
+var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "d-flex fs-5 fw-bold mb-2 justify-content-center"
+  }, "Başlama saatı", -1 /* HOISTED */);
+});
+var _hoisted_12 = {
   "class": "col d-flex justify-content-center aukcion__time_picker_div"
 };
-var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "d-flex aukcion_time_icon_div"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
@@ -42520,28 +42521,28 @@ var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
     alt: ""
   })], -1 /* HOISTED */);
 });
-var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_14 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col border border-1 mb-3"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "col mb-3 on_time_aukcion"
 };
-var _hoisted_15 = {
+var _hoisted_16 = {
   "class": "col d-block d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex"
 };
-var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "d-flex align-self-center justify-content-center fs-5 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0 me-2 rounded-0 do__akcion_on_time"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "me-1 auksiyon_text_style"
   }, " Auksion "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" saatla olsun? ")], -1 /* HOISTED */);
 });
-var _hoisted_17 = {
+var _hoisted_18 = {
   "class": "col d-flex"
 };
-var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     "class": "btn-check",
@@ -42551,7 +42552,7 @@ var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
     checked: ""
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     "class": "btn-check",
@@ -42560,43 +42561,43 @@ var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
     autocomplete: "off"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_20 = {
+var _hoisted_21 = {
   "class": "",
   id: "runLaterTimeAukcionCollapse"
 };
-var _hoisted_21 = {
+var _hoisted_22 = {
   "class": "card card-body"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_data_picker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("data-picker");
   var _component_time_picker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("time-picker");
   var _component_on_later_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("on-later-time-aukcion");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_data_picker, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_data_picker, {
     reset_al_time: $data.reset_al_time,
     onTimePickerIsChanged: $options.changeValueResetAlTime
-  }, null, 8 /* PROPS */, ["reset_al_time", "onTimePickerIsChanged"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_time_picker, {
+  }, null, 8 /* PROPS */, ["reset_al_time", "onTimePickerIsChanged"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_time_picker, {
     reset_al_time: $data.reset_al_time,
     onTimePickerIsChanged: $options.changeValueResetAlTime
-  }, null, 8 /* PROPS */, ["reset_al_time", "onTimePickerIsChanged"])])])])])]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, null, 8 /* PROPS */, ["reset_al_time", "onTimePickerIsChanged"])])])])])]), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     href: "#",
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.resetDateAndTime && $options.resetDateAndTime.apply($options, arguments);
     }),
     type: "button",
     "class": "link-danger reset__data_time"
-  }, "Sıfırla"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  RUN AUKCION NEW TIME COLLAPSE START  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, "Sıfırla"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  RUN AUKCION NEW TIME COLLAPSE START  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.runLaterTimeAukcionClose && $options.runLaterTimeAukcionClose.apply($options, arguments);
     }),
     "class": "col btn btn-outline-danger rounded-0 px-4 w-25",
     "for": "no-later-time"
-  }, "Xeyir"), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  }, "Xeyir"), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     onClick: _cache[2] || (_cache[2] = function () {
       return $options.runLaterTimeAukcion && $options.runLaterTimeAukcion.apply($options, arguments);
     }),
     "class": "col btn btn-outline-success rounded-0 px-4 w-25",
     "for": "yes-later-time"
-  }, "Bəli")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_later_time_aukcion, {
+  }, "Bəli")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_later_time_aukcion, {
     reset_al_time: $data.reset_al_time
   }, null, 8 /* PROPS */, ["reset_al_time"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" RUN AUKCION NEW TIME COLLAPSE END ")])]);
 }
