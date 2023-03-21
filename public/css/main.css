@@ -430,15 +430,15 @@ input:focus
         .new__announce_btn_a {
             display: flex;
             text-decoration: none;
+            padding: 7px 28px 7px 25px;
+            width: 185px;
+            height: 50px;
         }
             .new__announce_btn_div {
                 display: none;
                 background-color: #009512;
-                width: 185px;
-                height: 50px;
                 margin-top: 4px;
                 right: 610px;
-                padding: 7px 28px 7px 25px;
                 position: absolute;
             }
                 .new__announce_btn_icon_div {

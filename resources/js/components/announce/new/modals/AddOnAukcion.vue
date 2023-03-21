@@ -33,11 +33,15 @@
                             </div>
 
                             <!-- CURRENT TIME AUKCION START -->
-                                <current-time-aukcion></current-time-aukcion>
+                                <current-time-aukcion
+                                    :close_current_time_aukcion="close_current_time_aukcion"
+                                ></current-time-aukcion>
                             <!-- CURRENT TIME AUKCION END -->
 
                             <!-- LATER TIME DATA AND TIME PICKERS COLLAPSE START -->
-                                <later-time-aukcion></later-time-aukcion>
+                                <later-time-aukcion
+                                    :close_later_time_aukcion="close_later_time_aukcion"
+                                ></later-time-aukcion>
                             <!-- LATER TIME DATA AND TIME PICKERS COLLAPSE END -->
 
                         </div>
@@ -67,6 +71,8 @@ export default {
             today: new Date(),
             date_format: { year: 'numeric', month: 'long', day: 'numeric' },
             run_current_time_aukcion: true,
+            close_later_time_aukcion: false,
+            close_current_time_aukcion: false,
         }
     },
     methods: {
@@ -169,10 +175,19 @@ export default {
         },
         hideDateTimePickers() {
             let collapse_id = document.getElementById('collapsePicker');
+            let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
+            let newButton = document.getElementById('new-button');
+
             if( collapse_id ) {
                 collapse_id.style.maxHeight = null;
                 collapse_id.style.overflow = 'hidden';
             }
+
+            newButton.checked = true;
+            runCurrentTimeAukcion.style.maxHeight = runCurrentTimeAukcion.scrollHeight+'px'
+
+            this.close_later_time_aukcion = Math.random();
+            this.close_current_time_aukcion = Math.random();
         },
         modalBackdrop() {
             let modal_backdrop = document.getElementsByClassName('modal-backdrop');

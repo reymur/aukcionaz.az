@@ -15,8 +15,8 @@
 
                     <div class="col mb-3 on_time_aukcion">
                         <div class="col d-block d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
-                            <div class="d-flex justify-content-center fs-5 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0 me-2 rounded-0 do__akcion_on_time">
-                                <span class="auksiyon_text_style">Auksion </span> saatla olsun?
+                            <div class="d-flex align-self-center justify-content-center fs-5 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0 me-2 rounded-0 do__akcion_on_time">
+                                <span class="me-1 auksiyon_text_style">Auksion </span> saatla olsun?
                             </div>
                             <div class="col d-flex">
                                 <input type="radio" class="btn-check" name="on-time" id="no-time" autocomplete="off" checked>
@@ -44,9 +44,18 @@
 <script>
 export default {
     name: "CurrentTimeAukcion",
+    props:['close_current_time_aukcion'],
     data() {
         return {
             reset_al_time: false,
+        }
+    },
+    watch: {
+        close_current_time_aukcion() {
+            let no_time = document.getElementById('no-time');
+
+            if( no_time ) no_time.checked = true;
+            this.runNowTimeAukcionClose();
         }
     },
     methods: {

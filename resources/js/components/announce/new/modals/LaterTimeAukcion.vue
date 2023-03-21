@@ -1,7 +1,7 @@
 <template>
     <div class="collapse-picker" id="collapsePicker">
         <div class="card card-body position-relative">
-            <div class="col mt-3 mb-4">
+            <div class="col mt-3 mb-3">
 
                 <div class="">
                     <div class="d-flex mb-2 date_and_time_pickers_titles_div">
@@ -40,13 +40,15 @@
 
             </div>
 
+            <div class="col border border-1 mb-3"></div>
+
             <div href="#" @click="resetDateAndTime" type="button" class="link-danger reset__data_time">Sıfırla</div>
 
             <!--  RUN AUKCION NEW TIME COLLAPSE START  -->
             <div class="col mb-3 on_time_aukcion">
                 <div class="col d-block d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex">
-                    <div class="d-flex justify-content-center fs-5 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0 me-2 rounded-0 do__akcion_on_time">
-                        <span class="auksiyon_text_style">Auksion </span> saatla olsun?
+                    <div class="d-flex align-self-center justify-content-center fs-5 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0 me-2 rounded-0 do__akcion_on_time">
+                        <span class="me-1 auksiyon_text_style"> Auksion </span> saatla olsun?
                     </div>
                     <div class="col d-flex">
                         <input type="radio" class="btn-check" name="on-later-time" id="no-later-time" autocomplete="off" checked>
@@ -76,9 +78,18 @@
 <script>
 export default {
     name: "LaterTimeAukcion",
+    props:['close_later_time_aukcion'],
     data() {
         return {
             reset_al_time: false,
+        }
+    },
+    watch: {
+        close_later_time_aukcion() {
+            let no_later_time = document.getElementById('no-later-time');
+
+            if( no_later_time ) no_later_time.checked = true;
+            this.runLaterTimeAukcionClose();
         }
     },
     methods:{
