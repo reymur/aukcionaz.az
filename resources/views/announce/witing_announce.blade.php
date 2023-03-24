@@ -14,7 +14,7 @@
                         Elanınız yoxlama mərhələsindədir. <br> Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
                     </div>
 
-                    <div class="w-25 m-auto py-1 bg-success bg-opacity-10">
+                    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 m-auto py-1 bg-success bg-opacity-10">
                         <div class="d-flex justify-content-center">
                             <div class="fs-4 text-uppercase me-2"> pin: </div>
                             <div class="fs-4 text-black"> {{ $waiting_product->pin }} </div>
