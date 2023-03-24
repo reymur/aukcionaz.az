@@ -12,7 +12,7 @@ class WaitingAnnounceController extends Controller
         if (! $id ) abort(404);
 
         $waiting_product = GetProductByIdHelper($id);
-//        dd( $product );
+
         return view('announce.witing_announce', ['waiting_product' => $waiting_product]);
     }
 

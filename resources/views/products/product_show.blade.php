@@ -30,6 +30,48 @@
                     </div>
                 </div>
 
+                @if( $product->publish === 0 )
+                    <div class="d-none d-md-block d-lg-block d-xl-block d-xxl-block waiting__big_parent">
+                        <div class="waiting__big_main_parent">
+                            <div class="d-flex waiting__big_second_parent">
+                                <div class="waiting__big_image_parent">
+                                    <img src="{{ asset('images/icons/waiting.png') }}" alt="" class="waiting__big_image">
+                                </div>
+                                <div class="waiting__big_text_parent">
+                                    <span class="waiting__big_text">
+                                        elanınız yoxlama mərhələsindədir. Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="d-block d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none waiting__small_parent">
+                        <div class="waiting__small_image_parent" role="button" data-bs-toggle="modal" data-bs-target="#waitingSmallModal">
+                            <img src="{{ asset('images/icons/waiting.png') }}" alt="" class="waiting__small_image">
+                        </div>
+
+                        <div class="modal fade" id="waitingSmallModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="col-11 waiting__modal_small_image_parent">
+                                            <img src="{{ asset('images/icons/waiting.png') }}" alt="" class="waiting__modal_small_image">
+                                        </div>
+                                        <div class="col-1 mt-1 ms-n2">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body waiting__modal_small_text">
+                                        Sizin elanınız yoxlama mərhələsindədir. Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 <!-- PRODUCT CITY AND TYPE SECTION -->
                 <div class="product__show_city_and_type">
                     <table class="table mb-2">
