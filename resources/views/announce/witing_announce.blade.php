@@ -11,7 +11,9 @@
 
                 <div class="col mt-3 mb-3">
                     <div class="fs-4 mb-3 text-center">
-                        Elanınız yoxlama mərhələsindədir. <br> Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
+                        <span class="fs-3 fw-bold me-1">{{ $waiting_product->title }}</span>
+                        elanınız yoxlama mərhələsindədir. <br>
+                        Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
                     </div>
 
                     <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 m-auto py-1 bg-success bg-opacity-10">
@@ -54,7 +56,10 @@
                 <div class="d-flex justify-content-center mt-4">
                     <!-- ADD ON AUKCION -->
                     <div class="">
-                        <div class="d-flex justify-content-center fs-4 fw-bold mb-2">Aukcion-da daha tez sat</div>
+                        <div class="d-flex justify-content-center fs-4 fw-bold mb-2">
+                            <span class="fs-3 text-success me-1">Aukcion</span>
+                            <span class="m-auto"> - da daha tez sat</span>
+                        </div>
 
                         <div class="d-flex py-3">
                             <div class="align-self-center me-2">
