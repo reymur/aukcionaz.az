@@ -93,10 +93,12 @@
                                         </div>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="fs-5">
+                                        <div class="fs-5 px-3" style="text-align: justify;">
                                             Siz <span class="fs-4 ms-1 me-1 fw-bold">Aukcion</span>
-                                            əlavə etməklə, sizin elanı <span class="fs-4 ms-1 me-1 fw-bold">auksiyona</span> çıxatmış olursunuz və bu zaman müştərilər sizin elanın
-                                            <span class="fs-4 ms-1 me-1 fw-bold">auksiyonda</span> olduğunu görurlər. Bu o deməkdir ki, sizin elan real vaxtda daha çox müştəri
+                                            əlavə etməklə, sizin elanı <span class="fs-4 ms-1 me-1 fw-bold">auksiyona</span>
+                                            çıxatmış olursunuz və bu zaman müştərilər sizin elanın
+                                            <span class="fs-4 ms-1 me-1 fw-bold">auksiyonda</span>
+                                            olduğunu görurlər. Bu o deməkdir ki, sizin elan real vaxtda daha çox müştəri
                                             cəlb edir və siz real zamanda bir neçə müstəri ilə canlı olaraq alqı-satqı edirsiniz.
                                         </div>
                                     </div>
