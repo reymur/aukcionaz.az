@@ -86,7 +86,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <div class="col modal-title d-flex">
-                                            <div class="col-10 fs-4 fw-bold d-flex ms-5 justify-content-center" id="staticBackdropLabel"> Aukcion nədir? </div>
+                                            <div class="col-11 fs-4 fw-bold d-flex justify-content-center" id="staticBackdropLabel"> Aukcion nədir? </div>
                                             <div class="col-1">
                                                 <button type="button" class="btn-close m-auto" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
