@@ -54,6 +54,8 @@
                 <div class="d-flex justify-content-center mt-4">
                     <!-- ADD ON AUKCION -->
                     <div class="">
+                        <div class="d-flex justify-content-center fs-4 fw-bold mb-2">Aukcion-da daha tez sat</div>
+
                         <div class="d-flex py-3">
                             <div class="align-self-center me-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -74,7 +76,7 @@
 
 
                         <!-- Button trigger modal -->
-                        <div class="text-center text-decoration-underline fs-5" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                        <div class="text-center text-decoration-underline fs-5 mt-n2" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                             Aukcion nədir <span class="ms-1">?</span>
                         </div>
 
