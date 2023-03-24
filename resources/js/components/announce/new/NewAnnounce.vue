@@ -1,7 +1,7 @@
 <template>
     <div class="col-12">
 
-        <!-- ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE-->
+        <!-- ANNOUNCE NEW LOAD COMPONENT  COLLAPSE-->
         <component
             :is="loadComponent"
             :categories="categories"

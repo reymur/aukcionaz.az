@@ -59,7 +59,7 @@ class ElectronicsController extends Controller
                         'status' => 422,
                         'error' => 'productable'
                     ] );
-
+//
                     if( $imageable && $product->id === $imageable->imageable_id ) {
                         return response()->json( [
                             'productable' => $productable

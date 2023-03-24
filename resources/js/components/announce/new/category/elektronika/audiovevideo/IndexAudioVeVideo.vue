@@ -76,10 +76,10 @@
                     ></new-announce-user-info>
                 </div>
 
-                <!-- ADD ON AUKCION -->
-                <div class="d-flex justify-content-center py-3">
-                    <add-on-aukcion></add-on-aukcion>
-                </div>
+<!--                &lt;!&ndash; ADD ON AUKCION &ndash;&gt;-->
+<!--                <div class="d-flex justify-content-center py-3">-->
+<!--                    <add-on-aukcion></add-on-aukcion>-->
+<!--                </div>-->
 
                 <!-- SEND BUTTON -->
                 <div class="p-3 mb-4 border-bottom-danger">
@@ -545,7 +545,7 @@ export default {
                             let id = res.data.productable.id;
                             // document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/'+id;
                             console.log('Product has ben Created resA + = ', res );
-                            document.location.href = 'https://public.test/product/'+id;
+                            document.location.href = 'https://aukcionaz.test/announce/new/waiting/'+id;
                         }
                         // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                         // document.location.href = 'https://public.test/product/';

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewAnnounceController;
 use App\Http\Controllers\ElectronicsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WaitingAnnounceController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
@@ -39,6 +40,9 @@ Route::prefix('announce/new')->group(function(){
             Route::post('/upload-images', 'uploadImages');
         });
     });
+
+    // WAITING ANNOUNCE
+    Route::get('/waiting/{id}', [WaitingAnnounceController::class, 'index']);
 });
 
 

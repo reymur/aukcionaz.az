@@ -39077,7 +39077,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       var id = res.data.productable.id;
                       // document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/'+id;
                       console.log('Product has ben Created resA + = ', res);
-                      document.location.href = 'https://public.test/product/' + id;
+                      document.location.href = 'https://aukcionaz.test/announce/new/waiting/' + id;
                     }
                     // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                     // document.location.href = 'https://public.test/product/';
@@ -41372,7 +41372,7 @@ var _hoisted_1 = {
   "class": "col-12"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW LOAD  COMPONENT  COLLAPSE"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.loadComponent), {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW LOAD COMPONENT  COLLAPSE"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.loadComponent), {
     categories: $props.categories,
     cities: $props.cities,
     onCallComponentInNewAnnounce: $options.loadCallComponent
@@ -41547,27 +41547,24 @@ var _hoisted_12 = {
   "class": "mt-2 mb-3 announce__user_info_styles"
 };
 var _hoisted_13 = {
-  "class": "d-flex justify-content-center py-3"
-};
-var _hoisted_14 = {
   "class": "p-3 mb-4 border-bottom-danger"
 };
-var _hoisted_15 = {
+var _hoisted_14 = {
   key: 0,
   "class": "fs-5 p-2 m-auto text-white"
 };
-var _hoisted_16 = {
+var _hoisted_15 = {
   key: 1,
   "class": "fs-5 p-2 m-auto text-white"
 };
-var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "spinner-border spinner-border-sm",
     role: "status",
     "aria-hidden": "true"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "p-3 text-secondary text-opacity-50"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -41587,7 +41584,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_announce_new_modal_about = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("announce-new-modal-about");
   var _component_new_image_upload = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("new-image-upload");
   var _component_new_announce_user_info = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("new-announce-user-info");
-  var _component_add_on_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("add-on-aukcion");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ANNOUNCE NEW TOP ELEMENTS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_announce_new_top_elements), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" NEW ANNOUNCE ADD CATEGORIES "), $props.categories ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_modal_category, {
     categories: $props.categories,
     onSendSubCategoryTypeNameToIndexAudioVeVideoComponent: $options.callSubCategoryComponent
@@ -41620,13 +41616,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSendUserNameToNewAnnounceComponent: $options.getUserNameFromNewAnnounceUserInfoComponent,
     onSendUserEmailToNewAnnounceComponent: $options.getUserEmailFromNewAnnounceUserInfoComponent,
     onSendUserPhoneNumberToNewAnnounceComponent: $options.getUserPhoneNumberFromNewAnnounceUserInfoComponent
-  }, null, 8 /* PROPS */, ["name_error", "email_error", "phone_error", "onSendUserNameToNewAnnounceComponent", "onSendUserEmailToNewAnnounceComponent", "onSendUserPhoneNumberToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ADD ON AUKCION "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_add_on_aukcion)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SEND BUTTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, null, 8 /* PROPS */, ["name_error", "email_error", "phone_error", "onSendUserNameToNewAnnounceComponent", "onSendUserEmailToNewAnnounceComponent", "onSendUserPhoneNumberToNewAnnounceComponent"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                &lt;!&ndash; ADD ON AUKCION &ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"d-flex justify-content-center py-3\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <add-on-aukcion></add-on-aukcion>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SEND BUTTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.createNewAnnounce && $options.createNewAnnounce.apply($options, arguments);
     }),
     type: "button",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)('btn btn-success aukcionaz__main-color w-100 ' + $data.submit_button_disabled)
-  }, [!$data.submit_button_load ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_15, "Davam et")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Gözləyin... ")]))], 2 /* CLASS */), _hoisted_18])])])]);
+  }, [!$data.submit_button_load ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_14, "Davam et")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Gözləyin... ")]))], 2 /* CLASS */), _hoisted_17])])])]);
 }
 
 /***/ }),
@@ -42037,7 +42033,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.modalBackdrop && $options.modalBackdrop.apply($options, arguments);
     }),
     type: "button",
-    "class": "btn btn-danger",
+    "class": "btn btn-danger rounded-0",
     "data-bs-toggle": "modal",
     "data-bs-target": "#staticBackdrop"
   }, _hoisted_3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {

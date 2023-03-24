@@ -2,7 +2,7 @@
     <div class="">
 
         <!-- Button trigger modal -->
-        <button @click="modalBackdrop" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button @click="modalBackdrop" type="button" class="btn btn-danger rounded-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <span class="aukcion__add_button_text"> Auksion əlavə et</span>
         </button>
 

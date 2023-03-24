@@ -2,7 +2,7 @@
 
 use App\Models\Product;
 
-    function GetProductById($id) {
+    function GetProductByIdHelper($id) {
         if( !empty($id) ) {
             $product = Product::where('id',$id)->first();
 
