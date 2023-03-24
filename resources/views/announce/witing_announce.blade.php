@@ -76,7 +76,7 @@
 
 
                         <!-- Button trigger modal -->
-                        <div class="text-center text-decoration-underline fs-5 mt-n2" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                        <div class="text-center text-decoration-underline fs-5" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                             Aukcion nədir <span class="ms-1">?</span>
                         </div>
 
