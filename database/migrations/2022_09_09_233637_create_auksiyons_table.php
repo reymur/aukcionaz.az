@@ -13,13 +13,15 @@ class CreateAukcionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('aukcions', function (Blueprint $table) {
+        Schema::create('auksiyons', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->morphs('productable');
-            $table->dateTime('run_later_time')->nullable();
-            $table->tinyInteger('finished')->default(0);
-            $table->tinyInteger('publish')->default(1);
+            $table->bigInteger('product_id')->nullable();
+            $table->string('started')->nullable();
+            $table->tinyInteger('finished')->default(1);
+            $table->string('run_later_time')->nullable();
+            $table->tinyInteger('continues')->default(0);
+            $table->tinyInteger('publish')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreateAukcionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aukcions');
+        Schema::dropIfExists('auksiyons');
     }
 }
