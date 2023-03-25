@@ -3,15 +3,15 @@
 @section('content')
     <div class="container">
         <!-- NEW ANNOUNCE INFO -->
-        @isset($waiting_product)
-            @if( $waiting_product->id )
+        @isset($no_published)
+            @if( $no_published->id )
 {{--                <div class="mt-4">--}}
 {{--                    <a href="/" class="fs-3 fw-bold d-flex justify-content-center text-decoration-none text-black">Aukcionaz.az</a>--}}
 {{--                </div>--}}
 
                 <div class="col mt-4 mb-3">
                     <div class="fs-4 mb-3 text-center">
-                        <span class="fs-3 fw-bold me-1">{{ $waiting_product->title }}</span>
+                        <span class="fs-3 fw-bold me-1">{{ $no_published->title }}</span>
                         elanınız yoxlama mərhələsindədir. <br>
                         Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
                     </div>
@@ -19,7 +19,7 @@
                     <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 m-auto py-1 bg-success bg-opacity-10">
                         <div class="d-flex justify-content-center">
                             <div class="fs-4 text-uppercase me-2"> pin: </div>
-                            <div class="fs-4 text-black"> {{ $waiting_product->pin }} </div>
+                            <div class="fs-4 text-black"> {{ $no_published->pin }} </div>
                         </div>
 
                         <div class="fs-6 d-flex justify-content-center text-decoration-underline ms-3 mt-n1">
@@ -39,8 +39,8 @@
                                 </svg>
                             </div>
 
-                            <a href="{{ route('product', ['id' => $waiting_product->id]) }}" class="">
-                                {{ $waiting_product->title }}
+                            <a href="{{ route('product', ['id' => $no_published->id]) }}" class="">
+                                {{ $no_published->title }}
                             </a>
 
                             <div class="ms-3 me-3 text-black fs-5">|</div>
@@ -70,7 +70,7 @@
 
                             <div class="">
                                 <add-on-aukcion
-                                    :product_info="{{ $waiting_product }}"
+                                    :product_info="{{ $no_published }}"
                                 ></add-on-aukcion>
                             </div>
 

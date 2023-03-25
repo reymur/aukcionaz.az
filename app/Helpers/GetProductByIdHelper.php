@@ -4,7 +4,7 @@ use App\Models\Product;
 
     function GetProductByIdHelper($id) {
         if( !empty($id) ) {
-            $product = Product::where('id',$id)->first();
+            $product = Product::where('productable_id',$id)->first();
 
             if( ! $product ) abort(404 );
 

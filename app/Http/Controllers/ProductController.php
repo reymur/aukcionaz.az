@@ -20,4 +20,18 @@ class ProductController extends Controller
         return view('products.product_show', ['product' => $product]);
     }
 
+    public function NoPublishedProduct() {
+        session_start();
+
+        if( ! isset($_SESSION['product_id']) ) return redirect()->route('home');
+
+        $product_id = $_SESSION['product_id'];
+
+        $no_published = GetProductByIdHelper( $product_id );
+
+        session_destroy();
+
+        return view('products.no_published_product', ['no_published' => $no_published]);
+    }
+
 }

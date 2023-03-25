@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AukcionRealTimeController;
+use App\Http\Controllers\DeleteRollBackTransactionAnnounceImagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewAnnounceController;
 use App\Http\Controllers\ElectronicsController;
@@ -55,7 +56,7 @@ Route::prefix('product')->controller(ProductController::class)->group(function()
     Route::get('/{id}', 'index')->name('product');
 
     // WAITING PRODUCT
-    Route::get('/waiting/{id}', [WaitingProductController::class, 'index']);
+    Route::get('/no/published','NoPublishedProduct');
 });
 
-Route::post('/transaction/error/image/delete', [TransactionErrorImagesDeleteController::class, 'imageDelete']);
+Route::post('/transaction/error/image/delete', [DeleteRollBackTransactionAnnounceImagesController::class, 'imageDelete']);

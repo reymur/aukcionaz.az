@@ -18,7 +18,10 @@ class ElectronicsController extends Controller
 {
     public function audioVeVideo(AudioVeVideoRequest $request)
     {
-        if( !empty($request) ) {
+        if (!empty($request)) {
+            $user = null;
+            $imageable = null;
+            $productable = null;
 
             DB::beginTransaction();
 
@@ -29,73 +32,92 @@ class ElectronicsController extends Controller
                 ]);
 
                 Auth::login($user);
+            } catch (\Exception $ex) {
+                DB::rollBack();
+                abort(500, 'Not created user');
+            }
 
-                if ($user) {
-                    $product = AudioVeVideo::create([
-                        'user_id' => Auth::check() ? Auth::user()->id : $user->id,
-                        'sub_category_id' => $request->sub_category_id,
-                        'type' => $request->type,
-                        'title' => $request->title,
-                        'new' => $this->isCheckBoxName($request->check_box, 'new'),
-                        'delivery' => $this->isCheckBoxName($request->check_box, 'delivery'),
-                        'price' => $request->price,
-                        'city' => $request->city,
-                        'about' => $request->about,
-                        'publish' => false
-                    ]);
-
-                    if ($product && $product->id) {
-                        $this->makePinAndNumber($product);
-
-                        $phone = $product->phones()->create([
-                            'phone' => $request->phone,
-                        ]);
-
-                        if ($phone && $product->id === $phone->phoneable_id)
-                            $productable = $product->products()->create();
-                        else return response()->json([
-                            'status' => 422,
-                            'error' => 'phone'
-                        ]);
-
-                        if ($productable && $product->id === $productable->productable_id) {
-                            $imageable = $this->saveImages($product, $request);
-                        } else return response()->json([
-                            'status' => 422,
-                            'error' => 'productable'
-                        ]);
-
-                        if ($imageable && $products->id === $imageable->imageable_id) {
-                            return response()->json([
-                                'productable' => $productable->productable
-                            ]);
-                        } else return response()->json([
-                            'status' => 422,
-                            'error' => 'imageable'
-                        ]);
-                    } else return response()->json([
-                        'status' => 422,
-                        'error' => 'product no created'
-                    ]);
-                } else return response()->json([
-                    'status' => 422,
-                    'error' => 'user no created!'
+            try {
+                $product = AudioVeVideo::create([
+                    'user_id' => Auth::check() ? Auth::user()->id : $user->id,
+                    'sub_category_id' => $request->sub_category_id,
+                    'type' => $request->type,
+                    'title' => $request->title,
+                    'new' => $this->isCheckBoxName($request->check_box, 'new'),
+                    'delivery' => $this->isCheckBoxName($request->check_box, 'delivery'),
+                    'price' => $request->price,
+                    'city' => $request->city,
+                    'about' => $request->about,
+                    'publish' => false
                 ]);
+            } catch (\Exception $ex) {
+                DB::rollBack();
+                abort(500, 'Not created product');
+            }
 
-                DB::commit();
+
+            try {
+                $this->makePinAndNumber($product);
+            } catch (\Exception $ex) {
+                DB::rollBack();
+                abort(500, 'Not created PIN number');
+            }
+
+            try {
+                $phone = $product->phones()->create([
+                    'phone' => $request->phone,
+                ]);
+            } catch (\Exception $ex) {
+                DB::rollBack();
+                abort(500, 'Not created PHONE number');
+            }
+
+            try {
+                if ($phone && $product->id === $phone->phoneable_id) {
+                    $productable = $product->products()->create();
+                } else {
+                    abort(500, '(Productable create) Bilinməyən Xəta!');
+                }
+            } catch (\Exception $ex) {
+                DB::rollBack();
+                abort(500, 'Not created PRODUCTABLE');
+            }
+
+            try {
+                if ($productable && $product->id === $productable->productable_id) {
+                    $imageable = $this->saveImages($product, $request);
+                } else {
+                    abort(500, '(Image Save) Bilinməyən Xəta!');
+                }
             } catch (\Exception $ex) {
                 DB::rollBack();
 
-                if( ! $product->images->count() && $product && $product->id ) {
-                    $image_path = public_path('storage').'/images/products';
-                    $files = glob($image_path.'/*');
+                if( $product && !$product->images->count() && $product->id ) {
+                    abort(500, $product->id );
+                }
+            }
 
+            try {
+                if ($imageable && $product->id === $imageable->imageable_id) {
+                    session_start();
+                    $_SESSION['product_id'] = $product->id;
+
+                    DB::commit();
+
+                    return response()->json([
+                        'productable' => $productable->productable
+                    ]);
+                } else {
+                    abort(500, '(productable) Bilinməyən Xəta!');
+                }
+            } catch (\Exception $ex) {
+                DB::rollBack();
+
+                if( $product && !$product->images->count() && $product->id ) {
                     abort(500, $product->id );
                 }
             }
         }
-
-        return response()->json( $request );
     }
 
     public function saveImages( $product, $request )

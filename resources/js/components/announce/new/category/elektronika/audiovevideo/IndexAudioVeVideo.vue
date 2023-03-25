@@ -543,9 +543,9 @@ export default {
                         console.log('Create resAAA + = ', res );
                         if( res && res.data && res.data.productable && res.data.productable.id ) {
                             let id = res.data.productable.id;
-                            console.log('Product has ben Created resA + = ', res );
+                            console.log('Product has ben Created resA + = ', res.data.productable.id );
                             // document.location.href = 'https://eb54-5-197-255-153.ngrok.io/product/'+id;
-                            // document.location.href = 'https://auksiyonaz.test/product/waiting/'+id;
+                            document.location.href = 'https://auksiyonaz.test/product/no/published';
                         }
                         // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                         // document.location.href = 'https://public.test/product/';
