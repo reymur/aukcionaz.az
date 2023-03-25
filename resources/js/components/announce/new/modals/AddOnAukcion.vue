@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
+                        <button @click="sendToAnnounce" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
                     </div>
                 </div>
             </div>
@@ -66,6 +66,8 @@ export default {
     data () {
         return {
             // bodyColor: null,
+            now: true,
+            later: false,
             collapse: 'collapse',
             show_later_aukcion: true,
             current_time_show: '',
@@ -77,6 +79,25 @@ export default {
         }
     },
     methods: {
+        sendToAnnounce() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            let product_id = url.substring( start + 1 );
+
+            if( this.now === true && this.later === false ) {
+                axios({
+                    method:'POST',
+                    url: '/add-on-auksiyon',
+                    data: { product_id: Number(product_id) }
+                })
+                    .then( res => {
+                        console.log( 'res auksiyon - ', res.data )
+                    })
+                    .catch( err => {
+                        console.log( 'err auksiyon - ', err.response.data )
+                    });
+            }
+        },
         getCurrentTime( clear=false ) {
             let time_i = setInterval( () => {
                 let date = new Date();
@@ -154,6 +175,9 @@ export default {
                     runCurrentTimeAukcion.style.maxHeight = runCurrentTimeAukcion.scrollHeight+'px'
                 }, 300)
             }
+
+            this.now = true;
+            this.later = false;
         },
         laterAukcion() {
             this.run_current_time_aukcion = false;
@@ -173,6 +197,9 @@ export default {
                     collapse_id.style.overflow = 'unset';
                 }, 500);
             }
+
+            this.later = true;
+            this.now = false;
         },
         hideDateTimePickers() {
             let collapse_id = document.getElementById('collapsePicker');
@@ -200,7 +227,7 @@ export default {
     mounted() {
         this.getCurrentTime(false);
 
-        console.log('PRODUCT = ', this.product_info )
+        console.log('URL INDEXOF = ', window.location.pathname )
     }
 }
 </script>

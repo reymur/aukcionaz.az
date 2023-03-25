@@ -39735,6 +39735,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // bodyColor: null,
+      now: true,
+      later: false,
       collapse: 'collapse',
       show_later_aukcion: true,
       current_time_show: '',
@@ -39750,6 +39752,24 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    sendToAnnounce: function sendToAnnounce() {
+      var start = window.location.pathname.lastIndexOf('/');
+      var url = window.location.pathname;
+      var product_id = url.substring(start + 1);
+      if (this.now === true && this.later === false) {
+        axios({
+          method: 'POST',
+          url: '/add-on-auksiyon',
+          data: {
+            product_id: Number(product_id)
+          }
+        }).then(function (res) {
+          console.log('res auksiyon - ', res.data);
+        })["catch"](function (err) {
+          console.log('err auksiyon - ', err.response.data);
+        });
+      }
+    },
     getCurrentTime: function getCurrentTime() {
       var _this = this;
       var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -39819,6 +39839,8 @@ __webpack_require__.r(__webpack_exports__);
           runCurrentTimeAukcion.style.maxHeight = runCurrentTimeAukcion.scrollHeight + 'px';
         }, 300);
       }
+      this.now = true;
+      this.later = false;
     },
     laterAukcion: function laterAukcion() {
       this.run_current_time_aukcion = false;
@@ -39835,6 +39857,8 @@ __webpack_require__.r(__webpack_exports__);
           collapse_id.style.overflow = 'unset';
         }, 500);
       }
+      this.later = true;
+      this.now = false;
     },
     hideDateTimePickers: function hideDateTimePickers() {
       var collapse_id = document.getElementById('collapsePicker');
@@ -39857,7 +39881,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getCurrentTime(false);
-    console.log('PRODUCT = ', this.product_info);
+    console.log('URL INDEXOF = ', window.location.pathname);
   }
 });
 
@@ -42032,15 +42056,9 @@ var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
     id: "later"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "modal-footer"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    type: "button",
-    "class": "btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"
-  }, "Təstiqlə")], -1 /* HOISTED */);
-});
-
+var _hoisted_16 = {
+  "class": "modal-footer"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_current_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("current-time-aukcion");
   var _component_later_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("later-time-aukcion");
@@ -42076,7 +42094,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     close_current_time_aukcion: $data.close_current_time_aukcion
   }, null, 8 /* PROPS */, ["close_current_time_aukcion"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION END "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_later_time_aukcion, {
     close_later_time_aukcion: $data.close_later_time_aukcion
-  }, null, 8 /* PROPS */, ["close_later_time_aukcion"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE END ")])]), _hoisted_16])])])]);
+  }, null, 8 /* PROPS */, ["close_later_time_aukcion"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE END ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[4] || (_cache[4] = function () {
+      return $options.sendToAnnounce && $options.sendToAnnounce.apply($options, arguments);
+    }),
+    type: "button",
+    "class": "btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"
+  }, "Təstiqlə")])])])])]);
 }
 
 /***/ }),
