@@ -5,11 +5,11 @@
         <!-- NEW ANNOUNCE INFO -->
         @isset($waiting_product)
             @if( $waiting_product->id )
-                <div class="mt-4">
-                    <a href="/" class="fs-3 fw-bold d-flex justify-content-center text-decoration-none text-black">Aukcionaz.az</a>
-                </div>
+{{--                <div class="mt-4">--}}
+{{--                    <a href="/" class="fs-3 fw-bold d-flex justify-content-center text-decoration-none text-black">Aukcionaz.az</a>--}}
+{{--                </div>--}}
 
-                <div class="col mt-3 mb-3">
+                <div class="col mt-4 mb-3">
                     <div class="fs-4 mb-3 text-center">
                         <span class="fs-3 fw-bold me-1">{{ $waiting_product->title }}</span>
                         elanınız yoxlama mərhələsindədir. <br>
@@ -69,7 +69,9 @@
                             </div>
 
                             <div class="">
-                                <add-on-aukcion></add-on-aukcion>
+                                <add-on-aukcion
+                                    :product_info="{{ $waiting_product }}"
+                                ></add-on-aukcion>
                             </div>
 
                             <div class="align-self-center ms-2">

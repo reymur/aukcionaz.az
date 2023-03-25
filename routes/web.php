@@ -5,7 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewAnnounceController;
 use App\Http\Controllers\ElectronicsController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\WaitingAnnounceController;
+use App\Http\Controllers\TransactionErrorImagesDeleteController;
+use App\Http\Controllers\WaitingProductController;
 use App\Models\NewAnnounce;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
@@ -40,9 +41,6 @@ Route::prefix('announce/new')->group(function(){
             Route::post('/upload-images', 'uploadImages');
         });
     });
-
-    // WAITING ANNOUNCE
-    Route::get('/waiting/{id}', [WaitingAnnounceController::class, 'index']);
 });
 
 
@@ -55,5 +53,9 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
 // PRODUCT SHOW
 Route::prefix('product')->controller(ProductController::class)->group(function() {
     Route::get('/{id}', 'index')->name('product');
+
+    // WAITING PRODUCT
+    Route::get('/waiting/{id}', [WaitingProductController::class, 'index']);
 });
 
+Route::post('/transaction/error/image/delete', [TransactionErrorImagesDeleteController::class, 'imageDelete']);

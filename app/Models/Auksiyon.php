@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Aukcion extends Model
+class Auksiyon extends Model
 {
     use HasFactory;
 

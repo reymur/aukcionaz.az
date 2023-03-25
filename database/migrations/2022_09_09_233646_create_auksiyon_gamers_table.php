@@ -1,12 +1,12 @@
 <?php
 
-use App\Models\Aukcion;
+use App\Models\Auksiyon;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAukcionGamersTable extends Migration
+class CreateAuksiyonGamersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,10 @@ class CreateAukcionGamersTable extends Migration
      */
     public function up()
     {
-        Schema::create('aukcion_gamers', function (Blueprint $table) {
+        Schema::create('auksiyon_gamers', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignIdFor(Aukcion::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignIdFor(Auksiyon::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->integer('price')->default(0);
             $table->integer('position')->default(0);
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateAukcionGamersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aukcion_gamers');
+        Schema::dropIfExists('auksiyon_gamers');
     }
 }

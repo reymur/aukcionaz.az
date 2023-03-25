@@ -539,13 +539,13 @@ export default {
                     if( res && res.status && res.status === 200 && res.data ) {
                         this.submit_button_load = true;
                         this.submit_button_disabled = 'disabled';
-                        // console.log('Create resA + = ', res.data.productable );
-                        console.log('Create resA + = ', res );
+
+                        console.log('Create resAAA + = ', res );
                         if( res && res.data && res.data.productable && res.data.productable.id ) {
                             let id = res.data.productable.id;
-                            // document.location.href = 'https://8f63-5-197-255-221.ngrok.io/product/'+id;
                             console.log('Product has ben Created resA + = ', res );
-                            document.location.href = 'https://aukcionaz.test/announce/new/waiting/'+id;
+                            // document.location.href = 'https://eb54-5-197-255-153.ngrok.io/product/'+id;
+                            // document.location.href = 'https://auksiyonaz.test/product/waiting/'+id;
                         }
                         // REDIRECT TO NEW ADD PRODUCT SHOW PAGE
                         // document.location.href = 'https://public.test/product/';
@@ -565,7 +565,23 @@ export default {
                         else console.log('ERROR RESPONSE STATUS 422 === ', error.response.data )
                     }
                     else if( error.response && error.response && error.response.status && error.response.status === 500 ) {
-                        console.log('ERROR STATUS 500 === ', JSON.stringify(error) )
+                        // console.log('ERROR STATUS 500 === ', JSON.stringify(error) )
+                        // console.log('ERROR STATUS 500 2 === ', JSON.stringify(error.response) )
+                        // console.log('ERROR STATUS 500 3 === ', JSON.stringify(error.response.data ) )
+                        console.log('ERROR STATUS 500 4 === ', JSON.stringify(error.response.data.message ) )
+
+                        axios({
+                            method: 'POST',
+                            url: '/transaction/error/image/delete',
+                            data: {product_id: error.response.data.message}
+                        })
+                        .then( res => {
+                            console.log('res image delete 1 === ', res.data )
+                            console.log('res image delete 2 === ', res.data.delete_file )
+                        })
+                        .catch( err => {
+                            console.log('err image delete === ', err.response )
+                        })
                     }
                     else{
                         console.log('NO ERROR STATUS === ', JSON.stringify(error) )

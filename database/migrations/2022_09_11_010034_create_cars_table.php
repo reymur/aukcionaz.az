@@ -16,7 +16,7 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Aukcion::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Auksiyon::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('marka');
             $table->string('model');
             $table->string('color');

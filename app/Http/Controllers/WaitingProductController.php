@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class WaitingAnnounceController extends Controller
+class WaitingProductController extends Controller
 {
     public function index($id)
     {
@@ -13,7 +13,7 @@ class WaitingAnnounceController extends Controller
 
         $waiting_product = GetProductByIdHelper($id);
 
-        return view('announce.witing_announce', ['waiting_product' => $waiting_product]);
+        return view('products.waiting_product', ['waiting_product' => $waiting_product]);
     }
 
 

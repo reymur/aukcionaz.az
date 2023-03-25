@@ -15,7 +15,7 @@ class CreateAukcionGamerInfosTable extends Migration
     {
         Schema::create('aukcion_gamer_infos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\AukcionGamer::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\AuksiyonGamer::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->integer('rating')->default(0);
             $table->integer('played')->default(0);
             $table->integer('won')->default(0);

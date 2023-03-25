@@ -62,6 +62,7 @@ import * as bootstrap from 'bootstrap';
 import {toString} from "lodash";
 export default {
     name: "AddOnAukcion",
+    props: ['product_info'],
     data () {
         return {
             // bodyColor: null,
@@ -199,6 +200,7 @@ export default {
     mounted() {
         this.getCurrentTime(false);
 
+        console.log('PRODUCT = ', this.product_info )
     }
 }
 </script>

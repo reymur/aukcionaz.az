@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -18,66 +19,80 @@ class ElectronicsController extends Controller
     public function audioVeVideo(AudioVeVideoRequest $request)
     {
         if( !empty($request) ) {
-            $user = User::create([
-                'name'  => $request->name,
-                'email' => $request->email,
-            ]);
 
-            Auth::login( $user );
+            DB::beginTransaction();
 
-            if( $user ) {
-                $product = AudioVeVideo::create([
-                    'user_id' => Auth::check() ? Auth::user()->id : $user->id,
-                    'sub_category_id' => $request->sub_category_id,
-                    'type'            => $request->type,
-                    'title'           => $request->title,
-                    'new'             => $this->isCheckBoxName($request->check_box, 'new'),
-                    'delivery'        => $this->isCheckBoxName($request->check_box, 'delivery'),
-                    'price'           => $request->price,
-                    'city'            => $request->city,
-                    'about'           => $request->about,
-                    'publish'         => false
+            try {
+                $user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
                 ]);
 
-                if( $product && $product->id) {
-                    $this->makePinAndNumber($product);
+                Auth::login($user);
 
-                    $phone = $product->phones()->create([
-                        'phone' => $request->phone,
+                if ($user) {
+                    $product = AudioVeVideo::create([
+                        'user_id' => Auth::check() ? Auth::user()->id : $user->id,
+                        'sub_category_id' => $request->sub_category_id,
+                        'type' => $request->type,
+                        'title' => $request->title,
+                        'new' => $this->isCheckBoxName($request->check_box, 'new'),
+                        'delivery' => $this->isCheckBoxName($request->check_box, 'delivery'),
+                        'price' => $request->price,
+                        'city' => $request->city,
+                        'about' => $request->about,
+                        'publish' => false
                     ]);
 
-                    if( $phone && $product->id === $phone->phoneable_id )
-                        $productable = $product->products()->create();
-                    else return response()->json( [
-                        'status' => 422,
-                        'error' => 'phone'
-                    ] );
+                    if ($product && $product->id) {
+                        $this->makePinAndNumber($product);
 
-                    if( $productable && $product->id === $productable->productable_id )
-                        $imageable = $this->saveImages( $product, $request );
-                    else return response()->json( [
+                        $phone = $product->phones()->create([
+                            'phone' => $request->phone,
+                        ]);
+
+                        if ($phone && $product->id === $phone->phoneable_id)
+                            $productable = $product->products()->create();
+                        else return response()->json([
+                            'status' => 422,
+                            'error' => 'phone'
+                        ]);
+
+                        if ($productable && $product->id === $productable->productable_id) {
+                            $imageable = $this->saveImages($product, $request);
+                        } else return response()->json([
+                            'status' => 422,
+                            'error' => 'productable'
+                        ]);
+
+                        if ($imageable && $products->id === $imageable->imageable_id) {
+                            return response()->json([
+                                'productable' => $productable->productable
+                            ]);
+                        } else return response()->json([
+                            'status' => 422,
+                            'error' => 'imageable'
+                        ]);
+                    } else return response()->json([
                         'status' => 422,
-                        'error' => 'productable'
-                    ] );
-//
-                    if( $imageable && $product->id === $imageable->imageable_id ) {
-                        return response()->json( [
-                            'productable' => $productable
-                        ] );
-                    } else return response()->json( [
-                        'status' => 422,
-                        'error' => 'imageable'
-                    ] );
-                }
-                else return response()->json( [
+                        'error' => 'product no created'
+                    ]);
+                } else return response()->json([
                     'status' => 422,
-                    'error' => 'product no created'
-                ] );
+                    'error' => 'user no created!'
+                ]);
+
+                DB::commit();
+            } catch (\Exception $ex) {
+                DB::rollBack();
+
+                if( ! $product->images->count() && $product && $product->id ) {
+                    $image_path = public_path('storage').'/images/products';
+                    $files = glob($image_path.'/*');
+
+                    abort(500, $product->id );
+                }
             }
-            else return response()->json( [
-                'status' => 422,
-                'error' => 'user no created!'
-            ] );
         }
 
         return response()->json( $request );

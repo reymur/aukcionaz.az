@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\AukcionRealTimeSend;
 use App\Http\Requests\AukcionRealTimePriceRequest;
 use App\Jobs\AddProductInAukcionJob;
-use App\Models\AukcionGamer;
+use App\Models\AuksiyonGamer;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\User;
@@ -45,7 +45,7 @@ class AukcionRealTimeController extends Controller
     }
 
     public function setAukcionPrice(AukcionRealTimePriceRequest $request) {
-        $users = AukcionGamer::where('id', 1)
+        $users = AuksiyonGamer::where('id', 1)
                             ->update($request->validated());
 
         if( $users ){
@@ -56,7 +56,7 @@ class AukcionRealTimeController extends Controller
     }
 
     public function getAukcionGamers() {
-        return $users = AukcionGamer::query()->with(['user','aukcion'])->get();
+        return $users = AuksiyonGamer::query()->with(['user','aukcion'])->get();
     }
 
     public function getResponseAukcionGamers() {
