@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container no_published_main_div">
         <!-- NEW ANNOUNCE INFO -->
         @isset($no_published)
             @if( $no_published->id )
@@ -9,9 +9,9 @@
 {{--                    <a href="/" class="fs-3 fw-bold d-flex justify-content-center text-decoration-none text-black">Aukcionaz.az</a>--}}
 {{--                </div>--}}
 
-                <div class="col mt-4 mb-3">
-                    <div class="fs-4 mb-3 text-center">
-                        <span class="fs-3 fw-bold me-1">{{ $no_published->title }}</span>
+                <div class="m-auto align-self-center">
+                    <div class="fs-4 mb-5 text-center">
+                        <span class="fs-2 fw-bold me-1">{{ $no_published->title }}</span>
                         elanınız yoxlama mərhələsindədir. <br>
                         Elanınız təstiqləndikdən sonra elanlar bölməsində yerləşdiriləcək.
                     </div>
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <div class="mt-3 d-flex fs-5 text-center">
+                        <div class="mt-5 d-flex fs-5 text-center">
                             <div class="me-1">
                                 Elana baxış
                             </div>
@@ -50,73 +50,46 @@
                     </div>
                 </div>
 
-                <hr class="w-75 m-auto"/>
+                <!-- BOTTOM BORDER -->
+{{--                <hr class="w-75 m-auto"/>--}}
 
                 <!-- ADD AUKCION -->
-                <div class="d-flex justify-content-center mt-4">
-                    <!-- ADD ON AUKCION -->
-                    <div class="">
-                        <div class="d-flex justify-content-center fs-4 fw-bold mb-2">
-                            <span class="fs-3 text-success me-1">Aukcion</span>
-                            <span class="m-auto"> - da daha tez sat</span>
-                        </div>
+{{--                <div class="d-flex justify-content-center mt-4">--}}
+{{--                    <!-- ADD ON AUKCION -->--}}
+{{--                    <div class="">--}}
+{{--                        <div class="d-flex justify-content-center fs-4 fw-bold mb-2">--}}
+{{--                            <span class="fs-3 text-success me-1">Aukcion</span>--}}
+{{--                            <span class="m-auto"> - da daha tez sat</span>--}}
+{{--                        </div>--}}
 
-                        <div class="d-flex py-3">
-                            <div class="align-self-center me-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                </svg>
-                            </div>
+{{--                        <div class="d-flex py-3">--}}
+{{--                            <div class="align-self-center me-2">--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">--}}
+{{--                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>--}}
+{{--                                </svg>--}}
+{{--                            </div>--}}
 
-                            <div class="">
-                                <add-on-aukcion
-                                    :product_info="{{ $no_published }}"
-                                ></add-on-aukcion>
-                            </div>
+{{--                            @if( $no_published && $no_published->publish > 0 )--}}
+{{--                                <div class="">--}}
+{{--                                    <add-on-aukcion--}}
+{{--                                        :product_info="{{ $no_published }}"--}}
+{{--                                    ></add-on-aukcion>--}}
+{{--                                </div>--}}
+{{--                            @endif--}}
 
-                            <div class="align-self-center ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                                </svg>
-                            </div>
-                        </div>
+{{--                            <div class="align-self-center ms-2">--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">--}}
+{{--                                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>--}}
+{{--                                </svg>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
 
-                        <!-- Button trigger modal -->
-                        <div class="text-center text-decoration-underline fs-5" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                            Aukcion nədir <span class="ms-1">?</span>
-                        </div>
+{{--                        <!-- WHAT IS AUKSIYON? -->--}}
+{{--                        @include('products.crumbs.what_is_auksiyon')--}}
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <div class="col modal-title d-flex">
-                                            <div class="col-11 fs-4 fw-bold d-flex justify-content-center" id="staticBackdropLabel"> Aukcion nədir? </div>
-                                            <div class="col-1">
-                                                <button type="button" class="btn-close m-auto" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="fs-5 px-3" style="text-align: justify;">
-                                            Siz <span class="fs-4 ms-1 me-1 fw-bold">Aukcion</span>
-                                            əlavə etməklə, sizin elanı <span class="fs-4 ms-1 me-1 fw-bold">auksiyona</span>
-                                            çıxatmış olursunuz və bu zaman müştərilər sizin elanın
-                                            <span class="fs-4 ms-1 me-1 fw-bold">auksiyonda</span>
-                                            olduğunu görurlər. Bu o deməkdir ki, sizin elan real vaxtda daha çox müştəri
-                                            cəlb edir və siz real zamanda bir neçə müstəri ilə canlı olaraq alqı-satqı edirsiniz.
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
             @endif
         @endisset
     </div>

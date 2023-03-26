@@ -2,8 +2,8 @@
     <div class="">
 
         <!-- Button trigger modal -->
-        <button @click="modalBackdrop" type="button" class="btn btn-danger rounded-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <span class="aukcion__add_button_text"> Auksion əlavə et</span>
+        <button @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="aukcion__add_button_text"> Auksion əlavə et </span>
         </button>
 
         <!-- Modal -->
@@ -223,8 +223,18 @@ export default {
             if( modal_backdrop && modal_backdrop.length )
                 modal_backdrop[0].style = 'opacity: 0.3';
         },
+        ifProductNoPublished() {
+            let btn = document.getElementsByClassName('auksiyon_add_button');
+
+            if( btn && btn[0] && btn[0].classList ) {
+                if( this.product_info.publish === 0 ) {
+                    btn[0].classList.add('disabled')
+                }
+            }
+        }
     },
     mounted() {
+        this.ifProductNoPublished();
         this.getCurrentTime(false);
 
         console.log('URL INDEXOF = ', window.location.pathname )

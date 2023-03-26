@@ -199,6 +199,16 @@ input:focus
                 background-color: aliceblue;
                 padding: 5px;
             }
+            .what_is_auksiyon_icon {
+                transform: rotateY(165deg);
+                display: inline-table;
+                width: 30px;
+                z-index: 11;
+                right: 0;
+                border-radius: 50px;
+                background-color: aliceblue;
+                padding: 5px;
+            }
                 /* IF PRODUCT IS ACTIVE REALTIME ON AUKTION */
                 @keyframes box-shadow {
                     100% {
@@ -572,3 +582,7 @@ input:focus
                 font-size: 1.1rem;
                 letter-spacing: 1px;
             }
+.no_published_main_div {
+    height: 430px;
+    display: flex;
+}

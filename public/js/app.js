@@ -39877,9 +39877,18 @@ __webpack_require__.r(__webpack_exports__);
       var modal_backdrop = document.getElementsByClassName('modal-backdrop');
       // console.log('COLOR - ', modal_backdrop)
       if (modal_backdrop && modal_backdrop.length) modal_backdrop[0].style = 'opacity: 0.3';
+    },
+    ifProductNoPublished: function ifProductNoPublished() {
+      var btn = document.getElementsByClassName('auksiyon_add_button');
+      if (btn && btn[0] && btn[0].classList) {
+        if (this.product_info.publish === 0) {
+          btn[0].classList.add('disabled');
+        }
+      }
     }
   },
   mounted: function mounted() {
+    this.ifProductNoPublished();
     this.getCurrentTime(false);
     console.log('URL INDEXOF = ', window.location.pathname);
   }
@@ -41990,7 +41999,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "aukcion__add_button_text"
-  }, " Auksion əlavə et", -1 /* HOISTED */);
+  }, " Auksion əlavə et ", -1 /* HOISTED */);
 });
 var _hoisted_3 = [_hoisted_2];
 var _hoisted_4 = {
@@ -42067,7 +42076,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.modalBackdrop && $options.modalBackdrop.apply($options, arguments);
     }),
     type: "button",
-    "class": "btn btn-danger rounded-0",
+    "class": "btn btn-danger rounded-0 auksiyon_add_button",
     "data-bs-toggle": "modal",
     "data-bs-target": "#staticBackdrop"
   }, _hoisted_3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {

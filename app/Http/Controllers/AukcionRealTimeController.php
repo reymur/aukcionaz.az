@@ -58,7 +58,7 @@ class AukcionRealTimeController extends Controller
                 Auksiyon::create([
                     'user_id'    => Auth::check() ? Auth::user()->id : null,
                     'product_id' => $product_id,
-                    'started' => Date(),
+                    'started' => \Carbon\Carbon::now(),
                     'finish' => 0,
                     'run_later_time' => null,
                     'continues' => 1,

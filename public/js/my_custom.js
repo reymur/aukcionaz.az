@@ -18,25 +18,38 @@ let new__announce_btn_text = document.querySelector('.new__announce_btn_text');
 
 let main__search_large_icon = document.querySelector('.main__search_large_icon');
 let main__search_small_icon = document.querySelector('.main__search_small_icon');
-
-if( window.innerWidth >= 992 ) {
-    new__announce_btn_div.style.display = 'block'
-    new__announce_btn_text.style.display = 'block'
-}
-else if( window.innerWidth < 992 ) {
-    new__announce_btn_div.style.display = 'none'
-    new__announce_btn_text.style.display = 'none'
+if( new__announce_btn_div && new__announce_btn_text ) {
+    if( window.innerWidth >= 992 ) {
+        if( new__announce_btn_div.style && new__announce_btn_text.style ) {
+            new__announce_btn_div.style.display = 'block'
+            new__announce_btn_text.style.display = 'block'
+        }
+    }
+    else if( window.innerWidth < 992 ) {
+        if( new__announce_btn_div.style && new__announce_btn_text.style ) {
+            new__announce_btn_div.style.display = 'none'
+            new__announce_btn_text.style.display = 'none'
+        }
+    }
 }
 
 onresize = (event) => {
+    let new__announce_btn_div = document.querySelector('.new__announce_btn_div');
+    let new__announce_btn_text = document.querySelector('.new__announce_btn_text');
 
-    if( window.innerWidth >= 992 ) {
-        // console.log('window size == ', window.innerWidth)
-        new__announce_btn_text.style.display = 'block'
-    }
-    else if( window.innerWidth < 992 ) {
-        new__announce_btn_text.style.display = 'none';
-        // console.log('window size == ', window.innerWidth )
+    if( new__announce_btn_div && new__announce_btn_text ) {
+        if( window.innerWidth >= 992 ) {
+            if( new__announce_btn_div.style && new__announce_btn_text.style ) {
+                new__announce_btn_div.style.display = 'block'
+                new__announce_btn_text.style.display = 'block'
+            }
+        }
+        else if( window.innerWidth < 992 ) {
+            if( new__announce_btn_div.style && new__announce_btn_text.style ) {
+                new__announce_btn_div.style.display = 'none'
+                new__announce_btn_text.style.display = 'none'
+            }
+        }
     }
 };
 
@@ -86,9 +99,9 @@ let path_name = document.location.pathname;
 let navbar = document.getElementById('navbar');
 
 if( path_name.indexOf('announce') === 1 ) {
-    navbar.style.display = 'none';
+    if( navbar && navbar.style ) navbar.style.display = 'none';
 }else{
-    navbar.style.display = 'block';
+    if( navbar && navbar.style ) navbar.style.display = 'block';
 }
 
 

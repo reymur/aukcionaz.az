@@ -30,10 +30,19 @@
 {{--                    </div>--}}
 
                     <div class="">
-                        <add-on-aukcion
-                            :product_info="{{ $product }}"
-                        ></add-on-aukcion>
+                        <div class="mb-2">
+                            <add-on-aukcion
+                                :product_info="{{ $product }}"
+                            ></add-on-aukcion>
+                        </div>
+
+                        <div class="">
+                            <!-- WHAT IS AUKSIYON? -->
+                            @include('products.crumbs.what_is_auksiyon')
+                        </div>
                     </div>
+
+
                 </div>
 
                 @if( $product->publish === 0 )

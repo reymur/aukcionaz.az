@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('navbar')
+    @include('layouts.elements.navbar_section')
+@endsection
+
 @section('content')
     <div class="col-12">
         <div class="col-12 bg-white border__bottom_opacity-10">
@@ -40,4 +44,8 @@
 
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('layouts.elements.footer_section')
 @endsection
