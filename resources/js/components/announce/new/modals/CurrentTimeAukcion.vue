@@ -85,6 +85,8 @@ export default {
                 setTimeout( () => {
                     runNowTimeAukcionCollapse.style.marginTop = '0';
                 }, 100);
+                // alert(1111)
+                this.$emit('nowAuksiyonWithTimerYes', {status: false})
             }
         },
         runNowTimeAukcion() {
@@ -113,6 +115,9 @@ export default {
                 setTimeout( () => {
                     clearInterval(he);
                 }, 3000 );
+                // alert(222)
+
+                this.$emit('nowAuksiyonWithTimerYes', {status: true})
             }
         },
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- LIN TO ACTIVE AUKSIYON -->
-        <a v-if="auksiyon_status" href="" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
+        <a v-if="auksiyon_status" :href="'/realtime/auksiyon/'+1" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
             <span class="aukcion__add_button_text"> Auksion-a keçid </span>
         </a>
 
@@ -39,6 +39,7 @@
                             <!-- CURRENT TIME AUKCION START -->
                                 <current-time-aukcion
                                     :close_current_time_aukcion="close_current_time_aukcion"
+                                    @nowAuksiyonWithTimerYes="getNowAuksiyonWithTimerYes"
                                 ></current-time-aukcion>
                             <!-- CURRENT TIME AUKCION END -->
 
@@ -70,11 +71,15 @@ export default {
     data () {
         return {
             // bodyColor: null,
+            product_id: this.getProductID(),
+            site_name: window.location.hostname,
             auksiyon_status: false,
             now: true,
             later: false,
-            current_time_aukcion_no: true,
-            current_time_aukcion_yes: false,
+            now_auksiyon_current_with_timer_no: true,
+            now_auksiyon_current_with_timer_yes: false,
+            now_auksiyon_later_with_timer_no: true,
+            now_auksiyon_later_with_timer_yes: false,
             collapse: 'collapse',
             show_later_aukcion: true,
             current_time_show: '',
@@ -87,7 +92,7 @@ export default {
     },
     computed:{
         checkAuksiyon() {
-            let product_id = this.getProductID();
+            let product_id = this.product_id;
 
             if( product_id ) {
                 axios({
@@ -99,8 +104,9 @@ export default {
                         if( res && res.data && res.data.auksiyon ) {
                             if( res.data.auksiyon === 'ok' ) this.auksiyon_status = true;
                             else if( res.data.auksiyon === 'no' ) this.auksiyon_status = false;
+
+                            console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
                         }
-                        console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
                     })
                     .catch( err => {
                         console.log( 'err is on auksiyon1111 - ', err.response.data )
@@ -109,19 +115,6 @@ export default {
         },
     },
     methods: {
-        getProductID() {
-            let start = window.location.pathname.lastIndexOf('/');
-            let url = window.location.pathname;
-            return url.substring( start + 1 );
-        },
-        sendToAuksiyon() {
-            let product_id = this.getProductID();
-
-            if( this.now && !this.later && this.current_time_aukcion_no && !this.current_time_aukcion_yes ) {
-                this.addOnlyNowAuksiyon(product_id);
-
-            }
-        },
         addOnlyNowAuksiyon(product_id) {
             axios({
                 method:'POST',
@@ -140,27 +133,48 @@ export default {
                     console.log( 'err auksiyon - ', err.response.data )
                 });
         },
-        // checkAuksiyon() {
-        //     let product_id = this.getProductID();
-        //
-        //     if( product_id ) {
-        //         axios({
-        //             method:'POST',
-        //             url: '/check-auksiyon',
-        //             data: { product_id: Number(product_id) }
-        //         })
-        //             .then( res => {
-        //                 if( res && res.data && res.data.auksiyon ) {
-        //                     if( res.data.auksiyon === 'ok' ) this.auksiyon_status = true;
-        //                     else if( res.data.auksiyon === 'no' ) this.auksiyon_status = false;
-        //                 }
-        //                 console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
-        //             })
-        //             .catch( err => {
-        //                 console.log( 'err is on auksiyon1111 - ', err.response.data )
-        //             });
-        //     }
-        // },
+        addOnlyNowAuksiyonWithTimer(product_id) {
+            axios({
+                method:'POST',
+                url: '/add-only-now-auksiyon-with-timer',
+                data: { product_id: Number(product_id) }
+            })
+                .then( res => {
+                    if( res && res.data && res.data.auksiyon ) {
+                        if( res.data.auksiyon.status === 1 ) {
+                            this.checkAuksiyon();
+                        }
+                        console.log( 'res auksiyon - ', res.data.auksiyon.status )
+                    }
+                })
+                .catch( err => {
+                    console.log( 'err auksiyon - ', err.response.data )
+                });
+        },
+        sendToAuksiyon() {
+            let product_id = this.product_id;
+
+            if(
+                this.now && !this.later && this.now_auksiyon_current_with_timer_no &&
+                !this.now_auksiyon_current_with_timer_no && this.now_auksiyon_later_with_timer_no &&
+                !this.now_auksiyon_later_with_timer_yes
+            ) {
+                this.addOnlyNowAuksiyon(product_id);
+            }
+            if(
+                this.now && !this.later && !this.now_auksiyon_current_with_timer_no &&
+                this.now_auksiyon_current_with_timer_yes && this.now_auksiyon_later_with_timer_no &&
+                !this.now_auksiyon_later_with_timer_yes
+            ) {
+                this.addOnlyNowAuksiyonWithTimer(product_id);
+            }
+        },
+        getNowAuksiyonWithTimerYes(data) {
+            if( data && data.status )
+                this.now_auksiyon_with_timer_yes = data.status;
+            else if( data && !data.status )
+                this.now_auksiyon_with_timer_yes = data.status;
+        },
         newAukcion() {
             let collapse = document.getElementById('collapsePicker');
             let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
@@ -181,6 +195,11 @@ export default {
             this.current_time_aukcion_no = true;
             this.current_time_aukcion_yes = false;
             // this.changeVarsValue( true, false, true, false);
+        },
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
         },
         changeVarsValue( n, l, c_t_a_no, c_t_a_yes){
             this.now = n;

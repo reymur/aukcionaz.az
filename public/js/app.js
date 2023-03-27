@@ -28558,10 +28558,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".product__info[data-v-476092e2] {\n  b
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -28575,7 +28575,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".moving-item[data-v-e7c747e8] {\n  transition: all 1s ease;\n  -webkit-transition: all 500ms ease;\n}\nul[data-v-e7c747e8] {\n  list-style-type: none;\n  padding: 0;\n  position: relative;\n}\nli[data-v-e7c747e8] {\n  position: absolute;\n  border: 1px solid #d0cfcf;\n  border-radius: 7px;\n  height: 60px;\n  width: 100%;\n  /*padding: 5px;*/\n  color: #363636;\n  background-color: #fff;\n}\n.aukcion__text-info[data-v-e7c747e8] {\n  margin: 4px 0 2px 10px;\n}\n.aukcion__text-name[data-v-e7c747e8] {\n  font-size: 18px;\n}\n.aukcion__price-text[data-v-e7c747e8] {\n  font-size: 18px;\n}\n.aukcion__price-text-style[data-v-e7c747e8] {\n  background-color: #830e02;\n  color: white;\n  letter-spacing: 1px;\n  font-weight: 600;\n  padding: 16px 0 13px 0;\n  display: block;\n}\n.user__sub-titles[data-v-e7c747e8] {\n  margin: -5px 0 0 -12px;\n}\n.aukcion__user-delete-div[data-v-e7c747e8] {\n  color: #fff;\n  background-color: #262525;\n  margin: 0 0 0 1px;\n  border-radius: 0 5px 5px 0;\n  padding: 16px 13px 19px 12px;\n}\n.aukcion__user-delete[data-v-e7c747e8] {\n  padding: 17px 21px 18px 21px;\n}\n.ul__parent-div[data-v-e7c747e8] {\n  padding: 10px 10px 10px 10px;\n  background-color: #f3f0f0;\n}\n.aukcion__product-div[data-v-e7c747e8] {\n  background-color: #eaeaea;\n  border-bottom: 1px solid rgb(207 207 207 / 44%);\n  box-shadow: 0 0 8px 2px rgb(94 92 92 / 19%);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".moving-item[data-v-5718da28] {\n  transition: all 1s ease;\n  -webkit-transition: all 500ms ease;\n}\nul[data-v-5718da28] {\n  list-style-type: none;\n  padding: 0;\n  position: relative;\n}\nli[data-v-5718da28] {\n  position: absolute;\n  border: 1px solid #d0cfcf;\n  border-radius: 7px;\n  height: 60px;\n  width: 100%;\n  /*padding: 5px;*/\n  color: #363636;\n  background-color: #fff;\n}\n.aukcion__text-info[data-v-5718da28] {\n  margin: 4px 0 2px 10px;\n}\n.aukcion__text-name[data-v-5718da28] {\n  font-size: 18px;\n}\n.aukcion__price-text[data-v-5718da28] {\n  font-size: 18px;\n}\n.aukcion__price-text-style[data-v-5718da28] {\n  background-color: #830e02;\n  color: white;\n  letter-spacing: 1px;\n  font-weight: 600;\n  padding: 16px 0 13px 0;\n  display: block;\n}\n.user__sub-titles[data-v-5718da28] {\n  margin: -5px 0 0 -12px;\n}\n.aukcion__user-delete-div[data-v-5718da28] {\n  color: #fff;\n  background-color: #262525;\n  margin: 0 0 0 1px;\n  border-radius: 0 5px 5px 0;\n  padding: 16px 13px 19px 12px;\n}\n.aukcion__user-delete[data-v-5718da28] {\n  padding: 17px 21px 18px 21px;\n}\n.ul__parent-div[data-v-5718da28] {\n  padding: 10px 10px 10px 10px;\n  background-color: #f3f0f0;\n}\n.aukcion__product-div[data-v-5718da28] {\n  background-color: #eaeaea;\n  border-bottom: 1px solid rgb(207 207 207 / 44%);\n  box-shadow: 0 0 8px 2px rgb(94 92 92 / 19%);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39735,11 +39735,15 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // bodyColor: null,
+      product_id: this.getProductID(),
+      site_name: window.location.hostname,
       auksiyon_status: false,
       now: true,
       later: false,
-      current_time_aukcion_no: true,
-      current_time_aukcion_yes: false,
+      now_auksiyon_current_with_timer_no: true,
+      now_auksiyon_current_with_timer_yes: false,
+      now_auksiyon_later_with_timer_no: true,
+      now_auksiyon_later_with_timer_yes: false,
       collapse: 'collapse',
       show_later_aukcion: true,
       current_time_show: '',
@@ -39757,7 +39761,7 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     checkAuksiyon: function checkAuksiyon() {
       var _this = this;
-      var product_id = this.getProductID();
+      var product_id = this.product_id;
       if (product_id) {
         axios({
           method: 'POST',
@@ -39768,8 +39772,8 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (res) {
           if (res && res.data && res.data.auksiyon) {
             if (res.data.auksiyon === 'ok') _this.auksiyon_status = true;else if (res.data.auksiyon === 'no') _this.auksiyon_status = false;
+            console.log('res is on auksiyon1111 - ', res.data.auksiyon);
           }
-          console.log('res is on auksiyon1111 - ', res.data.auksiyon);
         })["catch"](function (err) {
           console.log('err is on auksiyon1111 - ', err.response.data);
         });
@@ -39777,17 +39781,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    getProductID: function getProductID() {
-      var start = window.location.pathname.lastIndexOf('/');
-      var url = window.location.pathname;
-      return url.substring(start + 1);
-    },
-    sendToAuksiyon: function sendToAuksiyon() {
-      var product_id = this.getProductID();
-      if (this.now && !this.later && this.current_time_aukcion_no && !this.current_time_aukcion_yes) {
-        this.addOnlyNowAuksiyon(product_id);
-      }
-    },
     addOnlyNowAuksiyon: function addOnlyNowAuksiyon(product_id) {
       var _this2 = this;
       axios({
@@ -39807,27 +39800,37 @@ __webpack_require__.r(__webpack_exports__);
         console.log('err auksiyon - ', err.response.data);
       });
     },
-    // checkAuksiyon() {
-    //     let product_id = this.getProductID();
-    //
-    //     if( product_id ) {
-    //         axios({
-    //             method:'POST',
-    //             url: '/check-auksiyon',
-    //             data: { product_id: Number(product_id) }
-    //         })
-    //             .then( res => {
-    //                 if( res && res.data && res.data.auksiyon ) {
-    //                     if( res.data.auksiyon === 'ok' ) this.auksiyon_status = true;
-    //                     else if( res.data.auksiyon === 'no' ) this.auksiyon_status = false;
-    //                 }
-    //                 console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
-    //             })
-    //             .catch( err => {
-    //                 console.log( 'err is on auksiyon1111 - ', err.response.data )
-    //             });
-    //     }
-    // },
+    addOnlyNowAuksiyonWithTimer: function addOnlyNowAuksiyonWithTimer(product_id) {
+      var _this3 = this;
+      axios({
+        method: 'POST',
+        url: '/add-only-now-auksiyon-with-timer',
+        data: {
+          product_id: Number(product_id)
+        }
+      }).then(function (res) {
+        if (res && res.data && res.data.auksiyon) {
+          if (res.data.auksiyon.status === 1) {
+            _this3.checkAuksiyon();
+          }
+          console.log('res auksiyon - ', res.data.auksiyon.status);
+        }
+      })["catch"](function (err) {
+        console.log('err auksiyon - ', err.response.data);
+      });
+    },
+    sendToAuksiyon: function sendToAuksiyon() {
+      var product_id = this.product_id;
+      if (this.now && !this.later && this.now_auksiyon_current_with_timer_no && !this.now_auksiyon_current_with_timer_no && this.now_auksiyon_later_with_timer_no && !this.now_auksiyon_later_with_timer_yes) {
+        this.addOnlyNowAuksiyon(product_id);
+      }
+      if (this.now && !this.later && !this.now_auksiyon_current_with_timer_no && this.now_auksiyon_current_with_timer_yes && this.now_auksiyon_later_with_timer_no && !this.now_auksiyon_later_with_timer_yes) {
+        this.addOnlyNowAuksiyonWithTimer(product_id);
+      }
+    },
+    getNowAuksiyonWithTimerYes: function getNowAuksiyonWithTimerYes(data) {
+      if (data && data.status) this.now_auksiyon_with_timer_yes = data.status;else if (data && !data.status) this.now_auksiyon_with_timer_yes = data.status;
+    },
     newAukcion: function newAukcion() {
       var collapse = document.getElementById('collapsePicker');
       var runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
@@ -39845,6 +39848,11 @@ __webpack_require__.r(__webpack_exports__);
       this.current_time_aukcion_no = true;
       this.current_time_aukcion_yes = false;
       // this.changeVarsValue( true, false, true, false);
+    },
+    getProductID: function getProductID() {
+      var start = window.location.pathname.lastIndexOf('/');
+      var url = window.location.pathname;
+      return url.substring(start + 1);
     },
     changeVarsValue: function changeVarsValue(n, l, c_t_a_no, c_t_a_yes) {
       this.now = n;
@@ -39871,7 +39879,7 @@ __webpack_require__.r(__webpack_exports__);
       this.now = false;
     },
     getCurrentTime: function getCurrentTime() {
-      var _this3 = this;
+      var _this4 = this;
       var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       var time_i = setInterval(function () {
         var date = new Date();
@@ -39880,7 +39888,7 @@ __webpack_require__.r(__webpack_exports__);
         var seconds = (0,lodash__WEBPACK_IMPORTED_MODULE_1__.toString)(date.getSeconds());
         if (minutes.length < 2) minutes = '0' + minutes;
         if (seconds.length < 2) seconds = '0' + seconds;
-        _this3.current_time_show = horus + ':' + minutes + ':' + seconds;
+        _this4.current_time_show = horus + ':' + minutes + ':' + seconds;
 
         // console.log('COLOR - ', date.getSeconds() )
       }, 1000);
@@ -40181,6 +40189,10 @@ __webpack_require__.r(__webpack_exports__);
         setTimeout(function () {
           runNowTimeAukcionCollapse.style.marginTop = '0';
         }, 100);
+        // alert(1111)
+        this.$emit('nowAuksiyonWithTimerYes', {
+          status: false
+        });
       }
     },
     runNowTimeAukcion: function runNowTimeAukcion() {
@@ -40206,6 +40218,11 @@ __webpack_require__.r(__webpack_exports__);
         setTimeout(function () {
           clearInterval(he);
         }, 3000);
+        // alert(222)
+
+        this.$emit('nowAuksiyonWithTimerYes', {
+          status: true
+        });
       }
     }
   }
@@ -41379,7 +41396,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    generateComponentName: function generateComponentName() {
+    importAuksiyonComponentElements: function importAuksiyonComponentElements() {
       if (this.product && this.product.sub_category && this.product.sub_category.slug) {
         var name = this.product.sub_category.slug;
         var new_name = '';
@@ -41424,10 +41441,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js":
-/*!****************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js ***!
-  \****************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -42118,7 +42135,7 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = {
   key: 0,
-  href: "",
+  href: '/realtime/auksiyon/' + 1,
   type: "button",
   "class": "btn btn-success rounded-0 auksiyon_add_button"
 };
@@ -42233,8 +42250,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "btn btn-outline-success rounded-0 px-4 w-100",
     "for": "later"
   }, "Sonra")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_current_time_aukcion, {
-    close_current_time_aukcion: $data.close_current_time_aukcion
-  }, null, 8 /* PROPS */, ["close_current_time_aukcion"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION END "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_later_time_aukcion, {
+    close_current_time_aukcion: $data.close_current_time_aukcion,
+    onNowAuksiyonWithTimerYes: $options.getNowAuksiyonWithTimerYes
+  }, null, 8 /* PROPS */, ["close_current_time_aukcion", "onNowAuksiyonWithTimerYes"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION END "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_later_time_aukcion, {
     close_later_time_aukcion: $data.close_later_time_aukcion
   }, null, 8 /* PROPS */, ["close_later_time_aukcion"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE END ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[4] || (_cache[4] = function () {
@@ -44008,17 +44026,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
 
     _: 1 /* STABLE */
-  })]), $props.product ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.generateComponentName), {
+  })]), $props.product ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($options.importAuksiyonComponentElements), {
     product: $props.product
   }, null, 8 /* PROPS */, ["product"]))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <div class=\"collapse\" id=\"collapseExample\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"d-flex justify-content-center pt-3\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"card w-auto\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <photo-provider>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <photo-consumer v-for=\"(src, id) in imgList\" :intro=\"src\" :key=\"src\" :id=\"id\" :src=\"src\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <img :src=\"src\" class=\"view-box\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </photo-consumer>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </photo-provider>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"card-body\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <h5 class=\"card-title\">Range Rove Voqe</h5>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <p class=\"card-text\"> 2005 </p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        </div>")]);
 }
 
 /***/ }),
 
-/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -44029,7 +44047,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _withScopeId = function _withScopeId(n) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-e7c747e8"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-5718da28"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 var _hoisted_1 = {
   "class": "root"
@@ -44294,7 +44312,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue3_photo_preview_dist_index_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue3-photo-preview/dist/index.css */ "./node_modules/vue3-photo-preview/dist/index.css");
 /* harmony import */ var litepie_datepicker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! litepie-datepicker */ "./node_modules/litepie-datepicker/dist/litepie-datepicker.esm.js");
 /* harmony import */ var _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
-/* harmony import */ var _components_pages_MainAukcionPage_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/pages/MainAukcionPage.vue */ "./resources/js/components/pages/MainAukcionPage.vue");
+/* harmony import */ var _components_pages_RealTimeAuksiyon_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/pages/RealTimeAuksiyon.vue */ "./resources/js/components/pages/RealTimeAuksiyon.vue");
 /* harmony import */ var _components_elements_AukcionUserInfoModal_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/elements/AukcionUserInfoModal.vue */ "./resources/js/components/elements/AukcionUserInfoModal.vue");
 /* harmony import */ var _components_elements_AuksionUserReitingInfoModal_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/elements/AuksionUserReitingInfoModal.vue */ "./resources/js/components/elements/AuksionUserReitingInfoModal.vue");
 /* harmony import */ var _components_elements_AukcionUserOffersModal_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/elements/AukcionUserOffersModal.vue */ "./resources/js/components/elements/AukcionUserOffersModal.vue");
@@ -44384,7 +44402,7 @@ app.use(vue3_photo_preview__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
 
 app.component('example-component', _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
-app.component('main-aukcion-page', _components_pages_MainAukcionPage_vue__WEBPACK_IMPORTED_MODULE_8__["default"]);
+app.component('real-time-auksiyon', _components_pages_RealTimeAuksiyon_vue__WEBPACK_IMPORTED_MODULE_8__["default"]);
 app.component('auksion-user-info-modal', _components_elements_AukcionUserInfoModal_vue__WEBPACK_IMPORTED_MODULE_9__["default"]);
 app.component('auksion-user-reiting-modal', _components_elements_AuksionUserReitingInfoModal_vue__WEBPACK_IMPORTED_MODULE_10__["default"]);
 app.component('auksion-user-offers-modal', _components_elements_AukcionUserOffersModal_vue__WEBPACK_IMPORTED_MODULE_11__["default"]);
@@ -70997,10 +71015,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -71010,7 +71028,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_style_index_0_id_e7c747e8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_style_index_0_id_5718da28_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css");
 
             
 
@@ -71019,11 +71037,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_style_index_0_id_e7c747e8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_style_index_0_id_5718da28_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_style_index_0_id_e7c747e8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_style_index_0_id_5718da28_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -72294,10 +72312,10 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/MainAukcionPage.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/pages/MainAukcionPage.vue ***!
-  \***********************************************************/
+/***/ "./resources/js/components/pages/RealTimeAuksiyon.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/pages/RealTimeAuksiyon.vue ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -72305,9 +72323,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true */ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true");
-/* harmony import */ var _MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainAukcionPage.vue?vue&type=script&lang=js */ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js");
-/* harmony import */ var _MainAukcionPage_vue_vue_type_style_index_0_id_e7c747e8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css */ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css");
+/* harmony import */ var _RealTimeAuksiyon_vue_vue_type_template_id_5718da28_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true */ "./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true");
+/* harmony import */ var _RealTimeAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RealTimeAuksiyon.vue?vue&type=script&lang=js */ "./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=script&lang=js");
+/* harmony import */ var _RealTimeAuksiyon_vue_vue_type_style_index_0_id_5718da28_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css */ "./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css");
 /* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
@@ -72316,7 +72334,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-e7c747e8"],['__file',"resources/js/components/pages/MainAukcionPage.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_RealTimeAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_RealTimeAuksiyon_vue_vue_type_template_id_5718da28_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-5718da28"],['__file',"resources/js/components/pages/RealTimeAuksiyon.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -72837,18 +72855,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************/
+/***/ "./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=script&lang=js":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=script&lang=js ***!
+  \************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MainAukcionPage.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RealTimeAuksiyon.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -73365,18 +73383,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true ***!
-  \*****************************************************************************************************/
+/***/ "./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true ***!
+  \******************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_template_id_5718da28_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_template_id_e7c747e8_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=template&id=e7c747e8&scoped=true");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_template_id_5718da28_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=template&id=5718da28&scoped=true");
 
 
 /***/ }),
@@ -73615,15 +73633,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css ***!
-  \*******************************************************************************************************************/
+/***/ "./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css ***!
+  \********************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MainAukcionPage_vue_vue_type_style_index_0_id_e7c747e8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/MainAukcionPage.vue?vue&type=style&index=0&id=e7c747e8&scoped=true&lang=css");
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RealTimeAuksiyon_vue_vue_type_style_index_0_id_5718da28_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/pages/RealTimeAuksiyon.vue?vue&type=style&index=0&id=5718da28&scoped=true&lang=css");
 
 
 /***/ }),

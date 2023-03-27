@@ -18,7 +18,7 @@ app.use(VueAxios, axios);
 app.use(vue3PhotoPreview);
 
 import example from './components/ExampleComponent.vue';
-import MainAukcionPage from './components/pages/MainAukcionPage.vue';
+import RealTimeAuksiyon from './components/pages/RealTimeAuksiyon.vue';
 import AukcionUserInfoModal from './components/elements/AukcionUserInfoModal.vue';
 import AuksionUserReitingInfoModal from './components/elements/AuksionUserReitingInfoModal.vue';
 import AukcionUserOffersModal from './components/elements/AukcionUserOffersModal.vue';
@@ -66,7 +66,7 @@ import OnTimeAukcion from "./components/announce/new/modals/OnTimeAukcion.vue";
 import OnLaterTimeAukcion from "./components/announce/new/modals/OnLaterTimeAukcion.vue";
 
 app.component('example-component' , example);
-app.component('main-aukcion-page' , MainAukcionPage);
+app.component('real-time-auksiyon' , RealTimeAuksiyon);
 app.component('auksion-user-info-modal' , AukcionUserInfoModal);
 app.component('auksion-user-reiting-modal' , AuksionUserReitingInfoModal);
 app.component('auksion-user-offers-modal' , AukcionUserOffersModal);

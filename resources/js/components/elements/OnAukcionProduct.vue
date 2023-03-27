@@ -14,7 +14,7 @@
                     <div v-if="product" class="col-8 d-flex align-items-center">
 
                         <component
-                            :is="generateComponentName"
+                            :is="importAuksiyonComponentElements"
                             :product="product"
                         ></component>
                     </div>
@@ -74,7 +74,7 @@ export default {
         }
     },
     computed: {
-        generateComponentName(){
+        importAuksiyonComponentElements(){
             if( this.product && this.product.sub_category && this.product.sub_category.slug ) {
                 let name = this.product.sub_category.slug;
                 let new_name = '';
@@ -87,7 +87,7 @@ export default {
                 })
 
                 return defineAsyncComponent(() =>
-                    import( '../auksiyon/elements/'+ new_name+'Element.vue' )
+                    import( '../auksiyon/elements/'+ new_name +'Element.vue' )
                 );
             }
         },

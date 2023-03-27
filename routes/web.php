@@ -46,7 +46,7 @@ Route::prefix('announce/new')->group(function(){
 
 // AUKSIYON
 Route::controller(AukcionRealTimeController::class)->group(function () {
-    Route::get('/realtime/{id}', 'getAuksiyon');
+    Route::get('/realtime/auksiyon/{id}', 'getAuksiyon');
     Route::post('/set-aukcion-price', 'setAukcionPrice');
     Route::post('/get-auksion-users',  'getResponseAukcionGamers');
 
