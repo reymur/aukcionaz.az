@@ -46,10 +46,12 @@ Route::prefix('announce/new')->group(function(){
 
 // AUKSIYON
 Route::controller(AukcionRealTimeController::class)->group(function () {
-    Route::get('/realtime', 'index');
+    Route::get('/realtime/{id}', 'getAuksiyon');
     Route::post('/set-aukcion-price', 'setAukcionPrice');
     Route::post('/get-auksion-users',  'getResponseAukcionGamers');
-    Route::post('/add-on-auksiyon', 'addOnAuksiyon');
+
+    Route::post('/add-only-now-auksiyon', 'addOnlyNowAuksiyon');
+    Route::post('/check-auksiyon', 'checkAuksiyon');
 });
 
 // PRODUCT SHOW

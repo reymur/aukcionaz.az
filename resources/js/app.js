@@ -49,10 +49,15 @@ import IndexAudioVeVideo from './components/announce/new/category/elektronika/au
 import ShowForPhoneScreen from './components/announce/products/crumbs/ShowForPhoneScreen.vue';
 import ShowForDesktopScreen from './components/announce/products/crumbs/ShowForDesktopScreen.vue';
 
-// ADD ON AUKCION
+// ADD ON AUKCION START
 import AddOnAukcion from "./components/announce/new/modals/AddOnAukcion.vue";
 import CurrentTimeAukcion from "./components/announce/new/modals/CurrentTimeAukcion.vue";
 import LaterTimeAukcion from "./components/announce/new/modals/LaterTimeAukcion.vue";
+
+//elements
+import AudioVeVideoElement from "./components/auksiyon/elements/AudioVeVideoElement.vue";
+// ADD ON AUKCION END
+
 
 // DATA and TIME PICKER
 import DataPicker from "./components/announce/new/modals/DataPicker.vue";
@@ -92,10 +97,14 @@ app.component('new-image-upload' , NewImageUpload);
 app.component('show-for-phone-screen' , ShowForPhoneScreen);
 app.component('show-for-desktop-screen' , ShowForDesktopScreen);
 
-// ADD ON AUKCION
+// ADD ON AUKCION START
 app.component('add-on-aukcion', AddOnAukcion);
 app.component('current-time-aukcion', CurrentTimeAukcion);
 app.component('later-time-aukcion', LaterTimeAukcion);
+
+// elements
+app.component('audio-ve-video-element', AudioVeVideoElement);
+// ADD ON AUKCION END
 
 // DATA PICKER
 app.component('data-picker', DataPicker);

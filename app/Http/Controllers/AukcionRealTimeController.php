@@ -21,9 +21,7 @@ use function PHPUnit\Framework\isEmpty;
 
 class AukcionRealTimeController extends Controller
 {
-    public function index() {
-
-
+    public function getAuksiyon(Request $request) {
 //        foreach ($sub_category as $item) {
 //            SubCategory::query()->insert([
 //                'category_id' => $item['category_id'], 'name' => $item['name']
@@ -35,60 +33,74 @@ class AukcionRealTimeController extends Controller
 //            'email' => 'ni-ttg@hotmail.com'
 //        ]);
 
-        $user = User::first();
+//        $user = User::first();
 
-        $pass = $user->password;
+//        $pass = $user->password;
 
 //        dispatch(
 //            new AddProductInAukcionJob($user, $pass))->delay(now()->addMinute(1)
 //        );
 
+//        dd( $request->id );
+        if( ! $request->id ) abort(404);
+
+        $product = false;
+        $auksiyon = Auksiyon::where('product_id', $request->id)->first();
+
+        if( $auksiyon->product_id == $request->id && $auksiyon->status ) {
+
+            if( $auksiyon && $auksiyon->product && $auksiyon->product->productable ) {
+
+                if( $auksiyon->product->productable->id == $request->id ) {
+                    $product = $auksiyon->product->productable->load(['images','subCategory']);
+//                    dd( $auksiyon->product->productable );
+                }
+            }
+        }
+
         $users = $this->getAukcionGamers();
-        return view('pages.real_time_aukcion', ['users' => $users]);
+        return view('auksiyon.real_time_aukcion', ['users' => $users, 'product' => $product]);
     }
 
-    public function addOnAuksiyon(Request $request) {
+    public function addOnlyNowAuksiyon(Request $request) {
 
         if( $request->product_id ) {
             $product_id = $request->product_id;
 
-            $is_published = $this->isProductPublished($product_id);
+            $isset_on_auksiyon = $this->issetOnAuksiyon($product_id);
 
-            if( $is_published === 1 ) {
-                Auksiyon::create([
+            if( ! $isset_on_auksiyon ) {
+                $auksiyon = Auksiyon::create([
                     'user_id'    => Auth::check() ? Auth::user()->id : null,
                     'product_id' => $product_id,
-                    'started' => \Carbon\Carbon::now(),
-                    'finish' => 0,
-                    'run_later_time' => null,
-                    'continues' => 1,
-                    'publish' => 1,
-                ]);
-            } else if( $is_published === 0 ) {
-                Auksiyon::create([
-                    'user_id'    => Auth::check() ? Auth::user()->id : null,
-                    'product_id' => $product_id,
+                    'started'    => \Carbon\Carbon::now(),
+                    'status'     => 1,
                 ]);
             }
 
             return response()->json([
-                'add_auksiyon' => 'add AAA =  null'
+                'auksiyon' => $auksiyon
             ]);
         }
     }
 
-    public function isProductPublished($product_id) {
+    public function checkAuksiyon(Request $request){
+        if( $request->product_id ) {
+            if( $this->issetOnAuksiyon($request->product_id) )
+                return response()->json([ 'auksiyon' => 'ok' ]);
+            else
+                return response()->json([ 'auksiyon' => 'no' ]);
+        }
+
+        return response()->json([ 'auksiyon' => 'AAAAAA' ]);
+    }
+
+    public function issetOnAuksiyon($product_id) {
         if( $product_id ) {
-            $product = Product::where('productable_id', $product_id)->first();
+            $auksiyon = Auksiyon::where('product_id', $product_id)->first();
 
-            if( $product && $product->id ) {
-                $productable = $product->productable;
-
-                if( $productable && isset($productable->publish) && $productable->publish === 0 )
-                    return 0;
-                else if( $productable && isset($productable->publish) && $productable->publish === 1 )
-                    return 1;
-            }
+            if( $auksiyon && $auksiyon->product_id === $product_id ) return true;
+            else return false;
         }
 
         return false;

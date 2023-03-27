@@ -6,9 +6,9 @@
 
                     <div class="ms-2 mb-3 pb-2">
                         <div class="d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex fs-5">
-                            <div class="d-flex me-2 justify-content-center"> Elan təstiqləndiyi andan </div>
-                            <div class="d-flex justify-content-center">
-                                <span class="me-2 auksiyon_text_style">Auksion </span> başlasın
+<!--                            <div class="d-flex me-2 justify-content-center"> Elan təstiqləndiyi andan </div>-->
+                            <div class="d-flex m-auto fs-3">
+                                <span class="me-2 auksiyon_text_style"> Auksion </span> indi başlasın
                             </div>
                         </div>
                     </div>

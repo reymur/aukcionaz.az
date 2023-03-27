@@ -19,6 +19,9 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        <main-aukcion-page :users="{{ $users }}"></main-aukcion-page>
+        <main-aukcion-page
+            :users="{{ $users }}"
+            :product="{{ $product }}"
+        ></main-aukcion-page>
     </div>
 @endsection

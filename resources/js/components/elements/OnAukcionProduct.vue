@@ -6,13 +6,17 @@
                     <div class="col-1 me-2">
                         <photo-provider>
                             <photo-consumer v-for="(src, id) in imgList" :intro="src" :key="src" :id="id" :src="src">
-                                <img :src="src" class="view-box rounded-circle product__avatar">
+                                <img v-if="id === 0" :src="src" class="view-box rounded-circle product__avatar">
                             </photo-consumer>
                         </photo-provider>
                     </div>
 
-                    <div class="col-8 d-flex align-items-center">
-                        Range rover voge / 2005 / 12000 km
+                    <div v-if="product" class="col-8 d-flex align-items-center">
+
+                        <component
+                            :is="generateComponentName"
+                            :product="product"
+                        ></component>
                     </div>
                 </div>
             </div>
@@ -41,16 +45,15 @@
 <script>
 
 import {PhotoProvider, PhotoConsumer, PhotoSlider } from 'vue3-photo-preview';
+import { defineComponent, defineAsyncComponent } from "vue";
 
 export default {
     name: "OnAukcion",
+    props:['product'],
     data() {
-        return { 
-            imgList: [
-                'https://i.ytimg.com/vi/LfO2U9gw2iE/hqdefault.jpg',
-                'https://lockandkeypros.com/wp-content/uploads/2021/11/Challenger-PNG-Photo-500x270-1.png',
-                'https://cdn.jdpower.com/ChromeImageGallery/Expanded/White/640/2014DOD004b_640/2014DOD004b_640_05.jpg',
-            ],
+        return {
+            imgList: [],
+            image_path: 'https://auksiyonaz.test/storage/images/products/'
         }
     },
     components: {
@@ -59,9 +62,35 @@ export default {
         PhotoSlider
     },
     methods: {
+        getImages(){
+            if( this.product && this.product.images ) {
+                this.product.images.forEach( img => {
+                    let image = this.image_path+img.image;
+                    this.imgList.push(image)
+                });
 
+                this.showOneImage;
+            }
+        }
     },
     computed: {
+        generateComponentName(){
+            if( this.product && this.product.sub_category && this.product.sub_category.slug ) {
+                let name = this.product.sub_category.slug;
+                let new_name = '';
+                let name_arr = name.split('-');
+
+
+                name_arr.forEach( str => {
+                    if( str[0] && str.substring(1) )
+                        new_name += str[0].toUpperCase() + str.substring(1);
+                })
+
+                return defineAsyncComponent(() =>
+                    import( '../auksiyon/elements/'+ new_name+'Element.vue' )
+                );
+            }
+        },
         showOneImage() {
             let el = document.getElementsByClassName('PhotoConsumer');
 
@@ -79,11 +108,17 @@ export default {
         }
     },
     mounted () {
-        this.showOneImage;
+        this.getImages();
+        // this.showOneImage;
 
         // console.log('PhotoConsumer - ',
         //     document.getElementsByClassName('PhotoConsumer')
         // );
+
+        console.log('PhotoConsumer - ',
+            // this.product.sub_category.slug
+            // this.generateComponentName(this.product.sub_category.slug)
+        );
     }
 }
 </script>
@@ -103,5 +138,6 @@ export default {
 }
 .product__avatar {
     width: 60px;
+    height: 60px;
 }
 </style>

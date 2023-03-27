@@ -3,7 +3,9 @@
         <div class="col-12">
             <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 m-auto">
                 <div class="aukcion__product-div">
-                    <on-aukcion-product></on-aukcion-product>
+                    <on-aukcion-product
+                        :product="product"
+                    ></on-aukcion-product>
                 </div>
 
                 <!--Real time actions table-->
@@ -90,66 +92,66 @@
                     </ul>
                     <ul class="list-group" v-else>
                         <li class="moving-item" v-for="user in aukcionUsers" :id="user.id" v-bind:style="{ top: (user.position * 62) + 'px'}">
-                                <div class="col-12 d-flex">
-                                    <div class="col-9">
-                                        <div class="col-12 d-flex aukcion__text-info">
-                                            <div class="col-10 aukcion__text-name">{{ user.user.name ?? '' }} </div>
-                                        </div>
-
-                                        <div class="col-12 justify-content-center d-flex user__sub-titles">
-                                            <div class="col-3"
-                                                 type="button" data-bs-toggle="modal" :data-bs-target="'#auksionUserReitionInfo'+user.id">
-
-                                                Reytinq
-                                                <span class="badge badge-success bg-primary">
-                                            5
-                                        </span>
-                                                <auksion-user-reiting-modal :id="user.id"></auksion-user-reiting-modal>
-                                            </div>
-
-                                            <div class="col-4"
-                                                 type="button" data-bs-toggle="modal" :data-bs-target="'#auksionUserInfoModal'+user.id">
-
-                                                Auksiyon
-                                                <span class="badge badge-success bg-primary">
-                                    9
-                                    <span class="">/</span>
-                                    4
-                                </span>
-
-                                                <auksion-user-info-modal :id="user.id"></auksion-user-info-modal>
-                                            </div>
-
-                                            <div class="col-3"
-                                                 type="button" data-bs-toggle="modal" :data-bs-target="'#auksionUserOffersModal'+user.id">
-
-                                                Təkliflər
-                                                <span class="badge badge-danger bg-danger">
-                                    1
-                                </span>
-
-                                                <auksion-user-offers-modal :id="user.id"></auksion-user-offers-modal>
-                                            </div>
-                                        </div>
+                            <div class="col-12 d-flex">
+                                <div class="col-9">
+                                    <div class="col-12 d-flex aukcion__text-info">
+                                        <div class="col-10 aukcion__text-name">{{ user.user.name ?? '' }} </div>
                                     </div>
 
-                                    <!--Price-->
-                                    <div class="col-3 d-flex">
-                                        <div class="col-8 text-center aukcion__price-text">
-                                    <span class=" aukcion__price-text-style">
-                                         {{ user.price }}
-                                    </span>
+                                    <div class="col-12 justify-content-center d-flex user__sub-titles">
+                                        <div class="col-3"
+                                             type="button" data-bs-toggle="modal" :data-bs-target="'#auksionUserReitionInfo'+user.id">
+
+                                            Reytinq
+                                            <span class="badge badge-success bg-primary">
+                                                5
+                                            </span>
+
+                                            <auksion-user-reiting-modal :id="user.id"></auksion-user-reiting-modal>
                                         </div>
 
-                                        <div class="col-4 aukcion__user-delete-div" type="button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                            </svg>
+                                        <div class="col-4"
+                                            type="button" data-bs-toggle="modal" :data-bs-target="'#auksionUserInfoModal'+user.id">
+
+                                            Auksiyon
+                                            <span class="badge badge-success bg-primary">
+                                                9
+                                                <span class="">/</span>
+                                                4
+                                            </span>
+
+                                            <auksion-user-info-modal :id="user.id"></auksion-user-info-modal>
+                                        </div>
+
+                                        <div class="col-3"
+                                             type="button" data-bs-toggle="modal" :data-bs-target="'#auksionUserOffersModal'+user.id">
+
+                                            Təkliflər
+                                            <span class="badge badge-danger bg-danger">
+                                                1
+                                            </span>
+
+                                            <auksion-user-offers-modal :id="user.id"></auksion-user-offers-modal>
                                         </div>
                                     </div>
                                 </div>
 
-                            </li>
+                                <!--Price-->
+                                <div class="col-3 d-flex">
+                                    <div class="col-8 text-center aukcion__price-text">
+                                <span class=" aukcion__price-text-style">
+                                     {{ user.price }}
+                                </span>
+                                    </div>
+
+                                    <div class="col-4 aukcion__user-delete-div" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
 
                 </div>
@@ -162,9 +164,9 @@
 <script>
 
 export default {
-    props:['users'],
+    props:['users','product'],
     components: {
-       
+
     },
     data() {
         return {

@@ -1,8 +1,12 @@
 <template>
     <div class="">
+        <!-- LIN TO ACTIVE AUKSIYON -->
+        <a v-if="auksiyon_status" href="" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
+            <span class="aukcion__add_button_text"> Auksion-a keçid </span>
+        </a>
 
         <!-- Button trigger modal -->
-        <button @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button v-if="!auksiyon_status" @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <span class="aukcion__add_button_text"> Auksion əlavə et </span>
         </button>
 
@@ -47,7 +51,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button @click="sendToAnnounce" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
+                        <button @click="sendToAuksiyon" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
                     </div>
                 </div>
             </div>
@@ -66,8 +70,11 @@ export default {
     data () {
         return {
             // bodyColor: null,
+            auksiyon_status: false,
             now: true,
             later: false,
+            current_time_aukcion_no: true,
+            current_time_aukcion_yes: false,
             collapse: 'collapse',
             show_later_aukcion: true,
             current_time_show: '',
@@ -78,25 +85,130 @@ export default {
             close_current_time_aukcion: false,
         }
     },
-    methods: {
-        sendToAnnounce() {
-            let start = window.location.pathname.lastIndexOf('/');
-            let url = window.location.pathname;
-            let product_id = url.substring( start + 1 );
+    computed:{
+        checkAuksiyon() {
+            let product_id = this.getProductID();
 
-            if( this.now === true && this.later === false ) {
+            if( product_id ) {
                 axios({
                     method:'POST',
-                    url: '/add-on-auksiyon',
+                    url: '/check-auksiyon',
                     data: { product_id: Number(product_id) }
                 })
                     .then( res => {
-                        console.log( 'res auksiyon - ', res.data )
+                        if( res && res.data && res.data.auksiyon ) {
+                            if( res.data.auksiyon === 'ok' ) this.auksiyon_status = true;
+                            else if( res.data.auksiyon === 'no' ) this.auksiyon_status = false;
+                        }
+                        console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
                     })
                     .catch( err => {
-                        console.log( 'err auksiyon - ', err.response.data )
+                        console.log( 'err is on auksiyon1111 - ', err.response.data )
                     });
             }
+        },
+    },
+    methods: {
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
+        },
+        sendToAuksiyon() {
+            let product_id = this.getProductID();
+
+            if( this.now && !this.later && this.current_time_aukcion_no && !this.current_time_aukcion_yes ) {
+                this.addOnlyNowAuksiyon(product_id);
+
+            }
+        },
+        addOnlyNowAuksiyon(product_id) {
+            axios({
+                method:'POST',
+                url: '/add-only-now-auksiyon',
+                data: { product_id: Number(product_id) }
+            })
+                .then( res => {
+                    if( res && res.data && res.data.auksiyon ) {
+                        if( res.data.auksiyon.status === 1 ) {
+                            this.checkAuksiyon();
+                        }
+                        console.log( 'res auksiyon - ', res.data.auksiyon.status )
+                    }
+                })
+                .catch( err => {
+                    console.log( 'err auksiyon - ', err.response.data )
+                });
+        },
+        // checkAuksiyon() {
+        //     let product_id = this.getProductID();
+        //
+        //     if( product_id ) {
+        //         axios({
+        //             method:'POST',
+        //             url: '/check-auksiyon',
+        //             data: { product_id: Number(product_id) }
+        //         })
+        //             .then( res => {
+        //                 if( res && res.data && res.data.auksiyon ) {
+        //                     if( res.data.auksiyon === 'ok' ) this.auksiyon_status = true;
+        //                     else if( res.data.auksiyon === 'no' ) this.auksiyon_status = false;
+        //                 }
+        //                 console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
+        //             })
+        //             .catch( err => {
+        //                 console.log( 'err is on auksiyon1111 - ', err.response.data )
+        //             });
+        //     }
+        // },
+        newAukcion() {
+            let collapse = document.getElementById('collapsePicker');
+            let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
+
+            if( collapse.style.maxHeight ) {
+                collapse.style.maxHeight = null;
+                collapse.style.overflow = 'hidden';
+            }
+
+            if( ! collapse.style.maxHeight ) {
+                setTimeout( () => {
+                    runCurrentTimeAukcion.style.maxHeight = runCurrentTimeAukcion.scrollHeight+'px'
+                }, 300)
+            }
+
+            this.now = true;
+            this.later = false;
+            this.current_time_aukcion_no = true;
+            this.current_time_aukcion_yes = false;
+            // this.changeVarsValue( true, false, true, false);
+        },
+        changeVarsValue( n, l, c_t_a_no, c_t_a_yes){
+            this.now = n;
+            this.later = l;
+            this.current_time_aukcion_no = c_t_a_no;
+            this.current_time_aukcion_yes = c_t_a_yes;
+        },
+        laterAukcion() {
+            this.run_current_time_aukcion = false;
+            let collapse_id = document.getElementById('collapsePicker');
+            let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
+
+            if( ! collapse_id.style.maxHeight ) {
+                runCurrentTimeAukcion.style.maxHeight = '0';
+
+                if( runCurrentTimeAukcion.style.maxHeight === '0px' ) {
+                    setTimeout( () => {
+                        collapse_id.style.maxHeight = collapse_id.scrollHeight+'px';
+                    }, 300)
+                }
+
+                setTimeout( () => {
+                    collapse_id.style.overflow = 'unset';
+                }, 500);
+            }
+
+            this.later = true;
+            this.now = false;
         },
         getCurrentTime( clear=false ) {
             let time_i = setInterval( () => {
@@ -161,46 +273,6 @@ export default {
                 }, 100);
             }
         },
-        newAukcion() {
-            let collapse = document.getElementById('collapsePicker');
-            let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
-
-            if( collapse.style.maxHeight ) {
-                collapse.style.maxHeight = null;
-                collapse.style.overflow = 'hidden';
-            }
-
-            if( ! collapse.style.maxHeight ) {
-                setTimeout( () => {
-                    runCurrentTimeAukcion.style.maxHeight = runCurrentTimeAukcion.scrollHeight+'px'
-                }, 300)
-            }
-
-            this.now = true;
-            this.later = false;
-        },
-        laterAukcion() {
-            this.run_current_time_aukcion = false;
-            let collapse_id = document.getElementById('collapsePicker');
-            let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
-
-            if( ! collapse_id.style.maxHeight ) {
-                runCurrentTimeAukcion.style.maxHeight = '0';
-
-                if( runCurrentTimeAukcion.style.maxHeight === '0px' ) {
-                    setTimeout( () => {
-                        collapse_id.style.maxHeight = collapse_id.scrollHeight+'px';
-                    }, 300)
-                }
-
-                setTimeout( () => {
-                    collapse_id.style.overflow = 'unset';
-                }, 500);
-            }
-
-            this.later = true;
-            this.now = false;
-        },
         hideDateTimePickers() {
             let collapse_id = document.getElementById('collapsePicker');
             let runCurrentTimeAukcion = document.getElementById('runCurrentTimeAukcion');
@@ -236,6 +308,7 @@ export default {
     mounted() {
         this.ifProductNoPublished();
         this.getCurrentTime(false);
+        this.checkAuksiyon;
 
         console.log('URL INDEXOF = ', window.location.pathname )
     }
