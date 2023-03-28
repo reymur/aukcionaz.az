@@ -51,7 +51,10 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
     Route::post('/get-auksion-users',  'getResponseAukcionGamers');
 
     Route::post('/add-only-now-auksiyon', 'addOnlyNowAuksiyon');
+    Route::post('/add-only-now-auksiyon-with-timer', 'addOnlyNowAuksiyonWithTimer');
     Route::post('/check-auksiyon', 'checkAuksiyon');
+
+    Route::post('/auksiyon/timer', 'auksiyonTimer');
 });
 
 // PRODUCT SHOW

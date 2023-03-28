@@ -30,7 +30,10 @@
                         <!--  RUN AUKCION NEW TIME COLLAPSE START  -->
                         <div class="" id="runNowTimeAukcionCollapse">
                             <div class="card card-body">
-                                <on-time-aukcion></on-time-aukcion>
+                                <on-time-aukcion
+                                    @sendHorusToCurrentTimeAuksiyon="getHorusFromCurrentTimeAuksiyon"
+                                    @sendMinuteToCurrentTimeAuksiyon="getMinuteFromCurrentTimeAuksiyon"
+                                ></on-time-aukcion>
                             </div>
                         </div>
                         <!-- RUN AUKCION NEW TIME COLLAPSE END -->
@@ -47,6 +50,8 @@ export default {
     props:['close_current_time_aukcion'],
     data() {
         return {
+            horus: null,
+            minute: null,
             reset_al_time: false,
         }
     },
@@ -59,6 +64,16 @@ export default {
         }
     },
     methods: {
+        getHorusFromCurrentTimeAuksiyon(data) {
+            if( data && data.horus ) {
+                this.$emit('sendHorusToAddOnauksiyon', { horus: data.horus })
+            }
+        },
+        getMinuteFromCurrentTimeAuksiyon(data) {
+            if( data && data.minute ) {
+                this.$emit('sendMinuteToAddOnauksiyon', { minute: data.minute })
+            }
+        },
         changeValueResetAlTime(data) {
             if( data ) {
                 this.reset_al_time = false;
@@ -86,7 +101,7 @@ export default {
                     runNowTimeAukcionCollapse.style.marginTop = '0';
                 }, 100);
                 // alert(1111)
-                this.$emit('nowAuksiyonWithTimerYes', {status: false})
+                this.$emit('nowAuksiyonWithTimerYesOrNo', {status: false})
             }
         },
         runNowTimeAukcion() {
@@ -117,7 +132,7 @@ export default {
                 }, 3000 );
                 // alert(222)
 
-                this.$emit('nowAuksiyonWithTimerYes', {status: true})
+                this.$emit('nowAuksiyonWithTimerYesOrNo', {status: true})
             }
         },
     }

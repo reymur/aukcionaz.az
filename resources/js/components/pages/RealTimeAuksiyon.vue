@@ -6,6 +6,10 @@
                     <on-aukcion-product
                         :product="product"
                     ></on-aukcion-product>
+
+                    <div class="d-flex time_left">
+                        <div class="auksiyon_horus"></div>
+                    </div>
                 </div>
 
                 <!--Real time actions table-->
@@ -164,12 +168,13 @@
 <script>
 
 export default {
-    props:['users','product'],
+    props:['users', 'product', 'auksiyon'],
     components: {
 
     },
     data() {
         return {
+            auksiyon_time: null,
             model2: false,
             price: '',
             reverse: 1,
@@ -180,8 +185,13 @@ export default {
         }
     },
     watch: {
+        auksiyon_time() {
+            // let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
+            // console.log('Relarion SSSSSS = ', 111111)
+            // if( auksiyon_horus && auksiyon_horus[0] )
+            //     auksiyon_horus[0].innerHTML = this.millisecondsToTime( this.auksiyon_time );
+        },
         users: val => {
-
             console.log("watch === ", this.users)
         },
         handleClick () {
@@ -212,22 +222,104 @@ export default {
                 item.position = index;
             });
         },
+        millisecondsToTime(timer) {
+            let milliseconds = Math.floor((timer % 1000) / 100),
+                seconds      = Math.floor((timer / 1000) % 60),
+                minutes      = Math.floor((timer / (1000 * 60)) % 60),
+                hours        = Math.floor((timer / (1000 * 60 * 60)) % 24);
+
+            hours = (hours < 10)     ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            // return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+            return hours + ":" + minutes + ":" + seconds;
+
+            // console.log(msToTime(300000))
+        },
+        getAuksiyonUsers() {
+            axios.post('/get-auksion-users')
+                .then(res => {
+                    this.aukcionUsers = res.data.users
+                    console.log('RELATIONS222 = ', res.data.users )
+                    this.upPrice();
+                }).catch(err => {
+                console.log("ERROR2 === ", err)
+            });
+        },
+        auksiyonTimer() {
+            let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
+            let timer     = this.getTimer(this.auksiyon);
+            let current   = this.getCurrentTime();
+            let date =  Number(timer);
+
+            document.addEventListener('DOMContentLoaded', () => {
+                axios({
+                    method:"POST",
+                    url:"/auksiyon/timer",
+                    data: {
+                        time: date,
+                        current_start: this.getCurrentTime()
+                    }
+                }).then( res => {
+                    if( res && res.data && res.data.time ) {
+                        date = date - res.data.time;
+                        console.log("started res -- === ", res.data.time )
+                    }
+                }).catch( err => {
+                    console.log("started err -- === ", err.response.data )
+                });
+            })
+
+            setInterval( () => {
+                if( auksiyon_horus && auksiyon_horus[0] )
+                    auksiyon_horus[0].innerHTML = this.millisecondsToTime( date )
+                date -= 1000;
+            }, 1000 );
+        },
+        getTimer(auksiyon_timer) {
+            if( auksiyon_timer && auksiyon_timer.timer ) {
+                let horus = null;
+                let minute = null;
+                let timer_arr = auksiyon_timer.timer.split('_');
+
+                if( timer_arr[0] && timer_arr[1] ) {
+                    horus  = Number(timer_arr[0]) * 3600000;
+                    minute = Number(timer_arr[1]) * 60000;
+                }
+
+                return horus + minute;
+            }
+        },
+        getAuksiyonStarted(auksiyon_started) {
+            let time = null;
+            let h    = null;
+            let m    = null;
+            let s    = null;
+            let arr  = auksiyon_started.split(' ');
+
+            if( arr[1] )  time = arr[1].split(':');
+            if( time[0] ) h = Number( time[0] ) * 3600000;
+            if( time[1] ) m = Number( time[1])  * 60000;
+            if( time[2] ) s = Number( time[2])  * 1000;
+
+            return (h + m + s);
+        },
+        getCurrentTime() {
+            let date    = new Date();
+            let h       = Number( date.getHours() ) * 3600000;
+            let m       = Number( date.getMinutes() )  * 60000;
+            let s       = Number( date.getSeconds() )  * 1000;
+
+            return (h + m + s);
+        }
     },
     computed: {
 
     },
     mounted() {
-        axios.post('/get-auksion-users')
-            .then(res => {
-                this.aukcionUsers = res.data.users
-                console.log('RELATIONS222 = ', res.data.users )
-                this.upPrice();
-            }).catch(err => {
-            console.log("ERROR2 === ", err)
-        })
-
-        console.log("UUUUUUU === ", this.users )
-        // console.log('ELEM = ', document.getElementsByTagName('li') )
+        this.getAuksiyonUsers();
+        this.auksiyonTimer();
     }
 }
 </script>

@@ -18,6 +18,7 @@ class CreateAuksiyonsTable extends Migration
             $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->bigInteger('product_id')->nullable();
             $table->string('started')->nullable();
+            $table->string('timer')->nullable();
             $table->string('finished')->nullable();
             $table->string('later_time')->nullable();
             $table->tinyInteger('status')->nullable();

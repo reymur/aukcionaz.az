@@ -86,9 +86,11 @@ export default {
     methods:{
         horusFunc() {
             this.setInnerText( this.horus, 'saat', 'horus-section');
+            this.$emit('sendHorusToCurrentTimeAuksiyon', {horus: this.horus})
         },
         minuteFunc() {
             this.setInnerText( this.minute, 'dəyqə', 'minute-section');
+            this.$emit('sendMinuteToCurrentTimeAuksiyon', {minute: this.minute})
         },
         timeReset() {
             this.horus = 'Saat';

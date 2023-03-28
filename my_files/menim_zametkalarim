@@ -1,0 +1,44 @@
+How to convert time in milliseconds to hours:
+
+    function msToTime(duration) {
+      var milliseconds = Math.floor((duration % 1000) / 100),
+        seconds = Math.floor((duration / 1000) % 60),
+        minutes = Math.floor((duration / (1000 * 60)) % 60),
+        hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+      hours = (hours < 10) ? "0" + hours : hours;
+      minutes = (minutes < 10) ? "0" + minutes : minutes;
+      seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+      return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+    }
+    console.log(msToTime(300000))
+----------------------------------------------------------------------------------------------------
+
+Vue- dynamic import vue components
+
+    <template>
+        <component :is="comp"></component>
+    </template>
+
+    <script>
+    //Vue 3 is having a special function to define these async functions
+    import {defineAsyncComponent} from "vue";
+
+    export default {
+     name: "DynamicComponent",
+     //I am passing the name of the Component as a prop
+     props: {
+         componentName:{
+             type: String,
+             required: true
+         }
+     },
+     computed: {
+      comp () {
+          return defineAsyncComponent(() => import(`@/components/${this.componentName}.vue`))
+      }
+    }
+    }
+    </script>
+----------------------------------------------------------------------------------------------------

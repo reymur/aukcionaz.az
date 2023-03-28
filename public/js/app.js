@@ -39744,6 +39744,8 @@ __webpack_require__.r(__webpack_exports__);
       now_auksiyon_current_with_timer_yes: false,
       now_auksiyon_later_with_timer_no: true,
       now_auksiyon_later_with_timer_yes: false,
+      horus: null,
+      minute: null,
       collapse: 'collapse',
       show_later_aukcion: true,
       current_time_show: '',
@@ -39771,7 +39773,12 @@ __webpack_require__.r(__webpack_exports__);
           }
         }).then(function (res) {
           if (res && res.data && res.data.auksiyon) {
-            if (res.data.auksiyon === 'ok') _this.auksiyon_status = true;else if (res.data.auksiyon === 'no') _this.auksiyon_status = false;
+            if (res.data.auksiyon === 'ok') {
+              _this.auksiyon_status = true;
+              window.location.href = '/realtime/auksiyon/' + product_id;
+            } else if (res.data.auksiyon === 'no') {
+              _this.auksiyon_status = false;
+            }
             console.log('res is on auksiyon1111 - ', res.data.auksiyon);
           }
         })["catch"](function (err) {
@@ -39792,12 +39799,13 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         if (res && res.data && res.data.auksiyon) {
           if (res.data.auksiyon.status === 1) {
-            _this2.checkAuksiyon();
+            _this2.checkAuksiyon;
+            console.log('res auksiyon 1- ', res.data.auksiyon.status);
           }
-          console.log('res auksiyon - ', res.data.auksiyon.status);
+          console.log('res auksiyon 2 - ', res);
         }
       })["catch"](function (err) {
-        console.log('err auksiyon - ', err.response.data);
+        console.log('err auksiyon - ', err);
       });
     },
     addOnlyNowAuksiyonWithTimer: function addOnlyNowAuksiyonWithTimer(product_id) {
@@ -39806,30 +39814,52 @@ __webpack_require__.r(__webpack_exports__);
         method: 'POST',
         url: '/add-only-now-auksiyon-with-timer',
         data: {
-          product_id: Number(product_id)
+          product_id: Number(product_id),
+          current_auksiyon_with_time_horus: this.horus,
+          current_auksiyon_with_time_minute: this.minute
         }
       }).then(function (res) {
         if (res && res.data && res.data.auksiyon) {
           if (res.data.auksiyon.status === 1) {
-            _this3.checkAuksiyon();
+            _this3.checkAuksiyon;
           }
-          console.log('res auksiyon - ', res.data.auksiyon.status);
+          console.log('res auksiyon WithTimer - ', res.data.auksiyon.status);
         }
       })["catch"](function (err) {
-        console.log('err auksiyon - ', err.response.data);
+        console.log('err auksiyon WithTimer - ', err.response.data);
       });
     },
-    sendToAuksiyon: function sendToAuksiyon() {
+    sendProductOnAuksiyon: function sendProductOnAuksiyon() {
       var product_id = this.product_id;
-      if (this.now && !this.later && this.now_auksiyon_current_with_timer_no && !this.now_auksiyon_current_with_timer_no && this.now_auksiyon_later_with_timer_no && !this.now_auksiyon_later_with_timer_yes) {
+      if (this.now && !this.later && this.now_auksiyon_current_with_timer_no && !this.now_auksiyon_current_with_timer_yes && this.now_auksiyon_later_with_timer_no && !this.now_auksiyon_later_with_timer_yes) {
         this.addOnlyNowAuksiyon(product_id);
       }
       if (this.now && !this.later && !this.now_auksiyon_current_with_timer_no && this.now_auksiyon_current_with_timer_yes && this.now_auksiyon_later_with_timer_no && !this.now_auksiyon_later_with_timer_yes) {
+        console.log('addOnlyNowAuksiyonWithTimer = ', 'yes');
         this.addOnlyNowAuksiyonWithTimer(product_id);
       }
+      // alert('TIMER')
     },
-    getNowAuksiyonWithTimerYes: function getNowAuksiyonWithTimerYes(data) {
-      if (data && data.status) this.now_auksiyon_with_timer_yes = data.status;else if (data && !data.status) this.now_auksiyon_with_timer_yes = data.status;
+    getNowAuksiyonWithTimerYesOrNo: function getNowAuksiyonWithTimerYesOrNo(data) {
+      if (data && data.status) {
+        this.now_auksiyon_current_with_timer_yes = data.status;
+        this.now_auksiyon_current_with_timer_no = false;
+        console.log('now_auksiyon_current_with_timer_yes = ', this.now_auksiyon_current_with_timer_yes);
+      } else if (data && !data.status) {
+        this.now_auksiyon_current_with_timer_yes = data.status;
+        this.now_auksiyon_current_with_timer_no = true;
+        this.horus = false;
+        this.minute = false;
+        // alert('horus - '+this.horus +' / minute - '+ this.minute)
+      }
+    },
+    getHorusFromACurrentTimeAuksiyon: function getHorusFromACurrentTimeAuksiyon(data) {
+      if (data && data.horus) this.horus = data.horus;
+      // alert('horus - '+this.horus)
+    },
+    getMinuteFromACurrentTimeAuksiyon: function getMinuteFromACurrentTimeAuksiyon(data) {
+      if (data && data.minute) this.minute = data.minute;
+      // alert('minute - '+this.minute)
     },
     newAukcion: function newAukcion() {
       var collapse = document.getElementById('collapsePicker');
@@ -40155,6 +40185,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['close_current_time_aukcion'],
   data: function data() {
     return {
+      horus: null,
+      minute: null,
       reset_al_time: false
     };
   },
@@ -40166,6 +40198,20 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    getHorusFromCurrentTimeAuksiyon: function getHorusFromCurrentTimeAuksiyon(data) {
+      if (data && data.horus) {
+        this.$emit('sendHorusToAddOnauksiyon', {
+          horus: data.horus
+        });
+      }
+    },
+    getMinuteFromCurrentTimeAuksiyon: function getMinuteFromCurrentTimeAuksiyon(data) {
+      if (data && data.minute) {
+        this.$emit('sendMinuteToAddOnauksiyon', {
+          minute: data.minute
+        });
+      }
+    },
     changeValueResetAlTime: function changeValueResetAlTime(data) {
       if (data) {
         this.reset_al_time = false;
@@ -40190,7 +40236,7 @@ __webpack_require__.r(__webpack_exports__);
           runNowTimeAukcionCollapse.style.marginTop = '0';
         }, 100);
         // alert(1111)
-        this.$emit('nowAuksiyonWithTimerYes', {
+        this.$emit('nowAuksiyonWithTimerYesOrNo', {
           status: false
         });
       }
@@ -40220,7 +40266,7 @@ __webpack_require__.r(__webpack_exports__);
         }, 3000);
         // alert(222)
 
-        this.$emit('nowAuksiyonWithTimerYes', {
+        this.$emit('nowAuksiyonWithTimerYesOrNo', {
           status: true
         });
       }
@@ -40725,9 +40771,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     horusFunc: function horusFunc() {
       this.setInnerText(this.horus, 'saat', 'horus-section');
+      this.$emit('sendHorusToCurrentTimeAuksiyon', {
+        horus: this.horus
+      });
     },
     minuteFunc: function minuteFunc() {
       this.setInnerText(this.minute, 'dəyqə', 'minute-section');
+      this.$emit('sendMinuteToCurrentTimeAuksiyon', {
+        minute: this.minute
+      });
     },
     timeReset: function timeReset() {
       this.horus = 'Saat';
@@ -41454,10 +41506,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var _this = undefined;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['users', 'product'],
+  props: ['users', 'product', 'auksiyon'],
   components: {},
   data: function data() {
     return {
+      auksiyon_time: null,
       model2: false,
       price: '',
       reverse: 1,
@@ -41468,6 +41521,12 @@ var _this = undefined;
     };
   },
   watch: {
+    auksiyon_time: function auksiyon_time() {
+      // let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
+      // console.log('Relarion SSSSSS = ', 111111)
+      // if( auksiyon_horus && auksiyon_horus[0] )
+      //     auksiyon_horus[0].innerHTML = this.millisecondsToTime( this.auksiyon_time );
+    },
     users: function users(val) {
       console.log("watch === ", _this.users);
     },
@@ -41498,20 +41557,95 @@ var _this = undefined;
       newItems.forEach(function (item, index) {
         item.position = index;
       });
+    },
+    millisecondsToTime: function millisecondsToTime(timer) {
+      var milliseconds = Math.floor(timer % 1000 / 100),
+        seconds = Math.floor(timer / 1000 % 60),
+        minutes = Math.floor(timer / (1000 * 60) % 60),
+        hours = Math.floor(timer / (1000 * 60 * 60) % 24);
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      // return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+      return hours + ":" + minutes + ":" + seconds;
+
+      // console.log(msToTime(300000))
+    },
+    getAuksiyonUsers: function getAuksiyonUsers() {
+      var _this3 = this;
+      axios.post('/get-auksion-users').then(function (res) {
+        _this3.aukcionUsers = res.data.users;
+        console.log('RELATIONS222 = ', res.data.users);
+        _this3.upPrice();
+      })["catch"](function (err) {
+        console.log("ERROR2 === ", err);
+      });
+    },
+    auksiyonTimer: function auksiyonTimer() {
+      var _this4 = this;
+      var auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
+      var timer = this.getTimer(this.auksiyon);
+      var current = this.getCurrentTime();
+      var date = Number(timer);
+      document.addEventListener('DOMContentLoaded', function () {
+        axios({
+          method: "POST",
+          url: "/auksiyon/timer",
+          data: {
+            time: date,
+            current_start: _this4.getCurrentTime()
+          }
+        }).then(function (res) {
+          if (res && res.data && res.data.time) {
+            date = date - res.data.time;
+            console.log("started res -- === ", res.data.time);
+          }
+        })["catch"](function (err) {
+          console.log("started err -- === ", err.response.data);
+        });
+      });
+      setInterval(function () {
+        if (auksiyon_horus && auksiyon_horus[0]) auksiyon_horus[0].innerHTML = _this4.millisecondsToTime(date);
+        date -= 1000;
+      }, 1000);
+    },
+    getTimer: function getTimer(auksiyon_timer) {
+      if (auksiyon_timer && auksiyon_timer.timer) {
+        var horus = null;
+        var minute = null;
+        var timer_arr = auksiyon_timer.timer.split('_');
+        if (timer_arr[0] && timer_arr[1]) {
+          horus = Number(timer_arr[0]) * 3600000;
+          minute = Number(timer_arr[1]) * 60000;
+        }
+        return horus + minute;
+      }
+    },
+    getAuksiyonStarted: function getAuksiyonStarted(auksiyon_started) {
+      var time = null;
+      var h = null;
+      var m = null;
+      var s = null;
+      var arr = auksiyon_started.split(' ');
+      if (arr[1]) time = arr[1].split(':');
+      if (time[0]) h = Number(time[0]) * 3600000;
+      if (time[1]) m = Number(time[1]) * 60000;
+      if (time[2]) s = Number(time[2]) * 1000;
+      return h + m + s;
+    },
+    getCurrentTime: function getCurrentTime() {
+      var date = new Date();
+      var h = Number(date.getHours()) * 3600000;
+      var m = Number(date.getMinutes()) * 60000;
+      var s = Number(date.getSeconds()) * 1000;
+      return h + m + s;
     }
   },
   computed: {},
   mounted: function mounted() {
-    var _this3 = this;
-    axios.post('/get-auksion-users').then(function (res) {
-      _this3.aukcionUsers = res.data.users;
-      console.log('RELATIONS222 = ', res.data.users);
-      _this3.upPrice();
-    })["catch"](function (err) {
-      console.log("ERROR2 === ", err);
-    });
-    console.log("UUUUUUU === ", this.users);
-    // console.log('ELEM = ', document.getElementsByTagName('li') )
+    this.getAuksiyonUsers();
+    this.auksiyonTimer();
   }
 });
 
@@ -42251,12 +42385,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "for": "later"
   }, "Sonra")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_current_time_aukcion, {
     close_current_time_aukcion: $data.close_current_time_aukcion,
-    onNowAuksiyonWithTimerYes: $options.getNowAuksiyonWithTimerYes
-  }, null, 8 /* PROPS */, ["close_current_time_aukcion", "onNowAuksiyonWithTimerYes"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION END "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_later_time_aukcion, {
+    onNowAuksiyonWithTimerYesOrNo: $options.getNowAuksiyonWithTimerYesOrNo,
+    onSendHorusToAddOnauksiyon: $options.getHorusFromACurrentTimeAuksiyon,
+    onSendMinuteToAddOnauksiyon: $options.getMinuteFromACurrentTimeAuksiyon
+  }, null, 8 /* PROPS */, ["close_current_time_aukcion", "onNowAuksiyonWithTimerYesOrNo", "onSendHorusToAddOnauksiyon", "onSendMinuteToAddOnauksiyon"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" CURRENT TIME AUKCION END "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE START "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_later_time_aukcion, {
     close_later_time_aukcion: $data.close_later_time_aukcion
   }, null, 8 /* PROPS */, ["close_later_time_aukcion"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LATER TIME DATA AND TIME PICKERS COLLAPSE END ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[4] || (_cache[4] = function () {
-      return $options.sendToAuksiyon && $options.sendToAuksiyon.apply($options, arguments);
+      return $options.sendProductOnAuksiyon && $options.sendProductOnAuksiyon.apply($options, arguments);
     }),
     type: "button",
     "class": "btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"
@@ -42618,7 +42754,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "class": "col btn btn-outline-success rounded-0 px-4 w-25",
     "for": "yes-time"
-  }, "Bəli")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  RUN AUKCION NEW TIME COLLAPSE START  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_time_aukcion)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" RUN AUKCION NEW TIME COLLAPSE END ")])])])])]);
+  }, "Bəli")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  RUN AUKCION NEW TIME COLLAPSE START  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_time_aukcion, {
+    onSendHorusToCurrentTimeAuksiyon: $options.getHorusFromCurrentTimeAuksiyon,
+    onSendMinuteToCurrentTimeAuksiyon: $options.getMinuteFromCurrentTimeAuksiyon
+  }, null, 8 /* PROPS */, ["onSendHorusToCurrentTimeAuksiyon", "onSendMinuteToCurrentTimeAuksiyon"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" RUN AUKCION NEW TIME COLLAPSE END ")])])])])]);
 }
 
 /***/ }),
@@ -44061,72 +44200,79 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "aukcion__product-div"
 };
-var _hoisted_5 = {
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "d-flex time_left"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "auksiyon_horus"
+  })], -1 /* HOISTED */);
+});
+var _hoisted_6 = {
   "class": "card"
 };
-var _hoisted_6 = {
+var _hoisted_7 = {
   "class": "card-header bg-transparent p-0"
 };
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "card-body py-3"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
     "class": "card-title m-0"
   }, "Ən yüksək məbləğ:")], -1 /* HOISTED */);
 });
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": "card-footer col-12 d-flex"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   key: 0,
   "class": "list-group"
 };
-var _hoisted_10 = ["id"];
-var _hoisted_11 = {
+var _hoisted_11 = ["id"];
+var _hoisted_12 = {
   "class": "col-12 d-flex"
 };
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "col-9"
 };
-var _hoisted_13 = {
+var _hoisted_14 = {
   "class": "col-12 d-flex aukcion__text-info"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "col-10 aukcion__text-name"
 };
-var _hoisted_15 = {
+var _hoisted_16 = {
   "class": "col-12 justify-content-center d-flex user__sub-titles"
 };
-var _hoisted_16 = ["data-bs-target"];
-var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = ["data-bs-target"];
+var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "badge badge-success bg-primary"
   }, " 5 ", -1 /* HOISTED */);
 });
-var _hoisted_18 = ["data-bs-target"];
-var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_19 = ["data-bs-target"];
+var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "badge badge-success bg-primary"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 9 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": ""
   }, "/"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 4 ")], -1 /* HOISTED */);
 });
-var _hoisted_20 = ["data-bs-target"];
-var _hoisted_21 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_21 = ["data-bs-target"];
+var _hoisted_22 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "badge badge-danger bg-danger"
   }, " 1 ", -1 /* HOISTED */);
 });
-var _hoisted_22 = {
+var _hoisted_23 = {
   "class": "col-3 d-flex"
 };
-var _hoisted_23 = {
+var _hoisted_24 = {
   "class": "col-8 text-center aukcion__price-text"
 };
-var _hoisted_24 = {
+var _hoisted_25 = {
   "class": "aukcion__price-text-style"
 };
-var _hoisted_25 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_26 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col-4 aukcion__user-delete-div",
     type: "button"
@@ -44141,56 +44287,56 @@ var _hoisted_25 = /*#__PURE__*/_withScopeId(function () {
     d: "M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
   })])], -1 /* HOISTED */);
 });
-var _hoisted_26 = {
+var _hoisted_27 = {
   key: 1,
   "class": "list-group"
 };
-var _hoisted_27 = ["id"];
-var _hoisted_28 = {
+var _hoisted_28 = ["id"];
+var _hoisted_29 = {
   "class": "col-12 d-flex"
 };
-var _hoisted_29 = {
+var _hoisted_30 = {
   "class": "col-9"
 };
-var _hoisted_30 = {
+var _hoisted_31 = {
   "class": "col-12 d-flex aukcion__text-info"
 };
-var _hoisted_31 = {
+var _hoisted_32 = {
   "class": "col-10 aukcion__text-name"
 };
-var _hoisted_32 = {
+var _hoisted_33 = {
   "class": "col-12 justify-content-center d-flex user__sub-titles"
 };
-var _hoisted_33 = ["data-bs-target"];
-var _hoisted_34 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_34 = ["data-bs-target"];
+var _hoisted_35 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "badge badge-success bg-primary"
   }, " 5 ", -1 /* HOISTED */);
 });
-var _hoisted_35 = ["data-bs-target"];
-var _hoisted_36 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_36 = ["data-bs-target"];
+var _hoisted_37 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "badge badge-success bg-primary"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 9 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": ""
   }, "/"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 4 ")], -1 /* HOISTED */);
 });
-var _hoisted_37 = ["data-bs-target"];
-var _hoisted_38 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_38 = ["data-bs-target"];
+var _hoisted_39 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "badge badge-danger bg-danger"
   }, " 1 ", -1 /* HOISTED */);
 });
-var _hoisted_39 = {
+var _hoisted_40 = {
   "class": "col-3 d-flex"
 };
-var _hoisted_40 = {
+var _hoisted_41 = {
   "class": "col-8 text-center aukcion__price-text"
 };
-var _hoisted_41 = {
+var _hoisted_42 = {
   "class": "aukcion__price-text-style"
 };
-var _hoisted_42 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_43 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col-4 aukcion__user-delete-div",
     type: "button"
@@ -44214,7 +44360,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_auksion_user_offers_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("auksion-user-offers-modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_aukcion_product, {
     product: $props.product
-  }, null, 8 /* PROPS */, ["product"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Real time actions table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_completion)]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, ["product"]), _hoisted_5]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Real time actions table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_completion)]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.price = $event;
     }),
@@ -44231,36 +44377,36 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       height: 4 * 62 + 'px',
       overflow: 'scroll'
     })
-  }, [$data.aukcionUsers.length > 5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.aukcionUsers, function (user) {
+  }, [$data.aukcionUsers.length > 5 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.aukcionUsers, function (user) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       "class": "moving-item",
       id: user.id,
       style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
         top: user.position * 62 + 'px'
       })
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.user.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.user.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
       "class": "col-3",
       type: "button",
       "data-bs-toggle": "modal",
       "data-bs-target": '#auksionUserReitionInfo' + user.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Reytinq "), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_reiting_modal, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Reytinq "), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_reiting_modal, {
       id: user.id
-    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_16), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_17), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
       "class": "col-4",
       type: "button",
       "data-bs-toggle": "modal",
       "data-bs-target": '#auksionUserInfoModal' + user.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Auksiyon "), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_info_modal, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Auksiyon "), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_info_modal, {
       id: user.id
-    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_18), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_19), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
       "class": "col-3",
       type: "button",
       "data-bs-toggle": "modal",
       "data-bs-target": '#auksionUserOffersModal' + user.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Təkliflər "), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_offers_modal, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Təkliflər "), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_offers_modal, {
       id: user.id
-    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_20)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Price"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.price), 1 /* TEXT */)]), _hoisted_25])])], 12 /* STYLE, PROPS */, _hoisted_10);
-  }), 256 /* UNKEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_26, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.aukcionUsers, function (user) {
+    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_21)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Price"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.price), 1 /* TEXT */)]), _hoisted_26])])], 12 /* STYLE, PROPS */, _hoisted_11);
+  }), 256 /* UNKEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_27, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.aukcionUsers, function (user) {
     var _user$user$name;
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       "class": "moving-item",
@@ -44268,28 +44414,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
         top: user.position * 62 + 'px'
       })
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_user$user$name = user.user.name) !== null && _user$user$name !== void 0 ? _user$user$name : ''), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_user$user$name = user.user.name) !== null && _user$user$name !== void 0 ? _user$user$name : ''), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
       "class": "col-3",
       type: "button",
       "data-bs-toggle": "modal",
       "data-bs-target": '#auksionUserReitionInfo' + user.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Reytinq "), _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_reiting_modal, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Reytinq "), _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_reiting_modal, {
       id: user.id
-    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_33), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_34), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
       "class": "col-4",
       type: "button",
       "data-bs-toggle": "modal",
       "data-bs-target": '#auksionUserInfoModal' + user.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Auksiyon "), _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_info_modal, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Auksiyon "), _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_info_modal, {
       id: user.id
-    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_35), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_36), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
       "class": "col-3",
       type: "button",
       "data-bs-toggle": "modal",
       "data-bs-target": '#auksionUserOffersModal' + user.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Təkliflər "), _hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_offers_modal, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Təkliflər "), _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_user_offers_modal, {
       id: user.id
-    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_37)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Price"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.price), 1 /* TEXT */)]), _hoisted_42])])], 12 /* STYLE, PROPS */, _hoisted_27);
+    }, null, 8 /* PROPS */, ["id"])], 8 /* PROPS */, _hoisted_38)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Price"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.price), 1 /* TEXT */)]), _hoisted_43])])], 12 /* STYLE, PROPS */, _hoisted_28);
   }), 256 /* UNKEYED_FRAGMENT */))]))], 4 /* STYLE */)])])]);
 }
 

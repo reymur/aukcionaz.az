@@ -39,7 +39,9 @@
                             <!-- CURRENT TIME AUKCION START -->
                                 <current-time-aukcion
                                     :close_current_time_aukcion="close_current_time_aukcion"
-                                    @nowAuksiyonWithTimerYes="getNowAuksiyonWithTimerYes"
+                                    @nowAuksiyonWithTimerYesOrNo="getNowAuksiyonWithTimerYesOrNo"
+                                    @sendHorusToAddOnauksiyon="getHorusFromACurrentTimeAuksiyon"
+                                    @sendMinuteToAddOnauksiyon="getMinuteFromACurrentTimeAuksiyon"
                                 ></current-time-aukcion>
                             <!-- CURRENT TIME AUKCION END -->
 
@@ -52,7 +54,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button @click="sendToAuksiyon" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
+                        <button @click="sendProductOnAuksiyon" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
                     </div>
                 </div>
             </div>
@@ -80,6 +82,8 @@ export default {
             now_auksiyon_current_with_timer_yes: false,
             now_auksiyon_later_with_timer_no: true,
             now_auksiyon_later_with_timer_yes: false,
+            horus: null,
+            minute: null,
             collapse: 'collapse',
             show_later_aukcion: true,
             current_time_show: '',
@@ -102,8 +106,14 @@ export default {
                 })
                     .then( res => {
                         if( res && res.data && res.data.auksiyon ) {
-                            if( res.data.auksiyon === 'ok' ) this.auksiyon_status = true;
-                            else if( res.data.auksiyon === 'no' ) this.auksiyon_status = false;
+                            if( res.data.auksiyon === 'ok' ) {
+                                this.auksiyon_status = true;
+
+                                window.location.href = '/realtime/auksiyon/'+ product_id;
+                            }
+                            else if( res.data.auksiyon === 'no' ) {
+                                this.auksiyon_status = false;
+                            }
 
                             console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
                         }
@@ -124,39 +134,44 @@ export default {
                 .then( res => {
                     if( res && res.data && res.data.auksiyon ) {
                         if( res.data.auksiyon.status === 1 ) {
-                            this.checkAuksiyon();
+                            this.checkAuksiyon;
+                            console.log( 'res auksiyon 1- ', res.data.auksiyon.status )
                         }
-                        console.log( 'res auksiyon - ', res.data.auksiyon.status )
+                        console.log( 'res auksiyon 2 - ', res )
                     }
                 })
                 .catch( err => {
-                    console.log( 'err auksiyon - ', err.response.data )
+                    console.log( 'err auksiyon - ', err )
                 });
         },
         addOnlyNowAuksiyonWithTimer(product_id) {
             axios({
                 method:'POST',
                 url: '/add-only-now-auksiyon-with-timer',
-                data: { product_id: Number(product_id) }
+                data: {
+                    product_id: Number(product_id),
+                    current_auksiyon_with_time_horus: this.horus,
+                    current_auksiyon_with_time_minute: this.minute,
+                }
             })
                 .then( res => {
                     if( res && res.data && res.data.auksiyon ) {
                         if( res.data.auksiyon.status === 1 ) {
-                            this.checkAuksiyon();
+                            this.checkAuksiyon;
                         }
-                        console.log( 'res auksiyon - ', res.data.auksiyon.status )
+                        console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
                     }
                 })
                 .catch( err => {
-                    console.log( 'err auksiyon - ', err.response.data )
+                    console.log( 'err auksiyon WithTimer - ', err.response.data )
                 });
         },
-        sendToAuksiyon() {
+        sendProductOnAuksiyon() {
             let product_id = this.product_id;
 
             if(
                 this.now && !this.later && this.now_auksiyon_current_with_timer_no &&
-                !this.now_auksiyon_current_with_timer_no && this.now_auksiyon_later_with_timer_no &&
+                !this.now_auksiyon_current_with_timer_yes && this.now_auksiyon_later_with_timer_no &&
                 !this.now_auksiyon_later_with_timer_yes
             ) {
                 this.addOnlyNowAuksiyon(product_id);
@@ -166,14 +181,32 @@ export default {
                 this.now_auksiyon_current_with_timer_yes && this.now_auksiyon_later_with_timer_no &&
                 !this.now_auksiyon_later_with_timer_yes
             ) {
+                console.log('addOnlyNowAuksiyonWithTimer = ', 'yes' )
                 this.addOnlyNowAuksiyonWithTimer(product_id);
             }
+            // alert('TIMER')
         },
-        getNowAuksiyonWithTimerYes(data) {
-            if( data && data.status )
-                this.now_auksiyon_with_timer_yes = data.status;
-            else if( data && !data.status )
-                this.now_auksiyon_with_timer_yes = data.status;
+        getNowAuksiyonWithTimerYesOrNo(data) {
+            if( data && data.status ) {
+                this.now_auksiyon_current_with_timer_yes = data.status;
+                this.now_auksiyon_current_with_timer_no = false;
+                console.log('now_auksiyon_current_with_timer_yes = ', this.now_auksiyon_current_with_timer_yes )
+            }
+            else if( data && !data.status ) {
+                this.now_auksiyon_current_with_timer_yes = data.status;
+                this.now_auksiyon_current_with_timer_no = true;
+                this.horus = false;
+                this.minute = false;
+                // alert('horus - '+this.horus +' / minute - '+ this.minute)
+            }
+        },
+        getHorusFromACurrentTimeAuksiyon(data) {
+            if( data && data.horus ) this.horus = data.horus;
+            // alert('horus - '+this.horus)
+        },
+        getMinuteFromACurrentTimeAuksiyon(data) {
+            if( data && data.minute ) this.minute = data.minute;
+            // alert('minute - '+this.minute)
         },
         newAukcion() {
             let collapse = document.getElementById('collapsePicker');

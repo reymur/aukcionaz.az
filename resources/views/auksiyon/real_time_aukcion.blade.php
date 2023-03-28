@@ -19,9 +19,15 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        <real-time-auksiyon
-            :users="{{ $users }}"
-            :product="{{ $product }}"
-        ></real-time-auksiyon>
+        @if( $users && $product && $auksiyon )
+
+{{--            :started_auksiyon="{{ $started_auksiyon }}"--}}
+
+            <real-time-auksiyon
+                :users="{{ $users }}"
+                :product="{{ $product }}"
+                :auksiyon="{{ $auksiyon }}"
+            ></real-time-auksiyon>
+        @endif
     </div>
 @endsection
