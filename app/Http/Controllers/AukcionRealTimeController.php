@@ -41,11 +41,10 @@ class AukcionRealTimeController extends Controller
 //            new AddProductInAukcionJob($user, $pass))->delay(now()->addMinute(1)
 //        );
 
-//        dd( $request->id );
+//        dd(  $this->issetOnAuksiyon(1) );
+
         if( ! $request->id ) abort(404);
 
-        $timer = null;
-        $started_auksiyon = null;
         $product = false;
         $auksiyon = Auksiyon::where('product_id', $request->id)->first();
 
@@ -81,10 +80,16 @@ class AukcionRealTimeController extends Controller
                     'started'    => \Carbon\Carbon::now(),
                     'status'     => 1,
                 ]);
+            } else if( $isset_on_auksiyon->finished && !$isset_on_auksiyon->status ) {
+                $isset_on_auksiyon->update([
+                    'started'    => \Carbon\Carbon::now(),
+                    'status'     => 1,
+                    'finished'   => null,
+                ]);
             }
 
             return response()->json([
-                'auksiyon' => $auksiyon
+                'auksiyon' => $auksiyon ?? $isset_on_auksiyon
             ]);
         }
     }
@@ -105,18 +110,27 @@ class AukcionRealTimeController extends Controller
                     'timer'      => $horus.'_'.$minute,
                     'status'     => 1,
                 ]);
+            } else if( $isset_on_auksiyon->finished && !$isset_on_auksiyon->status ) {
+                $isset_on_auksiyon->update([
+                    'started'    => \Carbon\Carbon::now(),
+                    'timer'      => $horus.'_'.$minute,
+                    'finished'   => null,
+                    'status'     => 1,
+                ]);
             }
 
             return response()->json([
-                'auksiyon' => $auksiyon
+                'auksiyon' => $auksiyon ?? $isset_on_auksiyon
             ]);
         }
     }
 
     public function checkAuksiyon(Request $request){
         if( $request->product_id ) {
+            $is_auksiyon = $this->issetOnAuksiyon($request->product_id);
+
             if( $this->issetOnAuksiyon($request->product_id) )
-                return response()->json([ 'auksiyon' => 'ok' ]);
+                return response()->json([ 'auksiyon' => $is_auksiyon ]);
             else
                 return response()->json([ 'auksiyon' => 'no' ]);
         }
@@ -128,7 +142,7 @@ class AukcionRealTimeController extends Controller
         if( $product_id ) {
             $auksiyon = Auksiyon::where('product_id', $product_id)->first();
 
-            if( $auksiyon && $auksiyon->product_id === $product_id ) return true;
+            if( $auksiyon && $auksiyon->product_id === $product_id ) return $auksiyon;
             else return false;
         }
 
@@ -136,8 +150,7 @@ class AukcionRealTimeController extends Controller
     }
 
     public function setAukcionPrice(AukcionRealTimePriceRequest $request) {
-        $users = AuksiyonGamer::where('id', 1)
-                            ->update($request->validated());
+        $users = AuksiyonGamer::where('id', 1)->update($request->validated());
 
         if( $users ){
             broadcast( new AukcionRealTimeSend($request->user, $request->price) );
@@ -156,15 +169,16 @@ class AukcionRealTimeController extends Controller
 
     public function auksiyonTimer(Request $request) {
         session_start();
-        if( $request->time && $request->current_start ) {
-            if( ! isset($_SESSION['time']) && !isset($_SESSION['current_start']) ) {
-                $_SESSION['time'] = $request->time;
+
+        if( $request->time && $request->name && $request->current_start ) {
+            if( ! isset($_SESSION[$request->name]) && !isset($_SESSION['current_start']) ) {
+                $_SESSION[$request->name] = $request->time;
                 $_SESSION['current_start'] = $request->current_start;
             }
 
-            if( isset($_SESSION['time']) && $_SESSION['time'] == ($_SESSION['time'] - 1000) ) {
+            if( isset($_SESSION[$request->name]) && $_SESSION[$request->name] == ($_SESSION[$request->name] - 1000) ) {
                 return response()->json([
-                    'time' => $_SESSION['time'],
+                    'time' => $_SESSION[$request->name],
                 ]);
             } else {
                 $time = $request->current_start - $_SESSION['current_start'];
@@ -172,6 +186,22 @@ class AukcionRealTimeController extends Controller
                     'time' => $time,
                 ]);
             }
+        }
+
+        if( $request->stop_auksiyon_timer && $request->auksiyon_id ) {
+            $auksiyon = Auksiyon::where('product_id', $request->auksiyon_id)->first();
+
+            $auksiyon->update([
+                'timer'    => null,
+                'finished' => \Carbon\Carbon::now(),
+                'status'   => 0
+            ]);
+
+            session_destroy();
+
+            return response()->json([
+                'stop_auksiyon_timer' => $auksiyon,
+            ]);
         }
 
 //        session_destroy();

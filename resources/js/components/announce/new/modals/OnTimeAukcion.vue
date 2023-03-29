@@ -1,15 +1,23 @@
 <template>
     <div class=" mt-2 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
         <div class="d-flex form-group">
-            <select @change="horusFunc" v-model="horus" class="form-select rounded-0" aria-label="Default select example">
-                <option disabled selected> Saat </option>
-                <option v-for="h of 24" :value="h">{{ h }} saat</option>
-            </select>
+            <div class="">
+                <select @change="horusFunc" v-model="horus" class="form-select rounded-0" aria-label="Default select example">
+                    <option disabled selected> Saat </option>
+                    <option v-for="h of 24" :value="h">{{ h }} saat</option>
+                </select>
 
-            <select @change="minuteFunc" v-model="minute" class="form-select rounded-0" aria-label="Default select example">
-                <option disabled selected> Dəyqə </option>
-                <option v-for="m of 59" :value="m">{{ m }} dəyqə</option>
-            </select>
+                <div class="current_horus_error"> Saat seçin! </div>
+            </div>
+
+            <div class="">
+                <select @change="minuteFunc" v-model="minute" class="form-select rounded-0" aria-label="Default select example">
+                    <option disabled selected> Dəyqə </option>
+                    <option v-for="m of 59" :value="m">{{ m }} dəyqə</option>
+                </select>
+
+                <div class="current_minutes_error"> Dəyqə seçin! </div>
+            </div>
         </div>
 
         <div class="d-flex mt-2 fs-5 justify-content-center">
@@ -28,7 +36,7 @@
                         </div>
 
                         <div v-if="show_close" class="d-flex ms-3">
-                            <div @click="timeReset" class="fs-6 text-danger align-self-center" role="button">
+                            <div @click="timeReset" class="fs-6 text-danger align-self-center current_horus_and_minutes_reset" role="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                                 </svg>
@@ -140,5 +148,11 @@ export default {
         font-size: 1em;
         color: #41830b;
         font-weight: bold;
+    }
+    .current_horus_error {
+        display: none;
+    }
+    .current_minutes_error {
+        display: none;
     }
 </style>

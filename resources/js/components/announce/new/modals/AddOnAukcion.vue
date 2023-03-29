@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- LIN TO ACTIVE AUKSIYON -->
-        <a v-if="auksiyon_status" :href="'/realtime/auksiyon/'+1" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
+        <a v-if="auksiyon_status" :href="'/realtime/auksiyon/'+product_id" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
             <span class="aukcion__add_button_text"> Auksion-a keçid </span>
         </a>
 
@@ -54,7 +54,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button @click="sendProductOnAuksiyon" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">Təstiqlə</button>
+                        <button @click="sendProductOnAuksiyon" type="button" class="btn btn-success m-auto col-8 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            Təstiqlə
+                        </button>
                     </div>
                 </div>
             </div>
@@ -104,68 +106,29 @@ export default {
                     url: '/check-auksiyon',
                     data: { product_id: Number(product_id) }
                 })
-                    .then( res => {
-                        if( res && res.data && res.data.auksiyon ) {
-                            if( res.data.auksiyon === 'ok' ) {
-                                this.auksiyon_status = true;
+                .then( res => {
+                    if( res && res.data && res.data.auksiyon ) {
+                        if( !res.data.auksiyon.finished && res.data.auksiyon.status  ) {
+                            this.auksiyon_status = res.data.auksiyon.status;
 
-                                window.location.href = '/realtime/auksiyon/'+ product_id;
-                            }
-                            else if( res.data.auksiyon === 'no' ) {
-                                this.auksiyon_status = false;
-                            }
-
-                            console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
+                            // window.location.href = '/realtime/auksiyon/'+ product_id;
                         }
-                    })
-                    .catch( err => {
-                        console.log( 'err is on auksiyon1111 - ', err.response.data )
-                    });
+                        else if( res.data.auksiyon === 'no' ) {
+                            this.auksiyon_status = false;
+                        }
+
+                        console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
+                    }
+                })
+                .catch( err => {
+                    console.log( 'err is on auksiyon1111 - ', err.response.data )
+                });
             }
+
+            return this.auksiyon_status;
         },
     },
     methods: {
-        addOnlyNowAuksiyon(product_id) {
-            axios({
-                method:'POST',
-                url: '/add-only-now-auksiyon',
-                data: { product_id: Number(product_id) }
-            })
-                .then( res => {
-                    if( res && res.data && res.data.auksiyon ) {
-                        if( res.data.auksiyon.status === 1 ) {
-                            this.checkAuksiyon;
-                            console.log( 'res auksiyon 1- ', res.data.auksiyon.status )
-                        }
-                        console.log( 'res auksiyon 2 - ', res )
-                    }
-                })
-                .catch( err => {
-                    console.log( 'err auksiyon - ', err )
-                });
-        },
-        addOnlyNowAuksiyonWithTimer(product_id) {
-            axios({
-                method:'POST',
-                url: '/add-only-now-auksiyon-with-timer',
-                data: {
-                    product_id: Number(product_id),
-                    current_auksiyon_with_time_horus: this.horus,
-                    current_auksiyon_with_time_minute: this.minute,
-                }
-            })
-                .then( res => {
-                    if( res && res.data && res.data.auksiyon ) {
-                        if( res.data.auksiyon.status === 1 ) {
-                            this.checkAuksiyon;
-                        }
-                        console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
-                    }
-                })
-                .catch( err => {
-                    console.log( 'err auksiyon WithTimer - ', err.response.data )
-                });
-        },
         sendProductOnAuksiyon() {
             let product_id = this.product_id;
 
@@ -182,9 +145,66 @@ export default {
                 !this.now_auksiyon_later_with_timer_yes
             ) {
                 console.log('addOnlyNowAuksiyonWithTimer = ', 'yes' )
-                this.addOnlyNowAuksiyonWithTimer(product_id);
+                if( this.horus && this.minute ) {
+                    this.addOnlyNowAuksiyonWithTimer(product_id);
+                }
+
+                if( !this.horus ) this.horusAndMinuteError('current_horus_error','block');
+                else this.horusAndMinuteError('current_horus_error','none');
+
+                if( !this.minute ) this.horusAndMinuteError('current_minutes_error','block');
+                else this.horusAndMinuteError('current_minutes_error','none');
             }
             // alert('TIMER')
+        },
+        addOnlyNowAuksiyon(product_id) {
+            axios({
+                method:'POST',
+                url: '/add-only-now-auksiyon',
+                data: { product_id: Number(product_id) }
+            })
+                .then( res => {
+                    if( res && res.data && res.data.auksiyon ) {
+                        if( res.data.auksiyon.status === 1 ) {
+                            this.checkAuksiyon;
+                            console.log( 'res auksiyon 1- ', res.data.auksiyon.status )
+                        }
+                        console.log( 'res auksiyon 2 - ', res.data.auksiyon )
+                    }
+                })
+                .catch( err => {
+                    console.log( 'err auksiyon - ', err.response.data )
+                });
+        },
+        addOnlyNowAuksiyonWithTimer(product_id) {
+            axios({
+                method:'POST',
+                url: '/add-only-now-auksiyon-with-timer',
+                data: {
+                    product_id: Number(product_id),
+                    current_auksiyon_with_time_horus: this.horus,
+                    current_auksiyon_with_time_minute: this.minute,
+                }
+            })
+                .then( res => {
+                    if( res && res.data && res.data.auksiyon ) {
+                        if( res.data.auksiyon.status === 1 ) {
+                            this.checkAuksiyon;
+
+                            this.auksiyonTimer(res.data.auksiyon, this.product_info)
+                        }
+                        console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
+                    }
+                })
+                .catch( err => {
+                    console.log( 'err auksiyon WithTimer - ', err.response.data )
+                });
+        },
+        horusAndMinuteError(error_name, display='') {
+            let error_element = document.getElementsByClassName(error_name);
+            if( error_element && error_element[0] ) {
+                error_element[0].style = 'display:'+ display+'; color: red; font-size: 0.9rem; margin: 4px 0 0 5px;'
+            }
         },
         getNowAuksiyonWithTimerYesOrNo(data) {
             if( data && data.status ) {
@@ -198,6 +218,19 @@ export default {
                 this.horus = false;
                 this.minute = false;
                 // alert('horus - '+this.horus +' / minute - '+ this.minute)
+
+                if( !this.horus ) this.horusAndMinuteError('current_horus_error','none');
+                if( !this.minute ) this.horusAndMinuteError('current_minutes_error','none');
+
+                this.clickedOnFindingElement('current_horus_and_minutes_reset', 500);
+            }
+        },
+        clickedOnFindingElement(element, time=100) {
+            let clicked_element = document.getElementsByClassName(element);
+            if( clicked_element && clicked_element[0] ) {
+                setTimeout( () => {
+                    clicked_element[0].click();
+                }, time)
             }
         },
         getHorusFromACurrentTimeAuksiyon(data) {
@@ -355,6 +388,68 @@ export default {
                     btn[0].classList.add('disabled')
                 }
             }
+        },
+        auksiyonTimer(auksiyon, product_name) {
+            let timer     = this.getTimer(auksiyon);
+            let current   = this.getCurrentTimes();
+            let date =  Number(timer);
+            // let product_name = this.auksiyon.product.productable.title;
+
+            axios({
+                method:"POST",
+                url:"/auksiyon/timer",
+                data: {
+                    name: product_name.title,
+                    time: date,
+                    current_start: this.getCurrentTimes()
+                }
+            }).then( res => {
+                if( res && res.data && res.data.time ) {
+                    date = date - res.data.time;
+                    console.log("started AAAAAA res -- === ", this.millisecondsToTime(res.data.time) )
+                }
+            }).catch( err => {
+                console.log("started AAAAAA err -- === ", err )
+            });
+
+            console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
+        },
+        millisecondsToTime(timer) {
+            let milliseconds = Math.floor((timer % 1000) / 100),
+                seconds      = Math.floor((timer / 1000) % 60),
+                minutes      = Math.floor((timer / (1000 * 60)) % 60),
+                hours        = Math.floor((timer / (1000 * 60 * 60)) % 24);
+
+            hours = (hours < 10)     ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            // return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+            return hours + ":" + minutes + ":" + seconds;
+
+            // console.log(msToTime(300000))
+        },
+        getTimer(auksiyon_timer) {
+            if( auksiyon_timer && auksiyon_timer.timer ) {
+                let horus = null;
+                let minute = null;
+                let timer_arr = auksiyon_timer.timer.split('_');
+
+                if( timer_arr[0] && timer_arr[1] ) {
+                    horus  = Number(timer_arr[0]) * 3600000;
+                    minute = Number(timer_arr[1]) * 60000;
+                }
+
+                return horus + minute;
+            }
+        },
+        getCurrentTimes() {
+            let date    = new Date();
+            let h       = Number( date.getHours() ) * 3600000;
+            let m       = Number( date.getMinutes() )  * 60000;
+            let s       = Number( date.getSeconds() )  * 1000;
+
+            return (h + m + s);
         }
     },
     mounted() {

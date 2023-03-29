@@ -199,6 +199,11 @@ export default {
         }
     },
     methods: {
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
+        },
         addPrice() {
             axios.post('/set-aukcion-price', {price: this.price})
                 .then(res => {
@@ -252,29 +257,53 @@ export default {
             let timer     = this.getTimer(this.auksiyon);
             let current   = this.getCurrentTime();
             let date =  Number(timer);
+            let product_name = this.auksiyon.product.productable.title;
 
             document.addEventListener('DOMContentLoaded', () => {
                 axios({
                     method:"POST",
                     url:"/auksiyon/timer",
                     data: {
+                        name: product_name,
                         time: date,
                         current_start: this.getCurrentTime()
                     }
                 }).then( res => {
                     if( res && res.data && res.data.time ) {
                         date = date - res.data.time;
-                        console.log("started res -- === ", res.data.time )
+                        console.log("started res -- === ", this.millisecondsToTime(res.data.time) )
                     }
                 }).catch( err => {
                     console.log("started err -- === ", err.response.data )
                 });
-            })
+            });
 
-            setInterval( () => {
+            // auksiyon_horus[0].innerHTML = this.millisecondsToTime( date );
+
+            let time_interval = setInterval( () => {
                 if( auksiyon_horus && auksiyon_horus[0] )
                     auksiyon_horus[0].innerHTML = this.millisecondsToTime( date )
                 date -= 1000;
+                // console.log("date -- === ", date < 0 )
+                if( date < 0 ) {
+                    axios({
+                        method:"POST",
+                        url:"/auksiyon/timer",
+                        data: {
+                            auksiyon_id: this.getProductID(),
+                            stop_auksiyon_timer: true,
+                        }
+                    }).then( res => {
+                        if( res && res.data && res.data.stop_auksiyon_timer ) {
+                            date = null;
+                            clearInterval(time_interval);
+                            console.log("stop_auksiyon_timer res -- === ", res.data.stop_auksiyon_timer )
+                        }
+                        // console.log("stop_auksiyon_timer res -- === ", res.data.stop_auksiyon_timer )
+                    }).catch( err => {
+                        console.log("stop_auksiyon_timer err -- === ", err.response.data )
+                    });
+                }
             }, 1000 );
         },
         getTimer(auksiyon_timer) {
@@ -320,6 +349,8 @@ export default {
     mounted() {
         this.getAuksiyonUsers();
         this.auksiyonTimer();
+
+        // console.log("AAAAAAA auksiyon - ", this.auksiyon.product.productable.title )
     }
 }
 </script>
