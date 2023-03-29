@@ -191,7 +191,7 @@ export default {
                         if( res.data.auksiyon.status === 1 ) {
                             this.checkAuksiyon;
 
-                            this.auksiyonTimer(res.data.auksiyon, this.product_info)
+                            this.auksiyonTimer(res.data.auksiyon)
                         }
                         console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
                     }
@@ -389,7 +389,7 @@ export default {
                 }
             }
         },
-        auksiyonTimer(auksiyon, product_name) {
+        auksiyonTimer(auksiyon) {
             let timer     = this.getTimer(auksiyon);
             let current   = this.getCurrentTimes();
             let date =  Number(timer);
@@ -399,20 +399,23 @@ export default {
                 method:"POST",
                 url:"/auksiyon/timer",
                 data: {
-                    name: product_name.title,
+                    name: this.product_info.title,
                     time: date,
-                    current_start: this.getCurrentTimes()
+                    current_time: this.getCurrentTimes()
                 }
             }).then( res => {
-                if( res && res.data && res.data.time ) {
-                    date = date - res.data.time;
-                    console.log("started AAAAAA res -- === ", this.millisecondsToTime(res.data.time) )
+                if( res && res.data && res.data.time !== null && res.data.time !== undefined ) {
+                    // date = date - res.data.time;
+                    console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
                 }
+                // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
             }).catch( err => {
-                console.log("started AAAAAA err -- === ", err )
+                console.log("started AAAAAABBB err -- === ", err )
+                console.log("started AAAAAA response err -- === ", err.response )
+                console.log("started AAAAAA err.response.data.message err -- === ", err.response.data ?? err.response.data.message )
             });
 
-            console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
+            // console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
         },
         millisecondsToTime(timer) {
             let milliseconds = Math.floor((timer % 1000) / 100),
@@ -457,7 +460,7 @@ export default {
         this.getCurrentTime(false);
         this.checkAuksiyon;
 
-        console.log('URL INDEXOF = ', window.location.pathname )
+        console.log('this.product_info = ', this.product_info )
     }
 }
 </script>

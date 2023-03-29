@@ -39839,7 +39839,7 @@ __webpack_require__.r(__webpack_exports__);
         if (res && res.data && res.data.auksiyon) {
           if (res.data.auksiyon.status === 1) {
             _this3.checkAuksiyon;
-            _this3.auksiyonTimer(res.data.auksiyon, _this3.product_info);
+            _this3.auksiyonTimer(res.data.auksiyon);
           }
           console.log('res auksiyon WithTimer - ', res.data.auksiyon.status);
         }
@@ -40018,7 +40018,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    auksiyonTimer: function auksiyonTimer(auksiyon, product_name) {
+    auksiyonTimer: function auksiyonTimer(auksiyon) {
       var _this5 = this;
       var timer = this.getTimer(auksiyon);
       var current = this.getCurrentTimes();
@@ -40029,19 +40029,24 @@ __webpack_require__.r(__webpack_exports__);
         method: "POST",
         url: "/auksiyon/timer",
         data: {
-          name: product_name.title,
+          name: this.product_info.title,
           time: date,
-          current_start: this.getCurrentTimes()
+          current_time: this.getCurrentTimes()
         }
       }).then(function (res) {
-        if (res && res.data && res.data.time) {
-          date = date - res.data.time;
-          console.log("started AAAAAA res -- === ", _this5.millisecondsToTime(res.data.time));
+        if (res && res.data && res.data.time !== null && res.data.time !== undefined) {
+          // date = date - res.data.time;
+          console.log("started AAAAAABBB res 111 -- === ", _this5.millisecondsToTime(res.data.time));
         }
+        // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
       })["catch"](function (err) {
-        console.log("started AAAAAA err -- === ", err);
+        var _err$response$data;
+        console.log("started AAAAAABBB err -- === ", err);
+        console.log("started AAAAAA response err -- === ", err.response);
+        console.log("started AAAAAA err.response.data.message err -- === ", (_err$response$data = err.response.data) !== null && _err$response$data !== void 0 ? _err$response$data : err.response.data.message);
       });
-      console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title);
+
+      // console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
     },
     millisecondsToTime: function millisecondsToTime(timer) {
       var milliseconds = Math.floor(timer % 1000 / 100),
@@ -40081,7 +40086,7 @@ __webpack_require__.r(__webpack_exports__);
     this.ifProductNoPublished();
     this.getCurrentTime(false);
     this.checkAuksiyon;
-    console.log('URL INDEXOF = ', window.location.pathname);
+    console.log('this.product_info = ', this.product_info);
   }
 });
 
@@ -41677,7 +41682,7 @@ var _this = undefined;
       var auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
       var timer = this.getTimer(this.auksiyon);
       var current = this.getCurrentTime();
-      var date = Number(timer);
+      var date = Number(timer) / 100;
       var product_name = this.auksiyon.product.productable.title;
       document.addEventListener('DOMContentLoaded', function () {
         axios({
@@ -41686,7 +41691,7 @@ var _this = undefined;
           data: {
             name: product_name,
             time: date,
-            current_start: _this4.getCurrentTime()
+            current_time: _this4.getCurrentTime()
           }
         }).then(function (res) {
           if (res && res.data && res.data.time) {
@@ -41709,6 +41714,7 @@ var _this = undefined;
             method: "POST",
             url: "/auksiyon/timer",
             data: {
+              auksiyon_name: product_name,
               auksiyon_id: _this4.getProductID(),
               stop_auksiyon_timer: true
             }

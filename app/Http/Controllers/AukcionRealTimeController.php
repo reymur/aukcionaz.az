@@ -7,6 +7,7 @@ use App\Http\Requests\AukcionRealTimePriceRequest;
 use App\Jobs\AddProductInAukcionJob;
 use App\Models\Auksiyon;
 use App\Models\AuksiyonGamer;
+use App\Models\AuksiyonTimer;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
@@ -167,29 +168,27 @@ class AukcionRealTimeController extends Controller
         return response()->json([ 'users' => $this->getAukcionGamers() ]);
     }
 
-    public function auksiyonTimer(Request $request) {
-        session_start();
+    public function auksiyonTimerFunc(Request $request) {
+        if( $request->name && $request->time && $request->current_time ) {
+            $auksiyon_timer = AuksiyonTimer::where('name', $request->name)->first();
 
-        if( $request->time && $request->name && $request->current_start ) {
-            if( ! isset($_SESSION[$request->name]) && !isset($_SESSION['current_start']) ) {
-                $_SESSION[$request->name] = $request->time;
-                $_SESSION['current_start'] = $request->current_start;
-            }
-
-            if( isset($_SESSION[$request->name]) && $_SESSION[$request->name] == ($_SESSION[$request->name] - 1000) ) {
-                return response()->json([
-                    'time' => $_SESSION[$request->name],
-                ]);
-            } else {
-                $time = $request->current_start - $_SESSION['current_start'];
-                return response()->json([
-                    'time' => $time,
+            if( ! $auksiyon_timer ) {
+                $auksiyon_timer = AuksiyonTimer::create([
+                    'name'              => $request->name,
+                    'time'              => $request->time,
+                    'current_save_time' => $request->current_time,
                 ]);
             }
+
+            $time = $request->current_time - $auksiyon_timer->current_save_time;
+            return response()->json([
+                'time' => $time,
+            ]);
         }
 
         if( $request->stop_auksiyon_timer && $request->auksiyon_id ) {
-            $auksiyon = Auksiyon::where('product_id', $request->auksiyon_id)->first();
+            $auksiyon_timer = AuksiyonTimer::where('name', $request->auksiyon_name)->delete();
+            $auksiyon       = Auksiyon::where('product_id', $request->auksiyon_id)->first();
 
             $auksiyon->update([
                 'timer'    => null,
@@ -197,14 +196,49 @@ class AukcionRealTimeController extends Controller
                 'status'   => 0
             ]);
 
-            session_destroy();
-
             return response()->json([
                 'stop_auksiyon_timer' => $auksiyon,
             ]);
         }
-
-//        session_destroy();
     }
+//    public function auksiyonTimer(Request $request) {
+//        session_start();
+//
+//        if( $request->time && $request->name && $request->current_start ) {
+//            if( ! isset($_SESSION[$request->name]) && !isset($_SESSION['current_start']) ) {
+//                $_SESSION[$request->name] = $request->time;
+//                $_SESSION['current_start'] = $request->current_start;
+//            }
+//
+//            if( isset($_SESSION[$request->name]) && $_SESSION[$request->name] == ($_SESSION[$request->name] - 1000) ) {
+//                return response()->json([
+//                    'time' => $_SESSION[$request->name],
+//                ]);
+//            } else {
+//                $time = $request->current_start - $_SESSION['current_start'];
+//                return response()->json([
+//                    'time' => $time,
+//                ]);
+//            }
+//        }
+//
+//        if( $request->stop_auksiyon_timer && $request->auksiyon_id ) {
+//            $auksiyon = Auksiyon::where('product_id', $request->auksiyon_id)->first();
+//
+//            $auksiyon->update([
+//                'timer'    => null,
+//                'finished' => \Carbon\Carbon::now(),
+//                'status'   => 0
+//            ]);
+//
+//            session_destroy();
+//
+//            return response()->json([
+//                'stop_auksiyon_timer' => $auksiyon,
+//            ]);
+//        }
+//
+////        session_destroy();
+//    }
 
 }

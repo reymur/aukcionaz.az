@@ -256,7 +256,7 @@ export default {
             let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
             let timer     = this.getTimer(this.auksiyon);
             let current   = this.getCurrentTime();
-            let date =  Number(timer);
+            let date =  Number(timer) / 100;
             let product_name = this.auksiyon.product.productable.title;
 
             document.addEventListener('DOMContentLoaded', () => {
@@ -266,7 +266,7 @@ export default {
                     data: {
                         name: product_name,
                         time: date,
-                        current_start: this.getCurrentTime()
+                        current_time: this.getCurrentTime()
                     }
                 }).then( res => {
                     if( res && res.data && res.data.time ) {
@@ -290,6 +290,7 @@ export default {
                         method:"POST",
                         url:"/auksiyon/timer",
                         data: {
+                            auksiyon_name: product_name,
                             auksiyon_id: this.getProductID(),
                             stop_auksiyon_timer: true,
                         }
