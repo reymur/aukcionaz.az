@@ -15,11 +15,17 @@
                     <p class="mt-4 mb-4 fw-bold fs-4"> Son qərar gözlənilir!</p>
 
                     <div class="mb-4">
-                        <div type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>
+                        <div @click="extendAuksiyonTime" type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>
                         <div type="button" class="btn btn-danger w-75 fs-5">Sonlandır</div>
                     </div>
                 </div>
                 <!--/.success-->
+            </div>
+
+            <div class="d-none add_on_aukcion_div">
+                <add-on-aukcion
+                    :product_info="product"
+                ></add-on-aukcion>
             </div>
             <!--/.row-->
 <!--            <div class="row">-->
@@ -38,7 +44,6 @@
 <!--            </div>-->
             <!--/.row-->
         </div>
-        <!--/.container-->
 
     </div>
 </template>
@@ -46,12 +51,48 @@
 <script>
 export default {
     name: "AukcionСompletion",
+    props:['product','auksiyon','stop_auksiyon'],
     data() {
         return {
-
+            product_id: this.getProductID(),
+            extend_tmie: null,
+            is_product: null,
         }
     },
     methods:{
+        extendAuksiyonTime() {
+            let auksiyon_button = setInterval( () => {
+                let auksiyon_add_button = document.getElementsByClassName('auksiyon_add_button');
+                let add_on_aukcion_div  = document.getElementsByClassName('add_on_aukcion_div');
+                let auksion_completion  = document.getElementsByClassName('modalbox');
+                let fon = document.getElementById('fon');
+                let body = document.body;
+
+                if( body && auksiyon_add_button && add_on_aukcion_div && auksion_completion && fon ) {
+                    if( auksiyon_add_button[0] && add_on_aukcion_div[0] && auksion_completion[0] && fon ) {
+                        auksion_completion[0].style.display = 'none';
+                        fon.style.display = 'none';
+                        body.style = 'overflow: none';
+
+                        setTimeout( () => {
+                            auksiyon_add_button[0].click();
+                        }, 100 );
+                    }
+
+                    clearInterval(auksiyon_button);
+                }
+
+            }, 0.1);
+
+            setTimeout( () => {
+                clearInterval(auksiyon_button)
+            }, 30000);
+        },
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
+        },
         getSuccessModal() {
             // document.ready(function() {
             let redo = document.getElementsByClassName('redo');
@@ -64,8 +105,42 @@ export default {
             }
         }
     },
+    computed: {
+        hideAuksiyonAddButton() {
+            let auksiyon_button = setInterval( () => {
+                let fon = document.getElementById('fon');
+                let auksiyon_add_button = document.getElementsByClassName('auksiyon_add_button');
+                let add_on_aukcion_div = document.getElementsByClassName('add_on_aukcion_div');
+                let body = document.body;
+
+                if( body && auksiyon_add_button && auksiyon_add_button[0] && add_on_aukcion_div && add_on_aukcion_div[0] ) {
+                    auksiyon_add_button[0].style = 'display:none: position: absolute; opacity: 0; z-index: -1;';
+
+                    body.style = 'overflow: hidden;';
+                    fon.style.display = 'block';
+
+                    setTimeout( () => {
+                        if ( add_on_aukcion_div && add_on_aukcion_div[0] && add_on_aukcion_div[0].classList ) {
+                            add_on_aukcion_div[0].classList.remove('d-none');
+                            add_on_aukcion_div[0].classList.add('d-block');
+                            add_on_aukcion_div[0].style.width = '0px'
+                            add_on_aukcion_div[0].style.height = '0px'
+                        }
+                    }, 1000 );
+
+                    clearInterval(auksiyon_button);
+                }
+            }, 0.1);
+        },
+    },
     mounted() {
+        this.hideAuksiyonAddButton;
         this.getSuccessModal();
+
+        let auksiyon_add_button = document.getElementsByClassName('auksion_completion')
+
+        console.log("BBBBBBBBBBFFFFFHHHHHKKK - ", auksiyon_add_button[0] );
+
     }
 }
 </script>

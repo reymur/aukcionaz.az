@@ -132,10 +132,10 @@ class AukcionRealTimeController extends Controller
         if( $request->product_id ) {
             $is_auksiyon = $this->issetOnAuksiyon($request->product_id);
 
-            if( $this->issetOnAuksiyon($request->product_id) )
+            if( $is_auksiyon )
                 return response()->json([ 'auksiyon' => $is_auksiyon ]);
             else
-                return response()->json([ 'auksiyon' => 'no' ]);
+                return response()->json([ 'auksiyon' => 'have not' ]);
         }
 
         return response()->json([ 'auksiyon' => 'AAAAAA' ]);
@@ -145,7 +145,7 @@ class AukcionRealTimeController extends Controller
         if( $product_id ) {
             $auksiyon = Auksiyon::where('product_id', $product_id)->first();
 
-            if( $auksiyon && $auksiyon->product_id === $product_id ) return $auksiyon;
+            if( $auksiyon && $auksiyon->product_id == $product_id ) return $auksiyon;
             else return false;
         }
 

@@ -39864,6 +39864,7 @@ __webpack_require__.r(__webpack_exports__);
           if (res.data.auksiyon.status === 1) {
             _this3.checkAuksiyon;
             _this3.auksiyonTimer(res.data.auksiyon);
+            window.location.reload();
           }
           console.log('res auksiyon WithTimer - ', res.data.auksiyon.status);
         }
@@ -41414,10 +41415,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "AukcionСompletion",
+  props: ['product', 'auksiyon', 'stop_auksiyon'],
   data: function data() {
-    return {};
+    return {
+      product_id: this.getProductID(),
+      extend_tmie: null,
+      is_product: null
+    };
   },
   methods: {
+    extendAuksiyonTime: function extendAuksiyonTime() {
+      var auksiyon_button = setInterval(function () {
+        var auksiyon_add_button = document.getElementsByClassName('auksiyon_add_button');
+        var add_on_aukcion_div = document.getElementsByClassName('add_on_aukcion_div');
+        var auksion_completion = document.getElementsByClassName('modalbox');
+        var fon = document.getElementById('fon');
+        var body = document.body;
+        if (body && auksiyon_add_button && add_on_aukcion_div && auksion_completion && fon) {
+          if (auksiyon_add_button[0] && add_on_aukcion_div[0] && auksion_completion[0] && fon) {
+            auksion_completion[0].style.display = 'none';
+            fon.style.display = 'none';
+            body.style = 'overflow: none';
+            setTimeout(function () {
+              auksiyon_add_button[0].click();
+            }, 100);
+          }
+          clearInterval(auksiyon_button);
+        }
+      }, 0.1);
+      setTimeout(function () {
+        clearInterval(auksiyon_button);
+      }, 30000);
+    },
+    getProductID: function getProductID() {
+      var start = window.location.pathname.lastIndexOf('/');
+      var url = window.location.pathname;
+      return url.substring(start + 1);
+    },
     getSuccessModal: function getSuccessModal() {
       // document.ready(function() {
       var redo = document.getElementsByClassName('redo');
@@ -41429,8 +41463,35 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
+  computed: {
+    hideAuksiyonAddButton: function hideAuksiyonAddButton() {
+      var auksiyon_button = setInterval(function () {
+        var fon = document.getElementById('fon');
+        var auksiyon_add_button = document.getElementsByClassName('auksiyon_add_button');
+        var add_on_aukcion_div = document.getElementsByClassName('add_on_aukcion_div');
+        var body = document.body;
+        if (body && auksiyon_add_button && auksiyon_add_button[0] && add_on_aukcion_div && add_on_aukcion_div[0]) {
+          auksiyon_add_button[0].style = 'display:none: position: absolute; opacity: 0; z-index: -1;';
+          body.style = 'overflow: hidden;';
+          fon.style.display = 'block';
+          setTimeout(function () {
+            if (add_on_aukcion_div && add_on_aukcion_div[0] && add_on_aukcion_div[0].classList) {
+              add_on_aukcion_div[0].classList.remove('d-none');
+              add_on_aukcion_div[0].classList.add('d-block');
+              add_on_aukcion_div[0].style.width = '0px';
+              add_on_aukcion_div[0].style.height = '0px';
+            }
+          }, 1000);
+          clearInterval(auksiyon_button);
+        }
+      }, 0.1);
+    }
+  },
   mounted: function mounted() {
+    this.hideAuksiyonAddButton;
     this.getSuccessModal();
+    var auksiyon_add_button = document.getElementsByClassName('auksion_completion');
+    console.log("BBBBBBBBBBFFFFFHHHHHKKK - ", auksiyon_add_button[0]);
   }
 });
 
@@ -41726,22 +41787,21 @@ var _this = undefined;
       var auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
       var timer = this.getTimer(this.auksiyon);
       var current = this.getCurrentTime();
-      var date = Number(timer) / 155;
+      var date = Number(timer) / 100;
       var product_name = this.auksiyon.product.productable.title;
       if (!date) {
+        this.stop_auksiyon = true;
         var success_auksiyon = setInterval(function () {
           var fon = document.getElementById('fon');
+          if (fon) fon.style.display = 'block';
           if (fon) clearInterval(success_auksiyon);
-          if (fon) {
-            fon.style.width = document.body.scrollWidth + 'px';
-            fon.style.height = document.body.scrollHeight + 'px';
-          }
           console.log("AAAAAAAAAAA === ", fon);
         }, 0.1);
-        this.stop_auksiyon = true;
+        setTimeout(function () {
+          clearInterval(success_auksiyon);
+        }, 30000);
       }
       if (!date) auksiyon_horus[0].innerHTML = this.millisecondsToTime(0);
-      ;
       document.addEventListener('DOMContentLoaded', function () {
         axios({
           method: "POST",
@@ -43992,9 +44052,66 @@ var _withScopeId = function _withScopeId(n) {
 var _hoisted_1 = {
   "class": "col-12"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"background\" id=\"success_auksiyon_fon\" data-v-ecfd07e4></div><div class=\"container\" data-v-ecfd07e4><div class=\"row justify-content-center\" data-v-ecfd07e4><div class=\"modalbox success col-sm-8 col-md-6 col-lg-5 center animate\" data-v-ecfd07e4><div class=\"d-flex icon\" data-v-ecfd07e4><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"90\" height=\"90\" fill=\"white\" class=\"bi bi-check-lg m-auto align-self-center\" viewBox=\"0 0 16 16\" data-v-ecfd07e4><path d=\"M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z\" data-v-ecfd07e4></path></svg></div><!--/.icon--><h1 data-v-ecfd07e4>Auksiyon sonlandı!</h1><p class=\"mt-4 mb-4 fw-bold fs-4\" data-v-ecfd07e4> Son qərar gözlənilir!</p><div class=\"mb-4\" data-v-ecfd07e4><div type=\"button\" class=\"btn btn-success w-75 mb-1 fs-5\" data-v-ecfd07e4>Vaxtı artır</div><div type=\"button\" class=\"btn btn-danger w-75 fs-5\" data-v-ecfd07e4>Sonlandır</div></div></div><!--/.success--></div><!--/.row--><!--            &lt;div class=&quot;row&quot;&gt;--><!--                &lt;div class=&quot;modalbox error col-sm-8 col-md-6 col-lg-5 center animate&quot; style=&quot;display: none;&quot;&gt;--><!--                    &lt;div class=&quot;icon&quot;&gt;--><!--                        &lt;span class=&quot;glyphicon glyphicon-thumbs-down&quot;&gt;&lt;/span&gt;--><!--                    &lt;/div&gt;--><!--                    &amp;lt;!&amp;ndash;/.icon&amp;ndash;&amp;gt;--><!--                    &lt;h1&gt;Oh no!&lt;/h1&gt;--><!--                    &lt;p&gt;Oops! Something went wrong,--><!--                        &lt;br&gt; you should try again.&lt;/p&gt;--><!--                    &lt;button type=&quot;button&quot; class=&quot;redo btn&quot;&gt;Try again&lt;/button&gt;--><!--                    &lt;span class=&quot;change&quot;&gt;&amp;#45;&amp;#45; Click to see opposite state &amp;#45;&amp;#45;&lt;/span&gt;--><!--                &lt;/div&gt;--><!--                &amp;lt;!&amp;ndash;/.success&amp;ndash;&amp;gt;--><!--            &lt;/div&gt;--><!--/.row--></div>", 2);
+var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "background",
+    id: "success_auksiyon_fon"
+  }, null, -1 /* HOISTED */);
+});
+var _hoisted_3 = {
+  "class": "container"
+};
+var _hoisted_4 = {
+  "class": "row justify-content-center"
+};
+var _hoisted_5 = {
+  "class": "modalbox success col-sm-8 col-md-6 col-lg-5 center animate"
+};
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "d-flex icon"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "90",
+    height: "90",
+    fill: "white",
+    "class": "bi bi-check-lg m-auto align-self-center",
+    viewBox: "0 0 16 16"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+    d: "M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+  })])], -1 /* HOISTED */);
+});
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Auksiyon sonlandı!", -1 /* HOISTED */);
+});
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "mt-4 mb-4 fw-bold fs-4"
+  }, " Son qərar gözlənilir!", -1 /* HOISTED */);
+});
+var _hoisted_9 = {
+  "class": "mb-4"
+};
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    type: "button",
+    "class": "btn btn-danger w-75 fs-5"
+  }, "Sonlandır", -1 /* HOISTED */);
+});
+var _hoisted_11 = {
+  "class": "d-none add_on_aukcion_div"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.container")]);
+  var _component_add_on_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("add-on-aukcion");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.icon"), _hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.extendAuksiyonTime && $options.extendAuksiyonTime.apply($options, arguments);
+    }),
+    type: "button",
+    "class": "btn btn-success w-75 mb-1 fs-5"
+  }, "Vaxtı artır"), _hoisted_10])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.success")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_add_on_aukcion, {
+    product_info: $props.product
+  }, null, 8 /* PROPS */, ["product_info"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.row"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"row\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"modalbox error col-sm-8 col-md-6 col-lg-5 center animate\" style=\"display: none;\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"icon\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <span class=\"glyphicon glyphicon-thumbs-down\"></span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    &lt;!&ndash;/.icon&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <h1>Oh no!</h1>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <p>Oops! Something went wrong,"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <br> you should try again.</p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <button type=\"button\" class=\"redo btn\">Try again</button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <span class=\"change\">&#45;&#45; Click to see opposite state &#45;&#45;</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                &lt;!&ndash;/.success&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.row")])]);
 }
 
 /***/ }),
@@ -44397,7 +44514,7 @@ var _hoisted_6 = {
 };
 var _hoisted_7 = {
   key: 0,
-  "class": "card-header bg-transparent p-0"
+  "class": "card-header bg-transparent p-0 auksion_completion"
 };
 var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -44546,7 +44663,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_auksion_user_offers_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("auksion-user-offers-modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_aukcion_product, {
     product: $props.product
-  }, null, 8 /* PROPS */, ["product"]), _hoisted_5]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Real time actions table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$data.stop_auksiyon ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h5", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_completion)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, ["product"]), _hoisted_5]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Real time actions table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$data.stop_auksiyon ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h5", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_completion, {
+    product: $props.product,
+    auksiyon: $props.auksiyon,
+    stop_auksiyon: $data.stop_auksiyon
+  }, null, 8 /* PROPS */, ["product", "auksiyon", "stop_auksiyon"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.price = $event;
     }),

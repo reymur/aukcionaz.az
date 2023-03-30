@@ -14,8 +14,12 @@
 
                 <!--Real time actions table-->
                 <div class="card">
-                    <h5 v-if="stop_auksiyon" class="card-header bg-transparent p-0">
-                        <auksion-completion></auksion-completion>
+                    <h5 v-if="stop_auksiyon" class="card-header bg-transparent p-0 auksion_completion">
+                        <auksion-completion
+                            :product="product"
+                            :auksiyon="auksiyon"
+                            :stop_auksiyon="stop_auksiyon"
+                        ></auksion-completion>
                     </h5>
 
                     <div class="card-body py-3">
@@ -257,24 +261,26 @@ export default {
             let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
             let timer     = this.getTimer(this.auksiyon);
             let current   = this.getCurrentTime();
-            let date =  Number(timer) / 155;
+            let date =  Number(timer) / 100;
             let product_name = this.auksiyon.product.productable.title;
 
             if( !date ) {
+                this.stop_auksiyon = true;
+
                 let success_auksiyon = setInterval( () => {
                     let fon = document.getElementById('fon');
+                    if(fon) fon.style.display = 'block';
                     if( fon ) clearInterval(success_auksiyon);
-                    if(fon) {
-                        fon.style.width = document.body.scrollWidth+'px';
-                        fon.style.height = document.body.scrollHeight+'px';
-                    }
+
                     console.log("AAAAAAAAAAA === ", fon )
                 }, 0.1 )
 
-                this.stop_auksiyon = true;
+                setTimeout(() => {
+                    clearInterval(success_auksiyon);
+                }, 30000 )
             }
 
-            if( !date ) auksiyon_horus[0].innerHTML = this.millisecondsToTime( 0 );;
+            if( !date ) auksiyon_horus[0].innerHTML = this.millisecondsToTime( 0 );
 
             document.addEventListener('DOMContentLoaded', () => {
                 axios({

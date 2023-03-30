@@ -191,7 +191,9 @@ export default {
                         if( res.data.auksiyon.status === 1 ) {
                             this.checkAuksiyon;
 
-                            this.auksiyonTimer(res.data.auksiyon)
+                            this.auksiyonTimer(res.data.auksiyon);
+
+                            window.location.reload();
                         }
                         console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
                     }
