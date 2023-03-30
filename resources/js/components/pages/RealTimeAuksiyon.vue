@@ -260,7 +260,20 @@ export default {
             let date =  Number(timer) / 155;
             let product_name = this.auksiyon.product.productable.title;
 
-            if( !date ) this.stop_auksiyon = true;
+            if( !date ) {
+                let success_auksiyon = setInterval( () => {
+                    let fon = document.getElementById('fon');
+                    if( fon ) clearInterval(success_auksiyon);
+                    if(fon) {
+                        fon.style.width = document.body.scrollWidth+'px';
+                        fon.style.height = document.body.scrollHeight+'px';
+                    }
+                    console.log("AAAAAAAAAAA === ", fon )
+                }, 0.1 )
+
+                this.stop_auksiyon = true;
+            }
+
             if( !date ) auksiyon_horus[0].innerHTML = this.millisecondsToTime( 0 );;
 
             document.addEventListener('DOMContentLoaded', () => {
@@ -289,7 +302,7 @@ export default {
             let time_interval = setInterval( () => {
                 if( auksiyon_horus && auksiyon_horus[0] && date )
                     auksiyon_horus[0].innerHTML = this.millisecondsToTime( date );
-                
+
                 date -= 1000;
                 // console.log("DATA = ", date < 0 )
                 if( date < 0 ) {

@@ -28510,6 +28510,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".PhotoConsumer[data-v-32724685] {\n  d
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".modalbox.success[data-v-ecfd07e4],\n.modalbox.error[data-v-ecfd07e4] {\n  position: absolute;\n  //box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  box-shadow: 0 4px 15px -1px #333232;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  border-radius: 2px;\n  background: #fff;\n  padding: 25px 25px 15px;\n  text-align: center;\n  z-index: 101;\n}\n.modalbox.success.animate .icon[data-v-ecfd07e4],\n.modalbox.error.animate .icon[data-v-ecfd07e4] {\n  animation: fall-in-ecfd07e4 0.75s;\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n}\n.modalbox.success h1[data-v-ecfd07e4],\n.modalbox.error h1[data-v-ecfd07e4] {\n  font-family: 'Montserrat', sans-serif;\n}\n.modalbox.success p[data-v-ecfd07e4],\n.modalbox.error p[data-v-ecfd07e4] {\n  font-family: 'Open Sans', sans-serif;\n}\n.modalbox.success button[data-v-ecfd07e4],\n.modalbox.error button[data-v-ecfd07e4],\n.modalbox.success button[data-v-ecfd07e4]:active,\n.modalbox.error button[data-v-ecfd07e4]:active,\n.modalbox.success button[data-v-ecfd07e4]:focus,\n.modalbox.error button[data-v-ecfd07e4]:focus {\n  transition: all 0.1s ease-in-out;\n  border-radius: 30px;\n  margin-top: 15px;\n  width: 80%;\n  background: transparent;\n  color: #4caf50;\n  border-color: #4caf50;\n  outline: none;\n}\n.modalbox.success button[data-v-ecfd07e4]:hover,\n.modalbox.error button[data-v-ecfd07e4]:hover,\n.modalbox.success button[data-v-ecfd07e4]:active:hover,\n.modalbox.error button[data-v-ecfd07e4]:active:hover,\n.modalbox.success button[data-v-ecfd07e4]:focus:hover,\n.modalbox.error button[data-v-ecfd07e4]:focus:hover {\n  color: #fff;\n  background: #4caf50;\n  border-color: transparent;\n}\n.modalbox.success .icon[data-v-ecfd07e4],\n.modalbox.error .icon[data-v-ecfd07e4] {\n  position: relative;\n  margin: 0 auto;\n  margin-top: -75px;\n  background: #4caf50;\n  height: 100px;\n  width: 100px;\n  border-radius: 50%;\n}\n.modalbox.success .icon span[data-v-ecfd07e4],\n.modalbox.error .icon span[data-v-ecfd07e4] {\n  postion: absolute;\n  font-size: 4em;\n  color: #fff;\n  text-align: center;\n  padding-top: 20px;\n}\n.modalbox.error button[data-v-ecfd07e4],\n.modalbox.error button[data-v-ecfd07e4]:active,\n.modalbox.error button[data-v-ecfd07e4]:focus {\n  color: #f44336;\n  border-color: #f44336;\n}\n.modalbox.error button[data-v-ecfd07e4]:hover,\n.modalbox.error button[data-v-ecfd07e4]:active:hover,\n.modalbox.error button[data-v-ecfd07e4]:focus:hover {\n  color: #fff;\n  background: #f44336;\n}\n.modalbox.error .icon[data-v-ecfd07e4] {\n  background: #f44336;\n}\n.modalbox.error .icon span[data-v-ecfd07e4] {\n  padding-top: 25px;\n}\n.center[data-v-ecfd07e4] {\n  float: none;\n  margin-left: auto;\n  margin-right: auto;\n  /* stupid browser compat. smh */\n}\n.center .change[data-v-ecfd07e4] {\n  clearn: both;\n  display: block;\n  font-size: 10px;\n  color: #ccc;\n  margin-top: 10px;\n}\n@keyframes fall-in-ecfd07e4 {\n0% {\n    transform: scale(3, 3);\n    opacity: 0;\n}\n50% {\n    transform: scale(1, 1);\n    opacity: 1;\n}\n60% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n@keyframes plunge-ecfd07e4 {\n0% {\n    margin-top: -100%;\n}\n100% {\n    margin-top: 15%;\n}\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/elements/NewAnnounceUserInfo.vue?vue&type=style&index=0&id=2e0f9bf5&scoped=true&lang=css":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/elements/NewAnnounceUserInfo.vue?vue&type=style&index=0&id=2e0f9bf5&scoped=true&lang=css ***!
@@ -41028,7 +41052,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }, 1);
       var centerOverlayCustomI = setInterval(function () {
-        var centerOverlayCustom = document.getElementsByClassName('center-overlay-custom');
+        var centerOverlayCustom = document.getElementsByClassName('center-overlay-customjs');
         if (centerOverlayCustom && centerOverlayCustom.length) {
           centerOverlayCustom.forEach(function (e) {
             if (e.style) {
@@ -41389,7 +41413,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "AukcionСompletion"
+  name: "AukcionСompletion",
+  data: function data() {
+    return {};
+  },
+  methods: {
+    getSuccessModal: function getSuccessModal() {
+      // document.ready(function() {
+      var redo = document.getElementsByClassName('redo');
+      var success = document.getElementsByClassName('success');
+      if (redo && redo[0] && success && success[0]) {
+        redo[0].click(function () {
+          success[0].toggle();
+        });
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.getSuccessModal();
+  }
 });
 
 /***/ }),
@@ -41686,7 +41728,18 @@ var _this = undefined;
       var current = this.getCurrentTime();
       var date = Number(timer) / 155;
       var product_name = this.auksiyon.product.productable.title;
-      if (!date) this.stop_auksiyon = true;
+      if (!date) {
+        var success_auksiyon = setInterval(function () {
+          var fon = document.getElementById('fon');
+          if (fon) clearInterval(success_auksiyon);
+          if (fon) {
+            fon.style.width = document.body.scrollWidth + 'px';
+            fon.style.height = document.body.scrollHeight + 'px';
+          }
+          console.log("AAAAAAAAAAA === ", fon);
+        }, 0.1);
+        this.stop_auksiyon = true;
+      }
       if (!date) auksiyon_horus[0].innerHTML = this.millisecondsToTime(0);
       ;
       document.addEventListener('DOMContentLoaded', function () {
@@ -43920,10 +43973,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4 ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -43933,32 +43986,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-ecfd07e4"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
 var _hoisted_1 = {
   "class": "col-12"
 };
-var _hoisted_2 = {
-  xmlns: "http://www.w3.org/2000/svg",
-  style: {
-    "display": "none"
-  }
-};
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<symbol id=\"check-circle-fill\" fill=\"currentColor\" viewBox=\"0 0 16 16\"><path d=\"M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z\"></path></symbol><symbol id=\"info-fill\" fill=\"currentColor\" viewBox=\"0 0 16 16\"><path d=\"M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z\"></path></symbol><symbol id=\"exclamation-triangle-fill\" fill=\"currentColor\" viewBox=\"0 0 16 16\"><path d=\"M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z\"></path></symbol>", 3);
-var _hoisted_6 = [_hoisted_3];
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "alert alert-danger d-flex align-items-center mb-0 py-1",
-  role: "alert"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
-  "class": "bi flex-shrink-0 me-2",
-  width: "24",
-  height: "24",
-  role: "img",
-  "aria-label": "Success:"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("use", {
-  "xlink:href": "#check-circle-fill"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, " Auksiyon sonlandı ")], -1 /* HOISTED */);
-
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"background\" id=\"success_auksiyon_fon\" data-v-ecfd07e4></div><div class=\"container\" data-v-ecfd07e4><div class=\"row justify-content-center\" data-v-ecfd07e4><div class=\"modalbox success col-sm-8 col-md-6 col-lg-5 center animate\" data-v-ecfd07e4><div class=\"d-flex icon\" data-v-ecfd07e4><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"90\" height=\"90\" fill=\"white\" class=\"bi bi-check-lg m-auto align-self-center\" viewBox=\"0 0 16 16\" data-v-ecfd07e4><path d=\"M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z\" data-v-ecfd07e4></path></svg></div><!--/.icon--><h1 data-v-ecfd07e4>Auksiyon sonlandı!</h1><p class=\"mt-4 mb-4 fw-bold fs-4\" data-v-ecfd07e4> Son qərar gözlənilir!</p><div class=\"mb-4\" data-v-ecfd07e4><div type=\"button\" class=\"btn btn-success w-75 mb-1 fs-5\" data-v-ecfd07e4>Vaxtı artır</div><div type=\"button\" class=\"btn btn-danger w-75 fs-5\" data-v-ecfd07e4>Sonlandır</div></div></div><!--/.success--></div><!--/.row--><!--            &lt;div class=&quot;row&quot;&gt;--><!--                &lt;div class=&quot;modalbox error col-sm-8 col-md-6 col-lg-5 center animate&quot; style=&quot;display: none;&quot;&gt;--><!--                    &lt;div class=&quot;icon&quot;&gt;--><!--                        &lt;span class=&quot;glyphicon glyphicon-thumbs-down&quot;&gt;&lt;/span&gt;--><!--                    &lt;/div&gt;--><!--                    &amp;lt;!&amp;ndash;/.icon&amp;ndash;&amp;gt;--><!--                    &lt;h1&gt;Oh no!&lt;/h1&gt;--><!--                    &lt;p&gt;Oops! Something went wrong,--><!--                        &lt;br&gt; you should try again.&lt;/p&gt;--><!--                    &lt;button type=&quot;button&quot; class=&quot;redo btn&quot;&gt;Try again&lt;/button&gt;--><!--                    &lt;span class=&quot;change&quot;&gt;&amp;#45;&amp;#45; Click to see opposite state &amp;#45;&amp;#45;&lt;/span&gt;--><!--                &lt;/div&gt;--><!--                &amp;lt;!&amp;ndash;/.success&amp;ndash;&amp;gt;--><!--            &lt;/div&gt;--><!--/.row--></div>", 2);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_2, _hoisted_6)), _hoisted_7]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.container")]);
 }
 
 /***/ }),
@@ -71251,6 +71287,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_style_index_0_id_ecfd07e4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_style_index_0_id_ecfd07e4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_style_index_0_id_ecfd07e4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/elements/NewAnnounceUserInfo.vue?vue&type=style&index=0&id=2e0f9bf5&scoped=true&lang=css":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/elements/NewAnnounceUserInfo.vue?vue&type=style&index=0&id=2e0f9bf5&scoped=true&lang=css ***!
@@ -72445,15 +72511,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionСompletion.vue?vue&type=template&id=ecfd07e4 */ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4");
+/* harmony import */ var _Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true */ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true");
 /* harmony import */ var _Aukcion_ompletion_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AukcionСompletion.vue?vue&type=script&lang=js */ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=script&lang=js");
-/* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Aukcion_ompletion_vue_vue_type_style_index_0_id_ecfd07e4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css */ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css");
+/* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Aukcion_ompletion_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/crumbs/AukcionСompletion.vue"]])
+
+
+const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Aukcion_ompletion_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-ecfd07e4"],['__file',"resources/js/components/crumbs/AukcionСompletion.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -73583,18 +73652,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4":
-/*!********************************************************************************************!*\
-  !*** ./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4 ***!
-  \********************************************************************************************/
+/***/ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true ***!
+  \********************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AukcionСompletion.vue?vue&type=template&id=ecfd07e4 */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_template_id_ecfd07e4_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=template&id=ecfd07e4&scoped=true");
 
 
 /***/ }),
@@ -73899,6 +73968,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowForPhoneScreen_vue_vue_type_style_index_0_id_32724685_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ShowForPhoneScreen.vue?vue&type=style&index=0&id=32724685&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/products/crumbs/ShowForPhoneScreen.vue?vue&type=style&index=0&id=32724685&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css ***!
+  \**********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Aukcion_ompletion_vue_vue_type_style_index_0_id_ecfd07e4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/crumbs/AukcionСompletion.vue?vue&type=style&index=0&id=ecfd07e4&scoped=true&lang=css");
 
 
 /***/ }),

@@ -586,3 +586,12 @@ input:focus
     height: 430px;
     display: flex;
 }
+
+#fon {
+    background-size: cover;
+    background-color: #0000006b;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
