@@ -399,6 +399,7 @@ export default {
                 method:"POST",
                 url:"/auksiyon/timer",
                 data: {
+                    timer: Number(timer),
                     name: this.product_info.title,
                     time: date,
                     current_time: this.getCurrentTimes()
@@ -406,7 +407,8 @@ export default {
             }).then( res => {
                 if( res && res.data && res.data.time !== null && res.data.time !== undefined ) {
                     // date = date - res.data.time;
-                    console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
+                    console.log("started AAAAAABBB res 111 -- === ", res.data.time )
+                    // console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
                 }
                 // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
             }).catch( err => {

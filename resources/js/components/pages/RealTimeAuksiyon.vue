@@ -14,7 +14,7 @@
 
                 <!--Real time actions table-->
                 <div class="card">
-                    <h5 class="card-header bg-transparent p-0">
+                    <h5 v-if="stop_auksiyon" class="card-header bg-transparent p-0">
                         <auksion-completion></auksion-completion>
                     </h5>
 
@@ -174,6 +174,7 @@ export default {
     },
     data() {
         return {
+            stop_auksiyon: null,
             auksiyon_time: null,
             model2: false,
             price: '',
@@ -256,23 +257,28 @@ export default {
             let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
             let timer     = this.getTimer(this.auksiyon);
             let current   = this.getCurrentTime();
-            let date =  Number(timer) / 100;
+            let date =  Number(timer) / 155;
             let product_name = this.auksiyon.product.productable.title;
+
+            if( !date ) this.stop_auksiyon = true;
+            if( !date ) auksiyon_horus[0].innerHTML = this.millisecondsToTime( 0 );;
 
             document.addEventListener('DOMContentLoaded', () => {
                 axios({
-                    method:"POST",
-                    url:"/auksiyon/timer",
+                    method: "POST",
+                    url: "/auksiyon/timer",
                     data: {
-                        name: product_name,
-                        time: date,
+                        timer: Number(timer),
+                        name:  product_name,
+                        time:  date,
                         current_time: this.getCurrentTime()
                     }
                 }).then( res => {
-                    if( res && res.data && res.data.time ) {
+                    if( res && res.data && res.data.time !== null && res.data.time !== undefined ) {
                         date = date - res.data.time;
                         console.log("started res -- === ", this.millisecondsToTime(res.data.time) )
                     }
+                    console.log("started res 222qqq-- === ", res.data )
                 }).catch( err => {
                     console.log("started err -- === ", err.response.data )
                 });
@@ -281,26 +287,30 @@ export default {
             // auksiyon_horus[0].innerHTML = this.millisecondsToTime( date );
 
             let time_interval = setInterval( () => {
-                if( auksiyon_horus && auksiyon_horus[0] )
-                    auksiyon_horus[0].innerHTML = this.millisecondsToTime( date )
+                if( auksiyon_horus && auksiyon_horus[0] && date )
+                    auksiyon_horus[0].innerHTML = this.millisecondsToTime( date );
+                
                 date -= 1000;
-                // console.log("date -- === ", date < 0 )
+                // console.log("DATA = ", date < 0 )
                 if( date < 0 ) {
+                    console.log("DATA axios = ", date  )
                     axios({
                         method:"POST",
                         url:"/auksiyon/timer",
                         data: {
                             auksiyon_name: product_name,
                             auksiyon_id: this.getProductID(),
-                            stop_auksiyon_timer: true,
+                            stop_auksiyon_timer: 1,
                         }
                     }).then( res => {
-                        if( res && res.data && res.data.stop_auksiyon_timer ) {
-                            date = null;
+                        if( res && res.data && res.data.stop_auksiyon ) {
+                            date = 0;
+                            auksiyon_horus[0].innerHTML = this.millisecondsToTime( date )
+                            this.stop_auksiyon = true;
                             clearInterval(time_interval);
-                            console.log("stop_auksiyon_timer res -- === ", res.data.stop_auksiyon_timer )
+                            console.log("stop auksiyon timer res -- === ", res.data.stop_auksiyon )
                         }
-                        // console.log("stop_auksiyon_timer res -- === ", res.data.stop_auksiyon_timer )
+                        // console.log("stop auksiyon timer res www -- === ", res )
                     }).catch( err => {
                         console.log("stop_auksiyon_timer err -- === ", err.response.data )
                     });

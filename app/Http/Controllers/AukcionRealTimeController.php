@@ -49,7 +49,9 @@ class AukcionRealTimeController extends Controller
         $product = false;
         $auksiyon = Auksiyon::where('product_id', $request->id)->first();
 
-        if( $auksiyon->product_id == $request->id && $auksiyon->status ) {
+        if( ! $auksiyon ) abort(404);
+
+        if( $auksiyon && $auksiyon->product_id == $request->id ) {
 
             if( $auksiyon && $auksiyon->product && $auksiyon->product->productable ) {
 
@@ -169,7 +171,7 @@ class AukcionRealTimeController extends Controller
     }
 
     public function auksiyonTimerFunc(Request $request) {
-        if( $request->name && $request->time && $request->current_time ) {
+        if( $request->timer && $request->name && $request->time && $request->current_time ) {
             $auksiyon_timer = AuksiyonTimer::where('name', $request->name)->first();
 
             if( ! $auksiyon_timer ) {
@@ -181,25 +183,35 @@ class AukcionRealTimeController extends Controller
             }
 
             $time = $request->current_time - $auksiyon_timer->current_save_time;
+
+            if( ($request->timer - $time) < 0 ) {
+                return $this->deleteAuksiyon($request->auksiyon_name, $request->auksiyon_id);
+            }
+
             return response()->json([
                 'time' => $time,
             ]);
         }
 
         if( $request->stop_auksiyon_timer && $request->auksiyon_id ) {
-            $auksiyon_timer = AuksiyonTimer::where('name', $request->auksiyon_name)->delete();
-            $auksiyon       = Auksiyon::where('product_id', $request->auksiyon_id)->first();
-
-            $auksiyon->update([
-                'timer'    => null,
-                'finished' => \Carbon\Carbon::now(),
-                'status'   => 0
-            ]);
-
-            return response()->json([
-                'stop_auksiyon_timer' => $auksiyon,
-            ]);
+            return $this->deleteAuksiyon($request->auksiyon_name, $request->auksiyon_id);
         }
+    }
+
+    public function deleteAuksiyon($auksiyon_name, $auksiyon_id) {
+        $auksiyon_timer = AuksiyonTimer::where('name', $auksiyon_name)->delete();
+        $auksiyon       = Auksiyon::where('product_id', $auksiyon_id)->first();
+        $res = $auksiyon;
+
+        $res->update([
+            'timer'    => null,
+            'finished' => \Carbon\Carbon::now(),
+            'status'   => 0
+        ]);
+
+        return response()->json([
+            'stop_auksiyon' => 11111,
+        ]);
     }
 //    public function auksiyonTimer(Request $request) {
 //        session_start();

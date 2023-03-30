@@ -40019,7 +40019,6 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     auksiyonTimer: function auksiyonTimer(auksiyon) {
-      var _this5 = this;
       var timer = this.getTimer(auksiyon);
       var current = this.getCurrentTimes();
       var date = Number(timer);
@@ -40029,6 +40028,7 @@ __webpack_require__.r(__webpack_exports__);
         method: "POST",
         url: "/auksiyon/timer",
         data: {
+          timer: Number(timer),
           name: this.product_info.title,
           time: date,
           current_time: this.getCurrentTimes()
@@ -40036,7 +40036,8 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         if (res && res.data && res.data.time !== null && res.data.time !== undefined) {
           // date = date - res.data.time;
-          console.log("started AAAAAABBB res 111 -- === ", _this5.millisecondsToTime(res.data.time));
+          console.log("started AAAAAABBB res 111 -- === ", res.data.time);
+          // console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
         }
         // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
       })["catch"](function (err) {
@@ -41600,6 +41601,7 @@ var _this = undefined;
   components: {},
   data: function data() {
     return {
+      stop_auksiyon: null,
       auksiyon_time: null,
       model2: false,
       price: '',
@@ -41682,22 +41684,27 @@ var _this = undefined;
       var auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
       var timer = this.getTimer(this.auksiyon);
       var current = this.getCurrentTime();
-      var date = Number(timer) / 100;
+      var date = Number(timer) / 155;
       var product_name = this.auksiyon.product.productable.title;
+      if (!date) this.stop_auksiyon = true;
+      if (!date) auksiyon_horus[0].innerHTML = this.millisecondsToTime(0);
+      ;
       document.addEventListener('DOMContentLoaded', function () {
         axios({
           method: "POST",
           url: "/auksiyon/timer",
           data: {
+            timer: Number(timer),
             name: product_name,
             time: date,
             current_time: _this4.getCurrentTime()
           }
         }).then(function (res) {
-          if (res && res.data && res.data.time) {
+          if (res && res.data && res.data.time !== null && res.data.time !== undefined) {
             date = date - res.data.time;
             console.log("started res -- === ", _this4.millisecondsToTime(res.data.time));
           }
+          console.log("started res 222qqq-- === ", res.data);
         })["catch"](function (err) {
           console.log("started err -- === ", err.response.data);
         });
@@ -41706,25 +41713,28 @@ var _this = undefined;
       // auksiyon_horus[0].innerHTML = this.millisecondsToTime( date );
 
       var time_interval = setInterval(function () {
-        if (auksiyon_horus && auksiyon_horus[0]) auksiyon_horus[0].innerHTML = _this4.millisecondsToTime(date);
+        if (auksiyon_horus && auksiyon_horus[0] && date) auksiyon_horus[0].innerHTML = _this4.millisecondsToTime(date);
         date -= 1000;
-        // console.log("date -- === ", date < 0 )
+        // console.log("DATA = ", date < 0 )
         if (date < 0) {
+          console.log("DATA axios = ", date);
           axios({
             method: "POST",
             url: "/auksiyon/timer",
             data: {
               auksiyon_name: product_name,
               auksiyon_id: _this4.getProductID(),
-              stop_auksiyon_timer: true
+              stop_auksiyon_timer: 1
             }
           }).then(function (res) {
-            if (res && res.data && res.data.stop_auksiyon_timer) {
-              date = null;
+            if (res && res.data && res.data.stop_auksiyon) {
+              date = 0;
+              auksiyon_horus[0].innerHTML = _this4.millisecondsToTime(date);
+              _this4.stop_auksiyon = true;
               clearInterval(time_interval);
-              console.log("stop_auksiyon_timer res -- === ", res.data.stop_auksiyon_timer);
+              console.log("stop auksiyon timer res -- === ", res.data.stop_auksiyon);
             }
-            // console.log("stop_auksiyon_timer res -- === ", res.data.stop_auksiyon_timer )
+            // console.log("stop auksiyon timer res www -- === ", res )
           })["catch"](function (err) {
             console.log("stop_auksiyon_timer err -- === ", err.response.data);
           });
@@ -43935,7 +43945,7 @@ var _hoisted_2 = {
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<symbol id=\"check-circle-fill\" fill=\"currentColor\" viewBox=\"0 0 16 16\"><path d=\"M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z\"></path></symbol><symbol id=\"info-fill\" fill=\"currentColor\" viewBox=\"0 0 16 16\"><path d=\"M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z\"></path></symbol><symbol id=\"exclamation-triangle-fill\" fill=\"currentColor\" viewBox=\"0 0 16 16\"><path d=\"M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z\"></path></symbol>", 3);
 var _hoisted_6 = [_hoisted_3];
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "alert alert-success d-flex align-items-center mb-0 py-1",
+  "class": "alert alert-danger d-flex align-items-center mb-0 py-1",
   role: "alert"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "bi flex-shrink-0 me-2",
@@ -44350,6 +44360,7 @@ var _hoisted_6 = {
   "class": "card"
 };
 var _hoisted_7 = {
+  key: 0,
   "class": "card-header bg-transparent p-0"
 };
 var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
@@ -44499,7 +44510,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_auksion_user_offers_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("auksion-user-offers-modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_on_aukcion_product, {
     product: $props.product
-  }, null, 8 /* PROPS */, ["product"]), _hoisted_5]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Real time actions table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_completion)]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, ["product"]), _hoisted_5]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Real time actions table"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$data.stop_auksiyon ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h5", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_auksion_completion)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.price = $event;
     }),
