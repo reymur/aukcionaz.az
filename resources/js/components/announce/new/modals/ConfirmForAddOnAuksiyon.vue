@@ -15,7 +15,7 @@
                                     <input type="text" class="form-control rounded-0" id="inputPassword">
                                 </div>
                             </div>
-
+ 
                             <div class="mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4">
                                 <label for="inputPassword" class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label">
                                     Telefon <span class="text-danger">*</span>
