@@ -28318,6 +28318,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".form-control[data-v-5c507bb8]:focus, 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "*[data-v-32ae46b3] {\n  box-sizing: border-box;\n}\nhtml[data-v-32ae46b3], body[data-v-32ae46b3] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  margin: 0;\n  padding: 0;\n  font-family: 'Noto Sans', sans-serif;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 22px;\n  background-color: #F2E1AC;\n}\n.fancy-btn[data-v-32ae46b3] {\n  -webkit-appearance: none;\n  cursor: pointer;\n  outline: none;\n  border: none;\n  position: relative;\n  top: 50%;\n  display: block;\n  min-width: 10%;\n  line-height: 55px;\n  font-size: 14px;\n  text-transform: uppercase;\n  margin: 0 auto;\n  padding: 0 10px;\n  background-color: #F2594B;\n  color: #FFF;\n  border-radius: 3px;\n  transform: translateY(-50%);\n}\n.fancy-btn[data-v-32ae46b3]:hover {\n  background-color: #f46f63;\n}\n.modal-overlay[data-v-32ae46b3] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n  background-color: #fff;\n  opacity: 0;\n  visibility: hidden;\n  z-index: 40;\n  -moz-transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n  -o-transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n  -webkit-transition: opacity 0.25s ease, visibility 0.35s linear;\n  -webkit-transition-delay: 0s, 0s;\n  transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n}\n.modal-overlay.state-show[data-v-32ae46b3] {\n  opacity: .7;\n  visibility: visible;\n  transition-delay: 0s;\n  transition-duration: 0.2s, 0s;\n}\n.modal-frame[data-v-32ae46b3] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n  z-index: 50;\n  /*     display: table; */\n  display: flex;\n  align-items: center;\n  -moz-box-align: center;\n  justify-content: center;\n  -moz-box-pack: center;\n  -ms-flex-pack: center;\n  width: 100%;\n  text-align: center;\n  visibility: hidden;\n}\n.modal-frame.state-appear[data-v-32ae46b3] {\n  visibility: visible;\n}\n.modal-frame.state-appear .modal-inset[data-v-32ae46b3] {\n  animation: modalComeIn-32ae46b3 0.25s ease;\n  visibility: visible;\n  /* to keep @ final state */\n}\n.modal-frame.state-appear .modal-body[data-v-32ae46b3] {\n  opacity: 1;\n  transform: translateY(0) scale(1, 1);\n}\n.modal-frame.state-leave[data-v-32ae46b3] {\n  visibility: visible;\n}\n.modal-frame.state-leave .modal-inset[data-v-32ae46b3] {\n  animation: modalHeadOut-32ae46b3 0.35s ease 0.1s;\n  visibility: visible;\n}\n.modal-frame.state-leave .modal-body[data-v-32ae46b3] {\n  opacity: 0;\n  transition-delay: 0s;\n  transition-duration: 0.35s;\n  transition-timing-function: ease;\n  transform: translateY(25px);\n}\n@-moz-document url-prefix() {\n.modal-frame[data-v-32ae46b3] {\n    height: calc(100% - 55px);\n}\n}\n.modal[data-v-32ae46b3] {\n  display: block;\n  vertical-align: middle;\n  text-align: center;\n}\n.modal-inset[data-v-32ae46b3] {\n  position: absolute;\n  padding: 60px;\n  background-color: white;\n  //min-width: 320px;\n  max-height: 320px;\n  margin: auto;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  visibility: hidden;\n  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  transform: translate3d(0, 0, 0);\n  transform-style: preserve-3d;\n}\n.modal-inset .close[data-v-32ae46b3] {\n  display: block;\n  cursor: pointer;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  padding: 10px;\n  opacity: .4;\n}\n.modal-inset .close[data-v-32ae46b3]:hover {\n  opacity: 1;\n}\n.modal-body[data-v-32ae46b3] {\n  margin: auto;\n  opacity: 0;\n  transform: translateY(0) scale(0.8, 0.8);\n  transition-property: opacity, transform;\n  transition-duration: 0.25s;\n  transition-delay: 0.1s;\n}\n.modal-body h3[data-v-32ae46b3] {\n  font-weight: 700;\n  padding-bottom: 22px;\n  display: block;\n  color: #F2594B;\n  text-align: center;\n}\n.modal-body p[data-v-32ae46b3] {\n  padding-bottom: 20px;\n}\n.modal-body .ps[data-v-32ae46b3] {\n  font-size: 12px;\n  opacity: .3;\n}\n@keyframes modalComeIn-32ae46b3 {\n0% {\n    visibility: hidden;\n    opacity: 0;\n    transform: scale(0.8, 0.8);\n}\n65.5% {\n    transform: scale(1.03, 1.03);\n}\n100% {\n    visibility: visible;\n    opacity: 1;\n    transform: scale(1, 1);\n}\n}\n@keyframes modalHeadOut-32ae46b3 {\n0% {\n    visibility: visible;\n    opacity: 1;\n    transform: translateY(0) scale(1, 1);\n}\n100% {\n    visibility: hidden;\n    opacity: 0;\n    transform: translateY(35px) scale(0.97, 0.97);\n}\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=style&index=0&id=aead5656&scoped=true&lang=css":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=style&index=0&id=aead5656&scoped=true&lang=css ***!
@@ -39751,6 +39775,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ConfirmForAddOnAuksiyon_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ConfirmForAddOnAuksiyon.vue */ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -39783,6 +39809,9 @@ __webpack_require__.r(__webpack_exports__);
       close_later_time_aukcion: false,
       close_current_time_aukcion: false
     };
+  },
+  components: {
+    ConfirmForAddOnAuksiyon: _ConfirmForAddOnAuksiyon_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   computed: {
     checkAuksiyon: function checkAuksiyon() {
@@ -40032,7 +40061,9 @@ __webpack_require__.r(__webpack_exports__);
       this.completeAuksiyonModalShow();
     },
     completeAuksiyonModalShow: function completeAuksiyonModalShow() {
-      console.log('completeAuksiyonModalShow = ', this.$parent.getSuccessModal());
+      if (this.$parent && this.$parent.getSuccessModal() !== undefined) {
+        console.log('completeAuksiyonModalShow = ', this.$parent.getSuccessModal());
+      }
       var findEl = setInterval(function () {
         var addAuksiyonCloseButton = document.getElementById('addAuksiyonCloseButton');
         if (addAuksiyonCloseButton) {
@@ -40297,6 +40328,63 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "ConfirmForAddOnAuksiyon",
+  data: function data() {
+    return {};
+  },
+  methods: {
+    modal: function modal() {
+      var modal = document.getElementsByClassName('modal-frame');
+
+      // Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers.
+      modal[0].click(function (e) {
+        if (modal[0] && modal[0].classList && modal[0].classList.contains("state-leave")) {
+          modal[0].classList.remove("state-leave");
+        }
+      });
+    },
+    open: function open() {
+      var open = document.getElementsByClassName('open');
+      var modal = document.getElementsByClassName('modal-frame');
+      var overlay = document.getElementsByClassName('modal-overlay');
+      var body = document.body;
+      if (body && open && open[0] && overlay && overlay[0] && modal && modal[0]) {
+        body.style = 'overflow: hidden';
+        overlay[0].classList.add("state-show");
+        modal[0].classList.remove("state-leave");
+        modal[0].classList.add("state-appear");
+      }
+    },
+    close: function close() {
+      var body = document.body;
+      var close = document.getElementsByClassName('close');
+      var modal = document.getElementsByClassName('modal-frame');
+      var overlay = document.getElementsByClassName('modal-overlay');
+      if (body && close && close[0] && overlay && overlay[0] && modal && modal[0]) {
+        body.style = 'overflow: none';
+        overlay[0].classList.remove("state-show");
+        modal[0].classList.remove("state-appear");
+        // modal[0].classList.add("state-leave");
+      }
+    }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -41486,7 +41574,7 @@ __webpack_require__.r(__webpack_exports__);
         var setTimer = setInterval(function () {
           var timer_div = document.getElementsByClassName('timer_div');
           if (timer_div && timer_div[0]) {
-            timer_div[0].innerHTML = timer / 1000;
+            timer_div[0].innerHTML = ' - ' + timer / 1000;
           }
           timer -= 1000;
           if (timer < 0) {
@@ -41561,9 +41649,10 @@ __webpack_require__.r(__webpack_exports__);
       var success = document.getElementsByClassName('success');
       if (fon && success && success[0]) {
         setTimeout(function () {
-          success[0].click(function () {
-            success[0].toggle();
-          });
+          // success[0].click( function() {
+          //     success[0].toggle();
+          // });
+
           if (fon.style.display && success[0].style.display === 'none') {
             fon.style.display = 'block';
             body.style = 'overflow: hidden';
@@ -42711,6 +42800,7 @@ var _hoisted_19 = {
   "class": "modal-footer"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_confirm_for_add_on_auksiyon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("confirm-for-add-on-auksiyon");
   var _component_current_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("current-time-aukcion");
   var _component_later_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("later-time-aukcion");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LIN TO ACTIVE AUKSIYON "), $data.auksiyon_status ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
@@ -42718,7 +42808,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: '/realtime/auksiyon/' + $data.product_id,
     type: "button",
     "class": "btn btn-success rounded-0 auksiyon_add_button"
-  }, _hoisted_4, 8 /* PROPS */, _hoisted_2)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), !$data.auksiyon_status ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }, _hoisted_4, 8 /* PROPS */, _hoisted_2)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_for_add_on_auksiyon), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), !$data.auksiyon_status ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.modalBackdrop && $options.modalBackdrop.apply($options, arguments);
@@ -43019,6 +43109,71 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     tokens: $data.hexTokens
   }, null, 8 /* PROPS */, _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.price], [_directive_maska, '##################################']]), _hoisted_8, _hoisted_9])])])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-32ae46b3"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+var _hoisted_1 = {
+  "class": ""
+};
+var _hoisted_2 = {
+  "class": "modal-frame"
+};
+var _hoisted_3 = {
+  "class": "col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 modal-inset"
+};
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+    "class": "fa fa-close"
+  }, null, -1 /* HOISTED */);
+});
+var _hoisted_5 = [_hoisted_4];
+var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "modal-body"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Such Modal, Much Animate!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Nothing groundbreaking, but I hope you enjoyed "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" the physics for the open/close animation =).")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "ps"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("**I know the SASS is a bit messy, I did this on the fly and for fun "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" and w.e. I DO WHAT I WANT!!")])], -1 /* HOISTED */);
+});
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "modal-overlay"
+  }, null, -1 /* HOISTED */);
+});
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.modal && $options.modal.apply($options, arguments);
+    }),
+    "class": "modal"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.close && $options.close.apply($options, arguments);
+    }),
+    "class": "button close"
+  }, _hoisted_5), _hoisted_6])])]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.open && $options.open.apply($options, arguments);
+    }),
+    "class": "fancy-btn open"
+  }, "Can I haz Modal?")]);
 }
 
 /***/ }),
@@ -44223,14 +44378,14 @@ var _hoisted_13 = {
   "class": "waviy fw-bold time__add_waiting"
 };
 var _hoisted_14 = {
-  "class": "timer_div_parent",
+  "class": "d-flex justify-content-center timer_div_parent",
   style: {
     "--i": "1"
   }
 };
 var _hoisted_15 = {
   key: 0,
-  "class": "timer_div"
+  "class": "ms-1 timer_div"
 };
 var _hoisted_16 = {
   "class": "mb-4"
@@ -44246,7 +44401,7 @@ var _hoisted_19 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_add_on_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("add-on-aukcion");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [!$data.out_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.out_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, _hoisted_11)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_12, !$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Vaxt artımı gözlənilir - "), $data.timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <p v-if=\" !is_auth_user \" class=\"fw-bold time__add_waiting\"> Vaxt artımı gözlənilir! </p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [!$data.out_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.out_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, _hoisted_11)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_12, !$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Vaxt artımı gözlənilir "), $data.timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <p v-if=\" !is_auth_user \" class=\"fw-bold time__add_waiting\"> Vaxt artımı gözlənilir! </p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 0,
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.extendAuksiyonTime && $options.extendAuksiyonTime.apply($options, arguments);
@@ -71317,6 +71472,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_style_index_0_id_32ae46b3_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_style_index_0_id_32ae46b3_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_style_index_0_id_32ae46b3_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=style&index=0&id=aead5656&scoped=true&lang=css":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=style&index=0&id=aead5656&scoped=true&lang=css ***!
@@ -72354,6 +72539,37 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ConfirmForAddOnAuksiyon_vue_vue_type_template_id_32ae46b3_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true */ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true");
+/* harmony import */ var _ConfirmForAddOnAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js");
+/* harmony import */ var _ConfirmForAddOnAuksiyon_vue_vue_type_style_index_0_id_32ae46b3_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css */ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css");
+/* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ConfirmForAddOnAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ConfirmForAddOnAuksiyon_vue_vue_type_template_id_32ae46b3_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-32ae46b3"],['__file',"resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue ***!
@@ -73170,6 +73386,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=script&lang=js":
 /*!****************************************************************************************************!*\
   !*** ./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=script&lang=js ***!
@@ -73698,6 +73930,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true ***!
+  \***************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_template_id_32ae46b3_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_template_id_32ae46b3_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=template&id=32ae46b3&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=template&id=aead5656&scoped=true":
 /*!**********************************************************************************************************************!*\
   !*** ./resources/js/components/announce/new/modals/CurrentTimeAukcion.vue?vue&type=template&id=aead5656&scoped=true ***!
@@ -74134,6 +74382,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AnnounceNewModalPrice_vue_vue_type_style_index_0_id_5c507bb8_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AnnounceNewModalPrice.vue?vue&type=style&index=0&id=5c507bb8&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/AnnounceNewModalPrice.vue?vue&type=style&index=0&id=5c507bb8&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmForAddOnAuksiyon_vue_vue_type_style_index_0_id_32ae46b3_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/ConfirmForAddOnAuksiyon.vue?vue&type=style&index=0&id=32ae46b3&scoped=true&lang=css");
 
 
 /***/ }),

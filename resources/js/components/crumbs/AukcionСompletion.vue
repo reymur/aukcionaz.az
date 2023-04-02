@@ -17,9 +17,9 @@
                     <h2 class="mt-2 text-danger time_is_over"> Vaxt bitdi! </h2>
 
                     <div v-if=" !is_auth_user " class="waviy fw-bold time__add_waiting">
-                        <span class="timer_div_parent" style="--i:1">
-                            Vaxt artımı gözlənilir -
-                            <div v-if="timer" class="timer_div"></div>
+                        <span class="d-flex justify-content-center timer_div_parent" style="--i:1">
+                            Vaxt artımı gözlənilir
+                            <div v-if="timer" class="ms-1 timer_div"></div>
                         </span>
                     </div>
 <!--                    <p v-if=" !is_auth_user " class="fw-bold time__add_waiting"> Vaxt artımı gözlənilir! </p>-->
@@ -116,7 +116,7 @@ export default {
                     let timer_div = document.getElementsByClassName('timer_div');
 
                     if( timer_div && timer_div[0] ) {
-                        timer_div[0].innerHTML = timer / 1000;
+                        timer_div[0].innerHTML = ' - '+ timer / 1000;
                     }
 
                     timer -= 1000;
@@ -137,7 +137,7 @@ export default {
                                 time_is_over[0].classList.add('other-animation');
                                 time_is_over[0].classList.add('text-success');
                                 time_is_over[0].innerHTML = 'Auksiyon sonlandı!'
-                               
+
                                 let set_icon_success = setInterval( () => {
                                     let icon_success = document.getElementsByClassName('icon_success');
 
@@ -205,9 +205,9 @@ export default {
 
             if( fon && success && success[0] ) {
                 setTimeout( () => {
-                    success[0].click( function() {
-                        success[0].toggle();
-                    });
+                    // success[0].click( function() {
+                    //     success[0].toggle();
+                    // });
 
                     if( fon.style.display && success[0].style.display === 'none' ) {
                         fon.style.display = 'block';

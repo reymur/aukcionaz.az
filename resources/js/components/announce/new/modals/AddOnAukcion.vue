@@ -5,6 +5,8 @@
             <span class="aukcion__add_button_text"> Auksion-a keçid </span>
         </a>
 
+        <confirm-for-add-on-auksiyon></confirm-for-add-on-auksiyon>
+
         <!-- Button trigger modal -->
         <button v-if="!auksiyon_status" @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <span class="aukcion__add_button_text"> Auksion əlavə et </span>
@@ -69,6 +71,8 @@
 
 import * as bootstrap from 'bootstrap';
 import {toString} from "lodash";
+import ConfirmForAddOnAuksiyon from './ConfirmForAddOnAuksiyon.vue';
+
 export default {
     name: "AddOnAukcion",
     props: ['product_info'],
@@ -95,6 +99,9 @@ export default {
             close_later_time_aukcion: false,
             close_current_time_aukcion: false,
         }
+    },
+    components: {
+        ConfirmForAddOnAuksiyon
     },
     computed:{
         checkAuksiyon() {
@@ -378,7 +385,9 @@ export default {
             this.completeAuksiyonModalShow();
         },
         completeAuksiyonModalShow() {
-            console.log('completeAuksiyonModalShow = ', this.$parent.getSuccessModal() );
+            if( this.$parent && this.$parent.getSuccessModal() !== undefined ) {
+                console.log('completeAuksiyonModalShow = ', this.$parent.getSuccessModal());
+            }
 
             let findEl = setInterval(() => {
                 let addAuksiyonCloseButton = document.getElementById('addAuksiyonCloseButton');
