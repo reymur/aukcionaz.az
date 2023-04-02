@@ -9,6 +9,7 @@ use App\Models\Auksiyon;
 use App\Models\AuksiyonGamer;
 use App\Models\AuksiyonTimer;
 use App\Models\Category;
+use App\Models\completeTimeExtendTimer;
 use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\User;
@@ -139,6 +140,37 @@ class AukcionRealTimeController extends Controller
         }
 
         return response()->json([ 'auksiyon' => 'AAAAAA' ]);
+    }
+
+    public function completeTimeExtendTimer(Request $request) {
+        if( $request->product_id && $request->current_time ) {
+            $timer = CompleteTimeExtendTimer::where('product_id', $request->product_id )->first();
+
+            if( !$timer ) {
+                $timer = CompleteTimeExtendTimer::create([
+                    'product_id' => $request->product_id,
+                    'current_save_time' => $request->current_time,
+                ]);
+
+                if( $timer ) {
+                    $current_save_time = $timer->current_save_time ?? $timer->current_save_time;
+
+                    return response()->json([
+                        'current_save_time' => $current_save_time
+                    ]);
+                }
+            } else {
+                $current_save_time = $timer->current_save_time ?? $timer->current_save_time;
+
+                return response()->json([
+                    'current_save_time' => $current_save_time
+                ]);
+            }
+        }
+
+//        return response()->json([
+//            'product_id' => $request->product_id.' - '.$request->current_time
+//        ]);
     }
 
     public function issetOnAuksiyon($product_id) {

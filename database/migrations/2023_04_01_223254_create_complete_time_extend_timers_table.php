@@ -15,6 +15,8 @@ class CreateCompleteTimeExtendTimersTable extends Migration
     {
         Schema::create('complete_time_extend_timers', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('product_id')->nullable();
+            $table->string('current_save_time')->nullable();
             $table->timestamps();
         });
     }

@@ -22,6 +22,14 @@
                         ></auksion-completion>
                     </h5>
 
+<!--                    <h5 v-if="stop_auksiyon" class="card-header bg-transparent p-0 auksion_completion">-->
+<!--                        <auksion-completion-->
+<!--                            :product="product"-->
+<!--                            :auksiyon="auksiyon"-->
+<!--                            :stop_auksiyon="stop_auksiyon"-->
+<!--                        ></auksion-completion>-->
+<!--                    </h5>-->
+
                     <div class="card-body py-3">
                         <h5 class="card-title m-0">Ən yüksək məbləğ:</h5>
                     </div>

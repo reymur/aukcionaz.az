@@ -21,7 +21,7 @@
                                 <span class="align-self-center aukcion__second_title"> - da daha tez sat!</span>
                             </div>
                         </h1>
-                        <button @click="hideDateTimePickers" type="button" class="col-1 btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button @click="hideDateTimePickers" type="button" class="col-1 btn-close" id="addAuksiyonCloseButton" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="">
@@ -375,6 +375,26 @@ export default {
 
             this.close_later_time_aukcion = Math.random();
             this.close_current_time_aukcion = Math.random();
+            this.completeAuksiyonModalShow();
+        },
+        completeAuksiyonModalShow() {
+            console.log('completeAuksiyonModalShow = ', this.$parent.getSuccessModal() );
+
+            let findEl = setInterval(() => {
+                let addAuksiyonCloseButton = document.getElementById('addAuksiyonCloseButton');
+
+                if( addAuksiyonCloseButton ) {
+                    document.addEventListener('addAuksiyonCloseButton', () => {
+                        alert(1111122222)
+                    })
+                }
+
+                if( addAuksiyonCloseButton ) clearInterval(findEl);
+            });
+
+            setTimeout( () => {
+                clearInterval(findEl);
+            },20000)
         },
         modalBackdrop() {
             let modal_backdrop = document.getElementsByClassName('modal-backdrop');

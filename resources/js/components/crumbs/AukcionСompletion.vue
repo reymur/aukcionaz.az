@@ -4,19 +4,31 @@
         <div class="background" id="success_auksiyon_fon"></div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="modalbox success col-sm-8 col-md-6 col-lg-5 center animate">
+                <div class="modalbox success col-10 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 center animate">
                     <div class="d-flex icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-check-lg m-auto align-self-center" viewBox="0 0 16 16">
-                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-                        </svg>
+                        <div class="text-white m-auto fs-2 fw-bold">STOP</div>
                     </div>
+<!--                    <div class="d-flex icon">-->
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-check-lg m-auto align-self-center" viewBox="0 0 16 16">-->
+<!--                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>-->
+<!--                        </svg>-->
+<!--                    </div>-->
                     <!--/.icon-->
-                    <h1>Auksiyon sonlandı!</h1>
-                    <p class="mt-4 mb-4 fw-bold fs-4"> Son qərar gözlənilir!</p>
+
+                    <h2 class="mt-2 text-danger"> Vaxt bitdi! </h2>
+
+                    <div v-if=" !is_auth_user " class="waviy fw-bold time__add_waiting">
+                        <span style="--i:1">
+                            Vaxt artımı gözlənilir -
+                            <span v-if="timer" class="timer_div"></span>
+                        </span>
+                    </div>
+<!--                    <p v-if=" !is_auth_user " class="fw-bold time__add_waiting"> Vaxt artımı gözlənilir! </p>-->
 
                     <div class="mb-4">
-                        <div @click="extendAuksiyonTime" type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>
-                        <div type="button" class="btn btn-danger w-75 fs-5">Sonlandır</div>
+                        <div v-if="is_auth_user" @click="extendAuksiyonTime" type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>
+                        <div v-if="is_auth_user" type="button" class="btn btn-danger w-75 fs-5">Sonlandır</div>
+                        <a :href="'/product/'+product_id" v-if=" !is_auth_user " type="button" class="btn btn-danger w-75 fs-5">Çıxış</a>
                     </div>
                 </div>
                 <!--/.success-->
@@ -51,17 +63,61 @@
 <script>
 export default {
     name: "AukcionСompletion",
-    props:['product','auksiyon','stop_auksiyon'],
+    props:['product','auksiyon','is_auth_user','stop_auksiyon'],
     data() {
         return {
+            timer: null,
+            is_stop_auksiyon: this.stop_auksiyon,
+            is_auth_user: this.is_auth_user,
             product_id: this.getProductID(),
             extend_tmie: null,
             is_product: null,
         }
     },
+    watch: {
+        is_stop_auksiyon() {
+            if( this.stop_auksiyon ) {
+                this.timeAddWaiting();
+            }
+        }
+    },
     methods:{
+        timeAddWaiting() {
+            let time = new Date().getSeconds();
+            axios({
+                method:"post",
+                url:"/complete-time-extend-timer",
+                data: { product_id: this.product_id, current_time: this.getCurrentTime()  }
+            })
+            .then( res => {
+                if( res && res.data && res.data.current_save_time ) {
+                    this.timer = true;
+                    this.getTimer( res.data.current_save_time );
+                    console.log("complete-time-extend-timer RES === ", res.data.current_save_time)
+                }
+            })
+            .catch( err => {
+                console.log("complete-time-extend-timer ERR === ", err.response.data.message )
+            })
+        },
+        getTimer( time ) {
+            if( time ) {
+                let timer = 300000 - (this.getCurrentTime() - Number(time));
+
+                setInterval( () => {
+                    let timer_div = document.getElementsByClassName('timer_div');
+
+                    if( timer_div && timer_div[0] ) {
+                        timer_div[0].innerHTML = timer / 1000;
+                    }
+
+                    timer -= 1000;
+                }, 1000 )
+            }
+        },
         extendAuksiyonTime() {
             let auksiyon_button = setInterval( () => {
+                let addAuksiyonCloseButton = document.getElementById('addAuksiyonCloseButton');
                 let auksiyon_add_button = document.getElementsByClassName('auksiyon_add_button');
                 let add_on_aukcion_div  = document.getElementsByClassName('add_on_aukcion_div');
                 let auksion_completion  = document.getElementsByClassName('modalbox');
@@ -94,16 +150,34 @@ export default {
             return url.substring( start + 1 );
         },
         getSuccessModal() {
+            // alert(333333)
             // document.ready(function() {
-            let redo = document.getElementsByClassName('redo');
+            let fon = document.getElementById('fon');
+            let body = document.body;
             let success = document.getElementsByClassName('success');
 
-            if( redo && redo[0] && success && success[0] ) {
-                redo[0].click( function() {
-                    success[0].toggle();
-                });
+            if( fon && success && success[0] ) {
+                setTimeout( () => {
+                    success[0].click( function() {
+                        success[0].toggle();
+                    });
+
+                    if( fon.style.display && success[0].style.display === 'none' ) {
+                        fon.style.display = 'block';
+                        body.style = 'overflow: hidden';
+                        success[0].style.display = 'block';
+                    }
+                }, 500 );
             }
-        }
+        },
+        getCurrentTime() {
+            let date    = new Date();
+            let h       = Number( date.getHours() ) * 3600000;
+            let m       = Number( date.getMinutes() )  * 60000;
+            let s       = Number( date.getSeconds() )  * 1000;
+
+            return (h + m + s);
+        },
     },
     computed: {
         hideAuksiyonAddButton() {
@@ -136,16 +210,42 @@ export default {
     mounted() {
         this.hideAuksiyonAddButton;
         this.getSuccessModal();
+        this.timeAddWaiting();
 
         let auksiyon_add_button = document.getElementsByClassName('auksion_completion')
 
-        console.log("BBBBBBBBBBFFFFFHHHHHKKK - ", auksiyon_add_button[0] );
+        console.log("BBBBBBBBBBFFFFFHHHHHKKK - ", this.stop_auksiyon );
 
     }
 }
 </script>
 
 <style scoped>
+
+/* waviy start */
+.waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+//font-size: 60px;
+}
+.waviy span {
+//font-family: 'Alfa Slab One', cursive;
+    position: relative;
+    display: inline-block;
+    color: #494848;
+    //text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+}
+@keyframes waviy {
+    0%,40%,100% {
+        transform: translateY(0)
+    }
+    20% {
+        transform: translateY(-1px)
+    }
+}
+/* waviy end*/
 
 .modalbox.success,
 .modalbox.error {
@@ -216,9 +316,11 @@ export default {
     position: relative;
     margin: 0 auto;
     margin-top: -75px;
-    background: #4caf50;
+    background: #de4d44;
+    //background: #4caf50;
     height: 100px;
     width: 100px;
+    border: 3px solid #fff;
     border-radius: 50%;
 }
 
@@ -251,6 +353,12 @@ export default {
 
 .modalbox.error .icon span {
     padding-top: 25px;
+}
+
+.time__add_waiting {
+    letter-spacing: 0.5px;
+    font-size: 1.4rem;
+    margin: 25px 0 35px 0;
 }
 
 .center {
@@ -533,4 +641,5 @@ export default {
         margin-top: 15%;
     }
 }
+
 </style>
