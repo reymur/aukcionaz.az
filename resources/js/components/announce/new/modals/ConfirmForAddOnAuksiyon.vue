@@ -1,14 +1,31 @@
 <template>
     <div class="">
         <div class="modal-frame">
-            <div @click="modal" class="modal">
-                <div class="col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 modal-inset">
+            <div class="modal">
+                <div class="col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 d-flex modal-inset">
                     <div @click="close" class="button close"><i class="fa fa-close"></i></div>
 
-                    <div class="modal-body">
-                        <h3>Such Modal, Much Animate!</h3>
-                        <p>Nothing groundbreaking, but I hope you enjoyed <br /> the physics for the open/close animation =).</p>
-                        <p class="ps">**I know the SASS is a bit messy, I did this on the fly and for fun <br /> and w.e. I DO WHAT I WANT!!</p>
+                    <div class="modal-body d-flex align-self-center justify-content-center">
+                        <div class="col-12">
+                            <div class="mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4">
+                                <label for="inputPassword" class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label">
+                                    Ad Soyad <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center">
+                                    <input type="text" class="form-control rounded-0" id="inputPassword">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4">
+                                <label for="inputPassword" class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label">
+                                    Telefon <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center">
+                                    <input type="text" class="form-control rounded-0" id="inputPassword">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -29,39 +46,32 @@ export default {
         }
     },
     methods:{
-        modal() {
-            let modal = document.getElementsByClassName('modal-frame');
-
-            // Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers.
-            modal[0].click(function (e) {
-                if ( modal[0] && modal[0].classList && modal[0].classList.contains("state-leave") ) {
-                    modal[0].classList.remove("state-leave");
-                }
-            });
-        },
         open() {
             let open = document.getElementsByClassName('open');
-            let modal = document.getElementsByClassName('modal-frame');
+            let modal = document.getElementsByClassName('modal');
+            let modal_frame = document.getElementsByClassName('modal-frame');
             let overlay = document.getElementsByClassName('modal-overlay');
             let body = document.body;
 
-            if( body && open && open[0] && overlay && overlay[0] && modal && modal[0] ) {
+            if( body && modal && modal[0] && open && open[0] && overlay && overlay[0] && modal_frame && modal_frame[0] ) {
                 body.style = 'overflow: hidden';
                 overlay[0].classList.add("state-show");
-                modal[0].classList.remove("state-leave");
-                modal[0].classList.add("state-appear");
+                modal_frame[0].classList.remove("state-leave");
+                modal_frame[0].classList.add("state-appear");
+                modal[0].style = 'background-color: rgb(246 234 208 / 87%)'
             }
         },
         close() {
             let body = document.body;
             let close = document.getElementsByClassName('close');
-            let modal = document.getElementsByClassName('modal-frame');
+            let modal = document.getElementsByClassName('modal');
+            let modal_frame = document.getElementsByClassName('modal-frame');
             let overlay = document.getElementsByClassName('modal-overlay');
 
-            if( body && close && close[0] && overlay && overlay[0] && modal && modal[0] ) {
+            if( body && close && close[0] && overlay && overlay[0] && modal_frame && modal_frame[0] ) {
                 body.style = 'overflow: none';
                 overlay[0].classList.remove("state-show");
-                modal[0].classList.remove("state-appear");
+                modal_frame[0].classList.remove("state-appear");
                 // modal[0].classList.add("state-leave");
             }
         }
@@ -229,8 +239,7 @@ html, body {
 
 .modal-inset {
     position: absolute;
-    padding: 60px;
-    background-color: white;
+    background-color: rgb(255 254 250);
     //min-width: 320px;
     max-height: 320px;
     margin: auto;

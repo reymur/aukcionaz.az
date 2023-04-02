@@ -28335,7 +28335,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "*[data-v-32ae46b3] {\n  box-sizing: border-box;\n}\nhtml[data-v-32ae46b3], body[data-v-32ae46b3] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  margin: 0;\n  padding: 0;\n  font-family: 'Noto Sans', sans-serif;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 22px;\n  background-color: #F2E1AC;\n}\n.fancy-btn[data-v-32ae46b3] {\n  -webkit-appearance: none;\n  cursor: pointer;\n  outline: none;\n  border: none;\n  position: relative;\n  top: 50%;\n  display: block;\n  min-width: 10%;\n  line-height: 55px;\n  font-size: 14px;\n  text-transform: uppercase;\n  margin: 0 auto;\n  padding: 0 10px;\n  background-color: #F2594B;\n  color: #FFF;\n  border-radius: 3px;\n  transform: translateY(-50%);\n}\n.fancy-btn[data-v-32ae46b3]:hover {\n  background-color: #f46f63;\n}\n.modal-overlay[data-v-32ae46b3] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n  background-color: #fff;\n  opacity: 0;\n  visibility: hidden;\n  z-index: 40;\n  -moz-transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n  -o-transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n  -webkit-transition: opacity 0.25s ease, visibility 0.35s linear;\n  -webkit-transition-delay: 0s, 0s;\n  transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n}\n.modal-overlay.state-show[data-v-32ae46b3] {\n  opacity: .7;\n  visibility: visible;\n  transition-delay: 0s;\n  transition-duration: 0.2s, 0s;\n}\n.modal-frame[data-v-32ae46b3] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n  z-index: 50;\n  /*     display: table; */\n  display: flex;\n  align-items: center;\n  -moz-box-align: center;\n  justify-content: center;\n  -moz-box-pack: center;\n  -ms-flex-pack: center;\n  width: 100%;\n  text-align: center;\n  visibility: hidden;\n}\n.modal-frame.state-appear[data-v-32ae46b3] {\n  visibility: visible;\n}\n.modal-frame.state-appear .modal-inset[data-v-32ae46b3] {\n  animation: modalComeIn-32ae46b3 0.25s ease;\n  visibility: visible;\n  /* to keep @ final state */\n}\n.modal-frame.state-appear .modal-body[data-v-32ae46b3] {\n  opacity: 1;\n  transform: translateY(0) scale(1, 1);\n}\n.modal-frame.state-leave[data-v-32ae46b3] {\n  visibility: visible;\n}\n.modal-frame.state-leave .modal-inset[data-v-32ae46b3] {\n  animation: modalHeadOut-32ae46b3 0.35s ease 0.1s;\n  visibility: visible;\n}\n.modal-frame.state-leave .modal-body[data-v-32ae46b3] {\n  opacity: 0;\n  transition-delay: 0s;\n  transition-duration: 0.35s;\n  transition-timing-function: ease;\n  transform: translateY(25px);\n}\n@-moz-document url-prefix() {\n.modal-frame[data-v-32ae46b3] {\n    height: calc(100% - 55px);\n}\n}\n.modal[data-v-32ae46b3] {\n  display: block;\n  vertical-align: middle;\n  text-align: center;\n}\n.modal-inset[data-v-32ae46b3] {\n  position: absolute;\n  padding: 60px;\n  background-color: white;\n  //min-width: 320px;\n  max-height: 320px;\n  margin: auto;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  visibility: hidden;\n  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  transform: translate3d(0, 0, 0);\n  transform-style: preserve-3d;\n}\n.modal-inset .close[data-v-32ae46b3] {\n  display: block;\n  cursor: pointer;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  padding: 10px;\n  opacity: .4;\n}\n.modal-inset .close[data-v-32ae46b3]:hover {\n  opacity: 1;\n}\n.modal-body[data-v-32ae46b3] {\n  margin: auto;\n  opacity: 0;\n  transform: translateY(0) scale(0.8, 0.8);\n  transition-property: opacity, transform;\n  transition-duration: 0.25s;\n  transition-delay: 0.1s;\n}\n.modal-body h3[data-v-32ae46b3] {\n  font-weight: 700;\n  padding-bottom: 22px;\n  display: block;\n  color: #F2594B;\n  text-align: center;\n}\n.modal-body p[data-v-32ae46b3] {\n  padding-bottom: 20px;\n}\n.modal-body .ps[data-v-32ae46b3] {\n  font-size: 12px;\n  opacity: .3;\n}\n@keyframes modalComeIn-32ae46b3 {\n0% {\n    visibility: hidden;\n    opacity: 0;\n    transform: scale(0.8, 0.8);\n}\n65.5% {\n    transform: scale(1.03, 1.03);\n}\n100% {\n    visibility: visible;\n    opacity: 1;\n    transform: scale(1, 1);\n}\n}\n@keyframes modalHeadOut-32ae46b3 {\n0% {\n    visibility: visible;\n    opacity: 1;\n    transform: translateY(0) scale(1, 1);\n}\n100% {\n    visibility: hidden;\n    opacity: 0;\n    transform: translateY(35px) scale(0.97, 0.97);\n}\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "*[data-v-32ae46b3] {\n  box-sizing: border-box;\n}\nhtml[data-v-32ae46b3], body[data-v-32ae46b3] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  margin: 0;\n  padding: 0;\n  font-family: 'Noto Sans', sans-serif;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 22px;\n  background-color: #F2E1AC;\n}\n.fancy-btn[data-v-32ae46b3] {\n  -webkit-appearance: none;\n  cursor: pointer;\n  outline: none;\n  border: none;\n  position: relative;\n  top: 50%;\n  display: block;\n  min-width: 10%;\n  line-height: 55px;\n  font-size: 14px;\n  text-transform: uppercase;\n  margin: 0 auto;\n  padding: 0 10px;\n  background-color: #F2594B;\n  color: #FFF;\n  border-radius: 3px;\n  transform: translateY(-50%);\n}\n.fancy-btn[data-v-32ae46b3]:hover {\n  background-color: #f46f63;\n}\n.modal-overlay[data-v-32ae46b3] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n  background-color: #fff;\n  opacity: 0;\n  visibility: hidden;\n  z-index: 40;\n  -moz-transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n  -o-transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n  -webkit-transition: opacity 0.25s ease, visibility 0.35s linear;\n  -webkit-transition-delay: 0s, 0s;\n  transition: opacity 0.25s ease 0s, visibility 0.35s linear;\n}\n.modal-overlay.state-show[data-v-32ae46b3] {\n  opacity: .7;\n  visibility: visible;\n  transition-delay: 0s;\n  transition-duration: 0.2s, 0s;\n}\n.modal-frame[data-v-32ae46b3] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n  z-index: 50;\n  /*     display: table; */\n  display: flex;\n  align-items: center;\n  -moz-box-align: center;\n  justify-content: center;\n  -moz-box-pack: center;\n  -ms-flex-pack: center;\n  width: 100%;\n  text-align: center;\n  visibility: hidden;\n}\n.modal-frame.state-appear[data-v-32ae46b3] {\n  visibility: visible;\n}\n.modal-frame.state-appear .modal-inset[data-v-32ae46b3] {\n  animation: modalComeIn-32ae46b3 0.25s ease;\n  visibility: visible;\n  /* to keep @ final state */\n}\n.modal-frame.state-appear .modal-body[data-v-32ae46b3] {\n  opacity: 1;\n  transform: translateY(0) scale(1, 1);\n}\n.modal-frame.state-leave[data-v-32ae46b3] {\n  visibility: visible;\n}\n.modal-frame.state-leave .modal-inset[data-v-32ae46b3] {\n  animation: modalHeadOut-32ae46b3 0.35s ease 0.1s;\n  visibility: visible;\n}\n.modal-frame.state-leave .modal-body[data-v-32ae46b3] {\n  opacity: 0;\n  transition-delay: 0s;\n  transition-duration: 0.35s;\n  transition-timing-function: ease;\n  transform: translateY(25px);\n}\n@-moz-document url-prefix() {\n.modal-frame[data-v-32ae46b3] {\n    height: calc(100% - 55px);\n}\n}\n.modal[data-v-32ae46b3] {\n  display: block;\n  vertical-align: middle;\n  text-align: center;\n}\n.modal-inset[data-v-32ae46b3] {\n  position: absolute;\n  background-color: rgb(255 254 250);\n  //min-width: 320px;\n  max-height: 320px;\n  margin: auto;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  visibility: hidden;\n  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  transform: translate3d(0, 0, 0);\n  transform-style: preserve-3d;\n}\n.modal-inset .close[data-v-32ae46b3] {\n  display: block;\n  cursor: pointer;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  padding: 10px;\n  opacity: .4;\n}\n.modal-inset .close[data-v-32ae46b3]:hover {\n  opacity: 1;\n}\n.modal-body[data-v-32ae46b3] {\n  margin: auto;\n  opacity: 0;\n  transform: translateY(0) scale(0.8, 0.8);\n  transition-property: opacity, transform;\n  transition-duration: 0.25s;\n  transition-delay: 0.1s;\n}\n.modal-body h3[data-v-32ae46b3] {\n  font-weight: 700;\n  padding-bottom: 22px;\n  display: block;\n  color: #F2594B;\n  text-align: center;\n}\n.modal-body p[data-v-32ae46b3] {\n  padding-bottom: 20px;\n}\n.modal-body .ps[data-v-32ae46b3] {\n  font-size: 12px;\n  opacity: .3;\n}\n@keyframes modalComeIn-32ae46b3 {\n0% {\n    visibility: hidden;\n    opacity: 0;\n    transform: scale(0.8, 0.8);\n}\n65.5% {\n    transform: scale(1.03, 1.03);\n}\n100% {\n    visibility: visible;\n    opacity: 1;\n    transform: scale(1, 1);\n}\n}\n@keyframes modalHeadOut-32ae46b3 {\n0% {\n    visibility: visible;\n    opacity: 1;\n    transform: translateY(0) scale(1, 1);\n}\n100% {\n    visibility: hidden;\n    opacity: 0;\n    transform: translateY(35px) scale(0.97, 0.97);\n}\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40349,37 +40349,30 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   methods: {
-    modal: function modal() {
-      var modal = document.getElementsByClassName('modal-frame');
-
-      // Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers.
-      modal[0].click(function (e) {
-        if (modal[0] && modal[0].classList && modal[0].classList.contains("state-leave")) {
-          modal[0].classList.remove("state-leave");
-        }
-      });
-    },
     open: function open() {
       var open = document.getElementsByClassName('open');
-      var modal = document.getElementsByClassName('modal-frame');
+      var modal = document.getElementsByClassName('modal');
+      var modal_frame = document.getElementsByClassName('modal-frame');
       var overlay = document.getElementsByClassName('modal-overlay');
       var body = document.body;
-      if (body && open && open[0] && overlay && overlay[0] && modal && modal[0]) {
+      if (body && modal && modal[0] && open && open[0] && overlay && overlay[0] && modal_frame && modal_frame[0]) {
         body.style = 'overflow: hidden';
         overlay[0].classList.add("state-show");
-        modal[0].classList.remove("state-leave");
-        modal[0].classList.add("state-appear");
+        modal_frame[0].classList.remove("state-leave");
+        modal_frame[0].classList.add("state-appear");
+        modal[0].style = 'background-color: rgb(246 234 208 / 87%)';
       }
     },
     close: function close() {
       var body = document.body;
       var close = document.getElementsByClassName('close');
-      var modal = document.getElementsByClassName('modal-frame');
+      var modal = document.getElementsByClassName('modal');
+      var modal_frame = document.getElementsByClassName('modal-frame');
       var overlay = document.getElementsByClassName('modal-overlay');
-      if (body && close && close[0] && overlay && overlay[0] && modal && modal[0]) {
+      if (body && close && close[0] && overlay && overlay[0] && modal_frame && modal_frame[0]) {
         body.style = 'overflow: none';
         overlay[0].classList.remove("state-show");
-        modal[0].classList.remove("state-appear");
+        modal_frame[0].classList.remove("state-appear");
         // modal[0].classList.add("state-leave");
       }
     }
@@ -43136,40 +43129,32 @@ var _hoisted_2 = {
   "class": "modal-frame"
 };
 var _hoisted_3 = {
-  "class": "col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 modal-inset"
+  "class": "modal"
 };
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_4 = {
+  "class": "col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 d-flex modal-inset"
+};
+var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "fa fa-close"
   }, null, -1 /* HOISTED */);
 });
-var _hoisted_5 = [_hoisted_4];
-var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "modal-body"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Such Modal, Much Animate!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Nothing groundbreaking, but I hope you enjoyed "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" the physics for the open/close animation =).")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "ps"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("**I know the SASS is a bit messy, I did this on the fly and for fun "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" and w.e. I DO WHAT I WANT!!")])], -1 /* HOISTED */);
-});
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_6 = [_hoisted_5];
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal-body d-flex align-self-center justify-content-center\" data-v-32ae46b3><div class=\"col-12\" data-v-32ae46b3><div class=\"mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4\" data-v-32ae46b3><label for=\"inputPassword\" class=\"col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label\" data-v-32ae46b3> Ad Soyad <span class=\"text-danger\" data-v-32ae46b3>*</span></label><div class=\"col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center\" data-v-32ae46b3><input type=\"text\" class=\"form-control rounded-0\" id=\"inputPassword\" data-v-32ae46b3></div></div><div class=\"mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4\" data-v-32ae46b3><label for=\"inputPassword\" class=\"col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label\" data-v-32ae46b3> Telefon <span class=\"text-danger\" data-v-32ae46b3>*</span></label><div class=\"col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center\" data-v-32ae46b3><input type=\"text\" class=\"form-control rounded-0\" id=\"inputPassword\" data-v-32ae46b3></div></div></div></div>", 1);
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "modal-overlay"
   }, null, -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    onClick: _cache[1] || (_cache[1] = function () {
-      return $options.modal && $options.modal.apply($options, arguments);
-    }),
-    "class": "modal"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.close && $options.close.apply($options, arguments);
     }),
     "class": "button close"
-  }, _hoisted_5), _hoisted_6])])]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[2] || (_cache[2] = function () {
+  }, _hoisted_6), _hoisted_7])])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function () {
       return $options.open && $options.open.apply($options, arguments);
     }),
     "class": "fancy-btn open"
