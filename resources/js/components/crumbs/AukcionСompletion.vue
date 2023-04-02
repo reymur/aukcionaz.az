@@ -5,22 +5,21 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="modalbox success col-10 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 center animate">
-                    <div class="d-flex icon">
+                    <div v-if="!out_timer" class="d-flex icon icon_stop">
                         <div class="text-white m-auto fs-2 fw-bold">STOP</div>
                     </div>
-<!--                    <div class="d-flex icon">-->
-<!--                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-check-lg m-auto align-self-center" viewBox="0 0 16 16">-->
-<!--                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>-->
-<!--                        </svg>-->
-<!--                    </div>-->
-                    <!--/.icon-->
+                    <div v-if="out_timer" class="d-flex icon icon_success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-check-lg m-auto align-self-center" viewBox="0 0 16 16">
+                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                        </svg>
+                    </div>
 
-                    <h2 class="mt-2 text-danger"> Vaxt bitdi! </h2>
+                    <h2 class="mt-2 text-danger time_is_over"> Vaxt bitdi! </h2>
 
                     <div v-if=" !is_auth_user " class="waviy fw-bold time__add_waiting">
-                        <span style="--i:1">
+                        <span class="timer_div_parent" style="--i:1">
                             Vaxt artımı gözlənilir -
-                            <span v-if="timer" class="timer_div"></span>
+                            <div v-if="timer" class="timer_div"></div>
                         </span>
                     </div>
 <!--                    <p v-if=" !is_auth_user " class="fw-bold time__add_waiting"> Vaxt artımı gözlənilir! </p>-->
@@ -67,12 +66,16 @@ export default {
     data() {
         return {
             timer: null,
+            out_timer: null,
             is_stop_auksiyon: this.stop_auksiyon,
             is_auth_user: this.is_auth_user,
             product_id: this.getProductID(),
             extend_tmie: null,
             is_product: null,
         }
+    },
+    components:{
+        AukcionСompletionSuccess: 'complete-success'
     },
     watch: {
         is_stop_auksiyon() {
@@ -102,9 +105,14 @@ export default {
         },
         getTimer( time ) {
             if( time ) {
-                let timer = 300000 - (this.getCurrentTime() - Number(time));
+                let timer = 30000 - (this.getCurrentTime() - Number(time));
+                let time_is_over = document.getElementsByClassName('time_is_over');
+                let time__add_waiting = document.getElementsByClassName('time__add_waiting');
+                let timer_div_parent = document.getElementsByClassName('timer_div_parent');
+                let icon_stop = document.getElementsByClassName('icon_stop');
+                let modalbox = document.getElementsByClassName('modalbox');
 
-                setInterval( () => {
+                let setTimer = setInterval( () => {
                     let timer_div = document.getElementsByClassName('timer_div');
 
                     if( timer_div && timer_div[0] ) {
@@ -112,7 +120,46 @@ export default {
                     }
 
                     timer -= 1000;
-                }, 1000 )
+
+                    if( timer < 0 ) {
+                        this.out_timer = true;
+                        if( time_is_over && time_is_over[0] && time__add_waiting && time__add_waiting[0] ) {
+                            if( time__add_waiting[0].classList ) {
+                                time__add_waiting[0].classList.add('other-animation');
+                                time__add_waiting[0].innerText = '00:00';
+                                modalbox[0].classList.remove('other-animation');
+                                console.log("LLLLLLLLL - ",  modalbox )
+                            }
+
+                            if( time_is_over[0].classList.contains('text-danger') ) {
+                                time_is_over[0].classList.remove('text-danger');
+                                modalbox[0].classList.add('animation');
+                                time_is_over[0].classList.add('other-animation');
+                                time_is_over[0].classList.add('text-success');
+                                time_is_over[0].innerHTML = 'Auksiyon sonlandı!'
+                               
+                                let set_icon_success = setInterval( () => {
+                                    let icon_success = document.getElementsByClassName('icon_success');
+
+                                    if( icon_success && icon_success[0] ) {
+                                        icon_success[0].style = 'background-color: #4caf50;';
+                                        clearInterval(set_icon_success);
+                                    }
+                                }, 0.1 );
+
+                                setTimeout( () => {
+                                    clearInterval(set_icon_success);
+                                }, 10000 );
+                            }
+                        }
+
+                        clearInterval(setTimer);
+                    }
+                }, 1000 );
+
+                setTimeout( () => {
+                    clearInterval(setTimer);
+                }, 60000 );
             }
         },
         extendAuksiyonTime() {
@@ -222,6 +269,21 @@ export default {
 
 <style scoped>
 
+.animation {
+    position: relative;
+    margin: auto;
+    animation: fall-in-ecfd07e4 0.75s;
+}
+.other-animation {
+    position: relative;
+    margin: auto;
+    animation: fall-in-ecfd07e4 0.75s;
+}
+.modalbox {
+    position: relative;
+    margin: auto;
+    animation: fall-in-ecfd07e4 0.75s;
+}
 /* waviy start */
 .waviy {
     position: relative;

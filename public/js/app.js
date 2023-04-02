@@ -28527,7 +28527,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* waviy start */\n.waviy[data-v-ecfd07e4] {\n  position: relative;\n  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));\n  //font-size: 60px;\n}\n.waviy span[data-v-ecfd07e4] {\n  //font-family: 'Alfa Slab One', cursive;\n  position: relative;\n  display: inline-block;\n  color: #494848;\n  //text-transform: uppercase;\n  animation: waviy-ecfd07e4 1s infinite;\n  animation-delay: calc(.1s * var(--i));\n}\n@keyframes waviy-ecfd07e4 {\n0%,40%,100% {\n    transform: translateY(0)\n}\n20% {\n    transform: translateY(-1px)\n}\n}\n\n/* waviy end*/\n.modalbox.success[data-v-ecfd07e4],\n.modalbox.error[data-v-ecfd07e4] {\n  position: absolute;\n  //box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  box-shadow: 0 4px 15px -1px #333232;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  border-radius: 2px;\n  background: #fff;\n  padding: 25px 25px 15px;\n  text-align: center;\n  z-index: 101;\n}\n.modalbox.success.animate .icon[data-v-ecfd07e4],\n.modalbox.error.animate .icon[data-v-ecfd07e4] {\n  animation: fall-in-ecfd07e4 0.75s;\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n}\n.modalbox.success h1[data-v-ecfd07e4],\n.modalbox.error h1[data-v-ecfd07e4] {\n  font-family: 'Montserrat', sans-serif;\n}\n.modalbox.success p[data-v-ecfd07e4],\n.modalbox.error p[data-v-ecfd07e4] {\n  font-family: 'Open Sans', sans-serif;\n}\n.modalbox.success button[data-v-ecfd07e4],\n.modalbox.error button[data-v-ecfd07e4],\n.modalbox.success button[data-v-ecfd07e4]:active,\n.modalbox.error button[data-v-ecfd07e4]:active,\n.modalbox.success button[data-v-ecfd07e4]:focus,\n.modalbox.error button[data-v-ecfd07e4]:focus {\n  transition: all 0.1s ease-in-out;\n  border-radius: 30px;\n  margin-top: 15px;\n  width: 80%;\n  background: transparent;\n  color: #4caf50;\n  border-color: #4caf50;\n  outline: none;\n}\n.modalbox.success button[data-v-ecfd07e4]:hover,\n.modalbox.error button[data-v-ecfd07e4]:hover,\n.modalbox.success button[data-v-ecfd07e4]:active:hover,\n.modalbox.error button[data-v-ecfd07e4]:active:hover,\n.modalbox.success button[data-v-ecfd07e4]:focus:hover,\n.modalbox.error button[data-v-ecfd07e4]:focus:hover {\n  color: #fff;\n  background: #4caf50;\n  border-color: transparent;\n}\n.modalbox.success .icon[data-v-ecfd07e4],\n.modalbox.error .icon[data-v-ecfd07e4] {\n  position: relative;\n  margin: 0 auto;\n  margin-top: -75px;\n  background: #de4d44;\n  //background: #4caf50;\n  height: 100px;\n  width: 100px;\n  border: 3px solid #fff;\n  border-radius: 50%;\n}\n.modalbox.success .icon span[data-v-ecfd07e4],\n.modalbox.error .icon span[data-v-ecfd07e4] {\n  postion: absolute;\n  font-size: 4em;\n  color: #fff;\n  text-align: center;\n  padding-top: 20px;\n}\n.modalbox.error button[data-v-ecfd07e4],\n.modalbox.error button[data-v-ecfd07e4]:active,\n.modalbox.error button[data-v-ecfd07e4]:focus {\n  color: #f44336;\n  border-color: #f44336;\n}\n.modalbox.error button[data-v-ecfd07e4]:hover,\n.modalbox.error button[data-v-ecfd07e4]:active:hover,\n.modalbox.error button[data-v-ecfd07e4]:focus:hover {\n  color: #fff;\n  background: #f44336;\n}\n.modalbox.error .icon[data-v-ecfd07e4] {\n  background: #f44336;\n}\n.modalbox.error .icon span[data-v-ecfd07e4] {\n  padding-top: 25px;\n}\n.time__add_waiting[data-v-ecfd07e4] {\n  letter-spacing: 0.5px;\n  font-size: 1.4rem;\n  margin: 25px 0 35px 0;\n}\n.center[data-v-ecfd07e4] {\n  float: none;\n  margin-left: auto;\n  margin-right: auto;\n  /* stupid browser compat. smh */\n}\n.center .change[data-v-ecfd07e4] {\n  clearn: both;\n  display: block;\n  font-size: 10px;\n  color: #ccc;\n  margin-top: 10px;\n}\n@keyframes fall-in-ecfd07e4 {\n0% {\n    transform: scale(3, 3);\n    opacity: 0;\n}\n50% {\n    transform: scale(1, 1);\n    opacity: 1;\n}\n60% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n@keyframes plunge-ecfd07e4 {\n0% {\n    margin-top: -100%;\n}\n100% {\n    margin-top: 15%;\n}\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".animation[data-v-ecfd07e4] {\n  position: relative;\n  margin: auto;\n  animation: fall-in-ecfd07e4 0.75s;\n}\n.other-animation[data-v-ecfd07e4] {\n  position: relative;\n  margin: auto;\n  animation: fall-in-ecfd07e4 0.75s;\n}\n.modalbox[data-v-ecfd07e4] {\n  position: relative;\n  margin: auto;\n  animation: fall-in-ecfd07e4 0.75s;\n}\n\n/* waviy start */\n.waviy[data-v-ecfd07e4] {\n  position: relative;\n  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));\n  //font-size: 60px;\n}\n.waviy span[data-v-ecfd07e4] {\n  //font-family: 'Alfa Slab One', cursive;\n  position: relative;\n  display: inline-block;\n  color: #494848;\n  //text-transform: uppercase;\n  animation: waviy-ecfd07e4 1s infinite;\n  animation-delay: calc(.1s * var(--i));\n}\n@keyframes waviy-ecfd07e4 {\n0%,40%,100% {\n    transform: translateY(0)\n}\n20% {\n    transform: translateY(-1px)\n}\n}\n\n/* waviy end*/\n.modalbox.success[data-v-ecfd07e4],\n.modalbox.error[data-v-ecfd07e4] {\n  position: absolute;\n  //box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  box-shadow: 0 4px 15px -1px #333232;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  border-radius: 2px;\n  background: #fff;\n  padding: 25px 25px 15px;\n  text-align: center;\n  z-index: 101;\n}\n.modalbox.success.animate .icon[data-v-ecfd07e4],\n.modalbox.error.animate .icon[data-v-ecfd07e4] {\n  animation: fall-in-ecfd07e4 0.75s;\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n}\n.modalbox.success h1[data-v-ecfd07e4],\n.modalbox.error h1[data-v-ecfd07e4] {\n  font-family: 'Montserrat', sans-serif;\n}\n.modalbox.success p[data-v-ecfd07e4],\n.modalbox.error p[data-v-ecfd07e4] {\n  font-family: 'Open Sans', sans-serif;\n}\n.modalbox.success button[data-v-ecfd07e4],\n.modalbox.error button[data-v-ecfd07e4],\n.modalbox.success button[data-v-ecfd07e4]:active,\n.modalbox.error button[data-v-ecfd07e4]:active,\n.modalbox.success button[data-v-ecfd07e4]:focus,\n.modalbox.error button[data-v-ecfd07e4]:focus {\n  transition: all 0.1s ease-in-out;\n  border-radius: 30px;\n  margin-top: 15px;\n  width: 80%;\n  background: transparent;\n  color: #4caf50;\n  border-color: #4caf50;\n  outline: none;\n}\n.modalbox.success button[data-v-ecfd07e4]:hover,\n.modalbox.error button[data-v-ecfd07e4]:hover,\n.modalbox.success button[data-v-ecfd07e4]:active:hover,\n.modalbox.error button[data-v-ecfd07e4]:active:hover,\n.modalbox.success button[data-v-ecfd07e4]:focus:hover,\n.modalbox.error button[data-v-ecfd07e4]:focus:hover {\n  color: #fff;\n  background: #4caf50;\n  border-color: transparent;\n}\n.modalbox.success .icon[data-v-ecfd07e4],\n.modalbox.error .icon[data-v-ecfd07e4] {\n  position: relative;\n  margin: 0 auto;\n  margin-top: -75px;\n  background: #de4d44;\n  //background: #4caf50;\n  height: 100px;\n  width: 100px;\n  border: 3px solid #fff;\n  border-radius: 50%;\n}\n.modalbox.success .icon span[data-v-ecfd07e4],\n.modalbox.error .icon span[data-v-ecfd07e4] {\n  postion: absolute;\n  font-size: 4em;\n  color: #fff;\n  text-align: center;\n  padding-top: 20px;\n}\n.modalbox.error button[data-v-ecfd07e4],\n.modalbox.error button[data-v-ecfd07e4]:active,\n.modalbox.error button[data-v-ecfd07e4]:focus {\n  color: #f44336;\n  border-color: #f44336;\n}\n.modalbox.error button[data-v-ecfd07e4]:hover,\n.modalbox.error button[data-v-ecfd07e4]:active:hover,\n.modalbox.error button[data-v-ecfd07e4]:focus:hover {\n  color: #fff;\n  background: #f44336;\n}\n.modalbox.error .icon[data-v-ecfd07e4] {\n  background: #f44336;\n}\n.modalbox.error .icon span[data-v-ecfd07e4] {\n  padding-top: 25px;\n}\n.time__add_waiting[data-v-ecfd07e4] {\n  letter-spacing: 0.5px;\n  font-size: 1.4rem;\n  margin: 25px 0 35px 0;\n}\n.center[data-v-ecfd07e4] {\n  float: none;\n  margin-left: auto;\n  margin-right: auto;\n  /* stupid browser compat. smh */\n}\n.center .change[data-v-ecfd07e4] {\n  clearn: both;\n  display: block;\n  font-size: 10px;\n  color: #ccc;\n  margin-top: 10px;\n}\n@keyframes fall-in-ecfd07e4 {\n0% {\n    transform: scale(3, 3);\n    opacity: 0;\n}\n50% {\n    transform: scale(1, 1);\n    opacity: 1;\n}\n60% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n@keyframes plunge-ecfd07e4 {\n0% {\n    margin-top: -100%;\n}\n100% {\n    margin-top: 15%;\n}\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41435,12 +41435,16 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       timer: null,
+      out_timer: null,
       is_stop_auksiyon: this.stop_auksiyon,
       is_auth_user: this.is_auth_user,
       product_id: this.getProductID(),
       extend_tmie: null,
       is_product: null
     };
+  },
+  components: {
+    AukcionСompletionSuccess: 'complete-success'
   },
   watch: {
     is_stop_auksiyon: function is_stop_auksiyon() {
@@ -41471,15 +41475,53 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getTimer: function getTimer(time) {
+      var _this2 = this;
       if (time) {
-        var timer = 300000 - (this.getCurrentTime() - Number(time));
-        setInterval(function () {
+        var timer = 30000 - (this.getCurrentTime() - Number(time));
+        var time_is_over = document.getElementsByClassName('time_is_over');
+        var time__add_waiting = document.getElementsByClassName('time__add_waiting');
+        var timer_div_parent = document.getElementsByClassName('timer_div_parent');
+        var icon_stop = document.getElementsByClassName('icon_stop');
+        var modalbox = document.getElementsByClassName('modalbox');
+        var setTimer = setInterval(function () {
           var timer_div = document.getElementsByClassName('timer_div');
           if (timer_div && timer_div[0]) {
             timer_div[0].innerHTML = timer / 1000;
           }
           timer -= 1000;
+          if (timer < 0) {
+            _this2.out_timer = true;
+            if (time_is_over && time_is_over[0] && time__add_waiting && time__add_waiting[0]) {
+              if (time__add_waiting[0].classList) {
+                time__add_waiting[0].classList.add('other-animation');
+                time__add_waiting[0].innerText = '00:00';
+                modalbox[0].classList.remove('other-animation');
+                console.log("LLLLLLLLL - ", modalbox);
+              }
+              if (time_is_over[0].classList.contains('text-danger')) {
+                time_is_over[0].classList.remove('text-danger');
+                modalbox[0].classList.add('animation');
+                time_is_over[0].classList.add('other-animation');
+                time_is_over[0].classList.add('text-success');
+                time_is_over[0].innerHTML = 'Auksiyon sonlandı!';
+                var set_icon_success = setInterval(function () {
+                  var icon_success = document.getElementsByClassName('icon_success');
+                  if (icon_success && icon_success[0]) {
+                    icon_success[0].style = 'background-color: #4caf50;';
+                    clearInterval(set_icon_success);
+                  }
+                }, 0.1);
+                setTimeout(function () {
+                  clearInterval(set_icon_success);
+                }, 10000);
+              }
+            }
+            clearInterval(setTimer);
+          }
         }, 1000);
+        setTimeout(function () {
+          clearInterval(setTimer);
+        }, 60000);
       }
     },
     extendAuksiyonTime: function extendAuksiyonTime() {
@@ -44144,58 +44186,79 @@ var _hoisted_4 = {
 var _hoisted_5 = {
   "class": "modalbox success col-10 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 center animate"
 };
-var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "d-flex icon"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "text-white m-auto fs-2 fw-bold"
-  }, "STOP")], -1 /* HOISTED */);
-});
+var _hoisted_6 = {
+  key: 0,
+  "class": "d-flex icon icon_stop"
+};
 var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "text-white m-auto fs-2 fw-bold"
+  }, "STOP", -1 /* HOISTED */);
+});
+var _hoisted_8 = [_hoisted_7];
+var _hoisted_9 = {
+  key: 1,
+  "class": "d-flex icon icon_success"
+};
+var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "90",
+    height: "90",
+    fill: "white",
+    "class": "bi bi-check-lg m-auto align-self-center",
+    viewBox: "0 0 16 16"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+    d: "M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+  })], -1 /* HOISTED */);
+});
+var _hoisted_11 = [_hoisted_10];
+var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-    "class": "mt-2 text-danger"
+    "class": "mt-2 text-danger time_is_over"
   }, " Vaxt bitdi! ", -1 /* HOISTED */);
 });
-var _hoisted_8 = {
-  key: 0,
+var _hoisted_13 = {
+  key: 2,
   "class": "waviy fw-bold time__add_waiting"
 };
-var _hoisted_9 = {
+var _hoisted_14 = {
+  "class": "timer_div_parent",
   style: {
     "--i": "1"
   }
 };
-var _hoisted_10 = {
+var _hoisted_15 = {
   key: 0,
   "class": "timer_div"
 };
-var _hoisted_11 = {
+var _hoisted_16 = {
   "class": "mb-4"
 };
-var _hoisted_12 = {
+var _hoisted_17 = {
   key: 1,
   type: "button",
   "class": "btn btn-danger w-75 fs-5"
 };
-var _hoisted_13 = ["href"];
-var _hoisted_14 = {
+var _hoisted_18 = ["href"];
+var _hoisted_19 = {
   "class": "d-none add_on_aukcion_div"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_add_on_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("add-on-aukcion");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"d-flex icon\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"90\" height=\"90\" fill=\"white\" class=\"bi bi-check-lg m-auto align-self-center\" viewBox=\"0 0 16 16\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <path d=\"M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z\"/>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </svg>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.icon"), _hoisted_7, !$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Vaxt artımı gözlənilir - "), $data.timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <p v-if=\" !is_auth_user \" class=\"fw-bold time__add_waiting\"> Vaxt artımı gözlənilir! </p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [!$data.out_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.out_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, _hoisted_11)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_12, !$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Vaxt artımı gözlənilir - "), $data.timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <p v-if=\" !is_auth_user \" class=\"fw-bold time__add_waiting\"> Vaxt artımı gözlənilir! </p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 0,
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.extendAuksiyonTime && $options.extendAuksiyonTime.apply($options, arguments);
     }),
     type: "button",
     "class": "btn btn-success w-75 mb-1 fs-5"
-  }, "Vaxtı artır")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, "Sonlandır")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+  }, "Vaxtı artır")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, "Sonlandır")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.is_auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
     key: 2,
     href: '/product/' + $data.product_id,
     type: "button",
     "class": "btn btn-danger w-75 fs-5"
-  }, "Çıxış", 8 /* PROPS */, _hoisted_13)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.success")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_add_on_aukcion, {
+  }, "Çıxış", 8 /* PROPS */, _hoisted_18)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.success")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_add_on_aukcion, {
     product_info: $props.product
   }, null, 8 /* PROPS */, ["product_info"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.row"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"row\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"modalbox error col-sm-8 col-md-6 col-lg-5 center animate\" style=\"display: none;\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"icon\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <span class=\"glyphicon glyphicon-thumbs-down\"></span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    &lt;!&ndash;/.icon&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <h1>Oh no!</h1>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <p>Oops! Something went wrong,"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <br> you should try again.</p>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <button type=\"button\" class=\"redo btn\">Try again</button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <span class=\"change\">&#45;&#45; Click to see opposite state &#45;&#45;</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                &lt;!&ndash;/.success&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/.row")])]);
 }
