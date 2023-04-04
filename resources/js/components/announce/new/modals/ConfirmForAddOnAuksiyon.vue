@@ -5,28 +5,15 @@
                 <div class="col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 d-flex modal-inset">
                     <div @click="close" class="button close"><i class="fa fa-close"></i></div>
 
-                    <div class="modal-body d-flex align-self-center justify-content-center">
-                        <div class="col-12">
-                            <div class="mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4">
-                                <label for="inputPassword" class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label">
-                                    Ad Soyad <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center">
-                                    <input type="text" class="form-control rounded-0" id="inputPassword">
-                                </div>
-                            </div>
- 
-                            <div class="mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4">
-                                <label for="inputPassword" class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label">
-                                    Telefon <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center">
-                                    <input type="text" class="form-control rounded-0" id="inputPassword">
-                                </div>
-                            </div>
-                        </div>
-
+                    <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
+                        <confirm-phone-and-name
+                            @sendPhoneAndName="getPhoneAndName"
+                        ></confirm-phone-and-name>
                     </div>
+                    <div v-if="success" class="modal-body d-flex align-self-center justify-content-center">
+                        <confirm-number-verification-code></confirm-number-verification-code>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -38,14 +25,58 @@
 </template>
 
 <script>
+import {maska} from "maska";
+import ConfirmPhoneAndName from './crumbs/ConfirmPhoneAndName.vue';
+import ConfirmNumberVerificationCode from './crumbs/ConfirmNumberVerificationCode.vue';
+
 export default {
     name: "ConfirmForAddOnAuksiyon",
+    directives: { maska },
     data() {
         return {
-
+            name: null,
+            phone: null,
+            success: null,
         }
     },
+    components: {
+        ConfirmPhoneAndName,
+        ConfirmNumberVerificationCode,
+    },
     methods:{
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
+        },
+        getPhoneAndName(data) {
+            if( data && data.name && data.phone ) {
+                this.sendConfirm(data.name, data.phone);
+                console.log( 'DATA - ', data )
+            }
+        },
+        sendConfirm(name, phone) {
+            if( /*name &&*/ phone ) {
+                axios({
+                    method: "post",
+                    url: "/send/confirmation",
+                    data: {
+                        product_id: this.getProductID(),
+                        number: phone,
+                      /*  name: name*/
+                    },
+                })
+                    .then(res => {
+                        if (res && res.data && res.data.success) {
+                            this.success = true;
+                            console.log('send-confirmation res - ', res.data.success)
+                        }
+                    })
+                    .catch(err => {
+                        console.log('send-confirmation err - ', err.response.data.message)
+                    })
+            }
+        },
         open() {
             let open = document.getElementsByClassName('open');
             let modal = document.getElementsByClassName('modal');

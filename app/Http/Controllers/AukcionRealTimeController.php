@@ -10,8 +10,10 @@ use App\Models\AuksiyonGamer;
 use App\Models\AuksiyonTimer;
 use App\Models\Category;
 use App\Models\completeTimeExtendTimer;
+use App\Models\Phone;
 use App\Models\Product;
 use App\Models\SubCategory;
+use App\Models\Token;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +22,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Testing\Fluent\Concerns\Has;
 use function PHPUnit\Framework\isEmpty;
+use Twilio\Rest\Client;
 
 class AukcionRealTimeController extends Controller
 {
@@ -68,6 +71,92 @@ class AukcionRealTimeController extends Controller
         return view('auksiyon.real_time_aukcion', [
             'users' => $users, 'product' => $product, 'auksiyon' => $auksiyon
         ]);
+    }
+
+    // VONAGE SMS Verification
+    public function sendConfirmation(Request $request) {
+        if( $request->number && $request->product_id /*&& $request->name*/ ) {
+            $product = GetProductByIdHelper($request->product_id);
+
+            if( $product ) {
+                $product_owner_phone = $this->getProductOwnerPhone($product);
+                if( $product_owner_phone == $request->number ) {
+                    $token = new Token();
+
+                    $token->user_id = $product->user->id;
+                    $token->code = $token->code ?? $this->generateCode();
+                    $token->save();
+
+                    Auth::login($product->user);
+
+                    if( $token->user && $token->code && $token->isValid() ) {
+                        try {
+                            $twilio = new Client(env('TWILIO_SID'), env('TWILIO_TOKEN'));
+
+                            $message = $twilio->messages->create(
+                                $request->number, // to
+                                array(
+                                    "from" => env('TWILIO_NUMBER'),
+                                    "body" => 'code: '.$token->code
+                                )
+                            );
+
+                            if( $message->sid ) {
+                                return response()->json([
+                                    'success' => Auth::user()
+                                ]);
+                            }
+                        } catch ( \Exception $ex ) {
+                            return response()->json([
+                                'error' => $ex->getMessage()
+                            ]);
+                        }
+                    }
+                }
+
+                return response()->json([
+                    'success' => $token
+                ]);
+            }
+        }
+    }
+
+    public function checkVerificationCode(Request $request) {
+        if( $request->verification_code ) {
+            if( Auth::check() ) {
+                $user = Auth::user();
+                $token = Token::where( 'user_id', $user->id )->first();
+
+                if( $token->code == $request->verification_code ) {
+                    return response()->json([
+                        'success' => $token->code == $request->verification_code
+                    ]);
+                }
+            }
+        }
+    }
+
+    public function generateCode($codeLength = 4): string
+    {
+        $min = pow(10, $codeLength);
+        $max = $min * 10 - 1;
+        $code = mt_rand($min, $max);
+
+        return $code;
+    }
+    public function getProductOwnerPhone( $product ) {
+        if( $product && $product->phones && $product->phones->count() ) {
+            $phone_num = false;
+
+            foreach ( $product->phones as $phone ) {
+                $phone_num = $phone->phone;
+            }
+
+            if( $phone_num ) return $phone_num;
+            else false;
+        }
+
+        return false;
     }
 
     public function addOnlyNowAuksiyon(Request $request) {

@@ -126,7 +126,7 @@ export default {
             }, 1 );
 
             let centerOverlayCustomI = setInterval( () => {
-                let centerOverlayCustom = document.getElementsByClassName('center-overlay-customjs');
+                let centerOverlayCustom = document.getElementsByClassName('center-overlay-customs');
 
                 if( centerOverlayCustom && centerOverlayCustom.length ) {
                     centerOverlayCustom.forEach( (e) => {

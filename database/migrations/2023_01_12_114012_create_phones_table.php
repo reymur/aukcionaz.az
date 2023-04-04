@@ -17,7 +17,9 @@ class CreatePhonesTable extends Migration
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('phone');
+            $table->string('country_code', 4)->nullable();
+            $table->string('operator_code')->nullable();
+            $table->string('phone')->nullable();
             $table->morphs('phoneable');
             $table->timestamps();
         });

@@ -56,6 +56,8 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
 
     Route::post('/auksiyon/timer', 'auksiyonTimerFunc');
     Route::post('/complete-time-extend-timer', 'completeTimeExtendTimer');
+    Route::post('/send/confirmation', 'sendConfirmation');
+    Route::post('/check-verification-code', 'checkVerificationCode');
 });
 
 // PRODUCT SHOW

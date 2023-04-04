@@ -12,7 +12,9 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "*"
+        "laravel/ui": "*",
+        "twilio/sdk": "^7.0",
+        "vonage/client": "^4.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

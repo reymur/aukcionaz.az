@@ -24,6 +24,15 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function tokens(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Token::class);
+    }
+    public function phone(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Phone::class,'phoneable');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

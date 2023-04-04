@@ -135,15 +135,15 @@ return [
     | Custom Validation Language Lines
     |--------------------------------------------------------------------------
     |
-    | Here you may specify customjs validation messages for attributes using the
+    | Here you may specify customs validation messages for attributes using the
     | convention "attribute.rule" to name the lines. This makes it quick to
-    | specify a specific customjs language line for a given attribute rule.
+    | specify a specific customs language line for a given attribute rule.
     |
     */
 
-    'customjs' => [
+    'customs' => [
         'attribute-name' => [
-            'rule-name' => 'customjs-message',
+            'rule-name' => 'customs-message',
         ],
     ],
 

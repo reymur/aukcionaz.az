@@ -40343,12 +40343,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var maska__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! maska */ "./node_modules/maska/dist/maska.esm.js");
+/* harmony import */ var _crumbs_ConfirmPhoneAndName_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crumbs/ConfirmPhoneAndName.vue */ "./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue");
+/* harmony import */ var _crumbs_ConfirmNumberVerificationCode_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./crumbs/ConfirmNumberVerificationCode.vue */ "./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue");
+
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ConfirmForAddOnAuksiyon",
+  directives: {
+    maska: maska__WEBPACK_IMPORTED_MODULE_0__.maska
+  },
   data: function data() {
-    return {};
+    return {
+      name: null,
+      phone: null,
+      success: null
+    };
+  },
+  components: {
+    ConfirmPhoneAndName: _crumbs_ConfirmPhoneAndName_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ConfirmNumberVerificationCode: _crumbs_ConfirmNumberVerificationCode_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   methods: {
+    getProductID: function getProductID() {
+      var start = window.location.pathname.lastIndexOf('/');
+      var url = window.location.pathname;
+      return url.substring(start + 1);
+    },
+    getPhoneAndName: function getPhoneAndName(data) {
+      if (data && data.name && data.phone) {
+        this.sendConfirm(data.name, data.phone);
+        console.log('DATA - ', data);
+      }
+    },
+    sendConfirm: function sendConfirm(name, phone) {
+      var _this = this;
+      if ( /*name &&*/phone) {
+        axios({
+          method: "post",
+          url: "/send/confirmation",
+          data: {
+            product_id: this.getProductID(),
+            number: phone
+            /*  name: name*/
+          }
+        }).then(function (res) {
+          if (res && res.data && res.data.success) {
+            _this.success = true;
+            console.log('send-confirmation res - ', res.data.success);
+          }
+        })["catch"](function (err) {
+          console.log('send-confirmation err - ', err.response.data.message);
+        });
+      }
+    },
     open: function open() {
       var open = document.getElementsByClassName('open');
       var modal = document.getElementsByClassName('modal');
@@ -41150,7 +41199,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }, 1);
       var centerOverlayCustomI = setInterval(function () {
-        var centerOverlayCustom = document.getElementsByClassName('center-overlay-customjs');
+        var centerOverlayCustom = document.getElementsByClassName('center-overlay-customs');
         if (centerOverlayCustom && centerOverlayCustom.length) {
           centerOverlayCustom.forEach(function (e) {
             if (e.style) {
@@ -41202,6 +41251,101 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.currentHorus;
     this.hideOtherTimeSections();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "ConfirmPVerificationCode",
+  data: function data() {
+    return {
+      verification_code: null
+    };
+  },
+  methods: {
+    checkVerificationCode: function checkVerificationCode() {
+      var _this = this;
+      axios({
+        method: "post",
+        url: "/check-verification-code",
+        data: {
+          verification_code: this.verification_code
+        }
+      }).then(function (res) {
+        if (res && res.data && res.data.success) {
+          _this.success = true;
+          console.log('check-verification-code res - ', res.data.success);
+        }
+      })["catch"](function (err) {
+        console.log('check-verification-code err - ', err.response.data.message);
+      });
+    },
+    inputMask: function inputMask() {
+      // let m = new mask;
+      console.log('XXXXXXXXXXXXXXX - ', this.verification_code);
+      var verification_code = document.getElementById('verification-code');
+      if (verification_code && verification_code[0]) {
+        verification_code[0].mask("9.9.9.9", {
+          placeholder: "_ _ _ _"
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var maska__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! maska */ "./node_modules/maska/dist/maska.esm.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "ConfirmPhoneAndName",
+  directives: {
+    maska: maska__WEBPACK_IMPORTED_MODULE_0__.maska
+  },
+  data: function data() {
+    return {
+      name: null,
+      phone: null
+    };
+  },
+  methods: {
+    sendPhoneAndName: function sendPhoneAndName() {
+      this.$emit('sendPhoneAndName', {
+        name: this.name,
+        phone: this.generateNumber(this.phone)
+      });
+    },
+    generateNumber: function generateNumber(phone) {
+      if (phone) {
+        var num = phone.match(/\d+/g).join('');
+        var operator = num.substring(0, 3);
+        num = num.substring(4);
+        return '+' + operator + '' + num;
+      }
+    }
   }
 });
 
@@ -43140,20 +43284,31 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   }, null, -1 /* HOISTED */);
 });
 var _hoisted_6 = [_hoisted_5];
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal-body d-flex align-self-center justify-content-center\" data-v-32ae46b3><div class=\"col-12\" data-v-32ae46b3><div class=\"mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4\" data-v-32ae46b3><label for=\"inputPassword\" class=\"col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label\" data-v-32ae46b3> Ad Soyad <span class=\"text-danger\" data-v-32ae46b3>*</span></label><div class=\"col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center\" data-v-32ae46b3><input type=\"text\" class=\"form-control rounded-0\" id=\"inputPassword\" data-v-32ae46b3></div></div><div class=\"mb-3 row d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center me-sm-4 me-md-4 me-lg-4 me-xl-4 me-xxl-4\" data-v-32ae46b3><label for=\"inputPassword\" class=\"col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 fs-5 d-flex justify-content-start justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end col-form-label\" data-v-32ae46b3> Telefon <span class=\"text-danger\" data-v-32ae46b3>*</span></label><div class=\"col-10 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 px-0 d-flex justify-content-center\" data-v-32ae46b3><input type=\"text\" class=\"form-control rounded-0\" id=\"inputPassword\" data-v-32ae46b3></div></div></div></div>", 1);
-var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_7 = {
+  key: 0,
+  "class": "modal-body d-flex align-self-center justify-content-center"
+};
+var _hoisted_8 = {
+  key: 1,
+  "class": "modal-body d-flex align-self-center justify-content-center"
+};
+var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "modal-overlay"
   }, null, -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_confirm_phone_and_name = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("confirm-phone-and-name");
+  var _component_confirm_number_verification_code = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("confirm-number-verification-code");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.close && $options.close.apply($options, arguments);
     }),
     "class": "button close"
-  }, _hoisted_6), _hoisted_7])])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, _hoisted_6), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
+    onSendPhoneAndName: $options.getPhoneAndName
+  }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.open && $options.open.apply($options, arguments);
     }),
@@ -43986,6 +44141,127 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.selections = $event;
     })
   }, null, 8 /* PROPS */, ["options", "modelValue"]), _hoisted_2])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+}
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99 ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "col-12 col-sm-8 col-md-6 col-xl-6 col-xxl-6"
+};
+var _hoisted_2 = {
+  "class": "form-floating"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "invalid-feedback fs-6 mt-1",
+  id: "phone-error"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
+var _hoisted_4 = {
+  "class": "col-12 mt-5 d-flex justify-content-center"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    onKeydown: _cache[0] || (_cache[0] = function () {
+      return $options.inputMask && $options.inputMask.apply($options, arguments);
+    }),
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.verification_code = $event;
+    }),
+    "class": "form-control pb-0 rounded-0 border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white fs-5",
+    id: "verification-code"
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.verification_code]]), _hoisted_3]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.checkVerificationCode && $options.checkVerificationCode.apply($options, arguments);
+    }),
+    "class": "col-6 btn btn-outline-success rounded-0 fs-5 w-100"
+  }, " Göndər ")])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "col-12 col-sm-8 col-md-6 col-xl-6 col-xxl-6"
+};
+var _hoisted_2 = {
+  "class": "form-floating has-validation"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "invalid-feedback"
+}, " Please choose a username. ", -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "name",
+  "class": "text-secondary fs-5"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Adınız "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-danger text-opacity-75"
+}, "*")], -1 /* HOISTED */);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "invalid-feedback fs-6 mt-1",
+  id: "name-error"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
+var _hoisted_6 = {
+  "class": "form-floating"
+};
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "floatingInput",
+  "class": "text-secondary fs-5"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Mobil nömrə "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-danger text-opacity-75"
+}, "*")], -1 /* HOISTED */);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "invalid-feedback fs-6 mt-1",
+  id: "phone-error"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" error text")], -1 /* HOISTED */);
+var _hoisted_9 = {
+  "class": "col-12 mt-5 d-flex justify-content-center"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _directive_maska = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDirective)("maska");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.name = $event;
+    }),
+    "class": "form-control pb-0 rounded-0 border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white fs-5",
+    placeholder: "Adınız",
+    type: "text",
+    id: "name"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]]), _hoisted_3, _hoisted_4, _hoisted_5]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.phone = $event;
+    }),
+    "class": "form-control pb-0 rounded-0 border-top-0 border-start-0 border-opacity-25 border-end-0 border-bottom-secondary bg-white fs-5",
+    placeholder: "+994 (000) 000-00-00",
+    id: "phone"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone], [_directive_maska, '+994 (###) ###-##-##']]), _hoisted_7, _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.sendPhoneAndName && $options.sendPhoneAndName.apply($options, arguments);
+    }),
+    "class": "col-6 btn btn-outline-success rounded-0 fs-5 w-100"
+  }, " Göndər ")])]);
 }
 
 /***/ }),
@@ -72797,6 +73073,62 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ConfirmNumberVerificationCode_vue_vue_type_template_id_0042fe99__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99 */ "./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99");
+/* harmony import */ var _ConfirmNumberVerificationCode_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmNumberVerificationCode.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=script&lang=js");
+/* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ConfirmNumberVerificationCode_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ConfirmNumberVerificationCode_vue_vue_type_template_id_0042fe99__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ConfirmPhoneAndName_vue_vue_type_template_id_412d08bc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc */ "./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc");
+/* harmony import */ var _ConfirmPhoneAndName_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmPhoneAndName.vue?vue&type=script&lang=js */ "./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=script&lang=js");
+/* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ConfirmPhoneAndName_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ConfirmPhoneAndName_vue_vue_type_template_id_412d08bc__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/products/ProductShow.vue":
 /*!*******************************************************************!*\
   !*** ./resources/js/components/announce/products/ProductShow.vue ***!
@@ -73515,6 +73847,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmNumberVerificationCode_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmNumberVerificationCode_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmNumberVerificationCode.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmPhoneAndName_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmPhoneAndName_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmPhoneAndName.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/announce/products/ProductShow.vue?vue&type=script&lang=js":
 /*!*******************************************************************************************!*\
   !*** ./resources/js/components/announce/products/ProductShow.vue?vue&type=script&lang=js ***!
@@ -74055,6 +74419,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TimePicker_vue_vue_type_template_id_bdbc1c4c_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TimePicker_vue_vue_type_template_id_bdbc1c4c_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TimePicker.vue?vue&type=template&id=bdbc1c4c&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/TimePicker.vue?vue&type=template&id=bdbc1c4c&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99 ***!
+  \****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmNumberVerificationCode_vue_vue_type_template_id_0042fe99__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmNumberVerificationCode_vue_vue_type_template_id_0042fe99__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99 */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmNumberVerificationCode.vue?vue&type=template&id=0042fe99");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmPhoneAndName_vue_vue_type_template_id_412d08bc__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ConfirmPhoneAndName_vue_vue_type_template_id_412d08bc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue?vue&type=template&id=412d08bc");
 
 
 /***/ }),
