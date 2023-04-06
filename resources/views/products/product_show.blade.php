@@ -32,6 +32,7 @@
                     <div class="">
                         <div class="mb-2">
                             <add-on-aukcion
+                                :auth_user="{{ $auth_user }}"
                                 :product_info="{{ $product }}"
                             ></add-on-aukcion>
                         </div>

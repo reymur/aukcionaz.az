@@ -80,14 +80,14 @@ class AukcionRealTimeController extends Controller
 
             if( $product ) {
                 $product_owner_phone = $this->getProductOwnerPhone($product);
-                if( $product_owner_phone == $request->number ) {
+                if( $this->generateNumber($product_owner_phone) == $request->number ) {
                     $token = new Token();
 
                     $token->user_id = $product->user->id;
                     $token->code = $token->code ?? $this->generateCode();
                     $token->save();
 
-                    Auth::login($product->user);
+//                    Auth::login($product->user);
 
                     if( $token->user && $token->code && $token->isValid() ) {
                         try {
@@ -103,36 +103,56 @@ class AukcionRealTimeController extends Controller
 
                             if( $message->sid ) {
                                 return response()->json([
-                                    'success' => Auth::user()
-                                ]);
+                                    'user' => $token->user,
+                                    'code' => $token->code
+                                ], 200 );
                             }
                         } catch ( \Exception $ex ) {
                             return response()->json([
                                 'error' => $ex->getMessage()
-                            ]);
+                            ], 500 );
                         }
                     }
                 }
 
                 return response()->json([
-                    'success' => $token
+                    'success' => /*$product_owner_phone ==*/ $request->number
                 ]);
             }
         }
     }
 
     public function checkVerificationCode(Request $request) {
-        if( $request->verification_code ) {
-            if( Auth::check() ) {
-                $user = Auth::user();
-                $token = Token::where( 'user_id', $user->id )->first();
+        if( $request->user_id && $request->code && $request->verification_code ) {
+            if( $request->code == $request->verification_code ) {
+                $token = Token::where('user_id', $request->user_id)->firstOrFail();
 
-                if( $token->code == $request->verification_code ) {
-                    return response()->json([
-                        'success' => $token->code == $request->verification_code
-                    ]);
+                if( $token && $token->user_id && $token->isValid() ) {
+                    Auth::login( $token->user );
+
+                    if( Auth::check() ) {
+                        $token->delete();
+
+                        return response()->json([
+                            'auth_user' => Auth::user()
+                        ]);
+                    }
                 }
             }
+        }
+
+        return response()->json([
+            'user' => $request->verification_code
+        ]);
+    }
+
+    public function generateNumber($phone) {
+        if( $phone ) {
+            $num = preg_replace('/[^0-9]/','', $phone);
+            $num ? $operator = substr($num, 0, 3) : false;
+            $num = substr($num,4);
+
+            return '+'. ($operator && $num) ? $operator.$num : false;
         }
     }
 

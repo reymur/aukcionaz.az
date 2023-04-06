@@ -11,7 +11,11 @@
                         ></confirm-phone-and-name>
                     </div>
                     <div v-if="success" class="modal-body d-flex align-self-center justify-content-center">
-                        <confirm-number-verification-code></confirm-number-verification-code>
+                        <confirm-number-verification-code
+                            :user="user"
+                            :code="code"
+                            :is_visible="is_visible"
+                        ></confirm-number-verification-code>
                     </div>
 
                 </div>
@@ -19,8 +23,11 @@
         </div>
         <div class="modal-overlay"></div>
 
+        <button @click="open" type="button" class="open btn btn-danger rounded-0 auksiyon_add_button">
+            <span class="aukcion__add_button_text"> Auksion əlavə et </span>
+        </button>
 
-        <button @click="open" class="fancy-btn open">Can I haz Modal?</button>
+<!--        <button class="fancy-btn open">Can I haz Modal?</button>-->
     </div>
 </template>
 
@@ -34,9 +41,12 @@ export default {
     directives: { maska },
     data() {
         return {
+            user: null,
+            code: null,
             name: null,
             phone: null,
             success: null,
+            is_visible:null,
         }
     },
     components: {
@@ -66,15 +76,19 @@ export default {
                       /*  name: name*/
                     },
                 })
-                    .then(res => {
-                        if (res && res.data && res.data.success) {
-                            this.success = true;
-                            console.log('send-confirmation res - ', res.data.success)
-                        }
-                    })
-                    .catch(err => {
-                        console.log('send-confirmation err - ', err.response.data.message)
-                    })
+                .then(res => {
+                    if ( res && res.data && res.data.user && res.data.code ) {
+                        this.user = res.data.user;
+                        this.code = res.data.code;
+                        this.success = true;
+                        console.log('send-confirmation AAA res - ', this.user, +' - '+ this.code)
+                        // console.log('send-confirmation AAA res - ', res.data.user)
+                    }
+                    console.log('send-confirmation res AAA 222 - ', res.data )
+                })
+                .catch(err => {
+                    console.log('send-confirmation err AAA - ', err.response.data.message)
+                })
             }
         },
         open() {
@@ -91,6 +105,8 @@ export default {
                 modal_frame[0].classList.add("state-appear");
                 modal[0].style = 'background-color: rgb(246 234 208 / 87%)'
             }
+
+            this.is_visible = true;
         },
         close() {
             let body = document.body;
@@ -114,6 +130,12 @@ export default {
 </script>
 
 <style scoped>
+
+.aukcion__add_button_text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 15px;
+}
 
 * {
     box-sizing: border-box;

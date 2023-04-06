@@ -5,10 +5,12 @@
             <span class="aukcion__add_button_text"> Auksion-a keçid </span>
         </a>
 
-        <confirm-for-add-on-auksiyon></confirm-for-add-on-auksiyon>
+        <div v-if="!auth_user" class="">
+            <confirm-for-add-on-auksiyon></confirm-for-add-on-auksiyon>
+        </div>
 
         <!-- Button trigger modal -->
-        <button v-if="!auksiyon_status" @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button v-if="!auksiyon_status && auth_user" @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <span class="aukcion__add_button_text"> Auksion əlavə et </span>
         </button>
 
@@ -75,7 +77,7 @@ import ConfirmForAddOnAuksiyon from './ConfirmForAddOnAuksiyon.vue';
 
 export default {
     name: "AddOnAukcion",
-    props: ['product_info'],
+    props: ['product_info','auth_user'],
     data () {
         return {
             // bodyColor: null,
