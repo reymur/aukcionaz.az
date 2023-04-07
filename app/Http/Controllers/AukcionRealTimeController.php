@@ -75,7 +75,7 @@ class AukcionRealTimeController extends Controller
 
     // VONAGE SMS Verification
     public function sendConfirmation(Request $request) {
-        if( $request->number && $request->product_id /*&& $request->name*/ ) {
+        if( $request->number && $request->product_id && $request->save_time /*&& $request->name*/ ) {
             $product = GetProductByIdHelper($request->product_id);
 
             if( $product ) {
@@ -85,6 +85,7 @@ class AukcionRealTimeController extends Controller
 
                     $token->user_id = $product->user->id;
                     $token->code = $token->code ?? $this->generateCode();
+                    $token->save_time = $request->save_time;
                     $token->save();
 
 //                    Auth::login($product->user);
@@ -105,7 +106,7 @@ class AukcionRealTimeController extends Controller
                                 return response()->json([
                                     'user' => $token->user,
                                     'code' => $token->code,
-                                    'timer' => $token->created_at->timestamp
+                                    'timer' => $token->save_time
                                 ], 200 );
 //                            }
 //                        } catch ( \Exception $ex ) {
@@ -148,7 +149,7 @@ class AukcionRealTimeController extends Controller
     }
 
     public function resendVerificationCode(Request $request) {
-        if( $request->user_id && $request->code ) {
+        if( $request->user_id && $request->code && $request->save_time ) {
             $token = new Token();
             $old_token_code = $this->getTableInfo($token, 'user_id', 'code', $request->user_id, $request->code);
 
@@ -158,13 +159,14 @@ class AukcionRealTimeController extends Controller
                 if( $old_token ) {
                     $token->user_id = $request->user_id;
                     $token->code = $token->code ?? $this->generateCode();
+                    $token->save_time = $request->save_time;
                     $token->save();
 
                     if( $token->user && $token->user->id && $token->code ) {
                         return response()->json([
                             'user_id'  => $token->user->id,
                             'new_code' => $token->code,
-                            'timer'    => $token->created_at->timestamp
+                            'timer'    => $token->save_time
                         ], 200);
                     }
                 }

@@ -5,12 +5,12 @@
                 <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset">
                     <div @click="close" class="button close"><i class="fa fa-close"></i></div>
 
-                    <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-phone-and-name
                             @sendPhoneAndName="getPhoneAndName"
                         ></confirm-phone-and-name>
                     </div>
-                    <div v-if="success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-number-verification-code
                             :user="user"
                             :code="code"
@@ -71,8 +71,9 @@ export default {
                     method: "post",
                     url: "/send/confirmation",
                     data: {
-                        product_id: this.getProductID(),
                         number: phone,
+                        product_id: this.getProductID(),
+                        save_time: this.getCurrentTimes(),
                       /*  name: name*/
                     },
                 })
@@ -92,6 +93,14 @@ export default {
                     console.log('send-confirmation err 2 AAA - ', err.response.data.message)
                 })
             }
+        },
+        getCurrentTimes() {
+            let date    = new Date();
+            let h       = Number( date.getHours() ) * 3600000;
+            let m       = Number( date.getMinutes() )  * 60000;
+            let s       = Number( date.getSeconds() )  * 1000;
+
+            return (h + m + s);
         },
         open() {
             let open = document.getElementsByClassName('open');

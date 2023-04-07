@@ -28503,7 +28503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".code__title[data-v-0042fe99] {\n  margin-top: -20px;\n  margin-bottom: 25px;\n}\n.resend__new_cod_div[data-v-0042fe99] {\n  margin-top: 15px;\n  display: flex;\n  justify-content: center;\n}\n.resend__new_cod_text[data-v-0042fe99] {\n  margin-right: 10px;\n  color: #656161;\n  font-size: 0.89rem;\n}\n.resend__new_cod_btn[data-v-0042fe99] {\n  letter-spacing: 0.5px;\n  z-index: 10;\n}\n.error__div[data-v-0042fe99] {\n  margin-top: 10px;\n  font-size: 1rem;\n  letter-spacing: 0.5px;\n}\n.code__timer[data-v-0042fe99] {\n  margin-top: 15px;\n  font-size: 1.1rem;\n  color: #878585;\n}\n.code__title_div[data-v-0042fe99] {\n}\n.code__title_text[data-v-0042fe99] {\n  width: 100%;\n}\n.code__styles[data-v-0042fe99] {\n  width: 45px;\n  height: 40px;\n  border-radius: 0;\n  border: 1px solid #6361614d;\n  box-shadow: 1px 1px 2px 0 #b7b2b2bd;\n  margin-right: 10px;\n  text-align: center;\n  font-size: 1.52rem;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".code__title[data-v-0042fe99] {\n  margin-top: -20px;\n  margin-bottom: 25px;\n}\n.resend__new_cod_div[data-v-0042fe99] {\n  margin-top: 15px;\n  display: flex;\n  justify-content: center;\n}\n.resend__new_cod_text[data-v-0042fe99] {\n  margin-right: 10px;\n  color: #656161;\n  font-size: 0.89rem;\n}\n.resend__new_cod_btn[data-v-0042fe99] {\n  letter-spacing: 0.5px;\n  z-index: 10;\n}\n.error__div[data-v-0042fe99] {\n  margin-top: 10px;\n  font-size: 1rem;\n  letter-spacing: 0.5px;\n}\n.code__timer_one[data-v-0042fe99] {\n  margin-top: 15px;\n  font-size: 1.1rem;\n  color: #878585;\n}\n.code__timer[data-v-0042fe99] {\n  margin-top: 15px;\n  font-size: 1.1rem;\n  color: #878585;\n}\n.code__title_div[data-v-0042fe99] {\n}\n.code__title_text[data-v-0042fe99] {\n  width: 100%;\n}\n.code__styles[data-v-0042fe99] {\n  width: 45px;\n  height: 40px;\n  border-radius: 0;\n  border: 1px solid #6361614d;\n  box-shadow: 1px 1px 2px 0 #b7b2b2bd;\n  margin-right: 10px;\n  text-align: center;\n  font-size: 1.52rem;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40411,8 +40411,9 @@ __webpack_require__.r(__webpack_exports__);
           method: "post",
           url: "/send/confirmation",
           data: {
+            number: phone,
             product_id: this.getProductID(),
-            number: phone
+            save_time: this.getCurrentTimes()
             /*  name: name*/
           }
         }).then(function (res) {
@@ -40431,6 +40432,13 @@ __webpack_require__.r(__webpack_exports__);
           console.log('send-confirmation err 2 AAA - ', err.response.data.message);
         });
       }
+    },
+    getCurrentTimes: function getCurrentTimes() {
+      var date = new Date();
+      var h = Number(date.getHours()) * 3600000;
+      var m = Number(date.getMinutes()) * 60000;
+      var s = Number(date.getSeconds()) * 1000;
+      return h + m + s;
     },
     open: function open() {
       var open = document.getElementsByClassName('open');
@@ -41315,7 +41323,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       set_focus: null,
       vrf_code: [],
       code_error: false,
-      is_resend_code: false,
+      show_timer: true,
+      is_resend_code: true,
       send_verification_code: false
     };
   },
@@ -41329,7 +41338,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     resendCode: function resendCode(e) {
       var _this = this;
       e.preventDefault();
-      this.is_resend_code = true;
+      this.is_resend_code = false;
+      this.show_timer = false;
+      this.verificationTimer(this.getCurrentTimes(), false);
       var code = localStorage.getItem('code');
       var user_id = localStorage.getItem('user_id');
       setTimeout(function () {
@@ -41339,13 +41350,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             url: "/resend-verification-code",
             data: {
               user_id: user_id,
-              code: code
+              code: code,
+              save_time: _this.getCurrentTimes()
             }
           }).then(function (res) {
             if (res && res.data && res.data.user_id && res.data.new_code && res.data.timer) {
               _this.removeSessionItems(['user_id', 'code', 'timer']);
               if (!_this.issetSessionItems(['user_id', 'code', 'timer'])) _this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
-              if (_this.issetSessionItems(['user_id', 'code', 'timer'])) _this.is_resend_code = false;
+              if (_this.issetSessionItems(['user_id', 'code', 'timer'])) {
+                _this.show_timer = true;
+                _this.verificationTimer(_this.getCurrentTimes(), true);
+              }
               console.log('NEW-VERIFICATION CODE 1 res - ', localStorage.getItem('user_id') + ' - ' + localStorage.getItem('code') + ' - ' + localStorage.getItem('timer'));
             }
             console.log('NEW-VERIFICATION CODE 2 - ', res.data);
@@ -41354,6 +41369,42 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           });
         }
       }, 2000);
+    },
+    verificationTimer: function verificationTimer(current_timer) {
+      var _this2 = this;
+      var show = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      if (current_timer && localStorage.getItem('timer')) {
+        var timer_div = document.getElementsByClassName('code__timer');
+        var timer = null;
+        var time = null;
+        var sec = null;
+        if (Number(localStorage.getItem('timer') < this.timer)) {
+          timer = this.timer;
+          time = current_timer - timer;
+          sec = 30 - time / 1000;
+        } else {
+          timer = Number(localStorage.getItem('timer'));
+          time = current_timer - timer;
+          sec = 30 - time / 1000;
+        }
+        if (localStorage.getItem('clear')) clearInterval(localStorage.getItem('clear'));
+        if (show) {
+          var timer_set = setInterval(function () {
+            if (sec >= 0 && timer_div && timer_div[0]) {
+              timer_div[0].innerHTML = sec;
+              sec -= 1;
+              if (sec < 0) {
+                sec = '00:00';
+                timer_div[0].innerHTML = sec;
+                clearInterval(timer_set);
+              }
+              console.log('TTTTTTTTT - ', sec);
+            }
+            _this2.is_resend_code = true;
+          }, 1000);
+          localStorage.setItem('clear', timer_set);
+        }
+      }
     },
     setInSessionCode: function setInSessionCode(user_id, code, timer) {
       if (user_id && code && timer) {
@@ -41364,10 +41415,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     },
     removeSessionItems: function removeSessionItems(items) {
       if (items && items.length) {
+        var count = 0;
         items.forEach(function (item) {
           localStorage.removeItem(item);
+          if (localStorage.getItem(item)) return false;
+          count++;
         });
+        if (count === items.length) return true;
       }
+      return false;
     },
     issetSessionItems: function issetSessionItems(items) {
       if (items && items.length) {
@@ -41375,7 +41431,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         var isset = null;
         items.forEach(function (item) {
           isset = localStorage.getItem(item);
-          if (!isset) return false;
+          if (!localStorage.getItem(item)) return false;
           count++;
           console.log('issetSessionItems - ', isset);
         });
@@ -41384,7 +41440,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return false;
     },
     changeInputFocus: function changeInputFocus(event) {
-      var _this2 = this;
+      var _this3 = this;
       var class_name = event.target.classList[0];
       var key = event.which || event.keyCode || event.charCode;
       var input_1 = document.getElementsByClassName('pincode1');
@@ -41400,39 +41456,39 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           if (class_name === 'pincode1' && input_2 && input_2[0]) {
             this.detectInputs(input_2);
             var inter1 = setInterval(function () {
-              if (_this2.input_1) _this2.setVerificationCode(inter1, _this2.input_1, 0);
-              _this2.checkCountCode();
+              if (_this3.input_1) _this3.setVerificationCode(inter1, _this3.input_1, 0);
+              _this3.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter1);
           }
           if (class_name === 'pincode2' && input_2 && input_2[0]) {
             this.detectInputs(input_3);
             var inter2 = setInterval(function () {
-              if (_this2.input_2) _this2.setVerificationCode(inter2, _this2.input_2, 1);
-              _this2.checkCountCode();
+              if (_this3.input_2) _this3.setVerificationCode(inter2, _this3.input_2, 1);
+              _this3.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter2);
           }
           if (class_name === 'pincode3' && input_3 && input_3[0]) {
             this.detectInputs(input_4);
             var inter3 = setInterval(function () {
-              if (_this2.input_3) _this2.setVerificationCode(inter3, _this2.input_3, 2);
-              _this2.checkCountCode();
+              if (_this3.input_3) _this3.setVerificationCode(inter3, _this3.input_3, 2);
+              _this3.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter3);
           }
           if (class_name === 'pincode4' && input_4 && input_4[0]) {
             this.detectInputs(input_5);
             var inter4 = setInterval(function () {
-              if (_this2.input_4) _this2.setVerificationCode(inter4, _this2.input_4, 3);
-              _this2.checkCountCode();
+              if (_this3.input_4) _this3.setVerificationCode(inter4, _this3.input_4, 3);
+              _this3.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter4);
           }
           if (class_name === 'pincode5' && input_5 && input_5[0]) {
             var inter5 = setInterval(function () {
-              if (_this2.input_5) _this2.setVerificationCode(inter5, _this2.input_5, 4);
-              _this2.checkCountCode();
+              if (_this3.input_5) _this3.setVerificationCode(inter5, _this3.input_5, 4);
+              _this3.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter5);
           }
@@ -41520,12 +41576,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
     },
     getInputValue: function getInputValue(value_var) {
-      var _this3 = this;
       var inter = setInterval(function () {
-        console.info('vrf_code value - ', _this3.value_var);
-        if (_this3.value_var) {
+        console.info('vrf_code value - ', value_var);
+        if (value_var) {
           clearInterval(inter);
-          return _this3.value_var;
+          return value_var;
         }
       }, 0.1);
       this.setIntervalClear(inter);
@@ -41587,9 +41642,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       })["catch"](function (err) {
         console.log('check-verification-code err - ', err.response.data.message);
       });
+    },
+    getCurrentTimes: function getCurrentTimes() {
+      var date = new Date();
+      var h = Number(date.getHours()) * 3600000;
+      var m = Number(date.getMinutes()) * 60000;
+      var s = Number(date.getSeconds()) * 1000;
+      return h + m + s;
     }
   },
   mounted: function mounted() {
+    this.verificationTimer(this.getCurrentTimes(), true);
     console.log('user and code - ', this.user + ' - ' + this.code);
     if (this.user && this.user.id && this.code && this.timer) this.setInSessionCode(this.user.id, this.code, this.timer);
   }
@@ -43605,9 +43668,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.close && $options.close.apply($options, arguments);
     }),
     "class": "button close"
-  }, _hoisted_6), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
+  }, _hoisted_6), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
     onSendPhoneAndName: $options.getPhoneAndName
-  }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
+  }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
     user: $data.user,
     code: $data.code,
     timer: $data.timer
@@ -44480,15 +44543,18 @@ var _hoisted_4 = {
   key: 0,
   "class": "d-block invalid-feedback error__div"
 };
-var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "code__timer"
-  }, "2 : 34", -1 /* HOISTED */);
-});
+var _hoisted_5 = {
+  key: 1,
+  "class": "code__timer"
+};
 var _hoisted_6 = {
+  key: 2,
+  "class": "code__timer_one"
+};
+var _hoisted_7 = {
   "class": "resend__new_cod_div"
 };
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "resend__new_cod_text"
   }, " Kod gəlmədi? ", -1 /* HOISTED */);
@@ -44550,7 +44616,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "pincode5 code__styles",
     inputmode: "numeric",
     maxlength: "1"
-  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.input_5]])]), $data.code_error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, " Yanlış kod! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, $data.is_resend_code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.input_5]])]), $data.code_error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, " Yanlış kod! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.show_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, "00:00")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.show_timer ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, "00:00")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, !$data.is_resend_code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
     key: 0,
     onClick: _cache[10] || (_cache[10] = function (e) {
       return e.preventDefault();
@@ -44558,7 +44624,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: "",
     disabled: "",
     "class": "text-muted resend__new_cod_btn"
-  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.is_resend_code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.is_resend_code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
     key: 1,
     onClick: _cache[11] || (_cache[11] = function () {
       return $options.resendCode && $options.resendCode.apply($options, arguments);

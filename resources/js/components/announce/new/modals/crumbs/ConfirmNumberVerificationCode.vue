@@ -36,19 +36,19 @@
             </div>
             <div v-if="code_error" class="d-block invalid-feedback error__div"> Yanlış kod! </div>
 
-            <div class="code__timer">2 : 34</div>
+            <div v-if="show_timer" class="code__timer">00:00</div>
+            <div v-if="!show_timer" class="code__timer_one">00:00</div>
 
             <div class="resend__new_cod_div">
                 <div class="resend__new_cod_text"> Kod gəlmədi? </div>
-                <a v-if="is_resend_code" @click="e => e.preventDefault()" href="" disabled class="text-muted resend__new_cod_btn" > Yeni kod alın </a>
-                <a v-if="! is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>
+                <a v-if="!is_resend_code" @click="e => e.preventDefault()" href="" disabled class="text-muted resend__new_cod_btn" > Yeni kod alın </a>
+                <a v-if="is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>
             </div>
 
         </div>
 </template>
 
 <script>
-
 
 export default {
     name: "ConfirmPVerificationCode",
@@ -63,7 +63,8 @@ export default {
             set_focus: null,
             vrf_code: [],
             code_error: false,
-            is_resend_code: false,
+            show_timer: true,
+            is_resend_code: true,
             send_verification_code: false,
         }
     },
@@ -78,7 +79,9 @@ export default {
     methods: {
         resendCode(e) {
             e.preventDefault();
-            this.is_resend_code = true;
+            this.is_resend_code = false;
+            this.show_timer = false;
+            this.verificationTimer( this.getCurrentTimes(), false );
             let code = localStorage.getItem('code');
             let user_id = localStorage.getItem('user_id');
 
@@ -90,6 +93,7 @@ export default {
                         data: {
                             user_id: user_id,
                             code: code,
+                            save_time: this.getCurrentTimes(),
                         },
                     })
                         .then(res => {
@@ -98,7 +102,10 @@ export default {
                                 if( ! this.issetSessionItems(['user_id','code','timer']) )
                                     this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
 
-                                if( this.issetSessionItems(['user_id','code','timer']) ) this.is_resend_code = false;
+                                if( this.issetSessionItems(['user_id','code','timer']) ) {
+                                    this.show_timer = true;
+                                    this.verificationTimer( this.getCurrentTimes(), true );
+                                }
 
                                 console.log( 'NEW-VERIFICATION CODE 1 res - ', localStorage.getItem('user_id')+' - '+localStorage.getItem('code')+' - '+localStorage.getItem('timer') )
                             }
@@ -111,6 +118,47 @@ export default {
                 }
             }, 2000 );
         },
+        verificationTimer(current_timer, show=false) {
+            if( current_timer && localStorage.getItem('timer') ) {
+                let timer_div = document.getElementsByClassName('code__timer');
+                let timer = null;
+                let time = null;
+                let sec = null;
+
+                if( Number(localStorage.getItem('timer') < this.timer ) ) {
+                    timer = this.timer;
+                    time = ( current_timer - timer );
+                    sec = 30 - (time  / 1000);
+                }
+                else {
+                    timer = Number(localStorage.getItem('timer'));
+                    time = ( current_timer - timer );
+                    sec = 30 - (time  / 1000);
+                }
+
+                if( localStorage.getItem('clear') ) clearInterval(localStorage.getItem('clear'));
+
+                if( show ) {
+                    let timer_set = setInterval(() => {
+                        if ( sec >= 0 && timer_div && timer_div[0] ) {
+                            timer_div[0].innerHTML = sec;
+                            sec -= 1
+
+                            if (sec < 0) {
+                                sec = '00:00';
+                                timer_div[0].innerHTML = sec;
+                                clearInterval(timer_set);
+                            }
+                            console.log('TTTTTTTTT - ', sec)
+                        }
+                        this.is_resend_code = true;
+                    }, 1000);
+
+                    localStorage.setItem( 'clear', timer_set );
+                }
+
+            }
+        },
         setInSessionCode(user_id, code, timer){
             if( user_id && code && timer ) {
                 localStorage.setItem('user_id', user_id);
@@ -120,10 +168,16 @@ export default {
         },
         removeSessionItems(items) {
             if( items && items.length ) {
+                let count = 0;
                 items.forEach( item => {
-                    localStorage.removeItem( item )
+                    localStorage.removeItem( item );
+                    if( localStorage.getItem(item) ) return false;
+                    count++;
                 })
+
+               if(  count === items.length ) return true;
             }
+            return false;
         },
         issetSessionItems(items) {
             if( items && items.length ) {
@@ -131,7 +185,7 @@ export default {
                 let isset = null;
                 items.forEach( item => {
                     isset = localStorage.getItem( item );
-                    if( !isset ) return false;
+                    if( ! localStorage.getItem( item ) ) return false;
                     count++;
                     console.log('issetSessionItems - ', isset )
                 });
@@ -275,10 +329,10 @@ export default {
         },
         getInputValue(value_var) {
                 let inter = setInterval( () => {
-                    console.info( 'vrf_code value - ', this.value_var );
-                    if( this.value_var ) {
+                    console.info( 'vrf_code value - ', value_var );
+                    if( value_var ) {
                         clearInterval(inter);
-                        return this.value_var;
+                        return value_var;
                     }
                 }, 0.1 );
 
@@ -346,8 +400,17 @@ export default {
                     console.log('check-verification-code err - ', err.response.data.message)
                 })
         },
+        getCurrentTimes() {
+            let date    = new Date();
+            let h       = Number( date.getHours() ) * 3600000;
+            let m       = Number( date.getMinutes() )  * 60000;
+            let s       = Number( date.getSeconds() )  * 1000;
+
+            return (h + m + s);
+        }
     },
     mounted(){
+        this.verificationTimer( this.getCurrentTimes(), true );
         console.log('user and code - ', this.user+' - '+this.code )
         if( this.user && this.user.id && this.code && this.timer) this.setInSessionCode(this.user.id, this.code, this.timer);
     }
@@ -381,6 +444,11 @@ export default {
     letter-spacing: 0.5px;
 }
 
+.code__timer_one {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #878585;
+}
 .code__timer {
     margin-top: 15px;
     font-size: 1.1rem;
