@@ -2,7 +2,7 @@
     <div class="">
         <div class="modal-frame">
             <div class="modal">
-                <div class="col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 d-flex modal-inset">
+                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset">
                     <div @click="close" class="button close"><i class="fa fa-close"></i></div>
 
                     <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
@@ -14,7 +14,7 @@
                         <confirm-number-verification-code
                             :user="user"
                             :code="code"
-                            :is_visible="is_visible"
+                            :timer="timer"
                         ></confirm-number-verification-code>
                     </div>
 
@@ -43,10 +43,10 @@ export default {
         return {
             user: null,
             code: null,
+            timer: null,
             name: null,
             phone: null,
             success: null,
-            is_visible:null,
         }
     },
     components: {
@@ -77,17 +77,19 @@ export default {
                     },
                 })
                 .then(res => {
-                    if ( res && res.data && res.data.user && res.data.code ) {
+                    if ( res && res.data && res.data.user && res.data.code && res.data.timer ) {
                         this.user = res.data.user;
                         this.code = res.data.code;
+                        this.timer = res.data.timer;
                         this.success = true;
-                        console.log('send-confirmation AAA res - ', this.user, +' - '+ this.code)
+                        console.log('send-confirmation AAA res - ', this.user ,' - ', this.code, ' - ', this.timer )
                         // console.log('send-confirmation AAA res - ', res.data.user)
                     }
                     console.log('send-confirmation res AAA 222 - ', res.data )
                 })
                 .catch(err => {
-                    console.log('send-confirmation err AAA - ', err.response.data.message)
+                    console.log('send-confirmation err 1 AAA - ', err )
+                    console.log('send-confirmation err 2 AAA - ', err.response.data.message)
                 })
             }
         },
@@ -105,8 +107,6 @@ export default {
                 modal_frame[0].classList.add("state-appear");
                 modal[0].style = 'background-color: rgb(246 234 208 / 87%)'
             }
-
-            this.is_visible = true;
         },
         close() {
             let body = document.body;

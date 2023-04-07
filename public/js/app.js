@@ -28503,7 +28503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".error__div[data-v-0042fe99] {\n  margin-top: 10px;\n  font-size: 1rem;\n  letter-spacing: 0.5px;\n}\n.code__timer[data-v-0042fe99] {\n  margin-top: 15px;\n  font-size: 1.1rem;\n  color: #878585;\n}\n.code__title[data-v-0042fe99] {\n  margin: auto;\n  position: absolute;\n  top: -45px;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  color: #858282;\n  font-size: 1.1rem;\n}\n.code__styles[data-v-0042fe99] {\n  width: 45px;\n  height: 40px;\n  border-radius: 0;\n  border: 1px solid #6361614d;\n  box-shadow: 1px 1px 2px 0 #b7b2b2bd;\n  margin-right: 10px;\n  text-align: center;\n  font-size: 1.52rem;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".code__title[data-v-0042fe99] {\n  margin-top: -20px;\n  margin-bottom: 25px;\n}\n.resend__new_cod_div[data-v-0042fe99] {\n  margin-top: 15px;\n  display: flex;\n  justify-content: center;\n}\n.resend__new_cod_text[data-v-0042fe99] {\n  margin-right: 10px;\n  color: #656161;\n  font-size: 0.89rem;\n}\n.resend__new_cod_btn[data-v-0042fe99] {\n  letter-spacing: 0.5px;\n  z-index: 10;\n}\n.error__div[data-v-0042fe99] {\n  margin-top: 10px;\n  font-size: 1rem;\n  letter-spacing: 0.5px;\n}\n.code__timer[data-v-0042fe99] {\n  margin-top: 15px;\n  font-size: 1.1rem;\n  color: #878585;\n}\n.code__title_div[data-v-0042fe99] {\n}\n.code__title_text[data-v-0042fe99] {\n  width: 100%;\n}\n.code__styles[data-v-0042fe99] {\n  width: 45px;\n  height: 40px;\n  border-radius: 0;\n  border: 1px solid #6361614d;\n  box-shadow: 1px 1px 2px 0 #b7b2b2bd;\n  margin-right: 10px;\n  text-align: center;\n  font-size: 1.52rem;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40382,10 +40382,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       user: null,
       code: null,
+      timer: null,
       name: null,
       phone: null,
-      success: null,
-      is_visible: null
+      success: null
     };
   },
   components: {
@@ -40416,17 +40416,19 @@ __webpack_require__.r(__webpack_exports__);
             /*  name: name*/
           }
         }).then(function (res) {
-          if (res && res.data && res.data.user && res.data.code) {
+          if (res && res.data && res.data.user && res.data.code && res.data.timer) {
             _this.user = res.data.user;
             _this.code = res.data.code;
+            _this.timer = res.data.timer;
             _this.success = true;
-            console.log('send-confirmation AAA res - ', _this.user, +' - ' + _this.code);
+            console.log('send-confirmation AAA res - ', _this.user, ' - ', _this.code, ' - ', _this.timer);
             // console.log('send-confirmation AAA res - ', res.data.user)
           }
 
           console.log('send-confirmation res AAA 222 - ', res.data);
         })["catch"](function (err) {
-          console.log('send-confirmation err AAA - ', err.response.data.message);
+          console.log('send-confirmation err 1 AAA - ', err);
+          console.log('send-confirmation err 2 AAA - ', err.response.data.message);
         });
       }
     },
@@ -40443,7 +40445,6 @@ __webpack_require__.r(__webpack_exports__);
         modal_frame[0].classList.add("state-appear");
         modal[0].style = 'background-color: rgb(246 234 208 / 87%)';
       }
-      this.is_visible = true;
     },
     close: function close() {
       var body = document.body;
@@ -41303,7 +41304,7 @@ __webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ConfirmPVerificationCode",
-  props: ['user', 'code', 'is_visible'],
+  props: ['user', 'code', 'timer'],
   data: function data() {
     return {
       input_1: '',
@@ -41314,6 +41315,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       set_focus: null,
       vrf_code: [],
       code_error: false,
+      is_resend_code: false,
       send_verification_code: false
     };
   },
@@ -41322,31 +41324,67 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     //     if( this.code ) localStorage.setItem('code', this.code );
     // }
   },
-  watch: {
-    send_verification_code: function send_verification_code() {
-      if (this.send_verification_code) {
-        var code = null;
-        // let vrf_code = null;
-
-        if (this.vrf_code && this.vrf_code.length && _typeof(this.vrf_code) === 'object') {
-          code = this.code ? String(this.code) : localStorage.getItem('code');
-          this.vrf_code = String(this.vrf_code.join('').replace(', ', ''));
-        }
-        if (code === this.vrf_code) {
-          console.info('send_verification_code - ', this.code === this.vrf_code);
-          this.checkVerificationCode();
-        } else this.code_error = true;
-        console.info('watch - ', this.code + ' - ' + this.vrf_code);
-      }
-    }
-  },
+  watch: {},
   methods: {
-    setInSessionCode: function setInSessionCode() {
-      if (this.code) localStorage.setItem('code', this.code);
-      if (this.user) localStorage.setItem('user_id', this.user.id);
+    resendCode: function resendCode(e) {
+      var _this = this;
+      e.preventDefault();
+      this.is_resend_code = true;
+      var code = localStorage.getItem('code');
+      var user_id = localStorage.getItem('user_id');
+      setTimeout(function () {
+        if (user_id && code) {
+          axios({
+            method: "post",
+            url: "/resend-verification-code",
+            data: {
+              user_id: user_id,
+              code: code
+            }
+          }).then(function (res) {
+            if (res && res.data && res.data.user_id && res.data.new_code && res.data.timer) {
+              _this.removeSessionItems(['user_id', 'code', 'timer']);
+              if (!_this.issetSessionItems(['user_id', 'code', 'timer'])) _this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
+              if (_this.issetSessionItems(['user_id', 'code', 'timer'])) _this.is_resend_code = false;
+              console.log('NEW-VERIFICATION CODE 1 res - ', localStorage.getItem('user_id') + ' - ' + localStorage.getItem('code') + ' - ' + localStorage.getItem('timer'));
+            }
+            console.log('NEW-VERIFICATION CODE 2 - ', res.data);
+          })["catch"](function (err) {
+            console.log('NEW-VERIFICATION CODE err - ', err.response);
+          });
+        }
+      }, 2000);
+    },
+    setInSessionCode: function setInSessionCode(user_id, code, timer) {
+      if (user_id && code && timer) {
+        localStorage.setItem('user_id', user_id);
+        localStorage.setItem('code', code);
+        localStorage.setItem('timer', timer);
+      }
+    },
+    removeSessionItems: function removeSessionItems(items) {
+      if (items && items.length) {
+        items.forEach(function (item) {
+          localStorage.removeItem(item);
+        });
+      }
+    },
+    issetSessionItems: function issetSessionItems(items) {
+      if (items && items.length) {
+        var count = 0;
+        var isset = null;
+        items.forEach(function (item) {
+          isset = localStorage.getItem(item);
+          if (!isset) return false;
+          count++;
+          console.log('issetSessionItems - ', isset);
+        });
+        if (count === items.length) return true;
+      }
+      return false;
     },
     changeInputFocus: function changeInputFocus(event) {
-      var _this = this;
+      var _this2 = this;
       var class_name = event.target.classList[0];
       var key = event.which || event.keyCode || event.charCode;
       var input_1 = document.getElementsByClassName('pincode1');
@@ -41362,39 +41400,39 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           if (class_name === 'pincode1' && input_2 && input_2[0]) {
             this.detectInputs(input_2);
             var inter1 = setInterval(function () {
-              if (_this.input_1) _this.setVerificationCode(inter1, _this.input_1, 0);
-              _this.checkCountCode();
+              if (_this2.input_1) _this2.setVerificationCode(inter1, _this2.input_1, 0);
+              _this2.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter1);
           }
           if (class_name === 'pincode2' && input_2 && input_2[0]) {
             this.detectInputs(input_3);
             var inter2 = setInterval(function () {
-              if (_this.input_2) _this.setVerificationCode(inter2, _this.input_2, 1);
-              _this.checkCountCode();
+              if (_this2.input_2) _this2.setVerificationCode(inter2, _this2.input_2, 1);
+              _this2.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter2);
           }
           if (class_name === 'pincode3' && input_3 && input_3[0]) {
             this.detectInputs(input_4);
             var inter3 = setInterval(function () {
-              if (_this.input_3) _this.setVerificationCode(inter3, _this.input_3, 2);
-              _this.checkCountCode();
+              if (_this2.input_3) _this2.setVerificationCode(inter3, _this2.input_3, 2);
+              _this2.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter3);
           }
           if (class_name === 'pincode4' && input_4 && input_4[0]) {
             this.detectInputs(input_5);
             var inter4 = setInterval(function () {
-              if (_this.input_4) _this.setVerificationCode(inter4, _this.input_4, 3);
-              _this.checkCountCode();
+              if (_this2.input_4) _this2.setVerificationCode(inter4, _this2.input_4, 3);
+              _this2.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter4);
           }
           if (class_name === 'pincode5' && input_5 && input_5[0]) {
             var inter5 = setInterval(function () {
-              if (_this.input_5) _this.setVerificationCode(inter5, _this.input_5, 4);
-              _this.checkCountCode();
+              if (_this2.input_5) _this2.setVerificationCode(inter5, _this2.input_5, 4);
+              _this2.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter5);
           }
@@ -41402,55 +41440,46 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       } else if (key === 8 || key === 46) {
         if (class_name === 'pincode1' && input_2 && input_2[0]) {
           if (this.vrf_code.length && this.vrf_code[0]) {
-            this.vrf_code[0] = null;
-            this.vrf_code = this.vrf_code.filter(function (e) {
-              return e !== null;
+            this.vrf_code = this.vrf_code.filter(function (e, index) {
+              return index !== 0;
             });
-            // console.info( 'vrf_code value delete - ', this.vrf_code );
+            this.removeErrorText();
           }
         }
-
         if (class_name === 'pincode2' && input_2 && input_2[0]) {
           this.detectInputs(input_1);
           if (this.vrf_code.length && this.vrf_code[1]) {
-            this.vrf_code[1] = null;
-            this.vrf_code = this.vrf_code.filter(function (e) {
-              return e !== null;
+            this.vrf_code = this.vrf_code.filter(function (e, index) {
+              return index !== 1;
             });
-            // console.info( 'vrf_code value delete - ', this.vrf_code );
+            this.removeErrorText();
           }
         }
-
         if (class_name === 'pincode3' && input_2 && input_2[0]) {
           this.detectInputs(input_2);
           if (this.vrf_code.length && this.vrf_code[2]) {
-            this.vrf_code[2] = null;
-            this.vrf_code = this.vrf_code.filter(function (e) {
-              return e !== null;
+            this.vrf_code = this.vrf_code.filter(function (e, index) {
+              return index !== 2;
             });
-            // console.info( 'vrf_code value delete - ', this.vrf_code );
+            this.removeErrorText();
           }
         }
-
         if (class_name === 'pincode4' && input_3 && input_3[0]) {
           this.detectInputs(input_3);
           if (this.vrf_code.length && this.vrf_code[3]) {
-            this.vrf_code[3] = null;
-            this.vrf_code = this.vrf_code.filter(function (e) {
-              return e !== null;
+            this.vrf_code = this.vrf_code.filter(function (e, index) {
+              return index !== 3;
             });
-            // console.info( 'vrf_code value delete - ', this.vrf_code );
+            this.removeErrorText();
           }
         }
-
         if (class_name === 'pincode5' && input_4 && input_4[0]) {
           this.detectInputs(input_4);
-          if (this.vrf_code.length && this.vrf_code[4]) {
-            this.vrf_code[4] = null;
-            this.vrf_code = this.vrf_code.filter(function (e) {
-              return e !== null;
+          if (this.vrf_code.length) {
+            this.vrf_code = this.vrf_code.filter(function (e, index) {
+              return index !== 4;
             });
-            console.info('vrf_code value delete - ', this.vrf_code);
+            this.removeErrorText();
           }
         }
       } else {
@@ -41459,9 +41488,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     },
     checkCountCode: function checkCountCode() {
       if (this.vrf_code && this.vrf_code.length === 5) {
-        return this.send_verification_code = true;
+        var code = null;
+        var vrf_code = null;
+        if (this.vrf_code && this.vrf_code.length && _typeof(this.vrf_code) === 'object') {
+          code = this.code ? String(this.code) : localStorage.getItem('code');
+          vrf_code = String(this.vrf_code.join('').replace(', ', ''));
+        }
+        if (code === vrf_code) {
+          console.info('send_verification_code - ', this.code === this.vrf_code);
+          this.checkVerificationCode();
+        } else this.code_error = true;
+        console.info('watch - ', code + ' - ' + vrf_code);
       }
       return false;
+    },
+    removeErrorText: function removeErrorText() {
+      this.code_error = false;
     },
     setVerificationCode: function setVerificationCode(clear, input, key) {
       if (clear && input) {
@@ -41478,21 +41520,21 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }
     },
     getInputValue: function getInputValue(value_var) {
-      var _this2 = this;
+      var _this3 = this;
       var inter = setInterval(function () {
-        console.info('vrf_code value - ', _this2.value_var);
-        if (_this2.value_var) {
+        console.info('vrf_code value - ', _this3.value_var);
+        if (_this3.value_var) {
           clearInterval(inter);
-          return _this2.value_var;
+          return _this3.value_var;
         }
       }, 0.1);
       this.setIntervalClear(inter);
     },
     detectInputs: function detectInputs(input) {
-      var _this3 = this;
+      var _this4 = this;
       if (input) {
         var clear = setInterval(function () {
-          _this3.setIntervalFunc(input);
+          _this4.setIntervalFunc(input);
           // this.setIntervalFunc(input_2);
           clearInterval(clear);
         }, 0.1);
@@ -41523,20 +41565,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return url.substring(start + 1);
     },
     checkVerificationCode: function checkVerificationCode() {
-      var _this4 = this;
+      var _this5 = this;
       axios({
         method: "post",
         url: "/check-verification-code",
         data: {
           user_id: this.user ? this.user.id : localStorage.getItem('user_id'),
           code: this.code ? this.code : localStorage.getItem('code'),
-          verification_code: this.vrf_code
+          verification_code: this.vrf_code.join('').replace(', ', '')
         }
       }).then(function (res) {
         if (res && res.data && res.data.auth_user) {
           if (res.data.auth_user) {
-            _this4.success = true;
-            document.location.href = '/product/' + Number(_this4.getProductID());
+            _this5.success = true;
+            document.location.href = '/product/' + Number(_this5.getProductID());
             console.log('check-verification-code res - ', res.data.auth_user);
           }
           console.log('check-verification-code res 111 - ', res.data.auth_user);
@@ -41548,7 +41590,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
   },
   mounted: function mounted() {
-    this.setInSessionCode();
+    console.log('user and code - ', this.user + ' - ' + this.code);
+    if (this.user && this.user.id && this.code && this.timer) this.setInSessionCode(this.user.id, this.code, this.timer);
   }
 });
 
@@ -43527,7 +43570,7 @@ var _hoisted_3 = {
   "class": "modal"
 };
 var _hoisted_4 = {
-  "class": "col-10 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 d-flex modal-inset"
+  "class": "col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset"
 };
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
@@ -43567,8 +43610,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
     user: $data.user,
     code: $data.code,
-    is_visible: $data.is_visible
-  }, null, 8 /* PROPS */, ["user", "code", "is_visible"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    timer: $data.timer
+  }, null, 8 /* PROPS */, ["user", "code", "timer"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.open && $options.open.apply($options, arguments);
     }),
@@ -44427,10 +44470,8 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "code__title"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": ""
-  }, " Telefona gələn 5 rəqmli kodu daxil edin ")], -1 /* HOISTED */);
+    "class": "d-flex fs-5 text-black-50 justify-content-center code__title"
+  }, " Kodu daxil edin ", -1 /* HOISTED */);
 });
 var _hoisted_3 = {
   "class": "d-flex position-relative justify-content-center"
@@ -44443,6 +44484,14 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "code__timer"
   }, "2 : 34", -1 /* HOISTED */);
+});
+var _hoisted_6 = {
+  "class": "resend__new_cod_div"
+};
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "resend__new_cod_text"
+  }, " Kod gəlmədi? ", -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -44501,7 +44550,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "pincode5 code__styles",
     inputmode: "numeric",
     maxlength: "1"
-  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.input_5]])]), $data.code_error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, " Yanlış kod! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_5]);
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.input_5]])]), $data.code_error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, " Yanlış kod! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, $data.is_resend_code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+    key: 0,
+    onClick: _cache[10] || (_cache[10] = function (e) {
+      return e.preventDefault();
+    }),
+    href: "",
+    disabled: "",
+    "class": "text-muted resend__new_cod_btn"
+  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.is_resend_code ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+    key: 1,
+    onClick: _cache[11] || (_cache[11] = function () {
+      return $options.resendCode && $options.resendCode.apply($options, arguments);
+    }),
+    href: "",
+    disabled: "",
+    "class": "resend__new_cod_btn"
+  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
 }
 
 /***/ }),

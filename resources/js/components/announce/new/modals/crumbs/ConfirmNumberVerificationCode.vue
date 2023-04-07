@@ -22,10 +22,10 @@
 <!--                </div>-->
 <!--            </div>-->
 
-            <div class="code__title">
-                <div class=""> Telefona gələn 5 rəqmli kodu daxil edin </div>
-            </div>
 
+            <div class="d-flex fs-5 text-black-50 justify-content-center code__title">
+                Kodu daxil edin
+            </div>
 
             <div class="d-flex position-relative justify-content-center">
                 <input @keydown="changeInputFocus" v-model="input_1" type="text" class="pincode1 code__styles" inputmode="numeric" maxlength="1">
@@ -38,6 +38,12 @@
 
             <div class="code__timer">2 : 34</div>
 
+            <div class="resend__new_cod_div">
+                <div class="resend__new_cod_text"> Kod gəlmədi? </div>
+                <a v-if="is_resend_code" @click="e => e.preventDefault()" href="" disabled class="text-muted resend__new_cod_btn" > Yeni kod alın </a>
+                <a v-if="! is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>
+            </div>
+
         </div>
 </template>
 
@@ -46,7 +52,7 @@
 
 export default {
     name: "ConfirmPVerificationCode",
-    props:['user','code','is_visible'],
+    props:['user','code','timer'],
     data() {
         return {
             input_1: '',
@@ -57,6 +63,7 @@ export default {
             set_focus: null,
             vrf_code: [],
             code_error: false,
+            is_resend_code: false,
             send_verification_code: false,
         }
     },
@@ -66,30 +73,72 @@ export default {
         // }
     },
     watch:{
-        send_verification_code() {
-            if( this.send_verification_code ) {
-                let code = null;
-                // let vrf_code = null;
 
-                if( this.vrf_code && this.vrf_code.length && typeof this.vrf_code === 'object' ) {
-                    code = this.code ? String( this.code ) : localStorage.getItem('code');
-                    this.vrf_code = String( this.vrf_code.join('').replace(', ','') );
-                }
-
-                if( code === this.vrf_code ) {
-                    console.info( 'send_verification_code - ', this.code === this.vrf_code );
-                    this.checkVerificationCode();
-                }
-                else this.code_error = true;
-
-                console.info( 'watch - ', this.code +' - '+ this.vrf_code );
-            }
-        }
     },
     methods: {
-        setInSessionCode(){
-            if( this.code ) localStorage.setItem('code', this.code );
-            if( this.user ) localStorage.setItem('user_id', this.user.id );
+        resendCode(e) {
+            e.preventDefault();
+            this.is_resend_code = true;
+            let code = localStorage.getItem('code');
+            let user_id = localStorage.getItem('user_id');
+
+            setTimeout( () => {
+                if( user_id && code ) {
+                    axios({
+                        method:"post",
+                        url:"/resend-verification-code",
+                        data: {
+                            user_id: user_id,
+                            code: code,
+                        },
+                    })
+                        .then(res => {
+                            if ( res && res.data && res.data.user_id && res.data.new_code && res.data.timer ) {
+                                this.removeSessionItems(['user_id','code','timer']);
+                                if( ! this.issetSessionItems(['user_id','code','timer']) )
+                                    this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
+
+                                if( this.issetSessionItems(['user_id','code','timer']) ) this.is_resend_code = false;
+
+                                console.log( 'NEW-VERIFICATION CODE 1 res - ', localStorage.getItem('user_id')+' - '+localStorage.getItem('code')+' - '+localStorage.getItem('timer') )
+                            }
+
+                            console.log( 'NEW-VERIFICATION CODE 2 - ', res.data )
+                        })
+                        .catch(err => {
+                            console.log('NEW-VERIFICATION CODE err - ', err.response )
+                        })
+                }
+            }, 2000 );
+        },
+        setInSessionCode(user_id, code, timer){
+            if( user_id && code && timer ) {
+                localStorage.setItem('user_id', user_id);
+                localStorage.setItem('code', code );
+                localStorage.setItem('timer', timer );
+            }
+        },
+        removeSessionItems(items) {
+            if( items && items.length ) {
+                items.forEach( item => {
+                    localStorage.removeItem( item )
+                })
+            }
+        },
+        issetSessionItems(items) {
+            if( items && items.length ) {
+                let count = 0;
+                let isset = null;
+                items.forEach( item => {
+                    isset = localStorage.getItem( item );
+                    if( !isset ) return false;
+                    count++;
+                    console.log('issetSessionItems - ', isset )
+                });
+
+                if( count === items.length ) return true;
+            }
+            return false;
         },
         changeInputFocus(event) {
             let class_name = event.target.classList[0];
@@ -148,41 +197,36 @@ export default {
             else if( key === 8 || key === 46 ) {
                 if ( class_name === 'pincode1' && input_2 && input_2[0] ) {
                     if( this.vrf_code.length && this.vrf_code[0] ) {
-                        this.vrf_code[0] = null;
-                        this.vrf_code = this.vrf_code.filter( e => { return e !== null });
-                        // console.info( 'vrf_code value delete - ', this.vrf_code );
+                        this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 0 } );
+                        this.removeErrorText();
                     }
                 }
                 if ( class_name === 'pincode2' && input_2 && input_2[0] ) {
                     this.detectInputs(input_1);
                     if( this.vrf_code.length && this.vrf_code[1] ) {
-                        this.vrf_code[1] = null;
-                        this.vrf_code = this.vrf_code.filter( e => { return e !== null });
-                        // console.info( 'vrf_code value delete - ', this.vrf_code );
+                        this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 1 } );
+                        this.removeErrorText();
                     }
                 }
                 if ( class_name === 'pincode3' && input_2 && input_2[0] ) {
                     this.detectInputs(input_2);
                     if( this.vrf_code.length && this.vrf_code[2] ) {
-                        this.vrf_code[2] = null;
-                        this.vrf_code = this.vrf_code.filter( e => { return e !== null });
-                        // console.info( 'vrf_code value delete - ', this.vrf_code );
+                        this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 2 } );
+                        this.removeErrorText();
                     }
                 }
                 if ( class_name === 'pincode4' && input_3 && input_3[0] ) {
                     this.detectInputs(input_3);
                     if( this.vrf_code.length && this.vrf_code[3] ) {
-                        this.vrf_code[3] = null;
-                        this.vrf_code = this.vrf_code.filter( e => { return e !== null });
-                        // console.info( 'vrf_code value delete - ', this.vrf_code );
+                        this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 3 } );
+                        this.removeErrorText();
                     }
                 }
                 if ( class_name === 'pincode5' && input_4 && input_4[0] ) {
                     this.detectInputs(input_4);
-                    if( this.vrf_code.length && this.vrf_code[4] ) {
-                        this.vrf_code[4] = null;
-                        this.vrf_code = this.vrf_code.filter( e => { return e !== null });
-                        console.info( 'vrf_code value delete - ', this.vrf_code );
+                    if( this.vrf_code.length ) {
+                        this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 4 } );
+                        this.removeErrorText();
                     }
                 }
             }
@@ -192,9 +236,26 @@ export default {
         },
         checkCountCode() {
             if( this.vrf_code && this.vrf_code.length === 5 ) {
-                return this.send_verification_code = true;
+                let code = null;
+                let vrf_code = null;
+
+                if( this.vrf_code && this.vrf_code.length && typeof this.vrf_code === 'object' ) {
+                    code = this.code ? String( this.code ) : localStorage.getItem('code');
+                    vrf_code = String( this.vrf_code.join('').replace(', ','') );
+                }
+
+                if( code === vrf_code ) {
+                    console.info( 'send_verification_code - ', this.code === this.vrf_code );
+                    this.checkVerificationCode();
+                }
+                else this.code_error = true;
+
+                console.info( 'watch - ', code +' - '+ vrf_code );
             }
             return false;
+        },
+        removeErrorText() {
+            this.code_error = false;
         },
         setVerificationCode(clear, input, key) {
             if( clear && input ) {
@@ -265,7 +326,7 @@ export default {
                 data: {
                     user_id: this.user ? this.user.id : localStorage.getItem('user_id'),
                     code: this.code ? this.code : localStorage.getItem('code'),
-                    verification_code: this.vrf_code
+                    verification_code: this.vrf_code.join('').replace(', ','')
                 },
             })
                 .then(res => {
@@ -287,14 +348,33 @@ export default {
         },
     },
     mounted(){
-
-        this.setInSessionCode();
+        console.log('user and code - ', this.user+' - '+this.code )
+        if( this.user && this.user.id && this.code && this.timer) this.setInSessionCode(this.user.id, this.code, this.timer);
     }
 }
 </script>
 
 <style scoped>
 
+.code__title {
+    margin-top: -20px;
+    margin-bottom: 25px;
+}
+
+.resend__new_cod_div {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+    .resend__new_cod_text {
+        margin-right: 10px;
+        color: #656161;
+        font-size: 0.89rem;
+    }
+    .resend__new_cod_btn {
+        letter-spacing: 0.5px;
+        z-index: 10;
+    }
 .error__div {
     margin-top: 10px;
     font-size: 1rem;
@@ -307,16 +387,12 @@ export default {
     color: #878585;
 }
 
-.code__title {
-    margin: auto;
-    position: absolute;
-    top: -45px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    color: #858282;
-    font-size: 1.1rem;
+.code__title_div {
+
 }
+    .code__title_text {
+        width: 100%;
+    }
 
 .code__styles {
     width: 45px;

@@ -90,28 +90,29 @@ class AukcionRealTimeController extends Controller
 //                    Auth::login($product->user);
 
                     if( $token->user && $token->code && $token->isValid() ) {
-                        try {
-                            $twilio = new Client(env('TWILIO_SID'), env('TWILIO_TOKEN'));
-
-                            $message = $twilio->messages->create(
-                                $request->number, // to
-                                array(
-                                    "from" => env('TWILIO_NUMBER'),
-                                    "body" => 'code: '.$token->code
-                                )
-                            );
-
-                            if( $message->sid ) {
+//                        try {
+//                            $twilio = new Client(env('TWILIO_SID'), env('TWILIO_TOKEN'));
+//
+//                            $message = $twilio->messages->create(
+//                                $request->number, // to
+//                                array(
+//                                    "from" => env('TWILIO_NUMBER'),
+//                                    "body" => 'code: '.$token->code
+//                                )
+//                            );
+//
+//                            if( $message->sid ) {
                                 return response()->json([
                                     'user' => $token->user,
-                                    'code' => $token->code
+                                    'code' => $token->code,
+                                    'timer' => $token->created_at->timestamp
                                 ], 200 );
-                            }
-                        } catch ( \Exception $ex ) {
-                            return response()->json([
-                                'error' => $ex->getMessage()
-                            ], 500 );
-                        }
+//                            }
+//                        } catch ( \Exception $ex ) {
+//                            return response()->json([
+//                                'error' => $ex->getMessage()
+//                            ], 500 );
+//                        }
                     }
                 }
 
@@ -142,10 +143,47 @@ class AukcionRealTimeController extends Controller
         }
 
         return response()->json([
-            'user' => $request->verification_code
+            'user' => $token->user
         ]);
     }
 
+    public function resendVerificationCode(Request $request) {
+        if( $request->user_id && $request->code ) {
+            $token = new Token();
+            $old_token_code = $this->getTableInfo($token, 'user_id', 'code', $request->user_id, $request->code);
+
+            if( $old_token_code && $old_token_code->count() ) {
+                $old_token = $old_token_code->delete();
+
+                if( $old_token ) {
+                    $token->user_id = $request->user_id;
+                    $token->code = $token->code ?? $this->generateCode();
+                    $token->save();
+
+                    if( $token->user && $token->user->id && $token->code ) {
+                        return response()->json([
+                            'user_id'  => $token->user->id,
+                            'new_code' => $token->code,
+                            'timer'    => $token->created_at->timestamp
+                        ], 200);
+                    }
+                }
+            } else {
+                return response()->json([
+                    'error' => $old_token_code
+                ], 500 );
+            }
+
+//            return response()->json([
+//                'success' => $old_token_code
+//            ], 200 );
+        }
+    }
+
+    public function getTableInfo($table, $column1, $column2=false, $column_val1, $column_val2=false) {
+        $res = $table->where(['user_id'=>$column_val1, 'code' => $column_val2])->first();
+        return $res ? $res : false;
+    }
     public function generateNumber($phone) {
         if( $phone ) {
             $num = preg_replace('/[^0-9]/','', $phone);
