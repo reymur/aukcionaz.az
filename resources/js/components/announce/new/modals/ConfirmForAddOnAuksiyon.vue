@@ -3,7 +3,7 @@
         <div class="modal-frame">
             <div class="modal">
                 <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset">
-                    <div @click="close" class="button close"><i class="fa fa-close"></i></div>
+                    <div @click="close" class="button close vrf__modal_close_btn"><i class="fa fa-close"></i></div>
 
                     <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-phone-and-name
@@ -15,6 +15,8 @@
                             :user="user"
                             :code="code"
                             :timer="timer"
+                            :delete_token="delete_token"
+                            @setSuccessValue="setSuccessValueThis"
                         ></confirm-number-verification-code>
                     </div>
 
@@ -47,6 +49,7 @@ export default {
             name: null,
             phone: null,
             success: null,
+            delete_token: null,
             is_verification_session_code: null,
         }
     },
@@ -55,6 +58,9 @@ export default {
         ConfirmNumberVerificationCode,
     },
     methods:{
+        setSuccessValueThis(data){
+            this.success = null;
+        },
         getProductID() {
             let start = window.location.pathname.lastIndexOf('/');
             let url = window.location.pathname;
@@ -119,6 +125,7 @@ export default {
             }
         },
         close() {
+            this.delete_token = Math.floor(Math.random() * 100);
             let body = document.body;
             let close = document.getElementsByClassName('close');
             let modal = document.getElementsByClassName('modal');

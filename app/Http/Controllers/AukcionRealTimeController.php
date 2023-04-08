@@ -182,6 +182,21 @@ class AukcionRealTimeController extends Controller
         }
     }
 
+    public function deleteToken(Request $request) {
+        if( $request->user_id && $request->code ) {
+            $token = new Token();
+            $result = $token->where(['user_id'=>$request->user_id, 'code'=>$request->code])->first();
+
+            if( $result ) {
+                $result->delete();
+
+                return response()->json([
+                    'deleted' => $result
+                ], 200);
+            }
+        }
+    }
+
     public function getTableInfo($table, $column1, $column2=false, $column_val1, $column_val2=false) {
         $res = $table->where(['user_id'=>$column_val1, 'code' => $column_val2])->first();
         return $res ? $res : false;

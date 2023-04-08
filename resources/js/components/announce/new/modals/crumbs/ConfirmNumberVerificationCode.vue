@@ -52,7 +52,7 @@
 
 export default {
     name: "ConfirmPVerificationCode",
-    props:['user','code','timer'],
+    props:['user','code','timer', 'delete_token'],
     data() {
         return {
             input_1: '',
@@ -68,6 +68,7 @@ export default {
             code_error: false,
             show_timer: true,
             is_resend_code: true,
+            this_delete_token: this.delete_token,
             send_verification_code: false,
         }
     },
@@ -77,7 +78,9 @@ export default {
         // }
     },
     watch:{
-
+        delete_token() {
+            if( this.this_user_id && this.this_code ) this.deleteToken()
+        }
     },
     methods: {
         resendCode(e) {
@@ -85,7 +88,7 @@ export default {
             this.is_resend_code = false;
             this.show_timer = false;
             this.verificationTimer( this.getCurrentTimes(), this.this_timer, false );
-            localStorage.setItem( '>>>>>>>>>>> - ', this.getCurrentTimes()+' - '+this.this_timer+' - '+true );
+
             setTimeout( () => {
                 if( this.this_user_id && this.this_code ) {
                     axios({
@@ -99,15 +102,6 @@ export default {
                     })
                         .then(res => {
                             if ( res && res.data && res.data.user_id && res.data.new_code && res.data.timer ) {
-                                // this.removeSessionItems(['user_id','code','timer']);
-                                // if( ! this.issetSessionItems(['user_id','code','timer']) )
-                                //     this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
-
-                                // if( this.issetSessionItems(['user_id','code','timer']) ) {
-                                //     this.show_timer = true;
-                                //     this.verificationTimer( this.getCurrentTimes(), true );
-                                // }
-
                                 this.show_timer = true;
                                 this.this_code = res.data.new_code;
                                 this.this_timer = res.data.timer;
@@ -122,9 +116,32 @@ export default {
                         })
                         .catch(err => {
                             console.log('NEW-VERIFICATION CODE err - ', err.response )
-                        })
+                        });
                 }
             }, 2000 );
+        },
+        deleteToken() {
+            if( this.this_user_id && this.this_code ) {
+                axios({
+                    method:"post",
+                    url:"/delete-token",
+                    data: {
+                        user_id: this.this_user_id,
+                        code: this.this_code,
+                    },
+                })
+                    .then(res => {
+                        if ( res && res.data && res.data.deleted ) {
+                            this.$emit('setSuccessValue', true);
+                            console.log( 'delete-token 1 res - ', res.data.deleted )
+                        }
+
+                        console.log( 'delete-token 2 - ', res.data )
+                    })
+                    .catch(err => {
+                        console.log('delete-token err - ', err.response )
+                    })
+            }
         },
         verificationTimer(current_timer, timer, show=false) {
             if( current_timer && timer ) {
@@ -145,14 +162,13 @@ export default {
                                 timer_div[0].innerHTML = sec;
                                 clearInterval(timer_set);
                             }
-                            console.log('TTTTTTTTT - ',  this.getCurrentTimes() +' - '+ this.timer +' - '+ show )
+                            // console.log('TTTTTTTTT - ',  this.getCurrentTimes() +' - '+ this.timer +' - '+ show )
                         }
                         this.is_resend_code = true;
                     }, 1000);
 
                     localStorage.setItem( 'clear', timer_set );
                 }
-                // localStorage.setItem( '>>>>>>>>>>> - ', current_timer,' - ',timer, show=false );
             }
         },
         setInSessionCode(user_id, code, timer){
@@ -403,6 +419,10 @@ export default {
     },
     mounted(){
         this.verificationTimer( this.getCurrentTimes(), this.timer, true );
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if( this.this_user_id && this.this_code ) this.deleteToken()
+        })
 
         console.log('""""""""""""" - ', this.user.id+" - "+this.code+" - "+this.timer )
     }

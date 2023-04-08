@@ -59,6 +59,7 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
     Route::post('/send/confirmation', 'sendConfirmation');
     Route::post('/check-verification-code', 'checkVerificationCode');
     Route::post('/resend-verification-code', 'resendVerificationCode');
+    Route::post('/delete-token', 'deleteToken');
 });
 
 // PRODUCT SHOW

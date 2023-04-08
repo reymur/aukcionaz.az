@@ -40386,6 +40386,7 @@ __webpack_require__.r(__webpack_exports__);
       name: null,
       phone: null,
       success: null,
+      delete_token: null,
       is_verification_session_code: null
     };
   },
@@ -40394,6 +40395,9 @@ __webpack_require__.r(__webpack_exports__);
     ConfirmNumberVerificationCode: _crumbs_ConfirmNumberVerificationCode_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   methods: {
+    setSuccessValueThis: function setSuccessValueThis(data) {
+      this.success = null;
+    },
     getProductID: function getProductID() {
       var start = window.location.pathname.lastIndexOf('/');
       var url = window.location.pathname;
@@ -40456,6 +40460,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     close: function close() {
+      this.delete_token = Math.floor(Math.random() * 100);
       var body = document.body;
       var close = document.getElementsByClassName('close');
       var modal = document.getElementsByClassName('modal');
@@ -41313,7 +41318,7 @@ __webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ConfirmPVerificationCode",
-  props: ['user', 'code', 'timer'],
+  props: ['user', 'code', 'timer', 'delete_token'],
   data: function data() {
     return {
       input_1: '',
@@ -41329,6 +41334,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       code_error: false,
       show_timer: true,
       is_resend_code: true,
+      this_delete_token: this.delete_token,
       send_verification_code: false
     };
   },
@@ -41337,7 +41343,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     //     if( this.code ) localStorage.setItem('code', this.code );
     // }
   },
-  watch: {},
+  watch: {
+    delete_token: function delete_token() {
+      if (this.this_user_id && this.this_code) this.deleteToken();
+    }
+  },
   methods: {
     resendCode: function resendCode(e) {
       var _this = this;
@@ -41345,7 +41355,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       this.is_resend_code = false;
       this.show_timer = false;
       this.verificationTimer(this.getCurrentTimes(), this.this_timer, false);
-      localStorage.setItem('>>>>>>>>>>> - ', this.getCurrentTimes() + ' - ' + this.this_timer + ' - ' + true);
       setTimeout(function () {
         if (_this.this_user_id && _this.this_code) {
           axios({
@@ -41358,15 +41367,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             }
           }).then(function (res) {
             if (res && res.data && res.data.user_id && res.data.new_code && res.data.timer) {
-              // this.removeSessionItems(['user_id','code','timer']);
-              // if( ! this.issetSessionItems(['user_id','code','timer']) )
-              //     this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
-
-              // if( this.issetSessionItems(['user_id','code','timer']) ) {
-              //     this.show_timer = true;
-              //     this.verificationTimer( this.getCurrentTimes(), true );
-              // }
-
               _this.show_timer = true;
               _this.this_code = res.data.new_code;
               _this.this_timer = res.data.timer;
@@ -41381,8 +41381,29 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
       }, 2000);
     },
-    verificationTimer: function verificationTimer(current_timer, timer) {
+    deleteToken: function deleteToken() {
       var _this2 = this;
+      if (this.this_user_id && this.this_code) {
+        axios({
+          method: "post",
+          url: "/delete-token",
+          data: {
+            user_id: this.this_user_id,
+            code: this.this_code
+          }
+        }).then(function (res) {
+          if (res && res.data && res.data.deleted) {
+            _this2.$emit('setSuccessValue', true);
+            console.log('delete-token 1 res - ', res.data.deleted);
+          }
+          console.log('delete-token 2 - ', res.data);
+        })["catch"](function (err) {
+          console.log('delete-token err - ', err.response);
+        });
+      }
+    },
+    verificationTimer: function verificationTimer(current_timer, timer) {
+      var _this3 = this;
       var show = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       if (current_timer && timer) {
         var timer_div = document.getElementsByClassName('code__timer');
@@ -41399,13 +41420,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
                 timer_div[0].innerHTML = sec;
                 clearInterval(timer_set);
               }
-              console.log('TTTTTTTTT - ', _this2.getCurrentTimes() + ' - ' + _this2.timer + ' - ' + show);
+              // console.log('TTTTTTTTT - ',  this.getCurrentTimes() +' - '+ this.timer +' - '+ show )
             }
-            _this2.is_resend_code = true;
+
+            _this3.is_resend_code = true;
           }, 1000);
           localStorage.setItem('clear', timer_set);
         }
-        // localStorage.setItem( '>>>>>>>>>>> - ', current_timer,' - ',timer, show=false );
       }
     },
     setInSessionCode: function setInSessionCode(user_id, code, timer) {
@@ -41438,7 +41459,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return false;
     },
     changeInputFocus: function changeInputFocus(event) {
-      var _this3 = this;
+      var _this4 = this;
       var class_name = event.target.classList[0];
       var key = event.which || event.keyCode || event.charCode;
       var input_1 = document.getElementsByClassName('pincode1');
@@ -41454,39 +41475,39 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           if (class_name === 'pincode1' && input_2 && input_2[0]) {
             this.detectInputs(input_2);
             var inter1 = setInterval(function () {
-              if (_this3.input_1) _this3.setVerificationCode(inter1, _this3.input_1, 0);
-              _this3.checkCountCode();
+              if (_this4.input_1) _this4.setVerificationCode(inter1, _this4.input_1, 0);
+              _this4.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter1);
           }
           if (class_name === 'pincode2' && input_2 && input_2[0]) {
             this.detectInputs(input_3);
             var inter2 = setInterval(function () {
-              if (_this3.input_2) _this3.setVerificationCode(inter2, _this3.input_2, 1);
-              _this3.checkCountCode();
+              if (_this4.input_2) _this4.setVerificationCode(inter2, _this4.input_2, 1);
+              _this4.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter2);
           }
           if (class_name === 'pincode3' && input_3 && input_3[0]) {
             this.detectInputs(input_4);
             var inter3 = setInterval(function () {
-              if (_this3.input_3) _this3.setVerificationCode(inter3, _this3.input_3, 2);
-              _this3.checkCountCode();
+              if (_this4.input_3) _this4.setVerificationCode(inter3, _this4.input_3, 2);
+              _this4.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter3);
           }
           if (class_name === 'pincode4' && input_4 && input_4[0]) {
             this.detectInputs(input_5);
             var inter4 = setInterval(function () {
-              if (_this3.input_4) _this3.setVerificationCode(inter4, _this3.input_4, 3);
-              _this3.checkCountCode();
+              if (_this4.input_4) _this4.setVerificationCode(inter4, _this4.input_4, 3);
+              _this4.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter4);
           }
           if (class_name === 'pincode5' && input_5 && input_5[0]) {
             var inter5 = setInterval(function () {
-              if (_this3.input_5) _this3.setVerificationCode(inter5, _this3.input_5, 4);
-              _this3.checkCountCode();
+              if (_this4.input_5) _this4.setVerificationCode(inter5, _this4.input_5, 4);
+              _this4.checkCountCode();
             }, 0.1);
             this.setIntervalClear(inter5);
           }
@@ -41584,10 +41605,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       this.setIntervalClear(inter);
     },
     detectInputs: function detectInputs(input) {
-      var _this4 = this;
+      var _this5 = this;
       if (input) {
         var clear = setInterval(function () {
-          _this4.setIntervalFunc(input);
+          _this5.setIntervalFunc(input);
           // this.setIntervalFunc(input_2);
           clearInterval(clear);
         }, 0.1);
@@ -41618,7 +41639,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return url.substring(start + 1);
     },
     checkVerificationCode: function checkVerificationCode() {
-      var _this5 = this;
+      var _this6 = this;
       axios({
         method: "post",
         url: "/check-verification-code",
@@ -41630,8 +41651,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       }).then(function (res) {
         if (res && res.data && res.data.auth_user) {
           if (res.data.auth_user) {
-            _this5.success = true;
-            document.location.href = '/product/' + Number(_this5.getProductID());
+            _this6.success = true;
+            document.location.href = '/product/' + Number(_this6.getProductID());
             console.log('check-verification-code res - ', res.data.auth_user);
           }
           console.log('check-verification-code res 111 - ', res.data.auth_user);
@@ -41650,7 +41671,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
   },
   mounted: function mounted() {
+    var _this7 = this;
     this.verificationTimer(this.getCurrentTimes(), this.timer, true);
+    document.addEventListener('DOMContentLoaded', function () {
+      if (_this7.this_user_id && _this7.this_code) _this7.deleteToken();
+    });
     console.log('""""""""""""" - ', this.user.id + " - " + this.code + " - " + this.timer);
   }
 });
@@ -43664,14 +43689,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.close && $options.close.apply($options, arguments);
     }),
-    "class": "button close"
+    "class": "button close vrf__modal_close_btn"
   }, _hoisted_6), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
     onSendPhoneAndName: $options.getPhoneAndName
   }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
     user: $data.user,
     code: $data.code,
-    timer: $data.timer
-  }, null, 8 /* PROPS */, ["user", "code", "timer"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    timer: $data.timer,
+    delete_token: $data.delete_token,
+    onSetSuccessValue: $options.setSuccessValueThis
+  }, null, 8 /* PROPS */, ["user", "code", "timer", "delete_token", "onSetSuccessValue"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.open && $options.open.apply($options, arguments);
     }),
