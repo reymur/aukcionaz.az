@@ -40385,7 +40385,8 @@ __webpack_require__.r(__webpack_exports__);
       timer: null,
       name: null,
       phone: null,
-      success: null
+      success: null,
+      is_verification_session_code: null
     };
   },
   components: {
@@ -41322,6 +41323,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       input_5: '',
       set_focus: null,
       vrf_code: [],
+      this_code: this.code,
+      this_timer: this.timer,
+      this_user_id: this.user.id,
       code_error: false,
       show_timer: true,
       is_resend_code: true,
@@ -41340,28 +41344,35 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       e.preventDefault();
       this.is_resend_code = false;
       this.show_timer = false;
-      this.verificationTimer(this.getCurrentTimes(), false);
-      var code = localStorage.getItem('code');
-      var user_id = localStorage.getItem('user_id');
+      this.verificationTimer(this.getCurrentTimes(), this.this_timer, false);
+      localStorage.setItem('>>>>>>>>>>> - ', this.getCurrentTimes() + ' - ' + this.this_timer + ' - ' + true);
       setTimeout(function () {
-        if (user_id && code) {
+        if (_this.this_user_id && _this.this_code) {
           axios({
             method: "post",
             url: "/resend-verification-code",
             data: {
-              user_id: user_id,
-              code: code,
+              user_id: _this.this_user_id,
+              code: _this.this_code,
               save_time: _this.getCurrentTimes()
             }
           }).then(function (res) {
             if (res && res.data && res.data.user_id && res.data.new_code && res.data.timer) {
-              _this.removeSessionItems(['user_id', 'code', 'timer']);
-              if (!_this.issetSessionItems(['user_id', 'code', 'timer'])) _this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
-              if (_this.issetSessionItems(['user_id', 'code', 'timer'])) {
-                _this.show_timer = true;
-                _this.verificationTimer(_this.getCurrentTimes(), true);
-              }
-              console.log('NEW-VERIFICATION CODE 1 res - ', localStorage.getItem('user_id') + ' - ' + localStorage.getItem('code') + ' - ' + localStorage.getItem('timer'));
+              // this.removeSessionItems(['user_id','code','timer']);
+              // if( ! this.issetSessionItems(['user_id','code','timer']) )
+              //     this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
+
+              // if( this.issetSessionItems(['user_id','code','timer']) ) {
+              //     this.show_timer = true;
+              //     this.verificationTimer( this.getCurrentTimes(), true );
+              // }
+
+              _this.show_timer = true;
+              _this.this_code = res.data.new_code;
+              _this.this_timer = res.data.timer;
+              _this.this_user_id = res.data.user_id;
+              _this.verificationTimer(_this.getCurrentTimes(), res.data.timer, true);
+              console.log('NEW-VERIFICATION CODE 1 res - ', _this.this_user_id + ' - ' + _this.this_code + ' - ' + _this.this_timer);
             }
             console.log('NEW-VERIFICATION CODE 2 - ', res.data);
           })["catch"](function (err) {
@@ -41370,23 +41381,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
       }, 2000);
     },
-    verificationTimer: function verificationTimer(current_timer) {
+    verificationTimer: function verificationTimer(current_timer, timer) {
       var _this2 = this;
-      var show = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      if (current_timer && localStorage.getItem('timer')) {
+      var show = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      if (current_timer && timer) {
         var timer_div = document.getElementsByClassName('code__timer');
-        var timer = null;
-        var time = null;
-        var sec = null;
-        if (Number(localStorage.getItem('timer') < this.timer)) {
-          timer = this.timer;
-          time = current_timer - timer;
-          sec = 30 - time / 1000;
-        } else {
-          timer = Number(localStorage.getItem('timer'));
-          time = current_timer - timer;
-          sec = 30 - time / 1000;
-        }
+        var time = current_timer - Number(timer);
+        var sec = 30 - time / 1000;
         if (localStorage.getItem('clear')) clearInterval(localStorage.getItem('clear'));
         if (show) {
           var timer_set = setInterval(function () {
@@ -41398,20 +41399,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
                 timer_div[0].innerHTML = sec;
                 clearInterval(timer_set);
               }
-              console.log('TTTTTTTTT - ', sec);
+              console.log('TTTTTTTTT - ', _this2.getCurrentTimes() + ' - ' + _this2.timer + ' - ' + show);
             }
             _this2.is_resend_code = true;
           }, 1000);
           localStorage.setItem('clear', timer_set);
         }
+        // localStorage.setItem( '>>>>>>>>>>> - ', current_timer,' - ',timer, show=false );
       }
     },
     setInSessionCode: function setInSessionCode(user_id, code, timer) {
-      if (user_id && code && timer) {
-        localStorage.setItem('user_id', user_id);
-        localStorage.setItem('code', code);
-        localStorage.setItem('timer', timer);
-      }
+      if (timer) localStorage.setItem('timer', timer);
     },
     removeSessionItems: function removeSessionItems(items) {
       if (items && items.length) {
@@ -41652,9 +41650,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
   },
   mounted: function mounted() {
-    this.verificationTimer(this.getCurrentTimes(), true);
-    console.log('user and code - ', this.user + ' - ' + this.code);
-    if (this.user && this.user.id && this.code && this.timer) this.setInSessionCode(this.user.id, this.code, this.timer);
+    this.verificationTimer(this.getCurrentTimes(), this.timer, true);
+    console.log('""""""""""""" - ', this.user.id + " - " + this.code + " - " + this.timer);
   }
 });
 
@@ -43668,9 +43665,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.close && $options.close.apply($options, arguments);
     }),
     "class": "button close"
-  }, _hoisted_6), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
+  }, _hoisted_6), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
     onSendPhoneAndName: $options.getPhoneAndName
-  }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
+  }, null, 8 /* PROPS */, ["onSendPhoneAndName"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
     user: $data.user,
     code: $data.code,
     timer: $data.timer

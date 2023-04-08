@@ -62,6 +62,9 @@ export default {
             input_5: '',
             set_focus: null,
             vrf_code: [],
+            this_code: this.code,
+            this_timer: this.timer,
+            this_user_id: this.user.id,
             code_error: false,
             show_timer: true,
             is_resend_code: true,
@@ -81,33 +84,38 @@ export default {
             e.preventDefault();
             this.is_resend_code = false;
             this.show_timer = false;
-            this.verificationTimer( this.getCurrentTimes(), false );
-            let code = localStorage.getItem('code');
-            let user_id = localStorage.getItem('user_id');
-
+            this.verificationTimer( this.getCurrentTimes(), this.this_timer, false );
+            localStorage.setItem( '>>>>>>>>>>> - ', this.getCurrentTimes()+' - '+this.this_timer+' - '+true );
             setTimeout( () => {
-                if( user_id && code ) {
+                if( this.this_user_id && this.this_code ) {
                     axios({
                         method:"post",
                         url:"/resend-verification-code",
                         data: {
-                            user_id: user_id,
-                            code: code,
+                            user_id: this.this_user_id,
+                            code: this.this_code,
                             save_time: this.getCurrentTimes(),
                         },
                     })
                         .then(res => {
                             if ( res && res.data && res.data.user_id && res.data.new_code && res.data.timer ) {
-                                this.removeSessionItems(['user_id','code','timer']);
-                                if( ! this.issetSessionItems(['user_id','code','timer']) )
-                                    this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
+                                // this.removeSessionItems(['user_id','code','timer']);
+                                // if( ! this.issetSessionItems(['user_id','code','timer']) )
+                                //     this.setInSessionCode(res.data.user_id, res.data.new_code, res.data.timer);
 
-                                if( this.issetSessionItems(['user_id','code','timer']) ) {
-                                    this.show_timer = true;
-                                    this.verificationTimer( this.getCurrentTimes(), true );
-                                }
+                                // if( this.issetSessionItems(['user_id','code','timer']) ) {
+                                //     this.show_timer = true;
+                                //     this.verificationTimer( this.getCurrentTimes(), true );
+                                // }
 
-                                console.log( 'NEW-VERIFICATION CODE 1 res - ', localStorage.getItem('user_id')+' - '+localStorage.getItem('code')+' - '+localStorage.getItem('timer') )
+                                this.show_timer = true;
+                                this.this_code = res.data.new_code;
+                                this.this_timer = res.data.timer;
+                                this.this_user_id = res.data.user_id;
+
+                                this.verificationTimer( this.getCurrentTimes(), res.data.timer, true );
+
+                                console.log( 'NEW-VERIFICATION CODE 1 res - ',  this.this_user_id+' - '+ this.this_code+' - '+ this.this_timer )
                             }
 
                             console.log( 'NEW-VERIFICATION CODE 2 - ', res.data )
@@ -118,23 +126,11 @@ export default {
                 }
             }, 2000 );
         },
-        verificationTimer(current_timer, show=false) {
-            if( current_timer && localStorage.getItem('timer') ) {
+        verificationTimer(current_timer, timer, show=false) {
+            if( current_timer && timer ) {
                 let timer_div = document.getElementsByClassName('code__timer');
-                let timer = null;
-                let time = null;
-                let sec = null;
-
-                if( Number(localStorage.getItem('timer') < this.timer ) ) {
-                    timer = this.timer;
-                    time = ( current_timer - timer );
-                    sec = 30 - (time  / 1000);
-                }
-                else {
-                    timer = Number(localStorage.getItem('timer'));
-                    time = ( current_timer - timer );
-                    sec = 30 - (time  / 1000);
-                }
+                let time = ( current_timer - Number(timer) );
+                let sec = 30 - (time  / 1000);
 
                 if( localStorage.getItem('clear') ) clearInterval(localStorage.getItem('clear'));
 
@@ -149,22 +145,18 @@ export default {
                                 timer_div[0].innerHTML = sec;
                                 clearInterval(timer_set);
                             }
-                            console.log('TTTTTTTTT - ', sec)
+                            console.log('TTTTTTTTT - ',  this.getCurrentTimes() +' - '+ this.timer +' - '+ show )
                         }
                         this.is_resend_code = true;
                     }, 1000);
 
                     localStorage.setItem( 'clear', timer_set );
                 }
-
+                // localStorage.setItem( '>>>>>>>>>>> - ', current_timer,' - ',timer, show=false );
             }
         },
         setInSessionCode(user_id, code, timer){
-            if( user_id && code && timer ) {
-                localStorage.setItem('user_id', user_id);
-                localStorage.setItem('code', code );
-                localStorage.setItem('timer', timer );
-            }
+            if( timer ) localStorage.setItem('timer', timer );
         },
         removeSessionItems(items) {
             if( items && items.length ) {
@@ -410,9 +402,9 @@ export default {
         }
     },
     mounted(){
-        this.verificationTimer( this.getCurrentTimes(), true );
-        console.log('user and code - ', this.user+' - '+this.code )
-        if( this.user && this.user.id && this.code && this.timer) this.setInSessionCode(this.user.id, this.code, this.timer);
+        this.verificationTimer( this.getCurrentTimes(), this.timer, true );
+
+        console.log('""""""""""""" - ', this.user.id+" - "+this.code+" - "+this.timer )
     }
 }
 </script>
