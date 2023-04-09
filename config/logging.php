@@ -43,7 +43,7 @@ return [
     |
     | Available Drivers: "single", "daily", "slack", "syslog",
     |                    "errorlog", "monolog",
-    |                    "customs", "stack"
+    |                    "custom", "stack"
     |
     */
 

@@ -58,12 +58,15 @@ import LaterTimeAukcion from "./components/announce/new/modals/LaterTimeAukcion.
 import AudioVeVideoElement from "./components/auksiyon/elements/AudioVeVideoElement.vue";
 // ADD ON AUKCION END
 
-
 // DATA and TIME PICKER
 import DataPicker from "./components/announce/new/modals/DataPicker.vue";
 import TimePicker from "./components/announce/new/modals/TimePicker.vue";
 import OnTimeAukcion from "./components/announce/new/modals/OnTimeAukcion.vue";
 import OnLaterTimeAukcion from "./components/announce/new/modals/OnLaterTimeAukcion.vue";
+
+// Push verification
+import Push from "./components/auksiyon/push/Push.vue";
+
 
 app.component('example-component' , example);
 app.component('real-time-auksiyon' , RealTimeAuksiyon);
@@ -111,6 +114,9 @@ app.component('data-picker', DataPicker);
 app.component('time-picker', TimePicker);
 app.component('on-time-aukcion', OnTimeAukcion);
 app.component('on-later-time-aukcion', OnLaterTimeAukcion);
+
+//AUKSIYON
+app.component('push', Push);
 
 
 app.mount("#app")

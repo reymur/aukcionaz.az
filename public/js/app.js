@@ -28102,6 +28102,30 @@ defineJQueryPlugin(Toast);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/notyf/notyf.min.css":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/notyf/notyf.min.css ***!
+  \**************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes notyf-fadeinup{\n  0%{\n    opacity:0;\n    transform:translateY(25%)\n  }\n\n  to{\n    opacity:1;\n    transform:translateY(0)\n  }\n}\n\n@keyframes notyf-fadeinleft{\n  0%{\n    opacity:0;\n    transform:translateX(25%)\n  }\n\n  to{\n    opacity:1;\n    transform:translateX(0)\n  }\n}\n\n@keyframes notyf-fadeoutright{\n  0%{\n    opacity:1;\n    transform:translateX(0)\n  }\n\n  to{\n    opacity:0;\n    transform:translateX(25%)\n  }\n}\n\n@keyframes notyf-fadeoutdown{\n  0%{\n    opacity:1;\n    transform:translateY(0)\n  }\n\n  to{\n    opacity:0;\n    transform:translateY(25%)\n  }\n}\n\n@keyframes ripple{\n  0%{\n    transform:scale(0) translateY(-45%) translateX(13%)\n  }\n\n  to{\n    transform:scale(1) translateY(-45%) translateX(13%)\n  }\n}\n\n.notyf{\n  position:fixed;\n  top:0;\n  left:0;\n  height:100%;\n  width:100%;\n  color:#fff;\n  z-index:9999;\n  display:flex;\n  flex-direction:column;\n  align-items:flex-end;\n  justify-content:flex-end;\n  pointer-events:none;\n  box-sizing:border-box;\n  padding:20px\n}\n\n.notyf__icon--error,.notyf__icon--success{\n  height:21px;\n  width:21px;\n  background:#fff;\n  border-radius:50%;\n  display:block;\n  margin:0 auto;\n  position:relative\n}\n\n.notyf__icon--error:after,.notyf__icon--error:before{\n  content:\"\";\n  background:currentColor;\n  display:block;\n  position:absolute;\n  width:3px;\n  border-radius:3px;\n  left:9px;\n  height:12px;\n  top:5px\n}\n\n.notyf__icon--error:after{\n  transform:rotate(-45deg)\n}\n\n.notyf__icon--error:before{\n  transform:rotate(45deg)\n}\n\n.notyf__icon--success:after,.notyf__icon--success:before{\n  content:\"\";\n  background:currentColor;\n  display:block;\n  position:absolute;\n  width:3px;\n  border-radius:3px\n}\n\n.notyf__icon--success:after{\n  height:6px;\n  transform:rotate(-45deg);\n  top:9px;\n  left:6px\n}\n\n.notyf__icon--success:before{\n  height:11px;\n  transform:rotate(45deg);\n  top:5px;\n  left:10px\n}\n\n.notyf__toast{\n  display:block;\n  overflow:hidden;\n  pointer-events:auto;\n  animation:notyf-fadeinup .3s ease-in forwards;\n  box-shadow:0 3px 7px 0 rgba(0,0,0,.25);\n  position:relative;\n  padding:0 15px;\n  border-radius:2px;\n  max-width:300px;\n  transform:translateY(25%);\n  box-sizing:border-box;\n  flex-shrink:0\n}\n\n.notyf__toast--disappear{\n  transform:translateY(0);\n  animation:notyf-fadeoutdown .3s forwards;\n  animation-delay:.25s\n}\n\n.notyf__toast--disappear .notyf__icon,.notyf__toast--disappear .notyf__message{\n  animation:notyf-fadeoutdown .3s forwards;\n  opacity:1;\n  transform:translateY(0)\n}\n\n.notyf__toast--disappear .notyf__dismiss{\n  animation:notyf-fadeoutright .3s forwards;\n  opacity:1;\n  transform:translateX(0)\n}\n\n.notyf__toast--disappear .notyf__message{\n  animation-delay:.05s\n}\n\n.notyf__toast--upper{\n  margin-bottom:20px\n}\n\n.notyf__toast--lower{\n  margin-top:20px\n}\n\n.notyf__toast--dismissible .notyf__wrapper{\n  padding-right:30px\n}\n\n.notyf__ripple{\n  height:400px;\n  width:400px;\n  position:absolute;\n  transform-origin:bottom right;\n  right:0;\n  top:0;\n  border-radius:50%;\n  transform:scale(0) translateY(-51%) translateX(13%);\n  z-index:5;\n  animation:ripple .4s ease-out forwards\n}\n\n.notyf__wrapper{\n  display:flex;\n  align-items:center;\n  padding-top:17px;\n  padding-bottom:17px;\n  padding-right:15px;\n  border-radius:3px;\n  position:relative;\n  z-index:10\n}\n\n.notyf__icon{\n  width:22px;\n  text-align:center;\n  font-size:1.3em;\n  opacity:0;\n  animation:notyf-fadeinup .3s forwards;\n  animation-delay:.3s;\n  margin-right:13px\n}\n\n.notyf__dismiss{\n  position:absolute;\n  top:0;\n  right:0;\n  height:100%;\n  width:26px;\n  margin-right:-15px;\n  animation:notyf-fadeinleft .3s forwards;\n  animation-delay:.35s;\n  opacity:0\n}\n\n.notyf__dismiss-btn{\n  background-color:rgba(0,0,0,.25);\n  border:none;\n  cursor:pointer;\n  transition:opacity .2s ease,background-color .2s ease;\n  outline:none;\n  opacity:.35;\n  height:100%;\n  width:100%\n}\n\n.notyf__dismiss-btn:after,.notyf__dismiss-btn:before{\n  content:\"\";\n  background:#fff;\n  height:12px;\n  width:2px;\n  border-radius:3px;\n  position:absolute;\n  left:calc(50% - 1px);\n  top:calc(50% - 5px)\n}\n\n.notyf__dismiss-btn:after{\n  transform:rotate(-45deg)\n}\n\n.notyf__dismiss-btn:before{\n  transform:rotate(45deg)\n}\n\n.notyf__dismiss-btn:hover{\n  opacity:.7;\n  background-color:rgba(0,0,0,.15)\n}\n\n.notyf__dismiss-btn:active{\n  opacity:.8\n}\n\n.notyf__message{\n  vertical-align:middle;\n  position:relative;\n  opacity:0;\n  animation:notyf-fadeinup .3s forwards;\n  animation-delay:.25s;\n  line-height:1.5em\n}\n\n@media only screen and (max-width:480px){\n  .notyf{\n    padding:0\n  }\n\n  .notyf__ripple{\n    height:600px;\n    width:600px;\n    animation-duration:.5s\n  }\n\n  .notyf__toast{\n    max-width:none;\n    border-radius:0;\n    box-shadow:0 -2px 7px 0 rgba(0,0,0,.13);\n    width:100%\n  }\n\n  .notyf__dismiss{\n    width:56px\n  }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue3-photo-preview/dist/index.css":
 /*!****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue3-photo-preview/dist/index.css ***!
@@ -28552,6 +28576,31 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".PhotoConsumer[data-v-32724685] {\n  display: flex;\n  //background-color: #322f2c;\n}\n.PhotoConsumer img[data-v-32724685] {\n  align-self: center;\n  background-size: cover;\n  margin: auto;\n  display: block;\n}\n.phone_image_consumer_styles[data-v-32724685] {\n  height: 150px;\n}\n.phone_image_consumer_img_div_styles[data-v-32724685] {\n  width: 200px;\n  height: 150px;\n  //background-color: #322f2c;\n}\n.phone__mage_consumer[data-v-32724685] {\n  //max-width: 100%;\n  //max-height: 100%;\n  width: 100%;\n  height: 100%;\n}\n\n/* .product__info {\n    background-color: #fff;\n    text-transform: capitalize;\n    font-size: 21px;\n    color: #000;\n    letter-spacing: 1px;\n    font-family: sans-serif;\n} */\n\n/* .close__style {\n    color: #fa1f1f;\n} */\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700);"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "[data-v-d55f8494]:root {\n  font-family: \"Montserrat\";\n}\nhtml[data-v-d55f8494], body[data-v-d55f8494] {\n  margin: 0;\n  height: 100%;\n}\nbody[data-v-d55f8494] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\ni[data-v-d55f8494] {\n  color: inherit;\n}\n.banners-container[data-v-d55f8494] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n}\n.banner[data-v-d55f8494] {\n  color: white;\n  font-weight: 700;\n  padding: 2rem;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.banner .banner-message[data-v-d55f8494] {\n  flex: 1;\n  padding: 0 2rem;\n}\n.banner .banner-close[data-v-d55f8494] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0.5rem;\n  border-radius: 4px;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.banner .banner-close[data-v-d55f8494]:hover {\n  background: rgba(0, 0, 0, 0.12);\n}\n.banner.success[data-v-d55f8494] {\n  background: #10c15c;\n}\n.banner.success[data-v-d55f8494]::after {\n  background: #10c15c;\n}\n.banner.error[data-v-d55f8494] {\n  background: #ed1c24;\n}\n.banner.error[data-v-d55f8494]::after {\n  background: #ed1c24;\n}\n.banner.info[data-v-d55f8494] {\n  background: #0b22e2;\n}\n.banner.info[data-v-d55f8494]::after {\n  background: #0b22e2;\n}\n.banner[data-v-d55f8494]::after {\n  content: \"\";\n  position: absolute;\n  height: 10%;\n  width: 100%;\n  bottom: 100%;\n  left: 0;\n}\n.banner[data-v-d55f8494]:not(.visible) {\n  display: none;\n  transform: translateY(-100%);\n}\n.banner.visible[data-v-d55f8494] {\n  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.12);\n  animation-name: banner-in-d55f8494;\n  animation-direction: forwards;\n  animation-duration: 0.6s;\n  animation-timing-function: ease-in-out;\n  animation-fill-mode: forwards;\n  animation-iteration-count: 1;\n}\n@keyframes banner-in-d55f8494 {\n0% {\n    transform: translateY(-100%);\n}\n50% {\n    transform: translateY(10%);\n}\n100% {\n    transform: translateY(0);\n}\n}\n.show-banner[data-v-d55f8494] {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  background: #ededed;\n  border: 0;\n  padding: 1rem 2rem;\n  border-radius: 4px;\n  cursor: pointer;\n  text-transform: uppercase;\n  margin: 0.25rem;\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41247,7 +41296,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }, 1);
       var centerOverlayCustomI = setInterval(function () {
-        var centerOverlayCustom = document.getElementsByClassName('center-overlay-customs');
+        var centerOverlayCustom = document.getElementsByClassName('center-overlay-custom');
         if (centerOverlayCustom && centerOverlayCustom.length) {
           centerOverlayCustom.forEach(function (e) {
             if (e.style) {
@@ -41315,7 +41364,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var notyf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! notyf */ "./node_modules/notyf/notyf.es.js");
+/* harmony import */ var notyf_notyf_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! notyf/notyf.min.css */ "./node_modules/notyf/notyf.min.css");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ConfirmPVerificationCode",
   props: ['user', 'code', 'timer', 'delete_token'],
@@ -41330,7 +41383,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       vrf_code: [],
       this_code: this.code,
       this_timer: this.timer,
-      this_user_id: this.user.id,
+      this_user_id: this.user ? this.user.id : null,
       code_error: false,
       show_timer: true,
       is_resend_code: true,
@@ -41338,6 +41391,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       send_verification_code: false
     };
   },
+  components: {},
   computed: {
     // setInSessionCode(){
     //     if( this.code ) localStorage.setItem('code', this.code );
@@ -41367,11 +41421,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             }
           }).then(function (res) {
             if (res && res.data && res.data.user_id && res.data.new_code && res.data.timer) {
+              _this.deleteNotificationByMessage('Gözləmə vaxtı bitdiyi üçün');
               _this.show_timer = true;
               _this.this_code = res.data.new_code;
               _this.this_timer = res.data.timer;
               _this.this_user_id = res.data.user_id;
               _this.verificationTimer(_this.getCurrentTimes(), res.data.timer, true);
+
+              // Display an error notification
+              var message = 'Yeni kod <b>Email</b> addresinizə göndərildi.';
+              _this.callNotification('success', message, 12000, true, 'green', 'right', 'top');
+              // let notyf = new Notyf({
+              //     dismissible: true,
+              //     duration: 12000,
+              //     position: {
+              //         x:'right',
+              //         y:'top'
+              //     },
+              //     types:[{}]
+              // });
+              // notyf.open({
+              //     type:'success',
+              //     message: 'Yeni kod <b>Email</b> addresinizə göndərildi.',
+              // });
+
               console.log('NEW-VERIFICATION CODE 1 res - ', _this.this_user_id + ' - ' + _this.this_code + ' - ' + _this.this_timer);
             }
             console.log('NEW-VERIFICATION CODE 2 - ', res.data);
@@ -41418,6 +41491,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               if (sec < 0) {
                 sec = '00:00';
                 timer_div[0].innerHTML = sec;
+                var message = 'Gözləmə vaxtı bitdiyi üçün <br/> <b>kod</b> etibarsızdir!, <br/> Yeni <b>kod</b> alın';
+                _this3.callNotification('warning', message, 12000, true, 'orange', 'right', 'top');
                 clearInterval(timer_set);
               }
               // console.log('TTTTTTTTT - ',  this.getCurrentTimes() +' - '+ this.timer +' - '+ show )
@@ -41518,7 +41593,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             this.vrf_code = this.vrf_code.filter(function (e, index) {
               return index !== 0;
             });
-            this.removeErrorText();
+            this.deleteNotificationByMessage('Yanlış kod!');
           }
         }
         if (class_name === 'pincode2' && input_2 && input_2[0]) {
@@ -41527,7 +41602,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             this.vrf_code = this.vrf_code.filter(function (e, index) {
               return index !== 1;
             });
-            this.removeErrorText();
+            this.deleteNotificationByMessage('Yanlış kod!');
           }
         }
         if (class_name === 'pincode3' && input_2 && input_2[0]) {
@@ -41536,7 +41611,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             this.vrf_code = this.vrf_code.filter(function (e, index) {
               return index !== 2;
             });
-            this.removeErrorText();
+            this.deleteNotificationByMessage('Yanlış kod!');
           }
         }
         if (class_name === 'pincode4' && input_3 && input_3[0]) {
@@ -41545,7 +41620,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             this.vrf_code = this.vrf_code.filter(function (e, index) {
               return index !== 3;
             });
-            this.removeErrorText();
+            this.deleteNotificationByMessage('Yanlış kod!');
           }
         }
         if (class_name === 'pincode5' && input_4 && input_4[0]) {
@@ -41554,12 +41629,35 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             this.vrf_code = this.vrf_code.filter(function (e, index) {
               return index !== 4;
             });
-            this.removeErrorText();
+            this.deleteNotificationByMessage('Yanlış kod!');
           }
         }
       } else {
         event.preventDefault();
       }
+    },
+    callNotification: function callNotification(type, message, duration, dismiss, background, horizontal, vertical) {
+      var notyfErr = new notyf__WEBPACK_IMPORTED_MODULE_0__.Notyf({
+        duration: duration,
+        position: {
+          x: horizontal,
+          y: vertical
+        },
+        types: [{
+          type: type,
+          icon: {
+            className: 'material-icons',
+            tagName: 'i',
+            text: 'warning'
+          }
+        }]
+      });
+      notyfErr.error({
+        type: type,
+        message: message,
+        dismissible: dismiss,
+        background: background
+      });
     },
     checkCountCode: function checkCountCode() {
       if (this.vrf_code && this.vrf_code.length === 5) {
@@ -41572,13 +41670,44 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         if (code === vrf_code) {
           console.info('send_verification_code - ', this.code === this.vrf_code);
           this.checkVerificationCode();
-        } else this.code_error = true;
+        } else this.callNotification('error', '<b>Yanlış kod!</b>', 13000, true, 'red', 'right', 'bottom');
         console.info('watch - ', code + ' - ' + vrf_code);
       }
       return false;
     },
-    removeErrorText: function removeErrorText() {
-      this.code_error = false;
+    deleteNotificationByMessage: function deleteNotificationByMessage(message) {
+      var _this5 = this;
+      if (message) {
+        var find = setInterval(function () {
+          var notyf_announcer = document.querySelectorAll('.notyf-announcer');
+          var notyf = document.querySelectorAll('.notyf');
+          if (notyf && notyf.length && notyf_announcer && notyf_announcer.length) {
+            notyf.forEach(function (el) {
+              if (el && el.children) {
+                _this5.recursiveDelete(el, el.children, message);
+              }
+            });
+            notyf_announcer.forEach(function (el) {
+              if (el) el.remove();
+            });
+            clearInterval(find);
+          }
+        }, 0.1);
+        setTimeout(function () {
+          clearInterval(find);
+        }, 10000);
+      }
+    },
+    recursiveDelete: function recursiveDelete(parent, child, text) {
+      var _this6 = this;
+      if (parent && child && child.length && text) {
+        child.forEach(function (el) {
+          if (el.classList && el.classList.contains('notyf__message') && el.innerText.indexOf(text) !== -1) {
+            console.info('el.remove - ', parent);
+            parent.remove();
+          } else if (el.children) _this6.recursiveDelete(parent, el.children, text);
+        });
+      }
     },
     setVerificationCode: function setVerificationCode(clear, input, key) {
       if (clear && input) {
@@ -41605,10 +41734,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       this.setIntervalClear(inter);
     },
     detectInputs: function detectInputs(input) {
-      var _this5 = this;
+      var _this7 = this;
       if (input) {
         var clear = setInterval(function () {
-          _this5.setIntervalFunc(input);
+          _this7.setIntervalFunc(input);
           // this.setIntervalFunc(input_2);
           clearInterval(clear);
         }, 0.1);
@@ -41639,20 +41768,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return url.substring(start + 1);
     },
     checkVerificationCode: function checkVerificationCode() {
-      var _this6 = this;
+      var _this8 = this;
       axios({
         method: "post",
         url: "/check-verification-code",
         data: {
-          user_id: this.user ? this.user.id : localStorage.getItem('user_id'),
-          code: this.code ? this.code : localStorage.getItem('code'),
+          user_id: this.this_user_id,
+          code: this.this_code,
           verification_code: this.vrf_code.join('').replace(', ', '')
         }
       }).then(function (res) {
         if (res && res.data && res.data.auth_user) {
           if (res.data.auth_user) {
-            _this6.success = true;
-            document.location.href = '/product/' + Number(_this6.getProductID());
+            _this8.success = true;
+            document.location.href = '/product/' + Number(_this8.getProductID());
             console.log('check-verification-code res - ', res.data.auth_user);
           }
           console.log('check-verification-code res 111 - ', res.data.auth_user);
@@ -41671,12 +41800,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
   },
   mounted: function mounted() {
-    var _this7 = this;
+    var _this9 = this;
     this.verificationTimer(this.getCurrentTimes(), this.timer, true);
     document.addEventListener('DOMContentLoaded', function () {
-      if (_this7.this_user_id && _this7.this_code) _this7.deleteToken();
+      if (_this9.this_user_id && _this9.this_code) _this9.deleteToken();
     });
-    console.log('""""""""""""" - ', this.user.id + " - " + this.code + " - " + this.timer);
+
+    // console.log('""""""""""""" - ', this.this_user_id+" - "+this.code+" - "+this.timer )
   }
 });
 
@@ -41980,6 +42110,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "audioVeVideo",
   props: ['product']
+});
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Push",
+  data: function data() {
+    return {};
+  },
+  methods: {
+    showBanner: function showBanner(selector) {
+      this.hideBanners();
+      // Ensure animation plays even if the same alert type is triggered.
+      requestAnimationFrame(function () {
+        var banner = document.querySelector(selector);
+        banner.classList.add("visible");
+      });
+    },
+    hideBanners: function hideBanners(e) {
+      document.querySelectorAll(".banner.visible").forEach(function (b) {
+        return b.classList.remove("visible");
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -44585,7 +44750,7 @@ var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"form-floating\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <input"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    @keydown=\"inputMask\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    v-model=\"vrf_code\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    class=\"form-control pb-0 rounded-0 border-top-0"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                               border-start-0 border-opacity-25 border-end-0"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                               border-bottom-secondary bg-white fs-5\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    id=\"verification-code\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                >"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"invalid-feedback fs-6 mt-1\" id=\"phone-error\"> &lt;!&ndash; error text&ndash;&gt; </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"col-12 mt-5 d-flex justify-content-center\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div @click=\"checkVerificationCode\" class=\"col-6 btn btn-outline-success rounded-0 fs-5 w-100\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    Göndər"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     onKeydown: _cache[0] || (_cache[0] = function () {
       return $options.changeInputFocus && $options.changeInputFocus.apply($options, arguments);
     }),
@@ -44656,7 +44821,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: "",
     disabled: "",
     "class": "resend__new_cod_btn"
-  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
+  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <push></push>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>")]);
 }
 
 /***/ }),
@@ -44942,6 +45107,31 @@ var _hoisted_2 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [$props.product ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.product.title), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=template&id=d55f8494&scoped=true":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=template&id=d55f8494&scoped=true ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-d55f8494"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+var _hoisted_1 = {
+  "class": ""
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1);
 }
 
 /***/ }),
@@ -45831,6 +46021,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_announce_new_modals_TimePicker_vue__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/announce/new/modals/TimePicker.vue */ "./resources/js/components/announce/new/modals/TimePicker.vue");
 /* harmony import */ var _components_announce_new_modals_OnTimeAukcion_vue__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/announce/new/modals/OnTimeAukcion.vue */ "./resources/js/components/announce/new/modals/OnTimeAukcion.vue");
 /* harmony import */ var _components_announce_new_modals_OnLaterTimeAukcion_vue__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/announce/new/modals/OnLaterTimeAukcion.vue */ "./resources/js/components/announce/new/modals/OnLaterTimeAukcion.vue");
+/* harmony import */ var _components_auksiyon_push_Push_vue__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/auksiyon/push/Push.vue */ "./resources/js/components/auksiyon/push/Push.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -45889,6 +46080,9 @@ app.use(vue3_photo_preview__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
 
 
+
+// Push verification
+
 app.component('example-component', _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
 app.component('real-time-auksiyon', _components_pages_RealTimeAuksiyon_vue__WEBPACK_IMPORTED_MODULE_8__["default"]);
 app.component('auksion-user-info-modal', _components_elements_AukcionUserInfoModal_vue__WEBPACK_IMPORTED_MODULE_9__["default"]);
@@ -45935,6 +46129,9 @@ app.component('data-picker', _components_announce_new_modals_DataPicker_vue__WEB
 app.component('time-picker', _components_announce_new_modals_TimePicker_vue__WEBPACK_IMPORTED_MODULE_36__["default"]);
 app.component('on-time-aukcion', _components_announce_new_modals_OnTimeAukcion_vue__WEBPACK_IMPORTED_MODULE_37__["default"]);
 app.component('on-later-time-aukcion', _components_announce_new_modals_OnLaterTimeAukcion_vue__WEBPACK_IMPORTED_MODULE_38__["default"]);
+
+//AUKSIYON
+app.component('push', _components_auksiyon_push_Push_vue__WEBPACK_IMPORTED_MODULE_39__["default"]);
 app.mount("#app");
 
 /***/ }),
@@ -71739,6 +71936,468 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/notyf/notyf.es.js":
+/*!****************************************!*\
+  !*** ./node_modules/notyf/notyf.es.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DEFAULT_OPTIONS": () => (/* binding */ DEFAULT_OPTIONS),
+/* harmony export */   "Notyf": () => (/* binding */ Notyf),
+/* harmony export */   "NotyfArray": () => (/* binding */ NotyfArray),
+/* harmony export */   "NotyfArrayEvent": () => (/* binding */ NotyfArrayEvent),
+/* harmony export */   "NotyfEvent": () => (/* binding */ NotyfEvent),
+/* harmony export */   "NotyfNotification": () => (/* binding */ NotyfNotification),
+/* harmony export */   "NotyfView": () => (/* binding */ NotyfView)
+/* harmony export */ });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+var NotyfNotification = /** @class */ (function () {
+    function NotyfNotification(options) {
+        this.options = options;
+        this.listeners = {};
+    }
+    NotyfNotification.prototype.on = function (eventType, cb) {
+        var callbacks = this.listeners[eventType] || [];
+        this.listeners[eventType] = callbacks.concat([cb]);
+    };
+    NotyfNotification.prototype.triggerEvent = function (eventType, event) {
+        var _this = this;
+        var callbacks = this.listeners[eventType] || [];
+        callbacks.forEach(function (cb) { return cb({ target: _this, event: event }); });
+    };
+    return NotyfNotification;
+}());
+var NotyfArrayEvent;
+(function (NotyfArrayEvent) {
+    NotyfArrayEvent[NotyfArrayEvent["Add"] = 0] = "Add";
+    NotyfArrayEvent[NotyfArrayEvent["Remove"] = 1] = "Remove";
+})(NotyfArrayEvent || (NotyfArrayEvent = {}));
+var NotyfArray = /** @class */ (function () {
+    function NotyfArray() {
+        this.notifications = [];
+    }
+    NotyfArray.prototype.push = function (elem) {
+        this.notifications.push(elem);
+        this.updateFn(elem, NotyfArrayEvent.Add, this.notifications);
+    };
+    NotyfArray.prototype.splice = function (index, num) {
+        var elem = this.notifications.splice(index, num)[0];
+        this.updateFn(elem, NotyfArrayEvent.Remove, this.notifications);
+        return elem;
+    };
+    NotyfArray.prototype.indexOf = function (elem) {
+        return this.notifications.indexOf(elem);
+    };
+    NotyfArray.prototype.onUpdate = function (fn) {
+        this.updateFn = fn;
+    };
+    return NotyfArray;
+}());
+
+var NotyfEvent;
+(function (NotyfEvent) {
+    NotyfEvent["Dismiss"] = "dismiss";
+    NotyfEvent["Click"] = "click";
+})(NotyfEvent || (NotyfEvent = {}));
+var DEFAULT_OPTIONS = {
+    types: [
+        {
+            type: 'success',
+            className: 'notyf__toast--success',
+            backgroundColor: '#3dc763',
+            icon: {
+                className: 'notyf__icon--success',
+                tagName: 'i',
+            },
+        },
+        {
+            type: 'error',
+            className: 'notyf__toast--error',
+            backgroundColor: '#ed3d3d',
+            icon: {
+                className: 'notyf__icon--error',
+                tagName: 'i',
+            },
+        },
+    ],
+    duration: 2000,
+    ripple: true,
+    position: {
+        x: 'right',
+        y: 'bottom',
+    },
+    dismissible: false,
+};
+
+var NotyfView = /** @class */ (function () {
+    function NotyfView() {
+        this.notifications = [];
+        this.events = {};
+        this.X_POSITION_FLEX_MAP = {
+            left: 'flex-start',
+            center: 'center',
+            right: 'flex-end',
+        };
+        this.Y_POSITION_FLEX_MAP = {
+            top: 'flex-start',
+            center: 'center',
+            bottom: 'flex-end',
+        };
+        // Creates the main notifications container
+        var docFrag = document.createDocumentFragment();
+        var notyfContainer = this._createHTMLElement({ tagName: 'div', className: 'notyf' });
+        docFrag.appendChild(notyfContainer);
+        document.body.appendChild(docFrag);
+        this.container = notyfContainer;
+        // Identifies the main animation end event
+        this.animationEndEventName = this._getAnimationEndEventName();
+        this._createA11yContainer();
+    }
+    NotyfView.prototype.on = function (event, cb) {
+        var _a;
+        this.events = __assign(__assign({}, this.events), (_a = {}, _a[event] = cb, _a));
+    };
+    NotyfView.prototype.update = function (notification, type) {
+        if (type === NotyfArrayEvent.Add) {
+            this.addNotification(notification);
+        }
+        else if (type === NotyfArrayEvent.Remove) {
+            this.removeNotification(notification);
+        }
+    };
+    NotyfView.prototype.removeNotification = function (notification) {
+        var _this = this;
+        var renderedNotification = this._popRenderedNotification(notification);
+        var node;
+        if (!renderedNotification) {
+            return;
+        }
+        node = renderedNotification.node;
+        node.classList.add('notyf__toast--disappear');
+        var handleEvent;
+        node.addEventListener(this.animationEndEventName, (handleEvent = function (event) {
+            if (event.target === node) {
+                node.removeEventListener(_this.animationEndEventName, handleEvent);
+                _this.container.removeChild(node);
+            }
+        }));
+    };
+    NotyfView.prototype.addNotification = function (notification) {
+        var node = this._renderNotification(notification);
+        this.notifications.push({ notification: notification, node: node });
+        // For a11y purposes, we still want to announce that there's a notification in the screen
+        // even if it comes with no message.
+        this._announce(notification.options.message || 'Notification');
+    };
+    NotyfView.prototype._renderNotification = function (notification) {
+        var _a;
+        var card = this._buildNotificationCard(notification);
+        var className = notification.options.className;
+        if (className) {
+            (_a = card.classList).add.apply(_a, className.split(' '));
+        }
+        this.container.appendChild(card);
+        return card;
+    };
+    NotyfView.prototype._popRenderedNotification = function (notification) {
+        var idx = -1;
+        for (var i = 0; i < this.notifications.length && idx < 0; i++) {
+            if (this.notifications[i].notification === notification) {
+                idx = i;
+            }
+        }
+        if (idx !== -1) {
+            return this.notifications.splice(idx, 1)[0];
+        }
+        return;
+    };
+    NotyfView.prototype.getXPosition = function (options) {
+        var _a;
+        return ((_a = options === null || options === void 0 ? void 0 : options.position) === null || _a === void 0 ? void 0 : _a.x) || 'right';
+    };
+    NotyfView.prototype.getYPosition = function (options) {
+        var _a;
+        return ((_a = options === null || options === void 0 ? void 0 : options.position) === null || _a === void 0 ? void 0 : _a.y) || 'bottom';
+    };
+    NotyfView.prototype.adjustContainerAlignment = function (options) {
+        var align = this.X_POSITION_FLEX_MAP[this.getXPosition(options)];
+        var justify = this.Y_POSITION_FLEX_MAP[this.getYPosition(options)];
+        var style = this.container.style;
+        style.setProperty('justify-content', justify);
+        style.setProperty('align-items', align);
+    };
+    NotyfView.prototype._buildNotificationCard = function (notification) {
+        var _this = this;
+        var options = notification.options;
+        var iconOpts = options.icon;
+        // Adjust container according to position (e.g. top-left, bottom-center, etc)
+        this.adjustContainerAlignment(options);
+        // Create elements
+        var notificationElem = this._createHTMLElement({ tagName: 'div', className: 'notyf__toast' });
+        var ripple = this._createHTMLElement({ tagName: 'div', className: 'notyf__ripple' });
+        var wrapper = this._createHTMLElement({ tagName: 'div', className: 'notyf__wrapper' });
+        var message = this._createHTMLElement({ tagName: 'div', className: 'notyf__message' });
+        message.innerHTML = options.message || '';
+        var mainColor = options.background || options.backgroundColor;
+        // Build the icon and append it to the card
+        if (iconOpts) {
+            var iconContainer = this._createHTMLElement({ tagName: 'div', className: 'notyf__icon' });
+            if (typeof iconOpts === 'string' || iconOpts instanceof String)
+                iconContainer.innerHTML = new String(iconOpts).valueOf();
+            if (typeof iconOpts === 'object') {
+                var _a = iconOpts.tagName, tagName = _a === void 0 ? 'i' : _a, className_1 = iconOpts.className, text = iconOpts.text, _b = iconOpts.color, color = _b === void 0 ? mainColor : _b;
+                var iconElement = this._createHTMLElement({ tagName: tagName, className: className_1, text: text });
+                if (color)
+                    iconElement.style.color = color;
+                iconContainer.appendChild(iconElement);
+            }
+            wrapper.appendChild(iconContainer);
+        }
+        wrapper.appendChild(message);
+        notificationElem.appendChild(wrapper);
+        // Add ripple if applicable, else just paint the full toast
+        if (mainColor) {
+            if (options.ripple) {
+                ripple.style.background = mainColor;
+                notificationElem.appendChild(ripple);
+            }
+            else {
+                notificationElem.style.background = mainColor;
+            }
+        }
+        // Add dismiss button
+        if (options.dismissible) {
+            var dismissWrapper = this._createHTMLElement({ tagName: 'div', className: 'notyf__dismiss' });
+            var dismissButton = this._createHTMLElement({
+                tagName: 'button',
+                className: 'notyf__dismiss-btn',
+            });
+            dismissWrapper.appendChild(dismissButton);
+            wrapper.appendChild(dismissWrapper);
+            notificationElem.classList.add("notyf__toast--dismissible");
+            dismissButton.addEventListener('click', function (event) {
+                var _a, _b;
+                (_b = (_a = _this.events)[NotyfEvent.Dismiss]) === null || _b === void 0 ? void 0 : _b.call(_a, { target: notification, event: event });
+                event.stopPropagation();
+            });
+        }
+        notificationElem.addEventListener('click', function (event) { var _a, _b; return (_b = (_a = _this.events)[NotyfEvent.Click]) === null || _b === void 0 ? void 0 : _b.call(_a, { target: notification, event: event }); });
+        // Adjust margins depending on whether its an upper or lower notification
+        var className = this.getYPosition(options) === 'top' ? 'upper' : 'lower';
+        notificationElem.classList.add("notyf__toast--" + className);
+        return notificationElem;
+    };
+    NotyfView.prototype._createHTMLElement = function (_a) {
+        var tagName = _a.tagName, className = _a.className, text = _a.text;
+        var elem = document.createElement(tagName);
+        if (className) {
+            elem.className = className;
+        }
+        elem.textContent = text || null;
+        return elem;
+    };
+    /**
+     * Creates an invisible container which will announce the notyfs to
+     * screen readers
+     */
+    NotyfView.prototype._createA11yContainer = function () {
+        var a11yContainer = this._createHTMLElement({ tagName: 'div', className: 'notyf-announcer' });
+        a11yContainer.setAttribute('aria-atomic', 'true');
+        a11yContainer.setAttribute('aria-live', 'polite');
+        // Set the a11y container to be visible hidden. Can't use display: none as
+        // screen readers won't read it.
+        a11yContainer.style.border = '0';
+        a11yContainer.style.clip = 'rect(0 0 0 0)';
+        a11yContainer.style.height = '1px';
+        a11yContainer.style.margin = '-1px';
+        a11yContainer.style.overflow = 'hidden';
+        a11yContainer.style.padding = '0';
+        a11yContainer.style.position = 'absolute';
+        a11yContainer.style.width = '1px';
+        a11yContainer.style.outline = '0';
+        document.body.appendChild(a11yContainer);
+        this.a11yContainer = a11yContainer;
+    };
+    /**
+     * Announces a message to screenreaders.
+     */
+    NotyfView.prototype._announce = function (message) {
+        var _this = this;
+        this.a11yContainer.textContent = '';
+        // This 100ms timeout is necessary for some browser + screen-reader combinations:
+        // - Both JAWS and NVDA over IE11 will not announce anything without a non-zero timeout.
+        // - With Chrome and IE11 with NVDA or JAWS, a repeated (identical) message won't be read a
+        //   second time without clearing and then using a non-zero delay.
+        // (using JAWS 17 at time of this writing).
+        // https://github.com/angular/material2/blob/master/src/cdk/a11y/live-announcer/live-announcer.ts
+        setTimeout(function () {
+            _this.a11yContainer.textContent = message;
+        }, 100);
+    };
+    /**
+     * Determine which animationend event is supported
+     */
+    NotyfView.prototype._getAnimationEndEventName = function () {
+        var el = document.createElement('_fake');
+        var transitions = {
+            MozTransition: 'animationend',
+            OTransition: 'oAnimationEnd',
+            WebkitTransition: 'webkitAnimationEnd',
+            transition: 'animationend',
+        };
+        var t;
+        for (t in transitions) {
+            if (el.style[t] !== undefined) {
+                return transitions[t];
+            }
+        }
+        // No supported animation end event. Using "animationend" as a fallback
+        return 'animationend';
+    };
+    return NotyfView;
+}());
+
+/**
+ * Main controller class. Defines the main Notyf API.
+ */
+var Notyf = /** @class */ (function () {
+    function Notyf(opts) {
+        var _this = this;
+        this.dismiss = this._removeNotification;
+        this.notifications = new NotyfArray();
+        this.view = new NotyfView();
+        var types = this.registerTypes(opts);
+        this.options = __assign(__assign({}, DEFAULT_OPTIONS), opts);
+        this.options.types = types;
+        this.notifications.onUpdate(function (elem, type) { return _this.view.update(elem, type); });
+        this.view.on(NotyfEvent.Dismiss, function (_a) {
+            var target = _a.target, event = _a.event;
+            _this._removeNotification(target);
+            // tslint:disable-next-line: no-string-literal
+            target['triggerEvent'](NotyfEvent.Dismiss, event);
+        });
+        // tslint:disable-next-line: no-string-literal
+        this.view.on(NotyfEvent.Click, function (_a) {
+            var target = _a.target, event = _a.event;
+            return target['triggerEvent'](NotyfEvent.Click, event);
+        });
+    }
+    Notyf.prototype.error = function (payload) {
+        var options = this.normalizeOptions('error', payload);
+        return this.open(options);
+    };
+    Notyf.prototype.success = function (payload) {
+        var options = this.normalizeOptions('success', payload);
+        return this.open(options);
+    };
+    Notyf.prototype.open = function (options) {
+        var defaultOpts = this.options.types.find(function (_a) {
+            var type = _a.type;
+            return type === options.type;
+        }) || {};
+        var config = __assign(__assign({}, defaultOpts), options);
+        this.assignProps(['ripple', 'position', 'dismissible'], config);
+        var notification = new NotyfNotification(config);
+        this._pushNotification(notification);
+        return notification;
+    };
+    Notyf.prototype.dismissAll = function () {
+        while (this.notifications.splice(0, 1))
+            ;
+    };
+    /**
+     * Assigns properties to a config object based on two rules:
+     * 1. If the config object already sets that prop, leave it as so
+     * 2. Otherwise, use the default prop from the global options
+     *
+     * It's intended to build the final config object to open a notification. e.g. if
+     * 'dismissible' is not set, then use the value from the global config.
+     *
+     * @param props - properties to be assigned to the config object
+     * @param config - object whose properties need to be set
+     */
+    Notyf.prototype.assignProps = function (props, config) {
+        var _this = this;
+        props.forEach(function (prop) {
+            // intentional double equality to check for both null and undefined
+            config[prop] = config[prop] == null ? _this.options[prop] : config[prop];
+        });
+    };
+    Notyf.prototype._pushNotification = function (notification) {
+        var _this = this;
+        this.notifications.push(notification);
+        var duration = notification.options.duration !== undefined ? notification.options.duration : this.options.duration;
+        if (duration) {
+            setTimeout(function () { return _this._removeNotification(notification); }, duration);
+        }
+    };
+    Notyf.prototype._removeNotification = function (notification) {
+        var index = this.notifications.indexOf(notification);
+        if (index !== -1) {
+            this.notifications.splice(index, 1);
+        }
+    };
+    Notyf.prototype.normalizeOptions = function (type, payload) {
+        var options = { type: type };
+        if (typeof payload === 'string') {
+            options.message = payload;
+        }
+        else if (typeof payload === 'object') {
+            options = __assign(__assign({}, options), payload);
+        }
+        return options;
+    };
+    Notyf.prototype.registerTypes = function (opts) {
+        var incomingTypes = ((opts && opts.types) || []).slice();
+        var finalDefaultTypes = DEFAULT_OPTIONS.types.map(function (defaultType) {
+            // find if there's a default type within the user input's types, if so, it means the user
+            // wants to change some of the default settings
+            var userTypeIdx = -1;
+            incomingTypes.forEach(function (t, idx) {
+                if (t.type === defaultType.type)
+                    userTypeIdx = idx;
+            });
+            var userType = userTypeIdx !== -1 ? incomingTypes.splice(userTypeIdx, 1)[0] : {};
+            return __assign(__assign({}, defaultType), userType);
+        });
+        return finalDefaultTypes.concat(incomingTypes);
+    };
+    return Notyf;
+}());
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -71930,6 +72589,36 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
+
+/***/ }),
+
+/***/ "./node_modules/notyf/notyf.min.css":
+/*!******************************************!*\
+  !*** ./node_modules/notyf/notyf.min.css ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_notyf_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./notyf.min.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/notyf/notyf.min.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_notyf_min_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_notyf_min_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -72500,6 +73189,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowForPhoneScreen_vue_vue_type_style_index_0_id_32724685_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_style_index_0_id_d55f8494_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_style_index_0_id_d55f8494_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_style_index_0_id_d55f8494_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -73750,6 +74469,37 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/auksiyon/push/Push.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/auksiyon/push/Push.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Push_vue_vue_type_template_id_d55f8494_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Push.vue?vue&type=template&id=d55f8494&scoped=true */ "./resources/js/components/auksiyon/push/Push.vue?vue&type=template&id=d55f8494&scoped=true");
+/* harmony import */ var _Push_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Push.vue?vue&type=script&lang=js */ "./resources/js/components/auksiyon/push/Push.vue?vue&type=script&lang=js");
+/* harmony import */ var _Push_vue_vue_type_style_index_0_id_d55f8494_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css */ "./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css");
+/* harmony import */ var _Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_Users_reymur_sites_auksiyonaz_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Push_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Push_vue_vue_type_template_id_d55f8494_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-d55f8494"],['__file',"resources/js/components/auksiyon/push/Push.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/crumbs/AukcionContionue.vue":
 /*!*************************************************************!*\
   !*** ./resources/js/components/crumbs/AukcionContionue.vue ***!
@@ -74446,6 +75196,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/auksiyon/push/Push.vue?vue&type=script&lang=js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/auksiyon/push/Push.vue?vue&type=script&lang=js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Push.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/crumbs/AukcionContionue.vue?vue&type=script&lang=js":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/crumbs/AukcionContionue.vue?vue&type=script&lang=js ***!
@@ -75022,6 +75788,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/auksiyon/push/Push.vue?vue&type=template&id=d55f8494&scoped=true":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/auksiyon/push/Push.vue?vue&type=template&id=d55f8494&scoped=true ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_template_id_d55f8494_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_template_id_d55f8494_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Push.vue?vue&type=template&id=d55f8494&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=template&id=d55f8494&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/crumbs/AukcionContionue.vue?vue&type=template&id=65bd7e86":
 /*!*******************************************************************************************!*\
   !*** ./resources/js/components/crumbs/AukcionContionue.vue?vue&type=template&id=65bd7e86 ***!
@@ -75396,6 +76178,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowForPhoneScreen_vue_vue_type_style_index_0_id_32724685_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader/dist/cjs.js!../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ShowForPhoneScreen.vue?vue&type=style&index=0&id=32724685&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/announce/products/crumbs/ShowForPhoneScreen.vue?vue&type=style&index=0&id=32724685&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Push_vue_vue_type_style_index_0_id_d55f8494_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/auksiyon/push/Push.vue?vue&type=style&index=0&id=d55f8494&scoped=true&lang=css");
 
 
 /***/ }),

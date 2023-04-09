@@ -1,28 +1,6 @@
 <template>
     <div class="col-12 col-sm-8 col-md-6 col-xl-6 col-xxl-6">
 
-<!--            <div class="form-floating">-->
-<!--                <input-->
-<!--                    @keydown="inputMask"-->
-<!--                    v-model="vrf_code"-->
-<!--                    class="form-control pb-0 rounded-0 border-top-0-->
-<!--                               border-start-0 border-opacity-25 border-end-0-->
-<!--                               border-bottom-secondary bg-white fs-5"-->
-
-<!--                    id="verification-code"-->
-<!--                >-->
-
-<!--                <div class="invalid-feedback fs-6 mt-1" id="phone-error"> &lt;!&ndash; error text&ndash;&gt; </div>-->
-<!--            </div>-->
-
-
-<!--            <div class="col-12 mt-5 d-flex justify-content-center">-->
-<!--                <div @click="checkVerificationCode" class="col-6 btn btn-outline-success rounded-0 fs-5 w-100">-->
-<!--                    Göndər-->
-<!--                </div>-->
-<!--            </div>-->
-
-
             <div class="d-flex fs-5 text-black-50 justify-content-center code__title">
                 Kodu daxil edin
             </div>
@@ -45,10 +23,16 @@
                 <a v-if="is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>
             </div>
 
+<!--            <div class="">-->
+<!--                <push></push>-->
+<!--            </div>-->
         </div>
 </template>
 
 <script>
+
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 export default {
     name: "ConfirmPVerificationCode",
@@ -64,13 +48,16 @@ export default {
             vrf_code: [],
             this_code: this.code,
             this_timer: this.timer,
-            this_user_id: this.user.id,
+            this_user_id: this.user ? this.user.id : null,
             code_error: false,
             show_timer: true,
             is_resend_code: true,
             this_delete_token: this.delete_token,
             send_verification_code: false,
         }
+    },
+    components: {
+
     },
     computed: {
         // setInSessionCode(){
@@ -102,12 +89,30 @@ export default {
                     })
                         .then(res => {
                             if ( res && res.data && res.data.user_id && res.data.new_code && res.data.timer ) {
+                                this.deleteNotificationByMessage( 'Gözləmə vaxtı bitdiyi üçün' );
                                 this.show_timer = true;
                                 this.this_code = res.data.new_code;
                                 this.this_timer = res.data.timer;
                                 this.this_user_id = res.data.user_id;
 
                                 this.verificationTimer( this.getCurrentTimes(), res.data.timer, true );
+
+                                // Display an error notification
+                                let message = 'Yeni kod <b>Email</b> addresinizə göndərildi.';
+                                this.callNotification('success', message, 12000, true, 'green', 'right','top' );
+                                // let notyf = new Notyf({
+                                //     dismissible: true,
+                                //     duration: 12000,
+                                //     position: {
+                                //         x:'right',
+                                //         y:'top'
+                                //     },
+                                //     types:[{}]
+                                // });
+                                // notyf.open({
+                                //     type:'success',
+                                //     message: 'Yeni kod <b>Email</b> addresinizə göndərildi.',
+                                // });
 
                                 console.log( 'NEW-VERIFICATION CODE 1 res - ',  this.this_user_id+' - '+ this.this_code+' - '+ this.this_timer )
                             }
@@ -160,6 +165,10 @@ export default {
                             if (sec < 0) {
                                 sec = '00:00';
                                 timer_div[0].innerHTML = sec;
+
+                                let message = 'Gözləmə vaxtı bitdiyi üçün <br/> <b>kod</b> etibarsızdir!, <br/> Yeni <b>kod</b> alın';
+                                this.callNotification('warning', message,12000,true, 'orange', 'right', 'top');
+
                                 clearInterval(timer_set);
                             }
                             // console.log('TTTTTTTTT - ',  this.getCurrentTimes() +' - '+ this.timer +' - '+ show )
@@ -260,41 +269,49 @@ export default {
                 if ( class_name === 'pincode1' && input_2 && input_2[0] ) {
                     if( this.vrf_code.length && this.vrf_code[0] ) {
                         this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 0 } );
-                        this.removeErrorText();
+                        this.deleteNotificationByMessage('Yanlış kod!');
                     }
                 }
                 if ( class_name === 'pincode2' && input_2 && input_2[0] ) {
                     this.detectInputs(input_1);
                     if( this.vrf_code.length && this.vrf_code[1] ) {
                         this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 1 } );
-                        this.removeErrorText();
+                        this.deleteNotificationByMessage('Yanlış kod!')
                     }
                 }
                 if ( class_name === 'pincode3' && input_2 && input_2[0] ) {
                     this.detectInputs(input_2);
                     if( this.vrf_code.length && this.vrf_code[2] ) {
                         this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 2 } );
-                        this.removeErrorText();
+                        this.deleteNotificationByMessage('Yanlış kod!');
                     }
                 }
                 if ( class_name === 'pincode4' && input_3 && input_3[0] ) {
                     this.detectInputs(input_3);
                     if( this.vrf_code.length && this.vrf_code[3] ) {
                         this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 3 } );
-                        this.removeErrorText();
+                        this.deleteNotificationByMessage('Yanlış kod!');
                     }
                 }
                 if ( class_name === 'pincode5' && input_4 && input_4[0] ) {
                     this.detectInputs(input_4);
                     if( this.vrf_code.length ) {
                         this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 4 } );
-                        this.removeErrorText();
+                        this.deleteNotificationByMessage('Yanlış kod!');
                     }
                 }
             }
             else {
                 event.preventDefault();
             }
+        },
+        callNotification( type, message, duration, dismiss, background, horizontal,vertical) {
+            let notyfErr = new Notyf({
+                duration:duration,
+                position:{x: horizontal, y: vertical},
+                types: [{type:type, icon: { className: 'material-icons', tagName: 'i', text: 'warning'}}]
+            });
+            notyfErr.error({ type:type,  message:message,dismissible: dismiss, background:background });
         },
         checkCountCode() {
             if( this.vrf_code && this.vrf_code.length === 5 ) {
@@ -310,14 +327,48 @@ export default {
                     console.info( 'send_verification_code - ', this.code === this.vrf_code );
                     this.checkVerificationCode();
                 }
-                else this.code_error = true;
+                else this.callNotification( 'error','<b>Yanlış kod!</b>',13000,true, 'red', 'right', 'bottom');
 
                 console.info( 'watch - ', code +' - '+ vrf_code );
             }
             return false;
         },
-        removeErrorText() {
-            this.code_error = false;
+        deleteNotificationByMessage(message) {
+            if( message ) {
+                let find = setInterval(() => {
+                    let notyf_announcer = document.querySelectorAll('.notyf-announcer');
+                    let notyf = document.querySelectorAll('.notyf');
+
+                    if (notyf && notyf.length && notyf_announcer && notyf_announcer.length) {
+                        notyf.forEach(el => {
+                            if (el && el.children) {
+                                this.recursiveDelete(el, el.children, message);
+                            }
+                        });
+
+                        notyf_announcer.forEach(el => {
+                            if (el) el.remove();
+                        });
+
+                        clearInterval(find);
+                    }
+                }, 0.1);
+
+                setTimeout(() => {
+                    clearInterval(find)
+                }, 10000)
+            }
+        },
+        recursiveDelete(parent, child, text) {
+            if( parent && child && child.length && text ){
+                child.forEach( el => {
+                    if( el.classList && el.classList.contains('notyf__message') && el.innerText.indexOf(text) !== -1 ) {
+                        console.info( 'el.remove - ',  parent );
+                        parent.remove();
+                    }
+                    else if( el.children ) this.recursiveDelete(parent, el.children, text);
+                })
+            }
         },
         setVerificationCode(clear, input, key) {
             if( clear && input ) {
@@ -386,8 +437,8 @@ export default {
                 method: "post",
                 url: "/check-verification-code",
                 data: {
-                    user_id: this.user ? this.user.id : localStorage.getItem('user_id'),
-                    code: this.code ? this.code : localStorage.getItem('code'),
+                    user_id: this.this_user_id,
+                    code: this.this_code,
                     verification_code: this.vrf_code.join('').replace(', ','')
                 },
             })
@@ -424,7 +475,7 @@ export default {
             if( this.this_user_id && this.this_code ) this.deleteToken()
         })
 
-        console.log('""""""""""""" - ', this.user.id+" - "+this.code+" - "+this.timer )
+        // console.log('""""""""""""" - ', this.this_user_id+" - "+this.code+" - "+this.timer )
     }
 }
 </script>

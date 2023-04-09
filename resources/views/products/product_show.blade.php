@@ -30,6 +30,10 @@
 {{--                    </div>--}}
 
                     <div class="">
+                        <push></push>
+                    </div>
+
+                    <div class="">
                         <div class="mb-2">
                             <add-on-aukcion
                                 :auth_user="{{ $auth_user }}"

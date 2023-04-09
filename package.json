@@ -40,6 +40,7 @@
         "jquery": "^3.6.4",
         "litepie-datepicker": "^1.0.14",
         "maska": "^1.5.1",
+        "notyf": "^3.10.0",
         "path": "^0.12.7",
         "popper.js": "^1.16.1",
         "socket.io": "^4.5.2",
