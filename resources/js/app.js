@@ -8,6 +8,9 @@ let app=createApp({});
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
 import vue3PhotoPreview from 'vue3-photo-preview';
 import 'vue3-photo-preview/dist/index.css';
 

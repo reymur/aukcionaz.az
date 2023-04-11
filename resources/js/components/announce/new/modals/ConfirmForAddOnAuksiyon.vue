@@ -5,12 +5,13 @@
                 <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset">
                     <div @click="close" class="button close vrf__modal_close_btn"><i class="fa fa-close"></i></div>
 
-                    <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="!success && !show_success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-phone-and-name
                             @sendPhoneAndName="getPhoneAndName"
+                            :not_user_error="not_user_error"
                         ></confirm-phone-and-name>
                     </div>
-                    <div v-if="success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="success && show_success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-number-verification-code
                             :user="user"
                             :code="code"
@@ -18,6 +19,10 @@
                             :delete_token="delete_token"
                             @setSuccessValue="setSuccessValueThis"
                         ></confirm-number-verification-code>
+                    </div>
+
+                    <div v-if="!success && show_success" class="modal-body d-flex align-self-center justify-content-center">
+                        <success></success>
                     </div>
 
                 </div>
@@ -35,6 +40,7 @@
 
 <script>
 import {maska} from "maska";
+import Success from '../../../../components/elements/Success.vue';
 import ConfirmPhoneAndName from './crumbs/ConfirmPhoneAndName.vue';
 import ConfirmNumberVerificationCode from './crumbs/ConfirmNumberVerificationCode.vue';
 
@@ -50,10 +56,13 @@ export default {
             phone: null,
             success: null,
             delete_token: null,
+            not_user_error: null,
+            show_success: null,
             is_verification_session_code: null,
         }
     },
     components: {
+        Success,
         ConfirmPhoneAndName,
         ConfirmNumberVerificationCode,
     },
@@ -89,17 +98,31 @@ export default {
                         this.user = res.data.user;
                         this.code = res.data.code;
                         this.timer = res.data.timer;
-                        this.success = true;
+
+                        this.showSuccess();
+                        // this.success = true;
+                        this.not_user_error = null;
                         console.log('send-confirmation AAA res - ', this.user ,' - ', this.code, ' - ', this.timer )
                         // console.log('send-confirmation AAA res - ', res.data.user)
                     }
                     console.log('send-confirmation res AAA 222 - ', res.data )
                 })
                 .catch(err => {
+                    if( err && err.response && err.response.status === 419 && err.response.data.message === 'not user' ) {
+                        this.not_user_error = Math.floor(Math.random() * 999);
+                    }
                     console.log('send-confirmation err 1 AAA - ', err )
-                    console.log('send-confirmation err 2 AAA - ', err.response.data.message)
+                    console.log('send-confirmation err 2 AAA - ', err.response)
                 })
             }
+        },
+        showSuccess() {
+            this.show_success = true;
+
+            setTimeout( () => {
+                this.success = true;
+                this.show_success = true;
+            }, 3000 );
         },
         getCurrentTimes() {
             let date    = new Date();

@@ -33,6 +33,8 @@
 
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import { useToast } from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 export default {
     name: "ConfirmPVerificationCode",
@@ -100,19 +102,6 @@ export default {
                                 // Display an error notification
                                 let message = 'Yeni kod <b>Email</b> addresinizə göndərildi.';
                                 this.callNotification('success', message, 12000, true, 'green', 'right','top' );
-                                // let notyf = new Notyf({
-                                //     dismissible: true,
-                                //     duration: 12000,
-                                //     position: {
-                                //         x:'right',
-                                //         y:'top'
-                                //     },
-                                //     types:[{}]
-                                // });
-                                // notyf.open({
-                                //     type:'success',
-                                //     message: 'Yeni kod <b>Email</b> addresinizə göndərildi.',
-                                // });
 
                                 console.log( 'NEW-VERIFICATION CODE 1 res - ',  this.this_user_id+' - '+ this.this_code+' - '+ this.this_timer )
                             }
@@ -298,6 +287,8 @@ export default {
                     if( this.vrf_code.length ) {
                         this.vrf_code = this.vrf_code.filter( (e, index) => { return index !== 4 } );
                         this.deleteNotificationByMessage('Yanlış kod!');
+                        // let vue_notification = new useToast();
+                        // vue_notification.error('Yanlış kod!', { timeout:12000})
                     }
                 }
             }
@@ -327,8 +318,9 @@ export default {
                     console.info( 'send_verification_code - ', this.code === this.vrf_code );
                     this.checkVerificationCode();
                 }
-                else this.callNotification( 'error','<b>Yanlış kod!</b>',13000,true, 'red', 'right', 'bottom');
-
+                else {
+                    this.callNotification('error', '<b>Yanlış kod!</b>', 13000, true, 'red', 'right', 'bottom');
+                }
                 console.info( 'watch - ', code +' - '+ vrf_code );
             }
             return false;
@@ -446,6 +438,7 @@ export default {
                     if ( res && res.data && res.data.auth_user ) {
                         if( res.data.auth_user ) {
                             this.success = true;
+                            this.showSuccess();
                             document.location.href = '/product/'+Number( this.getProductID() );
                             console.log( 'check-verification-code res - ', res.data.auth_user )
                         }
@@ -458,6 +451,9 @@ export default {
                 .catch(err => {
                     console.log('check-verification-code err - ', err.response.data.message)
                 })
+        },
+        showSuccess() {
+
         },
         getCurrentTimes() {
             let date    = new Date();

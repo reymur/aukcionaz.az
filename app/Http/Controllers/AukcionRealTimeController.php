@@ -80,6 +80,7 @@ class AukcionRealTimeController extends Controller
 
             if( $product ) {
                 $product_owner_phone = $this->getProductOwnerPhone($product);
+
                 if( $this->generateNumber($product_owner_phone) == $request->number ) {
                     $token = new Token();
 
@@ -115,6 +116,10 @@ class AukcionRealTimeController extends Controller
 //                            ], 500 );
 //                        }
                     }
+                } else {
+                    return response()->json([
+                        'message' => 'not user'
+                    ], 419 );
                 }
 
                 return response()->json([
@@ -122,6 +127,10 @@ class AukcionRealTimeController extends Controller
                 ]);
             }
         }
+
+        return response()->json([
+            'user' => 'not all'
+        ], 500 );
     }
 
     public function checkVerificationCode(Request $request) {
