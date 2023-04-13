@@ -153,7 +153,7 @@ class AukcionRealTimeController extends Controller
         }
 
         return response()->json([
-            'user' => $token->user
+            'user' => $request->user_id
         ]);
     }
 

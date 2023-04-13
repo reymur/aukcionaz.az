@@ -40487,6 +40487,7 @@ __webpack_require__.r(__webpack_exports__);
       success: null,
       delete_token: null,
       not_user_error: null,
+      add_auksiyon: null,
       show_success: null,
       is_verification_session_code: null
     };
@@ -40497,6 +40498,15 @@ __webpack_require__.r(__webpack_exports__);
     ConfirmNumberVerificationCode: _crumbs_ConfirmNumberVerificationCode_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   methods: {
+    showSuccessModal: function showSuccessModal(data) {
+      var _this = this;
+      if (data) {
+        this.show_success = true;
+        setTimeout(function () {
+          _this.add_auksiyon = true;
+        }, 2000);
+      }
+    },
     setSuccessValueThis: function setSuccessValueThis(data) {
       this.success = null;
     },
@@ -40512,7 +40522,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     sendConfirm: function sendConfirm(name, phone) {
-      var _this = this;
+      var _this2 = this;
       if ( /*name &&*/phone) {
         axios({
           method: "post",
@@ -40525,34 +40535,35 @@ __webpack_require__.r(__webpack_exports__);
           }
         }).then(function (res) {
           if (res && res.data && res.data.user && res.data.code && res.data.timer) {
-            _this.user = res.data.user;
-            _this.code = res.data.code;
-            _this.timer = res.data.timer;
-            _this.showSuccess();
-            // this.success = true;
-            _this.not_user_error = null;
-            console.log('send-confirmation AAA res - ', _this.user, ' - ', _this.code, ' - ', _this.timer);
+            _this2.user = res.data.user;
+            _this2.code = res.data.code;
+            _this2.timer = res.data.timer;
+
+            // this.showSuccess();
+            _this2.success = true;
+            _this2.not_user_error = null;
+            console.log('send-confirmation AAA res - ', _this2.user, ' - ', _this2.code, ' - ', _this2.timer);
             // console.log('send-confirmation AAA res - ', res.data.user)
           }
 
           console.log('send-confirmation res AAA 222 - ', res.data);
         })["catch"](function (err) {
           if (err && err.response && err.response.status === 419 && err.response.data.message === 'not user') {
-            _this.not_user_error = Math.floor(Math.random() * 999);
+            _this2.not_user_error = Math.floor(Math.random() * 999);
           }
           console.log('send-confirmation err 1 AAA - ', err);
           console.log('send-confirmation err 2 AAA - ', err.response);
         });
       }
     },
-    showSuccess: function showSuccess() {
-      var _this2 = this;
-      this.show_success = true;
-      setTimeout(function () {
-        _this2.success = true;
-        _this2.show_success = true;
-      }, 3000);
-    },
+    // showSuccess() {
+    //     this.show_success = true;
+    //
+    //     setTimeout( () => {
+    //         this.success = true;
+    //         this.show_success = true;
+    //     }, 3000 );
+    // },
     getCurrentTimes: function getCurrentTimes() {
       var date = new Date();
       var h = Number(date.getHours()) * 3600000;
@@ -41439,9 +41450,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
 
 
+// import Success from '../../../../../components/elements/Success.vue';
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ConfirmPVerificationCode",
-  props: ['user', 'code', 'timer', 'delete_token'],
+  props: ['user', 'code', 'timer', 'delete_token', 'add_auksiyon'],
   data: function data() {
     return {
       input_1: '',
@@ -41598,10 +41611,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       var input_3 = document.getElementsByClassName('pincode3');
       var input_4 = document.getElementsByClassName('pincode4');
       var input_5 = document.getElementsByClassName('pincode5');
-
-      // console.info( 'key key key - ', key );
-
-      if (key && key >= 48 && key <= 57) {
+      console.info('key key key - ', key);
+      if (key && key >= 48 && key <= 57 || key >= 96 && key <= 105) {
         if (event && event.target && event.target.classList && event.target.classList[0]) {
           if (class_name === 'pincode1' && input_2 && input_2[0]) {
             this.detectInputs(input_2);
@@ -41722,7 +41733,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         var code = null;
         var vrf_code = null;
         if (this.vrf_code && this.vrf_code.length && _typeof(this.vrf_code) === 'object') {
-          code = this.code ? String(this.code) : localStorage.getItem('code');
+          var _this$code;
+          code = (_this$code = this.code) !== null && _this$code !== void 0 ? _this$code : String(this.code);
           vrf_code = String(this.vrf_code.join('').replace(', ', ''));
         }
         if (code === vrf_code) {
@@ -41763,7 +41775,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       if (parent && child && child.length && text) {
         child.forEach(function (el) {
           if (el.classList && el.classList.contains('notyf__message') && el.innerText.indexOf(text) !== -1) {
-            console.info('el.remove - ', parent);
+            // console.info( 'el.remove - ',  parent );
             parent.remove();
           } else if (el.children) _this6.recursiveDelete(parent, el.children, text);
         });
@@ -41839,14 +41851,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
       }).then(function (res) {
         if (res && res.data && res.data.auth_user) {
-          if (res.data.auth_user) {
-            _this8.success = true;
-            _this8.showSuccess();
-            document.location.href = '/product/' + Number(_this8.getProductID());
-            console.log('check-verification-code res - ', res.data.auth_user);
-          }
-          console.log('check-verification-code res 111 - ', res.data.auth_user);
+          _this8.success = true;
+          _this8.showSuccess();
+          _this8.$emit('showSuccessModal', true);
+          console.log('check-verification-code res - ', res.data.user);
         }
+
+        // console.log( 'check-verification-code ressss 222 - ',  res.data.user+' - '+res.data.code+' - '+res.data.timer )
         console.log('check-verification-code ressss 222 - ', res.data.user);
       })["catch"](function (err) {
         console.log('check-verification-code err - ', err.response.data.message);
@@ -42725,10 +42736,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Success",
+  props: ['add_auksiyon'],
   data: function data() {
     return {};
   },
-  methods: {},
+  watch: {
+    add_auksiyon: function add_auksiyon() {
+      if (this.add_auksiyon) document.location.href = '/product/' + Number(this.getProductID());
+    }
+  },
+  methods: {
+    getProductID: function getProductID() {
+      var start = window.location.pathname.lastIndexOf('/');
+      var url = window.location.pathname;
+      return url.substring(start + 1);
+    }
+  },
   mounted: function mounted() {
     var inter = setInterval(function () {
       console.log('SSSSSSSSSSSSSSSSSSSS = ', 'yes');
@@ -43657,18 +43680,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_confirm_for_add_on_auksiyon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("confirm-for-add-on-auksiyon");
   var _component_current_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("current-time-aukcion");
   var _component_later_time_aukcion = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("later-time-aukcion");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LIN TO ACTIVE AUKSIYON "), $data.auksiyon_status ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LIN TO ACTIVE AUKSIYON "), $data.auksiyon_status && !$props.auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("a", {
     key: 0,
     href: '/realtime/auksiyon/' + $data.product_id,
     type: "button",
     "class": "btn btn-success rounded-0 auksiyon_add_button"
-  }, _hoisted_4, 8 /* PROPS */, _hoisted_2)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_for_add_on_auksiyon)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), !$data.auksiyon_status && $props.auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }, _hoisted_4, 8 /* PROPS */, _hoisted_2)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_for_add_on_auksiyon)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Button trigger modal "), $props.auth_user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 2,
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.modalBackdrop && $options.modalBackdrop.apply($options, arguments);
     }),
     type: "button",
-    "class": "btn btn-danger rounded-0 auksiyon_add_button",
+    "class": "btn btn-success rounded-0 auksiyon_add_button",
     "data-bs-toggle": "modal",
     "data-bs-target": "#staticBackdrop"
   }, _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -44007,7 +44030,7 @@ var _hoisted_7 = {
 };
 var _hoisted_8 = {
   key: 1,
-  "class": "modal-body d-flex align-self-center justify-content-center"
+  "class": "modal-body d-flex align-self-center justify-content-center verification__code_modal"
 };
 var _hoisted_9 = {
   key: 2,
@@ -44033,16 +44056,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.close && $options.close.apply($options, arguments);
     }),
     "class": "button close vrf__modal_close_btn"
-  }, _hoisted_6), !$data.success && !$data.show_success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
+  }, _hoisted_6), !$data.success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_phone_and_name, {
     onSendPhoneAndName: $options.getPhoneAndName,
     not_user_error: $data.not_user_error
-  }, null, 8 /* PROPS */, ["onSendPhoneAndName", "not_user_error"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success && $data.show_success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
+  }, null, 8 /* PROPS */, ["onSendPhoneAndName", "not_user_error"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.success && !$data.show_success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_confirm_number_verification_code, {
     user: $data.user,
     code: $data.code,
     timer: $data.timer,
     delete_token: $data.delete_token,
-    onSetSuccessValue: $options.setSuccessValueThis
-  }, null, 8 /* PROPS */, ["user", "code", "timer", "delete_token", "onSetSuccessValue"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.success && $data.show_success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_success)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onSetSuccessValue: $options.setSuccessValueThis,
+    onShowSuccessModal: $options.showSuccessModal
+  }, null, 8 /* PROPS */, ["user", "code", "timer", "delete_token", "onSetSuccessValue", "onShowSuccessModal"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.show_success ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_success, {
+    add_auksiyon: $data.add_auksiyon
+  }, null, 8 /* PROPS */, ["add_auksiyon"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.open && $options.open.apply($options, arguments);
     }),
@@ -45000,7 +45026,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: "",
     disabled: "",
     "class": "resend__new_cod_btn"
-  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <push></push>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>")]);
+  }, " Yeni kod alın ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div v-if=\"show_success\" class=\"modal-body d-flex align-self-center justify-content-center\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <success></success>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>")]);
 }
 
 /***/ }),

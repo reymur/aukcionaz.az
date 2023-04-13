@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- LIN TO ACTIVE AUKSIYON -->
-        <a v-if="auksiyon_status" :href="'/realtime/auksiyon/'+product_id" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
+        <a v-if="auksiyon_status && !auth_user" :href="'/realtime/auksiyon/'+product_id" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
             <span class="aukcion__add_button_text"> Auksion-a keçid </span>
         </a>
 
@@ -10,7 +10,7 @@
         </div>
 
         <!-- Button trigger modal -->
-        <button v-if="!auksiyon_status && auth_user" @click="modalBackdrop" type="button" class="btn btn-danger rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button v-if="auth_user" @click="modalBackdrop" type="button" class="btn btn-success rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <span class="aukcion__add_button_text"> Auksion əlavə et </span>
         </button>
 

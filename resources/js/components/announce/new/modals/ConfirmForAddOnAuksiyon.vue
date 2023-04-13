@@ -5,24 +5,27 @@
                 <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset">
                     <div @click="close" class="button close vrf__modal_close_btn"><i class="fa fa-close"></i></div>
 
-                    <div v-if="!success && !show_success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-phone-and-name
                             @sendPhoneAndName="getPhoneAndName"
                             :not_user_error="not_user_error"
                         ></confirm-phone-and-name>
                     </div>
-                    <div v-if="success && show_success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="success && !show_success" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">
                         <confirm-number-verification-code
                             :user="user"
                             :code="code"
                             :timer="timer"
                             :delete_token="delete_token"
                             @setSuccessValue="setSuccessValueThis"
+                            @showSuccessModal="showSuccessModal"
                         ></confirm-number-verification-code>
                     </div>
 
-                    <div v-if="!success && show_success" class="modal-body d-flex align-self-center justify-content-center">
-                        <success></success>
+                    <div v-if="show_success" class="modal-body d-flex align-self-center justify-content-center">
+                        <success
+                            :add_auksiyon="add_auksiyon"
+                        ></success>
                     </div>
 
                 </div>
@@ -57,6 +60,7 @@ export default {
             success: null,
             delete_token: null,
             not_user_error: null,
+            add_auksiyon: null,
             show_success: null,
             is_verification_session_code: null,
         }
@@ -67,6 +71,15 @@ export default {
         ConfirmNumberVerificationCode,
     },
     methods:{
+        showSuccessModal(data) {
+            if( data ) {
+                this.show_success = true;
+
+                setTimeout( () => {
+                    this.add_auksiyon = true;
+                },2000 );
+            }
+        },
         setSuccessValueThis(data){
             this.success = null;
         },
@@ -99,8 +112,8 @@ export default {
                         this.code = res.data.code;
                         this.timer = res.data.timer;
 
-                        this.showSuccess();
-                        // this.success = true;
+                        // this.showSuccess();
+                        this.success = true;
                         this.not_user_error = null;
                         console.log('send-confirmation AAA res - ', this.user ,' - ', this.code, ' - ', this.timer )
                         // console.log('send-confirmation AAA res - ', res.data.user)
@@ -116,14 +129,14 @@ export default {
                 })
             }
         },
-        showSuccess() {
-            this.show_success = true;
-
-            setTimeout( () => {
-                this.success = true;
-                this.show_success = true;
-            }, 3000 );
-        },
+        // showSuccess() {
+        //     this.show_success = true;
+        //
+        //     setTimeout( () => {
+        //         this.success = true;
+        //         this.show_success = true;
+        //     }, 3000 );
+        // },
         getCurrentTimes() {
             let date    = new Date();
             let h       = Number( date.getHours() ) * 3600000;

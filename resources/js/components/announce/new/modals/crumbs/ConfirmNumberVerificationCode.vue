@@ -23,9 +23,10 @@
                 <a v-if="is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>
             </div>
 
-<!--            <div class="">-->
-<!--                <push></push>-->
+<!--            <div v-if="show_success" class="modal-body d-flex align-self-center justify-content-center">-->
+<!--                <success></success>-->
 <!--            </div>-->
+
         </div>
 </template>
 
@@ -35,10 +36,11 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import { useToast } from "vue-toastification";
 import "vue-toastification/dist/index.css";
+// import Success from '../../../../../components/elements/Success.vue';
 
 export default {
     name: "ConfirmPVerificationCode",
-    props:['user','code','timer', 'delete_token'],
+    props:['user','code','timer', 'delete_token','add_auksiyon'],
     data() {
         return {
             input_1: '',
@@ -209,9 +211,9 @@ export default {
             let input_4 = document.getElementsByClassName('pincode4');
             let input_5 = document.getElementsByClassName('pincode5');
 
-            // console.info( 'key key key - ', key );
+            console.info( 'key key key - ', key );
 
-            if( key && key >= 48 && key <= 57 ) {
+            if( (key && key >= 48 && key <= 57) || (key >= 96 && key <= 105 ) ) {
                 if( event && event.target && event.target.classList && event.target.classList[0] ) {
                     if ( class_name === 'pincode1' && input_2 && input_2[0] ) {
                         this.detectInputs(input_2);
@@ -310,7 +312,7 @@ export default {
                 let vrf_code = null;
 
                 if( this.vrf_code && this.vrf_code.length && typeof this.vrf_code === 'object' ) {
-                    code = this.code ? String( this.code ) : localStorage.getItem('code');
+                    code = this.code ?? String( this.code );
                     vrf_code = String( this.vrf_code.join('').replace(', ','') );
                 }
 
@@ -355,7 +357,7 @@ export default {
             if( parent && child && child.length && text ){
                 child.forEach( el => {
                     if( el.classList && el.classList.contains('notyf__message') && el.innerText.indexOf(text) !== -1 ) {
-                        console.info( 'el.remove - ',  parent );
+                        // console.info( 'el.remove - ',  parent );
                         parent.remove();
                     }
                     else if( el.children ) this.recursiveDelete(parent, el.children, text);
@@ -436,17 +438,15 @@ export default {
             })
                 .then(res => {
                     if ( res && res.data && res.data.auth_user ) {
-                        if( res.data.auth_user ) {
-                            this.success = true;
-                            this.showSuccess();
-                            document.location.href = '/product/'+Number( this.getProductID() );
-                            console.log( 'check-verification-code res - ', res.data.auth_user )
-                        }
+                        this.success = true;
+                        this.showSuccess();
+                        this.$emit('showSuccessModal', true);
 
-                        console.log( 'check-verification-code res 111 - ', res.data.auth_user )
+                        console.log( 'check-verification-code res - ', res.data.user )
                     }
 
-                    console.log( 'check-verification-code ressss 222 - ', res.data.user )
+                    // console.log( 'check-verification-code ressss 222 - ',  res.data.user+' - '+res.data.code+' - '+res.data.timer )
+                    console.log( 'check-verification-code ressss 222 - ',  res.data.user )
                 })
                 .catch(err => {
                     console.log('check-verification-code err - ', err.response.data.message)

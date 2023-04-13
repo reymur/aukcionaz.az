@@ -11,13 +11,23 @@
 <script>
 export default {
     name: "Success",
+    props:['add_auksiyon'],
     data() {
         return {
 
         }
     },
+    watch:{
+        add_auksiyon() {
+            if( this.add_auksiyon ) document.location.href = '/product/'+Number( this.getProductID() );
+        },
+    },
     methods: {
-
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
+        },
     },
     mounted() {
 
