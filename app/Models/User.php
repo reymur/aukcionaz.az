@@ -35,7 +35,12 @@ class User extends Authenticatable
     }
     public function phone(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Phone::class,'phoneable');
+        return $this->hasOne(Phone::class,'phoneable_id', 'id');
+    }
+
+    public function auksiyonGamer(): \Illuminate\Database\Eloquent\Relations\hasOne
+    {
+        return $this->hasOne(AuksiyonGamer::class, 'user_id' );
     }
 
     /**

@@ -178,7 +178,7 @@
                     ></subscribe-to-the-auction-modal>
                 </div>
 
-                <div class="align-self-end add__price">
+                <div v-if="!is_ausiyon_owner"  class="align-self-end add__price">
                     <h5 class="card-footer col-12 d-flex">
                         <input v-model="price" type="text" class="form-control me-2">
                         <button @click="addPrice" class="btn btn-success">
@@ -210,8 +210,9 @@ export default {
             reverse: 1,
             aukcionUsers: [],
             showContionue: true,
-            showNegotiation: false,
             showCompletion: false,
+            showNegotiation: false,
+            is_ausiyon_owner: null,
             confirm_to_subscribe: false,
             subscribe_confirm_modal: false,
         }
@@ -452,6 +453,11 @@ export default {
         },
     },
     computed: {
+        isAusiyonOwner() {
+            if( this.user && this.auksiyon && this.user.id && this.auksiyon.user_id ) {
+                if(  this.user.id === this.auksiyon.user_id ) this.is_ausiyon_owner = true;
+            }
+        },
         thisWindowHeight() {
             let main_div = document.getElementsByClassName('main__div');
             // if( main_div && main_div[0] ) {
@@ -461,6 +467,7 @@ export default {
         }
     },
     mounted() {
+        this.isAusiyonOwner;
         this.thisWindowHeight;
         // this.showMessage();
         this.getAuksiyonUsers();
@@ -488,6 +495,7 @@ export default {
         // for (let i = 0; i < 5000; i++) {
         //     this.addPrice2(i)
         // }
+        // console.log('KKKKKKKK - ', this.user.id+" - "+this.auksiyon.user_id )
 
     }
 }

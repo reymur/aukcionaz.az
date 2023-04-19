@@ -8,6 +8,8 @@
                     <div v-if="!success" class="modal-body d-flex align-self-center justify-content-center">
                         <confirm-phone-and-name-for-auksiyon-gamer
                             @sendPhoneAndName="getPhoneAndName"
+                            :isset_gamer="isset_gamer"
+                            :isset_gamer_error_text="isset_gamer_error_text"
                             :not_user_error="not_user_error"
                             :remove_errors="remove_errors"
                         ></confirm-phone-and-name-for-auksiyon-gamer>
@@ -17,6 +19,7 @@
                             :user="user"
                             :code="code"
                             :timer="timer"
+                            :auksiyon_id="auksiyon_id"
                             :delete_token="delete_token"
                             @setSuccessValue="setSuccessValueThis"
                             @showSuccessModal="showSuccessModal"
@@ -63,7 +66,10 @@ export default {
             success: null,
             delete_token: null,
             remove_errors: null,
+            isset_gamer: null,
+            isset_gamer_error_text: null,
             not_user_error: null,
+            auksiyon_id: null,
             add_auksiyon: null,
             show_success: null,
             is_verification_session_code: null,
@@ -121,10 +127,11 @@ export default {
                     },
                 })
                 .then(res => {
-                    if ( res && res.data && res.data && res.data.user && res.data.code && res.data.timer && res.data.product_owner ) {
+                    if ( res && res.data && res.data && res.data.code && res.data.timer && res.data.user && res.data.auksiyon_id ) {
                         this.user = res.data.user;
                         this.code = res.data.code;
                         this.timer = res.data.timer;
+                        this.auksiyon_id = res.data.auksiyon_id;
                         //
                         // this.showSuccess();
                         this.success = true;
@@ -138,7 +145,11 @@ export default {
                     if( err && err.response && err.response.status === 419 && err.response.data.message === 'not user' ) {
                         this.not_user_error = Math.floor(Math.random() * 999);
                     }
-                    console.log('send-confirmation err 1 AAA - ', err )
+                    if( err && err.response && err.response.status === 500 && err.response.data.isset_gamer ) {
+                        this.isset_gamer = Math.floor(Math.random() * 999);
+                        this.isset_gamer_error_text = err.response.data.isset_gamer;
+                        console.log('send-confirmation err 1 AAA - ', err.response.data.isset_gamer)
+                    }
                     console.log('send-confirmation err 2 AAA - ', err.response)
                 })
             }

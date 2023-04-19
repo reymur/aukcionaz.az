@@ -40,7 +40,7 @@ import "vue-toastification/dist/index.css";
 
 export default {
     name: "ConfirmPVerificationCode",
-    props:['user','code','timer', 'delete_token','add_auksiyon'],
+    props:['user','code','timer', 'auksiyon_id', 'delete_token','add_auksiyon'],
     data() {
         return {
             input_1: '',
@@ -122,8 +122,10 @@ export default {
                     method:"post",
                     url:"/delete-token",
                     data: {
-                        user_id: this.this_user_id,
                         code: this.this_code,
+                        user_id: this.this_user_id,
+                        auksiyon_id: this.auksiyon_id,
+                        auksiyon_gamer_id: this.this_user_id,
                     },
                 })
                     .then(res => {
@@ -471,7 +473,7 @@ export default {
             if( this.this_user_id && this.this_code ) this.deleteToken()
         })
 
-        // console.log('""""""""""""" - ', this.this_user_id+" - "+this.code+" - "+this.timer )
+        // console.log('KKKKKKKK - ', this.user.id+" - "+this.auksiyon_id )
     }
 }
 </script>

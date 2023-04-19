@@ -172,19 +172,21 @@ class AukcionRealTimeController extends Controller
     }
     public function sendConfirmationForGamer(Request $request) {
         if( $request->name && $request->number && $request->product_id && $request->save_time ) {
+            $phone = null;
             $auksiyon = null;
+            $issetAuksiyonGamer = null;
             $product_owner_phone = null;
             $product = GetProductByIdHelper($request->product_id);
-
             if( $product ) $product_owner_phone = $this->getProductOwnerPhone($product);
+
             if( $product && $product->auksiyon && $product->auksiyon->id ) $auksiyon = $product->auksiyon;
 
             $phone = Phone::where('phone', $request->number)->first();
+            if( $phone ) $issetAuksiyonGamer = $phone->user->auksiyonGamer;
 
-//            return response()->json([
-//                'request' => $product->auksiyon->id,
-//            ], 200 );
-
+            if( $issetAuksiyonGamer ) return response()->json([
+                'isset_gamer' => $phone->user->auksiyonGamer->phone->phone.' bu nömrənin sahibi artıq auksiyonda iştirak edir!'
+            ],500 );
 
             if( $phone && $phone->count() && $phone->user && $phone->user->id ) {
                 $token = new Token();
@@ -209,21 +211,38 @@ class AukcionRealTimeController extends Controller
 //                            );
 //
 //                            if( $message->sid ) {
-                    Auth::login( $phone->user );
 
-                    $new_auksiyon_gamer = AuksiyonGamer::create([
-                        'user_id'     => $phone->user->id,
-                        'auksiyon_id' => $auksiyon->id,
-                        'price'       => 0,
-                        'position'    => $this->getPosition(),
-                    ]);
+                    if( $this->isAuksiyonOwner($auksiyon, $token, $request->number) ){
+                        $auksiyon_product_owner = $this->isAuksiyonOwner($auksiyon, $token, $request->number);
+//                        Auth::login($auksiyon->user);
+//                        return response()->json([
+//                            'request' => $product_auksiyon_owner->id.' = '.$token->user->id
+//                        ], 500 );
 
-                    return response()->json([
-                        'product_owner' => ($product_owner_phone == $phone->phone) ? 'true' : 'false',
-                        'user' => $token->user,
-                        'code' => $token->code,
-                        'timer' => $token->save_time
-                    ], 200 );
+                        return response()->json([
+                            'user' => $auksiyon_product_owner,
+                            'code' => $token->code,
+                            'timer' => $token->save_time,
+                            'auksiyon_id' => $auksiyon->id
+                        ], 200);
+                    } else {
+//                        Auth::login($phone->user);
+                        $new_auksiyon_gamer = AuksiyonGamer::create([
+                            'user_id'     => $phone->user->id,
+                            'auksiyon_id' => $auksiyon->id,
+                            'price'       => 0,
+                            'position'    => $this->getPosition(),
+                        ]);
+
+                        if( $new_auksiyon_gamer ) {
+                            return response()->json([
+                                'user' => $token->user,
+                                'code' => $token->code,
+                                'timer' => $token->save_time,
+                                'auksiyon_id' => $auksiyon->id
+                            ], 200);
+                        }
+                    }
 //                            }
 //                        } catch ( \Exception $ex ) {
 //                            return response()->json([
@@ -259,7 +278,7 @@ class AukcionRealTimeController extends Controller
 //                            );
 //
 //                            if( $message->sid ) {
-                    Auth::login( $new_user );
+//                    Auth::login( $new_user );
 
                     $new_auksiyon_gamer = AuksiyonGamer::create([
                         'user_id'     => $new_user->id,
@@ -269,10 +288,10 @@ class AukcionRealTimeController extends Controller
                     ]);
 
                     return response()->json([
-                        'product_owner' => ($product_owner_phone == $new_user_phone->phone) ? 'true' : 'false',
                         'user' => $token->user,
                         'code' => $token->code,
-                        'timer' => $token->save_time
+                        'timer' => $token->save_time,
+                        'auksiyon_id' => $auksiyon->id
                     ], 200 );
 //                            }
 //                        } catch ( \Exception $ex ) {
@@ -293,17 +312,10 @@ class AukcionRealTimeController extends Controller
 //        ], 500 );
     }
 
-    public function getPosition() {
-        $auksiyon_gamers = AuksiyonGamer::latest('id')->first();
-        if( $auksiyon_gamers && $auksiyon_gamers->count() ) {
-            return (int) $auksiyon_gamers->position + 1;
-        }
-        return false;
-    }
     public function checkVerificationCode(Request $request) {
         if( $request->user_id && $request->code && $request->verification_code ) {
             if( $request->code == $request->verification_code ) {
-                $token = Token::where('user_id', $request->user_id)->firstOrFail();
+                $token = Token::where('user_id', $request->user_id)->first();
 
                 if( $token && $token->user_id && $token->isValid() ) {
                     Auth::login( $token->user );
@@ -322,6 +334,23 @@ class AukcionRealTimeController extends Controller
         return response()->json([
             'user' => $request->user_id
         ]);
+    }
+    public function isAuksiyonOwner($auksiyon, $token, $number) {
+        if( $auksiyon && $auksiyon->user && $token && $token->user && $number ) {
+            if ( ($auksiyon->user->phone->phone == $number) &&( $auksiyon->user->id == $token->user->id) )
+                return $auksiyon->user;
+
+            return false;
+        }
+        return false;
+    }
+
+    public function getPosition() {
+        $auksiyon_gamers = AuksiyonGamer::latest('id')->first();
+        if( $auksiyon_gamers && $auksiyon_gamers->count() ) {
+            return (int) $auksiyon_gamers->position + 1;
+        }
+        return false;
     }
 
     public function resendVerificationCode(Request $request) {
@@ -371,6 +400,18 @@ class AukcionRealTimeController extends Controller
                 ], 200);
             }
         }
+
+        if( $request->auksiyon_gamer_id && $request->auksiyon_id ) {
+            $this->deleteAuksiyonGamer($request->auksiyon_gamer_id, $request->auksiyon_id);
+        }
+    }
+
+    public function deleteAuksiyonGamer($gamer_id, $auksiyon_id) {
+        $is_gamer = AuksiyonGamer::where([
+            'user_id', $gamer_id, 'auksiyon_id', $auksiyon_id
+        ])->first();
+
+        if( $is_gamer ) $is_gamer->delete();
     }
 
     public function getTableInfo($table, $column1, $column2=false, $column_val1, $column_val2=false) {

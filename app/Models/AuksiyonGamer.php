@@ -16,6 +16,11 @@ class AuksiyonGamer extends Model
     }
 
     public function auksiyon() {
-        return $this->belongsTo(Auksiyon::class);
+        return $this->belongsTo(Auksiyon::class );
+    }
+
+    public function phone(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Phone::class, 'phoneable_id', 'user_id' );
     }
 }

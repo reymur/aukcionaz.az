@@ -33,7 +33,7 @@
                     <span class="text-danger text-opacity-75">*</span>
                 </label>
 
-                <div v-if="phone_error" class="invalid-feedback d-block fs-6 mt-1" id="name-error">
+                <div v-if="phone_error" class="invalid-feedback d-block fs-6 mt-1" id="phone-error">
                     {{ phone_error_text }}
                 </div>
             </div>
@@ -58,7 +58,7 @@ import {maska} from "maska";
 export default {
     name: "ConfirmPhoneAndName",
     directives: { maska },
-    props: ['not_user_error','remove_errors'],
+    props: ['isset_gamer','not_user_error','remove_errors','isset_gamer_error_text'],
     data() {
         return {
             name: null,
@@ -72,6 +72,14 @@ export default {
         }
     },
     watch: {
+        isset_gamer() {
+            this.btn_spinner = null;
+            this.phone_error = true;
+            if( this.phone_error ) {
+                this.phone_error_text = this.isset_gamer_error_text;
+                this.addErrorStyles('phone','border-danger', 'phone-error');
+            }
+        },
         remove_errors() {
             this.removeErrors();
         },
@@ -122,7 +130,7 @@ export default {
         },
         checkInputPhone() {
             // console.log( 'checkInputPhone - ' , this.phone )
-            let input_div = document.getElementById('phone');
+            // let input_div = document.getElementById('phone');
             this.phone = !this.phone ? this.phone : this.phone.trim();
             if( !this.phone || this.phone.length === 0 ) {
                 this.phone_error = true;
@@ -136,14 +144,33 @@ export default {
             }
 
             if( this.phone_error_text ) {
-                if( input_div && input_div.classList && !input_div.classList.contains('border-danger') ) {
-                    input_div.classList.add('border-danger');
-                }
+                this.addErrorStyles('phone', 'border-danger', 'phone-error');
             } else {
-                if( input_div.classList.contains('border-danger') ) {
-                    input_div.classList.remove('border-danger');
-                    input_div.classList.add('border-secondary');
-                }
+                this.removeErrorStyles('phone', 'border-secondary', 'border-danger')
+            }
+        },
+        addErrorStyles( input_name, add_class, other_tyles=null ) {
+            let input = document.getElementById(input_name);
+            if( other_tyles ) {
+                let set_int = setInterval( () => {
+                    let input_error = document.getElementById(other_tyles);
+                    if( input_error ) {
+                        clearInterval(set_int);
+                        input_error.style = 'margin-bottom: -25px;';
+                    }
+                }, 0.1 );
+                setTimeout(() => {
+                    clearInterval(set_int);
+                }, 10000);
+            }
+            if( input && input.classList && !input.classList.contains(add_class) )
+                input.classList.add(add_class);
+        },
+        removeErrorStyles(input_name, add_class, remove_class) {
+            let input = document.getElementById(input_name);
+            if( input.classList.contains(remove_class) ) {
+                input.classList.remove(remove_class);
+                input.classList.add(add_class);
             }
         },
         removeErrors() {
