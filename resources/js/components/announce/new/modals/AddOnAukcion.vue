@@ -1,16 +1,16 @@
 <template>
     <div class="">
         <!-- LIN TO ACTIVE AUKSIYON -->
-        <a v-if="auksiyon_status && !auth_user" :href="'/realtime/auksiyon/'+product_id" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
+        <a v-if="auksiyon_status" :href="'/realtime/auksiyon/'+product_id" type="button" class="btn btn-success rounded-0 auksiyon_add_button">
             <span class="aukcion__add_button_text"> Auksion-a keçid </span>
         </a>
 
-        <div v-if="!auth_user" class="">
+        <div v-if="!auksiyon_status && (!auth_user || auth_user && product_info && auth_user.id !== product_info.user_id)" class="">
             <confirm-for-add-on-auksiyon></confirm-for-add-on-auksiyon>
         </div>
 
         <!-- Button trigger modal -->
-        <button v-if="auth_user" @click="modalBackdrop" type="button" class="btn btn-success rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button v-if="!auksiyon_status && auth_user && product_info && auth_user.id === product_info.user_id" @click="modalBackdrop" type="button" class="btn btn-success rounded-0 auksiyon_add_button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <span class="aukcion__add_button_text"> Auksion əlavə et </span>
         </button>
 
@@ -495,7 +495,7 @@ export default {
         this.getCurrentTime(false);
         this.checkAuksiyon;
 
-        console.log('this.product_info = ', this.product_info )
+        console.log('this.product_info = ', this.auth_user.id, this.product_info.user_id )
     }
 }
 </script>

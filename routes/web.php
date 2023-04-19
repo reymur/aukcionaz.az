@@ -57,6 +57,7 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
     Route::post('/auksiyon/timer', 'auksiyonTimerFunc');
     Route::post('/complete-time-extend-timer', 'completeTimeExtendTimer');
     Route::post('/send/confirmation', 'sendConfirmation');
+    Route::post('/send/confirmation-for-gamer', 'sendConfirmationForGamer');
     Route::post('/check-verification-code', 'checkVerificationCode');
     Route::post('/resend-verification-code', 'resendVerificationCode');
     Route::post('/delete-token', 'deleteToken');
@@ -71,3 +72,5 @@ Route::prefix('product')->controller(ProductController::class)->group(function()
 });
 
 Route::post('/transaction/error/image/delete', [DeleteRollBackTransactionAnnounceImagesController::class, 'imageDelete']);
+
+Route::post('/send-auksiyon-message',[AukcionRealTimeController::class, 'myMess'] );

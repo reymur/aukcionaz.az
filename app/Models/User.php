@@ -28,6 +28,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Token::class);
     }
+
+    public function phones(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    {
+        return $this->morphMany(Phone::class,'phoneable');
+    }
     public function phone(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Phone::class,'phoneable');

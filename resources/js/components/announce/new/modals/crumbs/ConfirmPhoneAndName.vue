@@ -58,7 +58,7 @@ import {maska} from "maska";
 export default {
     name: "ConfirmPhoneAndName",
     directives: { maska },
-    props: ['not_user_error'],
+    props: ['not_user_error','remove_errors'],
     data() {
         return {
             name: null,
@@ -72,6 +72,9 @@ export default {
         }
     },
     watch: {
+        remove_errors() {
+            this.removeErrors();
+        },
         not_user_error(){
             if( this.not_user_error ) this.btn_spinner = false;
         }
@@ -128,6 +131,25 @@ export default {
                     input_div.classList.remove('border-danger');
                     input_div.classList.add('border-secondary');
                 }
+            }
+        },
+        removeErrors() {
+            let name_div = document.getElementById('name');
+            let phone_div = document.getElementById('phone');
+
+            this.name_error = null;
+            this.name_error_text = '';
+            this.phone_error = null;
+            this.phone_error_text = '';
+
+            if( name_div && name_div.classList && name_div.classList.contains('border-danger') ) {
+                name_div.classList.remove('border-danger');
+                name_div.classList.add('border-secondary');
+            }
+
+            if( phone_div && phone_div.classList && phone_div.classList.contains('border-danger') ) {
+                phone_div.classList.remove('border-danger');
+                phone_div.classList.add('border-secondary');
             }
         },
         sendPhoneAndName() {

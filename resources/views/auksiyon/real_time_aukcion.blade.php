@@ -19,12 +19,13 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        @if( $users && $product && $auksiyon )
+        @if( $auksiyon_gamers && $product && $auksiyon )
 
 {{--            :started_auksiyon="{{ $started_auksiyon }}"--}}
 
             <real-time-auksiyon
-                :users="{{ $users }}"
+                :user="{{ $user }}"
+                :auksiyon_gamers="{{ $auksiyon_gamers }}"
                 :product="{{ $product }}"
                 :auksiyon="{{ $auksiyon }}"
             ></real-time-auksiyon>

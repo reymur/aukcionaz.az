@@ -38,6 +38,14 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'useTLS' => true,
+                'host' => 'auksiyonaz.test', // add this
+                'port' => 6001, // and this
+                'encrypted' => true, // also this
+                'scheme' => 'https', // and this
+                'curl_options' => [ // since we're only doing stuff locally this is fine
+                    CURLOPT_SSL_VERIFYHOST => 0,
+                    CURLOPT_SSL_VERIFYPEER => 0,
+                ],
             ],
         ],
 

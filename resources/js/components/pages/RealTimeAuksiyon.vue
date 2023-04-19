@@ -1,5 +1,5 @@
 <template>
-    <div class="root">
+    <div class="main__div">
         <div class="col-12">
             <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 m-auto">
                 <div class="aukcion__product-div">
@@ -34,15 +34,15 @@
                         <h5 class="card-title m-0">Ən yüksək məbləğ:</h5>
                     </div>
 
-                    <h5 class="card-footer col-12 d-flex">
-                        <input v-model="price" type="text" class="form-control me-2">
-                        <button v-on:click="addPrice" class="btn btn-success">
-                            Qiymet
-                        </button>
-                    </h5>
+<!--                    <h5 class="card-footer col-12 d-flex">-->
+<!--                        <input v-model="price" type="text" class="form-control me-2">-->
+<!--                        <button v-on:click="addPrice" class="btn btn-success">-->
+<!--                            Qiymet-->
+<!--                        </button>-->
+<!--                    </h5>-->
                 </div>
 
-                <div class="col-12 ul__parent-div" v-bind:style="{height: ( 4 * 62) + 'px', overflow:'scroll'}">
+                <div class="col-12 ul__parent-div" v-bind:style="{height: ( 5 * 65) + 'px', overflow:'scroll'}">
 
                     <ul class="list-group" v-if="aukcionUsers.length > 5">
                         <li class="moving-item" v-for="user in aukcionUsers" :id="user.id" v-bind:style="{ top: (user.position * 62) + 'px'}">
@@ -103,7 +103,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                    </div>
+                            </div>
                         </li>
                     </ul>
                     <ul class="list-group" v-else>
@@ -171,6 +171,22 @@
                     </ul>
 
                 </div>
+
+                <div v-if="subscribe_confirm_modal" class="d-block subscribe__confirm_modal">
+                    <subscribe-to-the-auction-modal
+                        :confirm_to_subscribe="confirm_to_subscribe"
+                    ></subscribe-to-the-auction-modal>
+                </div>
+
+                <div class="align-self-end add__price">
+                    <h5 class="card-footer col-12 d-flex">
+                        <input v-model="price" type="text" class="form-control me-2">
+                        <button @click="addPrice" class="btn btn-success">
+                            Qiymet
+                        </button>
+                    </h5>
+                </div>
+
             </div>
         </div>
 
@@ -179,10 +195,11 @@
 
 <script>
 
+import SubscribeToTheAuctionModal from '../auksiyon/modals/SubscribeToTheAuctionModal.vue';
 export default {
-    props:['users', 'product', 'auksiyon'],
+    props:['user','auksiyon_gamers', 'product', 'auksiyon'],
     components: {
-
+        SubscribeToTheAuctionModal,
     },
     data() {
         return {
@@ -195,6 +212,8 @@ export default {
             showContionue: true,
             showNegotiation: false,
             showCompletion: false,
+            confirm_to_subscribe: false,
+            subscribe_confirm_modal: false,
         }
     },
     watch: {
@@ -204,41 +223,83 @@ export default {
             // if( auksiyon_horus && auksiyon_horus[0] )
             //     auksiyon_horus[0].innerHTML = this.millisecondsToTime( this.auksiyon_time );
         },
-        users: val => {
-            console.log("watch === ", this.users)
+        aukcionUsers() {
+            // this.upPrice();
+            // this.aukcionUsers = this.auksiyon_gamers;
+            // console.log( "watch === ", this.aukcionUsers )
         },
         handleClick () {
             this.model2 = true
-        }
+        },
     },
     methods: {
-        getProductID() {
-            let start = window.location.pathname.lastIndexOf('/');
-            let url = window.location.pathname;
-            return url.substring( start + 1 );
+        showMessage() {
+            // setTimeout( () => {
+                Echo.channel('auksiyon')
+                    .listen('RealTimeAuksiyon', (e) => {
+                        localStorage.setItem('users', e.users);
+                        // this.aukcionUsers = e.users;
+                        // this.upPrice();
+                        console.log('showMessage--- = ', e.users )
+                    });
+
+            // this.aukcionUsers = localStorage.getItem('users');
+
+                // console.log('showMessage QQQQ = ', this.aukcionUsers)
+                // },1000)
+            // console.log('showMessage 22222 = ' )
         },
         addPrice() {
-            axios.post('/set-aukcion-price', {price: this.price})
+            if( this.user ) {
+                axios.post('/set-aukcion-price', {
+                    user_id: this.user.id,
+                    price: this.price,
+                    auksiyon_id: this.auksiyon ? this.auksiyon.id : null,
+                })
                 .then(res => {
                     this.aukcionUsers = res.data.users
-                    // console.log('Relarion = ', this.aukcionUsers)
+                    console.log('this.aukcionUsers+++ = ', res )
+                    // this.showMessage()
                     this.upPrice()
-                    console.log("RES2 === ", res.data.users)
+                    console.log("RES2 === ", this.aukcionUsers )
                 }).catch(err => {
-                    console.log("ERROR2 === ", err)
-                })
-        },
-        upPrice: function () {
-            var self = this;
-            self.reverse = self.reverse * -1
+                    console.log("ERROR22 === ", err.response )
+                });
+            } else {
+                this.callSubscribeConfirmModal();
+            }
 
-            let newItems = self.aukcionUsers.slice().sort(function (a, b) {
+            // this.showMessage();
+        },
+        callSubscribeConfirmModal() {
+            let subscribe__confirm_modal = document.getElementsByClassName('subscribe__confirm_modal');
+            this.subscribe_confirm_modal = true;
+
+            let inter = setInterval( () => {
+                if( subscribe__confirm_modal && subscribe__confirm_modal[0] ) {
+                    console.log("clearInterval AAA")
+                    clearInterval(inter);
+
+                    this.confirm_to_subscribe = Math.random(0, 999);
+                }
+            },0.1 )
+        },
+        upPrice() {
+            var self = this;
+            this.reverse = this.reverse * -1
+
+            let newItems = this.aukcionUsers.slice().sort(function (a, b) {
                 return b.price - a.price;
             })
 
             newItems.forEach(function (item, index) {
                 item.position = index;
             });
+        },
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
         },
         millisecondsToTime(timer) {
             let milliseconds = Math.floor((timer % 1000) / 100),
@@ -256,20 +317,20 @@ export default {
             // console.log(msToTime(300000))
         },
         getAuksiyonUsers() {
-            axios.post('/get-auksion-users')
+            axios.post('/get-auksion-users', {auksiyon_id: this.auksiyon.id })
                 .then(res => {
                     this.aukcionUsers = res.data.users
-                    console.log('RELATIONS222 = ', res.data.users )
+                    console.log('RELATIONS222 = ', this.aukcionUsers )
                     this.upPrice();
                 }).catch(err => {
-                console.log("ERROR2 === ", err)
+                console.log("ERROR222 === ", err.response )
             });
         },
         auksiyonTimer() {
             let auksiyon_horus = document.getElementsByClassName('auksiyon_horus');
             let timer     = this.getTimer(this.auksiyon);
             let current   = this.getCurrentTime();
-            let date =  Number(timer) / 100;
+            let date =  Number(timer);
             let product_name = this.auksiyon.product.productable.title;
 
             if( !date ) {
@@ -379,21 +440,71 @@ export default {
             let s       = Number( date.getSeconds() )  * 1000;
 
             return (h + m + s);
-        }
+        },
+        checkAuksiyonUser() {
+            if( this.user && this.auksiyon ) {
+                if( this.user.id && this.auksiyon.user_id ) {
+                    if( this.user.id === this.auksiyon.user_id ) {
+                        this.subscribe = false;
+                    } else this.subscribe = true;
+                }
+            }
+        },
     },
     computed: {
-
+        thisWindowHeight() {
+            let main_div = document.getElementsByClassName('main__div');
+            // if( main_div && main_div[0] ) {
+            //     main_div[0].style = 'height: '+  window.screen.height +'px'
+            // }
+            console.log("main_div AAAA - ", window.screen.height  )
+        }
     },
     mounted() {
+        this.thisWindowHeight;
+        // this.showMessage();
         this.getAuksiyonUsers();
         this.auksiyonTimer();
 
-        // console.log("AAAAAAA auksiyon - ", this.auksiyon.product.productable.title )
+        let body = document.querySelector('body')
+
+        if( body ) body.style = 'overflow: hidden;';
+
+        console.log("AAAAAAA auksiyon ++[[ - ", this.auksiyon_gamers )
+
+        // document.onreadystatechange = function () {
+        //     let aaa = setInterval( () => {
+        //         if (document.readyState === 'complete') {
+        //             clearInterval(aaa)
+        //             Echo.channel('auksiyon')
+        //                 .listen('RealTimeAuksiyon', (e) => console.log('RealTimeAuksiyon: ' , e.message ));
+        //         }
+        //         // console.log('RealTimeAuksiyon AAA ' , document.readyState === 'complete' )
+        //     }, 0.1 )
+        // }
+
+        // console.log('MMMMMMMMMMMMMM - ' )
+
+        // for (let i = 0; i < 5000; i++) {
+        //     this.addPrice2(i)
+        // }
+
     }
 }
 </script>
 
 <style scoped>
+
+.add__price {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 7px 15px 0 15px;;
+}
+
 .moving-item {
     transition: all 1s ease;
     -webkit-transition: all 500ms ease;

@@ -29,6 +29,10 @@ class AudioVeVideo extends Model
         return $this->morphMany(Phone::class, 'phoneable');
     }
 
+    public function auksiyon(){
+        return $this->hasOne(Auksiyon::class, 'product_id');
+    }
+
     public function subCategory(){
         return $this->belongsTo(SubCategory::class);
     }

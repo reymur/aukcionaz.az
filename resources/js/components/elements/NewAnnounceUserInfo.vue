@@ -49,7 +49,7 @@
                                border-start-0 border-opacity-25 border-end-0
                                border-bottom-secondary bg-white fs-5"
                         placeholder="+994 (000) 000-00-00"
-                        v-maska="'+994 (###) ###-##-##'"
+                        v-maska="'+994## ###-##-##'"
                         id="phone"
                     >
                     <label for="floatingInput" class="text-secondary fs-5">
