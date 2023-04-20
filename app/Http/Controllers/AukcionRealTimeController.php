@@ -390,27 +390,27 @@ class AukcionRealTimeController extends Controller
     public function deleteToken(Request $request) {
         if( $request->user_id && $request->code ) {
             $token = new Token();
+            $token = new Token();
             $result = $token->where(['user_id'=>$request->user_id, 'code'=>$request->code])->first();
 
             if( $result ) {
                 $result->delete();
-
-                return response()->json([
-                    'deleted' => $result
-                ], 200);
             }
         }
+//        return response()->json([
+//            'deleted' => $request->auksiyon_gamer_id .' - '. $request->auksiyon_id
+//        ], 200);
 
         if( $request->auksiyon_gamer_id && $request->auksiyon_id ) {
-            $this->deleteAuksiyonGamer($request->auksiyon_gamer_id, $request->auksiyon_id);
+            $this->deleteAuksiyonGamer($request->auksiyon_gamer_id, $request->auksiyon_id );
+
+
         }
     }
 
     public function deleteAuksiyonGamer($gamer_id, $auksiyon_id) {
-        $is_gamer = AuksiyonGamer::where([
-            'user_id', $gamer_id, 'auksiyon_id', $auksiyon_id
-        ])->first();
-
+        $is_gamer = AuksiyonGamer::where(['user_id'=>$gamer_id, 'auksiyon_id'=>$auksiyon_id])->first();
+        Auth::logout();
         if( $is_gamer ) $is_gamer->delete();
     }
 

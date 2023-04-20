@@ -70,7 +70,7 @@ export default {
     },
     watch:{
         delete_token() {
-            if( this.this_user_id && this.this_code ) this.deleteToken()
+            if( this.this_user_id && this.this_code ) this.deleteToken( this.user.id, this.auksiyon_id )
         }
     },
     methods: {
@@ -116,7 +116,8 @@ export default {
                 }
             }, 2000 );
         },
-        deleteToken() {
+        deleteToken( auksiyon_gamer_id=null, auksiyon_id=null ) {
+
             if( this.this_user_id && this.this_code ) {
                 axios({
                     method:"post",
@@ -124,8 +125,8 @@ export default {
                     data: {
                         code: this.this_code,
                         user_id: this.this_user_id,
-                        auksiyon_id: this.auksiyon_id,
-                        auksiyon_gamer_id: this.this_user_id,
+                        auksiyon_id: auksiyon_id,
+                        auksiyon_gamer_id: auksiyon_gamer_id,
                     },
                 })
                     .then(res => {
@@ -158,6 +159,8 @@ export default {
                             if (sec < 0) {
                                 sec = '00:00';
                                 timer_div[0].innerHTML = sec;
+
+                                // this.deleteToken(null, null);
 
                                 let message = 'Gözləmə vaxtı bitdiyi üçün <br/> <b>kod</b> etibarsızdir!, <br/> Yeni <b>kod</b> alın';
                                 this.callNotification('warning', message,12000,true, 'orange', 'right', 'top');
@@ -314,18 +317,18 @@ export default {
                 let vrf_code = null;
 
                 if( this.vrf_code && this.vrf_code.length && typeof this.vrf_code === 'object' ) {
-                    code = this.code ?? String( this.code );
+                    code = this.this_code ?? String( this.this_code );
                     vrf_code = String( this.vrf_code.join('').replace(', ','') );
                 }
 
                 if( code === vrf_code ) {
-                    console.info( 'send_verification_code - ', this.code === this.vrf_code );
+                    console.info( 'send_verification_code - ', this.this_code === this.vrf_code );
                     this.checkVerificationCode();
                 }
                 else {
                     this.callNotification('error', '<b>Yanlış kod!</b>', 13000, true, 'red', 'right', 'bottom');
                 }
-                console.info( 'watch - ', code +' - '+ vrf_code );
+                console.info( 'watch 222 - ', this.this_code +' - '+ this.vrf_code );
             }
             return false;
         },
@@ -470,7 +473,7 @@ export default {
         this.verificationTimer( this.getCurrentTimes(), this.timer, true );
 
         document.addEventListener('DOMContentLoaded', () => {
-            if( this.this_user_id && this.this_code ) this.deleteToken()
+            if( this.this_user_id && this.this_code ) this.deleteToken(this.user.id, this.auksiyon_id)
         })
 
         // console.log('KKKKKKKK - ', this.user.id+" - "+this.auksiyon_id )
