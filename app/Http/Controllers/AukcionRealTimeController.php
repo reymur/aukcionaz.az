@@ -185,8 +185,8 @@ class AukcionRealTimeController extends Controller
             if( $phone ) $issetAuksiyonGamer = $phone->user->auksiyonGamer;
 
             if( $issetAuksiyonGamer ) return response()->json([
-                'isset_gamer' => $phone->user->auksiyonGamer->phone->phone.' bu nömrənin sahibi artıq auksiyonda iştirak edir!'
-            ],500 );
+                'isset_gamer' => $phone->user->auksiyonGamer
+            ], 500 );
 
             if( $phone && $phone->count() && $phone->user && $phone->user->id ) {
                 $token = new Token();

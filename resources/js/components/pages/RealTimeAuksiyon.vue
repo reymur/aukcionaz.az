@@ -283,7 +283,10 @@ export default {
 
                     this.confirm_to_subscribe = Math.random(0, 999);
                 }
-            },0.1 )
+            },0.1 );
+        },
+        checkAuksiyonGamer() {
+
         },
         upPrice() {
             var self = this;
@@ -496,7 +499,6 @@ export default {
         //     this.addPrice2(i)
         // }
         // console.log('KKKKKKKK - ', this.user.id+" - "+this.auksiyon.user_id )
-
     }
 }
 </script>

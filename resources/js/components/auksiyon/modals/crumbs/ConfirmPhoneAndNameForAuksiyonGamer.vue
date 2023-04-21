@@ -72,14 +72,14 @@ export default {
         }
     },
     watch: {
-        isset_gamer() {
-            this.btn_spinner = null;
-            this.phone_error = true;
-            if( this.phone_error ) {
-                this.phone_error_text = this.isset_gamer_error_text;
-                this.addErrorStyles('phone','border-danger', 'phone-error');
-            }
-        },
+        // isset_gamer() {
+        //     this.btn_spinner = null;
+        //     this.phone_error = true;
+        //     if( this.phone_error ) {
+        //         this.phone_error_text = this.isset_gamer_error_text;
+        //         this.addErrorStyles('phone','border-danger', 'phone-error');
+        //     }
+        // },
         remove_errors() {
             this.removeErrors();
         },
