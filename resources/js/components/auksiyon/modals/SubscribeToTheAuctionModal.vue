@@ -5,29 +5,29 @@
                 <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4 col-xxl-4 d-flex modal-inset">
                     <div @click="close" class="button close subscribe__modal_close_btn"><i class="fa fa-close"></i></div>
 
-<!--                    <div v-if="!success && !isset_gamer" class="modal-body d-flex align-self-center justify-content-center">-->
-<!--                        <confirm-phone-and-name-for-auksiyon-gamer-->
-<!--                            @sendPhoneAndName="getPhoneAndName"-->
-<!--                            :isset_gamer="isset_gamer"-->
-<!--                            :isset_gamer_error_text="isset_gamer_error_text"-->
-<!--                            :not_user_error="not_user_error"-->
-<!--                            :remove_errors="remove_errors"-->
-<!--                        ></confirm-phone-and-name-for-auksiyon-gamer>-->
-<!--                    </div>-->
-<!--                    <div v-if="success && !isset_gamer && !show_success" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">-->
-<!--                        <confirm-number-verification-code-for-auksiyon-gamer-->
-<!--                            :user="user"-->
-<!--                            :code="code"-->
-<!--                            :timer="timer"-->
-<!--                            :auksiyon_id="auksiyon_id"-->
-<!--                            :delete_token="delete_token"-->
-<!--                            @setSuccessValue="setSuccessValueThis"-->
-<!--                            @showSuccessModal="showSuccessModal"-->
-<!--                        ></confirm-number-verification-code-for-auksiyon-gamer>-->
-<!--                    </div>-->
+                    <div v-if="!success && !isset_gamer" class="modal-body d-flex align-self-center justify-content-center">
+                        <confirm-phone-and-name-for-auksiyon-gamer
+                            @sendPhoneAndName="getPhoneAndName"
+                            :isset_gamer="isset_gamer"
+                            :isset_gamer_error_text="isset_gamer_error_text"
+                            :not_user_error="not_user_error"
+                            :remove_errors="remove_errors"
+                        ></confirm-phone-and-name-for-auksiyon-gamer>
+                    </div>
+                    <div v-if="success && !isset_gamer && !show_success" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">
+                        <confirm-number-verification-code-for-auksiyon-gamer
+                            :user="user"
+                            :code="code"
+                            :timer="timer"
+                            :auksiyon_id="auksiyon_id"
+                            :delete_token="delete_token"
+                            @setSuccessValue="setSuccessValueThis"
+                            @showSuccessModal="showSuccessModal"
+                        ></confirm-number-verification-code-for-auksiyon-gamer>
+                    </div>
 
                     <!-- ISSET GAMER -->
-                    <div v-if="true" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">
+                    <div v-if="isset_gamer" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">
                         <isset-gamer-verification
                             :gamer="isset_gamer"
                             :code="code"
@@ -157,7 +157,7 @@ export default {
                         this.not_user_error = Math.floor(Math.random() * 999);
                     }
                     if( err && err.response && err.response.status === 500 && err.response.data.isset_gamer ) {
-                        this.isset_gamer = Math.floor(Math.random() * 999);
+                        this.isset_gamer = err.response.data.isset_gamer;
                         this.isset_gamer_error_text = err.response.data.isset_gamer;
                         console.log('send-confirmation err 1 AAA - ', err.response.data.isset_gamer)
                     }

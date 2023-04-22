@@ -180,7 +180,7 @@
 
                 <div v-if="!is_ausiyon_owner"  class="align-self-end add__price">
                     <h5 class="card-footer col-12 d-flex">
-                        <input v-model="price" type="text" class="form-control me-2">
+                        <input v-model="price" type="text" class="form-control me-2" inputmode="numeric" maxlength="9">
                         <button @click="addPrice" class="btn btn-success">
                             Qiymet
                         </button>
@@ -196,8 +196,10 @@
 <script>
 
 import SubscribeToTheAuctionModal from '../auksiyon/modals/SubscribeToTheAuctionModal.vue';
+import AuksiyonRepeatMethods from "../auksiyon/mixins/AuksiyonRepeatMethods";
 export default {
     props:['user','auksiyon_gamers', 'product', 'auksiyon'],
+    mixins:[AuksiyonRepeatMethods],
     components: {
         SubscribeToTheAuctionModal,
     },
@@ -262,6 +264,7 @@ export default {
                     console.log('this.aukcionUsers+++ = ', res )
                     // this.showMessage()
                     this.upPrice()
+                    this.callNotification( 'success', this.user.name+': '+this.getUserPrice(this.user, res.data.users), 10000, true, 'green', 'right','top')
                     console.log("RES2 === ", this.aukcionUsers )
                 }).catch(err => {
                     console.log("ERROR22 === ", err.response )

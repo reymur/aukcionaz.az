@@ -58,7 +58,7 @@ class AukcionRealTimeController extends Controller
         $product = false;
         $auksiyon = Auksiyon::where('product_id', $request->id)->first();
 
-        if( ! $auksiyon ) abort(404);
+        if( ! $auksiyon ) return redirect()->route('home');
 
         if( $auksiyon->product_id && $auksiyon->product_id == $request->id ) {
 
@@ -312,6 +312,49 @@ class AukcionRealTimeController extends Controller
 //        ], 500 );
     }
 
+    public function authorizeAuksiyonGamer(Request $request) {
+        if( $request->pin && $request->user_id && $request->auksiyon_id ) {
+            $auksiyon_gamer = AuksiyonGamer::where([
+                'pin' => $request->pin,
+                'user_id' => $request->user_id,
+                'auksiyon_id' => $request->auksiyon_id,
+            ])->first();
+
+            if( $auksiyon_gamer && $auksiyon_gamer->auksiyon ) {
+                $gamer = $auksiyon_gamer;
+                if( !$gamer->auksiyon->finished && $gamer->auksiyon->status ) {
+                    return response()->json([
+                        'auksiyon_is_finished' => true
+                    ], 422 );
+                }
+            }
+
+            if( $auksiyon_gamer && $auksiyon_gamer->user ) {
+                Auth::login( $auksiyon_gamer->user );
+
+                return response()->json([
+                    'request' => $auksiyon_gamer->auksiyon
+                ], 200);
+            }
+
+
+        }
+    }
+
+    public function exitFromAuksiyon(Request $request) {
+        if( $request->auksiyon_id ) {
+            $auksiyon = Auksiyon::where('id', $request->auksiyon_id )->first();
+
+            if( $auksiyon && $auksiyon->id == $request->auksiyon_id ) {
+                $auksiyon->delete();
+
+                return response()->json([
+                    'auction_removed' => $auksiyon
+                ], 200 );
+            }
+        }
+    }
+
     public function checkVerificationCode(Request $request) {
         if( $request->user_id && $request->code && $request->verification_code ) {
             if( $request->code == $request->verification_code ) {
@@ -514,13 +557,12 @@ class AukcionRealTimeController extends Controller
         if( $request->product_id ) {
             $is_auksiyon = $this->issetOnAuksiyon($request->product_id);
 
-            if( $is_auksiyon )
-                return response()->json([ 'auksiyon' => $is_auksiyon ]);
-            else
-                return response()->json([ 'auksiyon' => 'have not' ]);
+            if( ! $is_auksiyon ) return response()->json([ 'auksiyon' => 'have not' ], 404 );
+
+            return response()->json([ 'auksiyon' => $is_auksiyon ], 200 );
         }
 
-        return response()->json([ 'auksiyon' => 'AAAAAA' ]);
+        return response()->json([ 'auksiyon' => 'request->product_id not have' ], 500 );
     }
 
     public function completeTimeExtendTimer(Request $request) {

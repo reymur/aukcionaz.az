@@ -1,6 +1,7 @@
 <template>
     <div class="col-12">
 
+        <div v-if="!auksiyon_is_finished" class="">
             <div class="fs-5 justify-content-center pin__title">
                 <h4 class="text-bold">Sizin seans bitib!</h4>
                 <br/>
@@ -12,20 +13,25 @@
             </div>
             <div v-if="code_error" class="d-block invalid-feedback error__div"> Yanlış kod! </div>
 
-<!--            <div v-if="show_timer" class="code__timer">00:00</div>-->
-<!--            <div v-if="!show_timer" class="code__timer_one">00:00</div>-->
+            <!--            <div v-if="show_timer" class="code__timer">00:00</div>-->
+            <!--            <div v-if="!show_timer" class="code__timer_one">00:00</div>-->
 
-<!--            <div class="resend__new_cod_div">-->
-<!--                <div class="resend__new_cod_text"> Kod gəlmədi? </div>-->
-<!--                <a v-if="!is_resend_code" @click="e => e.preventDefault()" href="" disabled class="text-muted resend__new_cod_btn" > Yeni kod alın </a>-->
-<!--                <a v-if="is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>-->
-<!--            </div>-->
+            <!--            <div class="resend__new_cod_div">-->
+            <!--                <div class="resend__new_cod_text"> Kod gəlmədi? </div>-->
+            <!--                <a v-if="!is_resend_code" @click="e => e.preventDefault()" href="" disabled class="text-muted resend__new_cod_btn" > Yeni kod alın </a>-->
+            <!--                <a v-if="is_resend_code" @click="resendCode" href="" disabled class="resend__new_cod_btn" > Yeni kod alın </a>-->
+            <!--            </div>-->
 
-<!--            <div v-if="show_success" class="modal-body d-flex align-self-center justify-content-center">-->
-<!--                <success></success>-->
-<!--            </div>-->
-
+            <!--            <div v-if="show_success" class="modal-body d-flex align-self-center justify-content-center">-->
+            <!--                <success></success>-->
+            <!--            </div>-->
         </div>
+        <div v-else class="">
+            <h3 class="text-danger"> Auksyion Bitmişdir! </h3>
+
+            <button @click="exitFromAuksiyon" class="mt-3 fs-5 btn btn-danger">Çıxış</button>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -41,8 +47,9 @@ export default {
     props:['gamer','code', 'auksiyon_id'],
     data() {
         return {
-            test:22222,
             pin:'',
+            product_id: this.getProductID(),
+            auksiyon_is_finished: null,
             set_focus: null,
             vrf_code: [],
             this_code: this.code,
@@ -69,6 +76,28 @@ export default {
         }
     },
     methods: {
+        exitFromAuksiyon() {
+            document.location.href = '/';
+            // axios({
+            //     method: "post",
+            //     url: "/exit-from-auksiyon",
+            //     data: {
+            //         auksiyon_id: this.gamer.auksiyon_id,
+            //     },
+            // })
+            //     .then(res => {
+            //         if ( res && res.data && res.data.auction_removed ) {
+            //             console.log( 'auction_removed res - ', res.data.auction_removed )
+            //             document.location.href = '/';
+            //         }
+            //     })
+            //     .catch( err => {
+            //         if ( err && err.response && err.response.data ) {
+            //             console.log('auction_removed err 111 - ', err.response.data )
+            //         }
+            //         console.log('auction_removed err 222 - ', err.response )
+            //     })
+        },
         deleteToken( auksiyon_gamer_id=null, auksiyon_id=null ) {
 
             if( this.this_user_id && this.this_code ) {
@@ -96,18 +125,16 @@ export default {
             }
         },
         changeInput(event) {
-            let value = event.target.value;
             let key = event.which || event.keyCode || event.charCode;
             if( (key && key >= 48 && key <= 57) || (key >= 96 && key <= 105 ) ) {
 
                 if( this.pin.length < 5 ) this.pin += event.key;
 
                 if( this.pin.length === 5 ) {
-                    console.info( 'this.pin.length - ', this.pin );
-                    console.info( 'this.pin.length 111 - ', this.pin.length );
-                    if( this.test === this.pin ) {
-                        console.info( 'send_verification_code - ', this.test === this.pin );
-                        this.checkVerificationCode();
+                    console.info( 'this.gamer.pin && this.pin - ', this.gamer +' === '+ this.pin );
+                    if( this.gamer.pin === this.pin ) {
+                        console.info( 'send_verification_code - ', this.gamer.pin +' === '+ this.pin );
+                        this.authorizeGamer();
                     }
                     else {
                         this.callNotification('error', '<b>Yanlış kod!</b>', 13000, true, 'red', 'right', 'bottom');
@@ -125,6 +152,33 @@ export default {
             else {
                 event.preventDefault();
             }
+        },
+        authorizeGamer() {
+            axios({
+                method: "post",
+                url: "/authorize-auksiyon-gamer",
+                data: {
+                    pin: this.gamer.pin,
+                    user_id: this.gamer.user_id,
+                    auksiyon_id: this.gamer.auksiyon_id,
+                },
+            })
+                .then(res => {
+                    if ( res && res.data && res.data.request ) {
+                        this.success = true;
+                        this.showSuccess();
+                        this.$emit('showSuccessModal', true);
+
+                        console.log( 'authorize-auksiyon-gamer res - ', res.data.request )
+                    }
+                })
+                .catch( err => {
+                    if ( err && err.response && err.response.data && err.response.data.auksiyon_is_finished ) {
+                        this.auksiyon_is_finished = err.response.data.auksiyon_is_finished;
+                        console.log('auksiyon_is_finished err 111 - ', err.response.data.auksiyon_is_finished)
+                    }
+                    console.log('auksiyon_is_finished err 222 - ', err.response)
+                })
         },
         callNotification( type, message, duration, dismiss, background, horizontal,vertical) {
             let notyfErr = new Notyf({
@@ -232,32 +286,6 @@ export default {
             let start = window.location.pathname.lastIndexOf('/');
             let url = window.location.pathname;
             return url.substring( start + 1 );
-        },
-        checkVerificationCode() {
-            axios({
-                method: "post",
-                url: "/check-verification-code",
-                data: {
-                    user_id: this.this_user_id,
-                    code: this.this_code,
-                    verification_code: this.vrf_code.join('').replace(', ','')
-                },
-            })
-                .then(res => {
-                    if ( res && res.data && res.data.auth_user ) {
-                        this.success = true;
-                        this.showSuccess();
-                        this.$emit('showSuccessModal', true);
-
-                        console.log( 'check-verification-code res - ', res.data.user )
-                    }
-
-                    // console.log( 'check-verification-code ressss 222 - ',  res.data.user+' - '+res.data.code+' - '+res.data.timer )
-                    console.log( 'check-verification-code ressss 222 - ',  res.data.user )
-                })
-                .catch(err => {
-                    console.log('check-verification-code err - ', err.response.data.message)
-                })
         },
         showSuccess() {
 

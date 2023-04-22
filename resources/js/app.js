@@ -53,7 +53,7 @@ import ShowForPhoneScreen from './components/announce/products/crumbs/ShowForPho
 import ShowForDesktopScreen from './components/announce/products/crumbs/ShowForDesktopScreen.vue';
 
 // ADD ON AUKCION START
-import AddOnAukcion from "./components/announce/new/modals/AddOnAukcion.vue";
+import AddOnAukcion from "./components/auksiyon/modals/AddOnAukcion.vue";
 import CurrentTimeAukcion from "./components/announce/new/modals/CurrentTimeAukcion.vue";
 import LaterTimeAukcion from "./components/announce/new/modals/LaterTimeAukcion.vue";
 

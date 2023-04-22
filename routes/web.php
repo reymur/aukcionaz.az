@@ -58,6 +58,8 @@ Route::controller(AukcionRealTimeController::class)->group(function () {
     Route::post('/complete-time-extend-timer', 'completeTimeExtendTimer');
     Route::post('/send/confirmation', 'sendConfirmation');
     Route::post('/send/confirmation-for-gamer', 'sendConfirmationForGamer');
+    Route::post('/authorize-auksiyon-gamer', 'authorizeAuksiyonGamer');
+    Route::post('/exit-from-auksiyon', 'exitFromAuksiyon');
     Route::post('/check-verification-code', 'checkVerificationCode');
     Route::post('/resend-verification-code', 'resendVerificationCode');
     Route::post('/delete-token', 'deleteToken');
