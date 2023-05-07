@@ -49,7 +49,7 @@
                             <div class="col-12 d-flex">
                                 <div class="col-9">
                                     <div class="col-12 d-flex aukcion__text-info">
-                                        <div class="col-10 aukcion__text-name">{{ user.user.name }} </div>
+                                        <div class="col-10 aukcion__text-name">{{ user.user ? user.user.name : '' }} </div>
                                     </div>
 
                                     <div class="col-12 justify-content-center d-flex user__sub-titles">
@@ -106,12 +106,12 @@
                             </div>
                         </li>
                     </ul>
-                    <ul class="list-group" v-else>
+                    <ul class="list-group" v-if="aukcionUsers.length">
                         <li class="moving-item" v-for="user in aukcionUsers" :id="user.id" v-bind:style="{ top: (user.position * 62) + 'px'}">
                             <div class="col-12 d-flex">
                                 <div class="col-9">
                                     <div class="col-12 d-flex aukcion__text-info">
-                                        <div class="col-10 aukcion__text-name">{{ user.user.name ?? '' }} </div>
+                                        <div class="col-10 aukcion__text-name">{{ user.user ? user.user.name : '' }} </div>
                                     </div>
 
                                     <div class="col-12 justify-content-center d-flex user__sub-titles">
@@ -180,13 +180,18 @@
 
                 <div v-if="!is_ausiyon_owner"  class="align-self-end add__price">
                     <h5 class="card-footer col-12 d-flex">
-                        <input v-model="price" type="text" class="form-control me-2" inputmode="numeric" maxlength="9">
-                        <button @click="addPrice" class="btn btn-success">
+                        <input v-model="price" type="text" class="form-control me-2" id="price" inputmode="numeric" maxlength="9" placeholder="Qiymət ancaq rəqəmlərdən ibarət olmalıdir...">
+                        <button v-if="!price_spinner" @click="addPrice" class="btn btn-success">
                             Qiymet
+                        </button>
+
+                        <button v-else class="btn btn-success d-flex align-self-center py-2" type="button" disabled>
+                            <span class="spinner-grow spinner-grow-sm py-1" role="status" aria-hidden="true"></span>
+                            <span class="spinner-grow spinner-grow-sm py-1" role="status" aria-hidden="true"></span>
+                            <span class="spinner-grow spinner-grow-sm py-1" role="status" aria-hidden="true"></span>
                         </button>
                     </h5>
                 </div>
-
             </div>
         </div>
 
@@ -209,6 +214,7 @@ export default {
             auksiyon_time: null,
             model2: false,
             price: '',
+            price_spinner: null,
             reverse: 1,
             aukcionUsers: [],
             showContionue: true,
@@ -235,45 +241,57 @@ export default {
             this.model2 = true
         },
     },
+    created() {
+        Echo.channel('auksiyon')
+            .listen('RealTimeAuksiyon', e => {
+                console.log('AAAAAA]]] --- ', e.users.last_add_price.price )
+                if( e.users && e.users.all_gamers &&
+                    e.users.all_gamers.length && e.users.last_add_price &&
+                    e.users.last_add_price.user && e.users.last_add_price.user.name && e.users.last_add_price.price
+                ) {
+                    this.price = '';
+                    this.price_spinner = null;
+                    this.aukcionUsers = e.users.all_gamers;
+
+                    let user_name = e.users.last_add_price.user.name;
+                    let price = '<span class="fw-bolder fs-5">'+ e.users.last_add_price.price +'</span>';
+                    this.callNotification( 'success', user_name+': '+price, 10000, true, 'green', 'right','top');
+                    this.upPrice();
+                }
+                // console.log('CCCCCCCCCCCCC = ', this.aukcionUsers )
+            });
+    },
     methods: {
-        showMessage() {
-            // setTimeout( () => {
-                Echo.channel('auksiyon')
-                    .listen('RealTimeAuksiyon', (e) => {
-                        localStorage.setItem('users', e.users);
-                        // this.aukcionUsers = e.users;
-                        // this.upPrice();
-                        console.log('showMessage--- = ', e.users )
-                    });
-
-            // this.aukcionUsers = localStorage.getItem('users');
-
-                // console.log('showMessage QQQQ = ', this.aukcionUsers)
-                // },1000)
-            // console.log('showMessage 22222 = ' )
-        },
         addPrice() {
-            if( this.user ) {
-                axios.post('/set-aukcion-price', {
-                    user_id: this.user.id,
-                    price: this.price,
-                    auksiyon_id: this.auksiyon ? this.auksiyon.id : null,
-                })
-                .then(res => {
-                    this.aukcionUsers = res.data.users
-                    console.log('this.aukcionUsers+++ = ', res )
-                    // this.showMessage()
-                    this.upPrice()
-                    this.callNotification( 'success', this.user.name+': '+this.getUserPrice(this.user, res.data.users), 10000, true, 'green', 'right','top')
-                    console.log("RES2 === ", this.aukcionUsers )
-                }).catch(err => {
-                    console.log("ERROR22 === ", err.response )
-                });
-            } else {
-                this.callSubscribeConfirmModal();
+            if( !this.$props.user ) return this.callSubscribeConfirmModal();
+
+            let price = document.getElementById('price');
+            this.price_spinner = true;
+
+            if( !this.price.match(/^[0-9]+$/) ) {
+                if( price ) this.price = '';
+                setTimeout( () => { this.price_spinner = null },100);
+                return false;
             }
 
-            // this.showMessage();
+            this.sendPrice();
+        },
+        sendPrice() {
+            axios.post('/set-aukcion-price', {
+                user_id: this.$props.user.id,
+                price: this.price,
+                auksiyon_id: this.auksiyon ? this.auksiyon.id : null,
+            })
+                .then(res => {
+                    // this.aukcionUsers = res.data.users
+                    console.log('this.aukcionUsers+++ = ', res )
+                    // this.showMessage()
+                    // this.upPrice()
+                    // this.callNotification( 'success', this.user.name+': '+this.getUserPrice(this.user, res.data.users), 10000, true, 'green', 'right','top');
+                    console.log("RES2 === ", this.aukcionUsers )
+                }).catch(err => {
+                console.log("ERROR22 === ", err.response )
+            });
         },
         callSubscribeConfirmModal() {
             let subscribe__confirm_modal = document.getElementsByClassName('subscribe__confirm_modal');
@@ -292,7 +310,6 @@ export default {
 
         },
         upPrice() {
-            var self = this;
             this.reverse = this.reverse * -1
 
             let newItems = this.aukcionUsers.slice().sort(function (a, b) {
@@ -483,7 +500,8 @@ export default {
 
         if( body ) body.style = 'overflow: hidden;';
 
-        console.log("AAAAAAA auksiyon ++[[ - ", this.auksiyon_gamers )
+        console.log("UUUUUUUUUUU - ", this.$props.user )
+        // console.log("AAAAAAA auksiyon ++[[ - ", this.auksiyon_gamers )
 
         // document.onreadystatechange = function () {
         //     let aaa = setInterval( () => {

@@ -5,13 +5,17 @@
             <circle id="successAnimationCircle" cx="35" cy="35" r="24" stroke="#979797" stroke-width="2" stroke-linecap="round" fill="transparent"/>
             <polyline id="successAnimationCheck" stroke="#979797" stroke-width="2" points="23 34 34 43 47 27" fill="transparent"/>
         </svg>
+
+<!--        <div class="" id="title">-->
+<!--            <div v-if="success_title" class="animated fw-bold fs-4 text-black-50">{{ success_title }}</div>-->
+<!--        </div>-->
     </div>
 </template>
 
 <script>
 export default {
     name: "Success",
-    props:['add_auksiyon'],
+    props:['add_auksiyon','success_title'],
     data() {
         return {
 

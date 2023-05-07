@@ -14,7 +14,7 @@
                             :remove_errors="remove_errors"
                         ></confirm-phone-and-name-for-auksiyon-gamer>
                     </div>
-                    <div v-if="success && !isset_gamer && !show_success" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">
+                    <div v-if="success && !isset_gamer && !show_success && !in_the_game" class="modal-body d-flex align-self-center justify-content-center verification__code_modal">
                         <confirm-number-verification-code-for-auksiyon-gamer
                             :user="user"
                             :code="code"
@@ -35,8 +35,9 @@
                         ></isset-gamer-verification>
                     </div>
 
-                    <div v-if="show_success" class="modal-body d-flex align-self-center justify-content-center">
+                    <div v-if="show_success || in_the_game" class="modal-body d-flex align-self-center justify-content-center">
                         <success
+                            :success_title="success_title"
                             :add_auksiyon="add_auksiyon"
                         ></success>
                     </div>
@@ -74,8 +75,10 @@ export default {
             name: null,
             phone: null,
             success: null,
+            success_title: null,
             delete_token: null,
             remove_errors: null,
+            in_the_game: null,
             isset_gamer: null,
             isset_gamer_error_text: null,
             not_user_error: null,
@@ -149,6 +152,19 @@ export default {
                         this.not_user_error = null;
                         console.log('send-confirmation PHONE res - ', res.data )
                         // console.log('send-confirmation AAA res - ', res.data.user)
+                    }
+                    if( res && res.data && res.data && res.data.product_owner ) {
+                        console.log('=============||| - ', res.data.product_owner )
+                        this.success = true;
+                        this.show_success = true;
+                        this.success_title =  res.data.product_owner.name;
+                        setTimeout( () => {document.location.reload()}, 1300);
+                    }
+                    if( res && res.data && res.data && res.data.in_the_game ) {
+                        console.log('>>>>>>>>>>>>> - ', res.data.in_the_game )
+                        this.success = true;
+                        this.in_the_game = true;
+                        setTimeout( () => {document.location.reload()}, 1300);
                     }
                     console.log('send-confirmation res PHONE 222 - ', res.data )
                 })
