@@ -6,6 +6,7 @@ use App\Events\AukcionRealTimeSend;
 use App\Events\RealTimeAuksiyon;
 use App\Http\Requests\AukcionRealTimePriceRequest;
 use App\Jobs\AddProductInAukcionJob;
+use App\Jobs\SetAuksiyonPriceJob;
 use App\Models\Auksiyon;
 use App\Models\AuksiyonGamer;
 use App\Models\AuksiyonTimer;
@@ -49,7 +50,7 @@ class AukcionRealTimeController extends Controller
 
 //        dd(  $this->issetOnAuksiyon(1) );
 //        dd(  $request->id );
-
+//        Auth::login();
         if( ! $request->id ) abort(404);
 
 //        event(new RealTimeAuksiyon('AAAAAAAAAAA'));
@@ -105,7 +106,7 @@ class AukcionRealTimeController extends Controller
                         'last_add_price' => $this->getAukcionGamersLastPriceAdd($request->auksiyon_id),
                     ];
 
-                event( new RealTimeAuksiyon( $users ) );
+                $this->dispatch( new SetAuksiyonPriceJob($users) );
 
 //            broadcast( new AukcionRealTimeSend($request->user, $request->price) );
 //                return response()->json([
@@ -124,7 +125,9 @@ class AukcionRealTimeController extends Controller
         return false;
     }
     public function getAukcionGamersById($auksiyon_id) {
-        if( $auksiyon_id ) return AuksiyonGamer::where('auksiyon_id', $auksiyon_id)->get();
+        if( $auksiyon_id ) return AuksiyonGamer::where('auksiyon_id', $auksiyon_id)
+            ->with('user')
+            ->get();
         return false;
     }
 
@@ -565,22 +568,34 @@ class AukcionRealTimeController extends Controller
                     'started'    => \Carbon\Carbon::now(),
                     'status'     => 1,
                 ]);
+
+                return response()->json([
+                    'auksiyon' => $auksiyon
+                ], 200);
+
             } else if( $isset_on_auksiyon->finished && !$isset_on_auksiyon->status ) {
                 $isset_on_auksiyon->update([
                     'started'    => \Carbon\Carbon::now(),
                     'status'     => 1,
                     'finished'   => null,
                 ]);
-            }
 
-            return response()->json([
-                'auksiyon' => $auksiyon ?? $isset_on_auksiyon
-            ]);
+                return response()->json([
+                    'isset_on_auksiyon' => $isset_on_auksiyon
+                ], 200);
+            }
         }
+
+        return response()->json([
+            'error' => $request
+        ], 500);
     }
     public function addOnlyNowAuksiyonWithTimer(Request $request) {
 
-        if( $request->product_id && $request->current_auksiyon_with_time_horus && $request->current_auksiyon_with_time_minute  ) {
+        if( $request->product_id &&
+            $request->current_auksiyon_with_time_horus &&
+            $request->current_auksiyon_with_time_minute
+        ) {
             $product_id = $request->product_id;
             $horus = $request->current_auksiyon_with_time_horus;
             $minute = $request->current_auksiyon_with_time_minute;
@@ -595,6 +610,11 @@ class AukcionRealTimeController extends Controller
                     'timer'      => $horus.'_'.$minute,
                     'status'     => 1,
                 ]);
+
+                return response()->json([
+                    'auksiyon' => $auksiyon
+                ], 200 );
+
             } else if( $isset_on_auksiyon->finished && !$isset_on_auksiyon->status ) {
                 $isset_on_auksiyon->update([
                     'started'    => \Carbon\Carbon::now(),
@@ -602,12 +622,16 @@ class AukcionRealTimeController extends Controller
                     'finished'   => null,
                     'status'     => 1,
                 ]);
-            }
 
-            return response()->json([
-                'auksiyon' => $auksiyon ?? $isset_on_auksiyon
-            ]);
+                return response()->json([
+                    'auksiyon' =>  $this->issetOnAuksiyon($product_id)
+                ], 200 );
+            }
         }
+
+        return response()->json([
+            'error' => $request
+        ], 500);
     }
 
     public function checkAuksiyon(Request $request){
@@ -705,10 +729,9 @@ class AukcionRealTimeController extends Controller
     public function deleteAuksiyon($auksiyon_name, $auksiyon_id) {
         $auksiyon_timer = AuksiyonTimer::where('name', $auksiyon_name)->delete();
         $auksiyon       = Auksiyon::where('product_id', $auksiyon_id)->first();
-        $res = $auksiyon;
 
-        $res->update([
-            'timer'    => null,
+        $auksiyon->update([
+            'timer'    => NULL,
             'finished' => \Carbon\Carbon::now(),
             'status'   => 0
         ]);

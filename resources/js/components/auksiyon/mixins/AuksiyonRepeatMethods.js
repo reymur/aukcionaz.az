@@ -1,9 +1,155 @@
 
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import {toString} from "lodash";
 
 export default {
+    data() {
+        return {
+            add_time_loading: null,
+        }
+    },
+    computed:{
+        checkAuksiyon() {
+            let product_id = this.product_id;
+
+            if( product_id ) {
+                axios({
+                    method:'POST',
+                    url: '/check-auksiyon',
+                    data: { product_id: Number(product_id) }
+                })
+                    .then( res => {
+                        if( res && res.data && res.data.auksiyon ) {
+                            if( !res.data.auksiyon.finished && res.data.auksiyon.status  ) {
+                                this.auksiyon_status = res.data.auksiyon.status;
+                                // window.location.href = '/realtime/auksiyon/'+ product_id;
+                            }
+                            else if( res.data.auksiyon === 'no' ) {
+                                this.auksiyon_status = false;
+                            }
+
+                            console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
+                        }
+                    })
+                    .catch( err => {
+                        if( err && err.response && err.response.data && err.response.data ) {
+                            if( err.response.data.auksiyon === 'have not' ) {
+                                this.auksiyon_status = false;
+                            }
+                        }
+                        console.log( 'err is on auksiyon1111 - ', err.response.data )
+                    });
+            }
+
+            return this.auksiyon_status;
+        },
+    },
     methods: {
+        addOnlyNowAuksiyonWithTimer(product_id, horus, minute) {
+            this.add_time_loading = true;
+
+            axios({
+                method:'POST',
+                url: '/add-only-now-auksiyon-with-timer',
+                data: {
+                    product_id: Number(product_id),
+                    current_auksiyon_with_time_horus: horus,
+                    current_auksiyon_with_time_minute: minute,
+                }
+            })
+                .then( res => {
+                    if( res && res.data && res.data.auksiyon ) {
+                        if( res.data.auksiyon.status === 1 ) {
+                            this.checkAuksiyon;
+                            this.auksiyonTimer(res.data.auksiyon);
+                            setTimeout(()=> {
+                                this.add_time_loading = false;
+                            },2000)
+
+                            // window.location.reload();
+                        }
+                        console.log( 'res auksiyon WithTimer auksiyon - ', res.data.auksiyon )
+                    }
+                    console.log( 'res auksiyon WithTimer1111 - ', res )
+                })
+                .catch( err => {
+                    this.add_time_loading = true;
+                    console.log( 'err auksiyon WithTimer new - ', err );
+                });
+        },
+        auksiyonTimer(auksiyon) {
+            let timer     = this.getTimer(auksiyon);
+            let current   = this.getCurrentTimes();
+            let date =  Number(timer);
+            // let product_name = this.auksiyon.product.productable.title;
+
+            axios({
+                method:"POST",
+                url:"/auksiyon/timer",
+                data: {
+                    timer: Number(timer),
+                    name: auksiyon.id,
+                    time: date,
+                    current_time: this.getCurrentTimes()
+                }
+            }).then( res => {
+                if( res && res.data && res.data.time !== null && res.data.time !== undefined ) {
+                    // date = date - res.data.time;
+                    console.log("started AAAAAABBB res 111 -- === ", res.data.time )
+                    // console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
+                }
+                // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
+            }).catch( err => {
+                console.log("started AAAAAABBB err -- === ", err )
+                console.log("started AAAAAA response err -- === ", err.response )
+                console.log("started AAAAAA err.response.data.message err -- === ", err.response.data ?? err.response.data.message )
+            });
+
+            // console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
+        },
+        getCurrentTimes() {
+            let date    = new Date();
+            let h       = Number( date.getHours() ) * 3600000;
+            let m       = Number( date.getMinutes() )  * 60000;
+            let s       = Number( date.getSeconds() )  * 1000;
+
+            return (h + m + s);
+        },
+        getCurrentTime( clear=false ) {
+            let time_i = setInterval( () => {
+                let date = new Date();
+                let horus = date.getHours();
+                let minutes = toString(date.getMinutes());
+                let seconds = toString( date.getSeconds() );
+                if( minutes.length < 2 ) minutes = '0'+minutes;
+                if( seconds.length < 2 ) seconds = '0'+seconds;
+
+                this.current_time_show = horus+':'+minutes+':'+seconds;
+
+
+                // console.log('COLOR - ', date.getSeconds() )
+            }, 1000 );
+        },
+        getTimer(auksiyon_timer) {
+            if( auksiyon_timer && auksiyon_timer.timer ) {
+                let horus = null;
+                let minute = null;
+                let timer_arr = auksiyon_timer.timer.split('_');
+
+                if( timer_arr[0] && timer_arr[1] ) {
+                    horus  = Number(timer_arr[0]) * 3600000;
+                    minute = Number(timer_arr[1]) * 60000;
+                }
+
+                return horus + minute;
+            }
+        },
+        getProductID() {
+            let start = window.location.pathname.lastIndexOf('/');
+            let url = window.location.pathname;
+            return url.substring( start + 1 );
+        },
         callNotification( type, message, duration, dismiss, background, horizontal,vertical) {
             let noty_i = setInterval( () => {
                 let notyf = document.getElementsByClassName('notyf');

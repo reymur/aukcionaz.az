@@ -74,9 +74,11 @@
 import * as bootstrap from 'bootstrap';
 import {toString} from "lodash";
 import ConfirmForAddOnAuksiyon from '../../announce/new/modals/ConfirmForAddOnAuksiyon.vue';
+import AuksiyonRepeatMethods from "../mixins/AuksiyonRepeatMethods";
 export default {
     name: "AddOnAukcion",
     props: ['product_info','auth_user'],
+    mixins:[AuksiyonRepeatMethods],
     data () {
         return {
             // bodyColor: null,
@@ -104,42 +106,42 @@ export default {
     components: {
         ConfirmForAddOnAuksiyon
     },
-    computed:{
-        checkAuksiyon() {
-            let product_id = this.product_id;
-
-            if( product_id ) {
-                axios({
-                    method:'POST',
-                    url: '/check-auksiyon',
-                    data: { product_id: Number(product_id) }
-                })
-                .then( res => {
-                    if( res && res.data && res.data.auksiyon ) {
-                        if( !res.data.auksiyon.finished && res.data.auksiyon.status  ) {
-                            this.auksiyon_status = res.data.auksiyon.status;
-                            // window.location.href = '/realtime/auksiyon/'+ product_id;
-                        }
-                        else if( res.data.auksiyon === 'no' ) {
-                            this.auksiyon_status = false;
-                        }
-
-                        console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
-                    }
-                })
-                .catch( err => {
-                    if( err && err.response && err.response.data && err.response.data ) {
-                        if( err.response.data.auksiyon === 'have not' ) {
-                            this.auksiyon_status = false;
-                        }
-                    }
-                    console.log( 'err is on auksiyon1111 - ', err.response.data )
-                });
-            }
-
-            return this.auksiyon_status;
-        },
-    },
+    // computed:{
+    //     checkAuksiyon() {
+    //         let product_id = this.product_id;
+    //
+    //         if( product_id ) {
+    //             axios({
+    //                 method:'POST',
+    //                 url: '/check-auksiyon',
+    //                 data: { product_id: Number(product_id) }
+    //             })
+    //             .then( res => {
+    //                 if( res && res.data && res.data.auksiyon ) {
+    //                     if( !res.data.auksiyon.finished && res.data.auksiyon.status  ) {
+    //                         this.auksiyon_status = res.data.auksiyon.status;
+    //                         // window.location.href = '/realtime/auksiyon/'+ product_id;
+    //                     }
+    //                     else if( res.data.auksiyon === 'no' ) {
+    //                         this.auksiyon_status = false;
+    //                     }
+    //
+    //                     console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
+    //                 }
+    //             })
+    //             .catch( err => {
+    //                 if( err && err.response && err.response.data && err.response.data ) {
+    //                     if( err.response.data.auksiyon === 'have not' ) {
+    //                         this.auksiyon_status = false;
+    //                     }
+    //                 }
+    //                 console.log( 'err is on auksiyon1111 - ', err.response.data )
+    //             });
+    //         }
+    //
+    //         return this.auksiyon_status;
+    //     },
+    // },
     methods: {
         sendProductOnAuksiyon() {
             let product_id = this.product_id;
@@ -158,7 +160,7 @@ export default {
             ) {
                 console.log('addOnlyNowAuksiyonWithTimer = ', 'yes' )
                 if( this.horus && this.minute ) {
-                    this.addOnlyNowAuksiyonWithTimer(product_id);
+                    this.addOnlyNowAuksiyonWithTimer(product_id, this.horus, this.minute);
                 }
 
                 if( !this.horus ) this.horusAndMinuteError('current_horus_error','block');
@@ -188,32 +190,32 @@ export default {
                     console.log( 'err auksiyon - ', err.response.data )
                 });
         },
-        addOnlyNowAuksiyonWithTimer(product_id) {
-            axios({
-                method:'POST',
-                url: '/add-only-now-auksiyon-with-timer',
-                data: {
-                    product_id: Number(product_id),
-                    current_auksiyon_with_time_horus: this.horus,
-                    current_auksiyon_with_time_minute: this.minute,
-                }
-            })
-                .then( res => {
-                    if( res && res.data && res.data.auksiyon ) {
-                        if( res.data.auksiyon.status === 1 ) {
-                            this.checkAuksiyon;
-
-                            this.auksiyonTimer(res.data.auksiyon);
-
-                            window.location.reload();
-                        }
-                        console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
-                    }
-                })
-                .catch( err => {
-                    console.log( 'err auksiyon WithTimer - ', err.response.data )
-                });
-        },
+        // addOnlyNowAuksiyonWithTimer(product_id) {
+        //     axios({
+        //         method:'POST',
+        //         url: '/add-only-now-auksiyon-with-timer',
+        //         data: {
+        //             product_id: Number(product_id),
+        //             current_auksiyon_with_time_horus: this.horus,
+        //             current_auksiyon_with_time_minute: this.minute,
+        //         }
+        //     })
+        //         .then( res => {
+        //             if( res && res.data && res.data.auksiyon ) {
+        //                 if( res.data.auksiyon.status === 1 ) {
+        //                     this.checkAuksiyon;
+        //
+        //                     this.auksiyonTimer(res.data.auksiyon);
+        //
+        //                     window.location.reload();
+        //                 }
+        //                 console.log( 'res auksiyon WithTimer - ', res.data.auksiyon.status )
+        //             }
+        //         })
+        //         .catch( err => {
+        //             console.log( 'err auksiyon WithTimer - ', err.response.data )
+        //         });
+        // },
         horusAndMinuteError(error_name, display='') {
             let error_element = document.getElementsByClassName(error_name);
             if( error_element && error_element[0] ) {
@@ -276,11 +278,11 @@ export default {
             this.current_time_aukcion_yes = false;
             // this.changeVarsValue( true, false, true, false);
         },
-        getProductID() {
-            let start = window.location.pathname.lastIndexOf('/');
-            let url = window.location.pathname;
-            return url.substring( start + 1 );
-        },
+        // getProductID() {
+        //     let start = window.location.pathname.lastIndexOf('/');
+        //     let url = window.location.pathname;
+        //     return url.substring( start + 1 );
+        // },
         changeVarsValue( n, l, c_t_a_no, c_t_a_yes){
             this.now = n;
             this.later = l;
@@ -425,36 +427,36 @@ export default {
                 }
             }
         },
-        auksiyonTimer(auksiyon) {
-            let timer     = this.getTimer(auksiyon);
-            let current   = this.getCurrentTimes();
-            let date =  Number(timer);
-            // let product_name = this.auksiyon.product.productable.title;
-
-            axios({
-                method:"POST",
-                url:"/auksiyon/timer",
-                data: {
-                    timer: Number(timer),
-                    name: this.product_info.title,
-                    time: date,
-                    current_time: this.getCurrentTimes()
-                }
-            }).then( res => {
-                if( res && res.data && res.data.time !== null && res.data.time !== undefined ) {
-                    // date = date - res.data.time;
-                    console.log("started AAAAAABBB res 111 -- === ", res.data.time )
-                    // console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
-                }
-                // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
-            }).catch( err => {
-                console.log("started AAAAAABBB err -- === ", err )
-                console.log("started AAAAAA response err -- === ", err.response )
-                console.log("started AAAAAA err.response.data.message err -- === ", err.response.data ?? err.response.data.message )
-            });
-
-            // console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
-        },
+        // auksiyonTimer(auksiyon) {
+        //     let timer     = this.getTimer(auksiyon);
+        //     let current   = this.getCurrentTimes();
+        //     let date =  Number(timer);
+        //     // let product_name = this.auksiyon.product.productable.title;
+        //
+        //     axios({
+        //         method:"POST",
+        //         url:"/auksiyon/timer",
+        //         data: {
+        //             timer: Number(timer),
+        //             name: this.product_info.title,
+        //             time: date,
+        //             current_time: this.getCurrentTimes()
+        //         }
+        //     }).then( res => {
+        //         if( res && res.data && res.data.time !== null && res.data.time !== undefined ) {
+        //             // date = date - res.data.time;
+        //             console.log("started AAAAAABBB res 111 -- === ", res.data.time )
+        //             // console.log("started AAAAAABBB res 111 -- === ", this.millisecondsToTime(res.data.time) )
+        //         }
+        //         // console.log("started AAAAAABBB res 222 -- === ", this.millisecondsToTime(res.data.time) )
+        //     }).catch( err => {
+        //         console.log("started AAAAAABBB err -- === ", err )
+        //         console.log("started AAAAAA response err -- === ", err.response )
+        //         console.log("started AAAAAA err.response.data.message err -- === ", err.response.data ?? err.response.data.message )
+        //     });
+        //
+        //     // console.log("BBBBBBNNNNNNNNDDDDDD - ", product_name.title )
+        // },
         millisecondsToTime(timer) {
             let milliseconds = Math.floor((timer % 1000) / 100),
                 seconds      = Math.floor((timer / 1000) % 60),
@@ -470,35 +472,35 @@ export default {
 
             // console.log(msToTime(300000))
         },
-        getTimer(auksiyon_timer) {
-            if( auksiyon_timer && auksiyon_timer.timer ) {
-                let horus = null;
-                let minute = null;
-                let timer_arr = auksiyon_timer.timer.split('_');
-
-                if( timer_arr[0] && timer_arr[1] ) {
-                    horus  = Number(timer_arr[0]) * 3600000;
-                    minute = Number(timer_arr[1]) * 60000;
-                }
-
-                return horus + minute;
-            }
-        },
-        getCurrentTimes() {
-            let date    = new Date();
-            let h       = Number( date.getHours() ) * 3600000;
-            let m       = Number( date.getMinutes() )  * 60000;
-            let s       = Number( date.getSeconds() )  * 1000;
-
-            return (h + m + s);
-        }
+        // getTimer(auksiyon_timer) {
+        //     if( auksiyon_timer && auksiyon_timer.timer ) {
+        //         let horus = null;
+        //         let minute = null;
+        //         let timer_arr = auksiyon_timer.timer.split('_');
+        //
+        //         if( timer_arr[0] && timer_arr[1] ) {
+        //             horus  = Number(timer_arr[0]) * 3600000;
+        //             minute = Number(timer_arr[1]) * 60000;
+        //         }
+        //
+        //         return horus + minute;
+        //     }
+        // },
+        // getCurrentTimes() {
+        //     let date    = new Date();
+        //     let h       = Number( date.getHours() ) * 3600000;
+        //     let m       = Number( date.getMinutes() )  * 60000;
+        //     let s       = Number( date.getSeconds() )  * 1000;
+        //
+        //     return (h + m + s);
+        // }
     },
     mounted() {
         this.ifProductNoPublished();
         this.getCurrentTime(false);
-        this.checkAuksiyon;
+        // this.checkAuksiyon;
 
-        console.log('this.product_info = ', this.auth_user.id, this.product_info.user_id )
+        // console.log('this.product_info = ', this.auth_user.id, this.product_info.user_id )
     }
 }
 </script>

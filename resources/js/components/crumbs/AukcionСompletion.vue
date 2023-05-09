@@ -16,17 +16,30 @@
 
                     <h2 class="mt-2 text-danger time_is_over"> Vaxt bitdi! </h2>
 
-                    <div v-if=" !is_auth_user " class="waviy fw-bold time__add_waiting">
+                    <div v-if="is_auth_user" class="waviy fw-bold time__add_waiting">
                         <span class="d-flex justify-content-center timer_div_parent" style="--i:1">
-                            Vaxt artımı gözlənilir
+                            Vaxt artımı gözlənilir!
                             <div v-if="timer" class="ms-1 timer_div"></div>
                         </span>
                     </div>
+                    <div v-else class="">
+<!--                        <div  class="waviy mb-3 fw-bold time__add_waiting">-->
+<!--                            <span class="d-flex justify-content-center timer_div_parent" style="&#45;&#45;i:1">-->
+<!--                                Vaxtı artırın!-->
+<!--                                <div v-if="timer" class="ms-1 timer_div"></div>-->
+<!--                            </span>-->
+<!--                        </div>-->
+
+                        <div class="border border-1 border-secondary rounded-1 border-opacity-10 py-3 mt-4 mb-4">
+                            <add-auksiyon-time></add-auksiyon-time>
+                        </div>
+                    </div>
+
 <!--                    <p v-if=" !is_auth_user " class="fw-bold time__add_waiting"> Vaxt artımı gözlənilir! </p>-->
 
                     <div class="mb-4">
-                        <div v-if="is_auth_user" @click="extendAuksiyonTime" type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>
-                        <div v-if="is_auth_user" type="button" class="btn btn-danger w-75 fs-5">Sonlandır</div>
+<!--                        <div v-if="!is_auth_user" @click="extendAuksiyonTime" type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>-->
+<!--                        <div v-if="!is_auth_user" type="button" class="btn btn-danger w-75 fs-5">Sonlandır</div>-->
                         <a :href="'/product/'+product_id" v-if=" !is_auth_user " type="button" class="btn btn-danger w-75 fs-5">Çıxış</a>
                     </div>
                 </div>
@@ -60,6 +73,7 @@
 </template>
 
 <script>
+import AddAuksiyonTime from "./AddAuksiyonTime.vue";
 export default {
     name: "AukcionСompletion",
     props:['product','auksiyon','is_auth_user','stop_auksiyon'],
@@ -68,13 +82,14 @@ export default {
             timer: null,
             out_timer: null,
             is_stop_auksiyon: this.stop_auksiyon,
-            is_auth_user: this.is_auth_user,
+            isset_auth_user: this.is_auth_user,
             product_id: this.getProductID(),
             extend_tmie: null,
             is_product: null,
         }
     },
     components:{
+        AddAuksiyonTime,
         AukcionСompletionSuccess: 'complete-success'
     },
     watch: {
