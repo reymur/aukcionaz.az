@@ -12,7 +12,6 @@
                     </div>
 
                     <div v-if="product" class="col-8 d-flex align-items-center">
-
                         <component
                             :is="importAuksiyonComponentElements"
                             :product="product"

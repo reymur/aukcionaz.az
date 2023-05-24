@@ -3,7 +3,7 @@
         <div class="col-12 d-flex justify-content-center">
             <div class="col-4">
                 <div class="form-floating">
-                    <select @change="horusFunc" v-model="horus" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                    <select v-model="horus" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
                         <option value="0" selected> 00 </option>
                         <option v-for="h of 23" :value="h">
                             <span v-if="h > 0" class="">{{ h }} saat</span>
@@ -15,9 +15,9 @@
 
             <div class="col-4">
                 <div class="form-floating">
-                    <select @change="minuteFunc" v-model="minute"  class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                    <select v-model="minute"  class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
                         <option value="0" selected> 00 </option>
-                        <option v-for="m of 59" :value="m">{{ m }} dəyqə</option>
+                        <option v-for="m of 59" :value="m"> {{ m }} dəyqə </option>
                     </select>
                     <label for="floatingSelectGrid"> Dəyqə </label>
                 </div>
@@ -26,7 +26,7 @@
 
         <button v-if="!add_time_loading" @click="addTime" type="button" class="waviy col-8 btn btn-success mt-3" style="--i:1">
             <span class="d-flex text-white fs-5 justify-content-center">
-                Vaxtı artırın
+                Vaxtı artır
             </span>
         </button>
         <button v-else type="button" class="waviy col-8 btn btn-success mt-3" style="--i:1" disabled>
@@ -59,7 +59,9 @@ export default {
     },
     methods: {
         addTime() {
-            this.addOnlyNowAuksiyonWithTimer(this.product_id, this.horus, this.minute);
+            if( this.$props.user )
+                this.addOnlyNowAuksiyonWithTimer(this.product_id, this.horus, this.minute);
+            // else
         },
     }
 }

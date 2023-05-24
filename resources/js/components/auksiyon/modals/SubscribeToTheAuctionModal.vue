@@ -47,7 +47,7 @@
         </div>
         <div class="modal-overlay"></div>
 
-        <button @click="subscribeOpen" type="button" class="subscribe-open btn btn-danger rounded-0 auksiyon_add_button">
+        <button @click="subscribeOpen" type="button" class="subscribe-open btn btn-danger rounded-0 opacity-0 disabled auksiyon_add_button">
 <!--            <span class="aukcion__add_button_text"> İştirak et </span>-->
         </button>
 
@@ -62,10 +62,12 @@ import IssetGamerVerification from '../../../components/auksiyon/modals/crumbs/I
 import ConfirmPhoneAndName from '../../../components/announce/new/modals/crumbs/ConfirmPhoneAndName.vue';
 import ConfirmPhoneAndNameForAuksiyonGamer from '../../../components/auksiyon/modals/crumbs/ConfirmPhoneAndNameForAuksiyonGamer.vue';
 import ConfirmNumberVerificationCodeForAuksiyonGamer from '../../../components/auksiyon/modals/crumbs/ConfirmNumberVerificationCodeForAuksiyonGamer.vue';
+import AuksiyonRepeatMethods from "../mixins/AuksiyonRepeatMethods";
 
 export default {
     name: "ConfirmForAddOnAuksiyon",
     directives: { maska },
+    mixins:[AuksiyonRepeatMethods],
     props:['confirm_to_subscribe'],
     data() {
         return {
@@ -86,6 +88,7 @@ export default {
             add_auksiyon: null,
             show_success: null,
             is_verification_session_code: null,
+            confirm_to_subscribe_in: this.confirm_to_subscribe,
         }
     },
     components: {
@@ -123,64 +126,64 @@ export default {
         },
         getPhoneAndName(data) {
             if( data && data.name && data.phone ) {
-                this.sendConfirm(data.name, data.phone);
-                console.log( 'DATA - ', data )
+                this.sendConfirm(data.name, data.phone, "/send/confirmation/for-gamer");
+                console.log( 'DATA /send/confirmation/for-gamer - ', data )
             }
         },
-        sendConfirm(name, phone) {
-            if( name && phone ) {
-                axios({
-                    method: "post",
-                    url: "/send/confirmation-for-gamer",
-                    data: {
-                        name: name,
-                        number: phone,
-                        product_id: this.getProductID(),
-                        save_time: this.getCurrentTimes(),
-                      /*  name: name*/
-                    },
-                })
-                .then(res => {
-                    if ( res && res.data && res.data && res.data.code && res.data.timer && res.data.user && res.data.auksiyon_id ) {
-                        this.user = res.data.user;
-                        this.code = res.data.code;
-                        this.timer = res.data.timer;
-                        this.auksiyon_id = res.data.auksiyon_id;
-                        //
-                        // this.showSuccess();
-                        this.success = true;
-                        this.not_user_error = null;
-                        console.log('send-confirmation PHONE res - ', res.data )
-                        // console.log('send-confirmation AAA res - ', res.data.user)
-                    }
-                    if( res && res.data && res.data && res.data.product_owner ) {
-                        console.log('=============||| - ', res.data.product_owner )
-                        this.success = true;
-                        this.show_success = true;
-                        this.success_title =  res.data.product_owner.name;
-                        setTimeout( () => {document.location.reload()}, 1300);
-                    }
-                    if( res && res.data && res.data && res.data.in_the_game ) {
-                        console.log('>>>>>>>>>>>>> - ', res.data.in_the_game )
-                        this.success = true;
-                        this.in_the_game = true;
-                        setTimeout( () => {document.location.reload()}, 1300);
-                    }
-                    console.log('send-confirmation res PHONE 222 - ', res.data )
-                })
-                .catch(err => {
-                    if( err && err.response && err.response.status === 419 && err.response.data.message === 'not user' ) {
-                        this.not_user_error = Math.floor(Math.random() * 999);
-                    }
-                    if( err && err.response && err.response.status === 500 && err.response.data.isset_gamer ) {
-                        this.isset_gamer = err.response.data.isset_gamer;
-                        this.isset_gamer_error_text = err.response.data.isset_gamer;
-                        console.log('send-confirmation err 1 AAA - ', err.response.data.isset_gamer)
-                    }
-                    console.log('send-confirmation err 2 AAA - ', err.response)
-                })
-            }
-        },
+        // sendConfirm(name=null, phone, url) {
+        //     if( name && phone && url ) {
+        //         axios({
+        //             method: "post",
+        //             url: url,
+        //             data: {
+        //                 name: name,
+        //                 number: phone,
+        //                 product_id: this.getProductID(),
+        //                 save_time: this.getCurrentTimes(),
+        //             },
+        //         })
+        //         .then(res => {
+        //             console.log('MAIN PHONE res - ', res.data )
+        //             if ( res && res.data && res.data && res.data.code && res.data.timer && res.data.user && res.data.auksiyon_id ) {
+        //                 this.user = res.data.user;
+        //                 this.code = res.data.code;
+        //                 this.timer = res.data.timer;
+        //                 this.auksiyon_id = res.data.auksiyon_id;
+        //                 //
+        //                 // this.showSuccess();
+        //                 this.success = true;
+        //                 this.not_user_error = null;
+        //                 console.log('send-confirmation PHONE res - ', res.data )
+        //                 // console.log('send-confirmation AAA res - ', res.data.user)
+        //             }
+        //             if( res && res.data && res.data && res.data.product_owner ) {
+        //                 console.log('=============||| - ', res.data.product_owner )
+        //                 this.success = true;
+        //                 this.show_success = true;
+        //                 this.success_title =  res.data.product_owner.name;
+        //                 setTimeout( () => {document.location.reload()}, 1300);
+        //             }
+        //             if( res && res.data && res.data && res.data.in_the_game ) {
+        //                 console.log('>>>>>>>>>>>>> - ', res.data.in_the_game )
+        //                 this.success = true;
+        //                 this.in_the_game = true;
+        //                 setTimeout( () => {document.location.reload()}, 1300);
+        //             }
+        //             console.log('send-confirmation res PHONE 222 - ', res.data )
+        //         })
+        //         .catch(err => {
+        //             if( err && err.response && err.response.status === 419 && err.response.data.message === 'not user' ) {
+        //                 this.not_user_error = Math.floor(Math.random() * 999);
+        //             }
+        //             if( err && err.response && err.response.status === 500 && err.response.data.isset_gamer ) {
+        //                 this.isset_gamer = err.response.data.isset_gamer;
+        //                 this.isset_gamer_error_text = err.response.data.isset_gamer;
+        //                 console.log('send-confirmation err 1 AAA - ', err.response.data.isset_gamer)
+        //             }
+        //             console.log('send-confirmation err 2 AAA - ', err.response)
+        //         })
+        //     }
+        // },
         // showSuccess() {
         //     this.show_success = true;
         //
@@ -228,11 +231,13 @@ export default {
             }
 
             this.remove_errors = Math.random(0, 999);
+            this.$emit('closeAddPriceSpinner', true)
         }
     },
     mounted() {
 
         console.log(' SSSSSSSSSS- ', this.user)
+        console.log(' this.confirm_to_subscribe- ', this.confirm_to_subscribe )
     }
 }
 </script>

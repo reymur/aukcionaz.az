@@ -15,7 +15,7 @@ class CreateAuksiyonTimersTable extends Migration
     {
         Schema::create('auksiyon_timers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->bigInteger('auksiyon_id')->nullable();
             $table->string('time')->nullable();
             $table->string('current_save_time')->nullable();
             $table->timestamps();

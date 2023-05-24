@@ -1,6 +1,5 @@
 <template>
     <div class="col-12">
-
         <div class="background" id="success_auksiyon_fon"></div>
         <div class="container">
             <div class="row justify-content-center">
@@ -16,20 +15,13 @@
 
                     <h2 class="mt-2 text-danger time_is_over"> Vaxt bitdi! </h2>
 
-                    <div v-if="is_auth_user" class="waviy fw-bold time__add_waiting">
+                    <div v-if="! checkUser(user)" class="waviy fw-bold time__add_waiting">
                         <span class="d-flex justify-content-center timer_div_parent" style="--i:1">
                             Vaxt artımı gözlənilir!
-                            <div v-if="timer" class="ms-1 timer_div"></div>
+                            <div class="ms-1 timer_div"></div>
                         </span>
                     </div>
                     <div v-else class="">
-<!--                        <div  class="waviy mb-3 fw-bold time__add_waiting">-->
-<!--                            <span class="d-flex justify-content-center timer_div_parent" style="&#45;&#45;i:1">-->
-<!--                                Vaxtı artırın!-->
-<!--                                <div v-if="timer" class="ms-1 timer_div"></div>-->
-<!--                            </span>-->
-<!--                        </div>-->
-
                         <div class="border border-1 border-secondary rounded-1 border-opacity-10 py-3 mt-4 mb-4">
                             <add-auksiyon-time></add-auksiyon-time>
                         </div>
@@ -40,7 +32,7 @@
                     <div class="mb-4">
 <!--                        <div v-if="!is_auth_user" @click="extendAuksiyonTime" type="button" class="btn btn-success w-75 mb-1 fs-5">Vaxtı artır</div>-->
 <!--                        <div v-if="!is_auth_user" type="button" class="btn btn-danger w-75 fs-5">Sonlandır</div>-->
-                        <a :href="'/product/'+product_id" v-if=" !is_auth_user " type="button" class="btn btn-danger w-75 fs-5">Çıxış</a>
+                        <a :href="'/product/'+product_id" type="button" class="btn btn-danger w-75 fs-5">Çıxış</a>
                     </div>
                 </div>
                 <!--/.success-->
@@ -76,7 +68,7 @@
 import AddAuksiyonTime from "./AddAuksiyonTime.vue";
 export default {
     name: "AukcionСompletion",
-    props:['product','auksiyon','is_auth_user','stop_auksiyon'],
+    props:['user','product','auksiyon','stop_auksiyon'],
     data() {
         return {
             timer: null,
@@ -100,27 +92,85 @@ export default {
         }
     },
     methods:{
+        checkUser(user) {
+            if( ! user ) {
+                let find_it = setInterval( () => {
+                    let success_auksiyon_fon = document.getElementById('fon');
+                    if( success_auksiyon_fon ) clearInterval(find_it);
+                    console.log('success_auksiyon_fon - ',success_auksiyon_fon )
+                    if( success_auksiyon_fon ) success_auksiyon_fon.style = 'display: none; z-index:0; opacity:0';
+                }, 0.1 );
+                let find_it2 = setInterval( () => {
+                    let modalbox = document.getElementsByClassName('modalbox');
+                    if( modalbox ) clearInterval(find_it2);
+                    console.log('modalbox - ',modalbox )
+                    if( modalbox && modalbox[0] ) modalbox[0].remove();
+                }, 0.1 );
+                return this.$emit('callSubscribeConfirmModal', true);
+            }
+            if( user.id == this.auksiyon.user_id ) {
+                // console.log('USER - ',user.id,' - ', this.auksiyon.user_id )
+                return true;
+            }
+            return false;
+        },
         timeAddWaiting() {
-            let time = new Date().getSeconds();
-            axios({
-                method:"post",
-                url:"/complete-time-extend-timer",
-                data: { product_id: this.product_id, current_time: this.getCurrentTime()  }
-            })
-            .then( res => {
-                if( res && res.data && res.data.current_save_time ) {
-                    this.timer = true;
-                    this.getTimer( res.data.current_save_time );
-                    console.log("complete-time-extend-timer RES === ", res.data.current_save_time)
+            let str_min = '';
+            let i = 0;
+            let c = 0;
+            let h = 0;
+            let m = 0;
+            let s = 0;
+            setInterval( () => {
+                let timer_div = document.getElementsByClassName('timer_div');
+
+                if (timer_div && timer_div[0]) {
+                    // if( s > 10 ) {
+                    h = i / (3600 - 60);
+                    m = c / 59;
+                    i++;
+
+                    if( s >= 59 ) s = 0;
+                    if( c >= (3600 - 60) ) {
+                        str_min = '00:';
+                        c = 0;
+                    }
+                    else if( Math.floor(m) ) str_min = '';
+
+                    c++;
+                    s++;
+                    // str_min = m.toString();
+                    // sec = s.toString();
+
+                    // if( !m ) str2 = '';
+                    // if( m && str_min.length == 1 ) str2 = '0'+ Math.floor(c / 59) +':';
+                    // if( m && str_min.length > 1 )  str2 = Math.floor(c / 59) +':';
+
+                    timer_div[0].innerHTML = ' - ' + (Math.floor(h) ? Math.floor(h)+':' : '') + (Math.floor(m) ? Math.floor(m)+':' : '') + str_min + s;
+                    // }
+                    // else timer_div[0].innerHTML = ' - '+ ++s;
                 }
-            })
-            .catch( err => {
-                console.log("complete-time-extend-timer ERR === ", err.response.data.message )
-            })
+            }, 1000 );
+                    // let time = new Date().getSeconds();
+            // axios({
+            //     method:"post",
+            //     url:"/complete-time-extend-timer",
+            //     data: { product_id: this.product_id, current_time: this.getCurrentTime()  }
+            // })
+            // .then( res => {
+            //     if( res && res.data && res.data.current_save_time ) {
+            //         this.timer = true;
+            //         this.getTimer( res.data.current_save_time );
+            //         console.log("complete-time-extend-timer RES === ", res.data.current_save_time)
+            //     }
+            // })
+            // .catch( err => {
+            //     console.log("complete-time-extend-timer ERR === ", err.response.data.message )
+            // })
         },
         getTimer( time ) {
             if( time ) {
-                let timer = 30000 - (this.getCurrentTime() - Number(time));
+                let timer = 32220000 - (this.getCurrentTime() - Number(time));
                 let time_is_over = document.getElementsByClassName('time_is_over');
                 let time__add_waiting = document.getElementsByClassName('time__add_waiting');
                 let timer_div_parent = document.getElementsByClassName('timer_div_parent');
@@ -224,7 +274,7 @@ export default {
                     //     success[0].toggle();
                     // });
 
-                    if( fon.style.display && success[0].style.display === 'none' ) {
+                    if( fon.style.display &&  success[0] && success[0].style && success[0].style.display === 'none' ) {
                         fon.style.display = 'block';
                         body.style = 'overflow: hidden';
                         success[0].style.display = 'block';

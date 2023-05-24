@@ -16,9 +16,11 @@
                 <div class="card">
                     <h5 v-if="stop_auksiyon" class="card-header bg-transparent p-0 auksion_completion">
                         <auksion-completion
+                            :user="user"
                             :product="product"
                             :auksiyon="auksiyon"
                             :stop_auksiyon="stop_auksiyon"
+                            @callSubscribeConfirmModal="callSubscribeConfirmModal"
                         ></auksion-completion>
                     </h5>
 
@@ -175,6 +177,7 @@
                 <div v-if="subscribe_confirm_modal" class="d-block subscribe__confirm_modal">
                     <subscribe-to-the-auction-modal
                         :confirm_to_subscribe="confirm_to_subscribe"
+                        @closeAddPriceSpinner="closeAddPriceSpinner"
                     ></subscribe-to-the-auction-modal>
                 </div>
 
@@ -262,6 +265,9 @@ export default {
             });
     },
     methods: {
+        closeAddPriceSpinner(data){
+            if(data) this.price_spinner = null;
+        },
         addPrice() {
             if( !this.$props.user ) return this.callSubscribeConfirmModal();
 
@@ -290,8 +296,18 @@ export default {
                     // this.callNotification( 'success', this.user.name+': '+this.getUserPrice(this.user, res.data.users), 10000, true, 'green', 'right','top');
                     console.log("RES2 === ", this.aukcionUsers )
                 }).catch(err => {
-                console.log("ERROR22 === ", err.response )
-            });
+                    if( err && err.response && err.response.data.user && err.response.data.user === 'no' ) {
+                        this.subscribe_confirm_modal = true;
+                        setTimeout( () => {
+                            if( this.subscribe_confirm_modal )
+                                this.confirm_to_subscribe = Math.floor( Math.random() * 999 );
+                        }, 100 )
+
+                        // alert( this.confirm_to_subscribe )
+                        console.log("ERROR22 user no === ",  err.response.data.user );
+                    }
+                    console.log("ERROR22 === ", err.response )
+                });
         },
         callSubscribeConfirmModal() {
             let subscribe__confirm_modal = document.getElementsByClassName('subscribe__confirm_modal');
@@ -381,7 +397,7 @@ export default {
                     url: "/auksiyon/timer",
                     data: {
                         timer: Number(timer),
-                        name:  product_name,
+                        auksiyon_id: this.auksiyon.id,
                         time:  date,
                         current_time: this.getCurrentTime()
                     }
@@ -410,8 +426,8 @@ export default {
                         method:"POST",
                         url:"/auksiyon/timer",
                         data: {
-                            auksiyon_name: product_name,
-                            auksiyon_id: this.getProductID(),
+                            auksiyon_id: this.auksiyon.id,
+                            // auksiyon_id: this.getProductID(),
                             stop_auksiyon_timer: 1,
                         }
                     }).then( res => {
@@ -476,7 +492,7 @@ export default {
         },
     },
     computed: {
-        isAusiyonOwner() {
+        isAuksiyonOwner() {
             if( this.user && this.auksiyon && this.user.id && this.auksiyon.user_id ) {
                 if(  this.user.id === this.auksiyon.user_id ) this.is_ausiyon_owner = true;
             }
@@ -490,7 +506,7 @@ export default {
         }
     },
     mounted() {
-        this.isAusiyonOwner;
+        this.isAuksiyonOwner;
         this.thisWindowHeight;
         // this.showMessage();
         this.getAuksiyonUsers();

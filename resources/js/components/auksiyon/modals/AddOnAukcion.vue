@@ -106,42 +106,42 @@ export default {
     components: {
         ConfirmForAddOnAuksiyon
     },
-    // computed:{
-    //     checkAuksiyon() {
-    //         let product_id = this.product_id;
-    //
-    //         if( product_id ) {
-    //             axios({
-    //                 method:'POST',
-    //                 url: '/check-auksiyon',
-    //                 data: { product_id: Number(product_id) }
-    //             })
-    //             .then( res => {
-    //                 if( res && res.data && res.data.auksiyon ) {
-    //                     if( !res.data.auksiyon.finished && res.data.auksiyon.status  ) {
-    //                         this.auksiyon_status = res.data.auksiyon.status;
-    //                         // window.location.href = '/realtime/auksiyon/'+ product_id;
-    //                     }
-    //                     else if( res.data.auksiyon === 'no' ) {
-    //                         this.auksiyon_status = false;
-    //                     }
-    //
-    //                     console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
-    //                 }
-    //             })
-    //             .catch( err => {
-    //                 if( err && err.response && err.response.data && err.response.data ) {
-    //                     if( err.response.data.auksiyon === 'have not' ) {
-    //                         this.auksiyon_status = false;
-    //                     }
-    //                 }
-    //                 console.log( 'err is on auksiyon1111 - ', err.response.data )
-    //             });
-    //         }
-    //
-    //         return this.auksiyon_status;
-    //     },
-    // },
+    computed:{
+        // checkAuksiyon() {
+        //     let product_id = this.product_id;
+        //
+        //     if( product_id ) {
+        //         axios({
+        //             method:'POST',
+        //             url: '/check-auksiyon',
+        //             data: { product_id: Number(product_id) }
+        //         })
+        //             .then( res => {
+        //                 if( res && res.data && res.data.auksiyon ) {
+        //                     if( !res.data.auksiyon.finished && res.data.auksiyon.status  ) {
+        //                         this.auksiyon_status = res.data.auksiyon.status;
+        //                         // window.location.href = '/realtime/auksiyon/'+ product_id;
+        //                     }
+        //                     else if( res.data.auksiyon === 'no' ) {
+        //                         this.auksiyon_status = false;
+        //                     }
+        //
+        //                     console.log( 'res is on auksiyon1111 - ', res.data.auksiyon )
+        //                 }
+        //             })
+        //             .catch( err => {
+        //                 if( err && err.response && err.response.data && err.response.data ) {
+        //                     if( err.response.data.auksiyon === 'have not' ) {
+        //                         this.auksiyon_status = false;
+        //                     }
+        //                 }
+        //                 console.log( 'err is on auksiyon1111 - ', err.response.data )
+        //             });
+        //     }
+        //
+        //     return this.auksiyon_status;
+        // },
+    },
     methods: {
         sendProductOnAuksiyon() {
             let product_id = this.product_id;
@@ -498,7 +498,7 @@ export default {
     mounted() {
         this.ifProductNoPublished();
         this.getCurrentTime(false);
-        // this.checkAuksiyon;
+        this.checkAuksiyon;
 
         // console.log('this.product_info = ', this.auth_user.id, this.product_info.user_id )
     }

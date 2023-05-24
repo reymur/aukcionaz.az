@@ -46,10 +46,12 @@ import {maska} from "maska";
 import Success from '../../../../components/elements/Success.vue';
 import ConfirmPhoneAndName from './crumbs/ConfirmPhoneAndName.vue';
 import ConfirmNumberVerificationCode from './crumbs/ConfirmNumberVerificationCode.vue';
+import AuksiyonRepeatMethods from "../../../auksiyon/mixins/AuksiyonRepeatMethods";
 
 export default {
     name: "ConfirmForAddOnAuksiyon",
     directives: { maska },
+    mixins:[AuksiyonRepeatMethods],
     data() {
         return {
             user: null,
@@ -59,7 +61,6 @@ export default {
             phone: null,
             success: null,
             delete_token: null,
-            not_user_error: null,
             add_auksiyon: null,
             show_success: null,
             is_verification_session_code: null,
@@ -90,45 +91,45 @@ export default {
         },
         getPhoneAndName(data) {
             if( data && data.name && data.phone ) {
-                this.sendConfirm(data.name, data.phone);
-                console.log( 'DATA - ', data )
+                this.sendConfirm(null, data.phone, "/send/confirmation");
+                console.log( 'DATA /send/confirmation - ', data )
             }
         },
-        sendConfirm(name, phone) {
-            if( /*name &&*/ phone ) {
-                axios({
-                    method: "post",
-                    url: "/send/confirmation",
-                    data: {
-                        number: phone,
-                        product_id: this.getProductID(),
-                        save_time: this.getCurrentTimes(),
-                      /*  name: name*/
-                    },
-                })
-                .then(res => {
-                    if ( res && res.data && res.data.user && res.data.code && res.data.timer ) {
-                        this.user = res.data.user;
-                        this.code = res.data.code;
-                        this.timer = res.data.timer;
-
-                        // this.showSuccess();
-                        this.success = true;
-                        this.not_user_error = null;
-                        console.log('send-confirmation AAA res - ', this.user ,' - ', this.code, ' - ', this.timer )
-                        // console.log('send-confirmation AAA res - ', res.data.user)
-                    }
-                    console.log('send-confirmation res AAA 222 - ', res.data )
-                })
-                .catch(err => {
-                    if( err && err.response && err.response.status === 419 && err.response.data.message === 'not user' ) {
-                        this.not_user_error = Math.floor(Math.random() * 999);
-                    }
-                    console.log('send-confirmation err 1 AAA - ', err )
-                    console.log('send-confirmation err 2 AAA - ', err.response)
-                })
-            }
-        },
+        // sendConfirm(name, phone) {
+        //     if( /*name &&*/ phone ) {
+        //         axios({
+        //             method: "post",
+        //             url: "/send/confirmation",
+        //             data: {
+        //                 number: phone,
+        //                 product_id: this.getProductID(),
+        //                 save_time: this.getCurrentTimes(),
+        //               /*  name: name*/
+        //             },
+        //         })
+        //         .then(res => {
+        //             if ( res && res.data && res.data.user && res.data.code && res.data.timer ) {
+        //                 this.user = res.data.user;
+        //                 this.code = res.data.code;
+        //                 this.timer = res.data.timer;
+        //
+        //                 // this.showSuccess();
+        //                 this.success = true;
+        //                 this.not_user_error = null;
+        //                 console.log('send-confirmation AAA res - ', this.user ,' - ', this.code, ' - ', this.timer )
+        //                 // console.log('send-confirmation AAA res - ', res.data.user)
+        //             }
+        //             console.log('send-confirmation res AAA 222 - ', res.data )
+        //         })
+        //         .catch(err => {
+        //             if( err && err.response && err.response.status === 419 && err.response.data.message === 'not user' ) {
+        //                 this.not_user_error = Math.floor(Math.random() * 999);
+        //             }
+        //             console.log('send-confirmation err 1 AAA - ', err )
+        //             console.log('send-confirmation err 2 AAA - ', err.response)
+        //         })
+        //     }
+        // },
         // showSuccess() {
         //     this.show_success = true;
         //
@@ -161,6 +162,7 @@ export default {
             }
         },
         close() {
+            this.not_user_error = null;
             this.delete_token = Math.floor(Math.random() * 100);
             let body = document.body;
             let close = document.getElementsByClassName('close');
@@ -183,6 +185,9 @@ export default {
 </script>
 
 <style scoped>
+.vrf__modal_close_btn {
+    z-index: 1000;
+}
 
 .aukcion__add_button_text {
     font-size: 1.2rem;

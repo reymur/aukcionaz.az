@@ -6,6 +6,7 @@ import {toString} from "lodash";
 export default {
     data() {
         return {
+            not_user_error: null,
             add_time_loading: null,
         }
     },
@@ -45,6 +46,9 @@ export default {
             return this.auksiyon_status;
         },
     },
+    watch:{
+
+    },
     methods: {
         addOnlyNowAuksiyonWithTimer(product_id, horus, minute) {
             this.add_time_loading = true;
@@ -77,6 +81,43 @@ export default {
                     this.add_time_loading = true;
                     console.log( 'err auksiyon WithTimer new - ', err );
                 });
+        },
+        sendConfirm(name, phone, url) {
+            console.log( 'DATA 2222333 - ', phone, url )
+            if( phone, url) {
+                axios({
+                    method: "post",
+                    url: url,
+                    data: {
+                        name: name,
+                        number: phone,
+                        product_id: this.getProductID(),
+                        save_time: this.getCurrentTimes(),
+                    },
+                })
+                    .then(res => {
+                        if ( res && res.data && res.data.user && res.data.code && res.data.timer ) {
+                            this.user = res.data.user;
+                            this.code = res.data.code;
+                            this.timer = res.data.timer;
+
+                            // this.showSuccess();
+                            this.success = true;
+                            this.not_user_error = null;
+                            console.log('send-confirmation AAA res - ', this.user ,' - ', this.code, ' - ', this.timer )
+                            // console.log('send-confirmation AAA res - ', res.data.user)
+                        }
+                        console.log('send-confirmation res AAA 222 - ', res.data )
+                    })
+                    .catch(err => {
+                        if( err && err.response && err.response.status && err.response.status === 419 && err.response.data.message === 'not user' ) {
+                            console.log('MMMMMBBBBBBB - ', err.response.data.message )
+                            this.not_user_error = Math.floor(Math.random() * 999);
+                        }
+                        console.log('send-confirmation err 1 AAA - ', err )
+                        console.log('send-confirmation err 2 AAA - ', err.response.data)
+                    })
+            }
         },
         auksiyonTimer(auksiyon) {
             let timer     = this.getTimer(auksiyon);

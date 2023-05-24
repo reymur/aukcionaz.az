@@ -98,6 +98,7 @@ class AukcionRealTimeController extends Controller
 //            return response()->json([
 //                'message' => $this->getAukcionGamers($request->auksiyon_id)
 //            ]);
+            if( !$user ) return response()->json(['user' => 'no'], 500);
 
             if( $user ){
                 $user->update($request->validated());
@@ -176,7 +177,7 @@ class AukcionRealTimeController extends Controller
                     }
                 } else {
                     return response()->json([
-                        'message' => 'not user'.$this->generateNumber($product_owner_phone).' - '.$request->number
+                        'message' => 'not user'
                     ], 419 );
                 }
 
@@ -205,13 +206,12 @@ class AukcionRealTimeController extends Controller
     public function AuksiyonGamerInTheGame( $auksiyon, $auksiyon_gamer ) {
             if( !$auksiyon || !$auksiyon_gamer ) return false;
             if( !$auksiyon->id || !$auksiyon_gamer->id ) return false;
-            if( !$auksiyon_gamer->auksiyonGamer->status ) return false;
+            if( $auksiyon_gamer->auksiyonGamer && !$auksiyon_gamer->auksiyonGamer->status ) return false;
             if( $auksiyon->finished && $auksiyon->status != 1 ) return false;
             if( $auksiyon->user_id == $auksiyon_gamer->id ) return false;
             if( !$auksiyon_gamer && !$auksiyon_gamer->auksiyonGamer && !$auksiyon_gamer->auksiyonGamer->auksiyon_id ) return false;
 
-            if( $auksiyon->id == $auksiyon_gamer->auksiyonGamer->auksiyon_id ) return true;
-
+            if( $auksiyon_gamer->auksiyonGamer && $auksiyon->id == $auksiyon_gamer->auksiyonGamer->auksiyon_id ) return true;
             return false;
         }
 
@@ -226,7 +226,7 @@ class AukcionRealTimeController extends Controller
 
             if( $product ) $product_owner_phone = $this->getProductOwnerPhone($product);
 
-            if( $phone && $phone->user && $phone->user->auksiyonGamer ) $phone_owner = $phone->user;
+            if( $phone && $phone->user /*&& $phone->user->auksiyonGamer*/ ) $phone_owner = $phone->user;
             if( $product && $product->auksiyon && $product->auksiyon->id ) $auksiyon = $product->auksiyon;
 
             if( $product_owner_phone == $request->number ) {
@@ -547,7 +547,7 @@ class AukcionRealTimeController extends Controller
                 $phone_num = $phone->phone;
             }
 
-            if( $phone_num ) return $phone_num;
+            if( $phone_num ) return '+'. preg_replace('/[^0-9]+/','',$phone_num);
             else false;
         }
 
@@ -699,12 +699,12 @@ class AukcionRealTimeController extends Controller
     }
 
     public function auksiyonTimerFunc(Request $request) {
-        if( $request->timer && $request->name && $request->time && $request->current_time ) {
-            $auksiyon_timer = AuksiyonTimer::where('name', $request->name)->first();
+        if( $request->timer && $request->auksiyon_id && $request->time && $request->current_time ) {
+            $auksiyon_timer = AuksiyonTimer::where('auksiyon_id', $request->auksiyon_id)->first();
 
             if( ! $auksiyon_timer ) {
                 $auksiyon_timer = AuksiyonTimer::create([
-                    'name'              => $request->name,
+                    'auksiyon_id'       => $request->auksiyon_id ,
                     'time'              => $request->time,
                     'current_save_time' => $request->current_time,
                 ]);
@@ -722,13 +722,13 @@ class AukcionRealTimeController extends Controller
         }
 
         if( $request->stop_auksiyon_timer && $request->auksiyon_id ) {
-            return $this->deleteAuksiyon($request->auksiyon_name, $request->auksiyon_id);
+            return $this->deleteAuksiyon($request->auksiyon_id);
         }
     }
 
-    public function deleteAuksiyon($auksiyon_name, $auksiyon_id) {
-        $auksiyon_timer = AuksiyonTimer::where('name', $auksiyon_name)->delete();
-        $auksiyon       = Auksiyon::where('product_id', $auksiyon_id)->first();
+    public function deleteAuksiyon($auksiyon_id) {
+        $auksiyon_timer = AuksiyonTimer::where('auksiyon_id', $auksiyon_id)->delete();
+        $auksiyon       = Auksiyon::where('id', $auksiyon_id)->first();
 
         $auksiyon->update([
             'timer'    => NULL,
